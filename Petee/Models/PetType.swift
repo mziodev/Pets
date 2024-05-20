@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PetType: String {
+enum PetType: String, Codable {
     case dog
     case cat
 }
