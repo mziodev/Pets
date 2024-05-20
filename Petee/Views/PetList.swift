@@ -18,7 +18,7 @@ struct PetList: View {
             List {
                 ForEach(pets) { pet in
                     NavigationLink {
-                        // go to pet detail
+                        PetDetail(pet: pet)
                     } label: {
                         HStack {
                             VStack(alignment: .leading) {
