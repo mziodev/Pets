@@ -2,7 +2,7 @@
 //  PeteeApp.swift
 //  Petee
 //
-//  Created by Mauricio dSR on 20/5/24.
+//  Created by MZiO on 20/5/24.
 //
 
 import SwiftUI

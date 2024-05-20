@@ -11,6 +11,8 @@
 		088794822BFB35E600635DB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088794812BFB35E600635DB7 /* ContentView.swift */; };
 		088794842BFB35E700635DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088794832BFB35E700635DB7 /* Assets.xcassets */; };
 		088794872BFB35E700635DB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088794862BFB35E700635DB7 /* Preview Assets.xcassets */; };
+		088794902BFB36C200635DB7 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887948F2BFB36C200635DB7 /* Pet.swift */; };
+		088794922BFB40BA00635DB7 /* PetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088794912BFB40BA00635DB7 /* PetType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		088794812BFB35E600635DB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		088794832BFB35E700635DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		088794862BFB35E700635DB7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0887948F2BFB36C200635DB7 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		088794912BFB40BA00635DB7 /* PetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 		088794732BFB35E600635DB7 = {
 			isa = PBXGroup;
 			children = (
+				0887947F2BFB35E600635DB7 /* PeteeApp.swift */,
 				0887947E2BFB35E600635DB7 /* Petee */,
 				0887947D2BFB35E600635DB7 /* Products */,
 			);
@@ -51,8 +56,8 @@
 		0887947E2BFB35E600635DB7 /* Petee */ = {
 			isa = PBXGroup;
 			children = (
-				0887947F2BFB35E600635DB7 /* PeteeApp.swift */,
-				088794812BFB35E600635DB7 /* ContentView.swift */,
+				0887948E2BFB367600635DB7 /* Views */,
+				0887948D2BFB366800635DB7 /* Models */,
 				088794832BFB35E700635DB7 /* Assets.xcassets */,
 				088794852BFB35E700635DB7 /* Preview Content */,
 			);
@@ -65,6 +70,23 @@
 				088794862BFB35E700635DB7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0887948D2BFB366800635DB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0887948F2BFB36C200635DB7 /* Pet.swift */,
+				088794912BFB40BA00635DB7 /* PetType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0887948E2BFB367600635DB7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				088794812BFB35E600635DB7 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				088794902BFB36C200635DB7 /* Pet.swift in Sources */,
 				088794822BFB35E600635DB7 /* ContentView.swift in Sources */,
 				088794802BFB35E600635DB7 /* PeteeApp.swift in Sources */,
+				088794922BFB40BA00635DB7 /* PetType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
