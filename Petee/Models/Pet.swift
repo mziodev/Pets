@@ -17,6 +17,7 @@ class Pet {
     var image: String?
     var adopted: Bool
     var onFamilySince: Date
+    var weight: Double
     
     init(
         type: PetType,
@@ -25,7 +26,8 @@ class Pet {
         breed: String,
         image: String? = nil,
         adopted: Bool,
-        onFamilySince: Date
+        onFamilySince: Date,
+        weight: Double
     ) {
         self.type = type
         self.name = name
@@ -34,6 +36,7 @@ class Pet {
         self.image = image
         self.adopted = adopted
         self.onFamilySince = onFamilySince
+        self.weight = weight
     }
 }
 
@@ -45,7 +48,8 @@ extension Pet {
             birthday: .now - (86400 * 300),
             breed: "Jack Russell",
             adopted: true,
-            onFamilySince: .now - (86400 * 5)
+            onFamilySince: .now - (86400 * 5),
+            weight: 7.350
         ),
         Pet(
             type: .dog,
@@ -53,7 +57,8 @@ extension Pet {
             birthday: .now - (86400 * 150),
             breed: "Puddle",
             adopted: false,
-            onFamilySince: .now - (86400 * 50)
+            onFamilySince: .now - (86400 * 50),
+            weight: 3.450
         ),
         Pet(
             type: .cat,
@@ -61,7 +66,8 @@ extension Pet {
             birthday: .now - (86400 * 200),
             breed: "Sphinx",
             adopted: false,
-            onFamilySince: .now - (86400 * 100)
+            onFamilySince: .now - (86400 * 100),
+            weight: 2.875
         ),
     ]
 }

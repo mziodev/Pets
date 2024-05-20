@@ -11,6 +11,22 @@ import SwiftUI
 struct PetDetail: View {
     @State var pet: Pet
     
+    @State var breed = ""
+    @State var birthday = Date.now
+    @State var onFamilySince = Date.now
+    @State var image: String?
+    @State var weight: Double = 0
+    
+    @State var isFormDisabled = true
+    
+    private var weightFormatter: Formatter {
+        let formatter = NumberFormatter()
+        
+        formatter.numberStyle = .decimal
+        
+        return formatter
+    }
+    
     var body: some View {
         VStack {
             ZStack {
@@ -21,22 +37,68 @@ struct PetDetail: View {
                 
                 Image(systemName: "teddybear.fill")
                     .font(.system(size: 100))
+                    .foregroundStyle(.secondary)
+                
+                Button {
+                    // add pet foto
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.largeTitle)
+                        .bold()
+                }
+                .offset(x: 40, y: 55)
             }
             .padding()
             
-            VStack(alignment: .leading,spacing: 10) {
-                Text(pet.breed)
-                    .font(.headline)
+            Form {
+                Section("Breed") {
+                    TextField("Breed", text: $breed)
+                }
                 
-                Text("Born on \(pet.birthday.formatted(date: .complete, time: .omitted))")
+                Section("Dates") {
+                    DatePicker(
+                        "Born on",
+                        selection: $birthday,
+                        in: Date.distantPast...Date.now,
+                        displayedComponents: .date
+                    )
+                    
+                    DatePicker(
+                        "On the family since",
+                        selection: $onFamilySince,
+                        in: Date.distantPast...Date.now,
+                        displayedComponents: .date
+                    )
+                }
                 
-                Text("Part of the family since \(pet.onFamilySince.formatted(date: .complete, time: .omitted))")
+                Section("Weight (Kg.)") {
+                    TextField("\(pet.name) weight", value: $weight, formatter: weightFormatter)
+                }
             }
-            .padding(.horizontal)
-            
-            Spacer()
+            .disabled(isFormDisabled)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(isFormDisabled ? "Edit" : "Done") {
+                        withAnimation {
+                            isFormDisabled.toggle()
+                        }
+                        
+                        if !isFormDisabled {
+                            
+                            
+                            // save pet data
+                        }
+                    }
+                }
+            }
         }
         .navigationTitle(pet.name)
+        .onAppear {
+            breed = pet.breed
+            birthday = pet.birthday
+            onFamilySince = pet.onFamilySince
+            weight = pet.weight
+        }
     }
 }
 
