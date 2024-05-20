@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		086B05032BFB4490005D7C95 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B05022BFB4490005D7C95 /* SampleData.swift */; };
 		088794802BFB35E600635DB7 /* PeteeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887947F2BFB35E600635DB7 /* PeteeApp.swift */; };
 		088794822BFB35E600635DB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088794812BFB35E600635DB7 /* ContentView.swift */; };
 		088794842BFB35E700635DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088794832BFB35E700635DB7 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		086B05022BFB4490005D7C95 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		0887947C2BFB35E600635DB7 /* Petee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0887947F2BFB35E600635DB7 /* PeteeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeteeApp.swift; sourceTree = "<group>"; };
 		088794812BFB35E600635DB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		086B05012BFB4473005D7C95 /* Utitliies */ = {
+			isa = PBXGroup;
+			children = (
+				086B05022BFB4490005D7C95 /* SampleData.swift */,
+			);
+			path = Utitliies;
+			sourceTree = "<group>";
+		};
 		088794732BFB35E600635DB7 = {
 			isa = PBXGroup;
 			children = (
@@ -56,8 +66,9 @@
 		0887947E2BFB35E600635DB7 /* Petee */ = {
 			isa = PBXGroup;
 			children = (
-				0887948E2BFB367600635DB7 /* Views */,
 				0887948D2BFB366800635DB7 /* Models */,
+				086B05012BFB4473005D7C95 /* Utitliies */,
+				0887948E2BFB367600635DB7 /* Views */,
 				088794832BFB35E700635DB7 /* Assets.xcassets */,
 				088794852BFB35E700635DB7 /* Preview Content */,
 			);
@@ -162,6 +173,7 @@
 				088794902BFB36C200635DB7 /* Pet.swift in Sources */,
 				088794822BFB35E600635DB7 /* ContentView.swift in Sources */,
 				088794802BFB35E600635DB7 /* PeteeApp.swift in Sources */,
+				086B05032BFB4490005D7C95 /* SampleData.swift in Sources */,
 				088794922BFB40BA00635DB7 /* PetType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
