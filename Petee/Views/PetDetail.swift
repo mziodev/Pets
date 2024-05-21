@@ -29,26 +29,31 @@ struct PetDetail: View {
     
     var body: some View {
         VStack {
-            ZStack {
-                Circle()
-                    .frame(width: 200)
-                    .foregroundStyle(.white)
-                    .shadow(radius: 10, x: 3, y: 5)
-                
-                Image(systemName: "teddybear.fill")
-                    .font(.system(size: 100))
-                    .foregroundStyle(.secondary)
-                
-                Button {
-                    // add pet foto
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.largeTitle)
-                        .bold()
+            VStack {
+                ZStack {
+                    Circle()
+                        .frame(width: 200)
+                        .foregroundStyle(.white)
+                        .shadow(radius: 10, x: 3, y: 5)
+                    
+                    Image(systemName: "teddybear.fill")
+                        .font(.system(size: 100))
+                        .foregroundStyle(.secondary)
+                    
+                    Button {
+                        // add pet foto
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.largeTitle)
+                            .bold()
+                    }
+                    .offset(x: 40, y: 55)
                 }
-                .offset(x: 40, y: 55)
+                .padding()
+                
+                Text(pet.age)
+                    .font(.headline)
             }
-            .padding()
             
             Form {
                 Section("Breed") {
@@ -72,7 +77,11 @@ struct PetDetail: View {
                 }
                 
                 Section("Weight (Kg.)") {
-                    TextField("\(pet.name) weight", value: $weight, formatter: weightFormatter)
+                    TextField(
+                        "\(pet.name) weight",
+                        value: $weight,
+                        formatter: weightFormatter
+                    )
                 }
             }
             .disabled(isFormDisabled)

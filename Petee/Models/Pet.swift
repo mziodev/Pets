@@ -10,7 +10,9 @@ import SwiftData
 
 @Model
 class Pet {
-    let type: PetType
+    // MARK: - properties
+    let type: PetSpecies
+    let sex: PetSex
     var name: String
     var birthday: Date
     var breed: String
@@ -19,8 +21,50 @@ class Pet {
     var onFamilySince: Date
     var weight: Double
     
+    // MARK: - age computed property
+    var age: String {
+        let components = Calendar.current.dateComponents(
+            [.year, .month],
+            from: self.birthday,
+            to: Date.now
+        )
+        
+        let years = components.year ?? 0
+        let months = components.month ?? 0
+        let completeAge: String
+        
+        
+        if years > 0 && months > 0 {
+            if years == 1 && months == 1 {
+                completeAge = "\(years) year and \(months) month old"
+            } else if years == 1 {
+                completeAge = "\(years) year and \(months) months old"
+            } else if months == 1 {
+                completeAge = "\(years) years and \(months) month old"
+            } else {
+                completeAge = "\(years) years and \(months) months old"
+            }
+        } else if years > 0 && months == 0 {
+            if years == 1 {
+                completeAge = "\(years) year old"
+            } else {
+                completeAge = "\(years) years old"
+            }
+        } else {
+            if months == 1 {
+                completeAge = "\(months) month old"
+            } else {
+                completeAge = "\(months) months old"
+            }
+        }
+        
+        return completeAge
+    }
+    
+    // MARK: - class init
     init(
-        type: PetType,
+        type: PetSpecies,
+        sex: PetSex,
         name: String,
         birthday: Date,
         breed: String,
@@ -30,6 +74,7 @@ class Pet {
         weight: Double
     ) {
         self.type = type
+        self.sex = sex
         self.name = name
         self.birthday = birthday
         self.breed = breed
@@ -40,34 +85,51 @@ class Pet {
     }
 }
 
+// MARK: - custom data types extension
+extension Pet {
+    enum PetSpecies: String, Codable {
+        case canine
+        case feline
+    }
+    
+    enum PetSex: String, Codable {
+        case male
+        case female
+    }
+}
+
+// MARK: - sample data extension
 extension Pet {
     static let sampleData = [
         Pet(
-            type: .dog,
+            type: .canine,
+            sex: .male,
             name: "Rocky",
-            birthday: .now - (86400 * 300),
+            birthday: .now - (86400 * 500),
             breed: "Jack Russell",
             adopted: true,
             onFamilySince: .now - (86400 * 5),
             weight: 7.350
         ),
         Pet(
-            type: .dog,
+            type: .canine,
+            sex: .male,
             name: "Tom",
-            birthday: .now - (86400 * 150),
+            birthday: .now - (86400 * 370),
             breed: "Puddle",
             adopted: false,
             onFamilySince: .now - (86400 * 50),
             weight: 3.450
         ),
         Pet(
-            type: .cat,
+            type: .feline,
+            sex: .female,
             name: "Lia",
-            birthday: .now - (86400 * 200),
+            birthday: .now - (86400 * 30),
             breed: "Sphinx",
             adopted: false,
-            onFamilySince: .now - (86400 * 100),
-            weight: 2.875
+            onFamilySince: .now - (86400 * 5),
+            weight: 0.675
         ),
     ]
 }
