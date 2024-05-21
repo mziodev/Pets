@@ -32,7 +32,7 @@ struct PetList: View {
                             
                             Spacer()
                             
-                            Image(systemName: "\(pet.type).fill")
+                            Image(systemName: "\(pet.type.rawValue.lowercased()).fill")
                                 .font(.title2)
                         }
                     }

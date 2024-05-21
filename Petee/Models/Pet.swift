@@ -19,7 +19,7 @@ class Pet {
     var image: String?
     var adopted: Bool
     var onFamilySince: Date
-    var weight: Double
+    var weights = [Weight]()
     
     // MARK: - age computed property
     var age: String {
@@ -70,8 +70,7 @@ class Pet {
         breed: String,
         image: String? = nil,
         adopted: Bool,
-        onFamilySince: Date,
-        weight: Double
+        onFamilySince: Date
     ) {
         self.type = type
         self.sex = sex
@@ -81,20 +80,19 @@ class Pet {
         self.image = image
         self.adopted = adopted
         self.onFamilySince = onFamilySince
-        self.weight = weight
     }
 }
 
 // MARK: - custom data types extension
 extension Pet {
-    enum PetSpecies: String, Codable {
-        case canine
-        case feline
+    enum PetSpecies: String, CaseIterable, Codable {
+        case canine = "dog"
+        case feline = "cat"
     }
     
-    enum PetSex: String, Codable {
-        case male
-        case female
+    enum PetSex: String, CaseIterable, Codable {
+        case male = "male"
+        case female = "female"
     }
 }
 
@@ -108,8 +106,7 @@ extension Pet {
             birthday: .now - (86400 * 500),
             breed: "Jack Russell",
             adopted: true,
-            onFamilySince: .now - (86400 * 5),
-            weight: 7.350
+            onFamilySince: .now - (86400 * 5)
         ),
         Pet(
             type: .canine,
@@ -118,8 +115,7 @@ extension Pet {
             birthday: .now - (86400 * 370),
             breed: "Puddle",
             adopted: false,
-            onFamilySince: .now - (86400 * 50),
-            weight: 3.450
+            onFamilySince: .now - (86400 * 50)
         ),
         Pet(
             type: .feline,
@@ -128,8 +124,7 @@ extension Pet {
             birthday: .now - (86400 * 30),
             breed: "Sphinx",
             adopted: false,
-            onFamilySince: .now - (86400 * 5),
-            weight: 0.675
+            onFamilySince: .now - (86400 * 5)
         ),
     ]
 }

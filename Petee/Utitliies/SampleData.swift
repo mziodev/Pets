@@ -21,6 +21,7 @@ class SampleData {
     private init() {
         let schema = Schema([
             Pet.self,
+            Weight.self,
         ])
         
         let modelConfiguration = ModelConfiguration(
@@ -44,6 +45,27 @@ class SampleData {
         for pet in Pet.sampleData {
             modelContext.insert(pet)
         }
+        
+        for weight in Weight.sampleData {
+            modelContext.insert(weight)
+        }
+        
+        Pet.sampleData[2].weights = [
+            Weight.sampleData[7]
+        ]
+        
+        Pet.sampleData[1].weights = [
+            Weight.sampleData[3],
+            Weight.sampleData[4],
+            Weight.sampleData[5],
+            Weight.sampleData[6],
+        ]
+        
+        Pet.sampleData[0].weights = [
+            Weight.sampleData[0],
+            Weight.sampleData[1],
+            Weight.sampleData[2],
+        ]
         
         do {
             try modelContext.save()
