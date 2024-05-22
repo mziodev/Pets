@@ -21,11 +21,12 @@ class Pet {
     var onFamilySince: Date
     var weights = [Weight]()
     
-    // MARK: - age computed property
+    
+    // MARK: - computed properties
     var age: String {
         let components = Calendar.current.dateComponents(
             [.year, .month],
-            from: self.birthday,
+            from: birthday,
             to: Date.now
         )
         
@@ -61,6 +62,11 @@ class Pet {
         return completeAge
     }
     
+    var sortedWeights: [Weight] {
+        weights.sorted { $0.date > $1.date }
+    }
+    
+    
     // MARK: - class init
     init(
         type: PetSpecies,
@@ -81,7 +87,14 @@ class Pet {
         self.adopted = adopted
         self.onFamilySince = onFamilySince
     }
+    
+    
+    // MARK: - functions
+    func getSortedWeights(in range: ClosedRange<Date>) -> [Weight] {
+        sortedWeights.filter { range.contains($0.date) }
+    }
 }
+
 
 // MARK: - custom data types extension
 extension Pet {
@@ -95,6 +108,7 @@ extension Pet {
         case female = "female"
     }
 }
+
 
 // MARK: - sample data extension
 extension Pet {

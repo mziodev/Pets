@@ -36,5 +36,6 @@ extension Weight {
 
         // Lia
         Weight(date: .now - (86400 * 5), value: 1.050),
+        Weight(date: .now, value: 1.280),
     ]
 }

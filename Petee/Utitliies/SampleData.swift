@@ -51,7 +51,8 @@ class SampleData {
         }
         
         Pet.sampleData[2].weights = [
-            Weight.sampleData[7]
+            Weight.sampleData[7],
+            Weight.sampleData[8],
         ]
         
         Pet.sampleData[1].weights = [

@@ -30,10 +30,6 @@ struct PetDetail: View {
 //        return formatter
 //    }
     
-    var sortedWeights: [Weight] {
-        pet.weights.sorted { $0.date > $1.date }
-    }
-    
     var petInfo: String {
         "\(pet.name) is a \(pet.age) \(compliments.randomElement() ?? "") \(pet.sex.rawValue) \(pet.type.rawValue)"
     }
@@ -91,9 +87,9 @@ struct PetDetail: View {
                 
                 Section("Weight (Kg.)") {
                     NavigationLink{
-                        // to weight list
+                        WeightList(pet: pet)
                     } label: {
-                        Text("\(sortedWeights[0].value.formatted())")
+                        Text("\(pet.sortedWeights[0].value.formatted())")
                     }
                 }
             }
