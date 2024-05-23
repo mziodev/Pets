@@ -13,6 +13,7 @@ struct PeteeApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Pet.self,
+            Weight.self,
         ])
         
         let modelConfiguration = ModelConfiguration(

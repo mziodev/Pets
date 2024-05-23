@@ -5,16 +5,17 @@
 //  Created by MZiO on 20/5/24.
 //
 
+import PhotosUI
 import SwiftData
 import SwiftUI
 
 struct PetDetail: View {
-    @State var pet: Pet
+    @Bindable var pet: Pet
     
     @State var breed = ""
     @State var birthday = Date.now
     @State var onFamilySince = Date.now
-    @State var image: String?
+    @State var selectedImage: PhotosPickerItem?
     @State var isFormDisabled = true
     
     private let compliments = [
@@ -37,21 +38,34 @@ struct PetDetail: View {
     var body: some View {
         VStack {
             VStack {
-                ZStack {
-                    Circle()
-                        .frame(width: 150)
-                        .foregroundStyle(.black.opacity(0.1))
-//                        .shadow(radius: 10, x: 3, y: 5)
-                    
-                    Image(systemName: "teddybear.fill")
-                        .font(.system(size: 80))
-                        .foregroundStyle(.secondary)
+                if let imageData = pet.image,
+                    let uiImage = UIImage(data: imageData) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 150, height: 150)
+                        .clipShape(Circle())
+
+                } else {
+                    GenericPetImage()
                 }
-                .padding(.top)
                 
                 if !isFormDisabled {
-                    Button("Edit") {
-                        // add pet foto
+                    PhotosPicker(
+                        selection: $selectedImage,
+                        matching: .images,
+                        photoLibrary: .shared()
+                    ) {
+                        Text("Select photo")
+                    }
+                    
+                    if pet.image != nil {
+                        Button("Remove photo", role: .destructive) {
+                            withAnimation {
+                                selectedImage = nil
+                                pet.image = nil
+                            }
+                        }
                     }
                 }
             }
@@ -64,6 +78,8 @@ struct PetDetail: View {
                 
                 Section("Breed") {
                     TextField("Breed", text: $breed)
+                        .disabled(isFormDisabled)
+                        .foregroundStyle(isFormDisabled ? .primary : Color.blue)
                 }
                 
                 Section("Dates") {
@@ -76,7 +92,7 @@ struct PetDetail: View {
                     .foregroundStyle(isFormDisabled ? .primary : Color.blue)
                     
                     DatePicker(
-                        "On the family since",
+                        pet.adopted ? "Adopted on" : "On the family since",
                         selection: $onFamilySince,
                         in: Date.distantPast...Date.now,
                         displayedComponents: .date
@@ -102,8 +118,12 @@ struct PetDetail: View {
                         isFormDisabled.toggle()
                     }
                     
-                    if !isFormDisabled {
-                        // save pet data
+//                    print(isFormDisabled)
+                    
+                    if isFormDisabled {
+                        pet.breed = breed
+                        pet.birthday = birthday
+                        pet.onFamilySince = onFamilySince
                     }
                 }
             }
@@ -118,11 +138,31 @@ struct PetDetail: View {
             birthday = pet.birthday
             onFamilySince = pet.onFamilySince
         }
+        .task(id: selectedImage) {
+            if let data = try? await selectedImage?.loadTransferable(type: Data.self) {
+                pet.image = data
+            }
+        }
     }
 }
 
 #Preview {
     NavigationStack {
         PetDetail(pet: SampleData.shared.pet)
+    }
+}
+
+struct GenericPetImage: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .frame(width: 150)
+                .foregroundStyle(.black.opacity(0.1))
+            
+            Image(systemName: "teddybear.fill")
+                .font(.system(size: 80))
+                .foregroundStyle(.secondary)
+        }
+        .padding(.top)
     }
 }

@@ -16,7 +16,7 @@ class Pet {
     var name: String
     var birthday: Date
     var breed: String
-    var image: String?
+    var image: Data?
     var adopted: Bool
     var onFamilySince: Date
     var weights = [Weight]()
@@ -74,7 +74,6 @@ class Pet {
         name: String,
         birthday: Date,
         breed: String,
-        image: String? = nil,
         adopted: Bool,
         onFamilySince: Date
     ) {
@@ -83,7 +82,6 @@ class Pet {
         self.name = name
         self.birthday = birthday
         self.breed = breed
-        self.image = image
         self.adopted = adopted
         self.onFamilySince = onFamilySince
     }
