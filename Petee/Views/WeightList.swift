@@ -13,26 +13,22 @@ struct WeightList: View {
     @Environment(\.modelContext) private var modelContext
     
     @State var pet: Pet
-    @State var scrollPositionStart: Date = .now
+    
+    private let lastSixMonthsRange = Date.now - (86400 * 180) ... Date.now
+    private let lastYearRange = Date.now - (86400 * 365) ... Date.now
+    
+    private let floatStyle = FloatingPointFormatStyle<Float>()
+        .rounded(rule: .down)
+        .precision(.fractionLength(2))
     
     
     // MARK: - computed properties
-    
-    private var scrollPositionEnd: Date {
-        scrollPositionStart.addingTimeInterval(3600 * 24 * 30)
+    var scrollPositionStartString: String {
+        pet.reverseSortedWeights.last!.date.formatted(.dateTime.month().day())
     }
     
-    private var scrollPositionStartString: String {
-        scrollPositionStart.formatted(.dateTime.month().day())
-    }
-    
-    private var scrollPositionEndString: String {
-        scrollPositionEnd.formatted(.dateTime.month().day().year())
-    }
-    
-    init(pet: Pet) {
-        self.pet = pet
-        self.scrollPositionStart = pet.weights.last!.date.addingTimeInterval(-1 * 3600 * 24 * 30)
+    var scrollPositionEndString: String {
+        pet.reverseSortedWeights.first!.date.formatted(.dateTime.month().day().year())
     }
     
     
@@ -40,10 +36,12 @@ struct WeightList: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-//                Text(
-//                    "Average: \(pet.averageWeightInPeriod(in: scrollPositionStart...scrollPositionEnd).formatted()) kg"
-//                )
-//                .font(.headline)
+                Text("Average weight")
+                .font(.callout)
+                
+                Text("\(pet.averageWeightIn(range: lastSixMonthsRange).formatted(floatStyle))kg")
+                    .font(.title)
+                    .bold()
                 
                 Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
                     .font(.callout)
@@ -51,12 +49,12 @@ struct WeightList: View {
             }
             .padding([.horizontal, .top])
             
-            PetWeightChart(pet: pet, scrollPosition: $scrollPositionStart)
+            PetWeightChart(weights: pet.getSortedWeights(in: lastSixMonthsRange))
                 .frame(height: 240)
                 .padding(.horizontal)
             
             List {
-                ForEach(pet.sortedWeights) { weight in
+                ForEach(pet.reverseSortedWeights) { weight in
                     HStack {
                         Text(weight.date.formatted(date: .complete, time: .omitted))
                         
@@ -86,38 +84,5 @@ struct WeightList: View {
 #Preview {
     NavigationStack {
         WeightList(pet: SampleData.shared.pet)
-    }
-}
-
-struct PetWeightChart: View {
-    let pet: Pet
-    
-    @Binding var scrollPosition: Date
-    
-    var body: some View {
-        Chart {
-            ForEach(pet.weights) { weight in
-                BarMark(
-                    x: .value("Date", weight.date),
-                    y: .value("Weight (kg.)", weight.value)
-                )
-            }
-        }
-        .chartScrollableAxes(.horizontal)
-        .chartXVisibleDomain(length: 3600 * 24 * 30)
-        .chartScrollTargetBehavior(
-            .valueAligned(
-                matching: .init(hour: 0),
-                majorAlignment: .matching(.init(day: 1))
-            )
-        )
-        .chartScrollPosition(x: $scrollPosition)
-        .chartXAxis {
-            AxisMarks(values: .stride(by: .day, count: 15)) {
-                AxisTick()
-                AxisGridLine()
-                AxisValueLabel(format: .dateTime.month().day())
-            }
-        }
     }
 }

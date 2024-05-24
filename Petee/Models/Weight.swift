@@ -14,10 +14,9 @@ class Weight {
     var value: Float
     var pet: Pet?
     
-    init(date: Date, value: Float, pet: Pet? = nil) {
+    init(date: Date, value: Float) {
         self.date = date
         self.value = value
-        self.pet = pet
     }
 }
 
@@ -29,7 +28,7 @@ extension Weight {
         Weight(date: .now, value: 7.340),
         
         // Tom
-        Weight(date: .now - (86400 * 75), value: 3.025),
+        Weight(date: .now - (86400 * 190), value: 3.025),
         Weight(date: .now - (86400 * 52), value: 3.150),
         Weight(date: .now - (86400 * 24), value: 3.300),
         Weight(date: .now - (86400 * 5), value: 3.250),

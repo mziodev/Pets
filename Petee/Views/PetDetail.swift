@@ -105,7 +105,7 @@ struct PetDetail: View {
                     NavigationLink{
                         WeightList(pet: pet)
                     } label: {
-                        Text("\(pet.sortedWeights[0].value.formatted())")
+                        Text("\(pet.reverseSortedWeights[0].value.formatted())")
                     }
                 }
             }

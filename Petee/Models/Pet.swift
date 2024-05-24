@@ -24,14 +24,15 @@ class Pet {
     
     // MARK: - computed properties
     var age: String {
-        let components = Calendar.current.dateComponents(
+        let dateComponents = Calendar.current.dateComponents(
             [.year, .month],
             from: birthday,
             to: Date.now
         )
         
-        let years = components.year ?? 0
-        let months = components.month ?? 0
+        let years = dateComponents.year ?? 0
+        let months = dateComponents.month ?? 0
+        
         let completeAge: String
         
         
@@ -63,6 +64,10 @@ class Pet {
     }
     
     var sortedWeights: [Weight] {
+        weights.sorted { $0.date < $1.date }
+    }
+    
+    var reverseSortedWeights: [Weight] {
         weights.sorted { $0.date > $1.date }
     }
     
@@ -89,21 +94,18 @@ class Pet {
     
     // MARK: - functions
     func getSortedWeights(in range: ClosedRange<Date>) -> [Weight] {
-        sortedWeights.filter { range.contains($0.date) }
-    }
-}
-
-
-// MARK: - custom data types extension
-extension Pet {
-    enum PetSpecies: String, CaseIterable, Codable {
-        case canine = "dog"
-        case feline = "cat"
+        weights.filter { range.contains($0.date) }.sorted { $0.date < $1.date }
     }
     
-    enum PetSex: String, CaseIterable, Codable {
-        case male = "male"
-        case female = "female"
+    func averageWeightIn(range: ClosedRange<Date>) -> Float {
+        let weightsInRange = weights.filter { range.contains($0.date) }
+        var totalWeightValue: Float = 0
+        
+        for weight in weightsInRange {
+            totalWeightValue += weight.value
+        }
+        
+        return totalWeightValue / Float(weightsInRange.count)
     }
 }
 
@@ -120,6 +122,7 @@ extension Pet {
             adopted: true,
             onFamilySince: .now - (86400 * 5)
         ),
+        
         Pet(
             type: .canine,
             sex: .male,
@@ -129,6 +132,7 @@ extension Pet {
             adopted: false,
             onFamilySince: .now - (86400 * 50)
         ),
+        
         Pet(
             type: .feline,
             sex: .female,

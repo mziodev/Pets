@@ -15,6 +15,9 @@
 		088794842BFB35E700635DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088794832BFB35E700635DB7 /* Assets.xcassets */; };
 		088794872BFB35E700635DB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088794862BFB35E700635DB7 /* Preview Assets.xcassets */; };
 		088794902BFB36C200635DB7 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887948F2BFB36C200635DB7 /* Pet.swift */; };
+		08B091962BFF5E0600D0F27D /* PetSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B091952BFF5E0600D0F27D /* PetSpecies.swift */; };
+		08B091982BFF5E6B00D0F27D /* PetSex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B091972BFF5E6B00D0F27D /* PetSex.swift */; };
+		08B0919A2BFF7D2C00D0F27D /* PetWeightChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B091992BFF7D2C00D0F27D /* PetWeightChart.swift */; };
 		08B8A67B2BFCB08100879E18 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B8A67A2BFCB08100879E18 /* Weight.swift */; };
 		08B8A67D2BFCE30400879E18 /* WeightList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B8A67C2BFCE30400879E18 /* WeightList.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +32,9 @@
 		088794832BFB35E700635DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		088794862BFB35E700635DB7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0887948F2BFB36C200635DB7 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		08B091952BFF5E0600D0F27D /* PetSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSpecies.swift; sourceTree = "<group>"; };
+		08B091972BFF5E6B00D0F27D /* PetSex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSex.swift; sourceTree = "<group>"; };
+		08B091992BFF7D2C00D0F27D /* PetWeightChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWeightChart.swift; sourceTree = "<group>"; };
 		08B8A67A2BFCB08100879E18 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		08B8A67C2BFCE30400879E18 /* WeightList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				0887948F2BFB36C200635DB7 /* Pet.swift */,
+				08B091972BFF5E6B00D0F27D /* PetSex.swift */,
+				08B091952BFF5E0600D0F27D /* PetSpecies.swift */,
 				08B8A67A2BFCB08100879E18 /* Weight.swift */,
 			);
 			path = Models;
@@ -104,6 +112,7 @@
 				088794812BFB35E600635DB7 /* ContentView.swift */,
 				086B05062BFB4FF7005D7C95 /* PetDetail.swift */,
 				086B05042BFB467A005D7C95 /* PetList.swift */,
+				08B091992BFF7D2C00D0F27D /* PetWeightChart.swift */,
 				08B8A67C2BFCE30400879E18 /* WeightList.swift */,
 			);
 			path = Views;
@@ -179,7 +188,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08B091982BFF5E6B00D0F27D /* PetSex.swift in Sources */,
+				08B0919A2BFF7D2C00D0F27D /* PetWeightChart.swift in Sources */,
 				088794902BFB36C200635DB7 /* Pet.swift in Sources */,
+				08B091962BFF5E0600D0F27D /* PetSpecies.swift in Sources */,
 				086B05052BFB467A005D7C95 /* PetList.swift in Sources */,
 				088794822BFB35E600635DB7 /* ContentView.swift in Sources */,
 				088794802BFB35E600635DB7 /* PeteeApp.swift in Sources */,
