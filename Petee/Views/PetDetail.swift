@@ -17,24 +17,14 @@ struct PetDetail: View {
     @State var onFamilySince = Date.now
     @State var selectedImage: PhotosPickerItem?
     @State var isFormDisabled = true
+    @State var petInfo = ""
     
     private let compliments = [
         "handsome", "beautiful", "lovely", "nice", "good-looking", "cute", "pretty"
     ]
     
-    // MARK: - computed properties
-//    private var weightFormatter: Formatter {
-//        let formatter = NumberFormatter()
-//        
-//        formatter.numberStyle = .decimal
-//        
-//        return formatter
-//    }
     
-    var petInfo: String {
-        "\(pet.name) is a \(pet.age) \(compliments.randomElement() ?? "") \(pet.sex.rawValue) \(pet.type.rawValue)"
-    }
-    
+    // MARK: - body
     var body: some View {
         VStack {
             VStack {
@@ -47,7 +37,7 @@ struct PetDetail: View {
                         .clipShape(Circle())
 
                 } else {
-                    GenericPetImage()
+                    GenericPetImage(petSpecies: pet.type)
                 }
                 
                 if !isFormDisabled {
@@ -56,7 +46,7 @@ struct PetDetail: View {
                         matching: .images,
                         photoLibrary: .shared()
                     ) {
-                        Text("Select photo")
+                        Text(pet.image != nil ? "Change photo" : "Add photo")
                     }
                     
                     if pet.image != nil {
@@ -137,12 +127,17 @@ struct PetDetail: View {
             breed = pet.breed
             birthday = pet.birthday
             onFamilySince = pet.onFamilySince
+            petInfo = getQuickInfo(from: pet)
         }
         .task(id: selectedImage) {
             if let data = try? await selectedImage?.loadTransferable(type: Data.self) {
                 pet.image = data
             }
         }
+    }
+    
+    func getQuickInfo(from pet: Pet) -> String {
+        "\(pet.name) is a \(pet.age) \(compliments.randomElement()!) \(pet.sex.rawValue) \(pet.type.rawValue)"
     }
 }
 
@@ -152,17 +147,3 @@ struct PetDetail: View {
     }
 }
 
-struct GenericPetImage: View {
-    var body: some View {
-        ZStack {
-            Circle()
-                .frame(width: 150)
-                .foregroundStyle(.black.opacity(0.1))
-            
-            Image(systemName: "teddybear.fill")
-                .font(.system(size: 80))
-                .foregroundStyle(.secondary)
-        }
-        .padding(.top)
-    }
-}

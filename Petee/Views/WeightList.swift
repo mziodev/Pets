@@ -9,13 +9,21 @@ import Charts
 import SwiftData
 import SwiftUI
 
+enum TimePeriod: String, CaseIterable, Identifiable {
+    case lastSixMonths = "Last 6 Months"
+    case lastTwelveMonths = "Last 12 months"
+    
+    var id: Self { self }
+}
+
 struct WeightList: View {
     @Environment(\.modelContext) private var modelContext
     
     @State var pet: Pet
+    @State private var selectedTimePeriod: TimePeriod = .lastSixMonths
     
     private let lastSixMonthsRange = Date.now - (86400 * 180) ... Date.now
-    private let lastYearRange = Date.now - (86400 * 365) ... Date.now
+    private let lastTwelveMonthsRange = Date.now - (86400 * 365) ... Date.now
     
     private let floatStyle = FloatingPointFormatStyle<Float>()
         .rounded(rule: .down)
@@ -23,6 +31,19 @@ struct WeightList: View {
     
     
     // MARK: - computed properties
+    private var selectedRange: ClosedRange<Date> {
+        let selectedRange: ClosedRange<Date>
+        
+        switch selectedTimePeriod {
+        case .lastSixMonths:
+            selectedRange = lastSixMonthsRange
+        case .lastTwelveMonths:
+            selectedRange = lastTwelveMonthsRange
+        }
+        
+        return selectedRange
+    }
+    
     var scrollPositionStartString: String {
         pet.reverseSortedWeights.last!.date.formatted(.dateTime.month().day())
     }
@@ -35,11 +56,19 @@ struct WeightList: View {
     // MARK: - body
     var body: some View {
         VStack(alignment: .leading) {
+            Picker("Time Period", selection: $selectedTimePeriod.animation()) {
+                ForEach(TimePeriod.allCases.reversed()) { period in
+                    Text(period.rawValue)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding(.horizontal)
+            
             VStack(alignment: .leading) {
                 Text("Average weight")
                 .font(.callout)
                 
-                Text("\(pet.averageWeightIn(range: lastSixMonthsRange).formatted(floatStyle))kg")
+                Text("\(pet.averageWeightIn(range: selectedRange).formatted(floatStyle))kg")
                     .font(.title)
                     .bold()
                 
@@ -49,7 +78,7 @@ struct WeightList: View {
             }
             .padding([.horizontal, .top])
             
-            PetWeightChart(weights: pet.getSortedWeights(in: lastSixMonthsRange))
+            PetWeightChart(weights: pet.getSortedWeights(in: selectedRange))
                 .frame(height: 240)
                 .padding(.horizontal)
             

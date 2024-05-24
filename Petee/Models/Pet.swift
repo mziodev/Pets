@@ -19,7 +19,7 @@ class Pet {
     var image: Data?
     var adopted: Bool
     var onFamilySince: Date
-    var weights = [Weight]()
+    @Relationship(deleteRule: .cascade) var weights = [Weight]()
     
     
     // MARK: - computed properties
