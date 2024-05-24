@@ -21,6 +21,8 @@
 		08B8A67B2BFCB08100879E18 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B8A67A2BFCB08100879E18 /* Weight.swift */; };
 		08B8A67D2BFCE30400879E18 /* WeightList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B8A67C2BFCE30400879E18 /* WeightList.swift */; };
 		08F2ED792C00AAD6002206A2 /* GenericPetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2ED782C00AAD6002206A2 /* GenericPetImage.swift */; };
+		08F2ED7B2C00D1D3002206A2 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2ED7A2C00D1D3002206A2 /* TimePeriod.swift */; };
+		08F2ED7D2C00D5EB002206A2 /* AddWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2ED7C2C00D5EB002206A2 /* AddWeight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		08B8A67A2BFCB08100879E18 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		08B8A67C2BFCE30400879E18 /* WeightList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightList.swift; sourceTree = "<group>"; };
 		08F2ED782C00AAD6002206A2 /* GenericPetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPetImage.swift; sourceTree = "<group>"; };
+		08F2ED7A2C00D1D3002206A2 /* TimePeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePeriod.swift; sourceTree = "<group>"; };
+		08F2ED7C2C00D5EB002206A2 /* AddWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 				0887948F2BFB36C200635DB7 /* Pet.swift */,
 				08B091972BFF5E6B00D0F27D /* PetSex.swift */,
 				08B091952BFF5E0600D0F27D /* PetSpecies.swift */,
+				08F2ED7A2C00D1D3002206A2 /* TimePeriod.swift */,
 				08B8A67A2BFCB08100879E18 /* Weight.swift */,
 			);
 			path = Models;
@@ -111,6 +116,7 @@
 		0887948E2BFB367600635DB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				08F2ED7C2C00D5EB002206A2 /* AddWeight.swift */,
 				088794812BFB35E600635DB7 /* ContentView.swift */,
 				086B05062BFB4FF7005D7C95 /* PetDetail.swift */,
 				08F2ED782C00AAD6002206A2 /* GenericPetImage.swift */,
@@ -201,8 +207,10 @@
 				086B05072BFB4FF7005D7C95 /* PetDetail.swift in Sources */,
 				08F2ED792C00AAD6002206A2 /* GenericPetImage.swift in Sources */,
 				08B8A67B2BFCB08100879E18 /* Weight.swift in Sources */,
+				08F2ED7B2C00D1D3002206A2 /* TimePeriod.swift in Sources */,
 				086B05032BFB4490005D7C95 /* SampleData.swift in Sources */,
 				08B8A67D2BFCE30400879E18 /* WeightList.swift in Sources */,
+				08F2ED7D2C00D5EB002206A2 /* AddWeight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

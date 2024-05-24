@@ -9,18 +9,12 @@ import Charts
 import SwiftData
 import SwiftUI
 
-enum TimePeriod: String, CaseIterable, Identifiable {
-    case lastSixMonths = "Last 6 Months"
-    case lastTwelveMonths = "Last 12 months"
-    
-    var id: Self { self }
-}
-
 struct WeightList: View {
     @Environment(\.modelContext) private var modelContext
     
     @State var pet: Pet
     @State private var selectedTimePeriod: TimePeriod = .lastSixMonths
+    @State private var showingAddWeightSheet: Bool = false
     
     private let lastSixMonthsRange = Date.now - (86400 * 180) ... Date.now
     private let lastTwelveMonthsRange = Date.now - (86400 * 365) ... Date.now
@@ -56,7 +50,10 @@ struct WeightList: View {
     // MARK: - body
     var body: some View {
         VStack(alignment: .leading) {
-            Picker("Time Period", selection: $selectedTimePeriod.animation()) {
+            Picker(
+                "Time Period",
+                selection: $selectedTimePeriod.animation()
+            ) {
                 ForEach(TimePeriod.allCases.reversed()) { period in
                     Text(period.rawValue)
                 }
@@ -66,39 +63,57 @@ struct WeightList: View {
             
             VStack(alignment: .leading) {
                 Text("Average weight")
-                .font(.callout)
                 
                 Text("\(pet.averageWeightIn(range: selectedRange).formatted(floatStyle))kg")
                     .font(.title)
                     .bold()
                 
                 Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
-                    .font(.callout)
                     .foregroundStyle(.secondary)
             }
-            .padding([.horizontal, .top])
+            .padding(.horizontal)
+            .padding(.top, 2)
             
             PetWeightChart(weights: pet.getSortedWeights(in: selectedRange))
                 .frame(height: 240)
                 .padding(.horizontal)
             
             List {
-                ForEach(pet.reverseSortedWeights) { weight in
-                    HStack {
-                        Text(weight.date.formatted(date: .complete, time: .omitted))
-                        
-                        Spacer()
-                        
-                        Text("\(weight.value.formatted()) kg")
-                            .bold()
+                Section("Weight list") {
+                    ForEach(pet.reverseSortedWeights) { weight in
+                        HStack {
+                            Text(weight.date.formatted(date: .complete, time: .omitted))
+                            
+                            Spacer()
+                            
+                            Text("\(weight.value.formatted()) kg")
+                                .bold()
+                        }
                     }
                 }
             }
             .navigationTitle("\(pet.name) weight list")
-        .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    showingAddWeightSheet.toggle()
+                    
+                    // add weight
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+        }
+        .sheet(isPresented: $showingAddWeightSheet) {
+            AddWeight(pet: pet)
+                .presentationDetents([.fraction(0.3)])
         }
     }
     
+    
+    // MARK: - functions
     private func getAverageWeight(in weights: [Weight]) -> Float {
         var totalWeight:Float = 0
         
