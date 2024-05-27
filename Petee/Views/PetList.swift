@@ -5,6 +5,14 @@
 //  Created by MZiO on 20/5/24.
 //
 
+/*
+ TODO:
+ 
+    Add button for showing add menu: weight, vaccine, parasites, vet consultations...
+ 
+    Add text with current weight
+ */
+
 import SwiftData
 import SwiftUI
 
@@ -12,6 +20,8 @@ struct PetList: View {
     @Query(sort: \Pet.name) var pets: [Pet]
     
     @Environment(\.modelContext) var modelContext
+    
+    @State private var showingAddPetSheet = false
     
     var body: some View {
         NavigationStack {
@@ -32,7 +42,7 @@ struct PetList: View {
                             
                             Spacer()
                             
-                            Image(systemName: "\(pet.type.rawValue.lowercased()).fill")
+                            Image(systemName: "\(pet.species.rawValue.lowercased()).fill")
                                 .font(.title2)
                         }
                     }
@@ -47,7 +57,7 @@ struct PetList: View {
                 
                 ToolbarItem(placement: .bottomBar) {
                     Button {
-                        // add new pet
+                        showingAddPetSheet = true
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -56,6 +66,11 @@ struct PetList: View {
                 
                 ToolbarItem(placement: .status) {
                     Text("\(pets.count) pets")
+                }
+            }
+            .sheet(isPresented: $showingAddPetSheet) {
+                NavigationStack {
+                    AddPet()
                 }
             }
         }

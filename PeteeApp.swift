@@ -33,7 +33,7 @@ struct PeteeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PetList()
                 .modelContainer(sharedModelContainer)
         }
     }

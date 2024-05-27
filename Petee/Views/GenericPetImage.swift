@@ -26,6 +26,6 @@ struct GenericPetImage: View {
 }
 
 #Preview {
-    GenericPetImage(petSpecies: SampleData.shared.pet.type
+    GenericPetImage(petSpecies: SampleData.shared.pet.species
     )
 }

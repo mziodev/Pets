@@ -12,15 +12,26 @@ import SwiftUI
 struct PetDetail: View {
     @Bindable var pet: Pet
     
+    @FocusState var isBreedTextFieldFocused: Bool
+    
+    
+    // MARK: - state pet properties
     @State var breed = ""
     @State var birthday = Date.now
     @State var onFamilySince = Date.now
     @State var selectedImage: PhotosPickerItem?
-    @State var isFormDisabled = true
-    @State var petInfo = ""
     
-    private let compliments = [
-        "handsome", "beautiful", "lovely", "nice", "good-looking", "cute", "pretty"
+    @State var petInfo = ""
+    @State var editingPetDetails = false
+    
+    private let petCompliments = [
+        "handsome",
+        "beautiful",
+        "lovely",
+        "nice",
+        "good-looking",
+        "cute",
+        "pretty"
     ]
     
     
@@ -37,10 +48,10 @@ struct PetDetail: View {
                         .clipShape(Circle())
 
                 } else {
-                    GenericPetImage(petSpecies: pet.type)
+                    GenericPetImage(petSpecies: pet.species)
                 }
                 
-                if !isFormDisabled {
+                if editingPetDetails {
                     PhotosPicker(
                         selection: $selectedImage,
                         matching: .images,
@@ -68,9 +79,13 @@ struct PetDetail: View {
                 
                 Section("Breed") {
                     TextField("Breed", text: $breed)
-                        .disabled(isFormDisabled)
-                        .foregroundStyle(isFormDisabled ? .primary : Color.blue)
+                        .disabled(!editingPetDetails)
+                        .foregroundStyle(
+                            editingPetDetails ? Color.accentColor : .primary
+                        )
+                        .focused($isBreedTextFieldFocused)
                 }
+                
                 
                 Section("Dates") {
                     DatePicker(
@@ -79,49 +94,53 @@ struct PetDetail: View {
                         in: Date.distantPast...Date.now,
                         displayedComponents: .date
                     )
-                    .foregroundStyle(isFormDisabled ? .primary : Color.blue)
+                    .foregroundStyle(
+                        editingPetDetails ? Color.accentColor : .primary
+                    )
                     
                     DatePicker(
-                        pet.adopted ? "Adopted on" : "On the family since",
+                        pet.isAdopted ? "Adopted on" : "On the family since",
                         selection: $onFamilySince,
                         in: Date.distantPast...Date.now,
                         displayedComponents: .date
                     )
-                    .foregroundStyle(isFormDisabled ? .primary : Color.blue)
+                    .foregroundStyle(
+                        editingPetDetails ? Color.accentColor : .primary
+                    )
                 }
-                .disabled(isFormDisabled)
+                .disabled(!editingPetDetails)
                 
-                Section("Weight (Kg.)") {
-                    NavigationLink{
-                        WeightList(pet: pet)
-                    } label: {
-                        Text("\(pet.reverseSortedWeights[0].value.formatted())")
+                if !editingPetDetails && !pet.weights.isEmpty {
+                    Section("Weight (Kg.)") {
+                        NavigationLink{
+                            WeightList(pet: pet)
+                        } label: {
+                            Text("\(pet.reverseSortedWeights[0].value.formatted())")
+                        }
                     }
                 }
             }
         }
         .navigationTitle(pet.name)
+        
+        
+        // MARK: - toolbar
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button(isFormDisabled ? "Edit" : "Done") {
+                Button(editingPetDetails ? "Done" : "Edit") {
                     withAnimation {
-                        isFormDisabled.toggle()
+                        editingPetDetails.toggle()
                     }
                     
-//                    print(isFormDisabled)
+                    isBreedTextFieldFocused.toggle()
                     
-                    if isFormDisabled {
+                    if !editingPetDetails {
                         pet.breed = breed
                         pet.birthday = birthday
                         pet.onFamilySince = onFamilySince
                     }
                 }
             }
-            
-//            ToolbarItem(placement: .status) {
-//                Text(pet.age)
-//                    .font(.caption)
-//            }
         }
         .onAppear {
             breed = pet.breed
@@ -137,7 +156,7 @@ struct PetDetail: View {
     }
     
     func getQuickInfo(from pet: Pet) -> String {
-        "\(pet.name) is a \(pet.age) \(compliments.randomElement()!) \(pet.sex.rawValue) \(pet.type.rawValue)"
+        "\(pet.name) is a \(pet.age) \(petCompliments.randomElement()!) \(pet.sex.rawValue) \(pet.species.rawValue)"
     }
 }
 

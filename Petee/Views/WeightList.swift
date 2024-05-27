@@ -5,6 +5,12 @@
 //  Created by MZiO on 21/5/24.
 //
 
+/*
+ TODO:
+ 
+    Add current age on each weight??? for checking pet grow. Show age on each weight bar on chart
+ */
+
 import Charts
 import SwiftData
 import SwiftUI

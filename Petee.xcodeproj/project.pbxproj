@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082BE7D12C01FC7200504177 /* AddPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082BE7D02C01FC7200504177 /* AddPet.swift */; };
 		086B05032BFB4490005D7C95 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B05022BFB4490005D7C95 /* SampleData.swift */; };
 		086B05052BFB467A005D7C95 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B05042BFB467A005D7C95 /* PetList.swift */; };
 		086B05072BFB4FF7005D7C95 /* PetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B05062BFB4FF7005D7C95 /* PetDetail.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		082BE7D02C01FC7200504177 /* AddPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPet.swift; sourceTree = "<group>"; };
 		086B05022BFB4490005D7C95 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		086B05042BFB467A005D7C95 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		086B05062BFB4FF7005D7C95 /* PetDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetail.swift; sourceTree = "<group>"; };
@@ -117,9 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				08F2ED7C2C00D5EB002206A2 /* AddWeight.swift */,
+				082BE7D02C01FC7200504177 /* AddPet.swift */,
 				088794812BFB35E600635DB7 /* ContentView.swift */,
-				086B05062BFB4FF7005D7C95 /* PetDetail.swift */,
 				08F2ED782C00AAD6002206A2 /* GenericPetImage.swift */,
+				086B05062BFB4FF7005D7C95 /* PetDetail.swift */,
 				086B05042BFB467A005D7C95 /* PetList.swift */,
 				08B091992BFF7D2C00D0F27D /* PetWeightChart.swift */,
 				08B8A67C2BFCE30400879E18 /* WeightList.swift */,
@@ -211,6 +214,7 @@
 				086B05032BFB4490005D7C95 /* SampleData.swift in Sources */,
 				08B8A67D2BFCE30400879E18 /* WeightList.swift in Sources */,
 				08F2ED7D2C00D5EB002206A2 /* AddWeight.swift in Sources */,
+				082BE7D12C01FC7200504177 /* AddPet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

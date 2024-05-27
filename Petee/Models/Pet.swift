@@ -11,15 +11,19 @@ import SwiftData
 @Model
 class Pet {
     // MARK: - properties
-    let type: PetSpecies
-    let sex: PetSex
+    var species: PetSpecies
+    var sex: PetSex
     var name: String
-    var birthday: Date
     var breed: String
-    var image: Data?
-    var adopted: Bool
+    var isAdopted: Bool
+    var birthday: Date
     var onFamilySince: Date
-    @Relationship(deleteRule: .cascade) var weights = [Weight]()
+    
+    @Attribute(.externalStorage)
+    var image: Data?
+    
+    @Relationship(deleteRule: .cascade)
+    var weights = [Weight]()
     
     
     // MARK: - computed properties
@@ -74,21 +78,23 @@ class Pet {
     
     // MARK: - class init
     init(
-        type: PetSpecies,
-        sex: PetSex,
-        name: String,
-        birthday: Date,
-        breed: String,
-        adopted: Bool,
-        onFamilySince: Date
+        species: PetSpecies = .canine,
+        sex: PetSex = .female,
+        name: String = "",
+        breed: String = "",
+        adopted: Bool = false,
+        birthday: Date = .now,
+        onFamilySince: Date = .now,
+        image: Data? = nil
     ) {
-        self.type = type
+        self.species = species
         self.sex = sex
         self.name = name
-        self.birthday = birthday
         self.breed = breed
-        self.adopted = adopted
+        self.birthday = birthday
         self.onFamilySince = onFamilySince
+        self.isAdopted = adopted
+        self.image = image
     }
     
     
@@ -114,32 +120,32 @@ class Pet {
 extension Pet {
     static let sampleData = [
         Pet(
-            type: .canine,
+            species: .canine,
             sex: .male,
             name: "Rocky",
-            birthday: .now - (86400 * 500),
             breed: "Jack Russell",
             adopted: true,
+            birthday: .now - (86400 * 500),
             onFamilySince: .now - (86400 * 5)
         ),
         
         Pet(
-            type: .canine,
+            species: .canine,
             sex: .male,
             name: "Tom",
-            birthday: .now - (86400 * 370),
             breed: "Puddle",
             adopted: false,
+            birthday: .now - (86400 * 370),
             onFamilySince: .now - (86400 * 50)
         ),
         
         Pet(
-            type: .feline,
+            species: .feline,
             sex: .female,
             name: "Lia",
-            birthday: .now - (86400 * 30),
             breed: "Sphinx",
             adopted: false,
+            birthday: .now - (86400 * 30),
             onFamilySince: .now - (86400 * 5)
         ),
     ]
