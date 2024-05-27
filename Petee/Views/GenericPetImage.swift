@@ -15,17 +15,21 @@ struct GenericPetImage: View {
         ZStack {
             Circle()
                 .frame(width: 150)
-                .foregroundStyle(.black.opacity(0.1))
+                .foregroundStyle(Color.secondary.opacity(0.2))
             
             Image(systemName: "\(petSpecies.rawValue).fill")
                 .font(.system(size: 60))
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.accentColor)
         }
         .padding(.top)
     }
 }
 
-#Preview {
-    GenericPetImage(petSpecies: SampleData.shared.pet.species
-    )
+#Preview("Light mode") {
+    GenericPetImage(petSpecies: SampleData.shared.pet.species)
+}
+
+#Preview("Dark mode") {
+    GenericPetImage(petSpecies: SampleData.shared.pet.species)
+        .preferredColorScheme(.dark)
 }

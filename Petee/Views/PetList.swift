@@ -83,7 +83,14 @@ struct PetList: View {
     }
 }
 
-#Preview {
+#Preview("Light mode") {
     PetList()
         .modelContainer(SampleData.shared.modelContainer)
+}
+
+
+#Preview("Dark mode") {
+    PetList()
+        .modelContainer(SampleData.shared.modelContainer)
+        .preferredColorScheme(.dark)
 }

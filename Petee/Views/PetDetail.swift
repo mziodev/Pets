@@ -120,6 +120,8 @@ struct PetDetail: View {
                     }
                 }
             }
+//            .scrollContentBackground(.hidden)
+//            .background(Color.ptLightBlue)
         }
         .navigationTitle(pet.name)
         
@@ -169,9 +171,16 @@ struct PetDetail: View {
     }
 }
 
-#Preview {
+#Preview("Light mode") {
     NavigationStack {
         PetDetail(pet: SampleData.shared.pet)
+    }
+}
+
+#Preview("Dark mode") {
+    NavigationStack {
+        PetDetail(pet: SampleData.shared.pet)
+            .preferredColorScheme(.dark)
     }
 }
 
