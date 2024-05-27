@@ -22,7 +22,7 @@ struct AddPet: View {
     @State var breed = ""
     @State var birthday = Date.now
     @State var onFamilySince = Date.now
-    @State var adopted = false
+    @State var isAdopted = false
     @State var image: Data?
     @State var selectedImage: PhotosPickerItem?
     
@@ -61,6 +61,8 @@ struct AddPet: View {
                 }
             }
             
+            
+            // MARK: - form
             Form {
                 Section("Basic info") {
                     Picker("Species", selection: $species) {
@@ -83,7 +85,7 @@ struct AddPet: View {
                 Section("Breed") {
                     TextField("Breed", text: $breed)
                     
-                    Toggle("Adopted", isOn: $adopted.animation())
+                    Toggle("Adopted", isOn: $isAdopted.animation())
                         .tint(.accentColor)
                 }
                 
@@ -96,7 +98,7 @@ struct AddPet: View {
                     )
                     
                     DatePicker(
-                        adopted ? "Adopted on" : "On the family since",
+                        isAdopted ? "Adopted on" : "On the family since",
                         selection: $onFamilySince,
                         in: Date.distantPast...Date.now,
                         displayedComponents: .date
@@ -123,7 +125,7 @@ struct AddPet: View {
                         sex: sex,
                         name: name,
                         breed: breed,
-                        adopted: adopted,
+                        adopted: isAdopted,
                         birthday: birthday,
                         onFamilySince: onFamilySince,
                         image: image

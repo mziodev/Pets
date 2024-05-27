@@ -18,6 +18,7 @@ class Pet {
     var isAdopted: Bool
     var birthday: Date
     var onFamilySince: Date
+    var chipID: String?
     
     @Attribute(.externalStorage)
     var image: Data?

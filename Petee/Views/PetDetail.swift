@@ -127,6 +127,15 @@ struct PetDetail: View {
         // MARK: - toolbar
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    // add menu dialog
+                } label: {
+                    Image(systemName: "plus")
+                }
+                .accessibilityLabel("Add menu")
+            }
+            
+            ToolbarItem(placement: .topBarTrailing) {
                 Button(editingPetDetails ? "Done" : "Edit") {
                     withAnimation {
                         editingPetDetails.toggle()
