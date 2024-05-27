@@ -67,6 +67,8 @@ struct WeightList: View {
             .pickerStyle(.segmented)
             .padding(.horizontal)
             
+            
+            // MARK: - chart
             VStack(alignment: .leading) {
                 Text("Average weight")
                 
@@ -76,14 +78,16 @@ struct WeightList: View {
                 
                 Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
                     .foregroundStyle(.secondary)
+                
+                PetWeightChart(weights: pet.getSortedWeights(in: selectedRange))
+                    .frame(height: 240)
+                    .padding(.horizontal)
             }
             .padding(.horizontal)
             .padding(.top, 2)
             
-            PetWeightChart(weights: pet.getSortedWeights(in: selectedRange))
-                .frame(height: 240)
-                .padding(.horizontal)
             
+            // MARK: - weight list
             List {
                 Section("Weight list") {
                     ForEach(pet.reverseSortedWeights) { weight in
@@ -96,13 +100,17 @@ struct WeightList: View {
                                 .bold()
                         }
                     }
+                    .onDelete(perform: deleteWeights)
                 }
             }
             .navigationTitle("\(pet.name) weight list")
             .navigationBarTitleDisplayMode(.inline)
         }
+        
+        
+        //MARK: - toolbar
         .toolbar {
-            ToolbarItem {
+            ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     showingAddWeightSheet.toggle()
                     
@@ -110,6 +118,10 @@ struct WeightList: View {
                 } label: {
                     Image(systemName: "plus")
                 }
+            }
+            
+            ToolbarItem(placement: .topBarTrailing) {
+                EditButton()
             }
         }
         .sheet(isPresented: $showingAddWeightSheet) {
@@ -129,10 +141,21 @@ struct WeightList: View {
         
         return totalWeight / Float(weights.count)
     }
+    
+    private func deleteWeights(offsets: IndexSet) {
+        pet.weights.remove(atOffsets: offsets)
+    }
 }
 
-#Preview {
+#Preview("Light mode") {
     NavigationStack {
         WeightList(pet: SampleData.shared.pet)
     }
+}
+
+#Preview("Dark mode") {
+    NavigationStack {
+        WeightList(pet: SampleData.shared.pet)
+    }
+    .preferredColorScheme(.dark)
 }
