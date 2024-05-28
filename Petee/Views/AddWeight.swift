@@ -13,7 +13,7 @@ struct AddWeight: View {
     @Bindable var pet: Pet
     
     @State private var date = Date.now
-    @State private var weight = ""
+    @State private var value = ""
     
     @FocusState private var isWeightTextFieldFocused
     
@@ -29,7 +29,7 @@ struct AddWeight: View {
                     )
                     .foregroundStyle(.placeholder)
                     
-                    TextField("kg", text: $weight)
+                    TextField("kg", text: $value)
                         .multilineTextAlignment(.trailing)
                         .focused($isWeightTextFieldFocused)
                         .keyboardType(.decimalPad)
@@ -44,8 +44,8 @@ struct AddWeight: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        let weightFloatValue = Double(weight) ?? 0
-                        let newWeight = Weight(date: date, value: weightFloatValue)
+                        let doubleValue = convertToDouble(value) ?? 0
+                        let newWeight = Weight(date: date, value: doubleValue)
                         
                         pet.weights.append(newWeight)
                         
@@ -57,6 +57,14 @@ struct AddWeight: View {
                 isWeightTextFieldFocused = true
             }
         }
+    }
+    
+    func convertToDouble(_ value: String) -> Double? {
+        let numberFormatter = NumberFormatter()
+        
+        numberFormatter.numberStyle = .decimal
+        
+        return numberFormatter.number(from: value)?.doubleValue
     }
 }
 
