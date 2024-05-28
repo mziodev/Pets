@@ -8,6 +8,11 @@
 import SwiftData
 import SwiftUI
 
+/*
+ TODO:
+    Add a ContentUnavailableView for the "No pets" thing. Probably the best thing is to create a Content view and split it into Unavailable and Pet list view.
+ */
+
 struct PetList: View {
     @Query(sort: \Pet.name) var pets: [Pet]
     
@@ -36,7 +41,7 @@ struct PetList: View {
                             
                             Spacer()
                             
-                            Image(systemName: "\(pet.species.rawValue.lowercased()).fill")
+                            Image(systemName: "\(pet.species.rawValue).fill")
                                 .font(.title2)
                         }
                     }
@@ -44,6 +49,20 @@ struct PetList: View {
                 .onDelete(perform: deletePets)
             }
             .navigationTitle("Pets")
+            .overlay {
+                if pets.isEmpty { NoPetsYet() }
+            }
+            
+            
+            // MARK: - add pet sheet
+            .sheet(isPresented: $showingAddPetSheet) {
+                NavigationStack {
+                    AddPet()
+                }
+            }
+            
+            
+            // MARK: - toolbar
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
@@ -58,18 +77,23 @@ struct PetList: View {
                     EditButton()
                 }
                 
-                ToolbarItem(placement: .status) {
-                    Text("\(pets.count) pets")
+                if !pets.isEmpty {
+                    ToolbarItem(placement: .status) {
+                        switch pets.count {
+                        case 1:
+                            Text("\(pets.count) pet")
+                        default:
+                            Text("\(pets.count) pets")
+                        }
+                    }
                 }
             }
-            .sheet(isPresented: $showingAddPetSheet) {
-                NavigationStack {
-                    AddPet()
-                }
-            }
+                
         }
     }
     
+    
+    // MARK: - functions
     private func deletePets(offsets: IndexSet) {
         for index in offsets {
             modelContext.delete(pets[index])
