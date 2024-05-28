@@ -16,9 +16,10 @@ import SwiftData
 import SwiftUI
 
 struct WeightList: View {
-    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) var dismiss
     
     @State var pet: Pet
+    
     @State private var selectedTimePeriod: TimePeriod = .lastSixMonths
     @State private var showingAddWeightSheet: Bool = false
     
@@ -69,22 +70,29 @@ struct WeightList: View {
             
             
             // MARK: - chart
-            VStack(alignment: .leading) {
-                Text("Average weight")
-                
-                Text("\(pet.averageWeightIn(range: selectedRange).formatted(floatStyle))kg")
+            if !pet.weights.isEmpty {
+                VStack(alignment: .leading) {
+                    Text("Average weight")
+                    
+                    Text(
+                        Weight.getMeasuredValue(
+                            from: getAverageWeight(in: pet.weights)
+                        ),
+                        format: formatStyle
+                    )
                     .font(.title)
                     .bold()
-                
-                Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
-                    .foregroundStyle(.secondary)
-                
-                PetWeightChart(weights: pet.getSortedWeights(in: selectedRange))
-                    .frame(height: 240)
-                    .padding(.horizontal)
+                    
+                    Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
+                        .foregroundStyle(.secondary)
+                    
+                    PetWeightChart(weights: pet.getSortedWeights(in: selectedRange))
+                        .frame(height: 240)
+                        .padding(.horizontal)
+                }
+                .padding(.horizontal)
+                .padding(.top, 2)
             }
-            .padding(.horizontal)
-            .padding(.top, 2)
             
             
             // MARK: - weight list
@@ -92,11 +100,13 @@ struct WeightList: View {
                 Section("Weight list") {
                     ForEach(pet.reverseSortedWeights) { weight in
                         HStack {
-                            Text(weight.date.formatted(date: .complete, time: .omitted))
+                            Text(
+                                weight.date.formatted(date: .complete, time: .omitted)
+                            )
                             
                             Spacer()
                             
-                            Text("\(weight.value.formatted()) kg")
+                            Text(Weight.getMeasuredValue(from: weight.value), format: formatStyle)
                                 .bold()
                         }
                     }
@@ -106,6 +116,12 @@ struct WeightList: View {
             .navigationTitle("\(pet.name) weight list")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .onChange(of: pet.weights) {
+            if pet.weights.isEmpty { dismiss() }
+        }
+        .sheet(isPresented: $showingAddWeightSheet) {
+            AddWeight(pet: pet)
+        }
         
         
         //MARK: - toolbar
@@ -113,40 +129,39 @@ struct WeightList: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     showingAddWeightSheet.toggle()
-                    
-                    // add weight
                 } label: {
                     Image(systemName: "plus")
                 }
+                .accessibilityLabel("Add weight")
             }
             
             ToolbarItem(placement: .topBarTrailing) {
                 EditButton()
             }
         }
-        .sheet(isPresented: $showingAddWeightSheet) {
-            AddWeight(pet: pet)
-                .presentationDetents([.fraction(0.3)])
-        }
     }
     
     
     // MARK: - functions
-    private func getAverageWeight(in weights: [Weight]) -> Float {
-        var totalWeight:Float = 0
+    private func getAverageWeight(in weights: [Weight]) -> Double {
+        var totalWeight: Double = 0
         
         for weight in weights {
             totalWeight += weight.value
         }
         
-        return totalWeight / Float(weights.count)
+        return totalWeight / Double(weights.count)
     }
     
     private func deleteWeights(offsets: IndexSet) {
-        pet.weights.remove(atOffsets: offsets)
+        withAnimation {
+            pet.weights.remove(atOffsets: offsets)
+        }
     }
 }
 
+
+// MARK: - previews
 #Preview("Light mode") {
     NavigationStack {
         WeightList(pet: SampleData.shared.pet)

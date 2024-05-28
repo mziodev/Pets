@@ -5,14 +5,6 @@
 //  Created by MZiO on 20/5/24.
 //
 
-/*
- TODO:
- 
-    Add button for showing add menu: weight, vaccine, parasites, vet consultations...
- 
-    Add text with current weight
- */
-
 import SwiftData
 import SwiftUI
 
@@ -23,6 +15,8 @@ struct PetList: View {
     
     @State private var showingAddPetSheet = false
     
+    
+    // MARK: - body
     var body: some View {
         NavigationStack {
             List {
@@ -52,16 +46,16 @@ struct PetList: View {
             .navigationTitle("Pets")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    EditButton()
-                }
-                
-                ToolbarItem(placement: .bottomBar) {
                     Button {
                         showingAddPetSheet = true
                     } label: {
                         Image(systemName: "plus")
                     }
                     .accessibilityLabel("Add pet")
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    EditButton()
                 }
                 
                 ToolbarItem(placement: .status) {

@@ -43,13 +43,13 @@ class Pet {
         
         if years > 0 && months > 0 {
             if years == 1 && months == 1 {
-                completeAge = "\(years) year and \(months) month old"
+                completeAge = "\(years) year, \(months) month old"
             } else if years == 1 {
-                completeAge = "\(years) year and \(months) months old"
+                completeAge = "\(years) year, \(months) months old"
             } else if months == 1 {
-                completeAge = "\(years) years and \(months) month old"
+                completeAge = "\(years) years, \(months) month old"
             } else {
-                completeAge = "\(years) years and \(months) months old"
+                completeAge = "\(years) years, \(months) months old"
             }
         } else if years > 0 && months == 0 {
             if years == 1 {
@@ -104,15 +104,15 @@ class Pet {
         weights.filter { range.contains($0.date) }.sorted { $0.date < $1.date }
     }
     
-    func averageWeightIn(range: ClosedRange<Date>) -> Float {
+    func averageWeightIn(range: ClosedRange<Date>) -> Double {
         let weightsInRange = weights.filter { range.contains($0.date) }
-        var totalWeightValue: Float = 0
+        var totalWeightValue: Double = 0
         
         for weight in weightsInRange {
             totalWeightValue += weight.value
         }
         
-        return totalWeightValue / Float(weightsInRange.count)
+        return totalWeightValue / Double(weightsInRange.count)
     }
 }
 

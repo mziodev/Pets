@@ -2,7 +2,7 @@
 //  GenericPetImage.swift
 //  Petee
 //
-//  Created by Mauricio dSR on 24/5/24.
+//  Created by MZiO on 24/5/24.
 //
 
 import SwiftUI

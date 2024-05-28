@@ -11,12 +11,18 @@ import SwiftData
 @Model
 class Weight {
     var date: Date
-    var value: Float
+    var value: Double
     var pet: Pet?
     
-    init(date: Date, value: Float) {
+    
+    // MARK: - init
+    init(date: Date, value: Double) {
         self.date = date
         self.value = value
+    }
+    
+    static func getMeasuredValue(from value: Double) -> Measurement<UnitMass> {
+        Measurement(value: value, unit: UnitMass.kilograms)
     }
 }
 

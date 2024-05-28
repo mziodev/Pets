@@ -44,7 +44,7 @@ struct AddWeight: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        let weightFloatValue = Float(weight) ?? 0
+                        let weightFloatValue = Double(weight) ?? 0
                         let newWeight = Weight(date: date, value: weightFloatValue)
                         
                         pet.weights.append(newWeight)

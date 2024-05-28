@@ -19,8 +19,11 @@ struct PetWeightChart: View {
                     y: .value("Weight", weight.value)
                 )
                 .annotation(position: .top) {
-                    Text("\(weight.value.formatted())kg")
-                        .font(.caption)
+                    Text(
+                        Weight.getMeasuredValue(from: weight.value),
+                        format: formatStyle
+                    )
+                    .font(.caption)
                 }
             }
         }
