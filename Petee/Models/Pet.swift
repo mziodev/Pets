@@ -35,37 +35,36 @@ class Pet {
             to: Date.now
         )
         
-        let years = dateComponents.year ?? 0
-        let months = dateComponents.month ?? 0
+        let year = dateComponents.year ?? 0
+        let month = dateComponents.month ?? 0
         
-        let completeAge: String
+        let yearString: String
+        let monthString: String
+        var nexus = ""
         
-        
-        if years > 0 && months > 0 {
-            if years == 1 && months == 1 {
-                completeAge = "\(years) year, \(months) month old"
-            } else if years == 1 {
-                completeAge = "\(years) year, \(months) months old"
-            } else if months == 1 {
-                completeAge = "\(years) years, \(months) month old"
-            } else {
-                completeAge = "\(years) years, \(months) months old"
-            }
-        } else if years > 0 && months == 0 {
-            if years == 1 {
-                completeAge = "\(years) year old"
-            } else {
-                completeAge = "\(years) years old"
-            }
-        } else {
-            if months == 1 {
-                completeAge = "\(months) month old"
-            } else {
-                completeAge = "\(months) months old"
-            }
+        switch year {
+        case 0:
+            yearString = ""
+        case 1:
+            yearString = "\(year) year"
+        default:
+            yearString = "\(year) years"
         }
         
-        return completeAge
+        switch month {
+        case 0:
+            monthString = ""
+        case 1:
+            monthString = "\(month) month"
+        default:
+            monthString = "\(month) months"
+        }
+        
+        if !yearString.isEmpty && !monthString.isEmpty {
+            nexus = ", "
+        }
+        
+        return "\(yearString)\(nexus)\(monthString) old"
     }
     
     var sortedWeights: [Weight] {
