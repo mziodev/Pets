@@ -9,15 +9,25 @@ import CoreImage.CIFilterBuiltins
 import SwiftUI
 
 struct ChipBarcode: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     let chipID: String
+    var barcodeImage: UIImage? {
+        generateBarcode(from: chipID)
+    }
     
     var body: some View {
         VStack {
-            Image(uiImage: generateBarcode(from: chipID))
-                .interpolation(chipID.isEmpty ? .low : .none)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: chipID.isEmpty ? 100 : 500)
+            if let barcodeImage {
+                Image(uiImage: barcodeImage)
+                    .interpolation(.none)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: chipID.isEmpty ? 100 : 500)
+            } else {
+                Image(systemName: "xmark.circle")
+                    .font(.system(size: 100))
+            }
             
             Text(
                 chipID.isEmpty ? "Barcode reading error, try again" : chipID
@@ -26,9 +36,12 @@ struct ChipBarcode: View {
                 .offset(y: chipID.isEmpty ? 5 : -20)
         }
         .rotationEffect(Angle(degrees: 90))
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.white)
+        .foregroundStyle(.black)
     }
     
-    func generateBarcode(from string: String) -> UIImage {
+    func generateBarcode(from string: String) -> UIImage? {
         let context = CIContext()
         let filter = CIFilter.code128BarcodeGenerator()
         
@@ -43,10 +56,29 @@ struct ChipBarcode: View {
             }
         }
         
-        return UIImage(systemName: "xmark.circle") ?? UIImage()
+        return nil
     }
+    
+//    func generateBarcode(from string: String) -> UIImage? {
+//        let data = string.data(using: String.Encoding.ascii)
+//
+//        if let filter = CIFilter(name: "CICode128BarcodeGenerator") {
+//            filter.setValue(data, forKey: "inputMessage")
+//            let transform = CGAffineTransform(scaleX: 3, y: 3)
+//
+//            if let output = filter.outputImage?.transformed(by: transform) {
+//                return UIImage(ciImage: output)
+//            }
+//        }
+//
+//        return nil
+//    }
 }
 
-#Preview {
+#Preview("With barcode") {
+    ChipBarcode(chipID: "123456789098765")
+}
+
+#Preview("Without barcode") {
     ChipBarcode(chipID: "")
 }

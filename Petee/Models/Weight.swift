@@ -26,6 +26,7 @@ class Weight {
     }
 }
 
+// MARK: - sample data
 extension Weight {
     static let sampleData = [
         // Rocky

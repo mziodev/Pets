@@ -116,7 +116,7 @@ class Pet {
 }
 
 
-// MARK: - sample data extension
+// MARK: - sample data
 extension Pet {
     static let sampleData = [
         Pet(
