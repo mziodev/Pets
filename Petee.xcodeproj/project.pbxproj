@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		082BE7D12C01FC7200504177 /* AddPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082BE7D02C01FC7200504177 /* AddPet.swift */; };
+		08645F502C07276A001C85DC /* ChipIDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08645F4F2C07276A001C85DC /* ChipIDType.swift */; };
 		086B05032BFB4490005D7C95 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B05022BFB4490005D7C95 /* SampleData.swift */; };
 		086B05052BFB467A005D7C95 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B05042BFB467A005D7C95 /* PetList.swift */; };
 		086B05072BFB4FF7005D7C95 /* PetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B05062BFB4FF7005D7C95 /* PetDetail.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		082BE7D02C01FC7200504177 /* AddPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPet.swift; sourceTree = "<group>"; };
+		08645F4F2C07276A001C85DC /* ChipIDType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChipIDType.swift; path = Petee/Views/ChipIDType.swift; sourceTree = SOURCE_ROOT; };
 		086B05022BFB4490005D7C95 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		086B05042BFB467A005D7C95 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		086B05062BFB4FF7005D7C95 /* PetDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetail.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		0887948D2BFB366800635DB7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08645F4F2C07276A001C85DC /* ChipIDType.swift */,
 				0887948F2BFB36C200635DB7 /* Pet.swift */,
 				08B091972BFF5E6B00D0F27D /* PetSex.swift */,
 				08B091952BFF5E0600D0F27D /* PetSpecies.swift */,
@@ -222,6 +225,7 @@
 				086B05032BFB4490005D7C95 /* SampleData.swift in Sources */,
 				08B8A67D2BFCE30400879E18 /* WeightList.swift in Sources */,
 				08F2ED7D2C00D5EB002206A2 /* AddWeight.swift in Sources */,
+				08645F502C07276A001C85DC /* ChipIDType.swift in Sources */,
 				082BE7D12C01FC7200504177 /* AddPet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Petee/Preview Content\"";
+				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -386,6 +391,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Petee/Preview Content\"";
+				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";

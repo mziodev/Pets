@@ -28,6 +28,8 @@ struct PetDetail: View {
     
     // MARK: - state pet properties
     @State var breed = ""
+    @State var chipIDType: ChipIDType = .fifteenDigits
+    @State var chipID = ""
     @State var birthday = Date.now
     @State var onFamilySince = Date.now
     @State var selectedImage: PhotosPickerItem?
@@ -98,6 +100,31 @@ struct PetDetail: View {
                             editingPetDetails ? Color.accentColor : .primary
                         )
                         .focused($isBreedTextFieldFocused)
+                }
+                
+                if !chipID.isEmpty || editingPetDetails {
+                    Section("Chip") {
+                        Picker("Chip ID type", selection: $chipIDType) {
+                            ForEach(ChipIDType.allCases, id: \.self) { type in
+                                Text(type.rawValue)
+                            }
+                        }
+                        .disabled(!chipID.isEmpty)
+                        .pickerStyle(.navigationLink)
+                        .foregroundStyle(
+                            editingPetDetails ? Color.accentColor : .primary
+                        )
+                        
+                        NavigationLink {
+                            ChipBarcode(chipID: chipID)
+                        } label: {
+                            TextField("Chip ID", text: $chipID)
+                                .disabled(!editingPetDetails)
+                                .foregroundStyle(
+                                    editingPetDetails ? Color.accentColor : .primary
+                                )
+                        }
+                    }
                 }
                 
                 
@@ -177,6 +204,7 @@ struct PetDetail: View {
                     
                     if !editingPetDetails {
                         pet.breed = breed
+                        pet.chipID = chipID
                         pet.birthday = birthday
                         pet.onFamilySince = onFamilySince
                     }
@@ -188,6 +216,7 @@ struct PetDetail: View {
         }
         .onAppear {
             breed = pet.breed
+            chipID = pet.chipID
             birthday = pet.birthday
             onFamilySince = pet.onFamilySince
             petInfo = getQuickInfo(from: pet)

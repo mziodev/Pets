@@ -15,10 +15,10 @@ class Pet {
     var sex: PetSex
     var name: String
     var breed: String
+    var chipID: String
     var isAdopted: Bool
     var birthday: Date
     var onFamilySince: Date
-    var chipID: String?
     
     @Attribute(.externalStorage)
     var image: Data?
@@ -82,6 +82,7 @@ class Pet {
         sex: PetSex = .female,
         name: String = "",
         breed: String = "",
+        chipID: String = "",
         adopted: Bool = false,
         birthday: Date = .now,
         onFamilySince: Date = .now,
@@ -91,6 +92,7 @@ class Pet {
         self.sex = sex
         self.name = name
         self.breed = breed
+        self.chipID = chipID
         self.birthday = birthday
         self.onFamilySince = onFamilySince
         self.isAdopted = adopted

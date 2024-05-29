@@ -8,11 +8,6 @@
 import SwiftData
 import SwiftUI
 
-/*
- TODO:
-    Add a ContentUnavailableView for the "No pets" thing. Probably the best thing is to create a Content view and split it into Unavailable and Pet list view.
- */
-
 struct PetList: View {
     @Query(sort: \Pet.name) var pets: [Pet]
     

@@ -9,19 +9,23 @@ import PhotosUI
 import SwiftData
 import SwiftUI
 
+
 struct AddPet: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     
-    // MARK: - state pet properties
     @State var pet = Pet()
     
+
+    // MARK: - state pet properties
     @State var species = PetSpecies.canine
     @State var sex = PetSex.female
     @State var name = ""
     @State var breed = ""
     @State var birthday = Date.now
     @State var onFamilySince = Date.now
+    @State var chipIDType: ChipIDType = .fifteenDigits
+    @State var chipID = ""
     @State var isAdopted = false
     @State var image: Data?
     @State var selectedImage: PhotosPickerItem?
@@ -89,6 +93,18 @@ struct AddPet: View {
                         .tint(.accentColor)
                 }
                 
+                Section("Chip") {
+                    Picker("Chip ID type", selection: $chipIDType) {
+                        ForEach(ChipIDType.allCases, id: \.self) { type in
+                            Text(type.rawValue)
+                        }
+                    }
+                    .disabled(!chipID.isEmpty)
+                    .pickerStyle(.navigationLink)
+                    
+                    TextField("Chip ID", text: $chipID)
+                }
+                
                 Section("Dates") {
                     DatePicker(
                         "Born on",
@@ -125,6 +141,7 @@ struct AddPet: View {
                         sex: sex,
                         name: name,
                         breed: breed,
+                        chipID: chipID,
                         adopted: isAdopted,
                         birthday: birthday,
                         onFamilySince: onFamilySince,
@@ -135,6 +152,7 @@ struct AddPet: View {
                     
                     dismiss()
                 }
+                .disabled(name.isEmpty)
             }
         }
         .task(id: selectedImage) {
