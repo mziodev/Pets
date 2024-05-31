@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0887947B2BFB35E600635DB7"
-               BuildableName = "Petee.app"
-               BlueprintName = "Petee"
-               ReferencedContainer = "container:Petee.xcodeproj">
+               BuildableName = "Pets.app"
+               BlueprintName = "Pets"
+               ReferencedContainer = "container:Pets.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0887947B2BFB35E600635DB7"
-            BuildableName = "Petee.app"
-            BlueprintName = "Petee"
-            ReferencedContainer = "container:Petee.xcodeproj">
+            BuildableName = "Pets.app"
+            BlueprintName = "Pets"
+            ReferencedContainer = "container:Pets.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0887947B2BFB35E600635DB7"
-            BuildableName = "Petee.app"
-            BlueprintName = "Petee"
-            ReferencedContainer = "container:Petee.xcodeproj">
+            BuildableName = "Pets.app"
+            BlueprintName = "Pets"
+            ReferencedContainer = "container:Pets.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

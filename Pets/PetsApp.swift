@@ -1,6 +1,6 @@
 //
-//  PeteeApp.swift
-//  Petee
+//  PetsApp.swift
+//  Pets
 //
 //  Created by MZiO on 20/5/24.
 //
@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 @main
-struct PeteeApp: App {
+struct PetsApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Pet.self,
