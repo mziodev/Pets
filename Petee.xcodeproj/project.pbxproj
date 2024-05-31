@@ -75,7 +75,6 @@
 		088794732BFB35E600635DB7 = {
 			isa = PBXGroup;
 			children = (
-				0887947F2BFB35E600635DB7 /* PeteeApp.swift */,
 				0887947E2BFB35E600635DB7 /* Petee */,
 				0887947D2BFB35E600635DB7 /* Products */,
 			);
@@ -92,6 +91,7 @@
 		0887947E2BFB35E600635DB7 /* Petee */ = {
 			isa = PBXGroup;
 			children = (
+				0887947F2BFB35E600635DB7 /* PeteeApp.swift */,
 				0887948D2BFB366800635DB7 /* Models */,
 				086B05012BFB4473005D7C95 /* Utitliies */,
 				0887948E2BFB367600635DB7 /* Views */,
