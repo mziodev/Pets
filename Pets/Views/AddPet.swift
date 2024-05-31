@@ -44,7 +44,7 @@ struct AddPet: View {
                         .clipShape(Circle())
 
                 } else {
-                    GenericPetImage(petSpecies: species)
+                    PlaceholderPetImage(petSpecies: species)
                 }
                 
                 PhotosPicker(

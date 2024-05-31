@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct GenericPetImage: View {
+struct PlaceholderPetImage: View {
     let petSpecies: PetSpecies
     
     var body: some View {
@@ -26,10 +26,10 @@ struct GenericPetImage: View {
 }
 
 #Preview("Light mode") {
-    GenericPetImage(petSpecies: SampleData.shared.pet.species)
+    PlaceholderPetImage(petSpecies: SampleData.shared.pet.species)
 }
 
 #Preview("Dark mode") {
-    GenericPetImage(petSpecies: SampleData.shared.pet.species)
+    PlaceholderPetImage(petSpecies: SampleData.shared.pet.species)
         .preferredColorScheme(.dark)
 }

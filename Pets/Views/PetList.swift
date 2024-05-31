@@ -13,6 +13,7 @@ struct PetList: View {
     
     @Environment(\.modelContext) var modelContext
     
+    @State private var newPet: Pet?
     @State private var showingAddPetSheet = false
     
     
@@ -50,7 +51,7 @@ struct PetList: View {
             
             
             // MARK: - add pet sheet
-            .sheet(isPresented: $showingAddPetSheet) {
+            .sheet(item: $newPet) { pet in
                 NavigationStack {
                     AddPet()
                 }
@@ -59,13 +60,10 @@ struct PetList: View {
             
             // MARK: - toolbar
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        showingAddPetSheet = true
-                    } label: {
-                        Image(systemName: "plus")
+                ToolbarItem() {
+                    Button(action: addPet) {
+                        Label("Add pet", systemImage: "plus")
                     }
-                    .accessibilityLabel("Add pet")
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
@@ -89,6 +87,16 @@ struct PetList: View {
     
     
     // MARK: - functions
+    private func addPet() {
+        withAnimation {
+            let item = Pet()
+            
+            modelContext.insert(item)
+            
+            newPet = item
+        }
+    }
+    
     private func deletePets(offsets: IndexSet) {
         for index in offsets {
             modelContext.delete(pets[index])
@@ -96,11 +104,12 @@ struct PetList: View {
     }
 }
 
+
+// MARK: - previews
 #Preview("Light mode") {
     PetList()
         .modelContainer(SampleData.shared.modelContainer)
 }
-
 
 #Preview("Dark mode") {
     PetList()

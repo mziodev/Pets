@@ -1,8 +1,8 @@
 //
 //  AddMenu.swift
-//  Petee
+//  Pets
 //
-//  Created by Mauricio dSR on 27/5/24.
+//  Created by MZiO on 27/5/24.
 //
 
 import SwiftUI
@@ -34,9 +34,9 @@ struct AddMenu: View {
                 Label("Vet appointment", systemImage: "cross")
             }
         } label: {
-            Image(systemName: "plus")
+            Image(systemName: "ellipsis.circle")
         }
-        .accessibilityLabel("Add")
+        .accessibilityLabel("Add menu")
     }
 }
 
