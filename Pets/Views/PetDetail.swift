@@ -1,6 +1,6 @@
 //
 //  PetDetail.swift
-//  Petee
+//  Pets
 //
 //  Created by MZiO on 20/5/24.
 //
@@ -15,6 +15,8 @@ import PhotosUI
 import SwiftData
 import SwiftUI
 
+
+// MARK: - format kg style
 let formatStyle = Measurement<UnitMass>.FormatStyle(
     width: .abbreviated,
     numberFormatStyle: .number
@@ -27,23 +29,10 @@ struct PetDetail: View {
     @Bindable var pet: Pet
     
     @State var selectedImage: PhotosPickerItem?
-    @State var petInfo = ""
-    @State var editingPetDetails = false
-    @State var showingAddWeightSheet = false
     
     let isNew: Bool
     
-    @FocusState var breedTextFieldFocused: Bool
-    
-    private let petCompliments = [
-        "handsome",
-        "beautiful",
-        "lovely",
-        "nice",
-        "good-looking",
-        "cute",
-        "pretty"
-    ]
+    @FocusState var nameTextFieldFocused: Bool
     
     
     // Mark: - init
@@ -56,37 +45,28 @@ struct PetDetail: View {
     // MARK: - body
     var body: some View {
         VStack {
-
+            
             
             // MARK: - pet image
             VStack {
-                if let imageData = pet.image,
-                    let uiImage = UIImage(data: imageData) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 150, height: 150)
-                        .clipShape(Circle())
-
-                } else {
-                    PlaceholderPetImage(petSpecies: pet.species)
+                PetImage(pet: pet, imageSize: .small)
+                
+                PhotosPicker(
+                    selection: $selectedImage,
+                    matching: .images,
+                    photoLibrary: .shared()
+                ) {
+                    Text(pet.image != nil ? "Change photo" : "Add photo")
+                        .foregroundStyle(
+                            pet.image != nil ? .primary : Color.accentColor
+                        )
                 }
                 
-                if editingPetDetails {
-                    PhotosPicker(
-                        selection: $selectedImage,
-                        matching: .images,
-                        photoLibrary: .shared()
-                    ) {
-                        Text(pet.image != nil ? "Change photo" : "Add photo")
-                    }
-                    
-                    if pet.image != nil {
-                        Button("Remove photo", role: .destructive) {
-                            withAnimation {
-                                selectedImage = nil
-                                pet.image = nil
-                            }
+                if pet.image != nil {
+                    Button("Remove photo", role: .destructive) {
+                        withAnimation {
+                            selectedImage = nil
+                            pet.image = nil
                         }
                     }
                 }
@@ -95,47 +75,41 @@ struct PetDetail: View {
             
             // MARK: - form
             Form {
-                if !isNew {
-                    Section("Quick Info") {
-                        Text(petInfo)
-                            .lineLimit(2)
+                Section("Basic info") {
+                    Picker("Species", selection: $pet.species) {
+                        ForEach(PetSpecies.allCases, id: \.self) { species in
+                            Text(species.rawValue)
+                        }
                     }
+                    .pickerStyle(.menu)
+                    
+                    Picker("Sex", selection: $pet.sex) {
+                        ForEach(PetSex.allCases, id: \.self) { sex in
+                            Text(sex.rawValue)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    
+                    TextField("Name", text: $pet.name)
+                        .focused($nameTextFieldFocused)
                 }
                 
                 Section("Breed") {
                     TextField("Breed", text: $pet.breed)
-                        .disabled(!editingPetDetails)
-                        .foregroundStyle(
-                            editingPetDetails ? Color.accentColor : .primary
-                        )
-                        .focused($breedTextFieldFocused)
                 }
                 
-                if !pet.chipID.isEmpty || editingPetDetails {
-                    Section("Chip") {
-                        Picker("Chip ID type", selection: $pet.chipID) {
-                            ForEach(ChipIDType.allCases, id: \.self) { type in
-                                Text(type.rawValue)
-                            }
-                        }
-                        .disabled(!pet.chipID.isEmpty)
-                        .pickerStyle(.navigationLink)
-                        .foregroundStyle(
-                            editingPetDetails ? Color.accentColor : .primary
-                        )
-                        
-                        NavigationLink {
-                            ChipBarcode(chipID: pet.chipID)
-                        } label: {
-                            TextField("Chip ID", text: $pet.chipID)
-                                .disabled(!editingPetDetails)
-                                .foregroundStyle(
-                                    editingPetDetails ? Color.accentColor : .primary
-                                )
+                Section("Chip") {
+                    Picker("ID type", selection: $pet.chipIDType.animation()) {
+                        ForEach(ChipIDType.allCases, id: \.self) { type in
+                            Text(type.rawValue)
                         }
                     }
+                    .pickerStyle(.menu)
+                    
+                    if pet.chipIDType != .noChipID {
+                        TextField("ID number", text: $pet.chipID)
+                    }
                 }
-                
                 
                 Section("Dates") {
                     DatePicker(
@@ -144,9 +118,6 @@ struct PetDetail: View {
                         in: Date.distantPast...Date.now,
                         displayedComponents: .date
                     )
-                    .foregroundStyle(
-                        editingPetDetails ? Color.accentColor : .primary
-                    )
                     
                     DatePicker(
                         pet.isAdopted ? "Adopted on" : "On the family since",
@@ -154,61 +125,18 @@ struct PetDetail: View {
                         in: Date.distantPast...Date.now,
                         displayedComponents: .date
                     )
-                    .foregroundStyle(
-                        editingPetDetails ? Color.accentColor : .primary
-                    )
-                }
-                .disabled(!editingPetDetails)
-                
-                if !editingPetDetails && !pet.weights.isEmpty {
-                    Section("Weight") {
-                        NavigationLink{
-                            WeightList(pet: pet)
-                        } label: {
-                            HStack {
-                                Text("Current weight")
-                                
-                                Spacer()
-                                
-                                Text(
-                                    Weight.getMeasuredValue(
-                                        from: pet.reverseSortedWeights.first!.value
-                                    ),
-                                    format: formatStyle
-                                )
-                            }
-                        }
-                    }
                 }
             }
-            // form background color change
-            /*
-            .scrollContentBackground(.hidden)
-            .background(Color.ptLightBlue)
-             */
         }
-        .navigationTitle(pet.name)
+        .navigationTitle(isNew ? "New pet" : pet.name)
+        .navigationBarTitleDisplayMode(.inline)
         
         
-        // MARK: - onApear
-        .onAppear {
-            if isNew {
-                breedTextFieldFocused.toggle()
-            } else {
-                petInfo = getQuickInfo(from: pet)
-            }
-        }
-        
-        
-        // MARK: - add weight sheet
-        .sheet(isPresented: $showingAddWeightSheet) {
-            AddWeight(pet: pet)
-        }
-        
-        
-        // MARK: - tasks
+        // MARK: - load image task
         .task(id: selectedImage) {
-            if let data = try? await selectedImage?.loadTransferable(type: Data.self) {
+            if let data = try? await selectedImage?.loadTransferable(
+                type: Data.self
+            ) {
                 pet.image = data
             }
         }
@@ -216,48 +144,40 @@ struct PetDetail: View {
         
         // MARK: - toolbar
         .toolbar {
-            ToolbarItem {
-//                Button {
-//                    showingAddWeightSheet.toggle()
-//                } label: {
-//                    Image(systemName: "plus")
-//                }
-//                .accessibilityLabel("Add weight")
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancel") {
+                    dismiss()
+                }
             }
             
             ToolbarItem(placement: .topBarTrailing) {
-                Button(editingPetDetails ? "Done" : "Edit") {
-                    withAnimation {
-                        editingPetDetails.toggle()
+                if isNew {
+                    Button("Save") {
+                        modelContext.insert(pet)
+                        
+                        dismiss()
                     }
-                    
-                    breedTextFieldFocused.toggle()
+                } else {
+                    Button("Done") { dismiss() }
                 }
             }
         }
-    }
-    
-    
-    // MARK: - functions
-    private func getQuickInfo(from pet: Pet) -> String {
-        "\(pet.name) is a \(pet.age) \(petCompliments.randomElement()!) \(pet.sex.rawValue) \(pet.species.rawValue)"
     }
 }
 
 
 // MARK: - previews
-#Preview("Light mode") {
+#Preview("New pet") {
     NavigationStack {
-        PetDetail(pet: SampleData.shared.pet)
+        PetDetail(pet: Pet(), isNew: true)
 //            .environment(\.locale, Locale(identifier: "en_US"))
     }
 }
 
-#Preview("Dark mode") {
+#Preview("Existing pet") {
     NavigationStack {
-        PetDetail(pet: SampleData.shared.pet)
-            .preferredColorScheme(.dark)
-//            .environment(\.locale, Locale(identifier: "es_ES"))
+        PetDetail(pet: SampleData.shared.petWithChipID)
+//            .environment(\.locale, Locale(identifier: "en_US"))
     }
 }
 

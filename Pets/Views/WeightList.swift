@@ -164,13 +164,6 @@ struct WeightList: View {
 // MARK: - previews
 #Preview("Light mode") {
     NavigationStack {
-        WeightList(pet: SampleData.shared.pet)
+        WeightList(pet: SampleData.shared.petWithChipID)
     }
-}
-
-#Preview("Dark mode") {
-    NavigationStack {
-        WeightList(pet: SampleData.shared.pet)
-    }
-    .preferredColorScheme(.dark)
 }

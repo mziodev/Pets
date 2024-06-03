@@ -75,8 +75,12 @@ class SampleData {
         }
     }
     
-    var pet: Pet {
+    var petWithChipID: Pet {
         Pet.sampleData[0]
+    }
+    
+    var petWithoutChipID: Pet {
+        Pet.sampleData[1]
     }
 }
 

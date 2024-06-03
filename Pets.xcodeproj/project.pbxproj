@@ -14,12 +14,10 @@
 		08833FF62C09CABB000FD0BF /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FDD2C09CABB000FD0BF /* Weight.swift */; };
 		08833FF72C09CABB000FD0BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08833FDF2C09CABB000FD0BF /* Preview Assets.xcassets */; };
 		08833FF82C09CABB000FD0BF /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE12C09CABB000FD0BF /* SampleData.swift */; };
-		08833FF92C09CABB000FD0BF /* AddMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE32C09CABB000FD0BF /* AddMenu.swift */; };
-		08833FFA2C09CABB000FD0BF /* AddPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE42C09CABB000FD0BF /* AddPet.swift */; };
+		08833FF92C09CABB000FD0BF /* PetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE32C09CABB000FD0BF /* PetCard.swift */; };
 		08833FFB2C09CABB000FD0BF /* AddWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE52C09CABB000FD0BF /* AddWeight.swift */; };
 		08833FFC2C09CABB000FD0BF /* ChipBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE62C09CABB000FD0BF /* ChipBarcode.swift */; };
 		08833FFD2C09CABB000FD0BF /* ChipIDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE72C09CABB000FD0BF /* ChipIDType.swift */; };
-		08833FFE2C09CABB000FD0BF /* PlaceholderPetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE82C09CABB000FD0BF /* PlaceholderPetImage.swift */; };
 		08833FFF2C09CABB000FD0BF /* NoPetsYet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE92C09CABB000FD0BF /* NoPetsYet.swift */; };
 		088340002C09CABB000FD0BF /* PetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FEA2C09CABB000FD0BF /* PetDetail.swift */; };
 		088340012C09CABB000FD0BF /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FEB2C09CABB000FD0BF /* PetList.swift */; };
@@ -27,6 +25,7 @@
 		088340032C09CABB000FD0BF /* WeightList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FED2C09CABB000FD0BF /* WeightList.swift */; };
 		088340042C09CABB000FD0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08833FEF2C09CABB000FD0BF /* Assets.xcassets */; };
 		088340052C09CABB000FD0BF /* PetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FF02C09CABB000FD0BF /* PetsApp.swift */; };
+		088340072C0A110E000FD0BF /* PetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088340062C0A110E000FD0BF /* PetImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,12 +36,10 @@
 		08833FDD2C09CABB000FD0BF /* Weight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		08833FDF2C09CABB000FD0BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		08833FE12C09CABB000FD0BF /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
-		08833FE32C09CABB000FD0BF /* AddMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMenu.swift; sourceTree = "<group>"; };
-		08833FE42C09CABB000FD0BF /* AddPet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPet.swift; sourceTree = "<group>"; };
+		08833FE32C09CABB000FD0BF /* PetCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetCard.swift; sourceTree = "<group>"; };
 		08833FE52C09CABB000FD0BF /* AddWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeight.swift; sourceTree = "<group>"; };
 		08833FE62C09CABB000FD0BF /* ChipBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipBarcode.swift; sourceTree = "<group>"; };
 		08833FE72C09CABB000FD0BF /* ChipIDType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipIDType.swift; sourceTree = "<group>"; };
-		08833FE82C09CABB000FD0BF /* PlaceholderPetImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderPetImage.swift; sourceTree = "<group>"; };
 		08833FE92C09CABB000FD0BF /* NoPetsYet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoPetsYet.swift; sourceTree = "<group>"; };
 		08833FEA2C09CABB000FD0BF /* PetDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetDetail.swift; sourceTree = "<group>"; };
 		08833FEB2C09CABB000FD0BF /* PetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
@@ -50,6 +47,7 @@
 		08833FED2C09CABB000FD0BF /* WeightList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightList.swift; sourceTree = "<group>"; };
 		08833FEF2C09CABB000FD0BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08833FF02C09CABB000FD0BF /* PetsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsApp.swift; sourceTree = "<group>"; };
+		088340062C0A110E000FD0BF /* PetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetImage.swift; sourceTree = "<group>"; };
 		0887947C2BFB35E600635DB7 /* Pets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -67,6 +65,7 @@
 		08833FDE2C09CABB000FD0BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08833FE72C09CABB000FD0BF /* ChipIDType.swift */,
 				08833FD92C09CABB000FD0BF /* Pet.swift */,
 				08833FDA2C09CABB000FD0BF /* PetSex.swift */,
 				08833FDB2C09CABB000FD0BF /* PetSpecies.swift */,
@@ -95,16 +94,14 @@
 		08833FEE2C09CABB000FD0BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				08833FE32C09CABB000FD0BF /* AddMenu.swift */,
-				08833FE42C09CABB000FD0BF /* AddPet.swift */,
 				08833FE52C09CABB000FD0BF /* AddWeight.swift */,
 				08833FE62C09CABB000FD0BF /* ChipBarcode.swift */,
-				08833FE72C09CABB000FD0BF /* ChipIDType.swift */,
 				08833FE92C09CABB000FD0BF /* NoPetsYet.swift */,
+				08833FE32C09CABB000FD0BF /* PetCard.swift */,
 				08833FEA2C09CABB000FD0BF /* PetDetail.swift */,
+				088340062C0A110E000FD0BF /* PetImage.swift */,
 				08833FEB2C09CABB000FD0BF /* PetList.swift */,
 				08833FEC2C09CABB000FD0BF /* PetWeightChart.swift */,
-				08833FE82C09CABB000FD0BF /* PlaceholderPetImage.swift */,
 				08833FED2C09CABB000FD0BF /* WeightList.swift */,
 			);
 			path = Views;
@@ -215,16 +212,15 @@
 				08833FFD2C09CABB000FD0BF /* ChipIDType.swift in Sources */,
 				08833FF22C09CABB000FD0BF /* Pet.swift in Sources */,
 				088340002C09CABB000FD0BF /* PetDetail.swift in Sources */,
-				08833FFE2C09CABB000FD0BF /* PlaceholderPetImage.swift in Sources */,
-				08833FF92C09CABB000FD0BF /* AddMenu.swift in Sources */,
+				08833FF92C09CABB000FD0BF /* PetCard.swift in Sources */,
 				08833FF82C09CABB000FD0BF /* SampleData.swift in Sources */,
 				08833FFC2C09CABB000FD0BF /* ChipBarcode.swift in Sources */,
 				088340012C09CABB000FD0BF /* PetList.swift in Sources */,
+				088340072C0A110E000FD0BF /* PetImage.swift in Sources */,
 				08833FF62C09CABB000FD0BF /* Weight.swift in Sources */,
 				08833FFB2C09CABB000FD0BF /* AddWeight.swift in Sources */,
 				088340032C09CABB000FD0BF /* WeightList.swift in Sources */,
 				088340052C09CABB000FD0BF /* PetsApp.swift in Sources */,
-				08833FFA2C09CABB000FD0BF /* AddPet.swift in Sources */,
 				08833FFF2C09CABB000FD0BF /* NoPetsYet.swift in Sources */,
 				08833FF42C09CABB000FD0BF /* PetSpecies.swift in Sources */,
 			);

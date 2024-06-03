@@ -69,5 +69,5 @@ struct AddWeight: View {
 }
 
 #Preview {
-    AddWeight(pet: SampleData.shared.pet)
+    AddWeight(pet: SampleData.shared.petWithChipID)
 }

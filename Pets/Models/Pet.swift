@@ -15,6 +15,7 @@ class Pet {
     var sex: PetSex
     var name: String
     var breed: String
+    var chipIDType: ChipIDType
     var chipID: String
     var isAdopted: Bool
     var birthday: Date
@@ -28,7 +29,7 @@ class Pet {
     
     
     // MARK: - computed properties
-    var age: String {
+    var age: [String] {
         let dateComponents = Calendar.current.dateComponents(
             [.year, .month],
             from: birthday,
@@ -40,7 +41,7 @@ class Pet {
         
         let yearString: String
         let monthString: String
-        var nexus = ""
+//        var nexus = ""
         
         switch year {
         case 0:
@@ -60,11 +61,12 @@ class Pet {
             monthString = "\(month) months"
         }
         
-        if !yearString.isEmpty && !monthString.isEmpty {
-            nexus = ", "
-        }
+//        if !yearString.isEmpty && !monthString.isEmpty {
+//            nexus = " and "
+//        }
         
-        return "\(yearString)\(nexus)\(monthString) old"
+//        return "\(yearString)\(nexus)\(monthString) old"
+        return [yearString, monthString]
     }
     
     var sortedWeights: [Weight] {
@@ -82,6 +84,7 @@ class Pet {
         sex: PetSex = .female,
         name: String = "",
         breed: String = "",
+        chipIDType: ChipIDType = .noChipID,
         chipID: String = "",
         adopted: Bool = false,
         birthday: Date = .now,
@@ -92,6 +95,7 @@ class Pet {
         self.sex = sex
         self.name = name
         self.breed = breed
+        self.chipIDType = chipIDType
         self.chipID = chipID
         self.birthday = birthday
         self.onFamilySince = onFamilySince
@@ -126,6 +130,8 @@ extension Pet {
             sex: .male,
             name: "Rocky",
             breed: "Jack Russell",
+            chipIDType: .fifteenDigits,
+            chipID: "123456789098765",
             adopted: true,
             birthday: .now - (86400 * 500),
             onFamilySince: .now - (86400 * 5)

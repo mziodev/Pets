@@ -1,6 +1,6 @@
 //
 //  PetList.swift
-//  Petee
+//  Pets
 //
 //  Created by MZiO on 20/5/24.
 //
@@ -13,7 +13,6 @@ struct PetList: View {
     
     @Environment(\.modelContext) var modelContext
     
-    @State private var newPet: Pet?
     @State private var showingAddPetSheet = false
     
     
@@ -23,7 +22,7 @@ struct PetList: View {
             List {
                 ForEach(pets) { pet in
                     NavigationLink {
-                        PetDetail(pet: pet)
+                        PetCard(pet: pet)
                     } label: {
                         HStack {
                             VStack(alignment: .leading) {
@@ -51,9 +50,9 @@ struct PetList: View {
             
             
             // MARK: - add pet sheet
-            .sheet(item: $newPet) { pet in
+            .sheet(isPresented: $showingAddPetSheet) {
                 NavigationStack {
-                    AddPet()
+                    PetDetail(pet: Pet(), isNew: true)
                 }
             }
             
@@ -61,7 +60,9 @@ struct PetList: View {
             // MARK: - toolbar
             .toolbar {
                 ToolbarItem() {
-                    Button(action: addPet) {
+                    Button{
+                        showingAddPetSheet.toggle()
+                    } label: {
                         Label("Add pet", systemImage: "plus")
                     }
                 }
@@ -87,16 +88,6 @@ struct PetList: View {
     
     
     // MARK: - functions
-    private func addPet() {
-        withAnimation {
-            let item = Pet()
-            
-            modelContext.insert(item)
-            
-            newPet = item
-        }
-    }
-    
     private func deletePets(offsets: IndexSet) {
         for index in offsets {
             modelContext.delete(pets[index])

@@ -33,7 +33,9 @@ struct PetWeightChart: View {
 }
 
 #Preview {
-    PetWeightChart(weights: SampleData.shared.pet.reverseSortedWeights)
-        .frame(height: 240)
-        .padding()
+    PetWeightChart(
+        weights: SampleData.shared.petWithChipID.reverseSortedWeights
+    )
+    .frame(height: 240)
+    .padding()
 }
