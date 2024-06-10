@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddWeight: View {
+struct WeightDetail: View {
     @Environment(\.dismiss) var dismiss
     
     @Bindable var pet: Pet
@@ -17,10 +17,15 @@ struct AddWeight: View {
     
     @FocusState private var isWeightTextFieldFocused
     
+    let isNew = false
+    
+    
+    // MARK: - body
+    
     var body: some View {
         NavigationStack {
             Form {
-                Section("Add weight") {
+                Section {
                     DatePicker(
                         "Date",
                         selection: $date,
@@ -35,6 +40,17 @@ struct AddWeight: View {
                         .keyboardType(.decimalPad)
                 }
             }
+            .navigationTitle(isNew ? "New weight" : "Edit weight")
+            .navigationBarTitleDisplayMode(.inline)
+            
+            
+            // MARK: - onAppear
+            .onAppear {
+                isWeightTextFieldFocused = true
+            }
+            
+            
+            // MARK: - toolbar
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
@@ -53,9 +69,6 @@ struct AddWeight: View {
                     }
                 }
             }
-            .onAppear {
-                isWeightTextFieldFocused = true
-            }
         }
     }
     
@@ -68,6 +81,9 @@ struct AddWeight: View {
     }
 }
 
+
+// MARK: - previews
+
 #Preview {
-    AddWeight(pet: SampleData.shared.petWithChipID)
+    WeightDetail(pet: SampleData.shared.petWithChipID)
 }

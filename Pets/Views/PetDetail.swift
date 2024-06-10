@@ -16,12 +16,6 @@ import SwiftData
 import SwiftUI
 
 
-// MARK: - format kg style
-let formatStyle = Measurement<UnitMass>.FormatStyle(
-    width: .abbreviated,
-    numberFormatStyle: .number
-)
-
 struct PetDetail: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
@@ -29,13 +23,23 @@ struct PetDetail: View {
     @Bindable var pet: Pet
     
     @State var selectedImage: PhotosPickerItem?
+    @FocusState var nameTextFieldFocused: Bool
     
     let isNew: Bool
     
-    @FocusState var nameTextFieldFocused: Bool
+    // MARK: - form validation logic
+    private var isNameVerified: Bool {
+        checkMinimumLength(pet.name)
+    }
+    private var isChipIDVerified: Bool {
+        Pet.chipIDValidators[pet.chipIDType]?(pet.chipID) ?? false
+    }
+    private var isFormVerified: Bool {
+        isNameVerified && isChipIDVerified
+    }
     
     
-    // Mark: - init
+    //  MARK: - init
     init(pet: Pet, isNew: Bool = false) {
         self.pet = pet
         self.isNew = isNew
@@ -78,20 +82,23 @@ struct PetDetail: View {
                 Section("Basic info") {
                     Picker("Species", selection: $pet.species) {
                         ForEach(PetSpecies.allCases, id: \.self) { species in
-                            Text(species.rawValue)
+                            Text(species.rawValue.capitalized)
                         }
                     }
                     .pickerStyle(.menu)
                     
                     Picker("Sex", selection: $pet.sex) {
                         ForEach(PetSex.allCases, id: \.self) { sex in
-                            Text(sex.rawValue)
+                            Text(sex.rawValue.capitalized)
                         }
                     }
                     .pickerStyle(.menu)
                     
-                    TextField("Name", text: $pet.name)
+                    TextField("Name (min. 2 characters)", text: $pet.name)
                         .focused($nameTextFieldFocused)
+                        .overlay {
+                            VerifiedCheckMark(condition: isNameVerified)
+                        }
                 }
                 
                 Section("Breed") {
@@ -105,9 +112,20 @@ struct PetDetail: View {
                         }
                     }
                     .pickerStyle(.menu)
+                    .onChange(of: pet.chipIDType) { oldValue, newValue in
+                        if newValue == .noChipID { pet.chipID = "" }
+                    }
                     
                     if pet.chipIDType != .noChipID {
-                        TextField("ID number", text: $pet.chipID)
+                        TextField(
+                            pet.chipIDType == .fifteenDigits ? "ID number (exactly 15 digits)" : "ID number (exactly 9 digits)",
+                            text: $pet.chipID
+                        )
+                        .overlay {
+                            VerifiedCheckMark(
+                                condition: isChipIDVerified
+                            )
+                        }
                     }
                 }
                 
@@ -157,12 +175,22 @@ struct PetDetail: View {
                         
                         dismiss()
                     }
+                    .disabled(!isFormVerified)
                 } else {
                     Button("Done") { dismiss() }
+                        .disabled(!isFormVerified)
                 }
             }
         }
     }
+    
+    
+    // MARK: functions
+    /// Checks if the given string has a minimum length of 2 characters.
+    ///
+    /// - Parameter name: The string to check.
+    /// - Returns: `true` if the string has a minimum length of 2 characters, `false` otherwise.
+    func checkMinimumLength(_ name: String) -> Bool { name.count > 1 }
 }
 
 

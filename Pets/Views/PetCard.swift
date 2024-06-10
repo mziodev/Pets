@@ -14,16 +14,6 @@ struct PetCard: View {
     
     var currentWeight: Measurement<UnitMass>?
     
-    private let petCompliments = [
-        "handsome",
-        "beautiful",
-        "lovely",
-        "nice",
-        "good-looking",
-        "cute",
-        "pretty"
-    ]
-    
     init(pet: Pet) {
         self.pet = pet
         self.currentWeight = .init(value: pet.reverseSortedWeights.first?.value ?? 0, unit: .kilograms)
@@ -101,16 +91,10 @@ struct PetCard: View {
             }
         }
     }
-    
-    
-    // MARK: - functions
-    private func getQuickInfo() -> String {
-        "I'm a \(petCompliments.randomElement()!) \(pet.sex.rawValue) \(pet.species.rawValue)"
-    }
 }
 
 
-// Previews
+// MARK: - previews
 #Preview("Pet with chip ID") {
     NavigationStack {
         PetCard(pet: SampleData.shared.petWithChipID)

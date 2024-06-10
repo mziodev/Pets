@@ -8,6 +8,7 @@
 import Foundation
 
 enum PetSpecies: String, CaseIterable, Codable {
+    case unknown = "none"
     case canine = "dog"
     case feline = "cat"
 }

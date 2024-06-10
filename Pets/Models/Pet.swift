@@ -28,60 +28,10 @@ class Pet {
     var weights = [Weight]()
     
     
-    // MARK: - computed properties
-    var age: [String] {
-        let dateComponents = Calendar.current.dateComponents(
-            [.year, .month],
-            from: birthday,
-            to: Date.now
-        )
-        
-        let year = dateComponents.year ?? 0
-        let month = dateComponents.month ?? 0
-        
-        let yearString: String
-        let monthString: String
-//        var nexus = ""
-        
-        switch year {
-        case 0:
-            yearString = ""
-        case 1:
-            yearString = "\(year) year"
-        default:
-            yearString = "\(year) years"
-        }
-        
-        switch month {
-        case 0:
-            monthString = ""
-        case 1:
-            monthString = "\(month) month"
-        default:
-            monthString = "\(month) months"
-        }
-        
-//        if !yearString.isEmpty && !monthString.isEmpty {
-//            nexus = " and "
-//        }
-        
-//        return "\(yearString)\(nexus)\(monthString) old"
-        return [yearString, monthString]
-    }
-    
-    var sortedWeights: [Weight] {
-        weights.sorted { $0.date < $1.date }
-    }
-    
-    var reverseSortedWeights: [Weight] {
-        weights.sorted { $0.date > $1.date }
-    }
-    
-    
-    // MARK: - class init
+    // MARK: - init
     init(
-        species: PetSpecies = .canine,
-        sex: PetSex = .female,
+        species: PetSpecies = .unknown,
+        sex: PetSex = .unknown,
         name: String = "",
         breed: String = "",
         chipIDType: ChipIDType = .noChipID,
@@ -104,57 +54,62 @@ class Pet {
     }
     
     
+    // MARK: - computed properties
+    
+    /// Calculates the age in years and months based on the pet `birthday` date.
+    ///
+    /// Returns an array of two strings: the first represents the years, and the second represents the months.
+    ///
+    /// - Note: This property assumes `birthday` is a valid date in the past.
+    var age: [String] {
+        let dateComponents = Calendar.current.dateComponents([.year, .month], from: birthday, to: Date.now)
+        
+        let year = dateComponents.year ?? 0
+        let month = dateComponents.month ?? 0
+
+        let formatString: (Int) -> String = { count in
+            switch count {
+            case 0: return ""
+            case 1: return "\(count) \(count == 1 ? "year" : "month")"
+            default: return "\(count) \(count == 1 ? "years" : "months")"
+            }
+        }
+
+        return [formatString(year), formatString(month)]
+    }
+    
+    var sortedWeights: [Weight] {
+        weights.sorted { $0.date < $1.date }
+    }
+    
+    var reverseSortedWeights: [Weight] {
+        weights.sorted { $0.date > $1.date }
+    }
+    
+    
     // MARK: - functions
-    func getSortedWeights(in range: ClosedRange<Date>) -> [Weight] {
+    
+    /// Sorts and filters the weights within a given date range.
+    ///
+    /// - Parameter range: A closed range of dates to filter the weights by.
+    ///
+    /// - Returns: An array of weights filtered by date and sorted in ascending order.
+    ///
+    /// - Note: This function assumes that the `weights` array is already populated with `Weight` objects.
+    func filteringAndSortWeights(in range: ClosedRange<Date>) -> [Weight] {
         weights.filter { range.contains($0.date) }.sorted { $0.date < $1.date }
     }
     
-    func averageWeightIn(range: ClosedRange<Date>) -> Double {
+    /// Calculates the average weight of a range of dates.
+    ///
+    /// - parameter range: A closed range of dates for which to calculate the average weight.
+    ///
+    /// - returns: The average weight for the specified date range.
+    ///
+    /// - note: If no weights are found in the specified range, the function returns 0.
+    func getAverageWeight(in range: ClosedRange<Date>) -> Double {
         let weightsInRange = weights.filter { range.contains($0.date) }
-        var totalWeightValue: Double = 0
         
-        for weight in weightsInRange {
-            totalWeightValue += weight.value
-        }
-        
-        return totalWeightValue / Double(weightsInRange.count)
+        return weightsInRange.isEmpty ? 0 : weightsInRange.map { $0.value }.reduce(0, +) / Double(weightsInRange.count)
     }
-}
-
-
-// MARK: - sample data
-extension Pet {
-    static let sampleData = [
-        Pet(
-            species: .canine,
-            sex: .male,
-            name: "Rocky",
-            breed: "Jack Russell",
-            chipIDType: .fifteenDigits,
-            chipID: "123456789098765",
-            adopted: true,
-            birthday: .now - (86400 * 500),
-            onFamilySince: .now - (86400 * 5)
-        ),
-        
-        Pet(
-            species: .canine,
-            sex: .male,
-            name: "Tom",
-            breed: "Puddle",
-            adopted: false,
-            birthday: .now - (86400 * 370),
-            onFamilySince: .now - (86400 * 50)
-        ),
-        
-        Pet(
-            species: .feline,
-            sex: .female,
-            name: "Lia",
-            breed: "Sphinx",
-            adopted: false,
-            birthday: .now - (86400 * 30),
-            onFamilySince: .now - (86400 * 5)
-        ),
-    ]
 }

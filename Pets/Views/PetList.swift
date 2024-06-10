@@ -89,9 +89,7 @@ struct PetList: View {
     
     // MARK: - functions
     private func deletePets(offsets: IndexSet) {
-        for index in offsets {
-            modelContext.delete(pets[index])
-        }
+        offsets.forEach { modelContext.delete(pets[$0]) }
     }
 }
 

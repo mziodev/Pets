@@ -12,10 +12,13 @@ struct ChipBarcode: View {
     @Environment(\.colorScheme) var colorScheme
     
     let chipID: String
+    
     var barcodeImage: UIImage? {
         generateBarcode(from: chipID)
     }
     
+    
+    // MARK: - body
     var body: some View {
         VStack {
             if let barcodeImage {
@@ -41,6 +44,18 @@ struct ChipBarcode: View {
         .foregroundStyle(.black)
     }
     
+    
+    // MARK: - functions
+    
+    /// Generates a UIImage representing a Code 128 barcode from a given string.
+    ///
+    /// - parameter from: The string to encode as a barcode.
+    ///
+    /// - returns: A UIImage instance with the generated barcode, or `nil` if the barcode 
+    /// cannot be generated.
+    ///
+    /// - note: This function uses the `CIContext` and `CIFilter` classes to generate 
+    /// the barcode image.
     func generateBarcode(from string: String) -> UIImage? {
         let context = CIContext()
         let filter = CIFilter.code128BarcodeGenerator()
@@ -58,22 +73,10 @@ struct ChipBarcode: View {
         
         return nil
     }
-    
-//    func generateBarcode(from string: String) -> UIImage? {
-//        let data = string.data(using: String.Encoding.ascii)
-//
-//        if let filter = CIFilter(name: "CICode128BarcodeGenerator") {
-//            filter.setValue(data, forKey: "inputMessage")
-//            let transform = CGAffineTransform(scaleX: 3, y: 3)
-//
-//            if let output = filter.outputImage?.transformed(by: transform) {
-//                return UIImage(ciImage: output)
-//            }
-//        }
-//
-//        return nil
-//    }
 }
+
+
+// MARK: - previews
 
 #Preview("With barcode") {
     ChipBarcode(chipID: "123456789098765")

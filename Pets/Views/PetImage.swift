@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum PetImageSize: Double {
-    case small = 150
-    case large = 250
-}
-
 struct PetImage: View {
     let pet: Pet
     let imageSize: PetImageSize
@@ -34,7 +29,7 @@ struct PetImage: View {
                     .frame(width: imageSize.rawValue, height: imageSize.rawValue)
                     .foregroundStyle(.thickMaterial)
                 
-                Image(systemName: "\(pet.species.rawValue).fill")
+                Image(systemName: pet.species == .unknown ? "pawprint.fill" : "\(pet.species.rawValue).fill")
                     .font(.system(size: imageSize.rawValue * 0.45))
                     .foregroundStyle(Color.accentColor)
             }

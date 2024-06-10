@@ -15,13 +15,19 @@ struct PetWeightChart: View {
         Chart {
             ForEach(weights) { weight in
                 BarMark(
-                    x: .value("Date", weight.date.formatted(date: .abbreviated, time: .omitted)),
+                    x: .value(
+                        "Date",
+                        weight.date.formatted(
+                            date: .abbreviated,
+                            time: .omitted
+                        )
+                    ),
                     y: .value("Weight", weight.value)
                 )
                 .annotation(position: .top) {
                     Text(
-                        Weight.getMeasuredValue(from: weight.value),
-                        format: formatStyle
+                        Weight.getMeasuredWeight(from: weight.value),
+                        format: Weight.formatStyle
                     )
                     .font(.caption)
                 }

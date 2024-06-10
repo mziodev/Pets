@@ -32,7 +32,7 @@ struct WeightList: View {
     
     
     // MARK: - computed properties
-    private var selectedRange: ClosedRange<Date> {
+    private var selectedDateRange: ClosedRange<Date> {
         let selectedRange: ClosedRange<Date>
         
         switch selectedTimePeriod {
@@ -46,11 +46,15 @@ struct WeightList: View {
     }
     
     var scrollPositionStartString: String {
-        pet.reverseSortedWeights.last!.date.formatted(.dateTime.month().day())
+        pet.reverseSortedWeights.last!.date.formatted(
+            .dateTime.month().day()
+        )
     }
     
     var scrollPositionEndString: String {
-        pet.reverseSortedWeights.first!.date.formatted(.dateTime.month().day().year())
+        pet.reverseSortedWeights.first!.date.formatted(
+            .dateTime.month().day().year()
+        )
     }
     
     
@@ -75,10 +79,10 @@ struct WeightList: View {
                     Text("Average weight")
                     
                     Text(
-                        Weight.getMeasuredValue(
-                            from: getAverageWeight(in: pet.weights)
+                        Weight.getMeasuredWeight(
+                            from: pet.weights.averaging()
                         ),
-                        format: formatStyle
+                        format: Weight.formatStyle
                     )
                     .font(.title)
                     .bold()
@@ -86,9 +90,13 @@ struct WeightList: View {
                     Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
                         .foregroundStyle(.secondary)
                     
-                    PetWeightChart(weights: pet.getSortedWeights(in: selectedRange))
-                        .frame(height: 240)
-                        .padding(.horizontal)
+                    PetWeightChart(
+                        weights: pet.filteringAndSortWeights(
+                            in: selectedDateRange
+                        )
+                    )
+                    .frame(height: 240)
+                    .padding(.horizontal)
                 }
                 .padding(.horizontal)
                 .padding(.top, 2)
@@ -101,13 +109,19 @@ struct WeightList: View {
                     ForEach(pet.reverseSortedWeights) { weight in
                         HStack {
                             Text(
-                                weight.date.formatted(date: .complete, time: .omitted)
+                                weight.date.formatted(
+                                    date: .complete,
+                                    time: .omitted
+                                )
                             )
                             
                             Spacer()
                             
-                            Text(Weight.getMeasuredValue(from: weight.value), format: formatStyle)
-                                .bold()
+                            Text(
+                                Weight.getMeasuredWeight(from: weight.value),
+                                format: Weight.formatStyle
+                            )
+                            .bold()
                         }
                     }
                     .onDelete(perform: deleteWeights)
@@ -116,11 +130,17 @@ struct WeightList: View {
             .navigationTitle("\(pet.name) weight list")
             .navigationBarTitleDisplayMode(.inline)
         }
+        
+        
+        // MARK: - onChange
         .onChange(of: pet.weights) {
             if pet.weights.isEmpty { dismiss() }
         }
+        
+        
+        // MARK: - add weight sheet
         .sheet(isPresented: $showingAddWeightSheet) {
-            AddWeight(pet: pet)
+            WeightDetail(pet: pet)
         }
         
         
@@ -143,16 +163,6 @@ struct WeightList: View {
     
     
     // MARK: - functions
-    private func getAverageWeight(in weights: [Weight]) -> Double {
-        var totalWeight: Double = 0
-        
-        for weight in weights {
-            totalWeight += weight.value
-        }
-        
-        return totalWeight / Double(weights.count)
-    }
-    
     private func deleteWeights(offsets: IndexSet) {
         withAnimation {
             pet.weights.remove(atOffsets: offsets)

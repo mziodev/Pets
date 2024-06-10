@@ -8,6 +8,7 @@
 import Foundation
 
 enum PetSex: String, CaseIterable, Codable {
+    case unknown = "unknown"
     case male = "male"
     case female = "female"
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087F5B562C131CF9005A7083 /* VerifiedCheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F5B552C131CF9005A7083 /* VerifiedCheckMark.swift */; };
+		087F5B582C1350A0005A7083 /* Pet+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F5B572C1350A0005A7083 /* Pet+Validation.swift */; };
 		08833FF22C09CABB000FD0BF /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FD92C09CABB000FD0BF /* Pet.swift */; };
 		08833FF32C09CABB000FD0BF /* PetSex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FDA2C09CABB000FD0BF /* PetSex.swift */; };
 		08833FF42C09CABB000FD0BF /* PetSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FDB2C09CABB000FD0BF /* PetSpecies.swift */; };
@@ -15,7 +17,7 @@
 		08833FF72C09CABB000FD0BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08833FDF2C09CABB000FD0BF /* Preview Assets.xcassets */; };
 		08833FF82C09CABB000FD0BF /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE12C09CABB000FD0BF /* SampleData.swift */; };
 		08833FF92C09CABB000FD0BF /* PetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE32C09CABB000FD0BF /* PetCard.swift */; };
-		08833FFB2C09CABB000FD0BF /* AddWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE52C09CABB000FD0BF /* AddWeight.swift */; };
+		08833FFB2C09CABB000FD0BF /* WeightDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE52C09CABB000FD0BF /* WeightDetail.swift */; };
 		08833FFC2C09CABB000FD0BF /* ChipBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE62C09CABB000FD0BF /* ChipBarcode.swift */; };
 		08833FFD2C09CABB000FD0BF /* ChipIDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE72C09CABB000FD0BF /* ChipIDType.swift */; };
 		08833FFF2C09CABB000FD0BF /* NoPetsYet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE92C09CABB000FD0BF /* NoPetsYet.swift */; };
@@ -26,9 +28,16 @@
 		088340042C09CABB000FD0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08833FEF2C09CABB000FD0BF /* Assets.xcassets */; };
 		088340052C09CABB000FD0BF /* PetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FF02C09CABB000FD0BF /* PetsApp.swift */; };
 		088340072C0A110E000FD0BF /* PetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088340062C0A110E000FD0BF /* PetImage.swift */; };
+		08A29E382C144D2500D45D98 /* Pet+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A29E372C144D2500D45D98 /* Pet+SampleData.swift */; };
+		08A29E3A2C1451AF00D45D98 /* Weight+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A29E392C1451AF00D45D98 /* Weight+SampleData.swift */; };
+		08B584F92C16E8A90068D4B2 /* PetImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B584F82C16E8A90068D4B2 /* PetImageSize.swift */; };
+		08B584FB2C16EFA10068D4B2 /* Weight+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B584FA2C16EFA10068D4B2 /* Weight+Format.swift */; };
+		08B584FD2C16FA460068D4B2 /* Weight+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B584FC2C16FA460068D4B2 /* Weight+Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		087F5B552C131CF9005A7083 /* VerifiedCheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedCheckMark.swift; sourceTree = "<group>"; };
+		087F5B572C1350A0005A7083 /* Pet+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+Validation.swift"; sourceTree = "<group>"; };
 		08833FD92C09CABB000FD0BF /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		08833FDA2C09CABB000FD0BF /* PetSex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSex.swift; sourceTree = "<group>"; };
 		08833FDB2C09CABB000FD0BF /* PetSpecies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSpecies.swift; sourceTree = "<group>"; };
@@ -37,7 +46,7 @@
 		08833FDF2C09CABB000FD0BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		08833FE12C09CABB000FD0BF /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		08833FE32C09CABB000FD0BF /* PetCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetCard.swift; sourceTree = "<group>"; };
-		08833FE52C09CABB000FD0BF /* AddWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeight.swift; sourceTree = "<group>"; };
+		08833FE52C09CABB000FD0BF /* WeightDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightDetail.swift; sourceTree = "<group>"; };
 		08833FE62C09CABB000FD0BF /* ChipBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipBarcode.swift; sourceTree = "<group>"; };
 		08833FE72C09CABB000FD0BF /* ChipIDType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipIDType.swift; sourceTree = "<group>"; };
 		08833FE92C09CABB000FD0BF /* NoPetsYet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoPetsYet.swift; sourceTree = "<group>"; };
@@ -49,6 +58,11 @@
 		08833FF02C09CABB000FD0BF /* PetsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsApp.swift; sourceTree = "<group>"; };
 		088340062C0A110E000FD0BF /* PetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetImage.swift; sourceTree = "<group>"; };
 		0887947C2BFB35E600635DB7 /* Pets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A29E372C144D2500D45D98 /* Pet+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+SampleData.swift"; sourceTree = "<group>"; };
+		08A29E392C1451AF00D45D98 /* Weight+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weight+SampleData.swift"; sourceTree = "<group>"; };
+		08B584F82C16E8A90068D4B2 /* PetImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetImageSize.swift; path = Pets/Views/PetImageSize.swift; sourceTree = SOURCE_ROOT; };
+		08B584FA2C16EFA10068D4B2 /* Weight+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weight+Format.swift"; sourceTree = "<group>"; };
+		08B584FC2C16FA460068D4B2 /* Weight+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weight+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +79,13 @@
 		08833FDE2C09CABB000FD0BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				08833FE72C09CABB000FD0BF /* ChipIDType.swift */,
 				08833FD92C09CABB000FD0BF /* Pet.swift */,
-				08833FDA2C09CABB000FD0BF /* PetSex.swift */,
-				08833FDB2C09CABB000FD0BF /* PetSpecies.swift */,
-				08833FDC2C09CABB000FD0BF /* TimePeriod.swift */,
+				08A29E372C144D2500D45D98 /* Pet+SampleData.swift */,
+				087F5B572C1350A0005A7083 /* Pet+Validation.swift */,
 				08833FDD2C09CABB000FD0BF /* Weight.swift */,
+				08B584FA2C16EFA10068D4B2 /* Weight+Format.swift */,
+				08A29E392C1451AF00D45D98 /* Weight+SampleData.swift */,
+				08B584FC2C16FA460068D4B2 /* Weight+Utilities.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -94,7 +109,7 @@
 		08833FEE2C09CABB000FD0BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				08833FE52C09CABB000FD0BF /* AddWeight.swift */,
+				08833FE52C09CABB000FD0BF /* WeightDetail.swift */,
 				08833FE62C09CABB000FD0BF /* ChipBarcode.swift */,
 				08833FE92C09CABB000FD0BF /* NoPetsYet.swift */,
 				08833FE32C09CABB000FD0BF /* PetCard.swift */,
@@ -102,6 +117,7 @@
 				088340062C0A110E000FD0BF /* PetImage.swift */,
 				08833FEB2C09CABB000FD0BF /* PetList.swift */,
 				08833FEC2C09CABB000FD0BF /* PetWeightChart.swift */,
+				087F5B552C131CF9005A7083 /* VerifiedCheckMark.swift */,
 				08833FED2C09CABB000FD0BF /* WeightList.swift */,
 			);
 			path = Views;
@@ -111,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				08833FF02C09CABB000FD0BF /* PetsApp.swift */,
+				08866F582C0F237700455EAE /* Custom types */,
 				08833FDE2C09CABB000FD0BF /* Models */,
 				08833FE22C09CABB000FD0BF /* Utitliies */,
 				08833FEE2C09CABB000FD0BF /* Views */,
@@ -118,6 +135,18 @@
 				08833FE02C09CABB000FD0BF /* Preview Content */,
 			);
 			path = Pets;
+			sourceTree = "<group>";
+		};
+		08866F582C0F237700455EAE /* Custom types */ = {
+			isa = PBXGroup;
+			children = (
+				08833FE72C09CABB000FD0BF /* ChipIDType.swift */,
+				08B584F82C16E8A90068D4B2 /* PetImageSize.swift */,
+				08833FDA2C09CABB000FD0BF /* PetSex.swift */,
+				08833FDB2C09CABB000FD0BF /* PetSpecies.swift */,
+				08833FDC2C09CABB000FD0BF /* TimePeriod.swift */,
+			);
+			path = "Custom types";
 			sourceTree = "<group>";
 		};
 		088794732BFB35E600635DB7 = {
@@ -207,18 +236,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				088340022C09CABB000FD0BF /* PetWeightChart.swift in Sources */,
+				08B584FB2C16EFA10068D4B2 /* Weight+Format.swift in Sources */,
 				08833FF32C09CABB000FD0BF /* PetSex.swift in Sources */,
 				08833FF52C09CABB000FD0BF /* TimePeriod.swift in Sources */,
+				08A29E382C144D2500D45D98 /* Pet+SampleData.swift in Sources */,
 				08833FFD2C09CABB000FD0BF /* ChipIDType.swift in Sources */,
 				08833FF22C09CABB000FD0BF /* Pet.swift in Sources */,
+				08B584F92C16E8A90068D4B2 /* PetImageSize.swift in Sources */,
 				088340002C09CABB000FD0BF /* PetDetail.swift in Sources */,
 				08833FF92C09CABB000FD0BF /* PetCard.swift in Sources */,
+				087F5B562C131CF9005A7083 /* VerifiedCheckMark.swift in Sources */,
 				08833FF82C09CABB000FD0BF /* SampleData.swift in Sources */,
+				08A29E3A2C1451AF00D45D98 /* Weight+SampleData.swift in Sources */,
 				08833FFC2C09CABB000FD0BF /* ChipBarcode.swift in Sources */,
 				088340012C09CABB000FD0BF /* PetList.swift in Sources */,
+				087F5B582C1350A0005A7083 /* Pet+Validation.swift in Sources */,
+				08B584FD2C16FA460068D4B2 /* Weight+Utilities.swift in Sources */,
 				088340072C0A110E000FD0BF /* PetImage.swift in Sources */,
 				08833FF62C09CABB000FD0BF /* Weight.swift in Sources */,
-				08833FFB2C09CABB000FD0BF /* AddWeight.swift in Sources */,
+				08833FFB2C09CABB000FD0BF /* WeightDetail.swift in Sources */,
 				088340032C09CABB000FD0BF /* WeightList.swift in Sources */,
 				088340052C09CABB000FD0BF /* PetsApp.swift in Sources */,
 				08833FFF2C09CABB000FD0BF /* NoPetsYet.swift in Sources */,
