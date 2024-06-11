@@ -119,11 +119,11 @@ struct BreedInfo: View {
             Text("Breed")
                 .font(.callout.smallCaps())
                 .foregroundStyle(.tint)
-                .padding(.top, 8)
             
             Text(breed)
                 .font(.largeTitle.bold())
                 .fontDesign(.serif)
+                .minimumScaleFactor(0.5)
             
             Spacer()
         }
@@ -136,18 +136,17 @@ struct AgeInfo: View {
     let month: String?
     
     var body: some View {
-        HStack(alignment: .bottom) {
+        HStack {
             Spacer()
             
             Text(year ?? "")
-                .font(.largeTitle)
+                .font(.largeTitle.bold())
                 .fontDesign(.serif)
-                .bold()
             
             Text(month ?? "")
                 .font(.callout.lowercaseSmallCaps())
                 .foregroundStyle(.tint)
-                .padding(.bottom, 5)
+                .padding(.top, 12)
             
             Spacer()
         }
@@ -159,13 +158,12 @@ struct WeightInfo: View {
     let weight: Measurement<UnitMass>?
     
     var body: some View {
-        HStack(alignment: .bottom) {
+        HStack {
             Spacer()
             
             Text("weight")
                 .font(.callout.lowercaseSmallCaps())
                 .foregroundStyle(.tint)
-                .padding(.bottom, 4)
             
             Text(
                 weight?.formatted(
@@ -195,7 +193,6 @@ struct ChipIDInfo: View {
             Text("Chip ID")
                 .font(.callout.smallCaps())
                 .foregroundStyle(.tint)
-                .padding(.top, 1)
             
             Text(chipID)
                 .fontDesign(.serif)

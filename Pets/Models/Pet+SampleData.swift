@@ -13,7 +13,7 @@ extension Pet {
             species: .canine,
             sex: .male,
             name: "Rocky",
-            breed: "Jack Russell",
+            breed: "Jack Russell Terrier",
             chipIDType: .fifteenDigits,
             chipID: "123456789098765",
             adopted: true,
@@ -25,7 +25,7 @@ extension Pet {
             species: .canine,
             sex: .male,
             name: "Tom",
-            breed: "Puddle",
+            breed: "Pooddle, Toy",
             adopted: false,
             birthday: .now - (86400 * 370),
             onFamilySince: .now - (86400 * 50)
@@ -35,10 +35,20 @@ extension Pet {
             species: .feline,
             sex: .female,
             name: "Lia",
-            breed: "Sphinx",
+            breed: "Sphynx",
             adopted: false,
             birthday: .now - (86400 * 30),
             onFamilySince: .now - (86400 * 5)
+        ),
+        
+        Pet(
+            species: .unknown,
+            sex: .male,
+            name: "Ruffo",
+            breed: "",
+            adopted: false,
+            birthday: .now - (86400 * 770),
+            onFamilySince: .now - (86400 * 320)
         ),
     ]
 }

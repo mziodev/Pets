@@ -1,0 +1,1178 @@
+[
+  {
+    "id": 1,
+    "name": "Afghan Hound",
+    "breed_variations": [],
+    "main_characteristics": ["Silky coat", "Tall and lean", "Aloof with strangers"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 2,
+    "name": "Airedale Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Wiry coat", "Strong and athletic", "Confident and friendly"],
+    "typical_illnesses": ["Hip dysplasia", "Allergies"],
+    "average_life_span": 11
+  },
+  {
+    "id": 3,
+    "name": "Akita",
+    "breed_variations": ["American Akita", "Japanese Akita"],
+    "main_characteristics": ["Thick coat", "Large and powerful", "Loyal and protective"],
+    "typical_illnesses": ["Hip dysplasia", "Autoimmune disorders"],
+    "average_life_span": 10
+  },
+  {
+    "id": 4,
+    "name": "Alaskan Malamute",
+    "breed_variations": [],
+    "main_characteristics": ["Thick coat", "Strong and athletic", "Independent and stubborn"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 5,
+    "name": "American Bulldog",
+    "breed_variations": ["Classic", "Bully", "Standard"],
+    "main_characteristics": ["Muscular build", "Short coat", "Confident and loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Skin infections"],
+    "average_life_span": 10
+  },
+  {
+    "id": 6,
+    "name": "American Eskimo Dog",
+    "breed_variations": ["Toy", "Miniature", "Standard"],
+    "main_characteristics": ["Thick coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Hip dysplasia", "Patellar luxation"],
+    "average_life_span": 12
+  },
+  {
+    "id": 7,
+    "name": "American Foxhound",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Tall and lean", "Friendly and outgoing"],
+    "typical_illnesses": ["Hip dysplasia", "Ear infections"],
+    "average_life_span": 10
+  },
+  {
+    "id": 8,
+    "name": "American Staffordshire Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Muscular build", "Short coat", "Confident and loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Skin infections"],
+    "average_life_span": 12
+  },
+  {
+    "id": 9,
+    "name": "Australian Cattle Dog",
+    "breed_variations": ["Blue Heeler", "Red Heeler"],
+    "main_characteristics": ["Short coat", "Strong and athletic", "Intelligent and energetic"],
+    "typical_illnesses": ["Deafness", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 10,
+    "name": "Australian Shepherd",
+    "breed_variations": ["Miniature", "Toy"],
+    "main_characteristics": ["Medium coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 11,
+    "name": "Basset Hound",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Short legs", "Calm and gentle"],
+    "typical_illnesses": ["Hip dysplasia", "Ear infections"],
+    "average_life_span": 10
+  },
+  {
+    "id": 12,
+    "name": "Beagle",
+    "breed_variations": ["Pocket Beagle", "Field Beagle"],
+    "main_characteristics": ["Short coat", "Friendly and curious", "Energetic and playful"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 13,
+    "name": "Bearded Collie",
+    "breed_variations": [],
+    "main_characteristics": ["Long coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 14,
+    "name": "Bedlington Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Curly coat", "Friendly and outgoing", "Energetic and playful"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 15,
+    "name": "Bernese Mountain Dog",
+    "breed_variations": [],
+    "main_characteristics": ["Thick coat", "Large and powerful", "Calm and gentle"],
+    "typical_illnesses": ["Hip dysplasia", "Cancer"],
+    "average_life_span": 8
+  },
+  {
+    "id": 16,
+    "name": "Bichon Frise",
+    "breed_variations": [],
+    "main_characteristics": ["Curly coat", "Playful and gentle", "Adaptable and friendly"],
+    "typical_illnesses": ["Liver problems", "Dental problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 17,
+    "name": "Black Russian Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Thick coat", "Large and powerful", "Confident and loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 18,
+    "name": "Bloodhound",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Strong and athletic", "Independent and stubborn"],
+    "typical_illnesses": ["Hip dysplasia", "Ear infections"],
+    "average_life_span": 10
+  },
+  {
+    "id": 19,
+    "name": "Border Collie",
+    "breed_variations": ["Miniature"],
+    "main_characteristics": ["Medium coat", "Intelligent and active", "Energetic and playful"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 20,
+    "name": "Border Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Friendly and outgoing", "Energetic and playful"],
+    "typical_illnesses": ["Hip dysplasia", "Patellar luxation"],
+    "average_life_span": 12
+  },
+  {
+    "id": 21,
+    "name": "Boston Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Friendly and outgoing", "Adaptable and gentle"],
+    "typical_illnesses": ["Patellar luxation", "Eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 22,
+    "name": "Boxer",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Muscular build", "Energetic and playful"],
+    "typical_illnesses": ["Hip dysplasia", "Heart problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 23,
+    "name": "Briard",
+    "breed_variations": [],
+    "main_characteristics": ["Long coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 24,
+    "name": "Brittany",
+    "breed_variations": ["American Brittany", "French Brittany"],
+    "main_characteristics": ["Short coat", "Friendly and outgoing", "Energetic and playful"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 25,
+    "name": "Bulldog",
+    "breed_variations": ["English Bulldog", "French Bulldog"],
+    "main_characteristics": ["Short coat", "Muscular build", "Calm and gentle"],
+    "typical_illnesses": ["Respiratory problems", "Skin infections"],
+    "average_life_span": 8
+  },
+  {
+    "id": 26,
+    "name": "Cane Corso",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Muscular build", "Confident and loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 27,
+    "name": "Cardigan Welsh Corgi",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Hip dysplasia", "Intervertebral disc disease"],
+    "average_life_span": 12
+  },
+  {
+    "id": 28,
+    "name": "Cavalier King Charles Spaniel",
+    "breed_variations": [],
+    "main_characteristics": ["Long coat", "Friendly and gentle", "Adaptable and playful"],
+    "typical_illnesses": ["Mitral valve disease", "Cerebellar ataxia"],
+    "average_life_span": 10
+  },
+  {
+    "id": 29,
+    "name": "Chihuahua",
+    "breed_variations": ["Long-haired", "Short-haired"],
+    "main_characteristics": ["Small size", "Confident and loyal", "Energetic and playful"],
+    "typical_illnesses": ["Patellar luxation", "Heart problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 30,
+    "name": "Chinese Crested",
+    "breed_variations": ["Hairless", "Powderpuff"],
+    "main_characteristics": ["Unique appearance", "Friendly and outgoing", "Adaptable and gentle"],
+    "typical_illnesses": ["Skin problems", "Dental problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 31,
+    "name": "Chinese Shar-Pei",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Loyal and protective", "Calm and gentle"],
+    "typical_illnesses": ["Skin problems", "Eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 32,
+    "name": "Chow Chow",
+    "breed_variations": [],
+    "main_characteristics": ["Thick coat", "Loyal and protective", "Independent and stubborn"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 33,
+    "name": "Cocker Spaniel",
+    "breed_variations": ["American Cocker Spaniel", "English Cocker Spaniel"],
+    "main_characteristics": ["Long coat", "Friendly and outgoing", "Energetic and playful"],
+    "typical_illnesses": ["Ear infections", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 34,
+    "name": "Collie",
+    "breed_variations": ["Rough Collie", "Smooth Collie"],
+    "main_characteristics": ["Medium coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Eye problems", "Collie eye anomaly"],
+    "average_life_span": 12
+  },
+  {
+    "id": 35,
+    "name": "Corgi",
+    "breed_variations": ["Pembroke Welsh Corgi", "Cardigan Welsh Corgi"],
+    "main_characteristics": ["Short coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Hip dysplasia", "Intervertebral disc disease"],
+    "average_life_span": 12
+  },
+  {
+    "id": 36,
+    "name": "Coton de Tulear",
+    "breed_variations": [],
+    "main_characteristics": ["Long coat", "Friendly and outgoing", "Adaptable and gentle"],
+    "typical_illnesses": ["Patellar luxation", "Heart problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 37,
+    "name": "Dachshund",
+    "breed_variations": ["Long-haired", "Short-haired", "Wire-haired"],
+    "main_characteristics": ["Short legs", "Friendly and curious", "Energetic and playful"],
+    "typical_illnesses": ["Intervertebral disc disease", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 38,
+    "name": "Dalmatian",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Friendly and outgoing", "Energetic and playful"],
+    "typical_illnesses": ["Deafness", "Urinary stones"],
+    "average_life_span": 10
+  },
+  {
+    "id": 39,
+    "name": "Doberman Pinscher",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Cardiomyopathy", "Hip dysplasia"],
+    "average_life_span": 10
+  },
+  {
+    "id": 40,
+    "name": "Dutch Shepherd",
+    "breed_variations": [],
+    "main_characteristics": ["Medium coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 41,
+    "name": "English Bulldog",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Muscular build", "Calm and gentle"],
+    "typical_illnesses": ["Respiratory problems", "Skin infections"],
+    "average_life_span": 8
+  },
+  {
+    "id": 42,
+    "name": "English Cocker Spaniel",
+    "breed_variations": [],
+    "main_characteristics": ["Long coat", "Friendly and outgoing", "Energetic and playful"],
+    "typical_illnesses": ["Ear infections", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 43,
+    "name": "English Springer Spaniel",
+    "breed_variations": [],
+    "main_characteristics": ["Medium coat", "Friendly and outgoing", "Energetic and playful"],
+    "typical_illnesses": ["Ear infections", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 44,
+    "name": "English Toy Spaniel",
+    "breed_variations": [],
+    "main_characteristics": ["Long coat", "Friendly and gentle", "Adaptable and playful"],
+    "typical_illnesses": ["Patellar luxation", "Mitral valve disease"],
+    "average_life_span": 12
+  },
+  {
+    "id": 45,
+    "name": "French Bulldog",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Muscular build", "Calm and gentle"],
+    "typical_illnesses": ["Respiratory problems", "Skin infections"],
+    "average_life_span": 10
+  },
+  {
+    "id": 46,
+    "name": "German Pinscher",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 47,
+    "name": "German Shepherd",
+    "breed_variations": [],
+    "main_characteristics": ["Medium coat", "Intelligent and active", "Loyal and protective"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia"],
+    "average_life_span": 10
+  },
+  {
+    "id": 48,
+    "name": "Golden Retriever",
+    "breed_variations": [],
+    "main_characteristics": ["Thick coat", "Friendly and outgoing", "Intelligent and active"],
+    "typical_illnesses": ["Hip dysplasia", "Cancer"],
+    "average_life_span": 10
+  },
+  {
+    "id": 49,
+    "name": "Gordon Setter",
+    "breed_variations": [],
+    "main_characteristics": ["Thick coat", "Friendly and outgoing", "Intelligent and active"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 50,
+    "name": "Great Dane",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Large and powerful", "Calm and gentle"],
+    "typical_illnesses": ["Hip dysplasia", "Bloat"],
+    "average_life_span": 6
+  },
+  {
+    "id": 51,
+    "name": "Great Pyrenees",
+    "breed_variations": [],
+    "main_characteristics": ["Thick coat", "Loyal and protective", "Calm and gentle"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 52,
+    "name": "Greyhound",
+    "breed_variations": [],
+    "main_characteristics": ["Short coat", "Tall and lean", "Friendly and gentle"],
+    "typical_illnesses": ["Bloat", "Osteosarcoma"],
+    "average_life_span": 10
+  },
+  {
+    "id": 53,
+    "name": "Havanese",
+    "breed_variations": [],
+    "main_characteristics": ["Long coat", "Friendly and outgoing", "Adaptable and playful"],
+    "typical_illnesses": ["Patellar luxation", "Eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 54,
+    "name": "Ibizan Hound",
+    "breed_variations": [],
+    "main_characteristics": ["athletic", "agile", "short coat"],
+    "typical_illnesses": ["hip dysplasia", "osteosarcoma"],
+    "average_life_span": 12
+  },
+  {
+    "id": 55,
+    "name": "Icelandic Sheepdog",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "thick coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "patellar luxation"],
+    "average_life_span": 12
+  },
+  {
+    "id": 56,
+    "name": "Indian Spitz",
+    "breed_variations": ["small", "medium", "large"],
+    "main_characteristics": ["fluffy coat", "intelligent", "active"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 57,
+    "name": "Irish Red and White Setter",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "feathery coat", "friendly"],
+    "typical_illnesses": ["hip dysplasia", "osteosarcoma"],
+    "average_life_span": 12
+  },
+  {
+    "id": 58,
+    "name": "Irish Setter",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "feathery coat", "friendly"],
+    "typical_illnesses": ["hip dysplasia", "osteosarcoma"],
+    "average_life_span": 12
+  },
+  {
+    "id": 59,
+    "name": "Irish Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "wiry coat", "feisty"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 13
+  },
+  {
+    "id": 60,
+    "name": "Irish Water Spaniel",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "curly coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 61,
+    "name": "Irish Wolfhound",
+    "breed_variations": [],
+    "main_characteristics": ["tall size", "rough coat", "gentle"],
+    "typical_illnesses": ["bloat", "osteosarcoma"],
+    "average_life_span": 6
+  },
+  {
+    "id": 62,
+    "name": "Italian Greyhound",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "short coat", "gentle"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 63,
+    "name": "Jack Russell Terrier",
+    "breed_variations": ["short legged", "long legged"],
+    "main_characteristics": ["small size", "short coat", "feisty"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 13
+  },
+  {
+    "id": 64,
+    "name": "Japanese Akita",
+    "breed_variations": [],
+    "main_characteristics": ["large size", "thick coat", "loyal"],
+    "typical_illnesses": ["hip dysplasia", "autoimmune disorders"],
+    "average_life_span": 10
+  },
+  {
+    "id": 65,
+    "name": "Japanese Chin",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "long coat", "gentle"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 66,
+    "name": "Japanese Spitz",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "thick coat", "intelligent"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 67,
+    "name": "Kai Ken",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "short coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 68,
+    "name": "Kangal Dog",
+    "breed_variations": [],
+    "main_characteristics": ["large size", "short coat", "loyal"],
+    "typical_illnesses": ["hip dysplasia", "osteosarcoma"],
+    "average_life_span": 12
+  },
+  {
+    "id": 69,
+    "name": "Karelian Bear Dog",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "short coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 70,
+    "name": "Keeshond",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "thick coat", "friendly"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 71,
+    "name": "Kerry Blue Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "wiry coat", "feisty"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 13
+  },
+  {
+    "id": 72,
+    "name": "Komondor",
+    "breed_variations": [],
+    "main_characteristics": ["large size", "corded coat", "loyal"],
+    "typical_illnesses": ["hip dysplasia", "osteosarcoma"],
+    "average_life_span": 10
+  },
+  {
+    "id": 73,
+    "name": "Kuvasz",
+    "breed_variations": [],
+    "main_characteristics": ["large size", "thick coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 74,
+    "name": "Labrador Retriever",
+    "breed_variations": ["English", "American"],
+    "main_characteristics": ["medium size", "short coat", "friendly"],
+    "typical_illnesses": ["hip dysplasia", "obesity"],
+    "average_life_span": 10
+  },
+  {
+    "id": 75,
+    "name": "Lagotto Romagnolo",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "curly coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 76,
+    "name": "Lakeland Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "wiry coat", "feisty"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 13
+  },
+  {
+    "id": 77,
+    "name": "Leonberger",
+    "breed_variations": [],
+    "main_characteristics": ["large size", "thick coat", "gentle"],
+    "typical_illnesses": ["hip dysplasia", "osteosarcoma"],
+    "average_life_span": 8
+  },
+  {
+    "id": 78,
+    "name": "Lhasa Apso",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "long coat", "friendly"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 79,
+    "name": "Lowchen",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "long coat", "gentle"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 80,
+    "name": "Maltese",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "long coat", "gentle"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 81,
+    "name": "Manchester Terrier",
+    "breed_variations": ["toy", "standard"],
+    "main_characteristics": ["small size", "short coat", "intelligent"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 82,
+    "name": "Maremma Sheepdog",
+    "breed_variations": [],
+    "main_characteristics": ["large size", "thick coat", "loyal"],
+    "typical_illnesses": ["hip dysplasia", "osteosarcoma"],
+    "average_life_span": 10
+  },
+  {
+    "id": 83,
+    "name": "Mastiff",
+    "breed_variations": ["English", "Bull", "Tibetan"],
+    "main_characteristics": ["large size", "short coat", "gentle"],
+    "typical_illnesses": ["hip dysplasia", "gastric torsion"],
+    "average_life_span": 7
+  },
+  {
+    "id": 84,
+    "name": "Mexican Hairless Dog",
+    "breed_variations": ["hairless", "coated"],
+    "main_characteristics": ["medium size", "no coat", "intelligent"],
+    "typical_illnesses": ["skin problems", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 85,
+    "name": "Miniature Pinscher",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "short coat", "intelligent"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 86,
+    "name": "Miniature Schnauzer",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "wiry coat", "intelligent"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 87,
+    "name": "Neapolitan Mastiff",
+    "breed_variations": [],
+    "main_characteristics": ["large size", "short coat", "gentle"],
+    "typical_illnesses": ["hip dysplasia", "gastric torsion"],
+    "average_life_span": 7
+  },
+  {
+    "id": 88,
+    "name": "Newfoundland",
+    "breed_variations": [],
+    "main_characteristics": ["large size", "thick coat", "gentle"],
+    "typical_illnesses": ["hip dysplasia", "heart problems"],
+    "average_life_span": 8
+  },
+  {
+    "id": 89,
+    "name": "Norfolk Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "wiry coat", "feisty"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 13
+  },
+  {
+    "id": 90,
+    "name": "Norwich Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "wiry coat", "feisty"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 13
+  },
+  {
+    "id": 91,
+    "name": "Nova Scotia Duck Tolling Retriever",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "thick coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 92,
+    "name": "Old English Sheepdog",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "shaggy coat", "gentle"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 93,
+    "name": "Otterhound",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "shaggy coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 94,
+    "name": "Papillon",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "long coat", "intelligent"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 95,
+    "name": "Pembroke Welsh Corgi",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "short coat", "intelligent"],
+    "typical_illnesses": ["obesity", "back problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 96,
+    "name": "Pharaoh Hound",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "short coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 97,
+    "name": "Pitbull",
+    "breed_variations": ["American", "Staffordshire"],
+    "main_characteristics": ["medium size", "short coat", "strong"],
+    "typical_illnesses": ["hip dysplasia", "heart problems"],
+    "average_life_span": 10
+  },
+  {
+    "id": 98,
+    "name": "Pointer",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "short coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 99,
+    "name": "Pomeranian",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "long coat", "friendly"],
+    "typical_illnesses": ["patellar luxation", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 100,
+    "name": "Poodle",
+    "breed_variations": ["Toy", "Miniature", "Standard"],
+    "main_characteristics": ["intelligent", "active", "low-shedding"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 101,
+    "name": "Portuguese Water Dog",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "curly coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 102,
+    "name": "Pug",
+    "breed_variations": [],
+    "main_characteristics": ["small size", "short coat", "playful"],
+    "typical_illnesses": ["obesity", "breathing problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 103,
+    "name": "Puli",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "corded coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 104,
+    "name": "Queensland Heeler",
+    "breed_variations": [],
+    "main_characteristics": ["medium size", "short coat", "intelligent"],
+    "typical_illnesses": ["hip dysplasia", "eye problems"],
+    "average_life_span": 12
+  },
+  {
+    "id": 105,
+    "name": "Rat Terrier",
+    "breed_variations": ["Toy", "Miniature"],
+    "main_characteristics": ["Intelligent", "Active", "Affectionate"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Allergies"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 106,
+    "name": "Redbone Coonhound",
+    "breed_variations": [],
+    "main_characteristics": ["Friendly", "Outgoing", "Energetic"],
+    "typical_illnesses": ["Hip dysplasia", "Eye problems", "Coonhound paralysis"],
+    "average_life_span": 10-12
+  },
+  {
+    "id": 107,
+    "name": "Rhodesian Ridgeback",
+    "breed_variations": [],
+    "main_characteristics": ["Confident", "Intelligent", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Dermoid sinus", "Allergies"],
+    "average_life_span": 10-12
+  },
+  {
+    "id": 108,
+    "name": "Rottweiler",
+    "breed_variations": [],
+    "main_characteristics": ["Confident", "Strong", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Subvalvular aortic stenosis"],
+    "average_life_span": 8-11
+  },
+  {
+    "id": 109,
+    "name": "Russian Wolfhound",
+    "breed_variations": ["Borzoi"],
+    "main_characteristics": ["Intelligent", "Independent", "Athletic"],
+    "typical_illnesses": ["Bloat", "Cardiac issues", "Osteosarcoma"],
+    "average_life_span": 10-13
+  },
+  {
+    "id": 110,
+    "name": "Saluki",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Independent", "Athletic"],
+    "typical_illnesses": ["Cardiac issues", "Cancer", "Cryptorchidism"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 111,
+    "name": "Samoyed",
+    "breed_variations": [],
+    "main_characteristics": ["Friendly", "Outgoing", "Fluffy"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Progressive retinal atrophy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 112,
+    "name": "Sarplaninac",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Loyal", "Protective"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Allergies"],
+    "average_life_span": 10-12
+  },
+  {
+    "id": 113,
+    "name": "Schipperke",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Active", "Curious"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Eye problems"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 114,
+    "name": "Scottish Deerhound",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Gentle", "Athletic"],
+    "typical_illnesses": ["Osteosarcoma", "Bloat", "Cardiac issues"],
+    "average_life_span": 8-11
+  },
+  {
+    "id": 115,
+    "name": "Scottish Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Confident", "Feisty", "Loyal"],
+    "typical_illnesses": ["Cerebellar abiotrophy", "Cerebellar ataxia", "Von Willebrand disease"],
+    "average_life_span": 10-12
+  },
+  {
+    "id": 116,
+    "name": "Sealyham Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Friendly", "Outgoing", "Energetic"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Allergies"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 117,
+    "name": "Shetland Sheepdog",
+    "breed_variations": ["Sheltie"],
+    "main_characteristics": ["Intelligent", "Loyal", "Agile"],
+    "typical_illnesses": ["Collie eye anomaly", "Trichiasis", "Patellar luxation"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 118,
+    "name": "Shiba Inu",
+    "breed_variations": [],
+    "main_characteristics": ["Confident", "Independent", "Agile"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Allergies"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 119,
+    "name": "Shih Tzu",
+    "breed_variations": [],
+    "main_characteristics": ["Friendly", "Outgoing", "Playful"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Eye problems"],
+    "average_life_span": 10-16
+  },
+  {
+    "id": 120,
+    "name": "Siberian Husky",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Progressive retinal atrophy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 121,
+    "name": "Silky Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Friendly", "Curious", "Energetic"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Allergies"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 122,
+    "name": "Skye Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Loyal", "Independent"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Eye problems"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 123,
+    "name": "Sloughi",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Athletic", "Independent"],
+    "typical_illnesses": ["Bloat", "Cardiac issues", "Osteosarcoma"],
+    "average_life_span": 10-12
+  },
+  {
+    "id": 124,
+    "name": "Slovakian Rough-Haired Pointer",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Allergies"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 125,
+    "name": "Slovenian Istrian Hound",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Allergies"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 126,
+    "name": "Soft Coated Wheaten Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Friendly", "Outgoing", "Energetic"],
+    "typical_illnesses": ["Protein-losing nephropathy", "Renal dysplasia", "Glycogen storage disease"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 127,
+    "name": "Spanish Mastiff",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Loyal", "Protective"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Dilated cardiomyopathy"],
+    "average_life_span": 10-12
+  },
+  {
+    "id": 128,
+    "name": "Spinone Italiano",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Cerebellar ataxia"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 129,
+    "name": "St. Bernard",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Gentle", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Eye problems"],
+    "average_life_span": 8-12
+  },
+  {
+    "id": 130,
+    "name": "Staffordshire Bull Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Confident", "Friendly", "Energetic"],
+    "typical_illnesses": ["Hip dysplasia", "Patellar luxation", "Allergies"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 131,
+    "name": "Sussex Spaniel",
+    "breed_variations": [],
+    "main_characteristics": ["Friendly", "Outgoing", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Patellar luxation", "Eye problems"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 132,
+    "name": "Swedish Vallhund",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Allergies"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 133,
+    "name": "Tibetan Mastiff",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Loyal", "Protective"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Dilated cardiomyopathy"],
+    "average_life_span": 10-12
+  },
+  {
+    "id": 134,
+    "name": "Tibetan Spaniel",
+    "breed_variations": [],
+    "main_characteristics": ["Friendly", "Outgoing", "Playful"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Eye problems"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 135,
+    "name": "Tibetan Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Loyal", "Energetic"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Allergies"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 136,
+    "name": "Transylvanian Hound",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Allergies"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 137,
+    "name": "Treeing Walker Coonhound",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Allergies"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 138,
+    "name": "Vizsla",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Allergies"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 139,
+    "name": "Weimaraner",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Bloat"],
+    "average_life_span": 10-13
+  },
+  {
+    "id": 140,
+    "name": "Welsh Springer Spaniel",
+    "breed_variations": [],
+    "main_characteristics": ["Friendly", "Outgoing", "Energetic"],
+    "typical_illnesses": ["Hip dysplasia", "Patellar luxation", "Eye problems"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 141,
+    "name": "West Highland White Terrier",
+    "breed_variations": ["Westie"],
+    "main_characteristics": ["Confident", "Friendly", "Energetic"],
+    "typical_illnesses": ["Craniomandibular osteopathy", "Pulmonary fibrosis", "Patellar luxation"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 142,
+    "name": "Whippet",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Athletic", "Loyal"],
+    "typical_illnesses": ["Bloat", "Cardiac issues", "Osteosarcoma"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 143,
+    "name": "Wire Fox Terrier",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Allergies"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 144,
+    "name": "Wire Haired Griffon",
+    "breed_variations": [],
+    "main_characteristics": ["Intelligent", "Energetic", "Loyal"],
+    "typical_illnesses": ["Hip dysplasia", "Elbow dysplasia", "Allergies"],
+    "average_life_span": 12-14
+  },
+  {
+    "id": 145,
+    "name": "Xoloitzcuintli",
+    "breed_variations": ["Mexican Hairless Dog"],
+    "main_characteristics": ["Intelligent", "Alert", "Loyal"],
+    "typical_illnesses": ["Skin problems", "Dental issues", "Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 146,
+    "name": "Yorkshire Terrier",
+    "breed_variations": ["Yorkie"],
+    "main_characteristics": ["Confident", "Spunky", "Loyal"],
+    "typical_illnesses": ["Luxating patellas", "Legg-Calve-Perthes disease", "Portosystemic shunt"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 147,
+    "name": "Zuchon",
+    "breed_variations": ["Shichon Frise"],
+    "main_characteristics": ["Friendly", "Outgoing", "Playful"],
+    "typical_illnesses": ["Patellar luxation", "Hip dysplasia", "Eye problems"],
+    "average_life_span": 12-15
+  }
+]

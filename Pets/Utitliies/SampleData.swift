@@ -82,5 +82,9 @@ class SampleData {
     var petWithoutChipID: Pet {
         Pet.sampleData[1]
     }
+    
+    var petWithoutSpecies: Pet {
+        Pet.sampleData[3]
+    }
 }
 

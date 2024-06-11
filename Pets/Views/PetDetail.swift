@@ -102,7 +102,15 @@ struct PetDetail: View {
                 }
                 
                 Section("Breed") {
-                    TextField("Breed", text: $pet.breed)
+//                    TextField("Breed", text: $pet.breed)
+                    NavigationLink {
+                        PetBreedList(pet: pet)
+                    } label: {
+                        Text(pet.breed.isEmpty ? "Select a breed" : pet.breed)
+                            .foregroundStyle(
+                                pet.breed.isEmpty ? .gray.opacity(0.7) : .primary)
+                    }
+
                 }
                 
                 Section("Chip") {

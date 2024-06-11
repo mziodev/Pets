@@ -1,0 +1,571 @@
+[
+  {
+    "id": 1,
+    "name": "Abyssinian",
+    "breed_variations": ["Ruddy", "Blue", "Fawn", "Red"],
+    "main_characteristics": ["Tickled fur", "Slender build", "Large ears", "Intelligent"],
+    "typical_illnesses": ["Patellar luxation", "Progressive retinal atrophy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 2,
+    "name": "Aegean",
+    "breed_variations": ["White", "Black", "Red", "Cream"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 3,
+    "name": "American Bobtail",
+    "breed_variations": ["Short hair", "Long hair"],
+    "main_characteristics": ["Short tail", "Muscular build", "Intelligent", "Playful"],
+    "typical_illnesses": ["Spinal muscular atrophy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 4,
+    "name": "American Curl",
+    "breed_variations": ["Short hair", "Long hair"],
+    "main_characteristics": ["Curled ears", "Playful", "Intelligent", "Affectionate"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 5,
+    "name": "American Shorthair",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Sturdy build", "Short coat", "Easy-going", "Playful"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 6,
+    "name": "American Wirehair",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Wiry coat", "Playful", "Intelligent", "Active"],
+    "typical_illnesses": ["Skin conditions"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 7,
+    "name": "Ashera",
+    "breed_variations": ["Hypoallergenic", "Leopard", "Snow"],
+    "main_characteristics": ["Large size", "Muscular build", "Intelligent", "Playful"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 8,
+    "name": "Asian",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 9,
+    "name": "Asian Semi-Longhair",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 10,
+    "name": "Balinese",
+    "breed_variations": ["Pointed", "Solid"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Intelligent"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 11,
+    "name": "Bambino",
+    "breed_variations": ["Short hair", "Long hair"],
+    "main_characteristics": ["Short legs", "Playful", "Intelligent", "Affectionate"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 12,
+    "name": "Bengal",
+    "breed_variations": ["Spotted", "Marbled", "Rosetted"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Intelligent"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 13,
+    "name": "Birman",
+    "breed_variations": ["Pointed", "White"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 14,
+    "name": "Bombay",
+    "breed_variations": ["Black", "Blue"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 15,
+    "name": "Brazilian Shorthair",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 16,
+    "name": "British Longhair",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 17,
+    "name": "British Shorthair",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Easy-going"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 18,
+    "name": "Burmese",
+    "breed_variations": ["Brown", "Chocolate", "Blue", "Platinum"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 19,
+    "name": "Burmilla",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 20,
+    "name": "Californian",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 21,
+    "name": "Canadian Sphynx",
+    "breed_variations": ["Hairless"],
+    "main_characteristics": ["Medium size", "Muscular build", "Curious", "Playful"],
+    "typical_illnesses": ["Skin conditions"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 22,
+    "name": "Chartreux",
+    "breed_variations": ["Blue"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 23,
+    "name": "Chausie",
+    "breed_variations": ["Brown", "Silver", "Black"],
+    "main_characteristics": ["Large size", "Muscular build", "Short coat", "Intelligent"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 24,
+    "name": "Cherubim",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 25,
+    "name": "Colorpoint Shorthair",
+    "breed_variations": ["Pointed"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 26,
+    "name": "Cornish Rex",
+    "breed_variations": ["Wavy"],
+    "main_characteristics": ["Medium size", "Muscular build", "Wavy coat", "Intelligent"],
+    "typical_illnesses": ["Skin conditions"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 27,
+    "name": "Cymric",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 28,
+    "name": "Devon Rex",
+    "breed_variations": ["Curly"],
+    "main_characteristics": ["Medium size", "Muscular build", "Curly coat", "Intelligent"],
+    "typical_illnesses": ["Skin conditions"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 29,
+    "name": "Donskoy",
+    "breed_variations": ["Hairless"],
+    "main_characteristics": ["Medium size", "Muscular build", "Curious", "Playful"],
+    "typical_illnesses": ["Skin conditions"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 30,
+    "name": "Dragon Li",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 31,
+    "name": "Egyptian Mau",
+    "breed_variations": ["Spotted"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Intelligent"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 32,
+    "name": "European Shorthair",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Easy-going"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 33,
+    "name": "Exotic Shorthair",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 34,
+    "name": "Havana",
+    "breed_variations": ["Brown", "Chocolate", "Silver"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 35,
+    "name": "Himalayan",
+    "breed_variations": ["Pointed"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 36,
+    "name": "Japanese Bobtail",
+    "breed_variations": ["Short hair", "Long hair"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short tail", "Playful"],
+    "typical_illnesses": ["Spinal muscular atrophy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 37,
+    "name": "Javanese",
+    "breed_variations": ["Pointed"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 38,
+    "name": "Korat",
+    "breed_variations": ["Blue"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Intelligent"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 39,
+    "name": "Kurilian",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 40,
+    "name": "LaPerm",
+    "breed_variations": ["Curly"],
+    "main_characteristics": ["Medium size", "Muscular build", "Curly coat", "Intelligent"],
+    "typical_illnesses": ["Skin conditions"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 41,
+    "name": "Maine Coon",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Large size", "Muscular build", "Long coat", "Intelligent"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 42,
+    "name": "Manx",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short tail", "Playful"],
+    "typical_illnesses": ["Spinal muscular atrophy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 43,
+    "name": "Munchkin",
+    "breed_variations": ["Short hair", "Long hair"],
+    "main_characteristics": ["Small size", "Muscular build", "Short legs", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 44,
+    "name": "Nebelung",
+    "breed_variations": ["Blue"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Intelligent"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 45,
+    "name": "Norwegian Forest Cat",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Large size", "Muscular build", "Long coat", "Intelligent"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 46,
+    "name": "Ocicat",
+    "breed_variations": ["Spotted", "Marbled", "Rosetted"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Intelligent"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 47,
+    "name": "Oriental",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 48,
+    "name": "Oriental Longhair",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 49,
+    "name": "Oriental Shorthair",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 50,
+    "name": "Persian",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Calm"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 51,
+    "name": "Peterbald",
+    "breed_variations": ["Hairless", "Flock"],
+    "main_characteristics": ["Medium size", "Muscular build", "Curious", "Playful"],
+    "typical_illnesses": ["Skin conditions"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 52,
+    "name": "Pixie-bob",
+    "breed_variations": ["Short hair", "Long hair"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short tail", "Playful"],
+    "typical_illnesses": ["Spinal muscular atrophy"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 53,
+    "name": "Ragamuffin",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 54,
+    "name": "Ragdoll",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Large size", "Muscular build", "Long coat", "Calm"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 55,
+    "name": "Russian Blue",
+    "breed_variations": ["Blue"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Intelligent"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 56,
+    "name": "Russian White",
+    "breed_variations": ["White"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Intelligent"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 57,
+    "name": "Savannah",
+    "breed_variations": ["Spotted", "Marbled", "Rosetted"],
+    "main_characteristics": ["Large size", "Muscular build", "Short coat", "Intelligent"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 58,
+    "name": "Scottish Fold",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 59,
+    "name": "Selkirk Rex",
+    "breed_variations": ["Curly"],
+    "main_characteristics": ["Medium size", "Muscular build", "Curly coat", "Intelligent"],
+    "typical_illnesses": ["Skin conditions"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 60,
+    "name": "Siamese",
+    "breed_variations": ["Pointed"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Intelligent"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 61,
+    "name": "Siberian",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Large size", "Muscular build", "Long coat", "Intelligent"],
+    "typical_illnesses": ["Hypertrophic cardiomyopathy"],
+    "average_life_span": 12-17
+  },
+  {
+    "id": 62,
+    "name": "Singapura",
+    "breed_variations": ["Brown-ticked"],
+    "main_characteristics": ["Small size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 63,
+    "name": "Snowshoe",
+    "breed_variations": ["Pointed"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 64,
+    "name": "Somali",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 65,
+    "name": "Sphynx",
+    "breed_variations": ["Hairless"],
+    "main_characteristics": ["Medium size", "Muscular build", "Curious", "Playful"],
+    "typical_illnesses": ["Skin conditions"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 66,
+    "name": "Tonkinese",
+    "breed_variations": ["Pointed"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 67,
+    "name": "Torbie",
+    "breed_variations": ["Tortoiseshell", "Tabby"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 68,
+    "name": "Turkish Angora",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Long coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 69,
+    "name": "Turkish Van",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 70,
+    "name": "Ural Rex",
+    "breed_variations": ["Curly"],
+    "main_characteristics": ["Medium size", "Muscular build", "Curly coat", "Intelligent"],
+    "typical_illnesses": ["Skin conditions"],
+    "average_life_span": 12-15
+  },
+  {
+    "id": 71,
+    "name": "York Chocolate",
+    "breed_variations": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
+    "main_characteristics": ["Medium size", "Muscular build", "Short coat", "Playful"],
+    "typical_illnesses": ["Patellar luxation"],
+    "average_life_span": 12-15
+  }
+]
+
