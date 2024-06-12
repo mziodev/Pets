@@ -41,6 +41,9 @@ struct PetBreedVariationList: View {
 
 #Preview {
     NavigationStack {
-        PetBreedVariationList(pet: SampleData.shared.petWithoutChipID, breed: PetBreed.sampledata[1])
+        PetBreedVariationList(
+            pet: SampleData.shared.petWithoutChipID,
+            breed: PetBreed.sampledata[1]
+        )
     }
 }

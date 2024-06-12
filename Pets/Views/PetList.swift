@@ -53,6 +53,7 @@ struct PetList: View {
             .sheet(isPresented: $showingAddPetSheet) {
                 NavigationStack {
                     PetDetail(pet: Pet(), isNew: true)
+                        .interactiveDismissDisabled()
                 }
             }
             

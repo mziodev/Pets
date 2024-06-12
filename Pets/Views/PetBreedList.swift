@@ -5,6 +5,8 @@
 //  Created by MZiO on 10/6/24.
 //
 
+
+
 import SwiftUI
 
 struct PetBreedList: View {
@@ -23,8 +25,11 @@ struct PetBreedList: View {
         }
     }
     
-    @State private var searchText: String = ""
+    @State private var searchText = ""
+    @State private var isSearchPresented = false
     
+    
+    // MARK: - body
     var body: some View {
         if pet.species != .unknown {
             VStack {
@@ -37,14 +42,24 @@ struct PetBreedList: View {
                         .lineLimit(1)
                 }
                 
+                
+                // MARK: - breed list
                 List {
                     ForEach(filteredPetBreedList) { breed in
                         if breed.variations.isEmpty {
                             PetBreedListRow(pet: pet, breed: breed)
-                                .onTapGesture { pet.breed = breed.name }
+                                .onTapGesture {
+                                    pet.breed = breed.name
+                                    
+                                    resetSearchable()
+                                }
                         } else {
                             NavigationLink {
-                                PetBreedVariationList(pet: pet, breed: breed)
+                                PetBreedVariationList(
+                                    pet: pet,
+//                                    isSearchPresented: $isSearchPresented,
+                                    breed: breed
+                                )
                             } label: {
                                 PetBreedListRow(pet: pet, breed: breed)
                             }
@@ -52,8 +67,16 @@ struct PetBreedList: View {
                         }
                     }
                 }
-                .searchable(text: $searchText)
                 .listStyle(.plain)
+                .searchable(
+                    text: $searchText,
+                    isPresented: $isSearchPresented
+                )
+                
+                // MARK: - onAppear
+                .onAppear {
+                    resetSearchable()
+                }
             }
             .navigationTitle(pet.name)
             .navigationBarTitleDisplayMode(.inline)
@@ -70,6 +93,12 @@ struct PetBreedList: View {
             Text("You have to select your pet species first.")
                 .padding()
         }
+        
+    }
+    
+    private func resetSearchable() {
+        searchText = ""
+        isSearchPresented = !searchText.isEmpty
     }
 }
 

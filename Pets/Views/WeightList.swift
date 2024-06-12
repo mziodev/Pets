@@ -141,6 +141,7 @@ struct WeightList: View {
         // MARK: - add weight sheet
         .sheet(isPresented: $showingAddWeightSheet) {
             WeightDetail(pet: pet)
+                .interactiveDismissDisabled()
         }
         
         

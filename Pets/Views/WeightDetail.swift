@@ -34,7 +34,7 @@ struct WeightDetail: View {
                     )
                     .foregroundStyle(.placeholder)
                     
-                    TextField("kg", text: $value)
+                    TextField("Kg", text: $value)
                         .multilineTextAlignment(.trailing)
                         .focused($isWeightTextFieldFocused)
                         .keyboardType(.decimalPad)
@@ -60,7 +60,7 @@ struct WeightDetail: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        let doubleValue = convertToDouble(value) ?? 0
+                        let doubleValue = Double(value) ?? 0
                         let newWeight = Weight(date: date, value: doubleValue)
                         
                         pet.weights.append(newWeight)

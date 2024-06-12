@@ -135,7 +135,6 @@
 		08833FEE2C09CABB000FD0BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				08833FE52C09CABB000FD0BF /* WeightDetail.swift */,
 				08833FE62C09CABB000FD0BF /* ChipBarcode.swift */,
 				08833FE92C09CABB000FD0BF /* NoPetsYet.swift */,
 				08B585072C1748690068D4B2 /* PetBreedList.swift */,
@@ -147,6 +146,7 @@
 				08833FEB2C09CABB000FD0BF /* PetList.swift */,
 				08833FEC2C09CABB000FD0BF /* PetWeightChart.swift */,
 				087F5B552C131CF9005A7083 /* VerifiedCheckMark.swift */,
+				08833FE52C09CABB000FD0BF /* WeightDetail.swift */,
 				08833FED2C09CABB000FD0BF /* WeightList.swift */,
 			);
 			path = Views;
