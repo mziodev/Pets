@@ -5,6 +5,11 @@
 //  Created by Mauricio dSR on 24/5/24.
 //
 
+/*
+ TODO:
+ Change commas for dots when adding a weight
+ */
+
 import SwiftUI
 
 struct WeightDetail: View {
@@ -36,6 +41,12 @@ struct WeightDetail: View {
                         .multilineTextAlignment(.trailing)
                         .focused($isWeightTextFieldFocused)
                         .keyboardType(.decimalPad)
+                        .onChange(of: value) { oldValue, newValue in
+                            value = newValue.replacingOccurrences(
+                                of: ",",
+                                with: "."
+                            )
+                        }
                 }
             }
             .navigationTitle("Add weight")

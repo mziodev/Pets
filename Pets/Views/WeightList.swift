@@ -127,9 +127,9 @@ struct WeightList: View {
                     .onDelete(perform: deleteWeights)
                 }
             }
-            .navigationTitle("\(pet.name) weight list")
-            .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationTitle("\(pet.name)'s weight list")
+        .navigationBarTitleDisplayMode(.inline)
         
         
         // MARK: - onChange
