@@ -79,6 +79,9 @@ struct PetDetail: View {
             
             // MARK: - form
             Form {
+                
+                
+                // MARK: - form section basics
                 Section("Basic info") {
                     Picker("Species", selection: $pet.species) {
                         ForEach(PetSpecies.allCases, id: \.self) { species in
@@ -101,18 +104,21 @@ struct PetDetail: View {
                         }
                 }
                 
+                
+                // MARK: - form section breed
                 Section("Breed") {
-//                    TextField("Breed", text: $pet.breed)
                     NavigationLink {
                         PetBreedList(pet: pet)
                     } label: {
                         Text(pet.breed.isEmpty ? "Select a breed" : pet.breed)
                             .foregroundStyle(
-                                pet.breed.isEmpty ? .gray.opacity(0.7) : .primary)
+                                pet.breed.isEmpty ? .gray.opacity(0.7) : .primary
+                            )
                     }
-
                 }
                 
+                
+                // MARK: - form section chip
                 Section("Chip") {
                     Picker("ID type", selection: $pet.chipIDType.animation()) {
                         ForEach(ChipIDType.allCases, id: \.self) { type in
@@ -129,6 +135,7 @@ struct PetDetail: View {
                             pet.chipIDType == .fifteenDigits ? "ID number (exactly 15 digits)" : "ID number (exactly 9 digits)",
                             text: $pet.chipID
                         )
+                        .keyboardType(.numberPad)
                         .overlay {
                             VerifiedCheckMark(
                                 condition: isChipIDVerified
@@ -137,6 +144,8 @@ struct PetDetail: View {
                     }
                 }
                 
+                
+                // MARK: - form section dates
                 Section("Dates") {
                     DatePicker(
                         "Born on",
@@ -156,6 +165,7 @@ struct PetDetail: View {
         }
         .navigationTitle(isNew ? "New pet" : pet.name)
         .navigationBarTitleDisplayMode(.inline)
+        .scrollDismissesKeyboard(.interactively)
         
         
         // MARK: - load image task
@@ -170,21 +180,23 @@ struct PetDetail: View {
         
         // MARK: - toolbar
         .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
-                    dismiss()
+            if isNew {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
                 }
-            }
-            
-            ToolbarItem(placement: .topBarTrailing) {
-                if isNew {
+                
+                ToolbarItem(placement: .primaryAction) {
                     Button("Save") {
                         modelContext.insert(pet)
                         
                         dismiss()
                     }
                     .disabled(!isFormVerified)
-                } else {
+                }
+            } else {
+                ToolbarItem(placement: .primaryAction) {
                     Button("Done") { dismiss() }
                         .disabled(!isFormVerified)
                 }

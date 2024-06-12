@@ -80,6 +80,7 @@ struct PetCard: View {
         .sheet(isPresented: $showingPetDetail) {
             NavigationStack {
                 PetDetail(pet: pet)
+                    .interactiveDismissDisabled()
             }
         }
         
@@ -107,8 +108,14 @@ struct PetCard: View {
     }
 }
 
+#Preview("Pet without weight") {
+    NavigationStack {
+        PetCard(pet: SampleData.shared.petWithoutSpecies)
+    }
+}
 
-// MARK: - extracted views
+
+//  MARK: - breed info view
 struct BreedInfo: View {
     let breed: String
     
@@ -131,6 +138,8 @@ struct BreedInfo: View {
     }
 }
 
+
+//  MARK: - age info view
 struct AgeInfo: View {
     let year: String?
     let month: String?
@@ -154,6 +163,8 @@ struct AgeInfo: View {
     }
 }
 
+
+//  MARK: - weight info view
 struct WeightInfo: View {
     let weight: Measurement<UnitMass>?
     
@@ -183,6 +194,8 @@ struct WeightInfo: View {
     }
 }
 
+
+//  MARK: - chip ID info view
 struct ChipIDInfo: View {
     let chipID: String
     
