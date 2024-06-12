@@ -148,7 +148,7 @@ struct PetDetail: View {
                     DatePicker(
                         pet.isAdopted ? "Adopted on" : "On the family since",
                         selection: $pet.onFamilySince,
-                        in: Date.distantPast...Date.now,
+                        in: pet.birthday...Date.now,
                         displayedComponents: .date
                     )
                 }

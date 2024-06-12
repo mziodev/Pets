@@ -66,16 +66,27 @@ class Pet {
         
         let year = dateComponents.year ?? 0
         let month = dateComponents.month ?? 0
-
-        let formatString: (Int) -> String = { count in
-            switch count {
-            case 0: return ""
-            case 1: return "\(count) \(count == 1 ? "year" : "month")"
-            default: return "\(count) \(count == 1 ? "years" : "months")"
-            }
+        
+        var age: [String] = []
+        
+        switch year {
+        case 0: age.append("")
+        case 1: age.append("1 year")
+        default: age.append("\(year) years")
         }
 
-        return [formatString(year), formatString(month)]
+        switch month {
+        case 0:
+            if year > 0 {
+                age.append("")
+            } else {
+                age.append("Newborn 🐣")
+            }
+        case 1: age.append("1 month")
+        default: age.append("\(month) months")
+        }
+
+        return age
     }
     
     var sortedWeights: [Weight] {

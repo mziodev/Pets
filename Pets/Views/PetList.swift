@@ -74,12 +74,8 @@ struct PetList: View {
                 
                 if !pets.isEmpty {
                     ToolbarItem(placement: .status) {
-                        switch pets.count {
-                        case 1:
-                            Text("\(pets.count) pet")
-                        default:
-                            Text("\(pets.count) pets")
-                        }
+                        Text("\(pets.count) pets")
+                            .font(.caption)
                     }
                 }
             }
