@@ -147,13 +147,11 @@ struct WeightList: View {
         
         //MARK: - toolbar
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
+            ToolbarItem(placement: .bottomBar) {
+                Button("Add weight") {
                     showingAddWeightSheet.toggle()
-                } label: {
-                    Image(systemName: "plus")
                 }
-                .accessibilityLabel("Add weight")
+                .bold()
             }
             
             ToolbarItem(placement: .topBarTrailing) {

@@ -40,7 +40,11 @@ struct PetCard: View {
                     NavigationLink {
                         WeightList(pet: pet)
                     } label: {
-                        WeightInfo(weight: currentWeight)
+                        if currentWeight!.value == 0.0 {
+                            AddWeightInfo()
+                        } else {
+                            WeightInfo(weight: currentWeight)
+                        }
                     }
                 }
                 .listRowSeparator(.hidden)
@@ -69,11 +73,6 @@ struct PetCard: View {
         }
         .navigationTitle(pet.name)
         .padding(.top)
-        
-        
-        // MARK: - onAppear
-        .onAppear {
-        }
         
         
         // MARK: - PetDetail sheet
@@ -115,7 +114,7 @@ struct PetCard: View {
 }
 
 
-//  MARK: - breed info view
+// MARK: - breed info view
 struct BreedInfo: View {
     let breed: String
     
@@ -139,7 +138,7 @@ struct BreedInfo: View {
 }
 
 
-//  MARK: - age info view
+// MARK: - age info view
 struct AgeInfo: View {
     let year: String?
     let month: String?
@@ -164,7 +163,23 @@ struct AgeInfo: View {
 }
 
 
-//  MARK: - weight info view
+// MARK: - add weight info view
+struct AddWeightInfo: View {
+    var body: some View {
+        HStack {
+            Spacer()
+            
+            Text("Add weight")
+                .font(.callout)
+                .foregroundStyle(.placeholder)
+            
+            Spacer()
+        }
+    }
+}
+
+
+// MARK: - weight info view
 struct WeightInfo: View {
     let weight: Measurement<UnitMass>?
     
@@ -176,17 +191,16 @@ struct WeightInfo: View {
                 .font(.callout.lowercaseSmallCaps())
                 .foregroundStyle(.tint)
             
-            Text(
-                weight?.formatted(
+            Text(weight?.formatted(
                     .measurement(
                         width: .abbreviated,
                         usage: .personWeight
                     )
-                ) ?? "No weight yet"
+                ) ?? "-"
             )
-                .font(.largeTitle)
-                .bold()
-                .fontDesign(.serif)
+            .font(.largeTitle)
+            .bold()
+            .fontDesign(.serif)
             
             Spacer()
         }

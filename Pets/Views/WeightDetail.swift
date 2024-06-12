@@ -17,8 +17,6 @@ struct WeightDetail: View {
     
     @FocusState private var isWeightTextFieldFocused
     
-    let isNew = false
-    
     
     // MARK: - body
     
@@ -40,7 +38,7 @@ struct WeightDetail: View {
                         .keyboardType(.decimalPad)
                 }
             }
-            .navigationTitle(isNew ? "New weight" : "Edit weight")
+            .navigationTitle("Add weight")
             .navigationBarTitleDisplayMode(.inline)
             
             
