@@ -5,11 +5,6 @@
 //  Created by Mauricio dSR on 24/5/24.
 //
 
-/*
- TODO:
- Change commas for dots when adding a weight
- */
-
 import SwiftUI
 
 struct WeightDetail: View {
@@ -37,7 +32,7 @@ struct WeightDetail: View {
                     )
                     .foregroundStyle(.placeholder)
                     
-                    TextField("Kg", text: $value)
+                    TextField("\(Weight.units)", text: $value)
                         .multilineTextAlignment(.trailing)
                         .focused($isWeightTextFieldFocused)
                         .keyboardType(.decimalPad)

@@ -14,6 +14,14 @@ extension Weight {
         numberFormatStyle: .number
     )
     
+    static var units: String {
+        if Locale.current.identifier == "en_US" {
+            return "lb"
+        } else {
+            return "kg"
+        }
+    }
+    
     
     // MARK: - functions
     
@@ -21,7 +29,9 @@ extension Weight {
     ///
     /// Returns a `UnitMass.kilograms` measured weigth value ready to work with.
     static func getMeasuredWeight(from value: Double) -> Measurement<UnitMass> {
-        Measurement(value: value, unit: UnitMass.kilograms)
+        let roundedValue = round(value * 100) / 100
+        
+        return Measurement(value: roundedValue, unit: UnitMass.kilograms)
     }
 }
 

@@ -7,8 +7,7 @@
 
 /*
  TODO:
- 
-    Add current age on each weight??? for checking pet grow. Show age on each weight bar on chart
+ Add current age on each weight??? for checking pet grow. Show age on each weight bar on chart
  */
 
 import Charts
@@ -19,16 +18,13 @@ struct WeightList: View {
     @Environment(\.dismiss) var dismiss
     
     @State var pet: Pet
+    @State var sortedWeights: [Weight] = []
     
     @State private var selectedTimePeriod: TimePeriod = .lastSixMonths
     @State private var showingAddWeightSheet: Bool = false
     
     private let lastSixMonthsRange = Date.now - (86400 * 180) ... Date.now
     private let lastTwelveMonthsRange = Date.now - (86400 * 365) ... Date.now
-    
-    private let floatStyle = FloatingPointFormatStyle<Float>()
-        .rounded(rule: .down)
-        .precision(.fractionLength(2))
     
     
     // MARK: - computed properties
@@ -79,10 +75,10 @@ struct WeightList: View {
                     Text("Average weight")
                     
                     Text(
-                        Weight.getMeasuredWeight(
-                            from: pet.weights.averaging()
-                        ),
-                        format: Weight.formatStyle
+                        String(
+                            format: "%.2f \(Weight.units)",
+                            pet.weights.averaging()
+                        )
                     )
                     .font(.title)
                     .bold()
@@ -106,30 +102,25 @@ struct WeightList: View {
             // MARK: - weight list
             List {
                 Section("Weight list") {
-                    ForEach(pet.reverseSortedWeights) { weight in
-                        HStack {
-                            Text(
-                                weight.date.formatted(
-                                    date: .complete,
-                                    time: .omitted
-                                )
-                            )
-                            
-                            Spacer()
-                            
-                            Text(
-                                Weight.getMeasuredWeight(from: weight.value),
-                                format: Weight.formatStyle
-                            )
-                            .bold()
+                    ForEach(sortedWeights) { weight in
+                        WeightListRow(weight: weight)
+                    }
+                    .onDelete { offsets in
+                        withAnimation {
+                            sortedWeights.remove(atOffsets: offsets)
+                            pet.weights.remove(atOffsets: offsets)
                         }
                     }
-                    .onDelete(perform: deleteWeights)
                 }
             }
         }
         .navigationTitle("\(pet.name)'s weight list")
         .navigationBarTitleDisplayMode(.inline)
+        
+        
+        .onAppear {
+            sortedWeights = pet.weights.sorted { $0.value > $1.value }
+        }
         
         
         // MARK: - onChange
@@ -154,17 +145,11 @@ struct WeightList: View {
                 .bold()
             }
             
-            ToolbarItem(placement: .topBarTrailing) {
-                EditButton()
+            if !pet.weights.isEmpty {
+                ToolbarItem(placement: .topBarTrailing) {
+                    EditButton()
+                }
             }
-        }
-    }
-    
-    
-    // MARK: - functions
-    private func deleteWeights(offsets: IndexSet) {
-        withAnimation {
-            pet.weights.remove(atOffsets: offsets)
         }
     }
 }
