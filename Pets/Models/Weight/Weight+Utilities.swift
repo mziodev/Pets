@@ -9,7 +9,7 @@ import Foundation
 
 extension Array where Element == Weight {
     
-    /// Calculates the average weight of the elements in the array.
+    /// Function that calculates the average weight of the elements in the array.
     ///
     /// - returns: The average weight value
     func averaging() -> Double {

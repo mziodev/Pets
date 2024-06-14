@@ -10,6 +10,8 @@ import SwiftUI
 struct WeightListRow: View {
     let weight: Weight
     
+    
+    // MARK: - body
     var body: some View {
         HStack {
             Text(weight.date.formatted(date: .complete, time: .omitted))
@@ -22,9 +24,11 @@ struct WeightListRow: View {
     }
 }
 
+
+// MARK: - previews
 #Preview {
     WeightListRow(
         weight: SampleData.shared.petWithChipID.sortedWeights[2]
     )
-        .padding()
+    .padding()
 }

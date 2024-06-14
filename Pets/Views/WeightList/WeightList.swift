@@ -16,9 +16,9 @@ import SwiftUI
 
 struct WeightList: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var modelContext
     
     @State var pet: Pet
-    @State var sortedWeights: [Weight] = []
     
     @State private var selectedTimePeriod: TimePeriod = .lastSixMonths
     @State private var showingAddWeightSheet: Bool = false
@@ -86,7 +86,7 @@ struct WeightList: View {
                     Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
                         .foregroundStyle(.secondary)
                     
-                    PetWeightChart(
+                    WeightListChart(
                         weights: pet.filteringAndSortWeights(
                             in: selectedDateRange
                         )
@@ -102,31 +102,15 @@ struct WeightList: View {
             // MARK: - weight list
             List {
                 Section("Weight list") {
-                    ForEach(sortedWeights) { weight in
+                    ForEach(pet.reverseSortedWeights) { weight in
                         WeightListRow(weight: weight)
                     }
-                    .onDelete { offsets in
-                        withAnimation {
-                            sortedWeights.remove(atOffsets: offsets)
-                            pet.weights.remove(atOffsets: offsets)
-                        }
-                    }
+                    .onDelete(perform: deleteWeights)
                 }
             }
         }
         .navigationTitle("\(pet.name)'s weight list")
         .navigationBarTitleDisplayMode(.inline)
-        
-        
-        .onAppear {
-            sortedWeights = pet.weights.sorted { $0.value > $1.value }
-        }
-        
-        
-        // MARK: - onChange
-        .onChange(of: pet.weights) {
-            if pet.weights.isEmpty { dismiss() }
-        }
         
         
         // MARK: - add weight sheet
@@ -139,24 +123,27 @@ struct WeightList: View {
         //MARK: - toolbar
         .toolbar {
             ToolbarItem(placement: .bottomBar) {
-                Button("Add weight") {
-                    showingAddWeightSheet.toggle()
-                }
-                .bold()
+                Button("Add weight") { showingAddWeightSheet.toggle() }
+                    .bold()
             }
             
             if !pet.weights.isEmpty {
-                ToolbarItem(placement: .topBarTrailing) {
-                    EditButton()
-                }
+                ToolbarItem(placement: .topBarTrailing) { EditButton() }
             }
         }
+    }
+    
+    
+    
+    // MARK: - functions
+    private func deleteWeights(offsets: IndexSet) {
+        offsets.forEach { modelContext.delete(pet.weights[$0]) }
     }
 }
 
 
 // MARK: - previews
-#Preview("Light mode") {
+#Preview {
     NavigationStack {
         WeightList(pet: SampleData.shared.petWithChipID)
     }

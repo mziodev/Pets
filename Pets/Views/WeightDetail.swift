@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WeightDetail: View {
     @Environment(\.dismiss) var dismiss
+//    @Environment(\.modelContext) var modelContext
     
     @Bindable var pet: Pet
     
@@ -19,7 +20,6 @@ struct WeightDetail: View {
     
     
     // MARK: - body
-    
     var body: some View {
         NavigationStack {
             Form {
@@ -57,37 +57,27 @@ struct WeightDetail: View {
             // MARK: - toolbar
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
+                    Button("Cancel") { dismiss() }
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Save") {
-                        let doubleValue = Double(value) ?? 0
-                        let newWeight = Weight(date: date, value: doubleValue)
-                        
-                        pet.weights.append(newWeight)
-                        
-                        dismiss()
-                    }
+                    Button("Save", action: saveWeight)
                 }
             }
         }
     }
     
-    func convertToDouble(_ value: String) -> Double? {
-        let numberFormatter = NumberFormatter()
+    
+    // MARK: - functions
+    func saveWeight() {
+        pet.weights.append(Weight(date: date, value: Double(value) ?? 0))
         
-        numberFormatter.numberStyle = .decimal
-        
-        return numberFormatter.number(from: value)?.doubleValue
+        dismiss()
     }
 }
 
 
 // MARK: - previews
-
 #Preview {
     WeightDetail(pet: SampleData.shared.petWithChipID)
 }

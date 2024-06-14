@@ -24,28 +24,18 @@ struct PetList: View {
                     NavigationLink {
                         PetCard(pet: pet)
                     } label: {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(pet.name)
-                                    .font(.headline)
-                                
-                                Text(pet.breed)
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-                            }
-                            
-                            Spacer()
-                            
-                            Image(systemName: "\(pet.species.rawValue).fill")
-                                .font(.title2)
-                        }
+                        PetListRow(
+                            name: pet.name,
+                            breed: pet.breed,
+                            speciesName: pet.species.rawValue
+                        )
                     }
                 }
                 .onDelete(perform: deletePets)
             }
             .navigationTitle("Pets")
             .overlay {
-                if pets.isEmpty { NoPetsYet() }
+                if pets.isEmpty { PetListNoPetsYet() }
             }
             
             
@@ -60,7 +50,7 @@ struct PetList: View {
             
             // MARK: - toolbar
             .toolbar {
-                ToolbarItem() {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button{
                         showingAddPetSheet.toggle()
                     } label: {
@@ -68,18 +58,17 @@ struct PetList: View {
                     }
                 }
                 
-                ToolbarItem(placement: .topBarTrailing) {
-                    EditButton()
-                }
-                
                 if !pets.isEmpty {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        EditButton()
+                    }
+                    
                     ToolbarItem(placement: .status) {
                         Text("\(pets.count) pets")
                             .font(.caption)
                     }
                 }
-            }
-                
+            }       
         }
     }
     

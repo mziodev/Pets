@@ -13,16 +13,18 @@
 import Charts
 import SwiftUI
 
-struct PetWeightChart: View {
+struct WeightListChart: View {
     let weights: [Weight]
     
+    
+    // MARK: - body
     var body: some View {
         Chart {
             ForEach(weights) { weight in
                 BarMark(
                     x: .value(
                         "Month",
-                        weight.date.formatted(date: .abbreviated, time: .omitted)
+                        weight.date.formatted(.dateTime.month().day())
                     ),
                     y: .value("Weight", weight.value)
                 )
@@ -33,8 +35,12 @@ struct PetWeightChart: View {
     }
 }
 
+
+// MARK: - previews
 #Preview {
-    PetWeightChart(weights: SampleData.shared.petWithChipID.sortedWeights)
-        .frame(height: 240)
-        .padding()
+    WeightListChart(
+        weights: SampleData.shared.petWithChipID.sortedWeights
+    )
+    .frame(height: 240)
+    .padding()
 }

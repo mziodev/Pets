@@ -24,15 +24,10 @@ struct PetImage: View {
                 .clipShape(Circle())
 
         } else {
-            ZStack {
-                Circle()
-                    .frame(width: imageSize.rawValue, height: imageSize.rawValue)
-                    .foregroundStyle(.thickMaterial)
-                
-                Image(systemName: pet.species == .unknown ? "pawprint.fill" : "\(pet.species.rawValue).fill")
-                    .font(.system(size: imageSize.rawValue * 0.45))
-                    .foregroundStyle(Color.accentColor)
-            }
+            PetImagePlaceholder(
+                species: pet.species,
+                imageSize: imageSize
+            )
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct VerifiedCheckMark: View {
+struct PetDetailCheckMark: View {
     let condition: Bool
     
     
@@ -25,11 +25,11 @@ struct VerifiedCheckMark: View {
 
 // MARK: - previews
 #Preview("Incorrect condition") {
-    VerifiedCheckMark(condition: false)
+    PetDetailCheckMark(condition: false)
         .padding()
 }
 
 #Preview("Correct condition") {
-    VerifiedCheckMark(condition: true)
+    PetDetailCheckMark(condition: true)
         .padding()
 }

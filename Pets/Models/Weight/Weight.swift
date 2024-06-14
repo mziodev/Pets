@@ -10,15 +10,12 @@ import SwiftData
 
 @Model
 class Weight {
-    // MARK: - properties
-    
     var date: Date
     var value: Double
     var pet: Pet?
     
     
     // MARK: - init
-    
     init(date: Date, value: Double) {
         self.date = date
         self.value = value

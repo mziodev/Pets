@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct NoPetsYet: View {
+struct PetListNoPetsYet: View {
     var body: some View {
         ContentUnavailableView {
             Label("No pets yet", systemImage: "dog.fill")
-                .foregroundStyle(.tint)
         } description: {
             Text("New pets you add will appear here.")
+                .foregroundStyle(.tint)
         }
     }
 }
 
 #Preview {
-    NoPetsYet()
+    PetListNoPetsYet()
 }

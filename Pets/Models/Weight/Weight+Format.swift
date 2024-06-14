@@ -8,30 +8,15 @@
 import Foundation
 
 extension Weight {
-    // MARK: - computed properties
-    static var formatStyle = Measurement<UnitMass>.FormatStyle(
-        width: .abbreviated,
-        numberFormatStyle: .number
-    )
-    
+    /// Computed variable that contains the correct weight unit depending on the current locale.
+    ///
+    /// - returns: A string with `lb` for US locale and `kg` for the rest of the countries.
     static var units: String {
         if Locale.current.identifier == "en_US" {
             return "lb"
         } else {
             return "kg"
         }
-    }
-    
-    
-    // MARK: - functions
-    
-    /// Transform a `Double` weight value into a `Measured<UnitMass>` one.
-    ///
-    /// Returns a `UnitMass.kilograms` measured weigth value ready to work with.
-    static func getMeasuredWeight(from value: Double) -> Measurement<UnitMass> {
-        let roundedValue = round(value * 100) / 100
-        
-        return Measurement(value: roundedValue, unit: UnitMass.kilograms)
     }
 }
 

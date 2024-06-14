@@ -5,12 +5,6 @@
 //  Created by MZiO on 20/5/24.
 //
 
-/*
- TODO:
- 
-    Add button for showing add menu: weight, vaccine, parasites, vet consultations...
- */
-
 import PhotosUI
 import SwiftData
 import SwiftUI
@@ -22,10 +16,11 @@ struct PetDetail: View {
     
     @Bindable var pet: Pet
     
-    @State var selectedImage: PhotosPickerItem?
     @FocusState var nameTextFieldFocused: Bool
+    @FocusState var chipTextFieldFocused: Bool
     
     let isNew: Bool
+    
     
     // MARK: - form validation logic
     private var isNameVerified: Bool {
@@ -49,40 +44,16 @@ struct PetDetail: View {
     // MARK: - body
     var body: some View {
         VStack {
+            PetDetailImage(pet: pet)
             
-            
-            // MARK: - pet image
-            VStack {
-                PetImage(pet: pet, imageSize: .small)
-                
-                PhotosPicker(
-                    selection: $selectedImage,
-                    matching: .images,
-                    photoLibrary: .shared()
-                ) {
-                    Text(pet.image != nil ? "Change photo" : "Add photo")
-                        .foregroundStyle(
-                            pet.image != nil ? .primary : Color.accentColor
-                        )
-                }
-                
-                if pet.image != nil {
-                    Button("Remove photo", role: .destructive) {
-                        withAnimation {
-                            selectedImage = nil
-                            pet.image = nil
-                        }
-                    }
-                }
-            }
-            
-            
-            // MARK: - form
             Form {
-                
-                
-                // MARK: - form section basics
-                Section("Basic info") {
+                Section("Basics") {
+                    TextField("Name (min. 2 characters)", text: $pet.name)
+                        .focused($nameTextFieldFocused)
+                        .overlay {
+                            PetDetailCheckMark(condition: isNameVerified)
+                        }
+                    
                     Picker("Species", selection: $pet.species) {
                         ForEach(PetSpecies.allCases, id: \.self) { species in
                             Text(species.rawValue.capitalized)
@@ -96,16 +67,8 @@ struct PetDetail: View {
                         }
                     }
                     .pickerStyle(.menu)
-                    
-                    TextField("Name (min. 2 characters)", text: $pet.name)
-                        .focused($nameTextFieldFocused)
-                        .overlay {
-                            VerifiedCheckMark(condition: isNameVerified)
-                        }
                 }
-                
-                
-                // MARK: - form section breed
+
                 Section("Breed") {
                     NavigationLink {
                         PetBreedList(pet: pet)
@@ -117,8 +80,6 @@ struct PetDetail: View {
                     }
                 }
                 
-                
-                // MARK: - form section chip
                 Section("Chip") {
                     Picker("ID type", selection: $pet.chipIDType.animation()) {
                         ForEach(ChipIDType.allCases, id: \.self) { type in
@@ -127,7 +88,7 @@ struct PetDetail: View {
                     }
                     .pickerStyle(.menu)
                     .onChange(of: pet.chipIDType) { oldValue, newValue in
-                        if newValue == .noChipID { pet.chipID = "" }
+                        chipTextFieldFocused = true
                     }
                     
                     if pet.chipIDType != .noChipID {
@@ -136,16 +97,15 @@ struct PetDetail: View {
                             text: $pet.chipID
                         )
                         .keyboardType(.numberPad)
+                        .focused($chipTextFieldFocused)
                         .overlay {
-                            VerifiedCheckMark(
+                            PetDetailCheckMark(
                                 condition: isChipIDVerified
                             )
                         }
                     }
                 }
                 
-                
-                // MARK: - form section dates
                 Section("Dates") {
                     DatePicker(
                         "Born on",
@@ -168,13 +128,9 @@ struct PetDetail: View {
         .scrollDismissesKeyboard(.interactively)
         
         
-        // MARK: - load image task
-        .task(id: selectedImage) {
-            if let data = try? await selectedImage?.loadTransferable(
-                type: Data.self
-            ) {
-                pet.image = data
-            }
+        // MARK: - onAppear
+        .onAppear {
+            if pet.name.isEmpty { nameTextFieldFocused = true }
         }
         
         
@@ -218,14 +174,12 @@ struct PetDetail: View {
 #Preview("New pet") {
     NavigationStack {
         PetDetail(pet: Pet(), isNew: true)
-//            .environment(\.locale, Locale(identifier: "en_US"))
     }
 }
 
 #Preview("Existing pet") {
     NavigationStack {
         PetDetail(pet: SampleData.shared.petWithChipID)
-//            .environment(\.locale, Locale(identifier: "en_US"))
     }
 }
 
