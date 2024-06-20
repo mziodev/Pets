@@ -17,8 +17,6 @@ struct PetChipBarcode: View {
         generateBarcode(from: chipID)
     }
     
-    
-    // MARK: - body
     var body: some View {
         VStack {
             if let barcodeImage {
@@ -33,19 +31,19 @@ struct PetChipBarcode: View {
             }
             
             Text(
-                chipID.isEmpty ? "Barcode reading error, try again" : chipID
+                chipID.isEmpty ? 
+                "Barcode reading error, try again" : chipID
             )
             .font(chipID.isEmpty ? .callout : .title2)
                 .offset(y: chipID.isEmpty ? 5 : -20)
         }
+        .navigationTitle("Chip ID Barcode")
+        .navigationBarTitleDisplayMode(.inline)
         .rotationEffect(Angle(degrees: 90))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.white)
         .foregroundStyle(.black)
     }
-    
-    
-    // MARK: - functions
     
     /// Generates a UIImage representing a Code 128 barcode from a given string.
     ///
@@ -75,13 +73,10 @@ struct PetChipBarcode: View {
     }
 }
 
-
-// MARK: - previews
-
 #Preview("With barcode") {
-    PetChipBarcode(chipID: "123456789098765")
+    NavigationStack { PetChipBarcode(chipID: "123456789098765") }
 }
 
 #Preview("Without barcode") {
-    PetChipBarcode(chipID: "")
+    NavigationStack { PetChipBarcode(chipID: "") }
 }

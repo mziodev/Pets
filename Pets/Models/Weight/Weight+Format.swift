@@ -12,11 +12,7 @@ extension Weight {
     ///
     /// - returns: A string with `lb` for US locale and `kg` for the rest of the countries.
     static var units: String {
-        if Locale.current.identifier == "en_US" {
-            return "lb"
-        } else {
-            return "kg"
-        }
+        Locale.current.identifier == "en_US" ? "lb" : "kg"
     }
 }
 

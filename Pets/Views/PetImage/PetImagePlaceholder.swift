@@ -29,7 +29,7 @@ struct PetImagePlaceholder: View {
                     width: imageSize.rawValue,
                     height: imageSize.rawValue
                 )
-                .foregroundStyle(.thickMaterial)
+                .foregroundStyle(.gray.opacity(0.1))
             
             Image(systemName: species == .unknown ? "pawprint.fill" : "\(species.rawValue).fill")
                 .font(.system(size: imageSize.rawValue * 0.45))

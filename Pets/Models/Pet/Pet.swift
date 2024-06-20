@@ -9,8 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Pet {
-    // MARK: - properties
+class Pet: ObservableObject {
     var species: PetSpecies
     var sex: PetSex
     var name: String
@@ -27,8 +26,9 @@ class Pet {
     @Relationship(deleteRule: .cascade)
     var weights = [Weight]()
     
+    @Relationship(deleteRule: .cascade)
+    var dewormings = [Deworming]()
     
-    // MARK: - init
     init(
         species: PetSpecies = .unknown,
         sex: PetSex = .unknown,
@@ -53,12 +53,9 @@ class Pet {
         self.image = image
     }
     
-    
-    // MARK: - computed properties
-    
-    /// Calculates the age in years and months based on the pet `birthday` date.
+    /// Computed property that calculates the age in years and months based on the pet `birthday` date.
     ///
-    /// Returns an array of two strings: the first represents the years, and the second represents the months.
+    /// - returns: An array with two strings: the first represents the years, and the second represents the months.
     ///
     /// - Note: This property assumes `birthday` is a valid date in the past.
     var age: [String] {
@@ -70,57 +67,23 @@ class Pet {
         var age: [String] = []
         
         switch year {
-        case 0: age.append("")
-        case 1: age.append("1 year")
-        default: age.append("\(year) years")
+        case 0: 
+            age.append("")
+        case 1: 
+            age.append("1 year")
+        default: 
+            age.append("\(year) years")
         }
 
         switch month {
         case 0:
-            if year > 0 {
-                age.append("")
-            } else {
-                age.append("Newborn 🐣")
-            }
-        case 1: age.append("1 month")
-        default: age.append("\(month) months")
+            year > 0 ? age.append("") : age.append("Newborn 🐣")
+        case 1: 
+            age.append("1 month")
+        default: 
+            age.append("\(month) months")
         }
 
         return age
-    }
-    
-    var sortedWeights: [Weight] {
-        weights.sorted { $0.date < $1.date }
-    }
-    
-    var reverseSortedWeights: [Weight] {
-        weights.sorted { $0.date > $1.date }
-    }
-    
-    
-    // MARK: - functions
-    
-    /// Sorts and filters the weights within a given date range.
-    ///
-    /// - Parameter range: A closed range of dates to filter the weights by.
-    ///
-    /// - Returns: An array of weights filtered by date and sorted in ascending order.
-    ///
-    /// - Note: This function assumes that the `weights` array is already populated with `Weight` objects.
-    func filteringAndSortWeights(in range: ClosedRange<Date>) -> [Weight] {
-        weights.filter { range.contains($0.date) }.sorted { $0.date < $1.date }
-    }
-    
-    /// Calculates the average weight of a range of dates.
-    ///
-    /// - parameter range: A closed range of dates for which to calculate the average weight.
-    ///
-    /// - returns: The average weight for the specified date range.
-    ///
-    /// - note: If no weights are found in the specified range, the function returns 0.
-    func getAverageWeight(in range: ClosedRange<Date>) -> Double {
-        let weightsInRange = weights.filter { range.contains($0.date) }
-        
-        return weightsInRange.isEmpty ? 0 : weightsInRange.map { $0.value }.reduce(0, +) / Double(weightsInRange.count)
     }
 }

@@ -14,6 +14,7 @@ struct PetsApp: App {
         let schema = Schema([
             Pet.self,
             Weight.self,
+            Deworming.self
         ])
         
         let modelConfiguration = ModelConfiguration(

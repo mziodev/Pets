@@ -6,11 +6,10 @@
 //
 
 /*
- TODO:
- Add current age on each weight??? for checking pet grow. Show age on each weight bar on chart
+ TODO
+ Fix delete weights. They are erratic on the deletion.
  */
 
-import Charts
 import SwiftData
 import SwiftUI
 
@@ -18,27 +17,21 @@ struct WeightList: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
     
-    @State var pet: Pet
+    @ObservedObject var pet: Pet
     
-    @State private var selectedTimePeriod: TimePeriod = .lastSixMonths
+    @State private var selectedTimePeriod: TimePeriod = .lastSixMonthsPeriod
     @State private var showingAddWeightSheet: Bool = false
     
-    private let lastSixMonthsRange = Date.now - (86400 * 180) ... Date.now
-    private let lastTwelveMonthsRange = Date.now - (86400 * 365) ... Date.now
+    private let lastSixMonths = Date.now - (86400 * 180)
+    private let lastTwelveMonths = Date.now - (86400 * 365)
     
-    
-    // MARK: - computed properties
     private var selectedDateRange: ClosedRange<Date> {
-        let selectedRange: ClosedRange<Date>
-        
         switch selectedTimePeriod {
-        case .lastSixMonths:
-            selectedRange = lastSixMonthsRange
-        case .lastTwelveMonths:
-            selectedRange = lastTwelveMonthsRange
+        case .lastSixMonthsPeriod:
+            return lastSixMonths ... .now
+        case .lastTwelveMonthsPeriod:
+            return lastTwelveMonths ... .now
         }
-        
-        return selectedRange
     }
     
     var scrollPositionStartString: String {
@@ -53,8 +46,6 @@ struct WeightList: View {
         )
     }
     
-    
-    // MARK: - body
     var body: some View {
         VStack(alignment: .leading) {
             Picker(
@@ -67,9 +58,7 @@ struct WeightList: View {
             }
             .pickerStyle(.segmented)
             .padding(.horizontal)
-            
-            
-            // MARK: - chart
+
             if !pet.weights.isEmpty {
                 VStack(alignment: .leading) {
                     Text("Average weight")
@@ -87,7 +76,7 @@ struct WeightList: View {
                         .foregroundStyle(.secondary)
                     
                     WeightListChart(
-                        weights: pet.filteringAndSortWeights(
+                        weights: pet.filteringAndSortingWeights(
                             in: selectedDateRange
                         )
                     )
@@ -97,34 +86,31 @@ struct WeightList: View {
                 .padding(.horizontal)
                 .padding(.top, 2)
             }
-            
-            
-            // MARK: - weight list
+
             List {
-                Section("Weight list") {
+                Section("Weight List") {
                     ForEach(pet.reverseSortedWeights) { weight in
                         WeightListRow(weight: weight)
                     }
                     .onDelete(perform: deleteWeights)
                 }
             }
+            .listStyle(.plain)
         }
         .navigationTitle("\(pet.name)'s weight list")
         .navigationBarTitleDisplayMode(.inline)
-        
-        
-        // MARK: - add weight sheet
         .sheet(isPresented: $showingAddWeightSheet) {
-            WeightDetail(pet: pet)
-                .interactiveDismissDisabled()
+            WeightDetail(pet: pet) 
         }
-        
-        
-        //MARK: - toolbar
         .toolbar {
             ToolbarItem(placement: .bottomBar) {
-                Button("Add weight") { showingAddWeightSheet.toggle() }
-                    .bold()
+                VStack {
+                    Button("Add weight") { showingAddWeightSheet.toggle() }
+                        .bold()
+                    
+                    Text("\(pet.weights.count) weights")
+                        .font(.caption)
+                }
             }
             
             if !pet.weights.isEmpty {
@@ -132,19 +118,16 @@ struct WeightList: View {
             }
         }
     }
-    
-    
-    
-    // MARK: - functions
+
     private func deleteWeights(offsets: IndexSet) {
-        offsets.forEach { modelContext.delete(pet.weights[$0]) }
+        withAnimation {
+            offsets.forEach { modelContext.delete(pet.weights[$0]) }
+            pet.objectWillChange.send()
+        }
     }
 }
 
-
-// MARK: - previews
 #Preview {
-    NavigationStack {
-        WeightList(pet: SampleData.shared.petWithChipID)
-    }
+    NavigationStack { WeightList(pet: SampleData.shared.petWithChipID) }
+        .modelContainer(SampleData.shared.modelContainer)
 }

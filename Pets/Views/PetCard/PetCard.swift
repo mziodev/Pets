@@ -16,45 +16,55 @@ struct PetCard: View {
         pet.reverseSortedWeights.first?.value ?? 0
     }
     
-    
-    // MARK: - body
     var body: some View {
-        VStack {
-            PetImage(pet: pet, imageSize: .large)
-        
-            List {
-                PetCardBreed(breed: pet.breed)
-                    .listRowSeparator(.hidden)
-                
-                PetCardAge(
-                    year: pet.age.first,
-                    month: pet.age.last
-                )
-                .listRowSeparator(.hidden)
-                
-                PetCardWeight(pet: pet)
-                .listRowSeparator(.hidden)
-                
-                PetCardChipID(chipID: pet.chipID)
-                    .listRowSeparator(.hidden)
-            }
-            .listStyle(.plain)
-            .padding(.top)
+        ZStack {
+            Rectangle()
+                .frame(maxWidth: 400, maxHeight: 700)
+                .foregroundStyle(.thickMaterial)
+                .clipShape(.rect(cornerRadius: 16))
+                .overlay {
+                    VStack {
+                        PetImage(pet: pet, imageSize: .large)
+                            .padding(.top)
+                        
+                        List {
+                            PetCardBreed(breed: pet.breed)
+                                .listRowSeparator(.hidden)
+                                .listRowBackground(Color.clear)
+
+                            
+                            PetCardAge(
+                                year: pet.age.first,
+                                month: pet.age.last
+                            )
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
+
+                            
+                            PetCardWeight(pet: pet)
+                                .listRowSeparator(.hidden)
+                                .listRowBackground(Color.clear)
+
+                            
+                            PetCardChipID(chipID: pet.chipID)
+                                .listRowSeparator(.hidden)
+                                .listRowBackground(Color.clear)
+                        }
+                        .listStyle(.plain)
+                        .padding(.horizontal)
+                        .scrollIndicators(.hidden)
+                    }
+                    .padding(.top)
+                }
+                .padding([.bottom, .horizontal])
         }
         .navigationTitle(pet.name)
-        .padding()
-        
-        
-        // MARK: - PetDetail sheet
         .sheet(isPresented: $showingPetDetail) {
             NavigationStack {
                 PetDetail(pet: pet)
                     .interactiveDismissDisabled()
             }
         }
-        
-        
-        // MARK: - toolbar
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button("Edit") { showingPetDetail.toggle() }
@@ -64,7 +74,6 @@ struct PetCard: View {
 }
 
 
-// MARK: - previews
 #Preview("Pet with chip ID") {
     NavigationStack {
         PetCard(pet: SampleData.shared.petWithChipID)
