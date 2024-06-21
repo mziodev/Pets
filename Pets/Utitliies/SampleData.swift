@@ -22,7 +22,7 @@ class SampleData {
         let schema = Schema([
             Pet.self,
             Weight.self,
-            Deworming.self,
+            DewormingTreatment.self,
         ])
         
         let modelConfiguration = ModelConfiguration(
@@ -51,13 +51,19 @@ class SampleData {
             modelContext.insert(weight)
         }
         
-        for deworming in Deworming.sampleData {
+        for deworming in DewormingTreatment.sampleData {
             modelContext.insert(deworming)
         }
         
-        Pet.sampleData[2].weights = [
-            Weight.sampleData[7],
-            Weight.sampleData[8],
+        Pet.sampleData[0].weights = [
+            Weight.sampleData[0],
+            Weight.sampleData[1],
+            Weight.sampleData[2],
+        ]
+        
+        Pet.sampleData[0].dewormings = [
+            DewormingTreatment.sampleData[0],
+            DewormingTreatment.sampleData[1],
         ]
         
         Pet.sampleData[1].weights = [
@@ -67,10 +73,19 @@ class SampleData {
             Weight.sampleData[6],
         ]
         
-        Pet.sampleData[0].weights = [
-            Weight.sampleData[0],
-            Weight.sampleData[1],
-            Weight.sampleData[2],
+        Pet.sampleData[1].dewormings = [
+            DewormingTreatment.sampleData[2],
+            DewormingTreatment.sampleData[3],
+        ]
+        
+        Pet.sampleData[2].weights = [
+            Weight.sampleData[7],
+            Weight.sampleData[8],
+        ]
+        
+        Pet.sampleData[3].dewormings = [
+            DewormingTreatment.sampleData[4],
+            DewormingTreatment.sampleData[5],
         ]
         
         do {

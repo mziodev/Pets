@@ -27,7 +27,7 @@ class Pet: ObservableObject {
     var weights = [Weight]()
     
     @Relationship(deleteRule: .cascade)
-    var dewormings = [Deworming]()
+    var dewormings = [DewormingTreatment]()
     
     init(
         species: PetSpecies = .unknown,

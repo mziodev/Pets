@@ -22,7 +22,8 @@ struct FontTest: View {
             Text("Title 3")
                 .font(.title3)
             
-            Text("Default")
+            Text("Body (default)")
+//                .font(.body)
             
             Text("Callout")
                 .font(.callout)

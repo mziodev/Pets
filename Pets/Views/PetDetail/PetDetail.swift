@@ -20,11 +20,9 @@ struct PetDetail: View {
     @FocusState var chipTextFieldFocused: Bool
     
     let isNew: Bool
-    
-    
-    // MARK: - form validation logic
+
     private var isNameVerified: Bool {
-        checkMinimumLength(pet.name)
+        FormVerification.checkMinimumLength(pet.name)
     }
     private var isChipIDVerified: Bool {
         Pet.chipIDValidators[pet.chipIDType]?(pet.chipID) ?? false
@@ -33,15 +31,13 @@ struct PetDetail: View {
         isNameVerified && isChipIDVerified
     }
     
-    
-    //  MARK: - init
+
     init(pet: Pet, isNew: Bool = false) {
         self.pet = pet
         self.isNew = isNew
     }
     
-    
-    // MARK: - body
+
     var body: some View {
         VStack {
             PetDetailImage(pet: pet)
@@ -51,7 +47,7 @@ struct PetDetail: View {
                     TextField("Name (min. 2 characters)", text: $pet.name)
                         .focused($nameTextFieldFocused)
                         .overlay {
-                            PetDetailCheckMark(condition: isNameVerified)
+                            VerificationCheckMark(condition: isNameVerified)
                         }
                     
                     Picker("Species", selection: $pet.species) {
@@ -99,7 +95,7 @@ struct PetDetail: View {
                         .keyboardType(.numberPad)
                         .focused($chipTextFieldFocused)
                         .overlay {
-                            PetDetailCheckMark(
+                            VerificationCheckMark(
                                 condition: isChipIDVerified
                             )
                         }
@@ -126,15 +122,9 @@ struct PetDetail: View {
         .navigationTitle(isNew ? "New pet" : pet.name)
         .navigationBarTitleDisplayMode(.inline)
         .scrollDismissesKeyboard(.interactively)
-        
-        
-        // MARK: - onAppear
         .onAppear {
             if pet.name.isEmpty { nameTextFieldFocused = true }
         }
-        
-        
-        // MARK: - toolbar
         .toolbar {
             if isNew {
                 ToolbarItem(placement: .cancellationAction) {
@@ -159,14 +149,6 @@ struct PetDetail: View {
             }
         }
     }
-    
-    
-    // MARK: functions
-    /// Checks if the given string has a minimum length of 2 characters.
-    ///
-    /// - Parameter name: The string to check.
-    /// - Returns: `true` if the string has a minimum length of 2 characters, `false` otherwise.
-    func checkMinimumLength(_ name: String) -> Bool { name.count > 1 }
 }
 
 

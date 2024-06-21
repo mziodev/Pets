@@ -8,10 +8,9 @@
 import SwiftData
 import SwiftUI
 
-struct DewormingActiveList: View {
-    @Query(filter: #Predicate<Deworming> { deworming in
-        deworming.expirationDate > now
-    } , sort: \Deworming.expirationDate) var activeDewormings: [Deworming]
+struct DewormingTreatmentList: View {
+    @Query(sort: \DewormingTreatment.startingDate, order: .reverse) 
+    var dewormingTreatments: [DewormingTreatment]
     
     @Environment(\.modelContext) private var modelContext
     
@@ -21,15 +20,13 @@ struct DewormingActiveList: View {
         NavigationStack {
             VStack {
                 List {
-                    Section("Active deworming") {
-                        ForEach(activeDewormings) { deworming in
+                    Section {
+                        ForEach(dewormingTreatments) { deworming in
                             NavigationLink{
                                 // go to deworming details
                             } label: {
-                                DewormingActiveListRow(
-                                    treatmentName: deworming.treatmentName,
-                                    treatmentDate: deworming.date,
-                                    remainingTreatmentDays: deworming.remainingTreatmentDays
+                                DewormingTreatmentListRow(
+                                    dewormingTreatment: deworming
                                 )
                             }
                         }
@@ -37,21 +34,24 @@ struct DewormingActiveList: View {
                     }
                 }
             }
-            .navigationTitle("Pets deworming list")
+            .navigationTitle("Pets deworming")
+            .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem {
-                    EditButton()
+//                    EditButton()
                 }
             }
         }
     }
     
+    
     private func deteleDewormings(offsets: IndexSet) {
-        offsets.forEach { modelContext.delete(activeDewormings[$0]) }
+        offsets.forEach { modelContext.delete(dewormingTreatments[$0]) }
     }
 }
 
+
 #Preview {
-    DewormingActiveList()
+    DewormingTreatmentList()
         .modelContainer(SampleData.shared.modelContainer)
 }

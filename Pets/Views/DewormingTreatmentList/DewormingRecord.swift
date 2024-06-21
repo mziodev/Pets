@@ -9,10 +9,10 @@ import SwiftData
 import SwiftUI
 
 struct DewormingRecord: View {
-    @Query(filter: #Predicate<Deworming> { deworming in
-        deworming.expirationDate <= now
-    }, sort: \Deworming.date, order: .reverse)
-    var dewormingHistory: [Deworming]
+    @Query(filter: #Predicate<DewormingTreatment> { deworming in
+        deworming.endingDate <= now
+    }, sort: \DewormingTreatment.startingDate, order: .reverse)
+    var dewormingHistory: [DewormingTreatment]
     
     static var now: Date { Date.now }
     
@@ -29,8 +29,8 @@ struct DewormingRecord: View {
                         // go to deworming details
                     } label: {
                         DewormingHistoryListRow(
-                            treatmentName: deworming.treatmentName,
-                            treatmentDate: deworming.date
+                            treatmentName: deworming.name,
+                            treatmentDate: deworming.startingDate
                         )
                     }
                 }
