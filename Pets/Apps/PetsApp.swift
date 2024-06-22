@@ -14,7 +14,7 @@ struct PetsApp: App {
         let schema = Schema([
             Pet.self,
             Weight.self,
-            DewormingTreatment.self
+//            DewormingTreatment.self
         ])
         
         let modelConfiguration = ModelConfiguration(
@@ -34,7 +34,7 @@ struct PetsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            DewormingTreatmentDetail(deworming: DewormingTreatment(pet: SampleData.shared.petWithChipID), isNew: true)
+            PetList()
                 .modelContainer(sharedModelContainer)
         }
     }
