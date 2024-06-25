@@ -9,49 +9,79 @@ import SwiftData
 import SwiftUI
 
 struct DewormingTreatmentList: View {
-    @Query(sort: \DewormingTreatment.startingDate, order: .reverse) 
-    var dewormingTreatments: [DewormingTreatment]
+    @Environment(\.dismiss) var dismiss
+//    @Environment(\.modelContext) var modelContext
     
-    @Environment(\.modelContext) private var modelContext
+    @ObservedObject var pet: Pet
     
-    static var now: Date { Date.now }
+    @State private var showingDewormingTreatmentDetail: Bool = false
     
     var body: some View {
         NavigationStack {
             VStack {
                 List {
-                    Section {
-                        ForEach(dewormingTreatments) { deworming in
-                            NavigationLink{
-                                // go to deworming details
-                            } label: {
-                                DewormingTreatmentListRow(
-                                    dewormingTreatment: deworming
-                                )
+                    Section("Active treatments") {
+                        ForEach(pet.reverseSortedDewormingTreatments) { deworming in
+                            if (deworming.activeDays > 0) {
+                                NavigationLink{
+                                    // go to deworming details
+                                } label: {
+                                    DewormingTreatmentListRow(
+                                        dewormingTreatment: deworming
+                                    )
+                                }
                             }
                         }
-                        .onDelete(perform: deteleDewormings)
+                    }
+                    
+                    Section("Expired treatments") {
+                        ForEach(pet.reverseSortedDewormingTreatments) { deworming in
+                            if (deworming.activeDays <= 0) {
+                                NavigationLink{
+                                    // go to deworming details
+                                } label: {
+                                    DewormingTreatmentListRow(
+                                        dewormingTreatment: deworming
+                                    )
+                                }
+                            }
+                        }
                     }
                 }
             }
-            .navigationTitle("Pets deworming")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("\(pet.name) deworming")
+            .navigationBarTitleDisplayMode(.inline)
+            .interactiveDismissDisabled()
+            .sheet(isPresented: $showingDewormingTreatmentDetail) {
+                DewormingTreatmentDetail(
+                    dewormingTreatment: DewormingTreatment(pet: pet),
+                    isNew: true
+                )
+            }
             .toolbar {
                 ToolbarItem {
-//                    EditButton()
+                    Button {
+                        showingDewormingTreatmentDetail = true
+                    } label: {
+                        Label("Add deworming treatment", systemImage: "plus")
+                    }
+                }
+                
+                ToolbarItem {
+                    Button("Done") { dismiss() }
+                }
+                
+                ToolbarItem(placement: .status) {
+                    Text("\(pet.activeDewormingTreatments) active treatments")
+                        .font(.caption)
                 }
             }
         }
-    }
-    
-    
-    private func deteleDewormings(offsets: IndexSet) {
-        offsets.forEach { modelContext.delete(dewormingTreatments[$0]) }
     }
 }
 
 
 #Preview {
-    DewormingTreatmentList()
+    DewormingTreatmentList(pet: SampleData.shared.petWithChipID)
         .modelContainer(SampleData.shared.modelContainer)
 }

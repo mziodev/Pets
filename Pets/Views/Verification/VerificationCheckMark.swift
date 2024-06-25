@@ -11,7 +11,6 @@ struct VerificationCheckMark: View {
     let condition: Bool
     
     
-    // MARK: - body
     var body: some View {
         HStack {
             Spacer()
@@ -23,7 +22,6 @@ struct VerificationCheckMark: View {
 }
 
 
-// MARK: - previews
 #Preview("Incorrect condition") {
     VerificationCheckMark(condition: false)
         .padding()

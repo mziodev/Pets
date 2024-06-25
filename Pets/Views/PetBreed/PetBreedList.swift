@@ -12,16 +12,16 @@ import SwiftUI
 struct PetBreedList: View {
     @Bindable var pet: Pet
     
-    private var petBreedList: [PetBreed] {
+    private var petBreedsSorted: [PetBreed] {
         PetBreedDataService.loadPetBreeds(
             from: "\(pet.species.rawValue)Breed"
-        ) ?? []
+        )?.sorted { $0.name < $1.name } ?? []
     }
     private var filteredPetBreedList: [PetBreed] {
         if searchText.isEmpty {
-            return petBreedList
+            return petBreedsSorted
         } else {
-            return petBreedList.filter { $0.name.contains(searchText) }
+            return petBreedsSorted.filter { $0.name.contains(searchText) }
         }
     }
     
@@ -42,8 +42,6 @@ struct PetBreedList: View {
                         .lineLimit(1)
                 }
                 
-                
-                // MARK: - breed list
                 List {
                     ForEach(filteredPetBreedList) { breed in
                         if breed.variations.isEmpty {
@@ -57,7 +55,6 @@ struct PetBreedList: View {
                             NavigationLink {
                                 PetBreedVariationList(
                                     pet: pet,
-//                                    isSearchPresented: $isSearchPresented,
                                     breed: breed
                                 )
                             } label: {
@@ -72,20 +69,13 @@ struct PetBreedList: View {
                     text: $searchText,
                     isPresented: $isSearchPresented
                 )
-                
-                // MARK: - onAppear
-                .onAppear {
-                    resetSearchable()
-                }
+                .onAppear { resetSearchable() }
             }
             .navigationTitle(pet.name)
             .navigationBarTitleDisplayMode(.inline)
-            
-            
-            // MARK: - toolbar
             .toolbar {
                 ToolbarItem(placement: .status) {
-                    Text("\(petBreedList.count) breeds")
+                    Text("\(petBreedsSorted.count) breeds")
                         .font(.caption)
                 }
             }
@@ -96,6 +86,7 @@ struct PetBreedList: View {
         
     }
     
+    
     private func resetSearchable() {
         searchText = ""
         isSearchPresented = !searchText.isEmpty
@@ -103,7 +94,6 @@ struct PetBreedList: View {
 }
 
 
-// MARK: - previews
 #Preview("Breed list is empty") {
     NavigationStack {
         PetBreedList(pet: SampleData.shared.petWithoutSpecies)

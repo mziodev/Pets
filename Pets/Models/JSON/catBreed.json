@@ -1,393 +1,398 @@
 [
-  {
-    "id": 1,
-    "name": "Abyssinian",
-    "variations": []
-  },
-  {
-    "id": 2,
-    "name": "Aegean",
-    "variations": []
-  },
-  {
-    "id": 3,
-    "name": "American Bobtail",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 4,
-    "name": "American Curl",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 5,
-    "name": "American Shorthair",
-    "variations": []
-  },
-  {
-    "id": 6,
-    "name": "American Wirehair",
-    "variations": []
-  },
-  {
-    "id": 7,
-    "name": "Ashera",
-    "variations": []
-  },
-  {
-    "id": 8,
-    "name": "Asian",
-    "variations": ["Longhair", "Semilonghair", "Shorthair"]
-  },
-  {
-    "id": 9,
-    "name": "Asian Semi-Longhair",
-    "variations": []
-  },
-  {
-    "id": 10,
-    "name": "Balinese",
-    "variations": ["Longhair", "Javanese"]
-  },
-  {
-    "id": 11,
-    "name": "Bambino",
-    "variations": []
-  },
-  {
-    "id": 12,
-    "name": "Bengal",
-    "variations": ["Brown Spotted", "Brown Marbled", "Rosetted", "Snow Spotted", "Snow Marbled", "Silver Spotted", "Silver Marbled", "Blue Spotted", "Blue Marbled"]
-  },
-  {
-    "id": 13,
-    "name": "Birman",
-    "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
-  },
-  {
-    "id": 14,
-    "name": "Bombay",
-    "variations": []
-  },
-  {
-    "id": 15,
-    "name": "Brazilian Shorthair",
-    "variations": []
-  },
-  {
-    "id": 16,
-    "name": "British Longhair",
-    "variations": []
-  },
-  {
-    "id": 17,
-    "name": "British Shorthair",
-    "variations": []
-  },
-  {
-    "id": 18,
-    "name": "Burmese",
-    "variations": ["Solid", "Tortoiseshell", "Torbie"]
-  },
-  {
-    "id": 19,
-    "name": "Burmilla",
-    "variations": ["Solid", "Tortoiseshell", "Torbie"]
-  },
-  {
-    "id": 20,
-    "name": "Calico",
-    "variations": []
-  },
-  {
-    "id": 21,
-    "name": "Canadian Sphynx",
-    "variations": []
-  },
-  {
-    "id": 22,
-    "name": "Chartreux",
-    "variations": []
-  },
-  {
-    "id": 23,
-    "name": "Chausie",
-    "variations": []
-  },
-  {
-    "id": 24,
-    "name": "Cherubim",
-    "variations": []
-  },
-  {
-    "id": 25,
-    "name": "Chinchilla",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 26,
-    "name": "Colorpoint Shorthair",
-    "variations": []
-  },
-  {
-    "id": 27,
-    "name": "Cornish Rex",
-    "variations": []
-  },
-  {
-    "id": 28,
-    "name": "Cymric",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 29,
-    "name": "Cyprus",
-    "variations": []
-  },
-  {
-    "id": 30,
-    "name": "Devon Rex",
-    "variations": []
-  },
-  {
-    "id": 31,
-    "name": "Donskoy",
-    "variations": []
-  },
-  {
-    "id": 32,
-    "name": "Dragon Li",
-    "variations": []
-  },
-  {
-    "id": 33,
-    "name": "Dutch Van",
-    "variations": []
-  },
-  {
-    "id": 34,
-    "name": "Egyptian Mau",
-    "variations": []
-  },
-  {
-    "id": 35,
-    "name": "Exotic Shorthair",
-    "variations": []
-  },
-  {
-    "id": 36,
-    "name": "Foldex",
-    "variations": []
-  },
-  {
-    "id": 37,
-    "name": "German Rex",
-    "variations": []
-  },
-  {
-    "id": 38,
-    "name": "Havana",
-    "variations": []
-  },
-  {
-    "id": 39,
-    "name": "Himalayan",
-    "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
-  },
-  {
-    "id": 40,
-    "name": "Japanese Bobtail",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 41,
-    "name": "Javanese",
-    "variations": []
-  },
-  {
-    "id": 42,
-    "name": "Korat",
-    "variations": []
-  },
-  {
-    "id": 43,
-    "name": "Kurilian",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 44,
-    "name": "LaPerm",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 45,
-    "name": "Maine Coon",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 46,
-    "name": "Manx",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 47,
-    "name": "Munchkin",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 48,
-    "name": "Nebelung",
-    "variations": []
-  },
-  {
-    "id": 49,
-    "name": "Norwegian Forest Cat",
-    "variations": []
-  },
-  {
-    "id": 50,
-    "name": "Ocicat",
-    "variations": []
-  },
-  {
-    "id": 51,
-    "name": "Ojos Azules",
-    "variations": []
-  },
-  {
-    "id": 52,
-    "name": "Oriental",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 53,
-    "name": "Oriental Longhair",
-    "variations": []
-  },
-  {
-    "id": 54,
-    "name": "Oriental Shorthair",
-    "variations": []
-  },
-  {
-    "id": 55,
-    "name": "Persian",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 56,
-    "name": "Peterbald",
-    "variations": []
-  },
-  {
-    "id": 57,
-    "name": "Pixie-bob",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 58,
-    "name": "Polydactyl",
-    "variations": []
-  },
-  {
-    "id": 59,
-    "name": "Ragamuffin",
-    "variations": []
-  },
-  {
-    "id": 60,
-    "name": "Ragdoll",
-    "variations": []
-  },
-  {
-    "id": 61,
-    "name": "Russian Blue",
-    "variations": []
-  },
-  {
-    "id": 62,
-    "name": "Russian White",
-    "variations": []
-  },
-  {
-    "id": 63,
-    "name": "Savannah",
-    "variations": ["Brown Spotted", "Brown Marbled", "Rosetted", "Snow Spotted", "Snow Marbled", "Silver Spotted", "Silver Marbled", "Blue Spotted", "Blue Marbled"]
-  },
-  {
-    "id": 64,
-    "name": "Scottish Fold",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 65,
-    "name": "Selkirk Rex",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 66,
-    "name": "Siamese",
-    "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
-  },
-  {
-    "id": 67,
-    "name": "Siberian",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 68,
-    "name": "Singapura",
-    "variations": []
-  },
-  {
-    "id": 69,
-    "name": "Snowshoe",
-    "variations": []
-  },
-  {
-    "id": 70,
-    "name": "Somali",
-    "variations": ["Longhair", "Shorthair"]
-  },
-  {
-    "id": 71,
-    "name": "Sphynx",
-    "variations": []
-  },
-  {
-    "id": 72,
-    "name": "Tonkinese",
-    "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
-  },
-  {
-    "id": 73,
-    "name": "Torbie",
-    "variations": []
-  },
-  {
-    "id": 74,
-    "name": "Tortoiseshell",
-    "variations": []
-  },
-  {
-    "id": 75,
-    "name": "Turkish Angora",
-    "variations": []
-  },
-  {
-    "id": 76,
-    "name": "Turkish Van",
-    "variations": []
-  },
-  {
-    "id": 77,
-    "name": "Ukrainian Levkoy",
-    "variations": []
-  },
-  {
-    "id": 78,
-    "name": "York Chocolate",
-    "variations": []
-  }
+    {
+        "id": 0,
+        "name": "Mixed-breed",
+        "variations": []
+    },
+    {
+        "id": 1,
+        "name": "Abyssinian",
+        "variations": []
+    },
+    {
+        "id": 2,
+        "name": "Aegean",
+        "variations": []
+    },
+    {
+        "id": 3,
+        "name": "American Bobtail",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 4,
+        "name": "American Curl",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 5,
+        "name": "American Shorthair",
+        "variations": []
+    },
+    {
+        "id": 6,
+        "name": "American Wirehair",
+        "variations": []
+    },
+    {
+        "id": 7,
+        "name": "Ashera",
+        "variations": []
+    },
+    {
+        "id": 8,
+        "name": "Asian",
+        "variations": ["Longhair", "Semilonghair", "Shorthair"]
+    },
+    {
+        "id": 9,
+        "name": "Asian Semi-Longhair",
+        "variations": []
+    },
+    {
+        "id": 10,
+        "name": "Balinese",
+        "variations": ["Longhair", "Javanese"]
+    },
+    {
+        "id": 11,
+        "name": "Bambino",
+        "variations": []
+    },
+    {
+        "id": 12,
+        "name": "Bengal",
+        "variations": ["Brown Spotted", "Brown Marbled", "Rosetted", "Snow Spotted", "Snow Marbled", "Silver Spotted", "Silver Marbled", "Blue Spotted", "Blue Marbled"]
+    },
+    {
+        "id": 13,
+        "name": "Birman",
+        "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
+    },
+    {
+        "id": 14,
+        "name": "Bombay",
+        "variations": []
+    },
+    {
+        "id": 15,
+        "name": "Brazilian Shorthair",
+        "variations": []
+    },
+    {
+        "id": 16,
+        "name": "British Longhair",
+        "variations": []
+    },
+    {
+        "id": 17,
+        "name": "British Shorthair",
+        "variations": []
+    },
+    {
+        "id": 18,
+        "name": "Burmese",
+        "variations": ["Solid", "Tortoiseshell", "Torbie"]
+    },
+    {
+        "id": 19,
+        "name": "Burmilla",
+        "variations": ["Solid", "Tortoiseshell", "Torbie"]
+    },
+    {
+        "id": 20,
+        "name": "Calico",
+        "variations": []
+    },
+    {
+        "id": 21,
+        "name": "Canadian Sphynx",
+        "variations": []
+    },
+    {
+        "id": 22,
+        "name": "Chartreux",
+        "variations": []
+    },
+    {
+        "id": 23,
+        "name": "Chausie",
+        "variations": []
+    },
+    {
+        "id": 24,
+        "name": "Cherubim",
+        "variations": []
+    },
+    {
+        "id": 25,
+        "name": "Chinchilla",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 26,
+        "name": "Colorpoint Shorthair",
+        "variations": []
+    },
+    {
+        "id": 27,
+        "name": "Cornish Rex",
+        "variations": []
+    },
+    {
+        "id": 28,
+        "name": "Cymric",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 29,
+        "name": "Cyprus",
+        "variations": []
+    },
+    {
+        "id": 30,
+        "name": "Devon Rex",
+        "variations": []
+    },
+    {
+        "id": 31,
+        "name": "Donskoy",
+        "variations": []
+    },
+    {
+        "id": 32,
+        "name": "Dragon Li",
+        "variations": []
+    },
+    {
+        "id": 33,
+        "name": "Dutch Van",
+        "variations": []
+    },
+    {
+        "id": 34,
+        "name": "Egyptian Mau",
+        "variations": []
+    },
+    {
+        "id": 35,
+        "name": "Exotic Shorthair",
+        "variations": []
+    },
+    {
+        "id": 36,
+        "name": "Foldex",
+        "variations": []
+    },
+    {
+        "id": 37,
+        "name": "German Rex",
+        "variations": []
+    },
+    {
+        "id": 38,
+        "name": "Havana",
+        "variations": []
+    },
+    {
+        "id": 39,
+        "name": "Himalayan",
+        "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
+    },
+    {
+        "id": 40,
+        "name": "Japanese Bobtail",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 41,
+        "name": "Javanese",
+        "variations": []
+    },
+    {
+        "id": 42,
+        "name": "Korat",
+        "variations": []
+    },
+    {
+        "id": 43,
+        "name": "Kurilian",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 44,
+        "name": "LaPerm",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 45,
+        "name": "Maine Coon",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 46,
+        "name": "Manx",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 47,
+        "name": "Munchkin",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 48,
+        "name": "Nebelung",
+        "variations": []
+    },
+    {
+        "id": 49,
+        "name": "Norwegian Forest Cat",
+        "variations": []
+    },
+    {
+        "id": 50,
+        "name": "Ocicat",
+        "variations": []
+    },
+    {
+        "id": 51,
+        "name": "Ojos Azules",
+        "variations": []
+    },
+    {
+        "id": 52,
+        "name": "Oriental",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 53,
+        "name": "Oriental Longhair",
+        "variations": []
+    },
+    {
+        "id": 54,
+        "name": "Oriental Shorthair",
+        "variations": []
+    },
+    {
+        "id": 55,
+        "name": "Persian",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 56,
+        "name": "Peterbald",
+        "variations": []
+    },
+    {
+        "id": 57,
+        "name": "Pixie-bob",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 58,
+        "name": "Polydactyl",
+        "variations": []
+    },
+    {
+        "id": 59,
+        "name": "Ragamuffin",
+        "variations": []
+    },
+    {
+        "id": 60,
+        "name": "Ragdoll",
+        "variations": []
+    },
+    {
+        "id": 61,
+        "name": "Russian Blue",
+        "variations": []
+    },
+    {
+        "id": 62,
+        "name": "Russian White",
+        "variations": []
+    },
+    {
+        "id": 63,
+        "name": "Savannah",
+        "variations": ["Brown Spotted", "Brown Marbled", "Rosetted", "Snow Spotted", "Snow Marbled", "Silver Spotted", "Silver Marbled", "Blue Spotted", "Blue Marbled"]
+    },
+    {
+        "id": 64,
+        "name": "Scottish Fold",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 65,
+        "name": "Selkirk Rex",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 66,
+        "name": "Siamese",
+        "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
+    },
+    {
+        "id": 67,
+        "name": "Siberian",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 68,
+        "name": "Singapura",
+        "variations": []
+    },
+    {
+        "id": 69,
+        "name": "Snowshoe",
+        "variations": []
+    },
+    {
+        "id": 70,
+        "name": "Somali",
+        "variations": ["Longhair", "Shorthair"]
+    },
+    {
+        "id": 71,
+        "name": "Sphynx",
+        "variations": []
+    },
+    {
+        "id": 72,
+        "name": "Tonkinese",
+        "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
+    },
+    {
+        "id": 73,
+        "name": "Torbie",
+        "variations": []
+    },
+    {
+        "id": 74,
+        "name": "Tortoiseshell",
+        "variations": []
+    },
+    {
+        "id": 75,
+        "name": "Turkish Angora",
+        "variations": []
+    },
+    {
+        "id": 76,
+        "name": "Turkish Van",
+        "variations": []
+    },
+    {
+        "id": 77,
+        "name": "Ukrainian Levkoy",
+        "variations": []
+    },
+    {
+        "id": 78,
+        "name": "York Chocolate",
+        "variations": []
+    }
 ]
-
+ 

@@ -26,7 +26,6 @@ struct PetCardAge: View {
             
             Spacer()
         }
-        .frame(height: 50)
     }
 }
 

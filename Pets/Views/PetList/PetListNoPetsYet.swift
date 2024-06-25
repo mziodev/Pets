@@ -10,13 +10,14 @@ import SwiftUI
 struct PetListNoPetsYet: View {
     var body: some View {
         ContentUnavailableView {
-            Label("No pets yet", systemImage: "dog.fill")
+            Label("No pets yet", systemImage: "pawprint.fill")
+                .foregroundStyle(.accent)
         } description: {
             Text("New pets you add will appear here.")
-                .foregroundStyle(.tint)
         }
     }
 }
+
 
 #Preview {
     PetListNoPetsYet()

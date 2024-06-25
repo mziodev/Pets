@@ -23,8 +23,9 @@ struct WeightListRow: View {
 }
 
 #Preview {
-    WeightListRow(
-        weight: SampleData.shared.petWithChipID.sortedWeights[2]
-    )
-    .padding()
+    List {
+        WeightListRow(
+            weight: SampleData.shared.petWithChipID.sortedWeights[2]
+        )
+    }
 }

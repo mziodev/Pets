@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Pet: ObservableObject {
+class Pet: Equatable, ObservableObject {
     var species: PetSpecies
     var sex: PetSex
     var name: String
@@ -27,7 +27,7 @@ class Pet: ObservableObject {
     var weights = [Weight]()
     
     @Relationship(deleteRule: .cascade)
-    var dewormings = [DewormingTreatment]()
+    var dewormingTreatments = [DewormingTreatment]()
     
     init(
         species: PetSpecies = .unknown,

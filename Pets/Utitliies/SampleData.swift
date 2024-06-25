@@ -61,7 +61,7 @@ class SampleData {
             Weight.sampleData[2],
         ]
         
-        Pet.sampleData[0].dewormings = [
+        Pet.sampleData[0].dewormingTreatments = [
             DewormingTreatment.sampleData[0],
             DewormingTreatment.sampleData[1],
         ]
@@ -73,7 +73,7 @@ class SampleData {
             Weight.sampleData[6],
         ]
         
-        Pet.sampleData[1].dewormings = [
+        Pet.sampleData[1].dewormingTreatments = [
             DewormingTreatment.sampleData[2],
             DewormingTreatment.sampleData[3],
         ]
@@ -83,7 +83,7 @@ class SampleData {
             Weight.sampleData[8],
         ]
         
-        Pet.sampleData[3].dewormings = [
+        Pet.sampleData[3].dewormingTreatments = [
             DewormingTreatment.sampleData[4],
             DewormingTreatment.sampleData[5],
         ]

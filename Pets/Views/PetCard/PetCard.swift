@@ -8,66 +8,87 @@
 import SwiftUI
 
 struct PetCard: View {
-    let pet: Pet
+    @ObservedObject var pet: Pet
     
     @State private var showingPetDetail: Bool = false
+    @State private var showingWeightDetail: Bool = false
+    @State private var showingDewormingTreatmentList: Bool = false
+    @State private var showingChipIDBarcode: Bool = false
     
-    private var currentWeight: Double {
-        pet.reverseSortedWeights.first?.value ?? 0
-    }
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .frame(maxWidth: 400, maxHeight: 700)
-                .foregroundStyle(.thickMaterial)
-                .clipShape(.rect(cornerRadius: 16))
-                .overlay {
-                    VStack {
-                        PetImage(pet: pet, imageSize: .large)
-                            .padding(.top)
-                        
-                        List {
-                            PetCardBreed(breed: pet.breed)
-                                .listRowSeparator(.hidden)
-                                .listRowBackground(Color.clear)
+        NavigationStack {
+            VStack {
+                PetImage(pet: pet, imageSize: .large)
+                
+                List {
+                    PetCardBreed(breed: pet.breed)
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                    
+                    PetCardAge(
+                        year: pet.age.first,
+                        month: pet.age.last
+                    )
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+                    
+//                    PetCardChipID(chipID: pet.chipID)
+//                        .listRowSeparator(.hidden)
+//                        .listRowBackground(Color.clear)
 
-                            
-                            PetCardAge(
-                                year: pet.age.first,
-                                month: pet.age.last
-                            )
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(Color.clear)
-
-                            
-                            PetCardWeight(pet: pet)
-                                .listRowSeparator(.hidden)
-                                .listRowBackground(Color.clear)
-
-                            
-                            PetCardChipID(chipID: pet.chipID)
-                                .listRowSeparator(.hidden)
-                                .listRowBackground(Color.clear)
-                        }
-                        .listStyle(.plain)
-                        .padding(.horizontal)
-                        .scrollIndicators(.hidden)
-                    }
-                    .padding(.top)
+                    PetCardWeight(
+                        pet: pet,
+                        currentWeight: pet.currentWeight,
+                        showingWeightDetail: $showingWeightDetail
+                    )
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
                 }
-                .padding([.bottom, .horizontal])
-        }
-        .navigationTitle(pet.name)
-        .sheet(isPresented: $showingPetDetail) {
-            NavigationStack {
-                PetDetail(pet: pet)
-                    .interactiveDismissDisabled()
+                .listStyle(.insetGrouped)
+                .scrollIndicators(.hidden)
             }
-        }
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button("Edit") { showingPetDetail.toggle() }
+            .navigationTitle(pet.name)
+            .sheet(isPresented: $showingPetDetail) {
+                PetDetail(pet: pet)
+            }
+            .sheet(isPresented: $showingWeightDetail) {
+                WeightList(pet: pet)
+            }
+            .sheet(isPresented: $showingDewormingTreatmentList) {
+                DewormingTreatmentList(pet: pet)
+            }
+            .sheet(isPresented: $showingChipIDBarcode) {
+                PetChipIDBarcode(chipID: pet.chipID)
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Edit") { showingPetDetail = true }
+                }
+                
+                ToolbarItemGroup(placement: .secondaryAction) {
+                    Button {
+                        showingWeightDetail = true
+                    } label: {
+                        Label("Weights", systemImage: "scalemass")
+                    }
+                    
+                    Button {
+                        showingDewormingTreatmentList = true
+                    } label: {
+                        Label("Dewormings", systemImage: "ant")
+                    }
+                }
+                
+                ToolbarItem(placement: .status) {
+                    if pet.chipID.isEmpty {
+                        Text("No chip ID")
+                            .font(.subheadline.smallCaps())
+                    } else {
+                        Button("Chip ID") { showingChipIDBarcode = true }
+                            .font(.headline.smallCaps())
+                    }
+                }
             }
         }
     }
@@ -75,19 +96,13 @@ struct PetCard: View {
 
 
 #Preview("Pet with chip ID") {
-    NavigationStack {
-        PetCard(pet: SampleData.shared.petWithChipID)
-    }
+    PetCard(pet: SampleData.shared.petWithChipID)
 }
 
 #Preview("Pet without chip ID") {
-    NavigationStack {
-        PetCard(pet: SampleData.shared.petWithoutChipID)
-    }
+    PetCard(pet: SampleData.shared.petWithoutChipID)
 }
 
 #Preview("Pet without weight") {
-    NavigationStack {
-        PetCard(pet: SampleData.shared.petWithoutSpecies)
-    }
+    PetCard(pet: SampleData.shared.petWithoutSpecies)
 }

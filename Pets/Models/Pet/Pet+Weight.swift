@@ -16,6 +16,10 @@ extension Pet {
         weights.sorted { $0.date > $1.date }
     }
     
+    var currentWeight: Double {
+        reverseSortedWeights.first?.value ?? 0
+    }
+    
     func filteringAndSortingWeights(in range: ClosedRange<Date>) -> [Weight] {
         weights.filter { range.contains($0.date) }.sorted { $0.date < $1.date }
     }

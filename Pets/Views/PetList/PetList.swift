@@ -16,7 +16,6 @@ struct PetList: View {
     @State private var showingAddPetSheet = false
     
     
-    // MARK: - body
     var body: some View {
         NavigationStack {
             List {
@@ -37,22 +36,13 @@ struct PetList: View {
             .overlay {
                 if pets.isEmpty { PetListNoPetsYet() }
             }
-            
-            
-            // MARK: - add pet sheet
             .sheet(isPresented: $showingAddPetSheet) {
-                NavigationStack {
-                    PetDetail(pet: Pet(), isNew: true)
-                        .interactiveDismissDisabled()
-                }
+                PetDetail(pet: Pet(), isNew: true)
             }
-            
-            
-            // MARK: - toolbar
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button{
-                        showingAddPetSheet.toggle()
+                        showingAddPetSheet = true
                     } label: {
                         Label("Add pet", systemImage: "plus")
                     }
@@ -72,22 +62,14 @@ struct PetList: View {
         }
     }
     
-    
-    // MARK: - functions
+
     private func deletePets(offsets: IndexSet) {
         offsets.forEach { modelContext.delete(pets[$0]) }
     }
 }
 
 
-// MARK: - previews
-#Preview("Light mode") {
+#Preview {
     PetList()
         .modelContainer(SampleData.shared.modelContainer)
-}
-
-#Preview("Dark mode") {
-    PetList()
-        .modelContainer(SampleData.shared.modelContainer)
-        .preferredColorScheme(.dark)
 }

@@ -16,22 +16,21 @@ struct PetCardChipID: View {
                 Spacer()
                 
                 Text("No chip")
-                    .fontDesign(.serif)
-                    .font(.headline)
-                .bold()
+                    .font(.callout.smallCaps())
+                    .foregroundStyle(.accent)
                 
                 Spacer()
             }
         } else {
             NavigationLink {
-                PetChipBarcode(chipID: chipID)
+                PetChipIDBarcode(chipID: chipID)
             } label: {
                 HStack {
                     Spacer()
                     
                     Text("Chip ID")
                         .font(.callout.smallCaps())
-                        .foregroundStyle(.tint)
+                        .foregroundStyle(.accent)
                     
                     Text(chipID)
                         .fontDesign(.serif)
@@ -41,6 +40,7 @@ struct PetCardChipID: View {
                     Spacer()
                 }
             }
+            .padding(.horizontal)
         }
     }
 }

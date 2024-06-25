@@ -12,6 +12,7 @@ struct PetListRow: View {
     let breed: String
     let speciesName: String
     
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -30,6 +31,7 @@ struct PetListRow: View {
         }
     }
 }
+
 
 #Preview("Dog") {
     PetListRow(name: "Ruffo", breed: "Labrador", speciesName: "dog")

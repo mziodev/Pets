@@ -7,7 +7,7 @@
 
 /*
  TODO
- Fix delete weights. They are erratic on the deletion.
+ Fix average weight, it show dots all the time. Check out the Locale option.
  */
 
 import SwiftData
@@ -15,7 +15,6 @@ import SwiftUI
 
 struct WeightList: View {
     @Environment(\.dismiss) var dismiss
-    @Environment(\.modelContext) var modelContext
     
     @ObservedObject var pet: Pet
     
@@ -47,87 +46,88 @@ struct WeightList: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Picker(
-                "Time Period",
-                selection: $selectedTimePeriod.animation()
-            ) {
-                ForEach(TimePeriod.allCases.reversed()) { period in
-                    Text(period.rawValue)
-                }
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal)
-
-            if !pet.weights.isEmpty {
-                VStack(alignment: .leading) {
-                    Text("Average weight")
-                    
-                    Text(
-                        String(
-                            format: "%.2f \(Weight.units)",
-                            pet.weights.averaging()
-                        )
-                    )
-                    .font(.title)
-                    .bold()
-                    
-                    Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
-                        .foregroundStyle(.secondary)
-                    
-                    WeightListChart(
-                        weights: pet.filteringAndSortingWeights(
-                            in: selectedDateRange
-                        )
-                    )
-                    .frame(height: 240)
-                    .padding(.horizontal)
-                }
-                .padding(.horizontal)
-                .padding(.top, 2)
-            }
-
-            List {
-                Section("Weight List") {
-                    ForEach(pet.reverseSortedWeights) { weight in
-                        WeightListRow(weight: weight)
+        NavigationStack {
+            VStack(alignment: .leading) {
+                Picker(
+                    "Time Period",
+                    selection: $selectedTimePeriod.animation()
+                ) {
+                    ForEach(TimePeriod.allCases.reversed()) { period in
+                        Text(period.rawValue)
                     }
-                    .onDelete(perform: deleteWeights)
                 }
-            }
-            .listStyle(.plain)
-        }
-        .navigationTitle("\(pet.name)'s weight list")
-        .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $showingAddWeightSheet) {
-            WeightDetail(pet: pet) 
-        }
-        .toolbar {
-            ToolbarItem(placement: .bottomBar) {
-                VStack {
-                    Button("Add weight") { showingAddWeightSheet.toggle() }
-                        .bold()
-                    
-                    Text("\(pet.weights.count) weights")
-                        .font(.caption)
-                }
-            }
-            
-            if !pet.weights.isEmpty {
-                ToolbarItem(placement: .topBarTrailing) { EditButton() }
-            }
-        }
-    }
+                .pickerStyle(.segmented)
+                .padding(.horizontal)
 
-    private func deleteWeights(offsets: IndexSet) {
-        withAnimation {
-            offsets.forEach { modelContext.delete(pet.weights[$0]) }
-            pet.objectWillChange.send()
+                if !pet.weights.isEmpty {
+                    VStack(alignment: .leading) {
+                        Text("Average weight")
+                        
+                        Text(
+                            String(
+                                format: "%.2f \(Weight.units)",
+                                pet.weights.averaging()
+                            )
+                        )
+                        .font(.title)
+                        .bold()
+                        
+                        Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
+                            .foregroundStyle(.secondary)
+                        
+                        WeightListChart(
+                            weights: pet.filteringAndSortingWeights(
+                                in: selectedDateRange
+                            )
+                        )
+                        .frame(height: 240)
+                        .padding(.horizontal)
+                    }
+                    .padding(.horizontal)
+                    .padding(.top, 2)
+                }
+
+                List {
+                    Section("Weight List") {
+                        ForEach(pet.reverseSortedWeights) { weight in
+                            NavigationLink {
+                                // go to weight detail
+                            } label: {
+                                WeightListRow(weight: weight)
+                            }
+                        }
+                    }
+                }
+                .listStyle(.plain)
+            }
+            .navigationTitle("\(pet.name)'s weight list")
+            .navigationBarTitleDisplayMode(.inline)
+            .interactiveDismissDisabled()
+            .sheet(isPresented: $showingAddWeightSheet) {
+                WeightDetail(pet: pet) 
+            }
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+                
+                ToolbarItem {
+                    Button { showingAddWeightSheet.toggle() } label: {
+                        Label("Add weight", systemImage: "plus")
+                    }
+                }
+                
+                if !pet.weights.isEmpty {
+                    ToolbarItem(placement: .status) {
+                        Text("\(pet.weights.count) weights")
+                            .font(.caption)
+                    }
+                }
+            }
         }
     }
 }
 
 #Preview {
-    NavigationStack { WeightList(pet: SampleData.shared.petWithChipID) }
-        .modelContainer(SampleData.shared.modelContainer)
+    WeightList(pet: SampleData.shared.petWithChipID)
 }

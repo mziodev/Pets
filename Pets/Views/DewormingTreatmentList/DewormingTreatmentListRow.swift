@@ -28,6 +28,11 @@ struct DewormingTreatmentListRow: View {
     
     var body: some View {
         HStack {
+            Image(systemName: dewormingTreatment.type.systemImage)
+                .font(.title2)
+                .foregroundStyle(isTreatmentExpired ? .secondary : Color.accent)
+                .accessibilityLabel("Treatment image")
+            
             VStack(alignment: .leading) {
                 Text(dewormingTreatment.name)
                     .font(.headline)
@@ -44,10 +49,7 @@ struct DewormingTreatmentListRow: View {
             
             Spacer()
             
-            if isTreatmentExpired {
-                Text("Expired")
-                    .font(.title3.smallCaps())
-            } else {
+            if !isTreatmentExpired {
                 VStack(alignment: .center) {
                     Text("\(dewormingTreatment.activeDays)")
                         .font(.title3)

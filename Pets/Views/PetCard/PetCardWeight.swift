@@ -9,26 +9,22 @@ import SwiftUI
 
 struct PetCardWeight: View {
     let pet: Pet
+    let currentWeight: Double
     
-    private var currentWeight: Double {
-        pet.reverseSortedWeights.first?.value ?? 0
-    }
+    @Binding var showingWeightDetail: Bool
     
     private var weightString: String {
-        currentWeight > 0 ? 
-        "\(currentWeight.formatted()) \(Weight.units)" : "Add weight"
+        "\(currentWeight.formatted()) \(Weight.units)"
     }
     
     var body: some View {
-        NavigationLink {
-            WeightList(pet: pet)
-        } label: {
+        if currentWeight > 0 {
             HStack {
                 Spacer()
                 
                 Text("weight")
                     .font(.callout.lowercaseSmallCaps())
-                    .foregroundStyle(.tint)
+                    .foregroundStyle(.accent)
                 
                 Text(weightString)
                     .font(currentWeight > 0 ? .largeTitle : .callout)
@@ -45,9 +41,17 @@ struct PetCardWeight: View {
 }
 
 #Preview("Normal weight") {
-    PetCardWeight(pet: SampleData.shared.petWithChipID)
+    PetCardWeight(
+        pet: SampleData.shared.petWithChipID,
+        currentWeight: 3.75,
+        showingWeightDetail: .constant(false)
+    )
 }
 
 #Preview("Zero weight") {
-    PetCardWeight(pet: SampleData.shared.petWithoutSpecies)
+    PetCardWeight(
+        pet: SampleData.shared.petWithoutSpecies,
+        currentWeight: 0,
+        showingWeightDetail: .constant(false)
+    )
 }

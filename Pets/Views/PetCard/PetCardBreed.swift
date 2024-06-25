@@ -18,7 +18,7 @@ struct PetCardBreed: View {
                 .font(.callout.smallCaps())
                 .foregroundStyle(.tint)
             
-            Text(breed.isEmpty ? "Unknown" : breed)
+            Text(breed.isEmpty ? "unknown" : breed)
                 .font(.largeTitle.bold())
                 .fontDesign(.serif)
                 .minimumScaleFactor(0.5)

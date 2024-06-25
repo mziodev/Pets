@@ -28,8 +28,8 @@ struct DewormingTreatmentDetail: View {
         dewormingTreatment.quantity > 0
     }
     
-    init(deworming: DewormingTreatment, isNew: Bool = false) {
-        self.dewormingTreatment = deworming
+    init(dewormingTreatment: DewormingTreatment, isNew: Bool = false) {
+        self.dewormingTreatment = dewormingTreatment
         self.isNew = isNew
     }
     
@@ -104,7 +104,11 @@ struct DewormingTreatmentDetail: View {
                 }
                 
                 Section("Notes") {
-                    TextField("...", text: $dewormingTreatment.notes, axis: .vertical)
+                    TextField(
+                        "...",
+                        text: $dewormingTreatment.notes,
+                        axis: .vertical
+                    )
                 }
             }
             .navigationTitle("Deworming details")
@@ -129,22 +133,26 @@ struct DewormingTreatmentDetail: View {
     
     
     private func saveDewormingTreatment() {
-        
+//        modelContext.insert(dewormingTreatment)
+        dewormingTreatment.pet?.dewormingTreatments.append(dewormingTreatment)
+        dismiss()
     }
 }
 
 
 #Preview("New deworming") {
     DewormingTreatmentDetail(
-        deworming: DewormingTreatment(
+        dewormingTreatment: DewormingTreatment(
             pet: SampleData.shared.petWithChipID
         ),
         isNew: true
     )
-        .modelContainer(SampleData.shared.modelContainer)
+    .modelContainer(SampleData.shared.modelContainer)
 }
 
 #Preview("Existing deworming") {
-    DewormingTreatmentDetail(deworming: DewormingTreatment.sampleData[3])
-        .modelContainer(SampleData.shared.modelContainer)
+    DewormingTreatmentDetail(
+        dewormingTreatment: DewormingTreatment.sampleData[3]
+    )
+    .modelContainer(SampleData.shared.modelContainer)
 }

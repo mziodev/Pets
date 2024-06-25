@@ -14,9 +14,6 @@ struct PetDetailImage: View {
     @State private var selectedImage: PhotosPickerItem?
     
     var body: some View {
-        
-        
-        // MARK: - body
         VStack {
             PetImage(pet: pet, imageSize: .small)
             
@@ -40,9 +37,6 @@ struct PetDetailImage: View {
                 }
             }
         }
-        
-        
-        // MARK: - load image task
         .task(id: selectedImage) {
             if let data = try? await selectedImage?.loadTransferable(
                 type: Data.self
