@@ -10,7 +10,6 @@ import SwiftUI
 
 struct DewormingTreatmentList: View {
     @Environment(\.dismiss) var dismiss
-//    @Environment(\.modelContext) var modelContext
     
     @ObservedObject var pet: Pet
     

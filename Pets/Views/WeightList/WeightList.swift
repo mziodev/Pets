@@ -91,7 +91,7 @@ struct WeightList: View {
                     Section("Weight List") {
                         ForEach(pet.reverseSortedWeights) { weight in
                             NavigationLink {
-                                // go to weight detail
+                                WeightDetail(pet: pet, weight: weight)
                             } label: {
                                 WeightListRow(weight: weight)
                             }

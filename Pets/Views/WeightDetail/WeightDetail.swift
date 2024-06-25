@@ -9,60 +9,97 @@ import SwiftUI
 
 struct WeightDetail: View {
     @Environment(\.dismiss) var dismiss
-//    @Environment(\.modelContext) var modelContext
     
     @Bindable var pet: Pet
     
-    @State private var date = Date.now
-    @State private var value = ""
+    @State var weight: Weight
     
     @FocusState private var isWeightTextFieldFocused
     
+    let isNew: Bool
+    
+    init(
+        pet: Pet,
+        weight: Weight = Weight(),
+        isNew: Bool = false
+    ) {
+        self.pet = pet
+        self.weight = weight
+        self.isNew = isNew
+    }
+    
+    
     var body: some View {
         NavigationStack {
-            Form {
-                DatePicker(
-                    "Date",
-                    selection: $date,
-                    in: Date.distantPast...Date.now,
-                    displayedComponents: .date
-                )
-                .foregroundStyle(.placeholder)
-                
-                TextField("\(Weight.units)", text: $value)
-                    .multilineTextAlignment(.trailing)
-                    .focused($isWeightTextFieldFocused)
-                    .keyboardType(.decimalPad)
-                    .onChange(of: value) { oldValue, newValue in
-                        value = newValue.replacingOccurrences(
-                            of: ",",
-                            with: "."
-                        )
+            VStack {
+                Form {
+                    DatePicker(
+                        "Date",
+                        selection: $weight.date,
+                        in: Date.distantPast...Date.now,
+                        displayedComponents: .date
+                    )
+                    .foregroundStyle(.placeholder)
+                    
+                    HStack {
+                        Text("Weight")
+                            .foregroundStyle(.placeholder)
+                        
+                        TextField("", value: $weight.value, format: .number)
+                            .multilineTextAlignment(.trailing)
+                            .keyboardType(.decimalPad)
+                            .focused($isWeightTextFieldFocused)
+                        
+                        Text("\(Weight.units)")
                     }
+                }
+                
+                if !isNew {
+                    Button("Delete weight", role: .destructive) {
+                        let weightIndex = pet.weights.firstIndex {
+                            $0.id == weight.id
+                        }
+                        
+                        if weightIndex != nil {
+                            pet.weights.remove(at: weightIndex!)
+                        }
+                        
+                        dismiss()
+                    }
+                }
             }
-            .navigationTitle("Add weight")
+            .navigationTitle(isNew ? "Add weight" : "Edit weight")
             .navigationBarTitleDisplayMode(.inline)
             .interactiveDismissDisabled()
-            .onAppear { isWeightTextFieldFocused = true }
+            .onAppear {
+                isWeightTextFieldFocused = true
+            }
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                if isNew {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") { dismiss() }
+                    }
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save", action: appendWeight)
-                        .disabled(value.isEmpty)
+                        .disabled(weight.value <= 0)
                 }
             }
         }
     }
 
     func appendWeight() {
-        pet.weights.append(Weight(date: date, value: Double(value) ?? 0))
+        pet.weights.append(weight)
         dismiss()
     }
 }
 
-#Preview {
-    WeightDetail(pet: SampleData.shared.petWithChipID)
+
+#Preview("New weight") {
+    WeightDetail(pet: SampleData.shared.petWithChipID, isNew: true)
+}
+
+#Preview("Existing weight") {
+    WeightDetail(pet: SampleData.shared.petWithChipID, weight: Weight.sampleData[0])
 }

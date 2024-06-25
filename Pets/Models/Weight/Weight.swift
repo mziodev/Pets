@@ -14,7 +14,7 @@ class Weight {
     var value: Double
     var pet: Pet?
     
-    init(date: Date, value: Double) {
+    init(date: Date = .now, value: Double = 0) {
         self.date = date
         self.value = value
     }    
