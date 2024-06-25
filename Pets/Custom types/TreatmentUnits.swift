@@ -8,13 +8,12 @@
 import Foundation
 
 enum TreatmentUnits: String, Codable, CaseIterable {
-    case unknown
+    case markings
     case milligrams = "mg"
     case milligramsPerMilliliter = "mg/ml"
     case milligramsPerKilogram = "mg/kg"
     case milliliters = "ml"
     case millilitersPerKilogram = "ml/kg"
-    case units
-    case markings
     case partsPerMillion = "ppm"
+    case units
 }

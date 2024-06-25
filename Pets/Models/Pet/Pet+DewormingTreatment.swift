@@ -15,4 +15,8 @@ extension Pet {
     var activeDewormingTreatments: Int {
         dewormingTreatments.filter { $0.activeDays > 0 }.count
     }
+    
+    var expiredDewormingTreatments: Int {
+        dewormingTreatments.filter { $0.activeDays <= 0 }.count
+    }
 }

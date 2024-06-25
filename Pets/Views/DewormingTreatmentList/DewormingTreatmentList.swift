@@ -18,34 +18,46 @@ struct DewormingTreatmentList: View {
     var body: some View {
         NavigationStack {
             VStack {
-                List {
-                    Section("Active treatments") {
-                        ForEach(pet.reverseSortedDewormingTreatments) { deworming in
-                            if (deworming.activeDays > 0) {
-                                NavigationLink{
-                                    // go to deworming details
-                                } label: {
-                                    DewormingTreatmentListRow(
-                                        dewormingTreatment: deworming
-                                    )
+                if pet.activeDewormingTreatments > 0 {
+                    List {
+                        Section("Active treatments") {
+                            ForEach(pet.reverseSortedDewormingTreatments) { treatment in
+                                if (treatment.activeDays > 0) {
+                                    NavigationLink{
+                                        DewormingTreatmentDetail(
+                                            pet: pet,
+                                            dewormingTreatment: treatment
+                                        )
+                                    } label: {
+                                        DewormingTreatmentListRow(
+                                            dewormingTreatment: treatment
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                        
+                        if pet.expiredDewormingTreatments > 0 {
+                            Section("Expired treatments") {
+                                ForEach(pet.reverseSortedDewormingTreatments) { treatment in
+                                    if (treatment.activeDays <= 0) {
+                                        NavigationLink{
+                                            DewormingTreatmentDetail(
+                                                pet: pet,
+                                                dewormingTreatment: treatment
+                                            )
+                                        } label: {
+                                            DewormingTreatmentListRow(
+                                                dewormingTreatment: treatment
+                                            )
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
-                    
-                    Section("Expired treatments") {
-                        ForEach(pet.reverseSortedDewormingTreatments) { deworming in
-                            if (deworming.activeDays <= 0) {
-                                NavigationLink{
-                                    // go to deworming details
-                                } label: {
-                                    DewormingTreatmentListRow(
-                                        dewormingTreatment: deworming
-                                    )
-                                }
-                            }
-                        }
-                    }
+                } else {
+                    DewormingTreatmentListNoTreatment()
                 }
             }
             .navigationTitle("\(pet.name) deworming")
@@ -53,7 +65,7 @@ struct DewormingTreatmentList: View {
             .interactiveDismissDisabled()
             .sheet(isPresented: $showingDewormingTreatmentDetail) {
                 DewormingTreatmentDetail(
-                    dewormingTreatment: DewormingTreatment(pet: pet),
+                    pet: pet,
                     isNew: true
                 )
             }
@@ -82,5 +94,4 @@ struct DewormingTreatmentList: View {
 
 #Preview {
     DewormingTreatmentList(pet: SampleData.shared.petWithChipID)
-        .modelContainer(SampleData.shared.modelContainer)
 }

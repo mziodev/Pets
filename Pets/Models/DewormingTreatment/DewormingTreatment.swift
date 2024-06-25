@@ -25,7 +25,7 @@ class DewormingTreatment {
     
     init(
         type: TreatmentType = .unknown,
-        units: TreatmentUnits = .unknown,
+        units: TreatmentUnits = .units,
         name: String = "",
         quantity: Double = 0,
         startingDate: Date = .now,
