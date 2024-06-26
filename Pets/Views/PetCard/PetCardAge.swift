@@ -8,27 +8,50 @@
 import SwiftUI
 
 struct PetCardAge: View {
-    let year: String?
-    let month: String?
+    let pet: Pet
     
     var body: some View {
-        HStack {
-            Spacer()
+        VStack(spacing: 10) {
+            HStack {
+                Spacer()
+                
+                Text("Age")
+                    .font(.callout.lowercaseSmallCaps())
+                    .foregroundStyle(.tint)
+//                    .padding(.top, 12)
+                
+                if let yearString = pet.age["year"] {
+                    Text(yearString)
+                        .font(.title.bold())
+                        .fontDesign(.serif)
+                }
+                
+                if let monthString = pet.age["month"] {
+                    Text(monthString)
+                        .font(pet.age["year"] == nil ? .title.bold() : .body)
+                        .fontDesign(.serif)
+                        .padding(.top, pet.age["year"] == nil ? 0 : 7)
+                }
+                
+                if let dayString = pet.age["day"] {
+                    Text(dayString)
+                        .font(.largeTitle.bold())
+                        .fontDesign(.serif)
+                }
+                
+                Spacer()
+            }
             
-            Text(year ?? "")
-                .font(.largeTitle.bold())
-                .fontDesign(.serif)
-            
-            Text(month ?? "")
-                .font(.callout.lowercaseSmallCaps())
-                .foregroundStyle(.tint)
-                .padding(.top, 12)
-            
-            Spacer()
+            PetCardOnFamily(onFamilyYears: pet.onFamilyYears)
         }
     }
 }
 
-#Preview {
-    PetCardAge(year: "2 years", month: "4 months")
+
+#Preview("Years and months") {
+    PetCardAge(pet: SampleData.shared.petWithChipID)
+}
+
+#Preview("Just days") {
+    PetCardAge(pet: SampleData.shared.petWithoutSpecies)
 }

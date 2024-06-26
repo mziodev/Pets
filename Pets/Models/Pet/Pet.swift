@@ -53,35 +53,88 @@ class Pet: Equatable, ObservableObject {
         self.image = image
     }
     
+    var age: [String: String] {
+        years(from: birthday)
+    }
+    
+    var onFamilyYears: [String: String] {
+        years(from: onFamilySince)
+    }
+    
     /// Computed property that calculates the age in years and months based on the pet `birthday` date.
     ///
     /// - returns: An array with two strings: the first represents the years, and the second represents the months.
     ///
     /// - Note: This property assumes `birthday` is a valid date in the past.
-    var age: [String] {
-        let dateComponents = Calendar.current.dateComponents([.year, .month], from: birthday, to: Date.now)
+//    var age: [String] {
+//        let dateComponents = Calendar.current.dateComponents([.year, .month], from: birthday, to: Date.now)
+//        
+//        let year = dateComponents.year ?? 0
+//        let month = dateComponents.month ?? 0
+//        
+//        var age: [String] = []
+//        
+//        switch year {
+//        case 0: 
+//            age.append("")
+//        case 1: 
+//            age.append("1 year")
+//        default: 
+//            age.append("\(year) years")
+//        }
+//
+//        switch month {
+//        case 0:
+//            year > 0 ? age.append("") : age.append("Newborn 🐣")
+//        case 1: 
+//            age.append("1 month")
+//        default: 
+//            age.append("\(month) months")
+//        }
+//
+//        return age
+//    }
+    
+    /// Calculates the years, months and days until a date.
+    ///
+    /// - returns: An array with up to three strings: the first one representing the years, the second one representing the months,
+    /// and the third one (only if the last two are zero) representing the days,
+    ///
+    /// - Note: This property assumes `date` is a valid date in the past.
+    private func years(from date: Date) -> [String: String] {
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: date, to: .now)
         
         let year = dateComponents.year ?? 0
         let month = dateComponents.month ?? 0
+        let day = dateComponents.day ?? 0
         
-        var age: [String] = []
+        var age: [String: String] = [:]
         
         switch year {
-        case 0: 
-            age.append("")
-        case 1: 
-            age.append("1 year")
-        default: 
-            age.append("\(year) years")
+        case 0:
+            break
+        case 1:
+            age["year"] = "1 year"
+        default:
+            age["year"] = "\(year) years"
         }
 
         switch month {
         case 0:
-            year > 0 ? age.append("") : age.append("Newborn 🐣")
-        case 1: 
-            age.append("1 month")
-        default: 
-            age.append("\(month) months")
+            break
+        case 1:
+            age["month"] = year > 0 ? "& 1 month" : "1 month"
+        default:
+            age["month"] = year > 0 ? "& \(month) months" : "\(month) months"
+        }
+        
+        if year == 0 && month == 0 {
+            switch day {
+            case 1:
+                age["day"] = "1 day"
+            default:
+                age["day"] = "\(day) days"
+            }
         }
 
         return age

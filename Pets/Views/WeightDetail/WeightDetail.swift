@@ -13,10 +13,12 @@ struct WeightDetail: View {
     @Bindable var pet: Pet
     
     @State var weight: Weight
+    @State private var showingDeleteAlert: Bool = false
     
     @FocusState private var isWeightTextFieldFocused
     
     let isNew: Bool
+    
     
     init(
         pet: Pet,
@@ -56,23 +58,23 @@ struct WeightDetail: View {
                 
                 if !isNew {
                     Button("Delete weight", role: .destructive) {
-                        let weightIndex = pet.weights.firstIndex {
-                            $0.id == weight.id
-                        }
-                        
-                        if weightIndex != nil {
-                            pet.weights.remove(at: weightIndex!)
-                        }
-                        
-                        dismiss()
+                        showingDeleteAlert = true
                     }
+                    .padding(.top, 10)
+                    .padding(.bottom, 20)
                 }
             }
-            .navigationTitle(isNew ? "Add weight" : "Edit weight")
+            .navigationTitle(isNew ? "Add Weight" : "Edit Weight")
             .navigationBarTitleDisplayMode(.inline)
             .interactiveDismissDisabled()
             .onAppear {
                 isWeightTextFieldFocused = true
+            }
+            .alert("Warning!", isPresented: $showingDeleteAlert) {
+                Button("Cancel", role: .cancel, action: { })
+                Button("Ok", role: .destructive, action: deleteWeight)
+            } message: {
+                Text("This weight will be deleted, are you sure?")
             }
             .toolbar {
                 if isNew {
@@ -89,8 +91,20 @@ struct WeightDetail: View {
         }
     }
 
-    func appendWeight() {
+    
+    private func appendWeight() {
         pet.weights.append(weight)
+        
+        dismiss()
+    }
+    
+    private func deleteWeight() {
+        if let weightIndex = pet.weights.firstIndex(where: {
+            $0.id == weight.id
+        }) {
+            pet.weights.remove(at: weightIndex)
+        }
+        
         dismiss()
     }
 }

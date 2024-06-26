@@ -22,17 +22,14 @@ struct PetCardWeight: View {
             HStack {
                 Spacer()
                 
-                Text("weight")
+                Text("Weight")
                     .font(.callout.lowercaseSmallCaps())
                     .foregroundStyle(.accent)
                 
                 Text(weightString)
-                    .font(currentWeight > 0 ? .largeTitle : .callout)
+                    .font(.largeTitle)
                     .bold()
                     .fontDesign(.serif)
-                    .foregroundStyle(
-                        currentWeight > 0 ? .primary : Color.gray.opacity(0.5)
-                    )
                 
                 Spacer()
             }

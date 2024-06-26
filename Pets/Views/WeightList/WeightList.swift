@@ -5,11 +5,6 @@
 //  Created by MZiO on 21/5/24.
 //
 
-/*
- TODO
- Fix average weight, it show dots all the time. Check out the Locale option.
- */
-
 import SwiftData
 import SwiftUI
 
@@ -21,16 +16,8 @@ struct WeightList: View {
     @State private var selectedTimePeriod: TimePeriod = .lastSixMonthsPeriod
     @State private var showingAddWeightSheet: Bool = false
     
-    private let lastSixMonths = Date.now - (86400 * 180)
-    private let lastTwelveMonths = Date.now - (86400 * 365)
-    
     private var selectedDateRange: ClosedRange<Date> {
-        switch selectedTimePeriod {
-        case .lastSixMonthsPeriod:
-            return lastSixMonths ... .now
-        case .lastTwelveMonthsPeriod:
-            return lastTwelveMonths ... .now
-        }
+        selectedTimePeriod.dateValue ... .now
     }
     
     var scrollPositionStartString: String {
@@ -45,35 +32,41 @@ struct WeightList: View {
         )
     }
     
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                Picker(
-                    "Time Period",
-                    selection: $selectedTimePeriod.animation()
-                ) {
-                    ForEach(TimePeriod.allCases.reversed()) { period in
-                        Text(period.rawValue)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding(.horizontal)
-
                 if !pet.weights.isEmpty {
+                    Picker(
+                        "Time Period",
+                        selection: $selectedTimePeriod.animation()
+                    ) {
+                        ForEach(TimePeriod.allCases.reversed()) { period in
+                            Text(period.rawValue)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .padding(.horizontal)
+                    
                     VStack(alignment: .leading) {
-                        Text("Average weight")
-                        
-                        Text(
-                            String(
-                                format: "%.2f \(Weight.units)",
-                                pet.weights.averaging()
+                        VStack(alignment: .leading) {
+                            Text("Average weight")
+                            
+                            Text(
+                                String(
+                                    format: "%.2f %@",
+                                    locale: Locale.current,
+                                    pet.weights.averaging(),
+                                    Weight.units
+                                )
                             )
-                        )
-                        .font(.title)
-                        .bold()
-                        
-                        Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
-                            .foregroundStyle(.secondary)
+                            .font(.title)
+                            .bold()
+                            
+                            Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(.horizontal, 5)
                         
                         WeightListChart(
                             weights: pet.filteringAndSortingWeights(
@@ -81,30 +74,32 @@ struct WeightList: View {
                             )
                         )
                         .frame(height: 240)
-                        .padding(.horizontal)
+                        .padding(.horizontal, 5)
                     }
                     .padding(.horizontal)
                     .padding(.top, 2)
-                }
-
-                List {
-                    Section("Weight List") {
-                        ForEach(pet.reverseSortedWeights) { weight in
-                            NavigationLink {
-                                WeightDetail(pet: pet, weight: weight)
-                            } label: {
-                                WeightListRow(weight: weight)
+                    
+                    List {
+                        Section("Weight List") {
+                            ForEach(pet.reverseSortedWeights) { weight in
+                                NavigationLink {
+                                    WeightDetail(pet: pet, weight: weight)
+                                } label: {
+                                    WeightListRow(weight: weight)
+                                }
                             }
                         }
                     }
+                    .listStyle(.plain)
+                } else {
+                    WeightListNoWeight()
                 }
-                .listStyle(.plain)
             }
             .navigationTitle("\(pet.name)'s weight list")
             .navigationBarTitleDisplayMode(.inline)
             .interactiveDismissDisabled()
             .sheet(isPresented: $showingAddWeightSheet) {
-                WeightDetail(pet: pet) 
+                WeightDetail(pet: pet, isNew: true) 
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {

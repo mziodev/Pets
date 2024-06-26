@@ -32,8 +32,7 @@ struct PetChipIDBarcode: View {
                 }
                 
                 Text(
-                    chipID.isEmpty ? 
-                    "Barcode reading error, try again" : chipID
+                    chipID.isEmpty ? "Barcode reading error, try again" : chipID
                 )
                 .font(chipID.isEmpty ? .callout : .title2)
                     .offset(y: chipID.isEmpty ? 5 : -20)
@@ -43,8 +42,7 @@ struct PetChipIDBarcode: View {
             .interactiveDismissDisabled()
             .rotationEffect(Angle(degrees: 90))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.white)
-            .foregroundStyle(.black)
+            .preferredColorScheme(.light)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }

@@ -62,6 +62,9 @@
 		08EEF0D02C23214F003ABFF9 /* TreatmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEF0CF2C23214F003ABFF9 /* TreatmentType.swift */; };
 		08EEF0D22C2322EA003ABFF9 /* Deworming+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEF0D12C2322EA003ABFF9 /* Deworming+SampleData.swift */; };
 		08EEF0D52C2326FD003ABFF9 /* DewormingTreatmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEF0D42C2326FD003ABFF9 /* DewormingTreatmentList.swift */; };
+		08FD87AB2C2C01E400CC9F9A /* WeightListNoWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87AA2C2C01E400CC9F9A /* WeightListNoWeight.swift */; };
+		08FD87B02C2C30F600CC9F9A /* PetCardOnFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87AF2C2C30F600CC9F9A /* PetCardOnFamily.swift */; };
+		08FD87B22C2C5F6B00CC9F9A /* PetCardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B12C2C5F6B00CC9F9A /* PetCardName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +124,9 @@
 		08EEF0CF2C23214F003ABFF9 /* TreatmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentType.swift; sourceTree = "<group>"; };
 		08EEF0D12C2322EA003ABFF9 /* Deworming+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deworming+SampleData.swift"; sourceTree = "<group>"; };
 		08EEF0D42C2326FD003ABFF9 /* DewormingTreatmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentList.swift; sourceTree = "<group>"; };
+		08FD87AA2C2C01E400CC9F9A /* WeightListNoWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightListNoWeight.swift; sourceTree = "<group>"; };
+		08FD87AF2C2C30F600CC9F9A /* PetCardOnFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardOnFamily.swift; sourceTree = "<group>"; };
+		08FD87B12C2C5F6B00CC9F9A /* PetCardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +305,8 @@
 				08DF54402C1C46FC003076B1 /* PetCardAge.swift */,
 				08DF543E2C1C4519003076B1 /* PetCardBreed.swift */,
 				08DF54442C1C553E003076B1 /* PetCardChipID.swift */,
+				08FD87AF2C2C30F600CC9F9A /* PetCardOnFamily.swift */,
+				08FD87B12C2C5F6B00CC9F9A /* PetCardName.swift */,
 				08DF54422C1C511E003076B1 /* PetCardWeight.swift */,
 				08833FE62C09CABB000FD0BF /* PetChipIDBarcode.swift */,
 			);
@@ -329,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				08833FED2C09CABB000FD0BF /* WeightList.swift */,
+				08FD87AA2C2C01E400CC9F9A /* WeightListNoWeight.swift */,
 				08833FEC2C09CABB000FD0BF /* WeightListChart.swift */,
 				08B5851A2C19E9B20068D4B2 /* WeightListRow.swift */,
 			);
@@ -466,6 +475,7 @@
 				08B584FB2C16EFA10068D4B2 /* Weight+Format.swift in Sources */,
 				08B585122C1849330068D4B2 /* PetBreed+SampleData.swift in Sources */,
 				08EEF0D02C23214F003ABFF9 /* TreatmentType.swift in Sources */,
+				08FD87B02C2C30F600CC9F9A /* PetCardOnFamily.swift in Sources */,
 				08833FF32C09CABB000FD0BF /* PetSex.swift in Sources */,
 				08833FF52C09CABB000FD0BF /* TimePeriod.swift in Sources */,
 				08A29E382C144D2500D45D98 /* Pet+SampleData.swift in Sources */,
@@ -476,12 +486,14 @@
 				08833FF22C09CABB000FD0BF /* Pet.swift in Sources */,
 				08DF54412C1C46FC003076B1 /* PetCardAge.swift in Sources */,
 				08DF543B2C1C34DC003076B1 /* PetListRow.swift in Sources */,
+				08FD87AB2C2C01E400CC9F9A /* WeightListNoWeight.swift in Sources */,
 				08DF544E2C1C84A0003076B1 /* PetDetailImage.swift in Sources */,
 				08EEF0CC2C22F7EF003ABFF9 /* DewormingTreatment.swift in Sources */,
 				08B584F92C16E8A90068D4B2 /* PetImageSize.swift in Sources */,
 				08012CF62C25C27E000C9418 /* FormatUtilities.swift in Sources */,
 				088340002C09CABB000FD0BF /* PetDetail.swift in Sources */,
 				08B5851B2C19E9B20068D4B2 /* WeightListRow.swift in Sources */,
+				08FD87B22C2C5F6B00CC9F9A /* PetCardName.swift in Sources */,
 				08833FF92C09CABB000FD0BF /* PetCard.swift in Sources */,
 				087F5B562C131CF9005A7083 /* VerificationCheckMark.swift in Sources */,
 				08833FF82C09CABB000FD0BF /* SampleData.swift in Sources */,

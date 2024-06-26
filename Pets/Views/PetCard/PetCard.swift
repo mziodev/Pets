@@ -18,24 +18,22 @@ struct PetCard: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 20) {
                 PetImage(pet: pet, imageSize: .large)
+                    .padding(.top)
                 
                 List {
+                    PetCardName(name: pet.name)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+                    
                     PetCardBreed(breed: pet.breed)
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
                     
-                    PetCardAge(
-                        year: pet.age.first,
-                        month: pet.age.last
-                    )
+                    PetCardAge(pet: pet)
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
-                    
-//                    PetCardChipID(chipID: pet.chipID)
-//                        .listRowSeparator(.hidden)
-//                        .listRowBackground(Color.clear)
 
                     PetCardWeight(
                         pet: pet,
@@ -48,7 +46,8 @@ struct PetCard: View {
                 .listStyle(.insetGrouped)
                 .scrollIndicators(.hidden)
             }
-            .navigationTitle(pet.name)
+            .navigationTitle("\(pet.name)'s Card")
+            .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showingPetDetail) {
                 PetDetail(pet: pet)
             }

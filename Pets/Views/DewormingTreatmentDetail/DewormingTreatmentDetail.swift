@@ -14,6 +14,7 @@ struct DewormingTreatmentDetail: View {
     @Bindable var pet: Pet
     
     @State var dewormingTreatment: DewormingTreatment
+    @State var showingDeleteAlert: Bool = false
     
     let isNew: Bool
     
@@ -63,36 +64,37 @@ struct DewormingTreatmentDetail: View {
                                 VerificationCheckMark(condition: isNameVerified)
                             }
                         
-                        Picker("Treatment type", selection: $dewormingTreatment.type.animation()) {
+                        Picker(
+                            "Treatment type",
+                            selection: $dewormingTreatment.type.animation()
+                        ) {
                             ForEach(TreatmentType.allCases, id: \.self) { type in
                                 Text(type.rawValue.capitalized)
                             }
                         }
                         .pickerStyle(.menu)
                         
-                        HStack {
-                            Picker(selection: $dewormingTreatment.units) {
-                                ForEach(TreatmentUnits.allCases, id:\.self) { units in
-                                    Text(units.rawValue)
-                                }
-                            } label: {
-                                HStack {
-                                    Text("Quantity")
-                                    
-                                    TextField(
-                                        "",
-                                        value: $dewormingTreatment.quantity,
-                                        format: .number
-                                    )
-                                    .multilineTextAlignment(.trailing)
-                                    .keyboardType(.decimalPad)
-                                }
+                        Picker(selection: $dewormingTreatment.units) {
+                            ForEach(TreatmentUnits.allCases, id:\.self) { units in
+                                Text(units.rawValue)
                             }
-                            .pickerStyle(.menu)
-                            .padding(.trailing, 30)
-                            .overlay {
-                                VerificationCheckMark(condition: isQuantityVerified)
+                        } label: {
+                            HStack {
+                                Text("Quantity")
+                                
+                                TextField(
+                                    "",
+                                    value: $dewormingTreatment.quantity,
+                                    format: .number
+                                )
+                                .multilineTextAlignment(.trailing)
+                                .keyboardType(.decimalPad)
                             }
+                        }
+                        .pickerStyle(.menu)
+                        .padding(.trailing, 30)
+                        .overlay {
+                            VerificationCheckMark(condition: isQuantityVerified)
                         }
                     }
                     
@@ -124,13 +126,20 @@ struct DewormingTreatmentDetail: View {
                     Button(
                         "Delete treatment",
                         role: .destructive,
-                        action: deleteDewormingTreatment
+                        action: { showingDeleteAlert = true }
                     )
-                    .padding(.top, 5)
+                    .padding(.top, 10)
+                    .padding(.bottom, 20)
                 }
             }
-            .navigationTitle("Deworming details")
+            .navigationTitle(isNew ? "Add Treatment" : "Edit Treatment")
             .navigationBarTitleDisplayMode(.inline)
+            .alert("Warning!", isPresented: $showingDeleteAlert) {
+                Button("Cancel", role: .cancel, action: { })
+                Button( "Ok", role: .destructive, action: deleteDewormingTreatment)
+            } message: {
+                Text("Deworming treatment will deleted, are you sure?")
+            }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save", action: appendDewormingTreatment)
@@ -149,12 +158,16 @@ struct DewormingTreatmentDetail: View {
     
     private func appendDewormingTreatment() {
         pet.dewormingTreatments.append(dewormingTreatment)
+        
         dismiss()
     }
     
     private func deleteDewormingTreatment() {
-        if let dewormingTreatmentIndex = pet.dewormingTreatments.firstIndex(where: { $0.id == dewormingTreatment.id }) {
+        if let dewormingTreatmentIndex = pet.dewormingTreatments.firstIndex(where: {
+            $0.id == dewormingTreatment.id
+        }) {
             pet.dewormingTreatments.remove(at: dewormingTreatmentIndex)
+            
             dismiss()
         }
     }
