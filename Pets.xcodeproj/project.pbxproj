@@ -66,7 +66,9 @@
 		08FD87B02C2C30F600CC9F9A /* PetCardOnFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87AF2C2C30F600CC9F9A /* PetCardOnFamily.swift */; };
 		08FD87B22C2C5F6B00CC9F9A /* PetCardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B12C2C5F6B00CC9F9A /* PetCardName.swift */; };
 		08FD87B42C2D5B9600CC9F9A /* PetColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B32C2D5B9600CC9F9A /* PetColors.swift */; };
-		08FD87B62C2DA5D400CC9F9A /* PetVaccineTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B52C2DA5D400CC9F9A /* PetVaccineTypes.swift */; };
+		08FD87B62C2DA5D400CC9F9A /* CanineVaccineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B52C2DA5D400CC9F9A /* CanineVaccineType.swift */; };
+		08FD87B92C2DB0B200CC9F9A /* CanineVaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B82C2DB0B200CC9F9A /* CanineVaccine.swift */; };
+		08FD87BB2C2DB40000CC9F9A /* FelineVaccineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87BA2C2DB40000CC9F9A /* FelineVaccineType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,7 +132,9 @@
 		08FD87AF2C2C30F600CC9F9A /* PetCardOnFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardOnFamily.swift; sourceTree = "<group>"; };
 		08FD87B12C2C5F6B00CC9F9A /* PetCardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardName.swift; sourceTree = "<group>"; };
 		08FD87B32C2D5B9600CC9F9A /* PetColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetColors.swift; sourceTree = "<group>"; };
-		08FD87B52C2DA5D400CC9F9A /* PetVaccineTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetVaccineTypes.swift; sourceTree = "<group>"; };
+		08FD87B52C2DA5D400CC9F9A /* CanineVaccineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanineVaccineType.swift; sourceTree = "<group>"; };
+		08FD87B82C2DB0B200CC9F9A /* CanineVaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanineVaccine.swift; sourceTree = "<group>"; };
+		08FD87BA2C2DB40000CC9F9A /* FelineVaccineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelineVaccineType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 		08833FDE2C09CABB000FD0BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08FD87B72C2DB0A200CC9F9A /* Vaccine */,
 				08EEF0CA2C22F7D0003ABFF9 /* DewormingTreatment */,
 				08B585172C19E3E20068D4B2 /* Pet */,
 				08C0F2EF2C2021D300D4C879 /* PetBreed */,
@@ -227,14 +232,15 @@
 		08866F582C0F237700455EAE /* Custom types */ = {
 			isa = PBXGroup;
 			children = (
+				08FD87B52C2DA5D400CC9F9A /* CanineVaccineType.swift */,
 				08833FE72C09CABB000FD0BF /* ChipIDType.swift */,
-				08EEF0CF2C23214F003ABFF9 /* TreatmentType.swift */,
+				08FD87BA2C2DB40000CC9F9A /* FelineVaccineType.swift */,
 				08B584F82C16E8A90068D4B2 /* PetImageSize.swift */,
 				08833FDA2C09CABB000FD0BF /* PetSex.swift */,
 				08833FDB2C09CABB000FD0BF /* PetSpecies.swift */,
+				08EEF0CF2C23214F003ABFF9 /* TreatmentType.swift */,
 				08EEF0CD2C23212A003ABFF9 /* TreatmentUnits.swift */,
 				08833FDC2C09CABB000FD0BF /* TimePeriod.swift */,
-				08FD87B52C2DA5D400CC9F9A /* PetVaccineTypes.swift */,
 			);
 			path = "Custom types";
 			sourceTree = "<group>";
@@ -395,6 +401,14 @@
 			path = DewormingTreatmentList;
 			sourceTree = "<group>";
 		};
+		08FD87B72C2DB0A200CC9F9A /* Vaccine */ = {
+			isa = PBXGroup;
+			children = (
+				08FD87B82C2DB0B200CC9F9A /* CanineVaccine.swift */,
+			);
+			path = Vaccine;
+			sourceTree = "<group>";
+		};
 		08FE45312C257B99001C78A1 /* DewormingTreatmentDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,8 +495,9 @@
 				08DF54452C1C553E003076B1 /* PetCardChipID.swift in Sources */,
 				08B584FB2C16EFA10068D4B2 /* Weight+Format.swift in Sources */,
 				08B585122C1849330068D4B2 /* PetBreed+SampleData.swift in Sources */,
+				08FD87B92C2DB0B200CC9F9A /* CanineVaccine.swift in Sources */,
 				08EEF0D02C23214F003ABFF9 /* TreatmentType.swift in Sources */,
-				08FD87B62C2DA5D400CC9F9A /* PetVaccineTypes.swift in Sources */,
+				08FD87B62C2DA5D400CC9F9A /* CanineVaccineType.swift in Sources */,
 				08FD87B02C2C30F600CC9F9A /* PetCardOnFamily.swift in Sources */,
 				08833FF32C09CABB000FD0BF /* PetSex.swift in Sources */,
 				08833FF52C09CABB000FD0BF /* TimePeriod.swift in Sources */,
@@ -524,6 +539,7 @@
 				08DF544B2C1C80A6003076B1 /* PetImagePlaceholder.swift in Sources */,
 				08B585062C1718E70068D4B2 /* PetBreedDataService.swift in Sources */,
 				08833FFF2C09CABB000FD0BF /* PetListNoPetsYet.swift in Sources */,
+				08FD87BB2C2DB40000CC9F9A /* FelineVaccineType.swift in Sources */,
 				08EEF0CE2C23212A003ABFF9 /* TreatmentUnits.swift in Sources */,
 				08DF543D2C1C3A86003076B1 /* FontTest.swift in Sources */,
 				08833FF42C09CABB000FD0BF /* PetSpecies.swift in Sources */,
