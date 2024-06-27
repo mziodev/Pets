@@ -58,11 +58,15 @@ struct DewormingTreatmentDetail: View {
                 
                 Form {
                     Section("Info") {
-                        TextField("Treatment name", text: $dewormingTreatment.name)
-                            .font(.title3.smallCaps())
-                            .overlay {
-                                VerificationCheckMark(condition: isNameVerified)
-                            }
+                        TextField(
+                            "Treatment name",
+                            text: $dewormingTreatment.name
+                        )
+                        .font(.title3.smallCaps())
+                        .scrollDismissesKeyboard(.interactively)
+                        .overlay {
+                            VerificationCheckMark(condition: isNameVerified)
+                        }
                         
                         Picker(
                             "Treatment type",
@@ -97,6 +101,7 @@ struct DewormingTreatmentDetail: View {
                             VerificationCheckMark(condition: isQuantityVerified)
                         }
                     }
+                    .listRowBackground(Color.petsBGDarkBlue.opacity(0.5))
                     
                     Section("Dates") {
                         DatePicker(
@@ -112,6 +117,7 @@ struct DewormingTreatmentDetail: View {
                             displayedComponents: .date
                         )
                     }
+                    .listRowBackground(Color.petsBGDarkBlue.opacity(0.5))
                     
                     Section("Notes") {
                         TextField(
@@ -120,7 +126,9 @@ struct DewormingTreatmentDetail: View {
                             axis: .vertical
                         )
                     }
+                    .listRowBackground(Color.petsBGDarkBlue.opacity(0.5))
                 }
+                .scrollContentBackground(.hidden)
                 
                 if !isNew {
                     Button(
@@ -132,6 +140,7 @@ struct DewormingTreatmentDetail: View {
                     .padding(.bottom, 20)
                 }
             }
+            .background(PetColors.backgroundGradient)
             .navigationTitle(isNew ? "Add Treatment" : "Edit Treatment")
             .navigationBarTitleDisplayMode(.inline)
             .alert("Warning!", isPresented: $showingDeleteAlert) {

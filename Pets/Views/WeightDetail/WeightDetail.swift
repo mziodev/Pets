@@ -35,26 +35,30 @@ struct WeightDetail: View {
         NavigationStack {
             VStack {
                 Form {
-                    DatePicker(
-                        "Date",
-                        selection: $weight.date,
-                        in: Date.distantPast...Date.now,
-                        displayedComponents: .date
-                    )
-                    .foregroundStyle(.placeholder)
-                    
-                    HStack {
-                        Text("Weight")
-                            .foregroundStyle(.placeholder)
+                    Section("Weight Data") {
+                        DatePicker(
+                            "Date",
+                            selection: $weight.date,
+                            in: Date.distantPast...Date.now,
+                            displayedComponents: .date
+                        )
+                        .foregroundStyle(.placeholder)
                         
-                        TextField("", value: $weight.value, format: .number)
-                            .multilineTextAlignment(.trailing)
-                            .keyboardType(.decimalPad)
-                            .focused($isWeightTextFieldFocused)
-                        
-                        Text("\(Weight.units)")
+                        HStack {
+                            Text("Weight")
+                                .foregroundStyle(.placeholder)
+                            
+                            TextField("", value: $weight.value, format: .number)
+                                .multilineTextAlignment(.trailing)
+                                .keyboardType(.decimalPad)
+                                .focused($isWeightTextFieldFocused)
+                            
+                            Text("\(Weight.units)")
+                        }
                     }
+                    .listRowBackground(Color.petsBGDarkBlue.opacity(0.4))
                 }
+                .scrollContentBackground(.hidden)
                 
                 if !isNew {
                     Button("Delete weight", role: .destructive) {
@@ -64,6 +68,7 @@ struct WeightDetail: View {
                     .padding(.bottom, 20)
                 }
             }
+            .background(PetColors.backgroundGradient)
             .navigationTitle(isNew ? "Add Weight" : "Edit Weight")
             .navigationBarTitleDisplayMode(.inline)
             .interactiveDismissDisabled()

@@ -87,6 +87,7 @@ struct WeightList: View {
                                 } label: {
                                     WeightListRow(weight: weight)
                                 }
+                                .listRowBackground(Color.clear)
                             }
                         }
                     }
@@ -95,11 +96,14 @@ struct WeightList: View {
                     WeightListNoWeight()
                 }
             }
+            .background(PetColors.backgroundGradient)
             .navigationTitle("\(pet.name)'s weight list")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.petsBGDarkBlue, for: .bottomBar)
+            .toolbarBackground(.visible, for: .bottomBar)
             .interactiveDismissDisabled()
             .sheet(isPresented: $showingAddWeightSheet) {
-                WeightDetail(pet: pet, isNew: true) 
+                WeightDetail(pet: pet, isNew: true)
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {

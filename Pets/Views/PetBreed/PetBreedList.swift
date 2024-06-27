@@ -6,7 +6,6 @@
 //
 
 
-
 import SwiftUI
 
 struct PetBreedList: View {
@@ -29,59 +28,67 @@ struct PetBreedList: View {
     @State private var isSearchPresented = false
     
     
-    // MARK: - body
     var body: some View {
-        if pet.species != .unknown {
+        NavigationStack {
             VStack {
-                if !pet.breed.isEmpty {
-                    Text("I'm a \(pet.breed)")
-                        .font(.callout)
-                        .bold()
-                        .foregroundStyle(.tint)
-                        .padding()
-                        .lineLimit(1)
-                }
-                
-                List {
-                    ForEach(filteredPetBreedList) { breed in
-                        if breed.variations.isEmpty {
-                            PetBreedListRow(pet: pet, breed: breed)
-                                .onTapGesture {
-                                    pet.breed = breed.name
-                                    
-                                    resetSearchable()
-                                }
-                        } else {
-                            NavigationLink {
-                                PetBreedVariationList(
-                                    pet: pet,
-                                    breed: breed
-                                )
-                            } label: {
+                if pet.species != .unknown {
+                    if !pet.breed.isEmpty {
+                        Text("I'm a \(pet.breed)")
+                            .font(.callout)
+                            .bold()
+                            .foregroundStyle(.tint)
+                            .padding()
+                            .lineLimit(1)
+                    }
+                    
+                    List {
+                        ForEach(filteredPetBreedList) { breed in
+                            if breed.variations.isEmpty {
                                 PetBreedListRow(pet: pet, breed: breed)
+                                    .listRowBackground(Color.clear)
+                                    .onTapGesture {
+                                        pet.breed = breed.name
+                                        
+                                        resetSearchable()
+                                    }
+                            } else {
+                                NavigationLink {
+                                    PetBreedVariationList(
+                                        pet: pet,
+                                        breed: breed
+                                    )
+                                } label: {
+                                    PetBreedListRow(pet: pet, breed: breed)
+                                }
+                                .listRowBackground(Color.clear)
                             }
-                            
                         }
                     }
+                    .listStyle(.plain)
+                    .searchable(
+                        text: $searchText,
+                        isPresented: $isSearchPresented
+                    )
+                    .onAppear { resetSearchable() }
+                } else {
+                    Text("You have to select your pet species first.")
+                        .padding()
                 }
-                .listStyle(.plain)
-                .searchable(
-                    text: $searchText,
-                    isPresented: $isSearchPresented
-                )
-                .onAppear { resetSearchable() }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(PetColors.backgroundGradient)
             .navigationTitle(pet.name)
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.petsBGDarkBlue, for: .bottomBar)
+            .toolbarBackground(.visible, for: .bottomBar)
             .toolbar {
-                ToolbarItem(placement: .status) {
-                    Text("\(petBreedsSorted.count) breeds")
-                        .font(.caption)
+                if pet.species != .unknown {
+                    ToolbarItem(placement: .status) {
+                        Text("\(petBreedsSorted.count) breeds")
+                            .font(.caption)
+                    }
                 }
             }
-        } else {
-            Text("You have to select your pet species first.")
-                .padding()
         }
         
     }
@@ -95,13 +102,9 @@ struct PetBreedList: View {
 
 
 #Preview("Breed list is empty") {
-    NavigationStack {
-        PetBreedList(pet: SampleData.shared.petWithoutSpecies)
-    }
+    PetBreedList(pet: SampleData.shared.petWithoutSpecies)
 }
 
 #Preview("Breed list is not empty") {
-    NavigationStack {
-        PetBreedList(pet: SampleData.shared.petWithChipID)
-    }
+    PetBreedList(pet: SampleData.shared.petWithChipID)
 }

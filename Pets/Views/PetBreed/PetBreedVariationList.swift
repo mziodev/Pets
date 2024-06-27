@@ -15,35 +15,41 @@ struct PetBreedVariationList: View {
     let breed: PetBreed
     
     var body: some View {
-        List(breed.variations, id: \.self) { variation in
-            HStack {
-                Text(variation)
-                
-                Spacer()
-                
-                if pet.breed == "\(breed.name), \(variation)" {
-                    Image(systemName: "checkmark.circle")
-                        .font(.title3)
-                        .foregroundStyle(.tint)
+        NavigationStack {
+            VStack {
+                List(breed.variations, id: \.self) { variation in
+                    Section {
+                        HStack {
+                            Text(variation)
+                            
+                            Spacer()
+                            
+                            if pet.breed == "\(breed.name), \(variation)" {
+                                Image(systemName: "checkmark.circle")
+                                    .font(.title3)
+                                    .foregroundStyle(.tint)
+                            }
+                            
+                        }
+                        .onTapGesture {
+                            pet.breed = "\(breed.name), \(variation)"
+                            
+                            dismiss()
+                    }
+                    }
+                    .listRowBackground(Color.clear)
                 }
-                
+                .listStyle(.plain)
             }
-            .onTapGesture {
-                pet.breed = "\(breed.name), \(variation)"
-                
-                dismiss()
-            }
+            .navigationTitle(breed.name)
+            .background(PetColors.backgroundGradient)
         }
-        .navigationTitle(breed.name)
-        .listStyle(.plain)
     }
 }
 
 #Preview {
-    NavigationStack {
-        PetBreedVariationList(
-            pet: SampleData.shared.petWithoutChipID,
-            breed: PetBreed.sampledata[1]
-        )
-    }
+    PetBreedVariationList(
+        pet: SampleData.shared.petWithoutChipID,
+        breed: PetBreed.sampledata[1]
+    )
 }

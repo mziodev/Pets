@@ -65,6 +65,7 @@ struct PetDetail: View {
                         }
                         .pickerStyle(.menu)
                     }
+                    .listRowBackground(Color.petsBGLightBlue.opacity(0.4))
 
                     Section("Breed") {
                         NavigationLink {
@@ -76,6 +77,7 @@ struct PetDetail: View {
                                 )
                         }
                     }
+                    .listRowBackground(Color.petsBGLightBlue.opacity(0.4))
                     
                     Section("Chip") {
                         Picker("ID type", selection: $pet.chipIDType.animation()) {
@@ -102,6 +104,7 @@ struct PetDetail: View {
                             }
                         }
                     }
+                    .listRowBackground(Color.petsBGLightBlue.opacity(0.4))
                     
                     Section("Dates") {
                         DatePicker(
@@ -118,8 +121,11 @@ struct PetDetail: View {
                             displayedComponents: .date
                         )
                     }
+                    .listRowBackground(Color.petsBGLightBlue.opacity(0.4))
                 }
+                .scrollContentBackground(.hidden)
             }
+            .background(PetColors.backgroundGradient)
             .navigationTitle(isNew ? "New pet" : pet.name)
             .navigationBarTitleDisplayMode(.inline)
             .scrollDismissesKeyboard(.interactively)

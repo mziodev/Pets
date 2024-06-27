@@ -15,18 +15,21 @@ struct PetCardOnFamily: View {
         HStack {
             Spacer()
             
-            if let yearString = onFamilyYears["year"] {
-                Text(yearString)
+            Group {
+                if let yearString = onFamilyYears["year"] {
+                    Text(yearString)
+                }
+                
+                if let monthString = onFamilyYears["month"] {
+                    Text(monthString)
+                        .padding(.leading, -5)
+                }
+                
+                if let dayString = onFamilyYears["day"] {
+                    Text(dayString)
+                }
             }
-            
-            if let monthString = onFamilyYears["month"] {
-                Text(monthString)
-                    .padding(.leading, -5)
-            }
-            
-            if let dayString = onFamilyYears["day"] {
-                Text(dayString)
-            }
+            .fontDesign(.serif)
             
             Text("on family")
                 .font(.callout.lowercaseSmallCaps())
@@ -34,7 +37,6 @@ struct PetCardOnFamily: View {
             
             Spacer()
         }
-        .font(.callout)
     }
 }
 

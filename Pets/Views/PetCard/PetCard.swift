@@ -43,11 +43,14 @@ struct PetCard: View {
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
                 }
-                .listStyle(.insetGrouped)
+                .listStyle(.plain)
                 .scrollIndicators(.hidden)
             }
             .navigationTitle("\(pet.name)'s Card")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.petsBGDarkBlue, for: .bottomBar)
+            .toolbarBackground(.visible, for: .bottomBar)
+            .background(PetColors.backgroundGradient)
             .sheet(isPresented: $showingPetDetail) {
                 PetDetail(pet: pet)
             }

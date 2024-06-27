@@ -18,24 +18,29 @@ struct PetList: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(pets) { pet in
-                    NavigationLink {
-                        PetCard(pet: pet)
-                    } label: {
-                        PetListRow(
-                            name: pet.name,
-                            breed: pet.breed,
-                            speciesName: pet.species.rawValue
-                        )
+            VStack {
+                List {
+                    ForEach(pets) { pet in
+                        NavigationLink {
+                            PetCard(pet: pet)
+                        } label: {
+                            PetListRow(
+                                name: pet.name,
+                                breed: pet.breed,
+                                speciesName: pet.species.rawValue
+                            )
+                        }
+                        .listRowBackground(Color.clear)
                     }
+                    .onDelete(perform: deletePets)
                 }
-                .onDelete(perform: deletePets)
+                .listStyle(.plain)
+                .overlay {
+                    if pets.isEmpty { PetListNoPetsYet() }
+                }
+                .navigationTitle("Pets")
             }
-            .navigationTitle("Pets")
-            .overlay {
-                if pets.isEmpty { PetListNoPetsYet() }
-            }
+            .background(PetColors.backgroundGradient)
             .sheet(isPresented: $showingAddPetSheet) {
                 PetDetail(pet: Pet(), isNew: true)
             }
@@ -58,7 +63,7 @@ struct PetList: View {
                             .font(.caption)
                     }
                 }
-            }       
+            }
         }
     }
     
