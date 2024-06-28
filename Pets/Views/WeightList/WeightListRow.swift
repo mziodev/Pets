@@ -17,7 +17,10 @@ struct WeightListRow: View {
             Spacer()
             
             Text("\(weight.value.formatted()) \(Weight.units)")
+                .font(.title3)
+                .fontDesign(.rounded)
                 .bold()
+
         }
     }
 }

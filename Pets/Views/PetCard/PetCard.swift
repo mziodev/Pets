@@ -18,7 +18,7 @@ struct PetCard: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 20) {
+            VStack(spacing: 30) {
                 PetImage(pet: pet, imageSize: .large)
                     .padding(.top)
                 
@@ -46,11 +46,9 @@ struct PetCard: View {
                 .listStyle(.plain)
                 .scrollIndicators(.hidden)
             }
+            .padding(.top)
             .navigationTitle("\(pet.name)'s Card")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.petsBGDarkBlue, for: .bottomBar)
-            .toolbarBackground(.visible, for: .bottomBar)
-            .background(PetColors.backgroundGradient)
             .sheet(isPresented: $showingPetDetail) {
                 PetDetail(pet: pet)
             }
@@ -88,7 +86,8 @@ struct PetCard: View {
                             .font(.subheadline.smallCaps())
                     } else {
                         Button("Chip ID") { showingChipIDBarcode = true }
-                            .font(.headline.smallCaps())
+                            .font(.headline.lowercaseSmallCaps())
+                            .foregroundStyle(.petsAccentBlue)
                     }
                 }
             }

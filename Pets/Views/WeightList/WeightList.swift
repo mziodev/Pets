@@ -60,8 +60,10 @@ struct WeightList: View {
                                     Weight.units
                                 )
                             )
-                            .font(.title)
+                            .font(.largeTitle)
+                            .fontDesign(.rounded)
                             .bold()
+                            .foregroundStyle(.accent)
                             
                             Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
                                 .foregroundStyle(.secondary)
@@ -87,20 +89,15 @@ struct WeightList: View {
                                 } label: {
                                     WeightListRow(weight: weight)
                                 }
-                                .listRowBackground(Color.clear)
                             }
                         }
                     }
-                    .listStyle(.plain)
                 } else {
                     WeightListNoWeight()
                 }
             }
-            .background(PetColors.backgroundGradient)
             .navigationTitle("\(pet.name)'s weight list")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.petsBGDarkBlue, for: .bottomBar)
-            .toolbarBackground(.visible, for: .bottomBar)
             .interactiveDismissDisabled()
             .sheet(isPresented: $showingAddWeightSheet) {
                 WeightDetail(pet: pet, isNew: true)

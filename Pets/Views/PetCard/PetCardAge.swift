@@ -18,7 +18,6 @@ struct PetCardAge: View {
                 Text("Age")
                     .font(.callout.lowercaseSmallCaps())
                     .foregroundStyle(.tint)
-//                    .padding(.top, 12)
                 
                 if let yearString = pet.age["year"] {
                     Text(yearString)
@@ -30,6 +29,7 @@ struct PetCardAge: View {
                     Text(monthString)
                         .font(pet.age["year"] == nil ? .title.bold() : .body)
                         .fontDesign(.serif)
+                        .foregroundStyle(.petsAccentBlue)
                         .padding(.top, pet.age["year"] == nil ? 0 : 7)
                 }
                 

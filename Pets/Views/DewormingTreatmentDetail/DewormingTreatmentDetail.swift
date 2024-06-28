@@ -43,20 +43,30 @@ struct DewormingTreatmentDetail: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Label(
-                    dewormingTreatment.type.rawValue,
-                    systemImage: dewormingTreatment.type.systemImage
-                )
-                .labelStyle(.iconOnly)
-                .font(.system(size: 70))
-                .padding(.top)
-                .foregroundStyle(.tint)
-                
-                Text("\(pet.name)'s deworming treatment")
-                    .font(.title3)
-                    .padding(.top)
-                
                 Form {
+                    Section {
+                        HStack {
+                            Spacer()
+                            
+                            VStack {
+                                Label(
+                                    dewormingTreatment.type.rawValue,
+                                    systemImage: dewormingTreatment.type.systemImage
+                                )
+                                .labelStyle(.iconOnly)
+                                .font(.system(size: 70))
+                                .foregroundStyle(.petsAccentBlue)
+                                
+                                Text("\(pet.name)'s deworming treatment")
+                                    .font(.title3)
+                                    .padding(.top)
+                            }
+                            
+                            Spacer()
+                        }
+                    }
+                    .listRowBackground(Color.clear)
+                    
                     Section("Info") {
                         TextField(
                             "Treatment name",
@@ -79,7 +89,7 @@ struct DewormingTreatmentDetail: View {
                         .pickerStyle(.menu)
                         
                         Picker(selection: $dewormingTreatment.units) {
-                            ForEach(TreatmentUnits.allCases, id:\.self) { units in
+                            ForEach(TreatmentUnit.allCases, id:\.self) { units in
                                 Text(units.rawValue)
                             }
                         } label: {
@@ -101,7 +111,6 @@ struct DewormingTreatmentDetail: View {
                             VerificationCheckMark(condition: isQuantityVerified)
                         }
                     }
-                    .listRowBackground(Color.petsBGDarkBlue.opacity(0.5))
                     
                     Section("Dates") {
                         DatePicker(
@@ -117,7 +126,6 @@ struct DewormingTreatmentDetail: View {
                             displayedComponents: .date
                         )
                     }
-                    .listRowBackground(Color.petsBGDarkBlue.opacity(0.5))
                     
                     Section("Notes") {
                         TextField(
@@ -126,9 +134,7 @@ struct DewormingTreatmentDetail: View {
                             axis: .vertical
                         )
                     }
-                    .listRowBackground(Color.petsBGDarkBlue.opacity(0.5))
                 }
-                .scrollContentBackground(.hidden)
                 
                 if !isNew {
                     Button(
@@ -140,7 +146,6 @@ struct DewormingTreatmentDetail: View {
                     .padding(.bottom, 20)
                 }
             }
-            .background(PetColors.backgroundGradient)
             .navigationTitle(isNew ? "Add Treatment" : "Edit Treatment")
             .navigationBarTitleDisplayMode(.inline)
             .alert("Warning!", isPresented: $showingDeleteAlert) {

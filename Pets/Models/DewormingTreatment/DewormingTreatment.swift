@@ -11,7 +11,7 @@ import SwiftData
 @Model
 class DewormingTreatment {
     var type: TreatmentType
-    var units: TreatmentUnits
+    var units: TreatmentUnit
     var name: String
     var quantity: Double
     var startingDate: Date
@@ -25,7 +25,7 @@ class DewormingTreatment {
     
     init(
         type: TreatmentType = .unknown,
-        units: TreatmentUnits = .units,
+        units: TreatmentUnit = .units,
         name: String = "",
         quantity: Double = 0,
         startingDate: Date = .now,

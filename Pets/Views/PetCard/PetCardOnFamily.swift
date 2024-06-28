@@ -31,9 +31,9 @@ struct PetCardOnFamily: View {
             }
             .fontDesign(.serif)
             
-            Text("on family")
+            Text("on Family")
                 .font(.callout.lowercaseSmallCaps())
-                .foregroundStyle(.tint)
+                .foregroundStyle(.accent)
             
             Spacer()
         }

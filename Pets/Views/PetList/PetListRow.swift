@@ -15,6 +15,10 @@ struct PetListRow: View {
     
     var body: some View {
         HStack {
+            Image(systemName: "\(speciesName == "none" ? "pawprint" : speciesName).fill")
+                .font(.title)
+                .foregroundStyle(.petsAccentBlue)
+            
             VStack(alignment: .leading) {
                 Text(name)
                     .font(.headline)
@@ -25,9 +29,6 @@ struct PetListRow: View {
             }
             
             Spacer()
-            
-            Image(systemName: "\(speciesName == "none" ? "pawprint" : speciesName).fill")
-                .font(.title2)
         }
     }
 }

@@ -29,13 +29,13 @@ struct DewormingTreatmentListRow: View {
     var body: some View {
         HStack {
             Image(systemName: dewormingTreatment.type.systemImage)
-                .font(.title2)
-                .foregroundStyle(isTreatmentExpired ? .secondary : Color.accent)
+                .font(.title)
+                .foregroundStyle(isTreatmentExpired ? .secondary : Color.petsAccentBlue)
                 .accessibilityLabel("Treatment image")
             
             VStack(alignment: .leading) {
                 Text(dewormingTreatment.name)
-                    .font(.headline)
+                    .font(.headline.smallCaps())
                 
                 Text(
                     dewormingTreatment.startingDate.formatted(

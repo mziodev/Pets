@@ -14,28 +14,34 @@ struct PetDetailImage: View {
     @State private var selectedImage: PhotosPickerItem?
     
     var body: some View {
-        VStack {
-            PetImage(pet: pet, imageSize: .small)
+        HStack {
+            Spacer()
             
-            PhotosPicker(
-                selection: $selectedImage,
-                matching: .images,
-                photoLibrary: .shared()
-            ) {
-                Text(pet.image != nil ? "Change photo" : "Add photo")
-                    .foregroundStyle(
-                        pet.image != nil ? .primary : Color.accentColor
-                    )
-            }
-            
-            if pet.image != nil {
-                Button("Remove photo", role: .destructive) {
-                    withAnimation {
-                        selectedImage = nil
-                        pet.image = nil
+            VStack {
+                PetImage(pet: pet, imageSize: .small)
+                
+                PhotosPicker(
+                    selection: $selectedImage,
+                    matching: .images,
+                    photoLibrary: .shared()
+                ) {
+                    Text(pet.image != nil ? "Change photo" : "Add photo")
+                        .foregroundStyle(
+                            pet.image != nil ? .primary : Color.accent
+                        )
+                }
+                
+                if pet.image != nil {
+                    Button("Remove photo", role: .destructive) {
+                        withAnimation {
+                            selectedImage = nil
+                            pet.image = nil
+                        }
                     }
                 }
             }
+            
+            Spacer()
         }
         .task(id: selectedImage) {
             if let data = try? await selectedImage?.loadTransferable(

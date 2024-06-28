@@ -1,5 +1,5 @@
 //
-//  TreatmentUnits.swift
+//  TreatmentUnit.swift
 //  Pets
 //
 //  Created by MZiO on 19/6/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TreatmentUnits: String, Codable, CaseIterable {
+enum TreatmentUnit: String, Codable, CaseIterable {
     case markings
     case milligrams = "mg"
     case milligramsPerMilliliter = "mg/ml"

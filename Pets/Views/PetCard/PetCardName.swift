@@ -20,6 +20,7 @@ struct PetCardName: View {
             
             Text(name)
                 .font(.largeTitle.bold())
+                .fontDesign(.serif)
             
             Spacer()
         }

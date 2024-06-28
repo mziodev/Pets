@@ -26,6 +26,7 @@ struct WeightListChart: View {
         }
         .chartScrollableAxes(.horizontal)
         .chartXVisibleDomain(length: weights.count)
+        .foregroundStyle(.petsAccentBlue)
     }
 }
 

@@ -41,9 +41,12 @@ struct PetDetail: View {
     var body: some View {
         NavigationStack {
             VStack {
-                PetDetailImage(pet: pet)
-                
                 Form {
+                    Section {
+                        PetDetailImage(pet: pet)
+                    }
+                    .listRowBackground(Color.clear)
+                    
                     Section("Basics") {
                         TextField("Name (min. 2 characters)", text: $pet.name)
                             .focused($nameTextFieldFocused)
@@ -65,7 +68,6 @@ struct PetDetail: View {
                         }
                         .pickerStyle(.menu)
                     }
-                    .listRowBackground(Color.petsBGLightBlue.opacity(0.4))
 
                     Section("Breed") {
                         NavigationLink {
@@ -77,7 +79,6 @@ struct PetDetail: View {
                                 )
                         }
                     }
-                    .listRowBackground(Color.petsBGLightBlue.opacity(0.4))
                     
                     Section("Chip") {
                         Picker("ID type", selection: $pet.chipIDType.animation()) {
@@ -104,31 +105,30 @@ struct PetDetail: View {
                             }
                         }
                     }
-                    .listRowBackground(Color.petsBGLightBlue.opacity(0.4))
                     
                     Section("Dates") {
+                        Toggle("Adopted", isOn: $pet.isAdopted.animation())
+                            .tint(.petsAccentBlue)
+                        
                         DatePicker(
-                            "Born on",
+                            "Birthday",
                             selection: $pet.birthday,
                             in: Date.distantPast...Date.now,
                             displayedComponents: .date
                         )
                         
                         DatePicker(
-                            pet.isAdopted ? "Adopted on" : "On the family since",
+                            pet.isAdopted ? "Adopted on" : "On family since",
                             selection: $pet.onFamilySince,
                             in: pet.birthday...Date.now,
                             displayedComponents: .date
                         )
                     }
-                    .listRowBackground(Color.petsBGLightBlue.opacity(0.4))
                 }
-                .scrollContentBackground(.hidden)
             }
-            .background(PetColors.backgroundGradient)
             .navigationTitle(isNew ? "New pet" : pet.name)
             .navigationBarTitleDisplayMode(.inline)
-            .scrollDismissesKeyboard(.interactively)
+            .scrollDismissesKeyboard(.immediately)
             .interactiveDismissDisabled()
             .onAppear {
                 if pet.name.isEmpty { nameTextFieldFocused = true }

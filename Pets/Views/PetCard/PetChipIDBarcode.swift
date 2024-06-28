@@ -13,6 +13,8 @@ struct PetChipIDBarcode: View {
     
     let chipID: String
     
+    @State private var currentScreenBrightness: CGFloat?
+    
     var barcodeImage: UIImage? {
         generateBarcode(from: chipID)
     }
@@ -21,28 +23,34 @@ struct PetChipIDBarcode: View {
         NavigationStack {
             VStack {
                 if let barcodeImage {
-                    Image(uiImage: barcodeImage)
-                        .interpolation(.none)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: chipID.isEmpty ? 100 : 500)
+                    VStack {
+                        Image(uiImage: barcodeImage)
+                            .interpolation(.none)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 600)
+                            .clipShape(.rect(cornerRadius: 20))
+                        
+                        Text(chipID)
+                            .font(.title)
+                    }
+                    .rotationEffect(Angle(degrees: 90))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .onAppear(perform: enableFullScreenBrightness)
+                    .onDisappear(perform: restoreScreenBrightness)
                 } else {
-                    Image(systemName: "xmark.circle")
-                        .font(.system(size: 100))
+                    VStack {
+                        Image(systemName: "xmark.circle")
+                            .font(.system(size: 100))
+                        
+                        Text("Barcode reading error, try again")
+                            .font(.headline)
+                    }
                 }
-                
-                Text(
-                    chipID.isEmpty ? "Barcode reading error, try again" : chipID
-                )
-                .font(chipID.isEmpty ? .callout : .title2)
-                    .offset(y: chipID.isEmpty ? 5 : -20)
             }
             .navigationTitle("Chip ID Barcode")
             .navigationBarTitleDisplayMode(.inline)
             .interactiveDismissDisabled()
-            .rotationEffect(Angle(degrees: 90))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .preferredColorScheme(.light)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }
@@ -60,7 +68,7 @@ struct PetChipIDBarcode: View {
     ///
     /// - note: This function uses the `CIContext` and `CIFilter` classes to generate 
     /// the barcode image.
-    func generateBarcode(from string: String) -> UIImage? {
+    private func generateBarcode(from string: String) -> UIImage? {
         let context = CIContext()
         let filter = CIFilter.code128BarcodeGenerator()
         
@@ -77,10 +85,26 @@ struct PetChipIDBarcode: View {
         
         return nil
     }
+    
+    private func enableFullScreenBrightness() {
+        currentScreenBrightness = UIScreen.main.brightness
+        
+        withAnimation {
+            UIScreen.main.brightness = 1.0
+        }
+    }
+    
+    private func restoreScreenBrightness() {
+        if let currentScreenBrightness = currentScreenBrightness {
+            withAnimation {
+                UIScreen.main.brightness = currentScreenBrightness
+            }
+        }
+    }
 }
 
 #Preview("With barcode") {
-    PetChipIDBarcode(chipID: "123456789098765")
+    PetChipIDBarcode(chipID: "981098108464559")
 }
 
 #Preview("Without barcode") {

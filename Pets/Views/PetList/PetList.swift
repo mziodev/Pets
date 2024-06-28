@@ -30,17 +30,14 @@ struct PetList: View {
                                 speciesName: pet.species.rawValue
                             )
                         }
-                        .listRowBackground(Color.clear)
                     }
                     .onDelete(perform: deletePets)
                 }
-                .listStyle(.plain)
                 .overlay {
                     if pets.isEmpty { PetListNoPetsYet() }
                 }
                 .navigationTitle("Pets")
             }
-            .background(PetColors.backgroundGradient)
             .sheet(isPresented: $showingAddPetSheet) {
                 PetDetail(pet: Pet(), isNew: true)
             }

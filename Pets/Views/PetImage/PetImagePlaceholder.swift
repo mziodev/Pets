@@ -29,12 +29,11 @@ struct PetImagePlaceholder: View {
                     width: imageSize.rawValue,
                     height: imageSize.rawValue
                 )
-//                .foregroundStyle(.gray.opacity(0.1))
-                .foregroundStyle(.petsBGDarkBlue.opacity(0.5))
+                .foregroundStyle(.petsAccentBlue)
             
             Image(systemName: species == .unknown ? "pawprint.fill" : "\(species.rawValue).fill")
                 .font(.system(size: imageSize.rawValue * 0.45))
-                .foregroundStyle(.tint)
+                .foregroundStyle(.white)
                 .accessibilityLabel(accessibilityLabel)
         }
     }

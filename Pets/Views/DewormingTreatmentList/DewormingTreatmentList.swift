@@ -36,7 +36,6 @@ struct DewormingTreatmentList: View {
                                 }
                             }
                         }
-                        .listRowBackground(Color.petsBGDarkBlue.opacity(0.4))
                         
                         if pet.expiredDewormingTreatments > 0 {
                             Section("Expired treatments") {
@@ -55,18 +54,13 @@ struct DewormingTreatmentList: View {
                                     }
                                 }
                             }
-                            .listRowBackground(
-                                Color.petsBGDarkBlue.opacity(0.4)
-                            )
                         }
                     }
-                    .scrollContentBackground(.hidden)
                 } else {
                     DewormingTreatmentListNoTreatment()
                 }
             }
-            .background(PetColors.backgroundGradient)
-            .navigationTitle("\(pet.name) deworming")
+            .navigationTitle("\(pet.name)'s dewormings")
             .navigationBarTitleDisplayMode(.inline)
             .interactiveDismissDisabled()
             .sheet(isPresented: $showingDewormingTreatmentDetail) {
@@ -75,8 +69,6 @@ struct DewormingTreatmentList: View {
                     isNew: true
                 )
             }
-            .toolbarBackground(Color.petsBGDarkBlue, for: .bottomBar)
-            .toolbarBackground(.visible, for: .bottomBar)
             .toolbar {
                 ToolbarItem {
                     Button {
