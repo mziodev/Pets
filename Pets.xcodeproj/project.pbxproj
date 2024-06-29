@@ -137,6 +137,7 @@
 		08FD87B82C2DB0B200CC9F9A /* CanineVaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanineVaccine.swift; sourceTree = "<group>"; };
 		08FD87BA2C2DB40000CC9F9A /* FelineVaccineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelineVaccineType.swift; sourceTree = "<group>"; };
 		08FD87BC2C30012F00CC9F9A /* PetBreedNoBreeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedNoBreeds.swift; sourceTree = "<group>"; };
+		08FD87BE2C300C7500CC9F9A /* ProjectNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ProjectNotes.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +222,7 @@
 			children = (
 				08EEF0C92C22EE5B003ABFF9 /* Apps */,
 				08866F582C0F237700455EAE /* Custom types */,
+				08FD87BF2C300E4B00CC9F9A /* MarkDown */,
 				08833FDE2C09CABB000FD0BF /* Models */,
 				08B585042C1718B90068D4B2 /* Services */,
 				08833FE22C09CABB000FD0BF /* Utitliies */,
@@ -410,6 +412,14 @@
 				08FD87B82C2DB0B200CC9F9A /* CanineVaccine.swift */,
 			);
 			path = Vaccine;
+			sourceTree = "<group>";
+		};
+		08FD87BF2C300E4B00CC9F9A /* MarkDown */ = {
+			isa = PBXGroup;
+			children = (
+				08FD87BE2C300C7500CC9F9A /* ProjectNotes.md */,
+			);
+			path = MarkDown;
 			sourceTree = "<group>";
 		};
 		08FE45312C257B99001C78A1 /* DewormingTreatmentDetail */ = {
