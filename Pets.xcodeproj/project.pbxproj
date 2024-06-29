@@ -69,6 +69,7 @@
 		08FD87B62C2DA5D400CC9F9A /* CanineVaccineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B52C2DA5D400CC9F9A /* CanineVaccineType.swift */; };
 		08FD87B92C2DB0B200CC9F9A /* CanineVaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B82C2DB0B200CC9F9A /* CanineVaccine.swift */; };
 		08FD87BB2C2DB40000CC9F9A /* FelineVaccineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87BA2C2DB40000CC9F9A /* FelineVaccineType.swift */; };
+		08FD87BD2C30012F00CC9F9A /* PetBreedNoBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87BC2C30012F00CC9F9A /* PetBreedNoBreeds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +136,7 @@
 		08FD87B52C2DA5D400CC9F9A /* CanineVaccineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanineVaccineType.swift; sourceTree = "<group>"; };
 		08FD87B82C2DB0B200CC9F9A /* CanineVaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanineVaccine.swift; sourceTree = "<group>"; };
 		08FD87BA2C2DB40000CC9F9A /* FelineVaccineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelineVaccineType.swift; sourceTree = "<group>"; };
+		08FD87BC2C30012F00CC9F9A /* PetBreedNoBreeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedNoBreeds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +332,7 @@
 			children = (
 				08B585072C1748690068D4B2 /* PetBreedList.swift */,
 				08B585132C1853640068D4B2 /* PetBreedListRow.swift */,
+				08FD87BC2C30012F00CC9F9A /* PetBreedNoBreeds.swift */,
 				08B585152C1855250068D4B2 /* PetBreedVariationList.swift */,
 			);
 			path = PetBreed;
@@ -546,6 +549,7 @@
 				08B585162C1855250068D4B2 /* PetBreedVariationList.swift in Sources */,
 				08C0F2EE2C20214500D4C879 /* Pet+Weight.swift in Sources */,
 				08B585032C1713A40068D4B2 /* PetBreed.swift in Sources */,
+				08FD87BD2C30012F00CC9F9A /* PetBreedNoBreeds.swift in Sources */,
 				080F406F2C246FDC0085CA65 /* DewormingTreatmentDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

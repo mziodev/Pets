@@ -32,55 +32,59 @@ struct PetBreedList: View {
         NavigationStack {
             VStack {
                 if pet.species != .unknown {
-                    if !pet.breed.isEmpty {
-                        Text("I'm a \(pet.breed)")
-                            .font(.callout)
-                            .bold()
-                            .foregroundStyle(.tint)
-                            .padding()
-                            .lineLimit(1)
-                    }
-                    
                     List {
-                        ForEach(filteredPetBreedList) { breed in
-                            if breed.variations.isEmpty {
-                                PetBreedListRow(pet: pet, breed: breed)
-                                    .listRowBackground(Color.clear)
-                                    .onTapGesture {
-                                        pet.breed = breed.name
-                                        
-                                        resetSearchable()
-                                    }
-                            } else {
-                                NavigationLink {
-                                    PetBreedVariationList(
-                                        pet: pet,
-                                        breed: breed
-                                    )
-                                } label: {
-                                    PetBreedListRow(pet: pet, breed: breed)
+                        Section {
+                            if !pet.breed.isEmpty {
+                                HStack {
+                                    Spacer()
+                                    
+                                    Text("I'm a \(pet.breed)")
+                                        .font(.headline)
+                                        .foregroundStyle(.petsAccentBlue)
+                                        .lineLimit(1)
+                                    
+                                    Spacer()
                                 }
-                                .listRowBackground(Color.clear)
+                            }
+                        }
+                        .listRowBackground(Color.clear)
+
+                        Section("Breeds") {
+                            ForEach(filteredPetBreedList) { breed in
+                                if breed.variations.isEmpty {
+                                    PetBreedListRow(pet: pet, breed: breed)
+                                        .onTapGesture {
+                                            withAnimation {
+                                                pet.breed = breed.name
+                                            }
+                                            
+                                            resetSearchable()
+                                        }
+                                } else {
+                                    NavigationLink {
+                                        PetBreedVariationList(
+                                            pet: pet,
+                                            breed: breed
+                                        )
+                                    } label: {
+                                        PetBreedListRow(pet: pet, breed: breed)
+                                    }
+                                }
                             }
                         }
                     }
-                    .listStyle(.plain)
                     .searchable(
                         text: $searchText,
                         isPresented: $isSearchPresented
                     )
                     .onAppear { resetSearchable() }
                 } else {
-                    Text("You have to select your pet species first.")
-                        .padding()
+                    PetBreedNoBreeds()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(PetColors.backgroundGradient)
             .navigationTitle(pet.name)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.petsBGDarkBlue, for: .bottomBar)
-            .toolbarBackground(.visible, for: .bottomBar)
             .toolbar {
                 if pet.species != .unknown {
                     ToolbarItem(placement: .status) {

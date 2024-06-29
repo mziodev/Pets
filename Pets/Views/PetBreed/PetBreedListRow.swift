@@ -21,7 +21,7 @@ struct PetBreedListRow: View {
             if pet.breed == breed.name {
                 Image(systemName: "checkmark.circle")
                     .font(.title3)
-                    .foregroundStyle(.tint)
+                    .foregroundStyle(.petsAccentBlue)
             }
         }
     }

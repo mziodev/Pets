@@ -18,31 +18,29 @@ struct PetBreedVariationList: View {
         NavigationStack {
             VStack {
                 List(breed.variations, id: \.self) { variation in
-                    Section {
-                        HStack {
-                            Text(variation)
-                            
-                            Spacer()
-                            
-                            if pet.breed == "\(breed.name), \(variation)" {
-                                Image(systemName: "checkmark.circle")
-                                    .font(.title3)
-                                    .foregroundStyle(.tint)
-                            }
-                            
+                    HStack {
+                        Text(variation)
+                        
+                        Spacer()
+                        
+                        if pet.breed == "\(breed.name), \(variation)" {
+                            Image(systemName: "checkmark.circle")
+                                .font(.title3)
+                                .foregroundStyle(.petsAccentBlue)
                         }
-                        .onTapGesture {
+                        
+                    }
+                    .onTapGesture {
+                        withAnimation {
                             pet.breed = "\(breed.name), \(variation)"
-                            
-                            dismiss()
+                        }
+                        
+                        dismiss()
                     }
-                    }
-                    .listRowBackground(Color.clear)
                 }
-                .listStyle(.plain)
             }
             .navigationTitle(breed.name)
-            .background(PetColors.backgroundGradient)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
