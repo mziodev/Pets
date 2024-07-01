@@ -24,7 +24,7 @@
 		08833FFB2C09CABB000FD0BF /* WeightDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE52C09CABB000FD0BF /* WeightDetail.swift */; };
 		08833FFC2C09CABB000FD0BF /* PetChipIDBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE62C09CABB000FD0BF /* PetChipIDBarcode.swift */; };
 		08833FFD2C09CABB000FD0BF /* ChipIDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE72C09CABB000FD0BF /* ChipIDType.swift */; };
-		08833FFF2C09CABB000FD0BF /* PetListNoPetsYet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE92C09CABB000FD0BF /* PetListNoPetsYet.swift */; };
+		08833FFF2C09CABB000FD0BF /* PetListNoPets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE92C09CABB000FD0BF /* PetListNoPets.swift */; };
 		088340002C09CABB000FD0BF /* PetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FEA2C09CABB000FD0BF /* PetDetail.swift */; };
 		088340012C09CABB000FD0BF /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FEB2C09CABB000FD0BF /* PetList.swift */; };
 		088340022C09CABB000FD0BF /* WeightListChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FEC2C09CABB000FD0BF /* WeightListChart.swift */; };
@@ -90,7 +90,7 @@
 		08833FE52C09CABB000FD0BF /* WeightDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightDetail.swift; sourceTree = "<group>"; };
 		08833FE62C09CABB000FD0BF /* PetChipIDBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetChipIDBarcode.swift; sourceTree = "<group>"; };
 		08833FE72C09CABB000FD0BF /* ChipIDType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipIDType.swift; sourceTree = "<group>"; };
-		08833FE92C09CABB000FD0BF /* PetListNoPetsYet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetListNoPetsYet.swift; sourceTree = "<group>"; };
+		08833FE92C09CABB000FD0BF /* PetListNoPets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetListNoPets.swift; sourceTree = "<group>"; };
 		08833FEA2C09CABB000FD0BF /* PetDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetDetail.swift; sourceTree = "<group>"; };
 		08833FEB2C09CABB000FD0BF /* PetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		08833FEC2C09CABB000FD0BF /* WeightListChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightListChart.swift; sourceTree = "<group>"; };
@@ -344,7 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				08833FEB2C09CABB000FD0BF /* PetList.swift */,
-				08833FE92C09CABB000FD0BF /* PetListNoPetsYet.swift */,
+				08833FE92C09CABB000FD0BF /* PetListNoPets.swift */,
 				08DF543A2C1C34DC003076B1 /* PetListRow.swift */,
 			);
 			path = PetList;
@@ -551,7 +551,7 @@
 				08EEF0D52C2326FD003ABFF9 /* DewormingTreatmentList.swift in Sources */,
 				08DF544B2C1C80A6003076B1 /* PetImagePlaceholder.swift in Sources */,
 				08B585062C1718E70068D4B2 /* PetBreedDataService.swift in Sources */,
-				08833FFF2C09CABB000FD0BF /* PetListNoPetsYet.swift in Sources */,
+				08833FFF2C09CABB000FD0BF /* PetListNoPets.swift in Sources */,
 				08FD87BB2C2DB40000CC9F9A /* FelineVaccineType.swift in Sources */,
 				08EEF0CE2C23212A003ABFF9 /* TreatmentUnit.swift in Sources */,
 				08DF543D2C1C3A86003076B1 /* FontTest.swift in Sources */,

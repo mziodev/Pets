@@ -34,7 +34,7 @@ struct PetList: View {
                     .onDelete(perform: deletePets)
                 }
                 .overlay {
-                    if pets.isEmpty { PetListNoPetsYet() }
+                    if pets.isEmpty { PetListNoPets() }
                 }
                 .navigationTitle("Pets")
             }

@@ -14,7 +14,10 @@ struct DewormingTreatmentDetail: View {
     @Bindable var pet: Pet
     
     @State var dewormingTreatment: DewormingTreatment
-    @State var showingDeleteAlert: Bool = false
+    @State private var editingTreatment: Bool = false
+    @State private var showingDeleteAlert: Bool = false
+    
+    @FocusState private var isTreatmentNameTextFieldFocused: Bool
     
     let isNew: Bool
     
@@ -73,7 +76,8 @@ struct DewormingTreatmentDetail: View {
                             text: $dewormingTreatment.name
                         )
                         .font(.title3.smallCaps())
-                        .scrollDismissesKeyboard(.interactively)
+                        .focused($isTreatmentNameTextFieldFocused)
+                        .scrollDismissesKeyboard(.immediately)
                         .overlay {
                             VerificationCheckMark(condition: isNameVerified)
                         }
@@ -135,6 +139,7 @@ struct DewormingTreatmentDetail: View {
                         )
                     }
                 }
+                .disabled(!editingTreatment)
                 
                 if !isNew {
                     Button(
@@ -148,6 +153,10 @@ struct DewormingTreatmentDetail: View {
             }
             .navigationTitle(isNew ? "Add Treatment" : "Edit Treatment")
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                if isNew { editingTreatment = true }
+                isTreatmentNameTextFieldFocused = true
+            }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
                 Button("Cancel", role: .cancel, action: { })
                 Button( "Ok", role: .destructive, action: deleteDewormingTreatment)
@@ -156,8 +165,12 @@ struct DewormingTreatmentDetail: View {
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save", action: appendDewormingTreatment)
-                        .disabled(!isFormVerified)
+                    if editingTreatment {
+                        Button("Save", action: appendDewormingTreatment)
+                            .disabled(!isFormVerified)
+                    } else {
+                        Button("Edit", action: editDewormingTreatment)
+                    }
                 }
                 
                 if isNew {
@@ -169,6 +182,12 @@ struct DewormingTreatmentDetail: View {
         }
     }
     
+    
+    private func editDewormingTreatment() {
+        withAnimation {
+            editingTreatment = true
+        }
+    }
     
     private func appendDewormingTreatment() {
         pet.dewormingTreatments.append(dewormingTreatment)

@@ -11,7 +11,7 @@ struct DewormingTreatmentListNoTreatment: View {
     var body: some View {
         ContentUnavailableView {
             Label("No treatments yet", systemImage: "ant")
-                .foregroundStyle(.accent)
+                .foregroundStyle(.petsAccentBlue)
         } description: {
             Text("Tap the plus button to add a new deworming treatment.")
         }

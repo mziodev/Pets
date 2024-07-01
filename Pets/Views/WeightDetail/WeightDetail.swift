@@ -1,5 +1,5 @@
 //
-//  AddWeight.swift
+//  WeightDetail.swift
 //  Petee
 //
 //  Created by MZiO on 24/5/24.
@@ -13,6 +13,7 @@ struct WeightDetail: View {
     @Bindable var pet: Pet
     
     @State var weight: Weight
+    @State private var editingWeight: Bool = false
     @State private var showingDeleteAlert: Bool = false
     
     @FocusState private var isWeightTextFieldFocused
@@ -56,9 +57,8 @@ struct WeightDetail: View {
                             Text("\(Weight.units)")
                         }
                     }
-                    .listRowBackground(Color.petsBGDarkBlue.opacity(0.4))
                 }
-                .scrollContentBackground(.hidden)
+                .disabled(!editingWeight)
                 
                 if !isNew {
                     Button("Delete weight", role: .destructive) {
@@ -68,11 +68,11 @@ struct WeightDetail: View {
                     .padding(.bottom, 20)
                 }
             }
-            .background(PetColors.backgroundGradient)
             .navigationTitle(isNew ? "Add Weight" : "Edit Weight")
             .navigationBarTitleDisplayMode(.inline)
             .interactiveDismissDisabled()
             .onAppear {
+                if isNew { editingWeight = true }
                 isWeightTextFieldFocused = true
             }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
@@ -89,13 +89,23 @@ struct WeightDetail: View {
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Save", action: appendWeight)
-                        .disabled(weight.value <= 0)
+                    if editingWeight {
+                        Button("Save", action: appendWeight)
+                            .disabled(weight.value <= 0)
+                    } else {
+                        Button("Edit", action: editWeight)
+                    }
                 }
             }
         }
     }
 
+    
+    private func editWeight() {
+        withAnimation {
+            editingWeight = true
+        }
+    }
     
     private func appendWeight() {
         pet.weights.append(weight)
