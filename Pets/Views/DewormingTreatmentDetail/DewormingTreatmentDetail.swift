@@ -151,7 +151,7 @@ struct DewormingTreatmentDetail: View {
                     .padding(.bottom, 20)
                 }
             }
-            .navigationTitle(isNew ? "Add Treatment" : "Edit Treatment")
+            .navigationTitle(isNew ? "Add Treatment" : "Treatment Details")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 if isNew { editingTreatment = true }

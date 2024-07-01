@@ -68,7 +68,7 @@ struct WeightDetail: View {
                     .padding(.bottom, 20)
                 }
             }
-            .navigationTitle(isNew ? "Add Weight" : "Edit Weight")
+            .navigationTitle(isNew ? "Add Weight" : "Weight Details")
             .navigationBarTitleDisplayMode(.inline)
             .interactiveDismissDisabled()
             .onAppear {
