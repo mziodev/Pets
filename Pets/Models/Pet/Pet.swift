@@ -14,8 +14,7 @@ class Pet: Equatable, ObservableObject {
     var sex: PetSex
     var name: String
     var breed: String
-    var chipIDType: ChipIDType
-    var chipID: String
+    var chipID: ChipID
     var isAdopted: Bool
     var birthday: Date
     var onFamilySince: Date
@@ -34,8 +33,7 @@ class Pet: Equatable, ObservableObject {
         sex: PetSex = .unknown,
         name: String = "",
         breed: String = "",
-        chipIDType: ChipIDType = .noChipID,
-        chipID: String = "",
+        chipID: ChipID = ChipID(),
         adopted: Bool = false,
         birthday: Date = .now,
         onFamilySince: Date = .now,
@@ -45,7 +43,6 @@ class Pet: Equatable, ObservableObject {
         self.sex = sex
         self.name = name
         self.breed = breed
-        self.chipIDType = chipIDType
         self.chipID = chipID
         self.birthday = birthday
         self.onFamilySince = onFamilySince

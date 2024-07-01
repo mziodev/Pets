@@ -13,7 +13,7 @@ struct PetCard: View {
     @State private var showingPetDetail: Bool = false
     @State private var showingWeightDetail: Bool = false
     @State private var showingDewormingTreatmentList: Bool = false
-    @State private var showingChipIDBarcode: Bool = false
+    @State private var showingChipID: Bool = false
     
     
     var body: some View {
@@ -58,8 +58,9 @@ struct PetCard: View {
             .sheet(isPresented: $showingDewormingTreatmentList) {
                 DewormingTreatmentList(pet: pet)
             }
-            .sheet(isPresented: $showingChipIDBarcode) {
-                PetChipIDBarcode(chipID: pet.chipID)
+            .sheet(isPresented: $showingChipID) {
+                PetChipID(pet: pet)
+                    .presentationDetents([.medium])
             }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
@@ -81,11 +82,11 @@ struct PetCard: View {
                 }
                 
                 ToolbarItem(placement: .status) {
-                    if pet.chipID.isEmpty {
+                    if pet.chipID.number.isEmpty {
                         Text("No chip ID")
                             .font(.subheadline.smallCaps())
                     } else {
-                        Button("Chip ID") { showingChipIDBarcode = true }
+                        Button("Chip ID") { showingChipID = true }
                             .font(.headline.lowercaseSmallCaps())
                             .foregroundStyle(.petsAccentBlue)
                     }

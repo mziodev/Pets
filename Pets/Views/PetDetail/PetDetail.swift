@@ -25,7 +25,7 @@ struct PetDetail: View {
         FormVerification.checkMinimumLength(pet.name)
     }
     private var isChipIDVerified: Bool {
-        Pet.chipIDValidators[pet.chipIDType]?(pet.chipID) ?? false
+        Pet.chipIDValidators[pet.chipID.type]?(pet.chipID.number) ?? false
     }
     private var isFormVerified: Bool {
         isNameVerified && isChipIDVerified
@@ -81,28 +81,37 @@ struct PetDetail: View {
                     }
                     
                     Section("Chip") {
-                        Picker("ID type", selection: $pet.chipIDType.animation()) {
+                        Picker("ID type", selection: $pet.chipID.type.animation()) {
                             ForEach(ChipIDType.allCases, id: \.self) { type in
                                 Text(type.rawValue)
                             }
                         }
                         .pickerStyle(.menu)
-                        .onChange(of: pet.chipIDType) { oldValue, newValue in
+                        .onChange(of: pet.chipID.type) { oldValue, newValue in
                             chipTextFieldFocused = true
                         }
                         
-                        if pet.chipIDType != .noChipID {
+                        if pet.chipID.type != .noChipID {
                             TextField(
-                                pet.chipIDType == .fifteenDigits ? "ID number (exactly 15 digits)" : "ID number (exactly 9 digits)",
-                                text: $pet.chipID
+                                pet.chipID.type == .fifteenDigits ? "ID number (exactly 15 digits)" : "ID number (exactly 9 digits)",
+                                text: $pet.chipID.number
                             )
                             .keyboardType(.numberPad)
+                            .scrollDismissesKeyboard(.immediately)
                             .focused($chipTextFieldFocused)
                             .overlay {
                                 VerificationCheckMark(
                                     condition: isChipIDVerified
                                 )
                             }
+                            
+                            DatePicker(
+                                "Implanted on",
+                                selection: $pet.chipID.implantedDate,
+                                displayedComponents: .date
+                            )
+                            
+                            TextField("Location", text: $pet.chipID.location)
                         }
                     }
                     
