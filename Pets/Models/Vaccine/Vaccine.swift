@@ -1,5 +1,5 @@
 //
-//  CanineVaccine.swift
+//  Vaccine.swift
 //  Pets
 //
 //  Created by MZiO on 27/6/24.
@@ -9,22 +9,24 @@ import Foundation
 import SwiftData
 
 @Model
-class CanineVaccine {
+class Vaccine {
     var name: String
-    var typeCode: CanineVaccineType
+    var type: VaccineType
     var date: Date
     var expirationDate: Date
     var pet: Pet?
     
+    var activeDays: Int { Int(expirationDate.timeIntervalSince(.now) / 86400) }
+    
     init(
         name: String = "",
-        typeCode: CanineVaccineType,
+        type: VaccineType = .unknown,
         date: Date = .now,
         expirationDate: Date = .now,
         pet: Pet? = nil
     ) {
         self.name = name
-        self.typeCode = typeCode
+        self.type = type
         self.date = date
         self.expirationDate = expirationDate
         self.pet = pet

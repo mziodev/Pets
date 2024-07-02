@@ -13,6 +13,7 @@ struct PetCard: View {
     @State private var showingPetDetail: Bool = false
     @State private var showingWeightDetail: Bool = false
     @State private var showingDewormingTreatmentList: Bool = false
+    @State private var showingVaccineList: Bool = false
     @State private var showingChipID: Bool = false
     
     
@@ -58,6 +59,9 @@ struct PetCard: View {
             .sheet(isPresented: $showingDewormingTreatmentList) {
                 DewormingTreatmentList(pet: pet)
             }
+            .sheet(isPresented: $showingVaccineList) {
+                VaccineList(pet: pet)
+            }
             .sheet(isPresented: $showingChipID) {
                 PetChipID(pet: pet)
                     .presentationDetents([.medium])
@@ -78,6 +82,12 @@ struct PetCard: View {
                         showingDewormingTreatmentList = true
                     } label: {
                         Label("Dewormings", systemImage: "ant")
+                    }
+                    
+                    Button {
+                        showingVaccineList = true
+                    } label: {
+                        Label("Vaccines", systemImage: "syringe")
                     }
                 }
                 

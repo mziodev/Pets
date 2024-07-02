@@ -23,6 +23,7 @@ class SampleData {
             Pet.self,
             Weight.self,
             DewormingTreatment.self,
+            Vaccine.self
         ])
         
         let modelConfiguration = ModelConfiguration(
@@ -55,6 +56,10 @@ class SampleData {
             modelContext.insert(deworming)
         }
         
+        for vaccine in Vaccine.sampleData {
+            modelContext.insert(vaccine)
+        }
+        
         Pet.sampleData[0].weights = [
             Weight.sampleData[0],
             Weight.sampleData[1],
@@ -64,6 +69,10 @@ class SampleData {
         Pet.sampleData[0].dewormingTreatments = [
             DewormingTreatment.sampleData[0],
             DewormingTreatment.sampleData[1],
+        ]
+        
+        Pet.sampleData[0].vaccines = [
+            Vaccine.sampleData[0]
         ]
         
         Pet.sampleData[1].weights = [
@@ -78,9 +87,18 @@ class SampleData {
             DewormingTreatment.sampleData[3],
         ]
         
+        Pet.sampleData[1].vaccines = [
+            Vaccine.sampleData[2]
+        ]
+        
         Pet.sampleData[2].weights = [
             Weight.sampleData[7],
             Weight.sampleData[8],
+        ]
+        
+        Pet.sampleData[2].vaccines = [
+            Vaccine.sampleData[1],
+            Vaccine.sampleData[3],
         ]
         
         Pet.sampleData[3].dewormingTreatments = [
@@ -105,6 +123,10 @@ class SampleData {
     
     var petWithoutSpecies: Pet {
         Pet.sampleData[3]
+    }
+    
+    var petWithExpiredVaccines: Pet {
+        Pet.sampleData[2]
     }
 }
 

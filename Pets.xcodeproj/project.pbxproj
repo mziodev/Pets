@@ -10,6 +10,13 @@
 		08012CF62C25C27E000C9418 /* FormatUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08012CF52C25C27E000C9418 /* FormatUtilities.swift */; };
 		080F40692C241DC60085CA65 /* DewormingTreatmentListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */; };
 		080F406F2C246FDC0085CA65 /* DewormingTreatmentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */; };
+		083DAC532C33F4D1001EDAA7 /* VaccineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC522C33F4D1001EDAA7 /* VaccineType.swift */; };
+		083DAC552C33F628001EDAA7 /* Vaccine+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC542C33F628001EDAA7 /* Vaccine+SampleData.swift */; };
+		083DAC582C33FE88001EDAA7 /* VaccineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC572C33FE88001EDAA7 /* VaccineList.swift */; };
+		083DAC5A2C3400DA001EDAA7 /* VaccineNoVaccines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC592C3400DA001EDAA7 /* VaccineNoVaccines.swift */; };
+		083DAC5C2C3401AD001EDAA7 /* Pet+Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC5B2C3401AD001EDAA7 /* Pet+Vaccine.swift */; };
+		083DAC5E2C3406C7001EDAA7 /* VaccineListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC5D2C3406C7001EDAA7 /* VaccineListRow.swift */; };
+		083DAC602C34107D001EDAA7 /* VaccineDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC5F2C34107D001EDAA7 /* VaccineDetails.swift */; };
 		086D7C3A2C258F520063A610 /* FormVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D7C392C258F520063A610 /* FormVerification.swift */; };
 		087F5B562C131CF9005A7083 /* VerificationCheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F5B552C131CF9005A7083 /* VerificationCheckMark.swift */; };
 		087F5B582C1350A0005A7083 /* Pet+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F5B572C1350A0005A7083 /* Pet+Validation.swift */; };
@@ -66,9 +73,7 @@
 		08FD87B02C2C30F600CC9F9A /* PetCardOnFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87AF2C2C30F600CC9F9A /* PetCardOnFamily.swift */; };
 		08FD87B22C2C5F6B00CC9F9A /* PetCardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B12C2C5F6B00CC9F9A /* PetCardName.swift */; };
 		08FD87B42C2D5B9600CC9F9A /* PetColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B32C2D5B9600CC9F9A /* PetColors.swift */; };
-		08FD87B62C2DA5D400CC9F9A /* CanineVaccineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B52C2DA5D400CC9F9A /* CanineVaccineType.swift */; };
-		08FD87B92C2DB0B200CC9F9A /* CanineVaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B82C2DB0B200CC9F9A /* CanineVaccine.swift */; };
-		08FD87BB2C2DB40000CC9F9A /* FelineVaccineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87BA2C2DB40000CC9F9A /* FelineVaccineType.swift */; };
+		08FD87B92C2DB0B200CC9F9A /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B82C2DB0B200CC9F9A /* Vaccine.swift */; };
 		08FD87BD2C30012F00CC9F9A /* PetBreedNoBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87BC2C30012F00CC9F9A /* PetBreedNoBreeds.swift */; };
 		08FD87C92C32ACBC00CC9F9A /* ChipID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87C82C32ACBC00CC9F9A /* ChipID.swift */; };
 		08FD87CB2C32B97D00CC9F9A /* PetChipID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87CA2C32B97D00CC9F9A /* PetChipID.swift */; };
@@ -78,6 +83,13 @@
 		08012CF52C25C27E000C9418 /* FormatUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatUtilities.swift; sourceTree = "<group>"; };
 		080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentListRow.swift; sourceTree = "<group>"; };
 		080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentDetail.swift; sourceTree = "<group>"; };
+		083DAC522C33F4D1001EDAA7 /* VaccineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineType.swift; sourceTree = "<group>"; };
+		083DAC542C33F628001EDAA7 /* Vaccine+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vaccine+SampleData.swift"; sourceTree = "<group>"; };
+		083DAC572C33FE88001EDAA7 /* VaccineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineList.swift; sourceTree = "<group>"; };
+		083DAC592C3400DA001EDAA7 /* VaccineNoVaccines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineNoVaccines.swift; sourceTree = "<group>"; };
+		083DAC5B2C3401AD001EDAA7 /* Pet+Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+Vaccine.swift"; sourceTree = "<group>"; };
+		083DAC5D2C3406C7001EDAA7 /* VaccineListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineListRow.swift; sourceTree = "<group>"; };
+		083DAC5F2C34107D001EDAA7 /* VaccineDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineDetails.swift; sourceTree = "<group>"; };
 		086D7C392C258F520063A610 /* FormVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVerification.swift; sourceTree = "<group>"; };
 		087F5B552C131CF9005A7083 /* VerificationCheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCheckMark.swift; sourceTree = "<group>"; };
 		087F5B572C1350A0005A7083 /* Pet+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+Validation.swift"; sourceTree = "<group>"; };
@@ -135,9 +147,7 @@
 		08FD87AF2C2C30F600CC9F9A /* PetCardOnFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardOnFamily.swift; sourceTree = "<group>"; };
 		08FD87B12C2C5F6B00CC9F9A /* PetCardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardName.swift; sourceTree = "<group>"; };
 		08FD87B32C2D5B9600CC9F9A /* PetColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetColors.swift; sourceTree = "<group>"; };
-		08FD87B52C2DA5D400CC9F9A /* CanineVaccineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanineVaccineType.swift; sourceTree = "<group>"; };
-		08FD87B82C2DB0B200CC9F9A /* CanineVaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanineVaccine.swift; sourceTree = "<group>"; };
-		08FD87BA2C2DB40000CC9F9A /* FelineVaccineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelineVaccineType.swift; sourceTree = "<group>"; };
+		08FD87B82C2DB0B200CC9F9A /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
 		08FD87BC2C30012F00CC9F9A /* PetBreedNoBreeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedNoBreeds.swift; sourceTree = "<group>"; };
 		08FD87BE2C300C7500CC9F9A /* ProjectNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ProjectNotes.md; sourceTree = "<group>"; };
 		08FD87C82C32ACBC00CC9F9A /* ChipID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipID.swift; sourceTree = "<group>"; };
@@ -155,6 +165,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		083DAC562C33FE73001EDAA7 /* Vaccine */ = {
+			isa = PBXGroup;
+			children = (
+				083DAC5F2C34107D001EDAA7 /* VaccineDetails.swift */,
+				083DAC572C33FE88001EDAA7 /* VaccineList.swift */,
+				083DAC5D2C3406C7001EDAA7 /* VaccineListRow.swift */,
+				083DAC592C3400DA001EDAA7 /* VaccineNoVaccines.swift */,
+			);
+			path = Vaccine;
+			sourceTree = "<group>";
+		};
 		086D7C372C258E3A0063A610 /* WeightDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,12 +196,12 @@
 			isa = PBXGroup;
 			children = (
 				08FD87C72C32AC9D00CC9F9A /* ChipID */,
-				08FD87B72C2DB0A200CC9F9A /* Vaccine */,
 				08EEF0CA2C22F7D0003ABFF9 /* DewormingTreatment */,
+				08B585192C19E4010068D4B2 /* JSON */,
 				08B585172C19E3E20068D4B2 /* Pet */,
 				08C0F2EF2C2021D300D4C879 /* PetBreed */,
+				08FD87B72C2DB0A200CC9F9A /* Vaccine */,
 				08B585182C19E3EE0068D4B2 /* Weight */,
-				08B585192C19E4010068D4B2 /* JSON */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +236,7 @@
 				08DF54512C1C8D29003076B1 /* PetDetail */,
 				08DF544C2C1C8421003076B1 /* PetImage */,
 				08DF54482C1C5F8A003076B1 /* PetList */,
+				083DAC562C33FE73001EDAA7 /* Vaccine */,
 				086D7C382C258E5E0063A610 /* Verification */,
 				086D7C372C258E3A0063A610 /* WeightDetail */,
 				08DF54492C1C605B003076B1 /* WeightList */,
@@ -241,15 +263,14 @@
 		08866F582C0F237700455EAE /* Custom types */ = {
 			isa = PBXGroup;
 			children = (
-				08FD87B52C2DA5D400CC9F9A /* CanineVaccineType.swift */,
 				08833FE72C09CABB000FD0BF /* ChipIDType.swift */,
-				08FD87BA2C2DB40000CC9F9A /* FelineVaccineType.swift */,
 				08B584F82C16E8A90068D4B2 /* PetImageSize.swift */,
 				08833FDA2C09CABB000FD0BF /* PetSex.swift */,
 				08833FDB2C09CABB000FD0BF /* PetSpecies.swift */,
 				08EEF0CF2C23214F003ABFF9 /* TreatmentType.swift */,
 				08EEF0CD2C23212A003ABFF9 /* TreatmentUnit.swift */,
 				08833FDC2C09CABB000FD0BF /* TimePeriod.swift */,
+				083DAC522C33F4D1001EDAA7 /* VaccineType.swift */,
 			);
 			path = "Custom types";
 			sourceTree = "<group>";
@@ -282,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				08833FD92C09CABB000FD0BF /* Pet.swift */,
+				083DAC5B2C3401AD001EDAA7 /* Pet+Vaccine.swift */,
 				08B752002C2AC7E800C0D143 /* Pet+DewormingTreatment.swift */,
 				08A29E372C144D2500D45D98 /* Pet+SampleData.swift */,
 				087F5B572C1350A0005A7083 /* Pet+Validation.swift */,
@@ -415,7 +437,8 @@
 		08FD87B72C2DB0A200CC9F9A /* Vaccine */ = {
 			isa = PBXGroup;
 			children = (
-				08FD87B82C2DB0B200CC9F9A /* CanineVaccine.swift */,
+				08FD87B82C2DB0B200CC9F9A /* Vaccine.swift */,
+				083DAC542C33F628001EDAA7 /* Vaccine+SampleData.swift */,
 			);
 			path = Vaccine;
 			sourceTree = "<group>";
@@ -522,9 +545,8 @@
 				08DF54452C1C553E003076B1 /* PetCardChipID.swift in Sources */,
 				08B584FB2C16EFA10068D4B2 /* Weight+Format.swift in Sources */,
 				08B585122C1849330068D4B2 /* PetBreed+SampleData.swift in Sources */,
-				08FD87B92C2DB0B200CC9F9A /* CanineVaccine.swift in Sources */,
+				08FD87B92C2DB0B200CC9F9A /* Vaccine.swift in Sources */,
 				08EEF0D02C23214F003ABFF9 /* TreatmentType.swift in Sources */,
-				08FD87B62C2DA5D400CC9F9A /* CanineVaccineType.swift in Sources */,
 				08FD87B02C2C30F600CC9F9A /* PetCardOnFamily.swift in Sources */,
 				08833FF32C09CABB000FD0BF /* PetSex.swift in Sources */,
 				08833FF52C09CABB000FD0BF /* TimePeriod.swift in Sources */,
@@ -539,14 +561,18 @@
 				08FD87AB2C2C01E400CC9F9A /* WeightListNoWeight.swift in Sources */,
 				08DF544E2C1C84A0003076B1 /* PetDetailImage.swift in Sources */,
 				08EEF0CC2C22F7EF003ABFF9 /* DewormingTreatment.swift in Sources */,
+				083DAC5A2C3400DA001EDAA7 /* VaccineNoVaccines.swift in Sources */,
 				08B584F92C16E8A90068D4B2 /* PetImageSize.swift in Sources */,
 				08012CF62C25C27E000C9418 /* FormatUtilities.swift in Sources */,
 				088340002C09CABB000FD0BF /* PetDetail.swift in Sources */,
 				08B5851B2C19E9B20068D4B2 /* WeightListRow.swift in Sources */,
 				08FD87B22C2C5F6B00CC9F9A /* PetCardName.swift in Sources */,
+				083DAC602C34107D001EDAA7 /* VaccineDetails.swift in Sources */,
+				083DAC582C33FE88001EDAA7 /* VaccineList.swift in Sources */,
 				08833FF92C09CABB000FD0BF /* PetCard.swift in Sources */,
 				087F5B562C131CF9005A7083 /* VerificationCheckMark.swift in Sources */,
 				08833FF82C09CABB000FD0BF /* SampleData.swift in Sources */,
+				083DAC5E2C3406C7001EDAA7 /* VaccineListRow.swift in Sources */,
 				08A29E3A2C1451AF00D45D98 /* Weight+SampleData.swift in Sources */,
 				08833FFC2C09CABB000FD0BF /* PetChipIDBarcode.swift in Sources */,
 				088340012C09CABB000FD0BF /* PetList.swift in Sources */,
@@ -566,17 +592,19 @@
 				088340052C09CABB000FD0BF /* PetsApp.swift in Sources */,
 				08EEF0D52C2326FD003ABFF9 /* DewormingTreatmentList.swift in Sources */,
 				08DF544B2C1C80A6003076B1 /* PetImagePlaceholder.swift in Sources */,
+				083DAC552C33F628001EDAA7 /* Vaccine+SampleData.swift in Sources */,
 				08B585062C1718E70068D4B2 /* PetBreedDataService.swift in Sources */,
 				08833FFF2C09CABB000FD0BF /* PetListNoPets.swift in Sources */,
-				08FD87BB2C2DB40000CC9F9A /* FelineVaccineType.swift in Sources */,
 				08EEF0CE2C23212A003ABFF9 /* TreatmentUnit.swift in Sources */,
 				08DF543D2C1C3A86003076B1 /* FontTest.swift in Sources */,
 				08833FF42C09CABB000FD0BF /* PetSpecies.swift in Sources */,
+				083DAC5C2C3401AD001EDAA7 /* Pet+Vaccine.swift in Sources */,
 				08B585162C1855250068D4B2 /* PetBreedVariationList.swift in Sources */,
 				08C0F2EE2C20214500D4C879 /* Pet+Weight.swift in Sources */,
 				08B585032C1713A40068D4B2 /* PetBreed.swift in Sources */,
 				08FD87BD2C30012F00CC9F9A /* PetBreedNoBreeds.swift in Sources */,
 				080F406F2C246FDC0085CA65 /* DewormingTreatmentDetail.swift in Sources */,
+				083DAC532C33F4D1001EDAA7 /* VaccineType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

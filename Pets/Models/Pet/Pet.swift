@@ -28,6 +28,9 @@ class Pet: Equatable, ObservableObject {
     @Relationship(deleteRule: .cascade)
     var dewormingTreatments = [DewormingTreatment]()
     
+    @Relationship(deleteRule: .cascade)
+    var vaccines = [Vaccine]()
+    
     init(
         species: PetSpecies = .unknown,
         sex: PetSex = .unknown,
