@@ -13,13 +13,13 @@ struct WeightListRow: View {
     var body: some View {
         HStack {
             Text(weight.date.formatted(date: .complete, time: .omitted))
+                .font(.callout)
             
             Spacer()
             
             Text("\(weight.value.formatted()) \(Weight.units)")
-                .font(.title3)
+                .font(.headline)
                 .fontDesign(.rounded)
-                .bold()
 
         }
     }

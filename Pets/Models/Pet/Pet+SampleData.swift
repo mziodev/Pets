@@ -10,7 +10,7 @@ import Foundation
 extension Pet {
     static let sampleData = [
         Pet(
-            species: .canine,
+            species: .cannine,
             sex: .male,
             name: "Rocky",
             breed: "Jack Russell Terrier",
@@ -26,7 +26,7 @@ extension Pet {
         ),
         
         Pet(
-            species: .canine,
+            species: .cannine,
             sex: .male,
             name: "Tom",
             breed: "Pooddle, Toy",

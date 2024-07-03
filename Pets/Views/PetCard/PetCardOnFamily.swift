@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PetCardOnFamily: View {
     let onFamilyYears: [String: String]
+    let adopted: Bool
 
     
     var body: some View {
@@ -31,7 +32,7 @@ struct PetCardOnFamily: View {
             }
             .fontDesign(.serif)
             
-            Text("on Family")
+            Text(adopted ? "since adopted" : "on Family")
                 .font(.callout.lowercaseSmallCaps())
                 .foregroundStyle(.accent)
             
@@ -41,6 +42,10 @@ struct PetCardOnFamily: View {
 }
 
 
-#Preview("Years and months") {
-    PetCardOnFamily(onFamilyYears: SampleData.shared.petWithoutChipID.onFamilyYears)
+#Preview("Not adopted") {
+    PetCardOnFamily(onFamilyYears: SampleData.shared.petWithoutChipID.onFamilyYears, adopted: false)
+}
+
+#Preview("Adopted") {
+    PetCardOnFamily(onFamilyYears: SampleData.shared.petWithoutChipID.onFamilyYears, adopted: true)
 }

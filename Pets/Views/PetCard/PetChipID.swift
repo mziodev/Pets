@@ -71,7 +71,7 @@ struct PetChipID: View {
                     
                     if showingChipIDNumberText {
                         Section {
-                            Text("**Chip ID** number is been copied to the clipboard. Go to [https://petmaxx.com](https://www.petmaxx.com/) and paste it inside the search box.")
+                            Text("**Chip ID** number is been copied to the clipboard. Go to [https://petmaxx.com](https://www.petmaxx.com/) and paste it inside the 'Microchip Search' box.")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                                 .padding(.horizontal)
@@ -81,7 +81,7 @@ struct PetChipID: View {
                 }
                 .listSectionSpacing(5)
             }
-            .navigationTitle("\(pet.name)'s Chip ID Info")
+            .navigationTitle("Chip ID Info")
             .navigationBarTitleDisplayMode(.inline)
             .interactiveDismissDisabled()
             .toolbar {

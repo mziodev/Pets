@@ -77,7 +77,6 @@ struct DewormingTreatmentDetail: View {
                         )
                         .font(.title3.smallCaps())
                         .focused($isTreatmentNameTextFieldFocused)
-                        .scrollDismissesKeyboard(.immediately)
                         .overlay {
                             VerificationCheckMark(condition: isNameVerified)
                         }
@@ -120,13 +119,14 @@ struct DewormingTreatmentDetail: View {
                         DatePicker(
                             "Start",
                             selection: $dewormingTreatment.startingDate,
-                            in: Date.distantPast...Date.now,
+                            in: pet.birthday ... .now,
                             displayedComponents: .date
                         )
                         
                         DatePicker(
                             "Ends",
                             selection: $dewormingTreatment.endingDate,
+                            in: pet.birthday ... .distantFuture,
                             displayedComponents: .date
                         )
                     }
@@ -140,6 +140,7 @@ struct DewormingTreatmentDetail: View {
                     }
                 }
                 .disabled(!editingTreatment)
+                .scrollDismissesKeyboard(.immediately)
                 
                 if !isNew {
                     Button(
@@ -153,6 +154,7 @@ struct DewormingTreatmentDetail: View {
             }
             .navigationTitle(isNew ? "Add Treatment" : "Treatment Details")
             .navigationBarTitleDisplayMode(.inline)
+            .interactiveDismissDisabled()
             .onAppear {
                 if isNew { editingTreatment = true }
                 isTreatmentNameTextFieldFocused = true

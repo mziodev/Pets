@@ -108,6 +108,7 @@ struct PetDetail: View {
                             DatePicker(
                                 "Implanted on",
                                 selection: $pet.chipID.implantedDate,
+                                in: pet.birthday ... .now,
                                 displayedComponents: .date
                             )
                             
@@ -122,14 +123,14 @@ struct PetDetail: View {
                         DatePicker(
                             "Birthday",
                             selection: $pet.birthday,
-                            in: Date.distantPast...Date.now,
+                            in: Date.distantPast ... .now,
                             displayedComponents: .date
                         )
                         
                         DatePicker(
                             pet.isAdopted ? "Adopted on" : "On family since",
                             selection: $pet.onFamilySince,
-                            in: pet.birthday...Date.now,
+                            in: pet.birthday ... .now,
                             displayedComponents: .date
                         )
                     }

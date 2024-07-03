@@ -40,7 +40,7 @@ struct WeightDetail: View {
                         DatePicker(
                             "Date",
                             selection: $weight.date,
-                            in: Date.distantPast...Date.now,
+                            in: pet.birthday ... .now,
                             displayedComponents: .date
                         )
                         .foregroundStyle(.placeholder)
@@ -59,6 +59,7 @@ struct WeightDetail: View {
                     }
                 }
                 .disabled(!editingWeight)
+                .scrollDismissesKeyboard(.immediately)
                 
                 if !isNew {
                     Button("Delete weight", role: .destructive) {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct VaccineDetails: View {
     @Environment(\.dismiss) var dismiss
     
@@ -35,6 +36,8 @@ struct VaccineDetails: View {
         self.vaccine = vaccine
         self.isNew = isNew
     }
+    
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -42,12 +45,12 @@ struct VaccineDetails: View {
                     Section("Product Info") {
                         TextField("Name", text: $vaccine.name)
                             .focused($vaccineNameTextFieldFocused)
-                            .scrollDismissesKeyboard(.immediately)
                         
                         Picker("Type", selection: $vaccine.type) {
                             ForEach(VaccineType.allCases) { vaccine in
                                 if vaccine.species.isEmpty {
                                     Text(vaccine.rawValue)
+                                        .font(.callout)
                                 }
                             }
                             
@@ -55,6 +58,7 @@ struct VaccineDetails: View {
                                 ForEach(VaccineType.allCases) { vaccine in
                                     if vaccine.species == "dogs" {
                                         Text(vaccine.rawValue)
+                                            .font(.callout)
                                     }
                                 }
                             } header: {
@@ -67,6 +71,7 @@ struct VaccineDetails: View {
                                 ForEach(VaccineType.allCases) { vaccine in
                                     if vaccine.species == "cats" {
                                         Text(vaccine.rawValue)
+                                            .font(.callout)
                                     }
                                 }
                             } header: {
@@ -81,7 +86,7 @@ struct VaccineDetails: View {
                     
                     if vaccine.type != .unknown {
                         Section {
-                            Text(vaccine.type.description)
+                            Text("\(pet.name) will be protected against \(vaccine.type.description).")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
@@ -93,19 +98,21 @@ struct VaccineDetails: View {
                         DatePicker(
                             "Date",
                             selection: $vaccine.date,
+                            in: pet.birthday ... .now,
                             displayedComponents: .date
                         )
                         
                         DatePicker(
                             "Expiration date",
                             selection: $vaccine.expirationDate,
+                            in: pet.birthday ... .distantFuture,
                             displayedComponents: .date
                         )
                     }
                     
                     if vaccine.activeDays > 0 {
                         Section {
-                            Text("Still **\(vaccine.activeDays)** more days until next vaccine.")
+                            Text("\(pet.name) still will be protected **\(vaccine.activeDays)** more days until next vaccine.")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
@@ -117,7 +124,7 @@ struct VaccineDetails: View {
                                 Spacer()
                                 
                                 Text("Expired Vaccine")
-                                    .font(.headline.lowercaseSmallCaps())
+                                    .font(.headline.smallCaps())
                                     .foregroundStyle(.secondary)
                                 
                                 Spacer()
@@ -128,15 +135,19 @@ struct VaccineDetails: View {
                     }
                 }
                 .disabled(!editingVaccine)
+                .scrollDismissesKeyboard(.immediately)
                 
                 if !isNew {
-                    Button("Delete vaccine", role: .destructive, action: deleteVaccine)
-                        .padding(.top, 10)
-                        .padding(.bottom, 20)
+                    Button("Delete vaccine", role: .destructive) {
+                        showingDeleteAlert = true
+                    }
+                    .padding(.top, 10)
+                    .padding(.bottom, 20)
                 }
             }
             .navigationTitle(isNew ? "Add Vaccine" : "Vaccine Details")
             .navigationBarTitleDisplayMode(.inline)
+            .interactiveDismissDisabled()
             .onAppear {
                 if isNew { editingVaccine = true }
                 vaccineNameTextFieldFocused = true
@@ -145,7 +156,7 @@ struct VaccineDetails: View {
                 Button("Cancel", role: .cancel, action: { })
                 Button( "Ok", role: .destructive, action: deleteVaccine)
             } message: {
-                Text("Vaccine data will be deleted, are you sure?")
+                Text("This vaccine data will be deleted, are you sure?")
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {

@@ -42,7 +42,7 @@ struct PetCardAge: View {
                 Spacer()
             }
             
-            PetCardOnFamily(onFamilyYears: pet.onFamilyYears)
+            PetCardOnFamily(onFamilyYears: pet.onFamilyYears, adopted: pet.isAdopted)
         }
     }
 }

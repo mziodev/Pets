@@ -15,7 +15,7 @@ struct PetImagePlaceholder: View {
         switch species {
         case .unknown:
             return "Paw print image"
-        case .canine:
+        case .cannine:
             return "Dog image"
         case .feline:
             return "Cat image"
@@ -44,5 +44,5 @@ struct PetImagePlaceholder: View {
 }
 
 #Preview("Dog, small") {
-    PetImagePlaceholder(species: .canine, imageSize: .small)
+    PetImagePlaceholder(species: .cannine, imageSize: .small)
 }

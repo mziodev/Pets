@@ -1,10 +1,20 @@
 # Project Notes
 
-## Vaccine model
-Each pet species need a separate vaccine model. This is because vaccine types: canine and feline types are different so models need to be different too. It seems to be the simplest way to do it. 
+## Resizable image
+We need to implement a resizable function for pet images.
+
 
 ## Pet icon color
 Maybe we can try to color dog and cat icons differently no the main pet list.
+
+
+## Localization and i18n
+We have to do localization an internationalization of the entire app: English, Spanish, French, Portuguese, German, Chinese, Japanese, Indian... on this order. 
+* Checkout: Text messages from alerts and empty views
+
+
+<!--## Trim spaces
+We need to trim all final and first blank spaces before save on the data base.-->
 
 
 ## Chip ID Types

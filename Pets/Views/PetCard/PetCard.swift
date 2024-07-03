@@ -97,7 +97,8 @@ struct PetCard: View {
                             .font(.subheadline.smallCaps())
                     } else {
                         Button("Chip ID") { showingChipID = true }
-                            .font(.headline.lowercaseSmallCaps())
+                            .font(.callout.smallCaps())
+                            .bold()
                             .foregroundStyle(.petsAccentBlue)
                     }
                 }

@@ -9,6 +9,6 @@ import Foundation
 
 enum PetSpecies: String, CaseIterable, Codable {
     case unknown = "none"
-    case canine = "dog"
+    case cannine = "dog"
     case feline = "cat"
 }
