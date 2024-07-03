@@ -1,7 +1,7 @@
 # Project Notes
 
 ## Resizable image
-We need to implement a resizable function for pet images.
+We need to implement a resizable function for pet images. Probably we need a new intermediate sheet view for selecting and resizing the photo. And it would be a good idea an alert message before deleting the existing image.
 
 
 ## Pet icon color
