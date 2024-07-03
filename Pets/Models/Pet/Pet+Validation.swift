@@ -15,7 +15,8 @@ extension Pet {
     /// whether the input is valid for that Chip ID type.
     static var chipIDValidators: [ChipIDType: (String) -> Bool] = [
         .noChipID: { $0.isEmpty },
-        .fifteenDigits: { $0.count == 15 },
-        .nineDigits: { $0.count == 9 }
+        .fifteenDigit: { $0.count == 15 },
+        .tenDigit: { $0.count == 10 },
+        .nineDigit: { $0.count == 9 }
     ]
 }

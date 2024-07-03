@@ -9,6 +9,7 @@ import Foundation
 
 enum ChipIDType: String, Codable, CaseIterable {
     case noChipID = "No chip"
-    case fifteenDigits = "15 digits (ISO/Euro)"
-    case nineDigits = "9 digits (AVID)"
+    case fifteenDigit = "15-digit (ISO)"
+    case tenDigit = "10-digit (ISO)"
+    case nineDigit = "9-digits (AVID)"
 }

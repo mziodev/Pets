@@ -20,7 +20,19 @@ struct PetDetail: View {
     @FocusState var chipTextFieldFocused: Bool
     
     let isNew: Bool
-
+    
+    private var chipIDNumberPlaceholderText: String {
+        switch pet.chipID.type {
+        case .noChipID:
+            ""
+        case .fifteenDigit:
+            "ID number (15 numeric digits)"
+        case .tenDigit:
+            "ID number (10 alphanumeric digits)"
+        case .nineDigit:
+            "ID number (9 numeric digits)"
+        }
+    }
     private var isNameVerified: Bool {
         FormVerification.checkMinimumLength(pet.name)
     }
@@ -80,42 +92,6 @@ struct PetDetail: View {
                         }
                     }
                     
-                    Section("Chip") {
-                        Picker("ID type", selection: $pet.chipID.type.animation()) {
-                            ForEach(ChipIDType.allCases, id: \.self) { type in
-                                Text(type.rawValue)
-                            }
-                        }
-                        .pickerStyle(.menu)
-                        .onChange(of: pet.chipID.type) { oldValue, newValue in
-                            chipTextFieldFocused = true
-                        }
-                        
-                        if pet.chipID.type != .noChipID {
-                            TextField(
-                                pet.chipID.type == .fifteenDigits ? "ID number (exactly 15 digits)" : "ID number (exactly 9 digits)",
-                                text: $pet.chipID.number
-                            )
-                            .keyboardType(.numberPad)
-                            .scrollDismissesKeyboard(.immediately)
-                            .focused($chipTextFieldFocused)
-                            .overlay {
-                                VerificationCheckMark(
-                                    condition: isChipIDVerified
-                                )
-                            }
-                            
-                            DatePicker(
-                                "Implanted on",
-                                selection: $pet.chipID.implantedDate,
-                                in: pet.birthday ... .now,
-                                displayedComponents: .date
-                            )
-                            
-                            TextField("Location", text: $pet.chipID.location)
-                        }
-                    }
-                    
                     Section("Dates") {
                         Toggle("Adopted", isOn: $pet.isAdopted.animation())
                             .tint(.petsAccentBlue)
@@ -134,11 +110,46 @@ struct PetDetail: View {
                             displayedComponents: .date
                         )
                     }
+                    
+                    Section("Chip") {
+                        Picker("ID type", selection: $pet.chipID.type.animation()) {
+                            ForEach(ChipIDType.allCases, id: \.self) { type in
+                                Text(type.rawValue)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        
+                        if pet.chipID.type != .noChipID {
+                            TextField(
+                                chipIDNumberPlaceholderText,
+                                text: $pet.chipID.number
+                            )
+                            .keyboardType(.numbersAndPunctuation)
+                            .focused($chipTextFieldFocused)
+                            .onChange(of: pet.chipID.type) { oldValue, newValue in
+                                chipTextFieldFocused = true
+                            }
+                            .overlay {
+                                VerificationCheckMark(
+                                    condition: isChipIDVerified
+                                )
+                            }
+                            
+                            DatePicker(
+                                "Implanted on",
+                                selection: $pet.chipID.implantedDate,
+                                in: pet.birthday ... .now,
+                                displayedComponents: .date
+                            )
+                            
+                            TextField("Location", text: $pet.chipID.location)
+                        }
+                    }
                 }
             }
             .navigationTitle(isNew ? "New pet" : pet.name)
             .navigationBarTitleDisplayMode(.inline)
-            .scrollDismissesKeyboard(.immediately)
+            .scrollDismissesKeyboard(.interactively)
             .interactiveDismissDisabled()
             .onAppear {
                 if pet.name.isEmpty { nameTextFieldFocused = true }

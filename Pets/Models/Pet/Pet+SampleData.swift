@@ -15,7 +15,7 @@ extension Pet {
             name: "Rocky",
             breed: "Jack Russell Terrier",
             chipID: ChipID(
-                type: .fifteenDigits,
+                type: .fifteenDigit,
                 number: "123456789098765",
                 implantedDate: .now - (86400 * 10),
                 location: "Neck, left side."
