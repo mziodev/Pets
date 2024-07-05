@@ -23,7 +23,7 @@ struct PetListRow: View {
                 Text(name)
                     .font(.headline)
                 
-                Text(breed.isEmpty ? "Unknown breed" : breed)
+                Text(breed.isEmpty ? String(localized: "Unknown breed") : breed)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }

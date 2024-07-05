@@ -42,7 +42,7 @@ struct WeightList: View {
                         selection: $selectedTimePeriod.animation()
                     ) {
                         ForEach(TimePeriod.allCases.reversed()) { period in
-                            Text(period.rawValue)
+                            Text(period.description)
                         }
                     }
                     .pickerStyle(.segmented)

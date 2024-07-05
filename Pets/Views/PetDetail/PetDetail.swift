@@ -26,11 +26,11 @@ struct PetDetail: View {
         case .noChipID:
             ""
         case .fifteenDigit:
-            "ID number (15 numeric digits)"
+            String(localized: "ID number (15 numeric digits)")
         case .tenDigit:
-            "ID number (10 alphanumeric digits)"
+            String(localized: "ID number (10 alphanumeric digits)")
         case .nineDigit:
-            "ID number (9 numeric digits)"
+            String(localized: "ID number (9 numeric digits)")
         }
     }
     private var isNameVerified: Bool {
@@ -68,14 +68,14 @@ struct PetDetail: View {
                         
                         Picker("Species", selection: $pet.species) {
                             ForEach(PetSpecies.allCases, id: \.self) { species in
-                                Text(species.rawValue.capitalized)
+                                Text(species.localizedDescription)
                             }
                         }
                         .pickerStyle(.menu)
                         
                         Picker("Sex", selection: $pet.sex) {
                             ForEach(PetSex.allCases, id: \.self) { sex in
-                                Text(sex.rawValue.capitalized)
+                                Text(sex.description)
                             }
                         }
                         .pickerStyle(.menu)
@@ -85,10 +85,13 @@ struct PetDetail: View {
                         NavigationLink {
                             PetBreedList(pet: pet)
                         } label: {
-                            Text(pet.breed.isEmpty ? "Select a breed" : pet.breed)
-                                .foregroundStyle(
-                                    pet.breed.isEmpty ? .gray.opacity(0.7) : .primary
-                                )
+                            Text(
+                                pet.breed.isEmpty ? 
+                                String(localized: "Select a breed") : pet.breed
+                            )
+                            .foregroundStyle(
+                                pet.breed.isEmpty ? .gray.opacity(0.7) : .primary
+                            )
                         }
                     }
                     
@@ -114,7 +117,7 @@ struct PetDetail: View {
                     Section("Chip") {
                         Picker("ID type", selection: $pet.chipID.type.animation()) {
                             ForEach(ChipIDType.allCases, id: \.self) { type in
-                                Text(type.rawValue)
+                                Text(type.description)
                             }
                         }
                         .pickerStyle(.menu)
@@ -147,7 +150,7 @@ struct PetDetail: View {
                     }
                 }
             }
-            .navigationTitle(isNew ? "New pet" : pet.name)
+            .navigationTitle(isNew ? String(localized: "New pet") : pet.name)
             .navigationBarTitleDisplayMode(.inline)
             .scrollDismissesKeyboard(.interactively)
             .interactiveDismissDisabled()

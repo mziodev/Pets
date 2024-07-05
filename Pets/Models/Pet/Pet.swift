@@ -76,32 +76,13 @@ class Pet: Equatable, ObservableObject {
         
         var age: [String: String] = [:]
         
-        switch year {
-        case 0:
-            break
-        case 1:
-            age["year"] = "1 year"
-        default:
-            age["year"] = "\(year) years"
-        }
-
-        switch month {
-        case 0:
-            break
-        case 1:
-            age["month"] = year > 0 ? "& 1 month" : "1 month"
-        default:
-            age["month"] = year > 0 ? "& \(month) months" : "\(month) months"
+        if year > 0 { age["year"] = String(localized: "\(year) years") }
+        
+        if month > 0 {
+            age["month"] = year > 0 ? String(localized: "& \(month) months") : String(localized: "\(month) months")
         }
         
-        if year == 0 && month == 0 {
-            switch day {
-            case 1:
-                age["day"] = "1 day"
-            default:
-                age["day"] = "\(day) days"
-            }
-        }
+        if year == 0 && month == 0 { age["day"] = String(localized: "\(day) days") }
 
         return age
     }

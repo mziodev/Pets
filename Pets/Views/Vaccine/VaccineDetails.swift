@@ -48,8 +48,8 @@ struct VaccineDetails: View {
                         
                         Picker("Type", selection: $vaccine.type) {
                             ForEach(VaccineType.allCases) { vaccine in
-                                if vaccine.species.isEmpty {
-                                    Text(vaccine.rawValue)
+                                if vaccine.species == "unknown" {
+                                    Text(vaccine.description)
                                         .font(.callout)
                                 }
                             }

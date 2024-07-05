@@ -10,7 +10,7 @@ import Foundation
 enum VaccineType: String, Codable, CaseIterable, Identifiable {
     var id: Self { self }
     
-    case unknown = "Unknown"
+    case unknown
     case DHPP
     case DHPPi
     case DHLPP
@@ -39,62 +39,62 @@ enum VaccineType: String, Codable, CaseIterable, Identifiable {
     var description: String {
         switch self {
         case .unknown:
-            ""
+            String(localized: "Unknown")
         case .DHPP:
-            "Distemper, Hepatitis, Parvovirus, Parainfluenza"
+            String(localized: "Distemper, Hepatitis, Parvovirus and Parainfluenza")
         case .DHPPi:
-            "Distemper, Hepatitis, Parvovirus, Parainfluenza and Influenza"
+            String(localized: "Distemper, Hepatitis, Parvovirus, Parainfluenza and Influenza")
         case .DHLPP:
-            "Distemper, Hepatitis, Leptospirosis, Parvovirus and Parainfluenza"
+            String(localized: "Distemper, Hepatitis, Leptospirosis, Parvovirus and Parainfluenza")
         case .DHLPPi:
-            "Distemper, Hepatitis, Leptospirosis, Parvovirus, Parainfluenza and Influenza"
+            String(localized: "Distemper, Hepatitis, Leptospirosis, Parvovirus, Parainfluenza and Influenza")
         case .L4:
-            "Low risk Rabies"
+            String(localized: "Low risk Rabies")
         case .L4R:
-            "Live Rabies"
+            String(localized: "Live Rabies")
         case .A:
-            "Adenovirus"
+            String(localized: "Adenovirus")
         case .B:
-            "Bordetella"
+            String(localized: "Bordetella")
         case .Ci:
-            "Canine influenza"
+            String(localized: "Canine Influenza")
         case .CoV:
-            "Coronavirus"
+            String(localized: "Coronavirus")
         case .D:
-            "Distemper"
+            String(localized: "Distemper")
         case .H:
-            "Hepatitis"
+            String(localized: "Hepatitis")
         case .L:
-            "Leptospirosis"
+            String(localized: "Leptospirosis")
         case .Ly:
-            "Lyme disease"
+            String(localized: "Lyme disease")
         case .P:
-            "Parvovirus"
+            String(localized: "Parvovirus")
         case .Pi:
-            "Parainfluenza"
+            String(localized: "Parainfluenza")
         case .R:
-            "Rabies"
+            String(localized: "Rabies")
         case .FVRCP:
-            "Feline Viral Rhinotracheitis, Calcivirus, Paleukopenia (also known as Feline Distemper)."
+            String(localized: "Feline Viral Rhinotracheitis, Calicivirus and Panleukopenia (also known as Feline Distemper)")
         case .FVRCPHS:
-            "Feline Viral Rhinotracheitis, Calcivirus, Paleukopenia (also known as Feline Distemper), Herpesvirus and Syncytial Virus."
+            String(localized: "Feline Viral Rhinotracheitis, Calicivirus, Panleukopenia (also known as Feline Distemper), Herpesvirus and Syncytial Virus")
         case .FVR:
-            "Viral Rhinotracheitis"
+            String(localized: "Viral Rhinotracheitis")
         case .FCV:
-            "Calicivirus"
+            String(localized: "Calicivirus")
         case .FPV:
-            "Panleukopenia (also known as Feline Distemper)"
+            String(localized: "Panleukopenia (also known as Feline Distemper)")
         case .FeLV:
-            "Leukemia Virus"
+            String(localized: "Leukemia Virus")
         case .FIV:
-            "Immunodeficiency Virus"
+            String(localized: "Immunodeficiency Virus")
         }
     }
     
     var species: String {
         switch self {
         case .unknown:
-            ""
+            "unknown"
         case .DHPP:
             "dogs"
         case .DHPPi:

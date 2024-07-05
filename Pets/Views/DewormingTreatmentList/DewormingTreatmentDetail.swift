@@ -86,14 +86,14 @@ struct DewormingTreatmentDetail: View {
                             selection: $dewormingTreatment.type.animation()
                         ) {
                             ForEach(TreatmentType.allCases, id: \.self) { type in
-                                Text(type.rawValue.capitalized)
+                                Text(type.localizedDescription)
                             }
                         }
                         .pickerStyle(.menu)
                         
                         Picker(selection: $dewormingTreatment.units) {
                             ForEach(TreatmentUnit.allCases, id:\.self) { units in
-                                Text(units.rawValue)
+                                Text(units.localizedDescription)
                             }
                         } label: {
                             HStack {

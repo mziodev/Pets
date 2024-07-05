@@ -8,8 +8,17 @@
 import Foundation
 
 enum TimePeriod: String, CaseIterable, Identifiable {
-    case lastSixMonthsPeriod = "Last 6 Months"
-    case lastTwelveMonthsPeriod = "Last 12 months"
+    case lastSixMonthsPeriod
+    case lastTwelveMonthsPeriod
+    
+    var description: String {
+        switch self {
+        case .lastSixMonthsPeriod:
+            String(localized: "Last 6 Months")
+        case .lastTwelveMonthsPeriod:
+            String(localized: "Last 12 Months")
+        }
+    }
     
     var dateValue: Date {
         switch self {

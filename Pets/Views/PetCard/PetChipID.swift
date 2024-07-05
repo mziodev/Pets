@@ -26,7 +26,7 @@ struct PetChipID: View {
                             
                             Spacer()
                             
-                            Text(pet.chipID.type.rawValue)
+                            Text(pet.chipID.type.description)
                         }
                         
                         HStack {

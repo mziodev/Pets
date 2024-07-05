@@ -8,7 +8,18 @@
 import Foundation
 
 enum PetSex: String, CaseIterable, Codable {
-    case unknown = "unknown"
-    case male = "male"
-    case female = "female"
+    case unknown
+    case male
+    case female
+    
+    var description: String {
+        switch self {
+        case .unknown:
+            String(localized: "Unknown")
+        case .male:
+            String(localized: "Male")
+        case .female:
+            String(localized: "Female")
+        }
+    }
 }

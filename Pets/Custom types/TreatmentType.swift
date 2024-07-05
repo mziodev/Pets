@@ -23,27 +23,54 @@ enum TreatmentType: String, Codable, CaseIterable {
     var systemImage: String {
         switch self {
         case .unknown:
-            return "ant"
+            "ant"
         case .pill:
-            return "pills"
+            "pills"
         case .liquid:
-            return "cross.vial"
+            "cross.vial"
         case .pipette:
-            return "testtube.2"
+            "testtube.2"
         case .spray:
-            return "humidifier.and.droplets"
+            "humidifier.and.droplets"
         case .shampoo:
-            return "bubbles.and.sparkles"
+            "bubbles.and.sparkles"
         case .collar:
-            return "circle"
+            "circle"
         case .injection:
-            return "syringe"
+            "syringe"
         case .additive:
-            return "waterbottle"
+            "waterbottle"
         case .suppository:
-            return "pill"
+            "pill"
         case .others:
-            return "ivfluid.bag"
+            "ivfluid.bag"
+        }
+    }
+    
+    var localizedDescription: String {
+        switch self {
+        case .unknown:
+            String(localized: "Unknown")
+        case .pill:
+            String(localized: "Pill")
+        case .liquid:
+            String(localized: "Liquid")
+        case .pipette:
+            String(localized: "Pipette")
+        case .spray:
+            String(localized: "Spray")
+        case .shampoo:
+            String(localized: "Shampoo")
+        case .collar:
+            String(localized: "Collar")
+        case .injection:
+            String(localized: "Injection")
+        case .additive:
+            String(localized: "Additive")
+        case .suppository:
+            String(localized: "Suppository")
+        case .others:
+            String(localized: "Others")
         }
     }
 }

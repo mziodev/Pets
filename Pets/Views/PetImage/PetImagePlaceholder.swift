@@ -11,16 +11,6 @@ struct PetImagePlaceholder: View {
     let species: PetSpecies
     let imageSize: PetImageSize
     
-    private var accessibilityLabel: String {
-        switch species {
-        case .unknown:
-            return "Paw print image"
-        case .cannine:
-            return "Dog image"
-        case .feline:
-            return "Cat image"
-        }
-    }
     
     var body: some View {
         ZStack {
@@ -31,13 +21,14 @@ struct PetImagePlaceholder: View {
                 )
                 .foregroundStyle(.petsAccentBlue)
             
-            Image(systemName: species == .unknown ? "pawprint.fill" : "\(species.rawValue).fill")
+            Image(systemName: "\(species.rawValue).fill")
                 .font(.system(size: imageSize.rawValue * 0.45))
                 .foregroundStyle(.white)
-                .accessibilityLabel(accessibilityLabel)
+                .accessibilityLabel("\(species.localizedDescription) image")
         }
     }
 }
+
 
 #Preview("No species, large") {
     PetImagePlaceholder(species: .unknown, imageSize: .large)

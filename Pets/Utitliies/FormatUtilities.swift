@@ -14,14 +14,4 @@ struct FormatUtilities {
         
         return Double(stringValue.replacingOccurrences(of: ",", with: ".")) ?? 0
     }
-    
-//    static func changingCommasPerDots2(in value: Double) -> Double {
-//        let formatter = NumberFormatter()
-//        
-//        formatter.locale = Locale(identifier: "en_US")
-//        formatter.numberStyle = .decimal
-//        formatter.decimalSeparator = "."
-//            
-//        return Double(formatter.string(from: NSNumber(value: value)) ?? "") ?? 0
-//    }
 }
