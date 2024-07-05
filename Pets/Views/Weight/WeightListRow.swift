@@ -12,15 +12,21 @@ struct WeightListRow: View {
 
     var body: some View {
         HStack {
-            Text(weight.date.formatted(date: .complete, time: .omitted))
+            Text(weight.date.formatted(date: .abbreviated, time: .omitted))
                 .font(.callout)
             
             Spacer()
             
-            Text("\(weight.value.formatted()) \(Weight.units)")
-                .font(.headline)
-                .fontDesign(.rounded)
-
+            Text(
+                String(
+                    format: "%.3f %@",
+                    locale: Locale.current,
+                    weight.value,
+                    Weight.units
+                )
+            )
+            .font(.headline)
+            .fontDesign(.rounded)
         }
     }
 }

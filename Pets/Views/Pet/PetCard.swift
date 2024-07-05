@@ -36,11 +36,7 @@ struct PetCard: View {
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
 
-                    PetCardWeight(
-                        pet: pet,
-                        currentWeight: pet.currentWeight,
-                        showingWeightDetail: $showingWeightDetail
-                    )
+                    PetCardWeight(pet: pet)
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
                 }
