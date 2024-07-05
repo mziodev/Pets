@@ -9,16 +9,10 @@ import SwiftUI
 
 struct PetCardWeight: View {
     let pet: Pet
-    let currentWeight: Double
     
-    @Binding var showingWeightDetail: Bool
-    
-    private var weightString: String {
-        "\(currentWeight.formatted()) \(Weight.units)"
-    }
     
     var body: some View {
-        if currentWeight > 0 {
+        if pet.currentWeight > 0 {
             HStack {
                 Spacer()
                 
@@ -26,10 +20,17 @@ struct PetCardWeight: View {
                     .font(.callout.lowercaseSmallCaps())
                     .foregroundStyle(.accent)
                 
-                Text(weightString)
-                    .font(.largeTitle)
-                    .bold()
-                    .fontDesign(.serif)
+                Text(
+                    String(
+                        format: "%.3f %@",
+                        locale: Locale.current,
+                        pet.currentWeight,
+                        Weight.units
+                    )
+                )
+                .font(.largeTitle)
+                .bold()
+                .fontDesign(.serif)
                 
                 Spacer()
             }
@@ -39,16 +40,12 @@ struct PetCardWeight: View {
 
 #Preview("Normal weight") {
     PetCardWeight(
-        pet: SampleData.shared.petWithChipID,
-        currentWeight: 3.75,
-        showingWeightDetail: .constant(false)
+        pet: SampleData.shared.petWithChipID
     )
 }
 
 #Preview("Zero weight") {
     PetCardWeight(
-        pet: SampleData.shared.petWithoutSpecies,
-        currentWeight: 0,
-        showingWeightDetail: .constant(false)
+        pet: SampleData.shared.petWithoutSpecies
     )
 }

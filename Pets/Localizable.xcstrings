@@ -19,7 +19,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Se ha copiado el número del **Microchip ID* en el portapapeles. Ve a la web [https://petmaxx.com](https://www.petmaxx.com/) y cópialo dentro del cuadro de búsqueda 'Microchip Search'."
+            "value" : "Se ha copiado el número del **Microchip ID** en el portapapeles. Ve a la web [https://petmaxx.com](https://www.petmaxx.com/) y cópialo dentro del cuadro de búsqueda 'Microchip Search'."
           }
         }
       }
@@ -90,22 +90,6 @@
         }
       }
     },
-    "%@ %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$@"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ %2$@"
-          }
-        }
-      }
-    },
     "%@ image" : {
       "localizations" : {
         "es" : {
@@ -116,7 +100,7 @@
         }
       }
     },
-    "%@ still will be protected **%lld** more days until next vaccine." : {
+    "%@ still will be protected %lld more days until next vaccine." : {
       "localizations" : {
         "en" : {
           "variations" : {
@@ -124,13 +108,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%1$@ still will be protected **%2$lld** more day until next vaccine."
+                  "value" : "%1$@ still will be protected %2$lld more day until next vaccine."
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "new",
-                  "value" : "%1$@ still will be protected **%2$lld** more days until next vaccine."
+                  "value" : "%1$@ still will be protected %2$lld more days until next vaccine."
                 }
               }
             }
@@ -142,13 +126,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%1$@ todavía estará protegido **%2$lld** día más hasta la siguiente vacuna."
+                  "value" : "%1$@ todavía estará protegido %2$lld día más hasta la siguiente vacuna."
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%1$@ todavía estará protegido **%2$lld** días más hasta la siguiente vacuna."
+                  "value" : "%1$@ todavía estará protegido %2$lld días más hasta la siguiente vacuna."
                 }
               }
             }

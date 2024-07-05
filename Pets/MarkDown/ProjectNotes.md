@@ -10,7 +10,7 @@ We need to implement a resizable function for pet images. Probably we need a new
 
 
 ## Number of decimal digits after the dot
-We hace to try changing the number of decimal digits from 2 to 3. 
+We hace to try changing the number of decimal digits from 2 to 3.
 
 
 ## Pet icon color

@@ -18,7 +18,7 @@ struct DewormingTreatmentList: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if pet.activeDewormingTreatments > 0 {
+                if pet.dewormingTreatments.count > 0 {
                     List {
                         Section("Active treatments") {
                             ForEach(pet.reverseSortedDewormingTreatments) { treatment in
@@ -82,9 +82,11 @@ struct DewormingTreatmentList: View {
                     Button("Done") { dismiss() }
                 }
                 
-                ToolbarItem(placement: .status) {
-                    Text("\(pet.activeDewormingTreatments) active treatments")
-                        .font(.caption)
+                if !pet.dewormingTreatments.isEmpty {
+                    ToolbarItem(placement: .status) {
+                        Text("\(pet.activeDewormingTreatments) active treatments")
+                            .font(.caption)
+                    }
                 }
             }
         }

@@ -112,7 +112,7 @@ struct VaccineDetails: View {
                     
                     if vaccine.activeDays > 0 {
                         Section {
-                            Text("\(pet.name) still will be protected **\(vaccine.activeDays)** more days until next vaccine.")
+                            Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
