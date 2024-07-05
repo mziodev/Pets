@@ -26,7 +26,7 @@ struct PetChipID: View {
                             
                             Spacer()
                             
-                            Text(pet.chipID.type.description)
+                            Text(pet.chipID.type.localizedDescription)
                         }
                         
                         HStack {
@@ -40,8 +40,11 @@ struct PetChipID: View {
                                 Text(pet.chipID.number)
                                 
                                 Button(action: copyChipIDNumber) {
-                                    Label("Copy chip ID number", systemImage: "doc.on.doc")
-                                        .labelStyle(.iconOnly)
+                                    Label(
+                                        "Copy chip ID number",
+                                        systemImage: "doc.on.doc"
+                                    )
+                                    .labelStyle(.iconOnly)
                                 }
                             }
                         }
@@ -54,7 +57,10 @@ struct PetChipID: View {
                             Spacer()
                             
                             Text(
-                                pet.chipID.implantedDate.formatted(date: .abbreviated, time: .omitted)
+                                pet.chipID.implantedDate.formatted(
+                                    date: .abbreviated,
+                                    time: .omitted
+                                )
                             )
                         }
                         

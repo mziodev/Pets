@@ -21,7 +21,7 @@ struct PetImagePlaceholder: View {
                 )
                 .foregroundStyle(.petsAccentBlue)
             
-            Image(systemName: "\(species.rawValue).fill")
+            Image(systemName: "\(species.systemImage).fill")
                 .font(.system(size: imageSize.rawValue * 0.45))
                 .foregroundStyle(.white)
                 .accessibilityLabel("\(species.localizedDescription) image")

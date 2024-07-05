@@ -8,9 +8,9 @@
 import Foundation
 
 enum PetSpecies: String, CaseIterable, Codable {
-    case unknown = "pawprint"
-    case cannine = "dog"
-    case feline = "cat"
+    case unknown
+    case cannine
+    case feline
     
     var localizedDescription: String {
         switch self {
@@ -20,6 +20,17 @@ enum PetSpecies: String, CaseIterable, Codable {
             String(localized: "Dog")
         case .feline:
             String(localized: "Cat")
+        }
+    }
+    
+    var systemImage: String {
+        switch self {
+        case .unknown:
+            "pawprint"
+        case .cannine:
+            "dog"
+        case .feline:
+            "cat"
         }
     }
 }

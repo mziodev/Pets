@@ -60,7 +60,7 @@ struct PetDetail: View {
                     .listRowBackground(Color.clear)
                     
                     Section("Basics") {
-                        TextField("Name (min. 2 characters)", text: $pet.name)
+                        TextField("Name", text: $pet.name)
                             .focused($nameTextFieldFocused)
                             .overlay {
                                 VerificationCheckMark(condition: isNameVerified)
@@ -75,7 +75,7 @@ struct PetDetail: View {
                         
                         Picker("Sex", selection: $pet.sex) {
                             ForEach(PetSex.allCases, id: \.self) { sex in
-                                Text(sex.description)
+                                Text(sex.localizedDescription)
                             }
                         }
                         .pickerStyle(.menu)
@@ -117,7 +117,7 @@ struct PetDetail: View {
                     Section("Chip") {
                         Picker("ID type", selection: $pet.chipID.type.animation()) {
                             ForEach(ChipIDType.allCases, id: \.self) { type in
-                                Text(type.description)
+                                Text(type.localizedDescription)
                             }
                         }
                         .pickerStyle(.menu)

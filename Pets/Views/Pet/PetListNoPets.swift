@@ -7,13 +7,14 @@
 
 import SwiftUI
 
+
 struct PetListNoPets: View {
     var body: some View {
         ContentUnavailableView {
             Label("No pets yet", systemImage: "pawprint.fill")
                 .foregroundStyle(.petsAccentBlue)
         } description: {
-            Text("New pets you add will appear here.")
+            Text("Tap on the button '+' for add a new pet.")
         }
     }
 }

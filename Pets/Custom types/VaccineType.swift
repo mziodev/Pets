@@ -7,9 +7,7 @@
 
 import Foundation
 
-enum VaccineType: String, Codable, CaseIterable, Identifiable {
-    var id: Self { self }
-    
+enum VaccineType: String, Codable, CaseIterable {    
     case unknown
     case DHPP
     case DHPPi
@@ -36,7 +34,7 @@ enum VaccineType: String, Codable, CaseIterable, Identifiable {
     case FeLV
     case FIV
     
-    var description: String {
+    var localizedDescription: String {
         switch self {
         case .unknown:
             String(localized: "Unknown")

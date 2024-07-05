@@ -39,7 +39,7 @@ struct PetBreedVariationList: View {
                     }
                 }
             }
-            .navigationTitle(breed.name)
+            .navigationTitle("\(breed.name) variations")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

@@ -8,10 +8,10 @@
 import Foundation
 
 struct FormatUtilities {
-    static func changingCommasPerDots(in value: Double) -> Double {
-        let stringValue = String(value)
-        print(stringValue)
-        
-        return Double(stringValue.replacingOccurrences(of: ",", with: ".")) ?? 0
-    }
+//    static func changingCommasPerDots(in value: Double) -> Double {
+//        let stringValue = String(value)
+//        print(stringValue)
+//        
+//        return Double(stringValue.replacingOccurrences(of: ",", with: ".")) ?? 0
+//    }
 }

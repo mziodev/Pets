@@ -16,7 +16,9 @@ class Vaccine {
     var expirationDate: Date
     var pet: Pet?
     
-    var activeDays: Int { Int(expirationDate.timeIntervalSince(.now) / 86400) }
+    var activeDays: Int {
+        Int(expirationDate.timeIntervalSince(.now) / 86400)
+    }
     
     init(
         name: String = "",

@@ -13,7 +13,7 @@ struct WeightList: View {
     
     @ObservedObject var pet: Pet
     
-    @State private var selectedTimePeriod: TimePeriod = .lastSixMonthsPeriod
+    @State private var selectedTimePeriod: TimePeriod = .lastSixMonths
     @State private var showingAddWeightSheet: Bool = false
     
     private var selectedDateRange: ClosedRange<Date> {
@@ -41,8 +41,11 @@ struct WeightList: View {
                         "Time Period",
                         selection: $selectedTimePeriod.animation()
                     ) {
-                        ForEach(TimePeriod.allCases.reversed()) { period in
-                            Text(period.description)
+                        ForEach(
+                            TimePeriod.allCases.reversed(),
+                            id: \.self
+                        ) { period in
+                            Text(period.localizedDescription)
                         }
                     }
                     .pickerStyle(.segmented)

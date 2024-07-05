@@ -47,15 +47,15 @@ struct VaccineDetails: View {
                             .focused($vaccineNameTextFieldFocused)
                         
                         Picker("Type", selection: $vaccine.type) {
-                            ForEach(VaccineType.allCases) { vaccine in
+                            ForEach(VaccineType.allCases, id: \.self) { vaccine in
                                 if vaccine.species == "unknown" {
-                                    Text(vaccine.description)
+                                    Text(vaccine.localizedDescription)
                                         .font(.callout)
                                 }
                             }
                             
                             Section {
-                                ForEach(VaccineType.allCases) { vaccine in
+                                ForEach(VaccineType.allCases, id: \.self) { vaccine in
                                     if vaccine.species == "dogs" {
                                         Text(vaccine.rawValue)
                                             .font(.callout)
@@ -68,7 +68,7 @@ struct VaccineDetails: View {
                             }
                             
                             Section {
-                                ForEach(VaccineType.allCases) { vaccine in
+                                ForEach(VaccineType.allCases, id: \.self) { vaccine in
                                     if vaccine.species == "cats" {
                                         Text(vaccine.rawValue)
                                             .font(.callout)
@@ -86,7 +86,7 @@ struct VaccineDetails: View {
                     
                     if vaccine.type != .unknown {
                         Section {
-                            Text("\(pet.name) will be protected against \(vaccine.type.description).")
+                            Text("\(pet.name) will be protected against \(vaccine.type.localizedDescription).")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }

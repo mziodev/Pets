@@ -11,9 +11,12 @@ import SwiftUI
 struct PetBreedList: View {
     @Bindable var pet: Pet
     
+    @State private var searchText = ""
+    @State private var isSearchPresented = false
+    
     private var petBreedsSorted: [PetBreed] {
         PetBreedDataService.loadPetBreeds(
-            from: "\(pet.species.rawValue)Breed"
+            from: "\(pet.species.rawValue)Breeds"
         )?.sorted { $0.name < $1.name } ?? []
     }
     private var filteredPetBreedList: [PetBreed] {
@@ -23,9 +26,6 @@ struct PetBreedList: View {
             return petBreedsSorted.filter { $0.name.contains(searchText) }
         }
     }
-    
-    @State private var searchText = ""
-    @State private var isSearchPresented = false
     
     
     var body: some View {
@@ -62,10 +62,7 @@ struct PetBreedList: View {
                                         }
                                 } else {
                                     NavigationLink {
-                                        PetBreedVariationList(
-                                            pet: pet,
-                                            breed: breed
-                                        )
+                                        PetBreedVariationList(pet: pet, breed: breed)
                                     } label: {
                                         PetBreedListRow(pet: pet, breed: breed)
                                     }
@@ -94,7 +91,6 @@ struct PetBreedList: View {
                 }
             }
         }
-        
     }
     
     

@@ -7,27 +7,25 @@
 
 import Foundation
 
-enum TimePeriod: String, CaseIterable, Identifiable {
-    case lastSixMonthsPeriod
-    case lastTwelveMonthsPeriod
+enum TimePeriod: String, CaseIterable {
+    case lastSixMonths
+    case lastTwelveMonths
     
-    var description: String {
+    var localizedDescription: String {
         switch self {
-        case .lastSixMonthsPeriod:
+        case .lastSixMonths:
             String(localized: "Last 6 Months")
-        case .lastTwelveMonthsPeriod:
+        case .lastTwelveMonths:
             String(localized: "Last 12 Months")
         }
     }
     
     var dateValue: Date {
         switch self {
-        case .lastSixMonthsPeriod:
-            return Date.now - (86400 * 180)
-        case .lastTwelveMonthsPeriod:
-            return Date.now - (86400 * 365)
+        case .lastSixMonths:
+            Date.now - (86400 * 180)
+        case .lastTwelveMonths:
+            Date.now - (86400 * 365)
         }
     }
-    
-    var id: Self { self }
 }

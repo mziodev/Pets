@@ -156,6 +156,16 @@
         }
       }
     },
+    "%@ variations" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variaciones de %@"
+          }
+        }
+      }
+    },
     "%@ will be protected against %@." : {
       "localizations" : {
         "en" : {
@@ -1372,32 +1382,12 @@
         }
       }
     },
-    "Name (min. 2 characters)" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nombre (min. 2 caracteres)"
-          }
-        }
-      }
-    },
     "New pet" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nueva mascota"
-          }
-        }
-      }
-    },
-    "New pets you add will appear here." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Las nuevas mascotas que añadas aparecerán aquí."
           }
         }
       }
@@ -1728,6 +1718,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Supositorio"
+          }
+        }
+      }
+    },
+    "Tap on the button '+' for add a new pet." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz tap en el botón '+' para añadir una nueva mascota."
           }
         }
       }

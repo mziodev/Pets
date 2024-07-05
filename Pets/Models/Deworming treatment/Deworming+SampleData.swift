@@ -9,7 +9,7 @@ import Foundation
 
 extension DewormingTreatment {
     static var sampleData = [
-            DewormingTreatment(
+        DewormingTreatment(
             type: .liquid,
             units: .milliliters,
             name: "Fenbendazole",
@@ -18,6 +18,7 @@ extension DewormingTreatment {
             endingDate: .now + (86400 * 2),
             notes: "Given to Bella"
         ),
+            
         DewormingTreatment(
             type: .liquid,
             units: .milliliters,
@@ -27,6 +28,7 @@ extension DewormingTreatment {
             endingDate: .now - (86400 * 30),
             notes: "Given to Duke"
         ),
+            
         DewormingTreatment(
             type: .injection,
             units: .millilitersPerKilogram,
@@ -36,6 +38,7 @@ extension DewormingTreatment {
             endingDate: .now + (86400 * 5),
             notes: "Given to Daisy"
         ),
+            
         DewormingTreatment(
             type: .injection,
             units: .millilitersPerKilogram,
@@ -45,6 +48,7 @@ extension DewormingTreatment {
             endingDate: .now - (86400 * 25),
             notes: "Given to Charlie"
         ),
+            
         DewormingTreatment(
             type: .pill,
             units: .units,
@@ -54,6 +58,7 @@ extension DewormingTreatment {
             endingDate: .now + (86400 * 29),
             notes: "Given to Lucy"
         ),
+            
         DewormingTreatment(
             type: .pill,
             units: .units,
@@ -63,6 +68,7 @@ extension DewormingTreatment {
             endingDate: .now - (86400 * 60),
             notes: "Given to Buddy"
         ),
+            
         DewormingTreatment(
             type: .liquid,
             units: .milliliters,
@@ -72,6 +78,7 @@ extension DewormingTreatment {
             endingDate: .now - (86400 * 35),
             notes: "Given to Rocky"
         ),
+            
         DewormingTreatment(
             type: .injection,
             units: .milliliters,
@@ -81,6 +88,7 @@ extension DewormingTreatment {
             endingDate: .now + (86400 * 5),
             notes: "Given to Ginger"
         ),
+            
         DewormingTreatment(
             type: .pill,
             units: .units,
@@ -90,6 +98,7 @@ extension DewormingTreatment {
             endingDate: .now + (86400 * 15),
             notes: "Given to Max"
         ),
+            
         DewormingTreatment(
             type: .collar,
             units: .units,
@@ -99,6 +108,7 @@ extension DewormingTreatment {
             endingDate: .now + (86400 * 10),
             notes: "Given to Coco"
         ),
+            
         DewormingTreatment(
             type: .collar,
             units: .units,

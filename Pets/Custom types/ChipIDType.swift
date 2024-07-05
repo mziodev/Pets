@@ -13,7 +13,7 @@ enum ChipIDType: String, Codable, CaseIterable {
     case tenDigit
     case nineDigit
     
-    var description: String {
+    var localizedDescription: String {
         switch self {
         case .noChipID:
             String(localized: "No chip")

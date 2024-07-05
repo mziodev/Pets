@@ -9,6 +9,7 @@ import Foundation
 
 class PetBreedDataService {
     static func loadPetBreeds(from filename: String) -> [PetBreed]? {
+            print("JSON file not found")
         if let url = Bundle.main.url(forResource: filename, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
@@ -22,7 +23,6 @@ class PetBreedDataService {
                 return nil
             }
         } else {
-            print("JSON file not found")
             
             return nil
         }
