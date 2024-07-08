@@ -20,6 +20,10 @@ struct WeightList: View {
         selectedTimePeriod.dateValue ... .now
     }
     
+    private var selectedDateRangeWeights: [Weight] {
+        pet.filteringAndSortingWeights(in: selectedDateRange)
+    }
+    
     var scrollPositionStartString: String {
         pet.reverseSortedWeights.last!.date.formatted(
             .dateTime.month().day()
@@ -59,7 +63,7 @@ struct WeightList: View {
                                 String(
                                     format: "%.2f %@",
                                     locale: Locale.current,
-                                    pet.weights.averaging(),
+                                    selectedDateRangeWeights.averaging(),
                                     Weight.units
                                 )
                             )
@@ -73,11 +77,7 @@ struct WeightList: View {
                         }
                         .padding(.horizontal, 5)
                         
-                        WeightListChart(
-                            weights: pet.filteringAndSortingWeights(
-                                in: selectedDateRange
-                            )
-                        )
+                        WeightListChart(weights: selectedDateRangeWeights)
                         .frame(height: 240)
                         .padding(.horizontal, 5)
                     }
@@ -127,5 +127,5 @@ struct WeightList: View {
 }
 
 #Preview {
-    WeightList(pet: SampleData.shared.petWithChipID)
+    WeightList(pet: SampleData.shared.petWithoutChipID)
 }

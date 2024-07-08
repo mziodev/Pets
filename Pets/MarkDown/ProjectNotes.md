@@ -1,9 +1,5 @@
 # Project Notes
 
-## Average weight
-We need to fix the 6 moths average weight because it's the same as 12 month average.
-  
-
 ## Data base migration
 We must to learn migrations before another model update.
 
