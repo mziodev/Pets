@@ -33,9 +33,20 @@ struct VaccineListRow: View {
                 
                 Text(vaccine.type.rawValue)
                     .font(.footnote)
+                    .bold()
                     .foregroundStyle(
                         vaccine.activeDays > 0 ? Color.petsAccentBlue : Color.secondary
                     )
+                
+                Text(
+                    vaccine.date.formatted(
+                        date: .abbreviated,
+                        time: .omitted
+                    )
+                )
+                .font(.caption)
+                .fontDesign(.rounded)
+                .foregroundStyle(.secondary)
             }
             
             Spacer()
@@ -43,12 +54,19 @@ struct VaccineListRow: View {
             if vaccine.activeDays > 0 {
                 VStack {
                     Text(vaccine.activeDays.description)
-                        .font(.title2)
+                        .font(.title)
+                        .fontDesign(.rounded)
                         .foregroundStyle(activeDaysColor)
                     Text("More days")
                         .font(.caption.smallCaps())
                         .bold()
                 }
+            } else {
+                HStack {
+                    Text("Expired")
+                        .font(.subheadline.smallCaps())
+                }
+                .foregroundStyle(.secondary)
             }
         }
     }
