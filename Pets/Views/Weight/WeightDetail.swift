@@ -71,7 +71,6 @@ struct WeightDetail: View {
             }
             .navigationTitle(isNew ? "Add Weight" : "Weight Details")
             .navigationBarTitleDisplayMode(.inline)
-            .interactiveDismissDisabled()
             .onAppear {
                 if isNew { editingWeight = true }
                 isWeightTextFieldFocused = true

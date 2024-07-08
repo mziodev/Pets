@@ -89,7 +89,6 @@ struct PetChipID: View {
             }
             .navigationTitle("Chip ID Info")
             .navigationBarTitleDisplayMode(.inline)
-            .interactiveDismissDisabled()
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }

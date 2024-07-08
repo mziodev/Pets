@@ -62,7 +62,6 @@ struct DewormingTreatmentList: View {
             }
             .navigationTitle("\(pet.name)'s dewormings")
             .navigationBarTitleDisplayMode(.inline)
-            .interactiveDismissDisabled()
             .sheet(isPresented: $showingDewormingTreatmentDetail) {
                 DewormingTreatmentDetail(
                     pet: pet,

@@ -147,7 +147,6 @@ struct VaccineDetails: View {
             }
             .navigationTitle(isNew ? "Add Vaccine" : "Vaccine Details")
             .navigationBarTitleDisplayMode(.inline)
-            .interactiveDismissDisabled()
             .onAppear {
                 if isNew { editingVaccine = true }
                 vaccineNameTextFieldFocused = true

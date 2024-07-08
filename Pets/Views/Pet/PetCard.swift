@@ -61,6 +61,7 @@ struct PetCard: View {
             .sheet(isPresented: $showingChipID) {
                 PetChipID(pet: pet)
                     .presentationDetents([.medium])
+                    .presentationDragIndicator(.visible)
             }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {

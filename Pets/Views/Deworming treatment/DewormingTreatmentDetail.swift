@@ -154,7 +154,6 @@ struct DewormingTreatmentDetail: View {
             }
             .navigationTitle(isNew ? "Add Treatment" : "Treatment Details")
             .navigationBarTitleDisplayMode(.inline)
-            .interactiveDismissDisabled()
             .onAppear {
                 if isNew { editingTreatment = true }
                 isTreatmentNameTextFieldFocused = true

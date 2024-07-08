@@ -153,7 +153,6 @@ struct PetDetail: View {
             .navigationTitle(isNew ? String(localized: "New pet") : pet.name)
             .navigationBarTitleDisplayMode(.inline)
             .scrollDismissesKeyboard(.interactively)
-            .interactiveDismissDisabled()
             .onAppear {
                 if pet.name.isEmpty { nameTextFieldFocused = true }
             }

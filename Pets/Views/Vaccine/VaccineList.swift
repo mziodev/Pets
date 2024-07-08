@@ -52,7 +52,6 @@ struct VaccineList: View {
             }
             .navigationTitle("\(pet.name)'s vaccines")
             .navigationBarTitleDisplayMode(.inline)
-            .interactiveDismissDisabled()
             .sheet(isPresented: $showingVaccineDetail) {
                 VaccineDetails(pet: pet, isNew: true)
             }

@@ -1,5 +1,9 @@
 # Project Notes
 
+## Average weight
+We need to fix the 6 moths average weight because it's the same as 12 month average.
+  
+
 ## Data base migration
 We must to learn migrations before another model update.
 
@@ -8,16 +12,8 @@ We must to learn migrations before another model update.
 We have to adaptate the app to properly render on an iPad.
 
 
-## Dismissing sheet views
-We are going to change them to dismiss interactive, with the top bar visible.
-
-
 ## Edit chip ID info
 We can add an edit button to the chip ID sheet view. We could build a separate view for always editing the chip ID, with a navigation link from the petDetails view and an edit button in the sheet view.  
-
-  
-## Average weight
-We need to fix the 6 moths average weight because it's the same as 12 month average.
 
 
 ## Vaccines

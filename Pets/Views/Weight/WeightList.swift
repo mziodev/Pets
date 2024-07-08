@@ -101,7 +101,6 @@ struct WeightList: View {
             }
             .navigationTitle("\(pet.name)'s weight list")
             .navigationBarTitleDisplayMode(.inline)
-            .interactiveDismissDisabled()
             .sheet(isPresented: $showingAddWeightSheet) {
                 WeightDetail(pet: pet, isNew: true)
             }
