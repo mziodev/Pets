@@ -32,6 +32,10 @@ We have to change alerts for confirmation sheet, which is more appropiate for th
 We need to implement a resizable function for pet images. Probably we need a new intermediate sheet view for selecting and resizing the photo. And it would be a good idea an alert message before deleting the existing image.
 
 
+## iPad (waiting for iOS 18)
+We have to adaptate the app to properly render on an iPad.
+
+
 ## Future features
 ### Food control:
 - Food brand, quantity, cost, shop link.
