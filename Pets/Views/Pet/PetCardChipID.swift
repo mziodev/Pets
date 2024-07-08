@@ -23,7 +23,7 @@ struct PetCardChipID: View {
             }
         } else {
             NavigationLink {
-                PetChipIDBarcode(chipID: chipID)
+                PetChipBarcode(chipID: chipID)
             } label: {
                 HStack {
                     Spacer()

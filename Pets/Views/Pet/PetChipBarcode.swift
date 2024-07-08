@@ -8,7 +8,7 @@
 import CoreImage.CIFilterBuiltins
 import SwiftUI
 
-struct PetChipIDBarcode: View {
+struct PetChipBarcode: View {
     @Environment(\.dismiss) var dismiss
     
     let chipID: String
@@ -104,9 +104,9 @@ struct PetChipIDBarcode: View {
 }
 
 #Preview("With barcode") {
-    PetChipIDBarcode(chipID: "981098108464559")
+    PetChipBarcode(chipID: "981098108464559")
 }
 
 #Preview("Without barcode") {
-    PetChipIDBarcode(chipID: "")
+    PetChipBarcode(chipID: "")
 }

@@ -20,7 +20,7 @@ struct PetCard: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 30) {
-                PetImage(pet: pet, imageSize: .large)
+                PetImage(pet: pet, imageSize: .medium)
                     .padding(.top)
                 
                 List {
@@ -59,7 +59,7 @@ struct PetCard: View {
                 VaccineList(pet: pet)
             }
             .sheet(isPresented: $showingChipID) {
-                PetChipID(pet: pet)
+                PetChipInfo(pet: pet)
                     .presentationDetents([.medium])
                     .presentationDragIndicator(.visible)
             }

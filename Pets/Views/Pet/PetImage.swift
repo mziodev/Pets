@@ -34,9 +34,15 @@ struct PetImage: View {
 
 
 #Preview("Small image size") {
-    PetImage(pet: SampleData.shared.petWithChipID, imageSize: .small)
+    PetImage(
+        pet: SampleData.shared.petWithChipID,
+        imageSize: .small
+    )
 }
 
 #Preview("Large image size") {
-    PetImage(pet: SampleData.shared.petWithChipID, imageSize: .large)
+    PetImage(
+        pet: SampleData.shared.petWithChipID,
+        imageSize: .medium
+    )
 }

@@ -31,9 +31,15 @@ struct PetImagePlaceholder: View {
 
 
 #Preview("No species, large") {
-    PetImagePlaceholder(species: .unknown, imageSize: .large)
+    PetImagePlaceholder(
+        species: .unknown,
+        imageSize: .medium
+    )
 }
 
 #Preview("Dog, small") {
-    PetImagePlaceholder(species: .cannine, imageSize: .small)
+    PetImagePlaceholder(
+        species: .cannine,
+        imageSize: .small
+    )
 }

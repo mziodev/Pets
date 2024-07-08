@@ -9,5 +9,5 @@ import Foundation
 
 enum PetImageSize: Double {
     case small = 150
-    case large = 220
+    case medium = 220
 }

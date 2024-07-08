@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PetChipID: View {
+struct PetChipInfo: View {
     @Environment(\.dismiss) var dismiss
     
     let pet: Pet
@@ -104,5 +104,5 @@ struct PetChipID: View {
 }
 
 #Preview {
-    PetChipID(pet: SampleData.shared.petWithChipID)
+    PetChipInfo(pet: SampleData.shared.petWithChipID)
 }

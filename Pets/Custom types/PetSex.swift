@@ -15,7 +15,7 @@ enum PetSex: String, CaseIterable, Codable {
     var localizedDescription: String {
         switch self {
         case .unknown:
-            String(localized: "Unknown")
+            String(localized: "Select a sex")
         case .male:
             String(localized: "Male")
         case .female:
