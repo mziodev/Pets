@@ -17,7 +17,6 @@ We can add an edit button to the chip ID sheet view. We could build a separate v
 
 
 ## Vaccines
-- We need the date info on each row of expired vaccines.
 - We need a notes box for vaccines.
 - Starts and Ends instead of Date...
 - Pickers 
