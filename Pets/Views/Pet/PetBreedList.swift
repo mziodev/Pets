@@ -21,9 +21,11 @@ struct PetBreedList: View {
     }
     private var filteredPetBreedList: [PetBreed] {
         if searchText.isEmpty {
-            return petBreedsSorted
+            petBreedsSorted
         } else {
-            return petBreedsSorted.filter { $0.name.contains(searchText) }
+            petBreedsSorted.filter {
+                $0.name.localizedStandardContains(searchText)
+            }
         }
     }
     
