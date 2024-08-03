@@ -1885,7 +1885,14 @@
       }
     },
     "Value" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valor"
+          }
+        }
+      }
     },
     "Viral Rhinotracheitis" : {
       "localizations" : {
@@ -1937,12 +1944,12 @@
         }
       }
     },
-    "Weight List" : {
+    "Weight List (%@)" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lista de Pesos"
+            "value" : "Lista de Pesos (%@)"
           }
         }
       }
