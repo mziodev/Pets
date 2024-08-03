@@ -13,6 +13,7 @@ struct WeightDetail: View {
     @Bindable var pet: Pet
     
     @State var weight: Weight
+    @State private var weightValue: Double?
     @State private var editingWeight: Bool = false
     @State private var showingDeleteAlert: Bool = false
     
@@ -46,15 +47,16 @@ struct WeightDetail: View {
                         .foregroundStyle(.placeholder)
                         
                         HStack {
-                            Text("Weight")
+                            Text("\(Weight.units)")
                                 .foregroundStyle(.placeholder)
                             
-                            TextField("", value: $weight.value, format: .number)
+                            TextField("", value: $weightValue, format: .number)
                                 .multilineTextAlignment(.trailing)
                                 .keyboardType(.decimalPad)
                                 .focused($isWeightTextFieldFocused)
-                            
-                            Text("\(Weight.units)")
+                                .onChange(of: weightValue ?? 0) { oldValue, newValue in
+                                    weight.value = newValue
+                                }
                         }
                     }
                 }
@@ -72,7 +74,10 @@ struct WeightDetail: View {
             .navigationTitle(isNew ? "Add Weight" : "Weight Details")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
+                copyWeightValue()
+                
                 if isNew { editingWeight = true }
+                
                 isWeightTextFieldFocused = true
             }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
@@ -121,6 +126,10 @@ struct WeightDetail: View {
         }
         
         dismiss()
+    }
+    
+    private func copyWeightValue() {
+        if weight.value > 0 { weightValue = self.weight.value }
     }
 }
 

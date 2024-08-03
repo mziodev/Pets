@@ -1,5 +1,5 @@
 //
-//  VaccineDetails.swift
+//  VaccineDetail.swift
 //  Pets
 //
 //  Created by MZiO on 2/7/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct VaccineDetails: View {
+struct VaccineDetail: View {
     @Environment(\.dismiss) var dismiss
     
     @Bindable var pet: Pet
@@ -200,13 +200,13 @@ struct VaccineDetails: View {
 
 
 #Preview("New vaccine") {
-    VaccineDetails(pet: SampleData.shared.petWithoutSpecies, isNew: true)
+    VaccineDetail(pet: SampleData.shared.petWithoutSpecies, isNew: true)
 }
 
 #Preview("Existing vaccine") {
-    VaccineDetails(pet: SampleData.shared.petWithChipID, vaccine: SampleData.shared.petWithChipID.vaccines[0])
+    VaccineDetail(pet: SampleData.shared.petWithChipID, vaccine: SampleData.shared.petWithChipID.vaccines[0])
 }
 
 #Preview("Expired vaccine") {
-    VaccineDetails(pet: SampleData.shared.petWithChipID, vaccine: SampleData.shared.petWithExpiredVaccines.vaccines[1])
+    VaccineDetail(pet: SampleData.shared.petWithChipID, vaccine: SampleData.shared.petWithExpiredVaccines.vaccines[1])
 }

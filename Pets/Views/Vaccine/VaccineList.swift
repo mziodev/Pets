@@ -26,7 +26,7 @@ struct VaccineList: View {
                             ForEach(pet.reverseSortedVaccines) { vaccine in
                                 if vaccine.activeDays > 0 {
                                     NavigationLink {
-                                        VaccineDetails(pet: pet, vaccine: vaccine)
+                                        VaccineDetail(pet: pet, vaccine: vaccine)
                                     } label: {
                                         VaccineListRow(vaccine: vaccine)
                                     }
@@ -39,7 +39,7 @@ struct VaccineList: View {
                                 ForEach(pet.reverseSortedVaccines) { vaccine in
                                     if vaccine.activeDays <= 0 {
                                         NavigationLink {
-                                            VaccineDetails(pet: pet, vaccine: vaccine)
+                                            VaccineDetail(pet: pet, vaccine: vaccine)
                                         } label: {
                                             VaccineListRow(vaccine: vaccine)
                                         }
@@ -53,7 +53,7 @@ struct VaccineList: View {
             .navigationTitle("\(pet.name)'s vaccines")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showingVaccineDetail) {
-                VaccineDetails(pet: pet, isNew: true)
+                VaccineDetail(pet: pet, isNew: true)
             }
             .toolbar {
                 ToolbarItem {

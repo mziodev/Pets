@@ -19,10 +19,9 @@ struct WeightListRow: View {
             
             Text(
                 String(
-                    format: "%.3f %@",
+                    format: "%.3f",
                     locale: Locale.current,
-                    weight.value,
-                    Weight.units
+                    weight.value
                 )
             )
             .font(.headline)

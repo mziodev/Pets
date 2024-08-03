@@ -14,6 +14,8 @@ struct DewormingTreatmentDetail: View {
     @Bindable var pet: Pet
     
     @State var dewormingTreatment: DewormingTreatment
+    
+    @State private var treatmentQuantity: Double?
     @State private var editingTreatment: Bool = false
     @State private var showingDeleteAlert: Bool = false
     
@@ -100,11 +102,14 @@ struct DewormingTreatmentDetail: View {
                                 Text("Quantity")
                                 
                                 TextField(
-                                    "",
-                                    value: $dewormingTreatment.quantity,
+                                    "Quantity",
+                                    value: $treatmentQuantity,
                                     format: .number
                                 )
                                 .multilineTextAlignment(.trailing)
+                                .onChange(of: treatmentQuantity ?? 0, { oldValue, newValue in
+                                    dewormingTreatment.quantity = newValue
+                                })
                                 .keyboardType(.decimalPad)
                             }
                         }
@@ -155,7 +160,10 @@ struct DewormingTreatmentDetail: View {
             .navigationTitle(isNew ? "Add Treatment" : "Treatment Details")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
+                copyDewormingTreatmentQuantity()
+                
                 if isNew { editingTreatment = true }
+                
                 isTreatmentNameTextFieldFocused = true
             }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
@@ -203,6 +211,12 @@ struct DewormingTreatmentDetail: View {
             pet.dewormingTreatments.remove(at: dewormingTreatmentIndex)
             
             dismiss()
+        }
+    }
+    
+    private func copyDewormingTreatmentQuantity() {
+        if dewormingTreatment.quantity > 0 {
+            treatmentQuantity = dewormingTreatment.quantity
         }
     }
 }

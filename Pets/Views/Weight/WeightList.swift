@@ -85,7 +85,7 @@ struct WeightList: View {
                     .padding(.top, 2)
                     
                     List {
-                        Section("Weight List") {
+                        Section("Weight List (\(Weight.units))") {
                             ForEach(pet.reverseSortedWeights) { weight in
                                 NavigationLink {
                                     WeightDetail(pet: pet, weight: weight)
