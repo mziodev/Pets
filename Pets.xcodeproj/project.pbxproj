@@ -49,8 +49,8 @@
 		08B585032C1713A40068D4B2 /* PetBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B585022C1713A40068D4B2 /* PetBreed.swift */; };
 		08B585062C1718E70068D4B2 /* PetBreedDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B585052C1718E70068D4B2 /* PetBreedDataService.swift */; };
 		08B585082C1748690068D4B2 /* PetBreedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B585072C1748690068D4B2 /* PetBreedList.swift */; };
-		08B5850C2C1753C80068D4B2 /* cannineBreeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 08B5850B2C1753C80068D4B2 /* cannineBreeds.json */; };
-		08B585102C1840740068D4B2 /* felineBreeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 08B5850F2C1840740068D4B2 /* felineBreeds.json */; };
+		08B5850C2C1753C80068D4B2 /* cannineBreeds_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 08B5850B2C1753C80068D4B2 /* cannineBreeds_en.json */; };
+		08B585102C1840740068D4B2 /* felineBreeds_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 08B5850F2C1840740068D4B2 /* felineBreeds_en.json */; };
 		08B585122C1849330068D4B2 /* PetBreed+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B585112C1849330068D4B2 /* PetBreed+SampleData.swift */; };
 		08B585142C1853640068D4B2 /* PetBreedListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B585132C1853640068D4B2 /* PetBreedListRow.swift */; };
 		08B585162C1855250068D4B2 /* PetBreedVariationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B585152C1855250068D4B2 /* PetBreedVariationList.swift */; };
@@ -117,14 +117,15 @@
 		08953B702C35A13E008C7D86 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = Pets/Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
 		08A29E372C144D2500D45D98 /* Pet+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+SampleData.swift"; sourceTree = "<group>"; };
 		08A29E392C1451AF00D45D98 /* Weight+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weight+SampleData.swift"; sourceTree = "<group>"; };
+		08A9D5F02C7750E7008907D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		08B584F82C16E8A90068D4B2 /* PetImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetImageSize.swift; path = Pets/Views/PetImageSize.swift; sourceTree = SOURCE_ROOT; };
 		08B584FA2C16EFA10068D4B2 /* Weight+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weight+Format.swift"; sourceTree = "<group>"; };
 		08B584FC2C16FA460068D4B2 /* Weight+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weight+Utilities.swift"; sourceTree = "<group>"; };
 		08B585022C1713A40068D4B2 /* PetBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreed.swift; sourceTree = "<group>"; };
 		08B585052C1718E70068D4B2 /* PetBreedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedDataService.swift; sourceTree = "<group>"; };
 		08B585072C1748690068D4B2 /* PetBreedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedList.swift; sourceTree = "<group>"; };
-		08B5850B2C1753C80068D4B2 /* cannineBreeds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cannineBreeds.json; sourceTree = "<group>"; };
-		08B5850F2C1840740068D4B2 /* felineBreeds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = felineBreeds.json; sourceTree = "<group>"; };
+		08B5850B2C1753C80068D4B2 /* cannineBreeds_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cannineBreeds_en.json; sourceTree = "<group>"; };
+		08B5850F2C1840740068D4B2 /* felineBreeds_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = felineBreeds_en.json; sourceTree = "<group>"; };
 		08B585112C1849330068D4B2 /* PetBreed+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetBreed+SampleData.swift"; sourceTree = "<group>"; };
 		08B585132C1853640068D4B2 /* PetBreedListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedListRow.swift; sourceTree = "<group>"; };
 		08B585152C1855250068D4B2 /* PetBreedVariationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedVariationList.swift; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 		08833FF12C09CABB000FD0BF /* Pets */ = {
 			isa = PBXGroup;
 			children = (
+				08A9D5F02C7750E7008907D4 /* Info.plist */,
 				08FD87BE2C300C7500CC9F9A /* Notes.md */,
 				08953B702C35A13E008C7D86 /* Localizable.xcstrings */,
 				08EEF0C92C22EE5B003ABFF9 /* Apps */,
@@ -313,8 +315,8 @@
 		08B585192C19E4010068D4B2 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				08B5850F2C1840740068D4B2 /* felineBreeds.json */,
-				08B5850B2C1753C80068D4B2 /* cannineBreeds.json */,
+				08B5850F2C1840740068D4B2 /* felineBreeds_en.json */,
+				08B5850B2C1753C80068D4B2 /* cannineBreeds_en.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -462,10 +464,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08B585102C1840740068D4B2 /* felineBreeds.json in Resources */,
+				08B585102C1840740068D4B2 /* felineBreeds_en.json in Resources */,
 				08953B712C35A13E008C7D86 /* Localizable.xcstrings in Resources */,
 				08833FF72C09CABB000FD0BF /* Preview Assets.xcassets in Resources */,
-				08B5850C2C1753C80068D4B2 /* cannineBreeds.json in Resources */,
+				08B5850C2C1753C80068D4B2 /* cannineBreeds_en.json in Resources */,
 				088340042C09CABB000FD0BF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,8 +680,10 @@
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Pets;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access your Photo Library so you can choose a photo of your pet.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -693,6 +697,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mzio.Pets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -710,8 +718,10 @@
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Pets;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access your Photo Library so you can choose a photo of your pet.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -725,6 +735,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mzio.Pets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
