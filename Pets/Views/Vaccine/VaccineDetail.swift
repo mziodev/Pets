@@ -132,7 +132,7 @@ struct VaccineDetail: View {
                                 
                                 Spacer()
                             }
-                        } else {
+                        } else if !isNew {
                             Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
                         }
                     }
@@ -166,7 +166,7 @@ struct VaccineDetail: View {
                 Text("This vaccine data will be deleted, are you sure?")
             }
             .toolbar {
-                if editingVaccine {
+                if editingVaccine && !isNew {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancel", action: editVaccine)
                     }
