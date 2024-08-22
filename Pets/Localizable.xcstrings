@@ -954,22 +954,22 @@
         }
       }
     },
+    "Ended" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminó"
+          }
+        }
+      }
+    },
     "Ends" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Termina el"
-          }
-        }
-      }
-    },
-    "Expiration date" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fecha de caducidad"
+            "value" : "Termina"
           }
         }
       }
@@ -1699,7 +1699,27 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Empieza el"
+            "value" : "Empieza"
+          }
+        }
+      }
+    },
+    "Started" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empezó"
+          }
+        }
+      }
+    },
+    "Starts" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empieza"
           }
         }
       }

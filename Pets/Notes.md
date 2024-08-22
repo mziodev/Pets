@@ -1,4 +1,4 @@
-# Project Notes
+# Notes
 
 ## Data base migration
 We must to learn migrations before another model update.
@@ -7,8 +7,7 @@ We must to learn migrations before another model update.
 ## Vaccines
 - We need a notes box for vaccines.
 - We need to store the cost? Or is included on the cost of consultation?
-- Starts and Ends instead of Date...
-- Pickers 
+- Pickers
 
 
 ## Localization and i18n

@@ -50,13 +50,17 @@ struct WeightDetail: View {
                             Text("\(Weight.units)")
                                 .foregroundStyle(.placeholder)
                             
-                            TextField("", value: $weightValue, format: .number)
-                                .multilineTextAlignment(.trailing)
-                                .keyboardType(.decimalPad)
-                                .focused($isWeightTextFieldFocused)
-                                .onChange(of: weightValue ?? 0) { oldValue, newValue in
-                                    weight.value = newValue
-                                }
+                            TextField(
+                                "",
+                                value: $weightValue,
+                                format: .number
+                            )
+                            .multilineTextAlignment(.trailing)
+                            .keyboardType(.decimalPad)
+                            .focused($isWeightTextFieldFocused)
+                            .onChange(of: weightValue ?? 0) { oldValue, newValue in
+                                weight.value = newValue
+                            }
                         }
                     }
                 }

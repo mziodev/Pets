@@ -14,6 +14,7 @@ struct VaccineDetail: View {
     @Bindable var pet: Pet
     
     @State var vaccine: Vaccine
+    
     @State private var editingVaccine: Bool = false
     @State private var showingDeleteAlert: Bool = false
     
@@ -21,9 +22,14 @@ struct VaccineDetail: View {
     
     let isNew: Bool
     
+    private var isVaccineExpired: Bool {
+        vaccine.activeDays <= 0 && !isNew
+    }
+    
     private var isNameVerified: Bool {
         FormVerification.checkMinimumLength(vaccine.name)
     }
+    
     private var isFormVerified: Bool { isNameVerified }
     
     
@@ -96,29 +102,21 @@ struct VaccineDetail: View {
                     
                     Section("Dates") {
                         DatePicker(
-                            "Date",
-                            selection: $vaccine.date,
+                            isVaccineExpired ? "Started" : "Starts",
+                            selection: $vaccine.starts,
                             in: pet.birthday ... .now,
                             displayedComponents: .date
                         )
                         
                         DatePicker(
-                            "Expiration date",
-                            selection: $vaccine.expirationDate,
+                            isVaccineExpired ? "Ended" : "Ends",
+                            selection: $vaccine.ends,
                             in: pet.birthday ... .distantFuture,
                             displayedComponents: .date
                         )
                     }
                     
-                    if vaccine.activeDays > 0 {
-                        Section {
-                            Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                        .listRowBackground(Color.clear)
-                        .listSectionSpacing(0)
-                    } else if !isNew {
+                    if isVaccineExpired {
                         Section {
                             HStack {
                                 Spacer()
@@ -129,6 +127,14 @@ struct VaccineDetail: View {
                                 
                                 Spacer()
                             }
+                        }
+                        .listRowBackground(Color.clear)
+                        .listSectionSpacing(0)
+                    } else {
+                        Section {
+                            Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
                         }
                         .listRowBackground(Color.clear)
                         .listSectionSpacing(0)
@@ -169,13 +175,14 @@ struct VaccineDetail: View {
                 
                 if isNew {
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") { dismiss() }
+                        Button("Cancel", action: dismissView)
                     }
                 }
             }
         }
     }
     
+    private func dismissView() { dismiss() }
     
     private func editVaccine() {
         withAnimation {
@@ -200,13 +207,22 @@ struct VaccineDetail: View {
 
 
 #Preview("New vaccine") {
-    VaccineDetail(pet: SampleData.shared.petWithoutSpecies, isNew: true)
+    VaccineDetail(
+        pet: SampleData.shared.petWithoutSpecies,
+        isNew: true
+    )
 }
 
 #Preview("Existing vaccine") {
-    VaccineDetail(pet: SampleData.shared.petWithChipID, vaccine: SampleData.shared.petWithChipID.vaccines[0])
+    VaccineDetail(
+        pet: SampleData.shared.petWithChipID,
+        vaccine: SampleData.shared.petWithChipID.vaccines[0]
+    )
 }
 
 #Preview("Expired vaccine") {
-    VaccineDetail(pet: SampleData.shared.petWithChipID, vaccine: SampleData.shared.petWithExpiredVaccines.vaccines[1])
+    VaccineDetail(
+        pet: SampleData.shared.petWithChipID,
+        vaccine: SampleData.shared.petWithExpiredVaccines.vaccines[1]
+    )
 }

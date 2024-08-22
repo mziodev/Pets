@@ -39,7 +39,7 @@ struct VaccineListRow: View {
                     )
                 
                 Text(
-                    vaccine.date.formatted(
+                    vaccine.starts.formatted(
                         date: .abbreviated,
                         time: .omitted
                     )

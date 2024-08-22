@@ -12,25 +12,25 @@ import SwiftData
 class Vaccine {
     var name: String
     var type: VaccineType
-    var date: Date
-    var expirationDate: Date
+    var starts: Date
+    var ends: Date
     var pet: Pet?
     
     var activeDays: Int {
-        Int(expirationDate.timeIntervalSince(.now) / 86400)
+        Int(ends.timeIntervalSince(.now) / 86400)
     }
     
     init(
         name: String = "",
         type: VaccineType = .unknown,
-        date: Date = .now,
-        expirationDate: Date = .now,
+        starts: Date = .now,
+        ends: Date = .now,
         pet: Pet? = nil
     ) {
         self.name = name
         self.type = type
-        self.date = date
-        self.expirationDate = expirationDate
+        self.starts = starts
+        self.ends = ends
         self.pet = pet
     }
 }
