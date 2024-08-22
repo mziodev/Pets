@@ -48,12 +48,15 @@ struct VaccineDetail: View {
         NavigationStack {
             VStack {
                 Form {
-                    Section("Product Info") {
+                    Section {
                         TextField("Name", text: $vaccine.name)
                             .focused($vaccineNameTextFieldFocused)
                         
                         Picker("Type", selection: $vaccine.type) {
-                            ForEach(VaccineType.allCases, id: \.self) { vaccine in
+                            ForEach(
+                                VaccineType.allCases,
+                                id: \.self
+                            ) { vaccine in
                                 if vaccine.species == "unknown" {
                                     Text(vaccine.localizedDescription)
                                         .font(.callout)
@@ -61,7 +64,10 @@ struct VaccineDetail: View {
                             }
                             
                             Section {
-                                ForEach(VaccineType.allCases, id: \.self) { vaccine in
+                                ForEach(
+                                    VaccineType.allCases,
+                                    id: \.self
+                                ) { vaccine in
                                     if vaccine.species == "dogs" {
                                         Text(vaccine.rawValue)
                                             .font(.callout)
@@ -74,7 +80,10 @@ struct VaccineDetail: View {
                             }
                             
                             Section {
-                                ForEach(VaccineType.allCases, id: \.self) { vaccine in
+                                ForEach(
+                                    VaccineType.allCases,
+                                    id: \.self
+                                ) { vaccine in
                                     if vaccine.species == "cats" {
                                         Text(vaccine.rawValue)
                                             .font(.callout)
@@ -88,19 +97,16 @@ struct VaccineDetail: View {
                         }
                         .pickerStyle(.navigationLink)
                         .foregroundStyle(.primary)
-                    }
-                    
-                    if vaccine.type != .unknown {
-                        Section {
-                            Text("\(pet.name) will be protected against \(vaccine.type.localizedDescription).")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
+                    } header: {
+                        Text("Product Info")
+                    } footer: {
+                        if vaccine.type != .unknown {
+                            Text(isVaccineExpired ? "\(pet.name) was protected against \(vaccine.type.localizedDescription)." : "\(pet.name) will be protected against \(vaccine.type.localizedDescription).")
                         }
-                        .listRowBackground(Color.clear)
-                        .listSectionSpacing(0)
                     }
                     
-                    Section("Dates") {
+                    
+                    Section {
                         DatePicker(
                             isVaccineExpired ? "Started" : "Starts",
                             selection: $vaccine.starts,
@@ -114,45 +120,41 @@ struct VaccineDetail: View {
                             in: pet.birthday ... .distantFuture,
                             displayedComponents: .date
                         )
-                    }
-                    
-                    if isVaccineExpired {
-                        Section {
+                    } header: {
+                        Text("Dates")
+                    } footer: {
+                        if isVaccineExpired {
                             HStack {
                                 Spacer()
                                 
                                 Text("Expired Vaccine")
                                     .font(.headline.smallCaps())
-                                    .foregroundStyle(.secondary)
                                 
                                 Spacer()
                             }
-                        }
-                        .listRowBackground(Color.clear)
-                        .listSectionSpacing(0)
-                    } else {
-                        Section {
+                        } else {
                             Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
                         }
-                        .listRowBackground(Color.clear)
-                        .listSectionSpacing(0)
                     }
                 }
                 .disabled(!editingVaccine)
                 .scrollDismissesKeyboard(.immediately)
-                
-                if !isNew {
-                    Button("Delete vaccine", role: .destructive) {
-                        showingDeleteAlert = true
-                    }
-                    .padding(.top, 10)
-                    .padding(.bottom, 20)
-                }
             }
             .navigationTitle(isNew ? "Add Vaccine" : "Vaccine Details")
             .navigationBarTitleDisplayMode(.inline)
+            .overlay {
+                if !isNew {
+                    VStack {
+                        Spacer()
+                        
+                        Button("Delete vaccine", role: .destructive) {
+                            showingDeleteAlert = true
+                        }
+                        .padding(.top, 10)
+                        .padding(.bottom, 30)
+                    }
+                }
+            }
             .onAppear {
                 if isNew { editingVaccine = true }
                 vaccineNameTextFieldFocused = true
@@ -164,6 +166,12 @@ struct VaccineDetail: View {
                 Text("This vaccine data will be deleted, are you sure?")
             }
             .toolbar {
+                if editingVaccine {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel", action: editVaccine)
+                    }
+                }
+                
                 ToolbarItem(placement: .confirmationAction) {
                     if editingVaccine {
                         Button("Save", action: appendVaccine)
@@ -186,7 +194,7 @@ struct VaccineDetail: View {
     
     private func editVaccine() {
         withAnimation {
-            editingVaccine = true
+            editingVaccine.toggle()
         }
     }
     

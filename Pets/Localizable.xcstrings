@@ -144,6 +144,22 @@
         }
       }
     },
+    "%@ was protected against %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ was protected against %2$@."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ estuvo protegido contra %2$@."
+          }
+        }
+      }
+    },
     "%@ will be protected against %@." : {
       "localizations" : {
         "es" : {
