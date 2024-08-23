@@ -1,5 +1,11 @@
 # Notes
 
+## Localization and i18n
+- Localize JSON breed files to Spanish.
+
+- We have to do localization and internationalization of the entire app on: English, Spanish, French, Portuguese, German, Chinese, Japanese, Indian... on this order.
+
+
 ## Data base migration
 We must to learn migrations before another model update.
 
@@ -8,11 +14,6 @@ We must to learn migrations before another model update.
 - We need a notes box for vaccines.
 - We need to store the cost? Or is included on the cost of consultation?
 - Pickers
-
-
-## Localization and i18n
-We have to do localization an internationalization of the entire app: English, Spanish, French, Portuguese, German, Chinese, Japanese, Indian... on this order.
-* Checkout: Text messages from alerts and empty views.
 
 
 ## Resizable image

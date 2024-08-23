@@ -96,7 +96,7 @@ struct WeightList: View {
                         }
                     }
                 } else {
-                    WeightListNoWeight()
+                    WeightListEmpty()
                 }
             }
             .navigationTitle("\(pet.name)'s weight list")
@@ -106,7 +106,7 @@ struct WeightList: View {
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { dismiss() }
+                    Button("Done", action: dismissView)
                 }
                 
                 ToolbarItem {
@@ -124,6 +124,8 @@ struct WeightList: View {
             }
         }
     }
+    
+    private func dismissView() { dismiss() }
 }
 
 #Preview {

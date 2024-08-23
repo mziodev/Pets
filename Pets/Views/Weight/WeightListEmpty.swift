@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WeightListNoWeight: View {
+struct WeightListEmpty: View {
     var body: some View {
         ContentUnavailableView {
             Label("No weights yet", systemImage: "scalemass")
@@ -20,5 +20,5 @@ struct WeightListNoWeight: View {
 }
 
 #Preview {
-    WeightListNoWeight()
+    WeightListEmpty()
 }

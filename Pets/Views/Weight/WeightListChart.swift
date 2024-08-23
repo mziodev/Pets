@@ -18,7 +18,9 @@ struct WeightListChart: View {
                 BarMark(
                     x: .value(
                         "Month",
-                        weight.date.formatted(.dateTime.month().day())
+                        weight.date.formatted(
+                            .dateTime.month().day()
+                        )
                     ),
                     y: .value("Weight", weight.value)
                 )

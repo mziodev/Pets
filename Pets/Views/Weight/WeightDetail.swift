@@ -13,11 +13,12 @@ struct WeightDetail: View {
     @Bindable var pet: Pet
     
     @State var weight: Weight
+    
     @State private var weightValue: Double?
     @State private var editingWeight: Bool = false
     @State private var showingDeleteAlert: Bool = false
     
-    @FocusState private var isWeightTextFieldFocused
+    @FocusState private var weightTextFieldFocused
     
     let isNew: Bool
     
@@ -57,8 +58,10 @@ struct WeightDetail: View {
                             )
                             .multilineTextAlignment(.trailing)
                             .keyboardType(.decimalPad)
-                            .focused($isWeightTextFieldFocused)
-                            .onChange(of: weightValue ?? 0) { oldValue, newValue in
+                            .focused($weightTextFieldFocused)
+                            .onChange(
+                                of: weightValue ?? 0
+                            ) { oldValue, newValue in
                                 weight.value = newValue
                             }
                         }
@@ -66,23 +69,23 @@ struct WeightDetail: View {
                 }
                 .disabled(!editingWeight)
                 .scrollDismissesKeyboard(.immediately)
-                
-                if !isNew {
-                    Button("Delete weight", role: .destructive) {
-                        showingDeleteAlert = true
-                    }
-                    .padding(.top, 10)
-                    .padding(.bottom, 20)
-                }
             }
             .navigationTitle(isNew ? "Add Weight" : "Weight Details")
             .navigationBarTitleDisplayMode(.inline)
+            .overlay {
+                if !isNew {
+                    DeleteButton(
+                        title: "Delete Weight",
+                        showingAlert: $showingDeleteAlert
+                    )
+                }
+            }
             .onAppear {
                 copyWeightValue()
                 
                 if isNew { editingWeight = true }
                 
-                isWeightTextFieldFocused = true
+                weightTextFieldFocused = true
             }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
                 Button("Cancel", role: .cancel, action: { })
@@ -93,26 +96,28 @@ struct WeightDetail: View {
             .toolbar {
                 if isNew {
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") { dismiss() }
+                        Button("Cancel", action: dismissView)
                     }
                 }
                 
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .confirmationAction) {
                     if editingWeight {
                         Button("Save", action: appendWeight)
                             .disabled(weight.value <= 0)
                     } else {
-                        Button("Edit", action: editWeight)
+                        Button("Edit", action: toggleEditigWeight)
                     }
                 }
             }
         }
     }
-
     
-    private func editWeight() {
+    private func dismissView() { dismiss() }
+    
+    private func toggleEditigWeight() {
         withAnimation {
-            editingWeight = true
+            editingWeight.toggle()
+            weightTextFieldFocused.toggle()
         }
     }
     
