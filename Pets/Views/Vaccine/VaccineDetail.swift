@@ -144,19 +144,15 @@ struct VaccineDetail: View {
             .navigationBarTitleDisplayMode(.inline)
             .overlay {
                 if !isNew {
-                    VStack {
-                        Spacer()
-                        
-                        Button("Delete vaccine", role: .destructive) {
-                            showingDeleteAlert = true
-                        }
-                        .padding(.top, 10)
-                        .padding(.bottom, 30)
-                    }
+                    DeleteButton(
+                        title: "Delete Vaccine",
+                        showingAlert: $showingDeleteAlert
+                    )
                 }
             }
             .onAppear {
                 if isNew { editingVaccine = true }
+                
                 vaccineNameTextFieldFocused = true
             }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
@@ -166,18 +162,12 @@ struct VaccineDetail: View {
                 Text("This vaccine data will be deleted, are you sure?")
             }
             .toolbar {
-                if editingVaccine && !isNew {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel", action: editVaccine)
-                    }
-                }
-                
                 ToolbarItem(placement: .confirmationAction) {
                     if editingVaccine {
                         Button("Save", action: appendVaccine)
                             .disabled(!isFormVerified)
                     } else {
-                        Button("Edit", action: editVaccine)
+                        Button("Edit", action: toggleEditingVaccine)
                     }
                 }
                 
@@ -192,9 +182,10 @@ struct VaccineDetail: View {
     
     private func dismissView() { dismiss() }
     
-    private func editVaccine() {
+    private func toggleEditingVaccine() {
         withAnimation {
             editingVaccine.toggle()
+            vaccineNameTextFieldFocused.toggle()
         }
     }
     

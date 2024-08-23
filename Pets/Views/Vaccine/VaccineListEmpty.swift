@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct VaccineNoVaccines: View {
+struct VaccineListEmpty: View {
     var body: some View {
         ContentUnavailableView {
             Label("No vaccines yet", systemImage: "syringe")
@@ -19,5 +19,5 @@ struct VaccineNoVaccines: View {
 }
 
 #Preview {
-    VaccineNoVaccines()
+    VaccineListEmpty()
 }

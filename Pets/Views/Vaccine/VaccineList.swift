@@ -18,31 +18,35 @@ struct VaccineList: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if pet.vaccines.isEmpty {
-                    VaccineNoVaccines()
-                } else {
-                    List {
+                List {
+                    if pet.activeVaccines > 0 {
                         Section("Active Vaccines") {
                             ForEach(pet.reverseSortedVaccines) { vaccine in
                                 if vaccine.activeDays > 0 {
                                     NavigationLink {
-                                        VaccineDetail(pet: pet, vaccine: vaccine)
+                                        VaccineDetail(
+                                            pet: pet,
+                                            vaccine: vaccine
+                                        )
                                     } label: {
                                         VaccineListRow(vaccine: vaccine)
                                     }
                                 }
                             }
                         }
-                        
-                        if pet.expiredVaccines > 0 {
-                            Section("Expired Vaccines") {
-                                ForEach(pet.reverseSortedVaccines) { vaccine in
-                                    if vaccine.activeDays <= 0 {
-                                        NavigationLink {
-                                            VaccineDetail(pet: pet, vaccine: vaccine)
-                                        } label: {
-                                            VaccineListRow(vaccine: vaccine)
-                                        }
+                    }
+                    
+                    if pet.expiredVaccines > 0 {
+                        Section("Expired Vaccines") {
+                            ForEach(pet.reverseSortedVaccines) { vaccine in
+                                if vaccine.activeDays <= 0 {
+                                    NavigationLink {
+                                        VaccineDetail(
+                                            pet: pet,
+                                            vaccine: vaccine
+                                        )
+                                    } label: {
+                                        VaccineListRow(vaccine: vaccine)
                                     }
                                 }
                             }
@@ -52,6 +56,11 @@ struct VaccineList: View {
             }
             .navigationTitle("\(pet.name)'s vaccines")
             .navigationBarTitleDisplayMode(.inline)
+            .overlay {
+                if pet.vaccines.isEmpty {
+                    VaccineListEmpty()
+                }
+            }
             .sheet(isPresented: $showingVaccineDetail) {
                 VaccineDetail(pet: pet, isNew: true)
             }
