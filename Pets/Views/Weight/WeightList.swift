@@ -105,10 +105,6 @@ struct WeightList: View {
                 WeightDetail(pet: pet, isNew: true)
             }
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done", action: dismissView)
-                }
-                
                 ToolbarItem {
                     Button { showingAddWeightSheet.toggle() } label: {
                         Label("Add weight", systemImage: "plus")
@@ -116,6 +112,10 @@ struct WeightList: View {
                 }
                 
                 if !pet.weights.isEmpty {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done", action: dismissView)
+                    }
+                    
                     ToolbarItem(placement: .status) {
                         Text("\(pet.weights.count) weights")
                             .font(.caption)
@@ -128,6 +128,10 @@ struct WeightList: View {
     private func dismissView() { dismiss() }
 }
 
-#Preview {
+#Preview("Existing Weight List") {
     WeightList(pet: SampleData.shared.petWithoutChipID)
+}
+
+#Preview("Empty Weight List") {
+    WeightList(pet: SampleData.shared.petWithoutSpecies)
 }

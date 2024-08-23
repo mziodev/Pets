@@ -30,12 +30,14 @@ struct DewormingTreatmentListRow: View {
         HStack {
             Image(systemName: dewormingTreatment.type.systemImage)
                 .font(.title)
-                .foregroundStyle(isTreatmentExpired ? .secondary : Color.petsAccentBlue)
+                .foregroundStyle(
+                    isTreatmentExpired ? .secondary : Color.petsAccentBlue
+                )
                 .accessibilityLabel("Treatment image")
             
             VStack(alignment: .leading) {
                 Text(dewormingTreatment.name)
-                    .font(.headline.smallCaps())
+                    .font(.headline)
                 
                 Text(
                     dewormingTreatment.startingDate.formatted(
@@ -60,6 +62,12 @@ struct DewormingTreatmentListRow: View {
                     Text("more days")
                         .font(.caption2.lowercaseSmallCaps())
                 }
+            } else {
+                HStack {
+                    Text("Expired")
+                        .font(.subheadline.smallCaps())
+                }
+                .foregroundStyle(.secondary)
             }
         }
         .foregroundStyle(isTreatmentExpired ? .secondary : .primary)

@@ -18,10 +18,12 @@ struct DewormingTreatmentList: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if pet.dewormingTreatments.count > 0 {
-                    List {
+                List {
+                    if pet.activeDewormingTreatments > 0 {
                         Section("Active treatments") {
-                            ForEach(pet.reverseSortedDewormingTreatments) { treatment in
+                            ForEach(
+                                pet.reverseSortedDewormingTreatments
+                            ) { treatment in
                                 if (treatment.activeDays > 0) {
                                     NavigationLink{
                                         DewormingTreatmentDetail(
@@ -36,32 +38,37 @@ struct DewormingTreatmentList: View {
                                 }
                             }
                         }
-                        
-                        if pet.expiredDewormingTreatments > 0 {
-                            Section("Expired treatments") {
-                                ForEach(pet.reverseSortedDewormingTreatments) { treatment in
-                                    if (treatment.activeDays <= 0) {
-                                        NavigationLink{
-                                            DewormingTreatmentDetail(
-                                                pet: pet,
-                                                dewormingTreatment: treatment
-                                            )
-                                        } label: {
-                                            DewormingTreatmentListRow(
-                                                dewormingTreatment: treatment
-                                            )
-                                        }
+                    }
+                    
+                    if pet.expiredDewormingTreatments > 0 {
+                        Section("Expired treatments") {
+                            ForEach(
+                                pet.reverseSortedDewormingTreatments
+                            ) { treatment in
+                                if (treatment.activeDays <= 0) {
+                                    NavigationLink{
+                                        DewormingTreatmentDetail(
+                                            pet: pet,
+                                            dewormingTreatment: treatment
+                                        )
+                                    } label: {
+                                        DewormingTreatmentListRow(
+                                            dewormingTreatment: treatment
+                                        )
                                     }
                                 }
                             }
                         }
                     }
-                } else {
-                    DewormingTreatmentListNoTreatment()
                 }
             }
             .navigationTitle("\(pet.name)'s dewormings")
             .navigationBarTitleDisplayMode(.inline)
+            .overlay {
+                if pet.dewormingTreatments.isEmpty {
+                    DewormingTreatmentListEmpty()
+                }
+            }
             .sheet(isPresented: $showingDewormingTreatmentDetail) {
                 DewormingTreatmentDetail(
                     pet: pet,
@@ -73,26 +80,36 @@ struct DewormingTreatmentList: View {
                     Button {
                         showingDewormingTreatmentDetail = true
                     } label: {
-                        Label("Add deworming treatment", systemImage: "plus")
+                        Label(
+                            "Add deworming treatment",
+                            systemImage: "plus"
+                        )
                     }
                 }
                 
-                ToolbarItem {
-                    Button("Done") { dismiss() }
-                }
-                
                 if !pet.dewormingTreatments.isEmpty {
+                    ToolbarItem {
+                        Button("Done", action: dismissView)
+                    }
+                    
                     ToolbarItem(placement: .status) {
-                        Text("\(pet.activeDewormingTreatments) active treatments")
-                            .font(.caption)
+                        Text(
+                            "\(pet.activeDewormingTreatments) active treatments"
+                        )
+                        .font(.caption)
                     }
                 }
             }
         }
     }
+    
+    private func dismissView() { dismiss() }
 }
 
+#Preview("Empty Treatment List") {
+    DewormingTreatmentList(pet: SampleData.shared.petWithExpiredVaccines)
+}
 
-#Preview {
+#Preview("Existing Treatment List") {
     DewormingTreatmentList(pet: SampleData.shared.petWithChipID)
 }

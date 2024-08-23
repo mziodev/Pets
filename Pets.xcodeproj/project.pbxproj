@@ -55,7 +55,7 @@
 		08B585162C1855250068D4B2 /* PetBreedVariationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B585152C1855250068D4B2 /* PetBreedVariationList.swift */; };
 		08B5851B2C19E9B20068D4B2 /* WeightListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B5851A2C19E9B20068D4B2 /* WeightListRow.swift */; };
 		08B752012C2AC7E800C0D143 /* Pet+DewormingTreatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B752002C2AC7E800C0D143 /* Pet+DewormingTreatment.swift */; };
-		08B752032C2B128E00C0D143 /* DewormingTreatmentListNoTreatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B752022C2B128E00C0D143 /* DewormingTreatmentListNoTreatment.swift */; };
+		08B752032C2B128E00C0D143 /* DewormingTreatmentListEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B752022C2B128E00C0D143 /* DewormingTreatmentListEmpty.swift */; };
 		08C0F2EE2C20214500D4C879 /* Pet+Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0F2ED2C20214500D4C879 /* Pet+Weight.swift */; };
 		08CACB342C7886D40068AC60 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CACB332C7886D40068AC60 /* DeleteButton.swift */; };
 		08DF543B2C1C34DC003076B1 /* PetListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF543A2C1C34DC003076B1 /* PetListRow.swift */; };
@@ -130,7 +130,7 @@
 		08B585152C1855250068D4B2 /* PetBreedVariationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedVariationList.swift; sourceTree = "<group>"; };
 		08B5851A2C19E9B20068D4B2 /* WeightListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightListRow.swift; sourceTree = "<group>"; };
 		08B752002C2AC7E800C0D143 /* Pet+DewormingTreatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+DewormingTreatment.swift"; sourceTree = "<group>"; };
-		08B752022C2B128E00C0D143 /* DewormingTreatmentListNoTreatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentListNoTreatment.swift; sourceTree = "<group>"; };
+		08B752022C2B128E00C0D143 /* DewormingTreatmentListEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentListEmpty.swift; sourceTree = "<group>"; };
 		08C0F2ED2C20214500D4C879 /* Pet+Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+Weight.swift"; sourceTree = "<group>"; };
 		08CACB332C7886D40068AC60 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		08DF543A2C1C34DC003076B1 /* PetListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListRow.swift; sourceTree = "<group>"; };
@@ -382,7 +382,7 @@
 			children = (
 				080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */,
 				08EEF0D42C2326FD003ABFF9 /* DewormingTreatmentList.swift */,
-				08B752022C2B128E00C0D143 /* DewormingTreatmentListNoTreatment.swift */,
+				08B752022C2B128E00C0D143 /* DewormingTreatmentListEmpty.swift */,
 				080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */,
 			);
 			path = "Deworming treatment";
@@ -494,7 +494,7 @@
 				08833FFD2C09CABB000FD0BF /* ChipIDType.swift in Sources */,
 				08B752012C2AC7E800C0D143 /* Pet+DewormingTreatment.swift in Sources */,
 				08CACB342C7886D40068AC60 /* DeleteButton.swift in Sources */,
-				08B752032C2B128E00C0D143 /* DewormingTreatmentListNoTreatment.swift in Sources */,
+				08B752032C2B128E00C0D143 /* DewormingTreatmentListEmpty.swift in Sources */,
 				08833FF22C09CABB000FD0BF /* Pet.swift in Sources */,
 				08DF54412C1C46FC003076B1 /* PetCardAge.swift in Sources */,
 				08DF543B2C1C34DC003076B1 /* PetListRow.swift in Sources */,

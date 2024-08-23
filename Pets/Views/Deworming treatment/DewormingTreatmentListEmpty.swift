@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DewormingTreatmentListNoTreatment: View {
+struct DewormingTreatmentListEmpty: View {
     var body: some View {
         ContentUnavailableView {
             Label("No treatments yet", systemImage: "ant")
@@ -19,5 +19,5 @@ struct DewormingTreatmentListNoTreatment: View {
 }
 
 #Preview {
-    DewormingTreatmentListNoTreatment()
+    DewormingTreatmentListEmpty()
 }

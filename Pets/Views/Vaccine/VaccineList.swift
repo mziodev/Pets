@@ -74,12 +74,16 @@ struct VaccineList: View {
                     
                 }
                 
-                ToolbarItem {
-                    Button("Done") { dismiss() }
+                if pet.activeVaccines > 0 {
+                    ToolbarItem {
+                        Button("Done", action: dismissView)
+                    }
                 }
             }
         }
     }
+    
+    private func dismissView() { dismiss() }
 }
 
 

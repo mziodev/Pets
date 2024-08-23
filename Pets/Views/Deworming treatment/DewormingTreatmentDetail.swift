@@ -19,7 +19,7 @@ struct DewormingTreatmentDetail: View {
     @State private var editingTreatment: Bool = false
     @State private var showingDeleteAlert: Bool = false
     
-    @FocusState private var isTreatmentNameTextFieldFocused: Bool
+    @FocusState private var treatmentNameTextFieldFocused: Bool
     
     let isNew: Bool
     
@@ -77,8 +77,7 @@ struct DewormingTreatmentDetail: View {
                             "Treatment name",
                             text: $dewormingTreatment.name
                         )
-                        .font(.title3.smallCaps())
-                        .focused($isTreatmentNameTextFieldFocused)
+                        .focused($treatmentNameTextFieldFocused)
                         .overlay {
                             VerificationCheckMark(condition: isNameVerified)
                         }
@@ -87,14 +86,20 @@ struct DewormingTreatmentDetail: View {
                             "Treatment type",
                             selection: $dewormingTreatment.type.animation()
                         ) {
-                            ForEach(TreatmentType.allCases, id: \.self) { type in
+                            ForEach(
+                                TreatmentType.allCases,
+                                id: \.self
+                            ) { type in
                                 Text(type.localizedDescription)
                             }
                         }
                         .pickerStyle(.menu)
                         
                         Picker(selection: $dewormingTreatment.units) {
-                            ForEach(TreatmentUnit.allCases, id:\.self) { units in
+                            ForEach(
+                                TreatmentUnit.allCases,
+                                id:\.self
+                            ) { units in
                                 Text(units.localizedDescription)
                             }
                         } label: {
@@ -107,22 +112,26 @@ struct DewormingTreatmentDetail: View {
                                     format: .number
                                 )
                                 .multilineTextAlignment(.trailing)
-                                .onChange(of: treatmentQuantity ?? 0, { oldValue, newValue in
+                                .onChange(
+                                    of: treatmentQuantity ?? 0
+                                ) { oldValue, newValue in
                                     dewormingTreatment.quantity = newValue
-                                })
+                                }
                                 .keyboardType(.decimalPad)
                             }
                         }
                         .pickerStyle(.menu)
                         .padding(.trailing, 30)
                         .overlay {
-                            VerificationCheckMark(condition: isQuantityVerified)
+                            VerificationCheckMark(
+                                condition: isQuantityVerified
+                            )
                         }
                     }
                     
                     Section("Dates") {
                         DatePicker(
-                            "Start",
+                            "Starts",
                             selection: $dewormingTreatment.startingDate,
                             in: pet.birthday ... .now,
                             displayedComponents: .date
@@ -145,30 +154,32 @@ struct DewormingTreatmentDetail: View {
                     }
                 }
                 .disabled(!editingTreatment)
-                .scrollDismissesKeyboard(.immediately)
-                
-                if !isNew {
-                    Button(
-                        "Delete treatment",
-                        role: .destructive,
-                        action: { showingDeleteAlert = true }
-                    )
-                    .padding(.top, 10)
-                    .padding(.bottom, 20)
-                }
+                .scrollDismissesKeyboard(.interactively)
             }
             .navigationTitle(isNew ? "Add Treatment" : "Treatment Details")
             .navigationBarTitleDisplayMode(.inline)
+            .overlay {
+                if !isNew {
+                    DeleteButton(
+                        title: "Delete Treatment",
+                        showingAlert: $showingDeleteAlert
+                    )
+                }
+            }
             .onAppear {
                 copyDewormingTreatmentQuantity()
                 
                 if isNew { editingTreatment = true }
                 
-                isTreatmentNameTextFieldFocused = true
+                treatmentNameTextFieldFocused = true
             }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
                 Button("Cancel", role: .cancel, action: { })
-                Button( "Ok", role: .destructive, action: deleteDewormingTreatment)
+                Button(
+                    "Ok",
+                    role: .destructive,
+                    action: deleteDewormingTreatment
+                )
             } message: {
                 Text("Deworming treatment will deleted, are you sure?")
             }
@@ -178,23 +189,25 @@ struct DewormingTreatmentDetail: View {
                         Button("Save", action: appendDewormingTreatment)
                             .disabled(!isFormVerified)
                     } else {
-                        Button("Edit", action: editDewormingTreatment)
+                        Button("Edit", action: toggleEditingTreatment)
                     }
                 }
                 
                 if isNew {
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") { dismiss() }
+                        Button("Cancel", action: dismissView)
                     }
                 }
             }
         }
     }
     
+    private func dismissView() { dismiss() }
     
-    private func editDewormingTreatment() {
+    private func toggleEditingTreatment() {
         withAnimation {
-            editingTreatment = true
+            editingTreatment.toggle()
+            treatmentNameTextFieldFocused.toggle()
         }
     }
     
