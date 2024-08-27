@@ -19,6 +19,7 @@ struct PetBreedList: View {
             from: "\(pet.species.rawValue)Breeds"
         )?.sorted { $0.name < $1.name } ?? []
     }
+    
     private var filteredPetBreedList: [PetBreed] {
         if searchText.isEmpty {
             petBreedsSorted
@@ -28,7 +29,6 @@ struct PetBreedList: View {
             }
         }
     }
-    
     
     var body: some View {
         NavigationStack {
@@ -54,19 +54,28 @@ struct PetBreedList: View {
                         Section("Breeds") {
                             ForEach(filteredPetBreedList) { breed in
                                 if breed.variations.isEmpty {
-                                    PetBreedListRow(pet: pet, breed: breed)
-                                        .onTapGesture {
-                                            withAnimation {
-                                                pet.breed = breed.name
-                                            }
-                                            
-                                            resetSearchable()
+                                    PetBreedListRow(
+                                        pet: pet,
+                                        breed: breed
+                                    )
+                                    .onTapGesture {
+                                        withAnimation {
+                                            pet.breed = breed.name
                                         }
+                                        
+                                        resetSearchable()
+                                    }
                                 } else {
                                     NavigationLink {
-                                        PetBreedVariationList(pet: pet, breed: breed)
+                                        PetBreedVariationList(
+                                            pet: pet,
+                                            breed: breed
+                                        )
                                     } label: {
-                                        PetBreedListRow(pet: pet, breed: breed)
+                                        PetBreedListRow(
+                                            pet: pet,
+                                            breed: breed
+                                        )
                                     }
                                 }
                             }
@@ -76,9 +85,9 @@ struct PetBreedList: View {
                         text: $searchText,
                         isPresented: $isSearchPresented
                     )
-                    .onAppear { resetSearchable() }
+                    .onAppear(perform: resetSearchable)
                 } else {
-                    PetBreedNoBreeds()
+                    PetBreedListEmpty()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -94,7 +103,6 @@ struct PetBreedList: View {
             }
         }
     }
-    
     
     private func resetSearchable() {
         searchText = ""

@@ -17,12 +17,12 @@
     {
         "id": 3,
         "name": "American Bobtail",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 4,
         "name": "American Curl",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
     {
         "id": 8,
         "name": "Asian",
-        "variations": []
+        "variations": ["Longhair", "Semilonghair", "Shorthair"]
     },
     {
         "id": 9,
@@ -127,7 +127,7 @@
     {
         "id": 25,
         "name": "Chinchilla",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 26,
@@ -142,7 +142,7 @@
     {
         "id": 28,
         "name": "Cymric",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 29,
@@ -202,7 +202,7 @@
     {
         "id": 40,
         "name": "Japanese Bobtail",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 41,
@@ -217,27 +217,27 @@
     {
         "id": 43,
         "name": "Kurilian",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 44,
         "name": "LaPerm",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 45,
         "name": "Maine Coon",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 46,
         "name": "Manx",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 47,
         "name": "Munchkin",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 48,
@@ -262,7 +262,7 @@
     {
         "id": 52,
         "name": "Oriental",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 53,
@@ -277,7 +277,7 @@
     {
         "id": 55,
         "name": "Persian",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 56,
@@ -287,7 +287,7 @@
     {
         "id": 57,
         "name": "Pixie-bob",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 58,
@@ -322,12 +322,12 @@
     {
         "id": 64,
         "name": "Scottish Fold",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 65,
         "name": "Selkirk Rex",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 66,
@@ -337,7 +337,7 @@
     {
         "id": 67,
         "name": "Siberian",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 68,
@@ -352,7 +352,7 @@
     {
         "id": 70,
         "name": "Somali",
-        "variations": []
+        "variations": ["Longhair", "Shorthair"]
     },
     {
         "id": 71,

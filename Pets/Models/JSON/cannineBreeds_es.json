@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "name": "Mixed-Breed",
+        "name": "Mestizo",
         "variations": []
     },
     {
@@ -11,12 +11,12 @@
     },
     {
         "id": 2,
-        "name": "Afghan Hound",
+        "name": "Sabueso Afgano",
         "variations": []
     },
     {
         "id": 3,
-        "name": "Airedale Terrier",
+        "name": "Terrier Airedale",
         "variations": []
     },
     {
@@ -26,47 +26,47 @@
     },
     {
         "id": 5,
-        "name": "Alaskan Klee Kai",
+        "name": "Klee Kai de Alaska",
         "variations": []
     },
     {
         "id": 6,
-        "name": "Alaskan Malamute",
+        "name": "Malamute de Alaska",
         "variations": []
     },
     {
         "id": 7,
-        "name": "American Bulldog",
+        "name": "Bulldog Americano",
         "variations": []
     },
     {
         "id": 8,
-        "name": "American Bully",
+        "name": "Bully Americano",
         "variations": []
     },
     {
         "id": 9,
-        "name": "American Eskimo Dog",
+        "name": "Esquimal Americano",
         "variations": []
     },
     {
         "id": 10,
-        "name": "American Foxhound",
+        "name": "Foxhound Americano",
         "variations": []
     },
     {
         "id": 11,
-        "name": "American Staffordshire Terrier",
+        "name": "Terrier Americano de Staffordshire",
         "variations": []
     },
     {
         "id": 12,
-        "name": "American Water Spaniel",
+        "name": "Spaniel de Agua Americano",
         "variations": []
     },
     {
         "id": 13,
-        "name": "Anatolian Shepherd Dog",
+        "name": "Pastor de Anatolia",
         "variations": []
     },
     {
@@ -76,17 +76,17 @@
     },
     {
         "id": 15,
-        "name": "Australian Cattle Dog",
+        "name": "Ganadero Australiano",
         "variations": ["Blue Heeler", "Red Heeler"]
     },
     {
         "id": 16,
-        "name": "Australian Shepherd",
+        "name": "Pastor Australiano",
         "variations": []
     },
     {
         "id": 17,
-        "name": "Australian Terrier",
+        "name": "Terrier Australiano",
         "variations": []
     },
     {
@@ -96,7 +96,7 @@
     },
     {
         "id": 19,
-        "name": "Basset Hound",
+        "name": "Sabueso Basset",
         "variations": []
     },
     {
@@ -106,7 +106,7 @@
     },
     {
         "id": 21,
-        "name": "Bearded Collie",
+        "name": "Collie Barbudo",
         "variations": []
     },
     {
@@ -116,32 +116,32 @@
     },
     {
         "id": 23,
-        "name": "Bedlington Terrier",
+        "name": "Terrier de Bedlington",
         "variations": []
     },
     {
         "id": 24,
-        "name": "Belgian Shepherd",
+        "name": "Pastor Belga",
         "variations": ["Groenendael", "Laekenois", "Malinois", "Tervuren"]
     },
     {
         "id": 25,
-        "name": "Bernese Mountain Dog",
+        "name": "Perro de Montaña Bernés",
         "variations": []
     },
     {
         "id": 26,
-        "name": "Bichon Frise",
+        "name": "Bichón Frisé",
         "variations": []
     },
     {
         "id": 27,
-        "name": "Black and Tan Coonhound",
+        "name": "Coonhound Negro y Fuego",
         "variations": []
     },
     {
         "id": 28,
-        "name": "Black Russian Terrier",
+        "name": "Terrier Negro Ruso",
         "variations": []
     },
     {
@@ -176,7 +176,7 @@
     },
     {
         "id": 35,
-        "name": "Bouvier des Flandres",
+        "name": "Boyero de Flandes",
         "variations": []
     },
     {
@@ -191,7 +191,7 @@
     },
     {
         "id": 38,
-        "name": "Briard",
+        "name": "Pastor de Brie",
         "variations": []
     },
     {
@@ -201,7 +201,7 @@
     },
     {
         "id": 40,
-        "name": "Brussels Griffon",
+        "name": "Grifón de Bruselas",
         "variations": []
     },
     {
@@ -211,7 +211,7 @@
     },
     {
         "id": 42,
-        "name": "Bullmastiff",
+        "name": "Mastín Toro",
         "variations": []
     },
     {
@@ -221,7 +221,7 @@
     },
     {
         "id": 44,
-        "name": "Canaan Dog",
+        "name": "Perro de Canaán",
         "variations": []
     },
     {
@@ -236,12 +236,12 @@
     },
     {
         "id": 48,
-        "name": "Cesky Terrier",
+        "name": "Terrier Checo",
         "variations": []
     },
     {
         "id": 49,
-        "name": "Chesapeake Bay Retriever",
+        "name": "Retriever de la Bahía de Chesapeake",
         "variations": []
     },
     {
@@ -251,12 +251,12 @@
     },
     {
         "id": 51,
-        "name": "Chinese Crested",
-        "variations": ["Hairless", "Powderpuff"]
+        "name": "Crestado Chino",
+        "variations": ["Sin pelo", "Powderpuff"]
     },
     {
         "id": 52,
-        "name": "Chinese Shar-Pei",
+        "name": "Shar-Pei Chino",
         "variations": []
     },
     {
@@ -277,7 +277,7 @@
     {
         "id": 56,
         "name": "Cocker Spaniel",
-        "variations": ["American", "English"]
+        "variations": ["Americano", "Inglés"]
     },
     {
         "id": 57,
@@ -287,16 +287,16 @@
     {
         "id": 58,
         "name": "Corgi",
-        "variations": ["Cardigan Welsh", "Pembroke Welsh"]
+        "variations": ["Cárdigan Galés", "Pembroke Galés"]
     },
     {
         "id": 59,
-        "name": "Coton de Tuléar",
+        "name": "Algodón de Tuléar",
         "variations": []
     },
     {
         "id": 60,
-        "name": "Curly-Coated Retriever",
+        "name": "Retriever de Pelo Rizado",
         "variations": []
     },
     {
@@ -306,7 +306,7 @@
     },
     {
         "id": 62,
-        "name": "Dalmatian",
+        "name": "Dálmata",
         "variations": []
     },
     {
@@ -316,12 +316,12 @@
     },
     {
         "id": 64,
-        "name": "Danish-Swedish Farmdog",
+        "name": "Perro de Granja Danés-Sueco",
         "variations": []
     },
     {
         "id": 65,
-        "name": "Dobermann Pinscher",
+        "name": "Doberman Pinscher",
         "variations": []
     },
     {
@@ -331,27 +331,27 @@
     },
     {
         "id": 67,
-        "name": "Dutch Shepherd",
+        "name": "Pastor Holandés",
         "variations": []
     },
     {
         "id": 68,
-        "name": "English Cocker Spaniel",
+        "name": "Cocker Spaniel Inglés",
         "variations": []
     },
     {
         "id": 69,
-        "name": "English Foxhound",
+        "name": "Foxhound Inglés",
         "variations": []
     },
     {
         "id": 70,
-        "name": "English Setter",
+        "name": "Setter Inglés",
         "variations": []
     },
     {
         "id": 71,
-        "name": "English Springer Spaniel",
+        "name": "Springer Spaniel Inglés",
         "variations": []
     },
     {
@@ -361,67 +361,67 @@
     },
     {
         "id": 73,
-        "name": "Entlebucher Mountain Dog",
+        "name": "Perro De Montaña Entlebucher",
         "variations": []
     },
     {
         "id": 74,
-        "name": "Eskimo Dog",
+        "name": "Perro Esquimal",
         "variations": []
     },
     {
         "id": 75,
-        "name": "Estrela Mountain Dog",
+        "name": "Perro de montaña de Estrela",
         "variations": []
     },
     {
         "id": 76,
-        "name": "Finnish Lapphund",
+        "name": "Perro Finlandés de Laponia",
         "variations": []
     },
     {
         "id": 77,
-        "name": "Finnish Spitz",
+        "name": "Spitz Finlandés",
         "variations": []
     },
     {
         "id": 78,
-        "name": "Flat-Coated Retriever",
+        "name": "Retriever de Pelo Liso",
         "variations": []
     },
     {
         "id": 79,
-        "name": "French Bulldog",
+        "name": "Bulldog Francés",
         "variations": []
     },
     {
         "id": 80,
-        "name": "French Spaniel",
+        "name": "Spaniel Francés",
         "variations": []
     },
     {
         "id": 81,
-        "name": "German Longhaired Pointer",
+        "name": "Braco Alemán de Pelo Largo",
         "variations": []
     },
     {
         "id": 82,
-        "name": "German Pinscher",
+        "name": "Pinscher Alemán",
         "variations": []
     },
     {
         "id": 83,
-        "name": "German Shepherd",
+        "name": "Pastor Alemán",
         "variations": []
     },
     {
         "id": 84,
-        "name": "German Shorthaired Pointer",
+        "name": "Braco alemán de Pelo Corto",
         "variations": []
     },
     {
         "id": 85,
-        "name": "German Wirehaired Pointer",
+        "name": "Braco alemán de Pelo Duro",
         "variations": []
     },
     {
@@ -441,42 +441,42 @@
     },
     {
         "id": 89,
-        "name": "Gordon Setter",
+        "name": "Setter Gordon",
         "variations": []
     },
     {
         "id": 90,
-        "name": "Great Dane",
+        "name": "Gran Danés",
         "variations": []
     },
     {
         "id": 91,
-        "name": "Great Pyrenees",
+        "name": "Grandes Pirineos",
         "variations": []
     },
     {
         "id": 92,
-        "name": "Greater Swiss Mountain Dog",
+        "name": "Gran Boyero Suizo",
         "variations": []
     },
     {
         "id": 93,
-        "name": "Greyhound",
+        "name": "Galgo",
         "variations": []
     },
     {
         "id": 94,
-        "name": "Griffon Bruxellois",
+        "name": "Grifón de Bruselas",
         "variations": []
     },
     {
         "id": 95,
-        "name": "Griffon Vendéen",
+        "name": "Grifón Vandeano",
         "variations": []
     },
     {
         "id": 96,
-        "name": "Havanese",
+        "name": "Bichón Habanero",
         "variations": []
     },
     {
@@ -486,47 +486,47 @@
     },
     {
         "id": 98,
-        "name": "Hungarian Vizsla",
+        "name": "Vizsla Húngaro",
         "variations": []
     },
     {
         "id": 99,
-        "name": "Ibizan Hound",
+        "name": "Podenco Ibicenco",
         "variations": []
     },
     {
         "id": 100,
-        "name": "Icelandic Sheepdog",
+        "name": "Pastor Islandés",
         "variations": []
     },
     {
         "id": 101,
-        "name": "Irish Setter",
+        "name": "Setter Irlandés",
         "variations": []
     },
     {
         "id": 102,
-        "name": "Irish Terrier",
+        "name": "Terrier Irlandés",
         "variations": []
     },
     {
         "id": 103,
-        "name": "Irish Water Spaniel",
+        "name": "Spaniel de Agua Irlandés",
         "variations": []
     },
     {
         "id": 104,
-        "name": "Irish Wolfhound",
+        "name": "Perro Lobo Irlandés",
         "variations": []
     },
     {
         "id": 105,
-        "name": "Italian Greyhound",
+        "name": "Galgo italiano",
         "variations": []
     },
     {
         "id": 106,
-        "name": "Italian Spinone",
+        "name": "Spinone Italiano",
         "variations": []
     },
     {
@@ -536,12 +536,12 @@
     },
     {
         "id": 108,
-        "name": "Japanese Chin",
+        "name": "Chin Japonés",
         "variations": []
     },
     {
         "id": 109,
-        "name": "Japanese Spitz",
+        "name": "Spitz Japonés",
         "variations": []
     },
     {
@@ -556,7 +556,7 @@
     },
     {
         "id": 112,
-        "name": "Karelian Bear Dog",
+        "name": "Perro Oso de Carelia",
         "variations": []
     },
     {
@@ -591,7 +591,7 @@
     },
     {
         "id": 119,
-        "name": "Lakeland Terrier",
+        "name": "Terrier de Lakeland",
         "variations": []
     },
     {
@@ -611,37 +611,37 @@
     },
     {
         "id": 123,
-        "name": "Bichon Maltese",
+        "name": "Bichón Maltés",
         "variations": []
     },
     {
         "id": 124,
-        "name": "Manchester Terrier",
+        "name": "Terrier de Manchester",
         "variations": []
     },
     {
         "id": 125,
-        "name": "Maremma Sheepdog",
+        "name": "Pastor de Maremma",
         "variations": []
     },
     {
         "id": 126,
-        "name": "Mastiff",
+        "name": "Mastín",
         "variations": []
     },
     {
         "id": 127,
-        "name": "Mexican Hairless Dog",
-        "variations": ["Hairless", "Powderpuff"]
+        "name": "Perro Mexicano sin Pelo",
+        "variations": ["Sin pelo", "Powderpuff"]
     },
     {
         "id": 128,
-        "name": "Miniature American Shepherd",
+        "name": "Pastor Americano Miniatura",
         "variations": []
     },
     {
         "id": 129,
-        "name": "Miniature Pinscher",
+        "name": "Pinscher Miniatura",
         "variations": []
     },
     {
@@ -651,32 +651,32 @@
     },
     {
         "id": 131,
-        "name": "Neapolitan Mastiff",
+        "name": "Mastín Napolitano",
         "variations": []
     },
     {
         "id": 132,
-        "name": "Newfoundland",
+        "name": "Terranova",
         "variations": []
     },
     {
         "id": 133,
-        "name": "Norfolk Terrier",
+        "name": "Terrier de Norfolk",
         "variations": []
     },
     {
         "id": 134,
-        "name": "Norwich Terrier",
+        "name": "Terrier de Norwich",
         "variations": []
     },
     {
         "id": 135,
-        "name": "Nova Scotia Duck Tolling Retriever",
+        "name": "Perdiguero de Nueva Escocia",
         "variations": []
     },
     {
         "id": 136,
-        "name": "Old English Sheepdog",
+        "name": "Antiguo Perro Pastor Inglés",
         "variations": []
     },
     {
@@ -686,7 +686,7 @@
     },
     {
         "id": 138,
-        "name": "Papillon",
+        "name": "Papillón",
         "variations": []
     },
     {
@@ -696,7 +696,7 @@
     },
     {
         "id": 141,
-        "name": "Pharaoh Hound",
+        "name": "Sabueso del Faraón",
         "variations": []
     },
     {
@@ -706,7 +706,7 @@
     },
     {
         "id": 143,
-        "name": "American Pitbull Terrier",
+        "name": "Pitbull Terrier Americano",
         "variations": []
     },
     {
@@ -716,7 +716,7 @@
     },
     {
         "id": 145,
-        "name": "Staffordshire Bull Terrier",
+        "name": "Bull Terrier de Staffordshire",
         "variations": []
     },
     {
@@ -731,7 +731,7 @@
     },
     {
         "id": 148,
-        "name": "Polish Lowland Sheepdog",
+        "name": "Pastor Lowland Polaco",
         "variations": []
     },
     {
@@ -741,7 +741,7 @@
     },
     {
         "id": 150,
-        "name": "Poodle",
+        "name": "Caniche",
         "variations": []
     },
     {
@@ -751,7 +751,7 @@
     },
     {
         "id": 152,
-        "name": "Portuguese Water Dog",
+        "name": "Perro de Aguas Portugués",
         "variations": []
     },
     {
@@ -771,17 +771,17 @@
     },
     {
         "id": 156,
-        "name": "Rat Terrier",
+        "name": "Terrier Rata",
         "variations": []
     },
     {
         "id": 157,
-        "name": "Redbone Coonhound",
+        "name": "Coonhound Redbone",
         "variations": []
     },
     {
         "id": 158,
-        "name": "Rhodesian Ridgeback",
+        "name": "Crestado de Rhodesia",
         "variations": []
     },
     {
@@ -791,7 +791,7 @@
     },
     {
         "id": 160,
-        "name": "Russian Wolfhound",
+        "name": "Perro Lobo ruso",
         "variations": []
     },
     {
@@ -801,7 +801,7 @@
     },
     {
         "id": 162,
-        "name": "Samoyed",
+        "name": "Samoyedo",
         "variations": []
     },
     {
@@ -816,22 +816,22 @@
     },
     {
         "id": 165,
-        "name": "Scottish Deerhound",
+        "name": "Lebrel Escocés",
         "variations": []
     },
     {
         "id": 166,
-        "name": "Scottish Terrier",
+        "name": "Terrier Escocés",
         "variations": []
     },
     {
         "id": 167,
-        "name": "Sealyham Terrier",
+        "name": "Terrier de Sealyham",
         "variations": []
     },
     {
         "id": 168,
-        "name": "Shetland Sheepdog",
+        "name": "Pastor de Shetland",
         "variations": []
     },
     {
@@ -846,17 +846,17 @@
     },
     {
         "id": 171,
-        "name": "Siberian Husky",
+        "name": "Husky Siberiano",
         "variations": []
     },
     {
         "id": 172,
-        "name": "Silky Terrier",
+        "name": "Terrier Sedoso",
         "variations": []
     },
     {
         "id": 173,
-        "name": "Skye Terrier",
+        "name": "Terrier de Skye",
         "variations": []
     },
     {
@@ -866,47 +866,47 @@
     },
     {
         "id": 175,
-        "name": "Slovakian Rough-Haired Pointer",
+        "name": "Braco Eslovaco de Pelo Duro",
         "variations": []
     },
     {
         "id": 176,
-        "name": "Slovenian Istrian Hound",
+        "name": "Sabueso Esloveno de Istria",
         "variations": []
     },
     {
         "id": 177,
-        "name": "Soft Coated Wheaten Terrier",
+        "name": "Terrier de Trigo de Pelo Suave",
         "variations": []
     },
     {
         "id": 179,
-        "name": "St. Bernard",
+        "name": "San Bernardo",
         "variations": []
     },
     {
         "id": 180,
-        "name": "Sussex Spaniel",
+        "name": "Spaniel de Sussex",
         "variations": []
     },
     {
         "id": 181,
-        "name": "Swedish Vallhund",
+        "name": "Vallhund Sueco",
         "variations": []
     },
     {
         "id": 182,
-        "name": "Tibetan Mastiff",
+        "name": "Mastín Tibetano",
         "variations": []
     },
     {
         "id": 183,
-        "name": "Tibetan Spaniel",
+        "name": "Spaniel Tibetano",
         "variations": []
     },
     {
         "id": 184,
-        "name": "Tibetan Terrier",
+        "name": "Terrier Tibetano",
         "variations": []
     },
     {
@@ -916,7 +916,7 @@
     },
     {
         "id": 186,
-        "name": "Transylvanian Hound",
+        "name": "Sabueso de Transilvania",
         "variations": []
     },
     {
@@ -931,17 +931,17 @@
     },
     {
         "id": 189,
-        "name": "Weimaraner",
+        "name": "Braco de Weimar",
         "variations": []
     },
     {
         "id": 191,
-        "name": "Welsh Springer Spaniel",
+        "name": "Springer Spaniel Galés",
         "variations": []
     },
     {
         "id": 192,
-        "name": "West Highland White Terrier",
+        "name": "Terrier Blanco West Highland",
         "variations": []
     },
     {
@@ -951,23 +951,23 @@
     },
     {
         "id": 194,
-        "name": "Wire Fox Terrier",
+        "name": "Fox terrier de Pelo Duro",
         "variations": []
     },
     {
         "id": 195,
-        "name": "Wirehaired Griffon",
+        "name": "Grifo de Pelo Duro",
         "variations": []
     },
     {
         "id": 196,
-        "name": "Wirehaired Pointing Griffon",
+        "name": "Grifón de Muestra de Pelo Duro",
         "variations": []
     },
     {
         "id": 197,
         "name": "Xoloitzcuintli",
-        "variations": ["Hairless", "Powderpuff"]
+        "variations": ["Sin pelo", "Powderpuff"]
     },
     {
         "id": 198,
@@ -976,12 +976,12 @@
     },
     {
         "id": 199,
-        "name": "Bichon",
+        "name": "Bichón",
         "variations": []
     },
     {
         "id": 200,
-        "name": "Bichon Bolognese",
+        "name": "Bichón Boloñés",
         "variations": []
     },
     {
@@ -991,22 +991,22 @@
     },
     {
         "id": 202,
-        "name": "Spanish Greyhound",
+        "name": "Galgo Español",
         "variations": []
     },
     {
         "id": 203,
-        "name": "English Greyhound",
+        "name": "Galgo Inglés",
         "variations": []
     },
     {
         "id": 204,
-        "name": "Warren Hound",
+        "name": "Podenco",
         "variations": []
     },
     {
         "id": 205,
-        "name": "Cretan Hound",
+        "name": "Podenco de Creta",
         "variations": []
     },
     {
@@ -1025,3 +1025,4 @@
         "variations": []
     },
 ]
+

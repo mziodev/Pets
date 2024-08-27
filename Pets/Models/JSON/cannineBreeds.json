@@ -37,991 +37,1002 @@
     {
         "id": 7,
         "name": "American Bulldog",
-        "variations": []
+        "variations": ["Bully", "Standard"]
     },
     {
         "id": 8,
-        "name": "American Bully",
-        "variations": []
+        "name": "American Eskimo Dog",
+        "variations": ["Miniature", "Standard", "Toy"]
     },
     {
         "id": 9,
-        "name": "American Eskimo Dog",
-        "variations": []
-    },
-    {
-        "id": 10,
         "name": "American Foxhound",
         "variations": []
     },
     {
-        "id": 11,
+        "id": 10,
         "name": "American Staffordshire Terrier",
         "variations": []
     },
     {
-        "id": 12,
+        "id": 11,
         "name": "American Water Spaniel",
         "variations": []
     },
     {
-        "id": 13,
+        "id": 12,
         "name": "Anatolian Shepherd Dog",
         "variations": []
     },
     {
-        "id": 14,
+        "id": 13,
         "name": "Anglo-Français de Petite Venerie",
         "variations": []
     },
     {
-        "id": 15,
+        "id": 14,
         "name": "Australian Cattle Dog",
         "variations": ["Blue Heeler", "Red Heeler"]
     },
     {
-        "id": 16,
+        "id": 15,
         "name": "Australian Shepherd",
-        "variations": []
+        "variations": ["Miniature", "Standard", "Toy"]
     },
     {
-        "id": 17,
+        "id": 16,
         "name": "Australian Terrier",
         "variations": []
     },
     {
-        "id": 18,
+        "id": 17,
         "name": "Basenji",
         "variations": []
     },
     {
-        "id": 19,
+        "id": 18,
         "name": "Basset Hound",
         "variations": []
     },
     {
-        "id": 20,
+        "id": 19,
         "name": "Beagle",
-        "variations": []
+        "variations": ["13 in and under", "over 13 in"]
     },
     {
-        "id": 21,
+        "id": 20,
         "name": "Bearded Collie",
         "variations": []
     },
     {
-        "id": 22,
+        "id": 21,
         "name": "Beauceron",
         "variations": []
     },
     {
-        "id": 23,
+        "id": 22,
         "name": "Bedlington Terrier",
         "variations": []
     },
     {
-        "id": 24,
-        "name": "Belgian Shepherd",
-        "variations": ["Groenendael", "Laekenois", "Malinois", "Tervuren"]
-    },
-    {
-        "id": 25,
-        "name": "Bernese Mountain Dog",
+        "id": 23,
+        "name": "Belgian Laekenois",
         "variations": []
     },
     {
+        "id": 24,
+        "name": "Belgian Malinois",
+        "variations": []
+    },
+    {
+        "id": 25,
+        "name": "Belgian Shepherd",
+        "variations": ["Laekenois", "Malinois", "Tervuren"]
+    },
+    {
         "id": 26,
-        "name": "Bichon Frise",
+        "name": "Belgian Tervuren",
         "variations": []
     },
     {
         "id": 27,
-        "name": "Black and Tan Coonhound",
+        "name": "Bernese Mountain Dog",
         "variations": []
     },
     {
         "id": 28,
-        "name": "Black Russian Terrier",
+        "name": "Bichon Frise",
         "variations": []
     },
     {
         "id": 29,
-        "name": "Bloodhound",
+        "name": "Black and Tan Coonhound",
         "variations": []
     },
     {
         "id": 30,
-        "name": "Boerboel",
+        "name": "Black Russian Terrier",
         "variations": []
     },
     {
         "id": 31,
-        "name": "Border Collie",
+        "name": "Bloodhound",
         "variations": []
     },
     {
         "id": 32,
-        "name": "Border Terrier",
+        "name": "Blue Heeler",
         "variations": []
     },
     {
         "id": 33,
-        "name": "Borzoi",
+        "name": "Boerboel",
         "variations": []
     },
     {
         "id": 34,
-        "name": "Boston Terrier",
+        "name": "Border Collie",
         "variations": []
     },
     {
         "id": 35,
-        "name": "Bouvier des Flandres",
+        "name": "Border Terrier",
         "variations": []
     },
     {
         "id": 36,
-        "name": "Boxer",
+        "name": "Borzoi",
         "variations": []
     },
     {
         "id": 37,
-        "name": "Boykin Spaniel",
+        "name": "Boston Terrier",
         "variations": []
     },
     {
         "id": 38,
-        "name": "Briard",
+        "name": "Bouvier des Flandres",
         "variations": []
     },
     {
         "id": 39,
-        "name": "Brittany",
+        "name": "Boxer",
         "variations": []
     },
     {
         "id": 40,
-        "name": "Brussels Griffon",
+        "name": "Boykin Spaniel",
         "variations": []
     },
     {
         "id": 41,
-        "name": "Bulldog",
+        "name": "Briard",
         "variations": []
     },
     {
         "id": 42,
-        "name": "Bullmastiff",
+        "name": "Brittany",
         "variations": []
     },
     {
         "id": 43,
-        "name": "Cairn Terrier",
+        "name": "Brussels Griffon",
         "variations": []
     },
     {
         "id": 44,
-        "name": "Canaan Dog",
+        "name": "Bulldog",
         "variations": []
     },
     {
         "id": 45,
-        "name": "Cane Corso",
+        "name": "Bullmastiff",
+        "variations": []
+    },
+    {
+        "id": 46,
+        "name": "Cairn Terrier",
         "variations": []
     },
     {
         "id": 47,
-        "name": "Cavalier King Charles Spaniel",
+        "name": "Canaan Dog",
         "variations": []
     },
     {
         "id": 48,
-        "name": "Cesky Terrier",
+        "name": "Cane Corso",
         "variations": []
     },
     {
         "id": 49,
-        "name": "Chesapeake Bay Retriever",
+        "name": "Cardigan Welsh Corgi",
         "variations": []
     },
     {
         "id": 50,
-        "name": "Chihuahua",
+        "name": "Cavalier King Charles Spaniel",
         "variations": []
     },
     {
         "id": 51,
-        "name": "Chinese Crested",
-        "variations": ["Hairless", "Powderpuff"]
+        "name": "Cesky Terrier",
+        "variations": []
     },
     {
         "id": 52,
-        "name": "Chinese Shar-Pei",
+        "name": "Chesapeake Bay Retriever",
         "variations": []
     },
     {
         "id": 53,
-        "name": "Chinook",
-        "variations": []
+        "name": "Chihuahua",
+        "variations": ["Long Coat", "Short Coat"]
     },
     {
         "id": 54,
-        "name": "Chow Chow",
-        "variations": []
+        "name": "Chinese Crested",
+        "variations": ["Hairless", "Powderpuff"]
     },
     {
         "id": 55,
-        "name": "Clumber Spaniel",
+        "name": "Chinese Shar-Pei",
         "variations": []
     },
     {
         "id": 56,
-        "name": "Cocker Spaniel",
-        "variations": ["American", "English"]
+        "name": "Chinook",
+        "variations": []
     },
     {
         "id": 57,
-        "name": "Collie",
+        "name": "Chow Chow",
         "variations": []
     },
     {
         "id": 58,
+        "name": "Clumber Spaniel",
+        "variations": []
+    },
+    {
+        "id": 59,
+        "name": "Cocker Spaniel",
+        "variations": ["American", "English"]
+    },
+    {
+        "id": 60,
+        "name": "Collie",
+        "variations": ["Rough", "Smooth"]
+    },
+    {
+        "id": 61,
         "name": "Corgi",
         "variations": ["Cardigan Welsh", "Pembroke Welsh"]
     },
     {
-        "id": 59,
-        "name": "Coton de Tuléar",
-        "variations": []
-    },
-    {
-        "id": 60,
-        "name": "Curly-Coated Retriever",
-        "variations": []
-    },
-    {
-        "id": 61,
-        "name": "Dachshund",
-        "variations": []
-    },
-    {
         "id": 62,
-        "name": "Dalmatian",
+        "name": "Coton de Tulear",
         "variations": []
     },
     {
         "id": 63,
-        "name": "Dandie Dinmont Terrier",
+        "name": "Curly-Coated Retriever",
         "variations": []
     },
     {
         "id": 64,
-        "name": "Danish-Swedish Farmdog",
-        "variations": []
+        "name": "Dachshund",
+        "variations": ["Longhaired", "Smooth", "Wirehaired"]
     },
     {
         "id": 65,
-        "name": "Dobermann Pinscher",
+        "name": "Dalmatian",
         "variations": []
     },
     {
         "id": 66,
-        "name": "Dogo Argentino",
+        "name": "Dandie Dinmont Terrier",
         "variations": []
     },
     {
         "id": 67,
-        "name": "Dutch Shepherd",
+        "name": "Danish-Swedish Farmdog",
         "variations": []
     },
     {
         "id": 68,
-        "name": "English Cocker Spaniel",
+        "name": "Dobermann Pinscher",
         "variations": []
     },
     {
         "id": 69,
-        "name": "English Foxhound",
+        "name": "Dogo Argentino",
         "variations": []
     },
     {
         "id": 70,
-        "name": "English Setter",
+        "name": "Dutch Shepherd",
         "variations": []
     },
     {
         "id": 71,
-        "name": "English Springer Spaniel",
+        "name": "English Bulldog",
         "variations": []
     },
     {
         "id": 72,
-        "name": "King Charles Spaniel",
+        "name": "English Cocker Spaniel",
         "variations": []
     },
     {
         "id": 73,
-        "name": "Entlebucher Mountain Dog",
+        "name": "English Foxhound",
         "variations": []
     },
     {
         "id": 74,
-        "name": "Eskimo Dog",
+        "name": "English Mastiff",
         "variations": []
     },
     {
         "id": 75,
-        "name": "Estrela Mountain Dog",
+        "name": "English Setter",
         "variations": []
     },
     {
         "id": 76,
-        "name": "Finnish Lapphund",
+        "name": "English Springer Spaniel",
         "variations": []
     },
     {
         "id": 77,
-        "name": "Finnish Spitz",
+        "name": "English Toy Spaniel",
         "variations": []
     },
     {
         "id": 78,
-        "name": "Flat-Coated Retriever",
+        "name": "Entlebucher Mountain Dog",
         "variations": []
     },
     {
         "id": 79,
-        "name": "French Bulldog",
+        "name": "Eskimo Dog",
         "variations": []
     },
     {
         "id": 80,
-        "name": "French Spaniel",
+        "name": "Estrela Mountain Dog",
         "variations": []
     },
     {
         "id": 81,
-        "name": "German Longhaired Pointer",
+        "name": "Finnish Lapphund",
         "variations": []
     },
     {
         "id": 82,
-        "name": "German Pinscher",
+        "name": "Finnish Spitz",
         "variations": []
     },
     {
         "id": 83,
-        "name": "German Shepherd",
+        "name": "Flat-Coated Retriever",
         "variations": []
     },
     {
         "id": 84,
-        "name": "German Shorthaired Pointer",
+        "name": "French Bulldog",
         "variations": []
     },
     {
         "id": 85,
-        "name": "German Wirehaired Pointer",
+        "name": "French Spaniel",
         "variations": []
     },
     {
         "id": 86,
-        "name": "Schnauzer",
+        "name": "German Longhaired Pointer",
         "variations": []
     },
     {
         "id": 87,
-        "name": "Glen of Imaal Terrier",
+        "name": "German Pinscher",
         "variations": []
     },
     {
         "id": 88,
-        "name": "Golden Retriever",
+        "name": "German Shepherd",
         "variations": []
     },
     {
         "id": 89,
-        "name": "Gordon Setter",
+        "name": "German Shorthaired Pointer",
         "variations": []
     },
     {
         "id": 90,
-        "name": "Great Dane",
+        "name": "German Wirehaired Pointer",
         "variations": []
     },
     {
         "id": 91,
-        "name": "Great Pyrenees",
+        "name": "Giant Schnauzer",
         "variations": []
     },
     {
         "id": 92,
-        "name": "Greater Swiss Mountain Dog",
+        "name": "Glen of Imaal Terrier",
         "variations": []
     },
     {
         "id": 93,
-        "name": "Greyhound",
+        "name": "Golden Retriever",
         "variations": []
     },
     {
         "id": 94,
-        "name": "Griffon Bruxellois",
+        "name": "Gordon Setter",
         "variations": []
     },
     {
         "id": 95,
-        "name": "Griffon Vendéen",
+        "name": "Great Dane",
         "variations": []
     },
     {
         "id": 96,
-        "name": "Havanese",
+        "name": "Great Pyrenees",
         "variations": []
     },
     {
         "id": 97,
-        "name": "Hovawart",
+        "name": "Greater Swiss Mountain Dog",
         "variations": []
     },
     {
         "id": 98,
-        "name": "Hungarian Vizsla",
+        "name": "Greyhound",
         "variations": []
     },
     {
         "id": 99,
-        "name": "Ibizan Hound",
+        "name": "Griffon Bruxellois",
         "variations": []
     },
     {
         "id": 100,
-        "name": "Icelandic Sheepdog",
+        "name": "Griffon Vendéen",
         "variations": []
     },
     {
         "id": 101,
-        "name": "Irish Setter",
+        "name": "Havanese",
         "variations": []
     },
     {
         "id": 102,
-        "name": "Irish Terrier",
+        "name": "Hovawart",
         "variations": []
     },
     {
         "id": 103,
-        "name": "Irish Water Spaniel",
+        "name": "Hungarian Vizsla",
         "variations": []
     },
     {
         "id": 104,
-        "name": "Irish Wolfhound",
+        "name": "Ibizan Hound",
         "variations": []
     },
     {
         "id": 105,
-        "name": "Italian Greyhound",
+        "name": "Icelandic Sheepdog",
         "variations": []
     },
     {
         "id": 106,
-        "name": "Italian Spinone",
+        "name": "Irish Setter",
         "variations": []
     },
     {
         "id": 107,
-        "name": "Jack Russell Terrier",
+        "name": "Irish Terrier",
         "variations": []
     },
     {
         "id": 108,
-        "name": "Japanese Chin",
+        "name": "Irish Water Spaniel",
         "variations": []
     },
     {
         "id": 109,
-        "name": "Japanese Spitz",
+        "name": "Irish Wolfhound",
         "variations": []
     },
     {
         "id": 110,
-        "name": "Jindo",
+        "name": "Italian Greyhound",
         "variations": []
     },
     {
         "id": 111,
-        "name": "Kai Ken",
+        "name": "Italian Spinone",
         "variations": []
     },
     {
         "id": 112,
-        "name": "Karelian Bear Dog",
+        "name": "Jack Russell Terrier",
         "variations": []
     },
     {
         "id": 113,
-        "name": "Keeshond",
+        "name": "Japanese Akita",
         "variations": []
     },
     {
         "id": 114,
-        "name": "Kerry Blue Terrier",
+        "name": "Japanese Chin",
         "variations": []
     },
     {
         "id": 115,
-        "name": "Komondor",
+        "name": "Japanese Spitz",
         "variations": []
     },
     {
         "id": 116,
-        "name": "Kuvasz",
+        "name": "Jindo",
         "variations": []
     },
     {
         "id": 117,
-        "name": "Labrador Retriever",
+        "name": "Kai Ken",
         "variations": []
     },
     {
         "id": 118,
-        "name": "Lagotto Romagnolo",
+        "name": "Karelian Bear Dog",
         "variations": []
     },
     {
         "id": 119,
-        "name": "Lakeland Terrier",
+        "name": "Keeshond",
         "variations": []
     },
     {
         "id": 120,
-        "name": "Leonberger",
+        "name": "Kerry Blue Terrier",
         "variations": []
     },
     {
         "id": 121,
-        "name": "Lhasa Apso",
+        "name": "Komondor",
         "variations": []
     },
     {
         "id": 122,
-        "name": "Löwchen",
+        "name": "Kuvasz",
         "variations": []
     },
     {
         "id": 123,
-        "name": "Bichon Maltese",
+        "name": "Labrador Retriever",
         "variations": []
     },
     {
         "id": 124,
-        "name": "Manchester Terrier",
+        "name": "Lagotto Romagnolo",
         "variations": []
     },
     {
         "id": 125,
-        "name": "Maremma Sheepdog",
+        "name": "Lakeland Terrier",
         "variations": []
     },
     {
         "id": 126,
-        "name": "Mastiff",
+        "name": "Leonberger",
         "variations": []
     },
     {
         "id": 127,
-        "name": "Mexican Hairless Dog",
-        "variations": ["Hairless", "Powderpuff"]
+        "name": "Lhasa Apso",
+        "variations": []
     },
     {
         "id": 128,
-        "name": "Miniature American Shepherd",
+        "name": "Löwchen",
         "variations": []
     },
     {
         "id": 129,
-        "name": "Miniature Pinscher",
+        "name": "Maltese",
         "variations": []
     },
     {
         "id": 130,
-        "name": "Mudi",
+        "name": "Manchester Terrier",
         "variations": []
     },
     {
         "id": 131,
-        "name": "Neapolitan Mastiff",
+        "name": "Maremma Sheepdog",
         "variations": []
     },
     {
         "id": 132,
-        "name": "Newfoundland",
+        "name": "Mastiff",
         "variations": []
     },
     {
         "id": 133,
-        "name": "Norfolk Terrier",
-        "variations": []
+        "name": "Mexican Hairless Dog",
+        "variations": ["Hairless", "Powderpuff"]
     },
     {
         "id": 134,
-        "name": "Norwich Terrier",
+        "name": "Miniature American Shepherd",
         "variations": []
     },
     {
         "id": 135,
-        "name": "Nova Scotia Duck Tolling Retriever",
+        "name": "Miniature Pinscher",
         "variations": []
     },
     {
         "id": 136,
-        "name": "Old English Sheepdog",
+        "name": "Miniature Schnauzer",
         "variations": []
     },
     {
         "id": 137,
-        "name": "Otterhound",
+        "name": "Mudi",
         "variations": []
     },
     {
         "id": 138,
-        "name": "Papillon",
+        "name": "Neapolitan Mastiff",
+        "variations": []
+    },
+    {
+        "id": 139,
+        "name": "Newfoundland",
         "variations": []
     },
     {
         "id": 140,
-        "name": "Perro de Presa Canario",
+        "name": "Norfolk Terrier",
         "variations": []
     },
     {
         "id": 141,
-        "name": "Pharaoh Hound",
+        "name": "Norwich Terrier",
         "variations": []
     },
     {
         "id": 142,
-        "name": "Pitbull",
+        "name": "Nova Scotia Duck Tolling Retriever",
         "variations": []
     },
     {
         "id": 143,
-        "name": "American Pitbull Terrier",
+        "name": "Old English Sheepdog",
         "variations": []
     },
     {
         "id": 144,
-        "name": "Can de Palleiro",
+        "name": "Otterhound",
         "variations": []
     },
     {
         "id": 145,
-        "name": "Staffordshire Bull Terrier",
+        "name": "Papillon",
         "variations": []
     },
     {
         "id": 146,
-        "name": "Plott Hound",
+        "name": "Pembroke Welsh Corgi",
         "variations": []
     },
     {
         "id": 147,
-        "name": "Pointer",
+        "name": "Perro de Presa Canario",
         "variations": []
     },
     {
         "id": 148,
-        "name": "Polish Lowland Sheepdog",
+        "name": "Pharaoh Hound",
         "variations": []
     },
     {
         "id": 149,
-        "name": "Pomeranian",
-        "variations": []
+        "name": "Pitbull",
+        "variations": ["American", "Staffordshire"]
     },
     {
         "id": 150,
-        "name": "Poodle",
+        "name": "Plott Hound",
         "variations": []
     },
     {
         "id": 151,
-        "name": "Podengo Portuguêse",
+        "name": "Pointer",
         "variations": []
     },
     {
         "id": 152,
-        "name": "Portuguese Water Dog",
+        "name": "Polish Lowland Sheepdog",
         "variations": []
     },
     {
         "id": 153,
-        "name": "Pug",
+        "name": "Pomeranian",
         "variations": []
     },
     {
         "id": 154,
-        "name": "Puli",
-        "variations": []
+        "name": "Poodle",
+        "variations": ["Miniature", "Standard", "Toy"]
     },
     {
         "id": 155,
-        "name": "Pumi",
+        "name": "Portuguese Podengo",
         "variations": []
     },
     {
         "id": 156,
-        "name": "Rat Terrier",
+        "name": "Portuguese Water Dog",
         "variations": []
     },
     {
         "id": 157,
-        "name": "Redbone Coonhound",
+        "name": "Pug",
         "variations": []
     },
     {
         "id": 158,
-        "name": "Rhodesian Ridgeback",
+        "name": "Puli",
         "variations": []
     },
     {
         "id": 159,
-        "name": "Rottweiler",
+        "name": "Pumi",
         "variations": []
     },
     {
         "id": 160,
-        "name": "Russian Wolfhound",
+        "name": "Rat Terrier",
         "variations": []
     },
     {
         "id": 161,
-        "name": "Saluki",
+        "name": "Redbone Coonhound",
         "variations": []
     },
     {
         "id": 162,
-        "name": "Samoyed",
+        "name": "Rhodesian Ridgeback",
         "variations": []
     },
     {
         "id": 163,
-        "name": "Sarplaninac",
+        "name": "Rottweiler",
         "variations": []
     },
     {
         "id": 164,
-        "name": "Schipperke",
+        "name": "Russian Wolfhound",
         "variations": []
     },
     {
         "id": 165,
-        "name": "Scottish Deerhound",
+        "name": "Saluki",
         "variations": []
     },
     {
         "id": 166,
-        "name": "Scottish Terrier",
+        "name": "Samoyed",
         "variations": []
     },
     {
         "id": 167,
-        "name": "Sealyham Terrier",
+        "name": "Sarplaninac",
         "variations": []
     },
     {
         "id": 168,
-        "name": "Shetland Sheepdog",
+        "name": "Schipperke",
         "variations": []
     },
     {
         "id": 169,
-        "name": "Shiba Inu",
-        "variations": []
+        "name": "Schnauzer",
+        "variations": ["Giant", "Miniature", "Standard"]
     },
     {
         "id": 170,
-        "name": "Shih Tzu",
+        "name": "Scottish Deerhound",
         "variations": []
     },
     {
         "id": 171,
-        "name": "Siberian Husky",
+        "name": "Scottish Terrier",
         "variations": []
     },
     {
         "id": 172,
-        "name": "Silky Terrier",
+        "name": "Sealyham Terrier",
         "variations": []
     },
     {
         "id": 173,
-        "name": "Skye Terrier",
+        "name": "Shetland Sheepdog",
         "variations": []
     },
     {
         "id": 174,
-        "name": "Sloughi",
+        "name": "Shiba Inu",
         "variations": []
     },
     {
         "id": 175,
-        "name": "Slovakian Rough-Haired Pointer",
+        "name": "Shih Tzu",
         "variations": []
     },
     {
         "id": 176,
-        "name": "Slovenian Istrian Hound",
+        "name": "Siberian Husky",
         "variations": []
     },
     {
         "id": 177,
-        "name": "Soft Coated Wheaten Terrier",
+        "name": "Silky Terrier",
+        "variations": []
+    },
+    {
+        "id": 178,
+        "name": "Skye Terrier",
         "variations": []
     },
     {
         "id": 179,
-        "name": "St. Bernard",
+        "name": "Sloughi",
         "variations": []
     },
     {
         "id": 180,
-        "name": "Sussex Spaniel",
+        "name": "Slovakian Rough-Haired Pointer",
         "variations": []
     },
     {
         "id": 181,
-        "name": "Swedish Vallhund",
+        "name": "Slovenian Istrian Hound",
         "variations": []
     },
     {
         "id": 182,
-        "name": "Tibetan Mastiff",
+        "name": "Soft Coated Wheaten Terrier",
         "variations": []
     },
     {
         "id": 183,
-        "name": "Tibetan Spaniel",
+        "name": "Spinone Italiano",
         "variations": []
     },
     {
         "id": 184,
-        "name": "Tibetan Terrier",
-        "variations": []
+        "name": "Springer Spaniel",
+        "variations": ["English", "Welsh"]
     },
     {
         "id": 185,
-        "name": "Toy Fox Terrier",
+        "name": "St. Bernard",
         "variations": []
     },
     {
         "id": 186,
-        "name": "Transylvanian Hound",
+        "name": "Staffordshire Bull Terrier",
         "variations": []
     },
     {
         "id": 187,
-        "name": "Treeing Walker Coonhound",
+        "name": "Standard Schnauzer",
         "variations": []
     },
     {
         "id": 188,
-        "name": "Vizsla",
+        "name": "Sussex Spaniel",
         "variations": []
     },
     {
         "id": 189,
-        "name": "Weimaraner",
+        "name": "Swedish Vallhund",
+        "variations": []
+    },
+    {
+        "id": 190,
+        "name": "Tibetan Mastiff",
         "variations": []
     },
     {
         "id": 191,
-        "name": "Welsh Springer Spaniel",
+        "name": "Tibetan Spaniel",
         "variations": []
     },
     {
         "id": 192,
-        "name": "West Highland White Terrier",
+        "name": "Tibetan Terrier",
         "variations": []
     },
     {
         "id": 193,
-        "name": "Whippet",
+        "name": "Toy Fox Terrier",
         "variations": []
     },
     {
         "id": 194,
-        "name": "Wire Fox Terrier",
+        "name": "Transylvanian Hound",
         "variations": []
     },
     {
         "id": 195,
-        "name": "Wirehaired Griffon",
+        "name": "Treeing Walker Coonhound",
         "variations": []
     },
     {
         "id": 196,
-        "name": "Wirehaired Pointing Griffon",
+        "name": "Vizsla",
         "variations": []
     },
     {
         "id": 197,
-        "name": "Xoloitzcuintli",
-        "variations": ["Hairless", "Powderpuff"]
-    },
-    {
-        "id": 198,
-        "name": "Yorkshire Terrier",
+        "name": "Weimaraner",
         "variations": []
     },
     {
+        "id": 198,
+        "name": "Welsh Corgi",
+        "variations": ["Cardigan", "Pembroke"]
+    },
+    {
         "id": 199,
-        "name": "Bichon",
+        "name": "Welsh Springer Spaniel",
         "variations": []
     },
     {
         "id": 200,
-        "name": "Bichon Bolognese",
+        "name": "West Highland White Terrier",
         "variations": []
     },
     {
         "id": 201,
-        "name": "Bolonka",
-        "variations": ["Zwetna", "Franzuska"]
+        "name": "Whippet",
+        "variations": []
     },
     {
         "id": 202,
-        "name": "Spanish Greyhound",
+        "name": "Wire Fox Terrier",
         "variations": []
     },
     {
         "id": 203,
-        "name": "English Greyhound",
+        "name": "Wirehaired Griffon",
         "variations": []
     },
     {
         "id": 204,
-        "name": "Warren Hound",
+        "name": "Wirehaired Pointing Griffon",
         "variations": []
     },
     {
         "id": 205,
-        "name": "Cretan Hound",
-        "variations": []
+        "name": "Xoloitzcuintli",
+        "variations": ["Hairless", "Powderpuff"]
     },
     {
         "id": 206,
-        "name": "Podenco Andaluz",
+        "name": "Yorkshire Terrier",
         "variations": []
-    },
-    {
-        "id": 207,
-        "name": "Podengo Galego",
-        "variations": []
-    },
-    {
-        "id": 208,
-        "name": "Xarnego Valencià",
-        "variations": []
-    },
+    }
 ]
+

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PetBreedNoBreeds: View {
+struct PetBreedListEmpty: View {
     var body: some View {
         ContentUnavailableView {
             Label("No breeds yet", systemImage: "pawprint.fill")
@@ -19,5 +19,5 @@ struct PetBreedNoBreeds: View {
 }
 
 #Preview {
-    PetBreedNoBreeds()
+    PetBreedListEmpty()
 }

@@ -1,58 +1,58 @@
 [
     {
         "id": 0,
-        "name": "Mixed-Breed",
+        "name": "Mestizo",
         "variations": []
     },
     {
         "id": 1,
-        "name": "Abyssinian",
+        "name": "Abisinio",
         "variations": []
     },
     {
         "id": 2,
-        "name": "Aegean",
+        "name": "Egeo",
         "variations": []
     },
     {
         "id": 3,
-        "name": "American Bobtail",
+        "name": "Bobtail americano",
         "variations": []
     },
     {
         "id": 4,
-        "name": "American Curl",
+        "name": "Curl Americano",
         "variations": []
     },
     {
         "id": 5,
-        "name": "American Shorthair",
+        "name": "Americano de Pelo Corto",
         "variations": []
     },
     {
         "id": 6,
-        "name": "American Wirehair",
+        "name": "Americano de Pelo Duro",
         "variations": []
     },
     {
         "id": 7,
-        "name": "Ashera",
+        "name": "Asera",
         "variations": []
     },
     {
         "id": 8,
-        "name": "Asian",
+        "name": "Asiático",
         "variations": []
     },
     {
         "id": 9,
-        "name": "Asian Semi-Longhair",
+        "name": "Asiático de Pelo Semilargo.",
         "variations": []
     },
     {
         "id": 10,
-        "name": "Balinese",
-        "variations": ["Longhair", "Javanese"]
+        "name": "Balinés",
+        "variations": ["Pelo Largo", "Javanés"]
     },
     {
         "id": 11,
@@ -61,12 +61,12 @@
     },
     {
         "id": 12,
-        "name": "Bengal",
-        "variations": ["Brown Spotted", "Brown Marbled", "Rosetted", "Snow Spotted", "Snow Marbled", "Silver Spotted", "Silver Marbled", "Blue Spotted", "Blue Marbled"]
+        "name": "Bengala",
+        "variations": ["Marrón Manchado", "Marrón Jaspeado", "Rosetado", "Manchas de Nieve", "Jaspedo de Nieve", "Manchas de Plata", "Jaspeado de Plata", "Manchas Azules", "Jaspeado Azul"]
     },
     {
         "id": 13,
-        "name": "Birman",
+        "name": "Birmano",
         "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
     },
     {
@@ -76,28 +76,28 @@
     },
     {
         "id": 15,
-        "name": "Brazilian Shorthair",
+        "name": "Brasileño de Pelo Corto",
         "variations": []
     },
     {
         "id": 16,
-        "name": "British Longhair",
+        "name": "Británico de Pelo Largo",
         "variations": []
     },
     {
         "id": 17,
-        "name": "British Shorthair",
+        "name": "Británico de Pelo Corto",
         "variations": []
     },
     {
         "id": 18,
         "name": "Burmese",
-        "variations": ["Solid", "Tortoiseshell", "Torbie"]
+        "variations": ["Sólido", "Carey", "Torbie"]
     },
     {
         "id": 19,
-        "name": "Burmilla",
-        "variations": ["Solid", "Tortoiseshell", "Torbie"]
+        "name": "Birmania",
+        "variations": ["Sólido", "Carey", "Torbie"]
     },
     {
         "id": 20,
@@ -106,7 +106,7 @@
     },
     {
         "id": 21,
-        "name": "Canadian Sphynx",
+        "name": "Esfinge Canadiense",
         "variations": []
     },
     {
@@ -121,7 +121,7 @@
     },
     {
         "id": 24,
-        "name": "Cherubim",
+        "name": "Querubín",
         "variations": []
     },
     {
@@ -131,7 +131,7 @@
     },
     {
         "id": 26,
-        "name": "Colorpoint Shorthair",
+        "name": "Colorpoint de Pelo Corto",
         "variations": []
     },
     {
@@ -146,7 +146,7 @@
     },
     {
         "id": 29,
-        "name": "Cyprus",
+        "name": "Chipre",
         "variations": []
     },
     {
@@ -166,17 +166,17 @@
     },
     {
         "id": 33,
-        "name": "Dutch Van",
+        "name": "Van Holandés",
         "variations": []
     },
     {
         "id": 34,
-        "name": "Egyptian Mau",
+        "name": "Mau Egipcio",
         "variations": []
     },
     {
         "id": 35,
-        "name": "Exotic Shorthair",
+        "name": "Exótico de Pelo Corto",
         "variations": []
     },
     {
@@ -186,7 +186,7 @@
     },
     {
         "id": 37,
-        "name": "German Rex",
+        "name": "Rex Alemán",
         "variations": []
     },
     {
@@ -196,17 +196,17 @@
     },
     {
         "id": 39,
-        "name": "Himalayan",
+        "name": "Himalaya",
         "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
     },
     {
         "id": 40,
-        "name": "Japanese Bobtail",
+        "name": "Bobtail Japonés",
         "variations": []
     },
     {
         "id": 41,
-        "name": "Javanese",
+        "name": "Javanés",
         "variations": []
     },
     {
@@ -246,7 +246,7 @@
     },
     {
         "id": 49,
-        "name": "Norwegian Forest Cat",
+        "name": "Gato del Bosque Noruego",
         "variations": []
     },
     {
@@ -266,17 +266,17 @@
     },
     {
         "id": 53,
-        "name": "Oriental Longhair",
+        "name": "Oriental de Pelo Largo",
         "variations": []
     },
     {
         "id": 54,
-        "name": "Oriental Shorthair",
+        "name": "Oriental de Pelo Corto",
         "variations": []
     },
     {
         "id": 55,
-        "name": "Persian",
+        "name": "Persa",
         "variations": []
     },
     {
@@ -306,22 +306,22 @@
     },
     {
         "id": 61,
-        "name": "Russian Blue",
+        "name": "Ruso Azul",
         "variations": []
     },
     {
         "id": 62,
-        "name": "Russian White",
+        "name": "Ruso Blanco",
         "variations": []
     },
     {
         "id": 63,
-        "name": "Savannah",
-        "variations": ["Brown Spotted", "Brown Marbled", "Rosetted", "Snow Spotted", "Snow Marbled", "Silver Spotted", "Silver Marbled", "Blue Spotted", "Blue Marbled"]
+        "name": "Savana",
+        "variations": ["Marrón Manchado", "Marrón Jaspeado", "Rosetado", "Manchas de Nieve", "Jaspedo de Nieve", "Manchas de Plata", "Jaspeado de Plata", "Manchas Azules", "Jaspeado Azul"]
     },
     {
         "id": 64,
-        "name": "Scottish Fold",
+        "name": "Fold Escocés",
         "variations": []
     },
     {
@@ -331,17 +331,17 @@
     },
     {
         "id": 66,
-        "name": "Siamese",
+        "name": "Siamés",
         "variations": ["Pointed", "Mitted", "Gloved", "Lace"]
     },
     {
         "id": 67,
-        "name": "Siberian",
+        "name": "Siberiano",
         "variations": []
     },
     {
         "id": 68,
-        "name": "Singapura",
+        "name": "Singapur",
         "variations": []
     },
     {
@@ -351,12 +351,12 @@
     },
     {
         "id": 70,
-        "name": "Somali",
+        "name": "somalí",
         "variations": []
     },
     {
         "id": 71,
-        "name": "Sphynx",
+        "name": "Esfinge",
         "variations": []
     },
     {
@@ -371,28 +371,29 @@
     },
     {
         "id": 74,
-        "name": "Tortoiseshell",
+        "name": "Carey",
         "variations": []
     },
     {
         "id": 75,
-        "name": "Turkish Angora",
+        "name": "Angora Turco",
         "variations": []
     },
     {
         "id": 76,
-        "name": "Turkish Van",
+        "name": "Van Turco",
         "variations": []
     },
     {
         "id": 77,
-        "name": "Ukrainian Levkoy",
+        "name": "Levkoy Ucraniano",
         "variations": []
     },
     {
         "id": 78,
-        "name": "York Chocolate",
+        "name": "Chocolate York",
         "variations": []
     }
 ]
  
+
