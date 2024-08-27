@@ -230,6 +230,11 @@
         "variations": []
     },
     {
+        "id": 46,
+        "name": "Terrier",
+        "variations": []
+    },
+    {
         "id": 47,
         "name": "Cavalier King Charles Spaniel",
         "variations": []
@@ -462,11 +467,6 @@
     {
         "id": 93,
         "name": "Greyhound",
-        "variations": []
-    },
-    {
-        "id": 94,
-        "name": "Griffon Bruxellois",
         "variations": []
     },
     {

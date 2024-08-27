@@ -1,7 +1,7 @@
 # Project Notes
 
 ## Cannine Breed JSON list free IDs
-- 139, 46, 178, 190
+- 94, 139, 178, 190
 
 
 ## Dog/Cat size

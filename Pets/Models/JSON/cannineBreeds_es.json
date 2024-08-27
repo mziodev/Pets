@@ -230,6 +230,11 @@
         "variations": []
     },
     {
+        "id": 46,
+        "name": "Terrier",
+        "variations": []
+    },
+    {
         "id": 47,
         "name": "Cavalier King Charles Spaniel",
         "variations": []
@@ -416,12 +421,12 @@
     },
     {
         "id": 84,
-        "name": "Braco alemán de Pelo Corto",
+        "name": "Braco Alemán de Pelo Corto",
         "variations": []
     },
     {
         "id": 85,
-        "name": "Braco alemán de Pelo Duro",
+        "name": "Braco Alemán de Pelo Duro",
         "variations": []
     },
     {
@@ -462,11 +467,6 @@
     {
         "id": 93,
         "name": "Galgo",
-        "variations": []
-    },
-    {
-        "id": 94,
-        "name": "Grifón de Bruselas",
         "variations": []
     },
     {
@@ -521,7 +521,7 @@
     },
     {
         "id": 105,
-        "name": "Galgo italiano",
+        "name": "Galgo Italiano",
         "variations": []
     },
     {
@@ -951,12 +951,12 @@
     },
     {
         "id": 194,
-        "name": "Fox terrier de Pelo Duro",
+        "name": "Fox Terrier de Pelo Duro",
         "variations": []
     },
     {
         "id": 195,
-        "name": "Grifo de Pelo Duro",
+        "name": "Grifón de Pelo Duro",
         "variations": []
     },
     {

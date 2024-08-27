@@ -9,7 +9,7 @@ import Foundation
 
 class PetBreedDataService {
     static func loadPetBreeds(from filename: String) -> [PetBreed]? {
-        let localizedFilename = filename + "_\(Locale.preferredLanguages.first ?? "en")"
+        let localizedFilename = filename + "_\(Locale.current.language.languageCode?.identifier ?? "en")"
         
         if let url = Bundle.main.url(
             forResource: localizedFilename,
