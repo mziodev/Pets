@@ -24,7 +24,7 @@ struct DewormingTreatmentDetail: View {
     let isNew: Bool
     
     private var isNameVerified: Bool {
-        FormVerification.checkMinimumLength(dewormingTreatment.name)
+        dewormingTreatment.name.hasMinimumLength()
     }
     private var isQuantityVerified: Bool {
         dewormingTreatment.quantity > 0

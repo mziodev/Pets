@@ -19,9 +19,11 @@ struct VaccineList: View {
         NavigationStack {
             VStack {
                 List {
-                    if pet.activeVaccines > 0 {
+                    if pet.vaccines.active > 0 {
                         Section("Active Vaccines") {
-                            ForEach(pet.reverseSortedVaccines) { vaccine in
+                            ForEach(
+                                pet.vaccines.reverseSortedByActiveDays
+                            ) { vaccine in
                                 if vaccine.activeDays > 0 {
                                     NavigationLink {
                                         VaccineDetail(
@@ -36,9 +38,11 @@ struct VaccineList: View {
                         }
                     }
                     
-                    if pet.expiredVaccines > 0 {
+                    if pet.vaccines.expired > 0 {
                         Section("Expired Vaccines") {
-                            ForEach(pet.reverseSortedVaccines) { vaccine in
+                            ForEach(
+                                pet.vaccines.reverseSortedByActiveDays
+                            ) { vaccine in
                                 if vaccine.activeDays <= 0 {
                                     NavigationLink {
                                         VaccineDetail(
@@ -74,7 +78,7 @@ struct VaccineList: View {
                     
                 }
                 
-                if pet.activeVaccines > 0 {
+                if pet.vaccines.active > 0 {
                     ToolbarItem {
                         Button("Done", action: dismissView)
                     }

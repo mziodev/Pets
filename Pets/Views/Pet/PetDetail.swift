@@ -34,7 +34,7 @@ struct PetDetail: View {
         }
     }
     private var isNameVerified: Bool {
-        FormVerification.checkMinimumLength(pet.name)
+        pet.name.hasMinimumLength()
     }
     private var isChipIDVerified: Bool {
         Pet.chipIDValidators[pet.chipID.type]?(pet.chipID.number) ?? false

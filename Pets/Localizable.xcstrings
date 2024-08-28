@@ -888,39 +888,6 @@
         }
       }
     },
-    "Delete treatment" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Borrar tratamiento"
-          }
-        }
-      }
-    },
-    "Delete vaccine" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Borrar vacuna"
-          }
-        }
-      }
-    },
-    "Delete weight" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Borrar peso"
-          }
-        }
-      }
-    },
     "Deworming treatment will deleted, are you sure?" : {
       "localizations" : {
         "es" : {
@@ -1842,17 +1809,6 @@
         }
       }
     },
-    "Start" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Empieza"
-          }
-        }
-      }
-    },
     "Started" : {
       "localizations" : {
         "es" : {
@@ -2070,17 +2026,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vacunas"
-          }
-        }
-      }
-    },
-    "Value" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Valor"
           }
         }
       }

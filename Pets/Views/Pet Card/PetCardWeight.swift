@@ -12,7 +12,7 @@ struct PetCardWeight: View {
     
     
     var body: some View {
-        if pet.currentWeight > 0 {
+        if pet.weights.currentWeight > 0 {
             HStack {
                 Spacer()
                 
@@ -24,8 +24,8 @@ struct PetCardWeight: View {
                     String(
                         format: "%.3f %@",
                         locale: Locale.current,
-                        pet.currentWeight,
-                        Weight.units
+                        pet.weights.currentWeight,
+                        Format.weightUnits
                     )
                 )
                 .font(.largeTitle)

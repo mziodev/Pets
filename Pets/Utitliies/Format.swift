@@ -8,6 +8,12 @@
 import Foundation
 
 struct Format {
+    /// Computed variable that contains the correct weight unit depending on the current locale.
+    ///
+    /// - returns: A string with `lb` for US locale and `kg` for the rest of the countries.
+    static var weightUnits: String {
+        Locale.current.identifier == "en_US" ? "lb" : "kg"
+    }
     
     /// Formats a string value as a currency string, removing trailing zeros and decimal points.
     ///

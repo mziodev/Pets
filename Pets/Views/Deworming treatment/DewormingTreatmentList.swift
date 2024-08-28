@@ -19,10 +19,10 @@ struct DewormingTreatmentList: View {
         NavigationStack {
             VStack {
                 List {
-                    if pet.activeDewormingTreatments > 0 {
+                    if pet.dewormingTreatments.active > 0 {
                         Section("Active treatments") {
                             ForEach(
-                                pet.reverseSortedDewormingTreatments
+                                pet.dewormingTreatments.reverseSortedByActiveDays
                             ) { treatment in
                                 if (treatment.activeDays > 0) {
                                     NavigationLink{
@@ -40,10 +40,10 @@ struct DewormingTreatmentList: View {
                         }
                     }
                     
-                    if pet.expiredDewormingTreatments > 0 {
+                    if pet.dewormingTreatments.expired > 0 {
                         Section("Expired treatments") {
                             ForEach(
-                                pet.reverseSortedDewormingTreatments
+                                pet.dewormingTreatments.reverseSortedByActiveDays
                             ) { treatment in
                                 if (treatment.activeDays <= 0) {
                                     NavigationLink{
@@ -94,7 +94,7 @@ struct DewormingTreatmentList: View {
                     
                     ToolbarItem(placement: .status) {
                         Text(
-                            "\(pet.activeDewormingTreatments) active treatments"
+                            "\(pet.dewormingTreatments.active) active treatments"
                         )
                         .font(.caption)
                     }

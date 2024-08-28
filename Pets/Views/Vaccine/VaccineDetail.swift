@@ -27,7 +27,7 @@ struct VaccineDetail: View {
     }
     
     private var isNameVerified: Bool {
-        FormVerification.checkMinimumLength(vaccine.name)
+        vaccine.name.hasMinimumLength()
     }
     
     private var isFormVerified: Bool { isNameVerified }

@@ -48,7 +48,7 @@ struct WeightDetail: View {
                         .foregroundStyle(.placeholder)
                         
                         HStack {
-                            Text("\(Weight.units)")
+                            Text("\(Format.weightUnits)")
                                 .foregroundStyle(.placeholder)
                             
                             TextField(

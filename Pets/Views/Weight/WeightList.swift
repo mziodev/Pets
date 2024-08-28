@@ -21,17 +21,19 @@ struct WeightList: View {
     }
     
     private var selectedDateRangeWeights: [Weight] {
-        pet.filteringAndSortingWeights(in: selectedDateRange)
+        pet.weights.filteringAndSorting(
+            in: selectedDateRange
+        )
     }
     
     var scrollPositionStartString: String {
-        pet.reverseSortedWeights.last!.date.formatted(
+        pet.weights.reverseSortedByDate.last!.date.formatted(
             .dateTime.month().day()
         )
     }
     
     var scrollPositionEndString: String {
-        pet.reverseSortedWeights.first!.date.formatted(
+        pet.weights.reverseSortedByDate.first!.date.formatted(
             .dateTime.month().day().year()
         )
     }
@@ -64,7 +66,7 @@ struct WeightList: View {
                                     format: "%.2f %@",
                                     locale: Locale.current,
                                     selectedDateRangeWeights.averaging(),
-                                    Weight.units
+                                    Format.weightUnits
                                 )
                             )
                             .font(.largeTitle)
@@ -85,8 +87,8 @@ struct WeightList: View {
                     .padding(.top, 2)
                     
                     List {
-                        Section("Weight List (\(Weight.units))") {
-                            ForEach(pet.reverseSortedWeights) { weight in
+                        Section("Weight List (\(Format.weightUnits))") {
+                            ForEach(pet.weights.reverseSortedByDate) { weight in
                                 NavigationLink {
                                     WeightDetail(pet: pet, weight: weight)
                                 } label: {
