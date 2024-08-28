@@ -779,6 +779,16 @@
         }
       }
     },
+    "Cat symbol" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Símbolo de gato"
+          }
+        }
+      }
+    },
     "Change photo" : {
       "localizations" : {
         "es" : {
@@ -964,6 +974,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Perro"
+          }
+        }
+      }
+    },
+    "Dog symbol" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Símbolo de perro"
           }
         }
       }
@@ -1633,6 +1653,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parvovirus"
+          }
+        }
+      }
+    },
+    "Paw symbol" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Símbolo de pezuña"
           }
         }
       }

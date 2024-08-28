@@ -21,10 +21,12 @@ struct PetImagePlaceholder: View {
                 )
                 .foregroundStyle(.petsAccentBlue)
             
-            Image(systemName: "\(species.systemImage).fill")
+            Image(systemName: "\(species.symbol).fill")
                 .font(.system(size: imageSize.rawValue * 0.45))
                 .foregroundStyle(.white)
-                .accessibilityLabel("\(species.localizedDescription) image")
+                .accessibilityLabel(
+                    species.symbolLocalizedDescription
+                )
         }
     }
 }

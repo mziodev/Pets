@@ -22,6 +22,7 @@ struct PetImage: View {
                     height: imageSize.rawValue
                 )
                 .clipShape(Circle())
+                .accessibilityLabel("\(pet.name) photo")
 
         } else {
             PetImagePlaceholder(

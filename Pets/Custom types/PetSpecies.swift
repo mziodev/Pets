@@ -23,7 +23,7 @@ enum PetSpecies: String, CaseIterable, Codable {
         }
     }
     
-    var systemImage: String {
+    var symbol: String {
         switch self {
         case .unknown:
             "pawprint"
@@ -31,6 +31,17 @@ enum PetSpecies: String, CaseIterable, Codable {
             "dog"
         case .feline:
             "cat"
+        }
+    }
+    
+    var symbolLocalizedDescription: String {
+        switch self {
+        case .unknown:
+            String(localized: "Paw symbol")
+        case .cannine:
+            String(localized: "Dog symbol")
+        case .feline:
+            String(localized: "Cat symbol")
         }
     }
 }

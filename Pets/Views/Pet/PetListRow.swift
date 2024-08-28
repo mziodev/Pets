@@ -8,30 +8,27 @@
 import SwiftUI
 
 struct PetListRow: View {
-//    let name: String
-//    let breed: String
-//    let speciesName: String
-    
     let pet: Pet
-    
     
     var body: some View {
         HStack {
-            
             VStack(alignment: .leading) {
                 Text(pet.name)
                     .font(.headline)
                 
-                Text(pet.breed.isEmpty ? String(localized: "Unknown breed") : pet.breed)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                Text(
+                    pet.breed.isEmpty ? String(localized: "Unknown breed") : pet.breed
+                )
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
             }
             
             Spacer()
             
-            Image(systemName: "\(pet.species.systemImage).fill")
+            Image(systemName: "\(pet.species.symbol).fill")
                 .font(.title2)
                 .foregroundStyle(.petsAccentBlue)
+                .accessibilityLabel(pet.species.symbolLocalizedDescription)
         }
     }
 }
