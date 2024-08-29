@@ -46,114 +46,114 @@ struct VaccineDetail: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Form {
-                    Section {
-                        TextField("Name", text: $vaccine.name)
-                            .focused($vaccineNameTextFieldFocused)
+            Form {
+                Section {
+                    TextField("Name", text: $vaccine.name)
+                        .focused($vaccineNameTextFieldFocused)
+                    
+                    Picker("Type", selection: $vaccine.type) {
+                        ForEach(
+                            VaccineType.allCases,
+                            id: \.self
+                        ) { vaccine in
+                            if vaccine.species == "unknown" {
+                                Text(vaccine.localizedDescription)
+                                    .font(.callout)
+                            }
+                        }
                         
-                        Picker("Type", selection: $vaccine.type) {
+                        Section {
                             ForEach(
                                 VaccineType.allCases,
                                 id: \.self
                             ) { vaccine in
-                                if vaccine.species == "unknown" {
-                                    Text(vaccine.localizedDescription)
+                                if vaccine.species == "dogs" {
+                                    Text(vaccine.rawValue)
                                         .font(.callout)
                                 }
                             }
-                            
-                            Section {
-                                ForEach(
-                                    VaccineType.allCases,
-                                    id: \.self
-                                ) { vaccine in
-                                    if vaccine.species == "dogs" {
-                                        Text(vaccine.rawValue)
-                                            .font(.callout)
-                                    }
-                                }
-                            } header: {
-                                Text("For dogs")
-                                    .font(.headline.smallCaps())
-                                    .foregroundStyle(.petsAccentBlue)
-                            }
-                            
-                            Section {
-                                ForEach(
-                                    VaccineType.allCases,
-                                    id: \.self
-                                ) { vaccine in
-                                    if vaccine.species == "cats" {
-                                        Text(vaccine.rawValue)
-                                            .font(.callout)
-                                    }
-                                }
-                            } header: {
-                                Text("For cats")
-                                    .font(.headline.smallCaps())
-                                    .foregroundStyle(.petsAccentBlue)
-                            }
+                        } header: {
+                            Text("For dogs")
+                                .font(.headline.smallCaps())
+                                .foregroundStyle(.petsAccentBlue)
                         }
-                        .pickerStyle(.navigationLink)
-                        .foregroundStyle(.primary)
-                    } header: {
-                        Text("Product Info")
-                    } footer: {
-                        if vaccine.type != .unknown {
-                            Text(isVaccineExpired ? "\(pet.name) was protected against \(vaccine.type.localizedDescription)." : "\(pet.name) will be protected against \(vaccine.type.localizedDescription).")
-                        }
-                    }
-                    
-                    
-                    Section {
-                        DatePicker(
-                            isVaccineExpired ? "Started" : "Starts",
-                            selection: $vaccine.starts,
-                            in: pet.birthday ... .now,
-                            displayedComponents: .date
-                        )
                         
-                        DatePicker(
-                            isVaccineExpired ? "Ended" : "Ends",
-                            selection: $vaccine.ends,
-                            in: pet.birthday ... .distantFuture,
-                            displayedComponents: .date
-                        )
-                    } header: {
-                        Text("Dates")
-                    } footer: {
-                        if isVaccineExpired {
-                            HStack {
-                                Spacer()
-                                
-                                Text("Expired Vaccine")
-                                    .font(.headline.smallCaps())
-                                
-                                Spacer()
+                        Section {
+                            ForEach(
+                                VaccineType.allCases,
+                                id: \.self
+                            ) { vaccine in
+                                if vaccine.species == "cats" {
+                                    Text(vaccine.rawValue)
+                                        .font(.callout)
+                                }
                             }
-                        } else if !isNew {
-                            Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
+                        } header: {
+                            Text("For cats")
+                                .font(.headline.smallCaps())
+                                .foregroundStyle(.petsAccentBlue)
                         }
                     }
-                    
-                    Section("Notes") {
-                        TextField("...", text: $vaccine.notes, axis: .vertical)
+                    .pickerStyle(.navigationLink)
+                    .foregroundStyle(.primary)
+                } header: {
+                    Text("Product Info")
+                } footer: {
+                    if vaccine.type != .unknown {
+                        Text(isVaccineExpired ? "\(pet.name) was protected against \(vaccine.type.localizedDescription)." : "\(pet.name) will be protected against \(vaccine.type.localizedDescription).")
                     }
                 }
-                .disabled(!editingVaccine)
-                .scrollDismissesKeyboard(.immediately)
-            }
-            .navigationTitle(isNew ? "Add Vaccine" : "Vaccine Details")
-            .navigationBarTitleDisplayMode(.inline)
-            .overlay {
+                
+                
+                Section {
+                    DatePicker(
+                        isVaccineExpired ? "Started" : "Starts",
+                        selection: $vaccine.starts,
+                        in: pet.birthday ... .now,
+                        displayedComponents: .date
+                    )
+                    
+                    DatePicker(
+                        isVaccineExpired ? "Ended" : "Ends",
+                        selection: $vaccine.ends,
+                        in: pet.birthday ... .distantFuture,
+                        displayedComponents: .date
+                    )
+                } header: {
+                    Text("Dates")
+                } footer: {
+                    if isVaccineExpired {
+                        HStack {
+                            Spacer()
+                            
+                            Text("Expired Vaccine")
+                                .font(.headline.smallCaps())
+                            
+                            Spacer()
+                        }
+                    } else if !isNew {
+                        Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
+                    }
+                }
+                
+                Section("Notes") {
+                    TextField(
+                        "...",
+                        text: $vaccine.notes,
+                        axis: .vertical
+                    )
+                }
+                
                 if !isNew {
-                    DeleteButton(
+                    RowDeleteButton(
                         title: "Delete Vaccine",
                         showingAlert: $showingDeleteAlert
                     )
                 }
             }
+            .navigationTitle(isNew ? "Add Vaccine" : "Vaccine Details")
+            .navigationBarTitleDisplayMode(.inline)
+            .disabled(!editingVaccine)
             .onAppear {
                 if isNew { editingVaccine = true }
                 

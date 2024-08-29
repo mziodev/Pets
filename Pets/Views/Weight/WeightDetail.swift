@@ -36,49 +36,48 @@ struct WeightDetail: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Form {
-                    Section("Weight Data") {
-                        DatePicker(
-                            "Date",
-                            selection: $weight.date,
-                            in: pet.birthday ... .now,
-                            displayedComponents: .date
-                        )
-                        .foregroundStyle(.placeholder)
+            Form {
+                Section("Weight Data") {
+                    DatePicker(
+                        "Date",
+                        selection: $weight.date,
+                        in: pet.birthday ... .now,
+                        displayedComponents: .date
+                    )
+                    .foregroundStyle(.placeholder)
+                    
+                    HStack {
+                        Text("\(Format.weightUnits)")
+                            .foregroundStyle(.placeholder)
                         
-                        HStack {
-                            Text("\(Format.weightUnits)")
-                                .foregroundStyle(.placeholder)
-                            
-                            TextField(
-                                "",
-                                value: $weightValue,
-                                format: .number
-                            )
-                            .multilineTextAlignment(.trailing)
-                            .keyboardType(.decimalPad)
-                            .focused($weightTextFieldFocused)
-                            .onChange(
-                                of: weightValue ?? 0
-                            ) { oldValue, newValue in
-                                weight.value = newValue
-                            }
+                        TextField(
+                            "",
+                            value: $weightValue,
+                            format: .number
+                        )
+                        .multilineTextAlignment(.trailing)
+                        .keyboardType(.decimalPad)
+                        .focused($weightTextFieldFocused)
+                        .onChange(
+                            of: weightValue ?? 0
+                        ) { oldValue, newValue in
+                            weight.value = newValue
                         }
                     }
+                    
+                    if !isNew {
+                        RowDeleteButton(
+                            title: "Delete Weight",
+                            showingAlert: $showingDeleteAlert
+                        )
+                    }
                 }
-                .disabled(!editingWeight)
-                .scrollDismissesKeyboard(.immediately)
             }
+            .scrollDismissesKeyboard(.immediately)
             .navigationTitle(isNew ? "Add Weight" : "Weight Details")
             .navigationBarTitleDisplayMode(.inline)
+            .disabled(!editingWeight)
             .overlay {
-                if !isNew {
-                    DeleteButton(
-                        title: "Delete Weight",
-                        showingAlert: $showingDeleteAlert
-                    )
-                }
             }
             .onAppear {
                 copyWeightValue()

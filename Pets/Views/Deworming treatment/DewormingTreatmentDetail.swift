@@ -47,125 +47,122 @@ struct DewormingTreatmentDetail: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Form {
-                    Section {
-                        HStack {
-                            Spacer()
-                            
-                            VStack {
-                                Label(
-                                    dewormingTreatment.type.rawValue,
-                                    systemImage: dewormingTreatment.type.systemImage
-                                )
-                                .labelStyle(.iconOnly)
-                                .font(.system(size: 70))
-                                .foregroundStyle(.petsAccentBlue)
-                                
-                                Text("\(pet.name)'s deworming treatment")
-                                    .font(.title3)
-                                    .padding(.top)
-                            }
-                            
-                            Spacer()
-                        }
-                    }
-                    .listRowBackground(Color.clear)
-                    
-                    Section("Info") {
-                        TextField(
-                            "Treatment name",
-                            text: $dewormingTreatment.name
-                        )
-                        .focused($treatmentNameTextFieldFocused)
-                        .overlay {
-                            VerificationCheckMark(condition: isNameVerified)
-                        }
+            Form {
+                Section {
+                    HStack {
+                        Spacer()
                         
-                        Picker(
-                            "Treatment type",
-                            selection: $dewormingTreatment.type.animation()
-                        ) {
-                            ForEach(
-                                TreatmentType.allCases,
-                                id: \.self
-                            ) { type in
-                                Text(type.localizedDescription)
-                            }
-                        }
-                        .pickerStyle(.menu)
-                        
-                        Picker(selection: $dewormingTreatment.units) {
-                            ForEach(
-                                TreatmentUnit.allCases,
-                                id:\.self
-                            ) { units in
-                                Text(units.localizedDescription)
-                            }
-                        } label: {
-                            HStack {
-                                Text("Quantity")
-                                
-                                TextField(
-                                    "Quantity",
-                                    value: $treatmentQuantity,
-                                    format: .number
-                                )
-                                .multilineTextAlignment(.trailing)
-                                .onChange(
-                                    of: treatmentQuantity ?? 0
-                                ) { oldValue, newValue in
-                                    dewormingTreatment.quantity = newValue
-                                }
-                                .keyboardType(.decimalPad)
-                            }
-                        }
-                        .pickerStyle(.menu)
-                        .padding(.trailing, 30)
-                        .overlay {
-                            VerificationCheckMark(
-                                condition: isQuantityVerified
+                        VStack {
+                            Label(
+                                dewormingTreatment.type.rawValue,
+                                systemImage: dewormingTreatment.type.systemImage
                             )
+                            .labelStyle(.iconOnly)
+                            .font(.system(size: 70))
+                            .foregroundStyle(.petsAccentBlue)
+                            
+                            Text("\(pet.name)'s deworming treatment")
+                                .font(.title3)
+                                .padding(.top)
+                        }
+                        
+                        Spacer()
+                    }
+                }
+                .listRowBackground(Color.clear)
+                
+                Section("Info") {
+                    TextField(
+                        "Treatment name",
+                        text: $dewormingTreatment.name
+                    )
+                    .focused($treatmentNameTextFieldFocused)
+                    .overlay {
+                        VerificationCheckMark(condition: isNameVerified)
+                    }
+                    
+                    Picker(
+                        "Treatment type",
+                        selection: $dewormingTreatment.type.animation()
+                    ) {
+                        ForEach(
+                            TreatmentType.allCases,
+                            id: \.self
+                        ) { type in
+                            Text(type.localizedDescription)
                         }
                     }
+                    .pickerStyle(.menu)
                     
-                    Section("Dates") {
-                        DatePicker(
-                            "Starts",
-                            selection: $dewormingTreatment.startingDate,
-                            in: pet.birthday ... .now,
-                            displayedComponents: .date
-                        )
-                        
-                        DatePicker(
-                            "Ends",
-                            selection: $dewormingTreatment.endingDate,
-                            in: pet.birthday ... .distantFuture,
-                            displayedComponents: .date
-                        )
+                    Picker(selection: $dewormingTreatment.units) {
+                        ForEach(
+                            TreatmentUnit.allCases,
+                            id:\.self
+                        ) { units in
+                            Text(units.localizedDescription)
+                        }
+                    } label: {
+                        HStack {
+                            Text("Quantity")
+                            
+                            TextField(
+                                "Quantity",
+                                value: $treatmentQuantity,
+                                format: .number
+                            )
+                            .multilineTextAlignment(.trailing)
+                            .onChange(
+                                of: treatmentQuantity ?? 0
+                            ) { oldValue, newValue in
+                                dewormingTreatment.quantity = newValue
+                            }
+                            .keyboardType(.decimalPad)
+                        }
                     }
-                    
-                    Section("Notes") {
-                        TextField(
-                            "...",
-                            text: $dewormingTreatment.notes,
-                            axis: .vertical
+                    .pickerStyle(.menu)
+                    .padding(.trailing, 30)
+                    .overlay {
+                        VerificationCheckMark(
+                            condition: isQuantityVerified
                         )
                     }
                 }
-                .disabled(!editingTreatment)
-                .scrollDismissesKeyboard(.interactively)
-            }
-            .navigationTitle(isNew ? "Add Treatment" : "Treatment Details")
-            .navigationBarTitleDisplayMode(.inline)
-            .overlay {
+                
+                Section("Dates") {
+                    DatePicker(
+                        "Starts",
+                        selection: $dewormingTreatment.startingDate,
+                        in: pet.birthday ... .now,
+                        displayedComponents: .date
+                    )
+                    
+                    DatePicker(
+                        "Ends",
+                        selection: $dewormingTreatment.endingDate,
+                        in: pet.birthday ... .distantFuture,
+                        displayedComponents: .date
+                    )
+                }
+                
+                Section("Notes") {
+                    TextField(
+                        "...",
+                        text: $dewormingTreatment.notes,
+                        axis: .vertical
+                    )
+                }
+                
                 if !isNew {
-                    DeleteButton(
+                    RowDeleteButton(
                         title: "Delete Treatment",
                         showingAlert: $showingDeleteAlert
                     )
                 }
             }
+            .scrollDismissesKeyboard(.interactively)
+            .navigationTitle(isNew ? "Add Treatment" : "Treatment Details")
+            .disabled(!editingTreatment)
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 copyDewormingTreatmentQuantity()
                 
