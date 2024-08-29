@@ -85,6 +85,7 @@
       }
     },
     "%@ image" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -93,6 +94,9 @@
           }
         }
       }
+    },
+    "%@ photo" : {
+
     },
     "%@ still will be protected %lld more days until next vaccine." : {
       "localizations" : {

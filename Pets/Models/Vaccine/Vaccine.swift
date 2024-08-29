@@ -14,6 +14,7 @@ class Vaccine {
     var type: VaccineType
     var starts: Date
     var ends: Date
+    var notes: String
     var pet: Pet?
     
     var activeDays: Int {
@@ -25,12 +26,14 @@ class Vaccine {
         type: VaccineType = .unknown,
         starts: Date = .now,
         ends: Date = .now,
+        notes: String = "",
         pet: Pet? = nil
     ) {
         self.name = name
         self.type = type
         self.starts = starts
         self.ends = ends
+        self.notes = notes
         self.pet = pet
     }
 }

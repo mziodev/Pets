@@ -136,6 +136,10 @@ struct VaccineDetail: View {
                             Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
                         }
                     }
+                    
+                    Section("Notes") {
+                        TextField("...", text: $vaccine.notes, axis: .vertical)
+                    }
                 }
                 .disabled(!editingVaccine)
                 .scrollDismissesKeyboard(.immediately)

@@ -69,6 +69,10 @@ struct VaccineList: View {
                 VaccineDetail(pet: pet, isNew: true)
             }
             .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", action: dismissView)
+                }
+                
                 ToolbarItem {
                     Button {
                         showingVaccineDetail = true

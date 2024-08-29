@@ -13,9 +13,7 @@ We must to learn migrations before another model update.
 
 
 ## Vaccines
-- We need a notes box for vaccines.
 - We need to store the cost? Or is included on the cost of consultation?
-- Pickers
 
 
 ## Resizable image
