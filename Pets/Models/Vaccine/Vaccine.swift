@@ -14,7 +14,7 @@ class Vaccine {
     var type: VaccineType
     var starts: Date
     var ends: Date
-    var notes: String
+    var notes: String = ""
     var pet: Pet?
     
     var activeDays: Int {
