@@ -30,6 +30,7 @@ struct PetBreedVariationList: View {
                         }
                         
                     }
+                    .contentShape(Rectangle()) // for the getting tap gesture on the entire row
                     .onTapGesture {
                         withAnimation {
                             pet.breed = "\(breed.name), \(variation)"
