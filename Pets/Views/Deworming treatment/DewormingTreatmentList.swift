@@ -19,10 +19,10 @@ struct DewormingTreatmentList: View {
         NavigationStack {
             VStack {
                 List {
-                    if pet.dewormingTreatments.active > 0 {
+                    if pet.unwrappedDewormingTreatments.active > 0 {
                         Section("Active treatments") {
                             ForEach(
-                                pet.dewormingTreatments.reverseSortedByActiveDays
+                                pet.unwrappedDewormingTreatments.reverseSortedByActiveDays
                             ) { treatment in
                                 if (treatment.activeDays > 0) {
                                     NavigationLink{
@@ -40,10 +40,10 @@ struct DewormingTreatmentList: View {
                         }
                     }
                     
-                    if pet.dewormingTreatments.expired > 0 {
+                    if pet.unwrappedDewormingTreatments.expired > 0 {
                         Section("Expired treatments") {
                             ForEach(
-                                pet.dewormingTreatments.reverseSortedByActiveDays
+                                pet.unwrappedDewormingTreatments.reverseSortedByActiveDays
                             ) { treatment in
                                 if (treatment.activeDays <= 0) {
                                     NavigationLink{
@@ -65,7 +65,7 @@ struct DewormingTreatmentList: View {
             .navigationTitle("\(pet.name)'s dewormings")
             .navigationBarTitleDisplayMode(.inline)
             .overlay {
-                if pet.dewormingTreatments.isEmpty {
+                if pet.unwrappedDewormingTreatments.isEmpty {
                     DewormingTreatmentListEmpty()
                 }
             }
@@ -87,14 +87,14 @@ struct DewormingTreatmentList: View {
                     }
                 }
                 
-                if !pet.dewormingTreatments.isEmpty {
+                if !pet.unwrappedDewormingTreatments.isEmpty {
                     ToolbarItem {
                         Button("Done", action: dismissView)
                     }
                     
                     ToolbarItem(placement: .status) {
                         Text(
-                            "\(pet.dewormingTreatments.active) active treatments"
+                            "\(pet.unwrappedDewormingTreatments.active) active treatments"
                         )
                         .font(.caption)
                     }

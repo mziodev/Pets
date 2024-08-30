@@ -38,7 +38,7 @@ struct WeightListRow: View {
 #Preview {
     List {
         WeightListRow(
-            weight: SampleData.shared.petWithChipID.weights.sortedByDate[2]
+            weight: SampleData.shared.petWithChipID.unwrappedWeights.sortedByDate[2]
         )
     }
 }

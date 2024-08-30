@@ -209,16 +209,16 @@ struct DewormingTreatmentDetail: View {
     }
     
     private func appendDewormingTreatment() {
-        pet.dewormingTreatments.append(dewormingTreatment)
+        pet.dewormingTreatments?.append(dewormingTreatment)
         
         dismiss()
     }
     
     private func deleteDewormingTreatment() {
-        if let dewormingTreatmentIndex = pet.dewormingTreatments.firstIndex(where: {
+        if let dewormingTreatmentIndex = pet.unwrappedDewormingTreatments.firstIndex(where: {
             $0.id == dewormingTreatment.id
         }) {
-            pet.dewormingTreatments.remove(at: dewormingTreatmentIndex)
+            pet.dewormingTreatments?.remove(at: dewormingTreatmentIndex)
             
             dismiss()
         }
@@ -242,6 +242,6 @@ struct DewormingTreatmentDetail: View {
 #Preview("Existing deworming") {
     DewormingTreatmentDetail(
         pet: SampleData.shared.petWithChipID,
-        dewormingTreatment: SampleData.shared.petWithChipID.dewormingTreatments[0]
+        dewormingTreatment: SampleData.shared.petWithChipID.unwrappedDewormingTreatments[0]
     )
 }

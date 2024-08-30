@@ -35,7 +35,7 @@ struct WeightListChart: View {
 
 #Preview {
     WeightListChart(
-        weights: SampleData.shared.petWithChipID.weights.sortedByDate
+        weights: SampleData.shared.petWithChipID.unwrappedWeights.sortedByDate
     )
     .frame(height: 240)
     .padding()

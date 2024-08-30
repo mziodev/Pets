@@ -10,8 +10,8 @@ import SwiftData
 
 @Model
 class Weight {
-    var date: Date
-    var value: Double
+    var date: Date = Date.now
+    var value: Double = 0
     var pet: Pet?
     
     init(date: Date = .now, value: Double = 0) {

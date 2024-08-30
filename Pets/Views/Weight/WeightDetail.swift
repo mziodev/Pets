@@ -121,16 +121,16 @@ struct WeightDetail: View {
     }
     
     private func appendWeight() {
-        pet.weights.append(weight)
+        pet.weights?.append(weight)
         
         dismiss()
     }
     
     private func deleteWeight() {
-        if let weightIndex = pet.weights.firstIndex(where: {
+        if let weightIndex = pet.unwrappedWeights.firstIndex(where: {
             $0.id == weight.id
         }) {
-            pet.weights.remove(at: weightIndex)
+            pet.weights?.remove(at: weightIndex)
         }
         
         dismiss()

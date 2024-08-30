@@ -10,14 +10,14 @@ import SwiftData
 
 @Model
 class DewormingTreatment {
-    var type: TreatmentType
-    var units: TreatmentUnit
-    var name: String
-    var quantity: Double
-    var startingDate: Date
-    var endingDate: Date
-    var notes: String
-    var pet: Pet?
+    var type: TreatmentType = TreatmentType.unknown
+    var units: TreatmentUnit = TreatmentUnit.units
+    var name: String = ""
+    var quantity: Double = 0
+    var startingDate: Date = Date.now
+    var endingDate: Date = Date.now
+    var notes: String = ""
+    var pet: Pet? = nil
     
     var activeDays: Int {
         Int(endingDate.timeIntervalSince(.now) / 86400)

@@ -194,15 +194,15 @@ struct VaccineDetail: View {
     }
     
     private func appendVaccine() {
-        pet.vaccines.append(vaccine)
+        pet.vaccines?.append(vaccine)
         dismiss()
     }
     
     private func deleteVaccine() {
-        if let vaccineIndex = pet.vaccines.firstIndex(where: {
+        if let vaccineIndex = pet.unwrappedVaccines.firstIndex(where: {
             $0.id == vaccine.id
         }) {
-            pet.vaccines.remove(at: vaccineIndex)
+            pet.vaccines?.remove(at: vaccineIndex)
             dismiss()
         }
     }
@@ -219,13 +219,13 @@ struct VaccineDetail: View {
 #Preview("Existing vaccine") {
     VaccineDetail(
         pet: SampleData.shared.petWithChipID,
-        vaccine: SampleData.shared.petWithChipID.vaccines[0]
+        vaccine: SampleData.shared.petWithChipID.unwrappedVaccines[0]
     )
 }
 
 #Preview("Expired vaccine") {
     VaccineDetail(
         pet: SampleData.shared.petWithChipID,
-        vaccine: SampleData.shared.petWithExpiredVaccines.vaccines[1]
+        vaccine: SampleData.shared.petWithExpiredVaccines.unwrappedVaccines[1]
     )
 }

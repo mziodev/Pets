@@ -21,19 +21,19 @@ struct WeightList: View {
     }
     
     private var selectedDateRangeWeights: [Weight] {
-        pet.weights.filteringAndSorting(
+        pet.unwrappedWeights.filteringAndSorting(
             in: selectedDateRange
         )
     }
     
     var scrollPositionStartString: String {
-        pet.weights.reverseSortedByDate.last!.date.formatted(
+        pet.unwrappedWeights.reverseSortedByDate.last!.date.formatted(
             .dateTime.month().day()
         )
     }
     
     var scrollPositionEndString: String {
-        pet.weights.reverseSortedByDate.first!.date.formatted(
+        pet.unwrappedWeights.reverseSortedByDate.first!.date.formatted(
             .dateTime.month().day().year()
         )
     }
@@ -42,7 +42,7 @@ struct WeightList: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                if !pet.weights.isEmpty {
+                if !pet.unwrappedWeights.isEmpty {
                     Picker(
                         "Time Period",
                         selection: $selectedTimePeriod.animation()
@@ -88,7 +88,7 @@ struct WeightList: View {
                     
                     List {
                         Section("Weight List (\(Format.weightUnits))") {
-                            ForEach(pet.weights.reverseSortedByDate) { weight in
+                            ForEach(pet.unwrappedWeights.reverseSortedByDate) { weight in
                                 NavigationLink {
                                     WeightDetail(pet: pet, weight: weight)
                                 } label: {
@@ -113,13 +113,13 @@ struct WeightList: View {
                     }
                 }
                 
-                if !pet.weights.isEmpty {
+                if !pet.unwrappedWeights.isEmpty {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Done", action: dismissView)
                     }
                     
                     ToolbarItem(placement: .status) {
-                        Text("\(pet.weights.count) weights")
+                        Text("\(pet.unwrappedWeights.count) weights")
                             .font(.caption)
                     }
                 }

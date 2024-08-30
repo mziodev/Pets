@@ -10,10 +10,10 @@ import SwiftData
 
 @Model
 class Vaccine {
-    var name: String
-    var type: VaccineType
-    var starts: Date
-    var ends: Date
+    var name: String = ""
+    var type: VaccineType = VaccineType.unknown
+    var starts: Date = Date.now
+    var ends: Date = Date.now
     var notes: String = ""
     var pet: Pet?
     

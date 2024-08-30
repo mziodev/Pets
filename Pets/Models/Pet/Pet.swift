@@ -10,26 +10,38 @@ import SwiftData
 
 @Model
 class Pet: Equatable, ObservableObject {
-    var species: PetSpecies
-    var sex: PetSex
-    var name: String
-    var breed: String
-    var chipID: ChipID
-    var isAdopted: Bool
-    var birthday: Date
-    var onFamilySince: Date
+    var species: PetSpecies = PetSpecies.unknown
+    var sex: PetSex = PetSex.unknown
+    var name: String = ""
+    var breed: String = ""
+    var chipID: ChipID = ChipID()
+    var isAdopted: Bool = false
+    var birthday: Date = Date.now
+    var onFamilySince: Date = Date.now
     
     @Attribute(.externalStorage)
     var image: Data?
     
     @Relationship(deleteRule: .cascade)
-    var weights = [Weight]()
+    var weights: [Weight]? = [Weight]()
     
     @Relationship(deleteRule: .cascade)
-    var dewormingTreatments = [DewormingTreatment]()
+    var dewormingTreatments: [DewormingTreatment]? = [DewormingTreatment]()
     
     @Relationship(deleteRule: .cascade)
-    var vaccines = [Vaccine]()
+    var vaccines: [Vaccine]? = [Vaccine]()
+    
+    var unwrappedWeights: [Weight] {
+        weights ?? []
+    }
+    
+    var unwrappedDewormingTreatments: [DewormingTreatment] {
+        dewormingTreatments ?? []
+    }
+    
+    var unwrappedVaccines: [Vaccine] {
+        vaccines ?? []
+    }
     
     init(
         species: PetSpecies = .unknown,
