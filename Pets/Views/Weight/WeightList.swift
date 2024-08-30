@@ -106,11 +106,7 @@ struct WeightList: View {
             .sheet(isPresented: $showingAddWeightSheet) {
                 WeightDetail(pet: pet, isNew: true)
             }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", action: dismissView)
-                }
-                
+            .toolbar {   
                 ToolbarItem {
                     Button { showingAddWeightSheet.toggle() } label: {
                         Label("Add weight", systemImage: "plus")
@@ -119,12 +115,16 @@ struct WeightList: View {
                 
                 if !pet.unwrappedWeights.isEmpty {
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("Done", action: dismissView)
+                        Button("Ok", action: dismissView)
                     }
                     
                     ToolbarItem(placement: .status) {
                         Text("\(pet.unwrappedWeights.count) weights")
                             .font(.caption)
+                    }
+                } else {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel", action: dismissView)
                     }
                 }
             }

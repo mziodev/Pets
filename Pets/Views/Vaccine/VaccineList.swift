@@ -69,10 +69,6 @@ struct VaccineList: View {
                 VaccineDetail(pet: pet, isNew: true)
             }
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", action: dismissView)
-                }
-                
                 ToolbarItem {
                     Button {
                         showingVaccineDetail = true
@@ -82,9 +78,13 @@ struct VaccineList: View {
                     
                 }
                 
-                if pet.unwrappedVaccines.active > 0 {
-                    ToolbarItem {
-                        Button("Done", action: dismissView)
+                if !pet.unwrappedVaccines.isEmpty {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Ok", action: dismissView)
+                    }
+                } else {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel", action: dismissView)
                     }
                 }
             }

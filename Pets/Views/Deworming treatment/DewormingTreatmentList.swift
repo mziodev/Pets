@@ -76,10 +76,6 @@ struct DewormingTreatmentList: View {
                 )
             }
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", action: dismissView)
-                }
-                
                 ToolbarItem {
                     Button {
                         showingDewormingTreatmentDetail = true
@@ -93,7 +89,7 @@ struct DewormingTreatmentList: View {
                 
                 if !pet.unwrappedDewormingTreatments.isEmpty {
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("Done", action: dismissView)
+                        Button("Ok", action: dismissView)
                     }
                     
                     ToolbarItem(placement: .status) {
@@ -101,6 +97,10 @@ struct DewormingTreatmentList: View {
                             "\(pet.unwrappedDewormingTreatments.active) active treatments"
                         )
                         .font(.caption)
+                    }
+                } else {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel", action: dismissView)
                     }
                 }
             }
