@@ -52,101 +52,99 @@ struct PetDetail: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                Form {
-                    Section {
-                        PetDetailImage(pet: pet)
-                    }
-                    .listRowBackground(Color.clear)
+            Form {
+                Section {
+                    PetDetailImage(pet: pet)
+                }
+                .listRowBackground(Color.clear)
+                
+                Section("Basics") {
+                    TextField("Name", text: $pet.name)
+                        .focused($nameTextFieldFocused)
+                        .overlay {
+                            VerificationCheckMark(condition: isNameVerified)
+                        }
                     
-                    Section("Basics") {
-                        TextField("Name", text: $pet.name)
-                            .focused($nameTextFieldFocused)
-                            .overlay {
-                                VerificationCheckMark(condition: isNameVerified)
-                            }
-                        
-                        Picker("Species", selection: $pet.species) {
-                            ForEach(PetSpecies.allCases, id: \.self) { species in
-                                Text(species.localizedDescription)
-                            }
-                        }
-                        .pickerStyle(.menu)
-                        
-                        Picker("Sex", selection: $pet.sex) {
-                            ForEach(PetSex.allCases, id: \.self) { sex in
-                                Text(sex.localizedDescription)
-                            }
-                        }
-                        .pickerStyle(.menu)
-                    }
-
-                    Section("Breed") {
-                        NavigationLink {
-                            PetBreedList(pet: pet)
-                        } label: {
-                            Text(
-                                pet.breed.isEmpty ? 
-                                String(localized: "Select a breed") : pet.breed
-                            )
-                            .foregroundStyle(
-                                pet.breed.isEmpty ? .gray.opacity(0.7) : .primary
-                            )
+                    Picker("Species", selection: $pet.species) {
+                        ForEach(PetSpecies.allCases, id: \.self) { species in
+                            Text(species.localizedDescription)
                         }
                     }
+                    .pickerStyle(.menu)
                     
-                    Section("Dates") {
-                        Toggle("Adopted", isOn: $pet.isAdopted.animation())
-                            .tint(.petsAccentBlue)
-                        
-                        DatePicker(
-                            "Birthday",
-                            selection: $pet.birthday,
-                            in: Date.distantPast ... .now,
-                            displayedComponents: .date
+                    Picker("Sex", selection: $pet.sex) {
+                        ForEach(PetSex.allCases, id: \.self) { sex in
+                            Text(sex.localizedDescription)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                }
+                
+                Section("Breed") {
+                    NavigationLink {
+                        PetBreedList(pet: pet)
+                    } label: {
+                        Text(
+                            pet.breed.isEmpty ?
+                            String(localized: "Select a breed") : pet.breed
                         )
+                        .foregroundStyle(
+                            pet.breed.isEmpty ? .gray.opacity(0.7) : .primary
+                        )
+                    }
+                }
+                
+                Section("Dates") {
+                    Toggle("Adopted", isOn: $pet.isAdopted.animation())
+                        .tint(.petsAccentBlue)
+                    
+                    DatePicker(
+                        "Birthday",
+                        selection: $pet.birthday,
+                        in: Date.distantPast ... .now,
+                        displayedComponents: .date
+                    )
+                    
+                    DatePicker(
+                        pet.isAdopted ? "Adopted on" : "On family since",
+                        selection: $pet.onFamilySince,
+                        in: pet.birthday ... .now,
+                        displayedComponents: .date
+                    )
+                }
+                
+                Section("Chip") {
+                    Picker("ID type", selection: $pet.chipID.type.animation()) {
+                        ForEach(ChipIDType.allCases, id: \.self) { type in
+                            Text(type.localizedDescription)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    
+                    if pet.chipID.type != .noChipID {
+                        TextField(
+                            chipIDNumberPlaceholderText,
+                            text: $pet.chipID.number
+                        )
+                        .keyboardType(.numbersAndPunctuation)
+                        .focused($chipTextFieldFocused)
+                        .onChange(of: pet.chipID.type) { oldValue, newValue in
+                            chipTextFieldFocused = true
+                        }
+                        .overlay {
+                            VerificationCheckMark(
+                                condition: isChipIDVerified
+                            )
+                        }
                         
                         DatePicker(
-                            pet.isAdopted ? "Adopted on" : "On family since",
-                            selection: $pet.onFamilySince,
+                            "Implanted on",
+                            selection: $pet.chipID.implantedDate,
                             in: pet.birthday ... .now,
                             displayedComponents: .date
                         )
-                    }
-                    
-                    Section("Chip") {
-                        Picker("ID type", selection: $pet.chipID.type.animation()) {
-                            ForEach(ChipIDType.allCases, id: \.self) { type in
-                                Text(type.localizedDescription)
-                            }
-                        }
-                        .pickerStyle(.menu)
                         
-                        if pet.chipID.type != .noChipID {
-                            TextField(
-                                chipIDNumberPlaceholderText,
-                                text: $pet.chipID.number
-                            )
-                            .keyboardType(.numbersAndPunctuation)
-                            .focused($chipTextFieldFocused)
-                            .onChange(of: pet.chipID.type) { oldValue, newValue in
-                                chipTextFieldFocused = true
-                            }
-                            .overlay {
-                                VerificationCheckMark(
-                                    condition: isChipIDVerified
-                                )
-                            }
-                            
-                            DatePicker(
-                                "Implanted on",
-                                selection: $pet.chipID.implantedDate,
-                                in: pet.birthday ... .now,
-                                displayedComponents: .date
-                            )
-                            
-                            TextField("Location", text: $pet.chipID.location)
-                        }
+                        TextField("Location", text: $pet.chipID.location)
                     }
                 }
             }
@@ -157,38 +155,40 @@ struct PetDetail: View {
                 if pet.name.isEmpty { nameTextFieldFocused = true }
             }
             .toolbar {
-                if isNew {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") {
-                            dismiss()
-                        }
-                    }
-                    
-                    ToolbarItem(placement: .primaryAction) {
-                        Button("Save") {
-                            modelContext.insert(pet)
-                            
-                            dismiss()
-                        }
-                        .disabled(!isFormVerified)
-                    }
-                } else {
-                    ToolbarItem(placement: .primaryAction) {
-                        Button("Done") { dismiss() }
-                            .disabled(!isFormVerified)
-                    }
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", action: dismissView)
                 }
+                
+                ToolbarItem(placement: .confirmationAction) {
+                    Group {
+                        if isNew {
+                            Button("Save") {
+                                modelContext.insert(pet)
+                                
+                                dismiss()
+                            }
+                        } else {
+                            Button("Done", action: dismissView)
+                        }                        
+                    }
+                    .disabled(!isFormVerified)
+                }
+                
             }
         }
     }
+    
+    private func dismissView() { dismiss() }
 }
 
 
 #Preview("New pet") {
     PetDetail(pet: Pet(), isNew: true)
+        .modelContainer(SampleData.shared.modelContainer)
 }
 
 #Preview("Existing pet") {
     PetDetail(pet: SampleData.shared.petWithChipID)
+        .modelContainer(SampleData.shared.modelContainer)
 }
 

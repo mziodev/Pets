@@ -107,6 +107,10 @@ struct WeightList: View {
                 WeightDetail(pet: pet, isNew: true)
             }
             .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", action: dismissView)
+                }
+                
                 ToolbarItem {
                     Button { showingAddWeightSheet.toggle() } label: {
                         Label("Add weight", systemImage: "plus")
