@@ -240,8 +240,8 @@
 		08833FF12C09CABB000FD0BF /* Pets */ = {
 			isa = PBXGroup;
 			children = (
-				082419E92C81BEBF008BE7D1 /* Pets.entitlements */,
 				08FD87BE2C300C7500CC9F9A /* Notes.md */,
+				082419E92C81BEBF008BE7D1 /* Pets.entitlements */,
 				08953B702C35A13E008C7D86 /* Localizable.xcstrings */,
 				08EEF0C92C22EE5B003ABFF9 /* Apps */,
 				08866F582C0F237700455EAE /* Custom types */,

@@ -24,6 +24,7 @@ struct PetBreedListRow: View {
                     .foregroundStyle(.petsAccentBlue)
             }
         }
+        .contentShape(Rectangle()) // for the getting tap gesture on the entire row
     }
 }
 
