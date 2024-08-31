@@ -116,7 +116,7 @@ struct VaccineDetail: View {
                     DatePicker(
                         isVaccineExpired ? "Ended" : "Ends",
                         selection: $vaccine.ends,
-                        in: pet.birthday ... .distantFuture,
+                        in: vaccine.starts ... .distantFuture,
                         displayedComponents: .date
                     )
                 } header: {

@@ -4,6 +4,12 @@
 - 94, 139, 178, 190
 
 
+## Weight
+- We should be able to add notes to each weight.
+- Weight chart should not show anything until have at least 3 weights ??
+- 12 month time period should show up when he have 12 months of weights. 
+
+
 ## Family Sharing
 
 

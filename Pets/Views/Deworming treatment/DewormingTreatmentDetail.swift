@@ -139,7 +139,7 @@ struct DewormingTreatmentDetail: View {
                     DatePicker(
                         "Ends",
                         selection: $dewormingTreatment.endingDate,
-                        in: pet.birthday ... .distantFuture,
+                        in: dewormingTreatment.startingDate ... .distantFuture,
                         displayedComponents: .date
                     )
                 }
