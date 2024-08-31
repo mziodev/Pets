@@ -63,7 +63,7 @@ struct PetCard: View {
                     .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showingChipID) {
-                PetChipInfo(pet: pet)
+                MicrochipInfo(pet: pet)
                     .presentationDetents([.medium])
                     .presentationDragIndicator(.visible)
             }
@@ -93,11 +93,11 @@ struct PetCard: View {
                 }
                 
                 ToolbarItem(placement: .status) {
-                    if pet.chipID.number.isEmpty {
-                        Text("No chip ID")
+                    if pet.chipID.type == .noChipID {
+                        Text("No Microchip")
                             .font(.subheadline.smallCaps())
                     } else {
-                        Button("Chip ID") { showingChipID = true }
+                        Button("Microchip") { showingChipID = true }
                             .font(.callout.smallCaps())
                             .bold()
                             .foregroundStyle(.petsAccentBlue)

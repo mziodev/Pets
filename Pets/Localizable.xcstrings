@@ -14,16 +14,6 @@
         }
       }
     },
-    "**Chip ID** number is been copied to the clipboard. Go to [https://petmaxx.com](https://www.petmaxx.com/) and paste it inside the 'Microchip Search' box." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se ha copiado el número del **Microchip ID** en el portapapeles. Ve a la web [https://petmaxx.com](https://www.petmaxx.com/) y cópialo dentro del cuadro de búsqueda 'Microchip Search'."
-          }
-        }
-      }
-    },
     "& %lld months" : {
       "localizations" : {
         "en" : {
@@ -80,17 +70,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@ – %2$@"
-          }
-        }
-      }
-    },
-    "%@ image" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imagen de %@"
           }
         }
       }
@@ -833,16 +812,6 @@
         }
       }
     },
-    "Chip ID Info" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Microchip Info"
-          }
-        }
-      }
-    },
     "Collar" : {
       "localizations" : {
         "es" : {
@@ -1416,6 +1385,36 @@
         }
       }
     },
+    "Microchip" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microchip"
+          }
+        }
+      }
+    },
+    "Microchip Info" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microchip Info"
+          }
+        }
+      }
+    },
+    "Microchip number is been copied to the clipboard. Go to [https://petmaxx.com](https://www.petmaxx.com/) and paste it inside the 'Microchip Search' box." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El número del Microchip se ha copiado en el portapapeles. Ve a [https://petmaxx.com](https://www.petmaxx.com/) y pégalo dentro de la caja de búsqueda 'Microchip Search'."
+          }
+        }
+      }
+    },
     "Miniature" : {
 
     },
@@ -1512,12 +1511,12 @@
         }
       }
     },
-    "No chip ID" : {
+    "No Microchip" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sin microchip ID"
+            "value" : "Sin Microchip"
           }
         }
       }

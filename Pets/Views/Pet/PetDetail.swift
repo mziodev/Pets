@@ -33,23 +33,28 @@ struct PetDetail: View {
             String(localized: "ID number (9 numeric digits)")
         }
     }
+    
     private var isNameVerified: Bool {
         pet.name.hasMinimumLength()
     }
+    
     private var isChipIDVerified: Bool {
-        Pet.chipIDValidators[pet.chipID.type]?(pet.chipID.number) ?? false
+        if pet.chipID.type == .noChipID {
+            true
+        } else {
+            Pet.chipIDValidators[pet.chipID.type]?(pet.chipID.number) ?? false
+        }
     }
+    
     private var isFormVerified: Bool {
         isNameVerified && isChipIDVerified
     }
     
-
     init(pet: Pet, isNew: Bool = false) {
         self.pet = pet
         self.isNew = isNew
     }
     
-
     var body: some View {
         NavigationStack {
             Form {

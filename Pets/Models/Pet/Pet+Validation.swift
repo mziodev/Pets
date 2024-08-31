@@ -14,7 +14,7 @@ extension Pet {
     /// closure that takes a `String` input (pet ID number) and returns a `Bool` indicating
     /// whether the input is valid for that Chip ID type.
     static var chipIDValidators: [ChipIDType: (String) -> Bool] = [
-        .noChipID: { $0.isEmpty },
+//        .noChipID: { $0.isEmpty },
         .fifteenDigit: { $0.count == 15 },
         .tenDigit: { $0.count == 10 },
         .nineDigit: { $0.count == 9 }

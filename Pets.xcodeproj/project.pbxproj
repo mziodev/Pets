@@ -82,7 +82,7 @@
 		08FD87B92C2DB0B200CC9F9A /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B82C2DB0B200CC9F9A /* Vaccine.swift */; };
 		08FD87BD2C30012F00CC9F9A /* PetBreedListEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87BC2C30012F00CC9F9A /* PetBreedListEmpty.swift */; };
 		08FD87C92C32ACBC00CC9F9A /* ChipID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87C82C32ACBC00CC9F9A /* ChipID.swift */; };
-		08FD87CB2C32B97D00CC9F9A /* PetChipInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87CA2C32B97D00CC9F9A /* PetChipInfo.swift */; };
+		08FD87CB2C32B97D00CC9F9A /* MicrochipInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87CA2C32B97D00CC9F9A /* MicrochipInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,7 +164,7 @@
 		08FD87BC2C30012F00CC9F9A /* PetBreedListEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedListEmpty.swift; sourceTree = "<group>"; };
 		08FD87BE2C300C7500CC9F9A /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = "<group>"; };
 		08FD87C82C32ACBC00CC9F9A /* ChipID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipID.swift; sourceTree = "<group>"; };
-		08FD87CA2C32B97D00CC9F9A /* PetChipInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetChipInfo.swift; sourceTree = "<group>"; };
+		08FD87CA2C32B97D00CC9F9A /* MicrochipInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrochipInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				08909CEE2C7F1B5D00C65D5A /* Array */,
-				08FD87C72C32AC9D00CC9F9A /* Chip */,
+				08FD87C72C32AC9D00CC9F9A /* Microchip */,
 				08EEF0CA2C22F7D0003ABFF9 /* Deworming treatment */,
 				08B585192C19E4010068D4B2 /* JSON */,
 				08B585172C19E3E20068D4B2 /* Pet */,
@@ -346,7 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				08833FE62C09CABB000FD0BF /* PetChipBarcode.swift */,
-				08FD87CA2C32B97D00CC9F9A /* PetChipInfo.swift */,
+				08FD87CA2C32B97D00CC9F9A /* MicrochipInfo.swift */,
 			);
 			path = "Pet Chip";
 			sourceTree = "<group>";
@@ -463,12 +463,12 @@
 			path = Vaccine;
 			sourceTree = "<group>";
 		};
-		08FD87C72C32AC9D00CC9F9A /* Chip */ = {
+		08FD87C72C32AC9D00CC9F9A /* Microchip */ = {
 			isa = PBXGroup;
 			children = (
 				08FD87C82C32ACBC00CC9F9A /* ChipID.swift */,
 			);
-			path = Chip;
+			path = Microchip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,7 +587,7 @@
 				08A29E3A2C1451AF00D45D98 /* Weight+SampleData.swift in Sources */,
 				08833FFC2C09CABB000FD0BF /* PetChipBarcode.swift in Sources */,
 				088340012C09CABB000FD0BF /* PetList.swift in Sources */,
-				08FD87CB2C32B97D00CC9F9A /* PetChipInfo.swift in Sources */,
+				08FD87CB2C32B97D00CC9F9A /* MicrochipInfo.swift in Sources */,
 				08DF543F2C1C4519003076B1 /* PetCardBreed.swift in Sources */,
 				087F5B582C1350A0005A7083 /* Pet+Validation.swift in Sources */,
 				08CACB3A2C78D9F10068AC60 /* PetSize.swift in Sources */,

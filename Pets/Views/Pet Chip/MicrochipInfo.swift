@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PetChipInfo: View {
+struct MicrochipInfo: View {
     @Environment(\.dismiss) var dismiss
     
     let pet: Pet
@@ -76,7 +76,7 @@ struct PetChipInfo: View {
                 
                 if showingChipIDNumberText {
                     Section {
-                        Text("**Chip ID** number is been copied to the clipboard. Go to [https://petmaxx.com](https://www.petmaxx.com/) and paste it inside the 'Microchip Search' box.")
+                        Text("Microchip number is been copied to the clipboard. Go to [https://petmaxx.com](https://www.petmaxx.com/) and paste it inside the 'Microchip Search' box.")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                             .padding(.horizontal)
@@ -84,7 +84,7 @@ struct PetChipInfo: View {
                     .listRowBackground(Color.clear)
                 }
             }
-            .navigationTitle("Chip ID Info")
+            .navigationTitle("Microchip Info")
             .navigationBarTitleDisplayMode(.inline)
             .listSectionSpacing(5)
             .toolbar {
@@ -102,5 +102,5 @@ struct PetChipInfo: View {
 }
 
 #Preview {
-    PetChipInfo(pet: SampleData.shared.petWithChipID)
+    MicrochipInfo(pet: SampleData.shared.petWithChipID)
 }
