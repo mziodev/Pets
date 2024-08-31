@@ -64,13 +64,13 @@ struct WeightDetail: View {
                             weight.value = newValue
                         }
                     }
-                    
-                    if !isNew {
-                        RowDeleteButton(
-                            title: "Delete Weight",
-                            showingAlert: $showingDeleteAlert
-                        )
-                    }
+                }
+                
+                if !isNew {
+                    RowDeleteButton(
+                        title: String(localized: "Delete Weight"),
+                        showingAlert: $showingDeleteAlert
+                    )
                 }
             }
             .scrollDismissesKeyboard(.immediately)

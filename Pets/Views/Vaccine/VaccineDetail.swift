@@ -146,7 +146,7 @@ struct VaccineDetail: View {
                 
                 if !isNew {
                     RowDeleteButton(
-                        title: "Delete Vaccine",
+                        title: String(localized: "Delete Vaccine"),
                         showingAlert: $showingDeleteAlert
                     )
                 }

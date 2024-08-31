@@ -871,6 +871,36 @@
         }
       }
     },
+    "Delete Treatment" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar Tratamiento"
+          }
+        }
+      }
+    },
+    "Delete Vaccine" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar Vacuna"
+          }
+        }
+      }
+    },
+    "Delete Weight" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar Peso"
+          }
+        }
+      }
+    },
     "Deworming treatment will deleted, are you sure?" : {
       "localizations" : {
         "es" : {
