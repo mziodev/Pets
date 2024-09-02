@@ -32,10 +32,17 @@ struct WeightListChart: View {
     }
 }
 
-
-#Preview {
+#Preview("Less than 3 weights") {
     WeightListChart(
-        weights: SampleData.shared.petWithChipID.unwrappedWeights.sortedByDate
+        weights: SampleData.shared.petWithExpiredVaccines.unwrappedWeights.sortedByDate
+    )
+    .frame(height: 240)
+    .padding()
+}
+
+#Preview("More than 3 weights") {
+    WeightListChart(
+        weights: SampleData.shared.petWithoutChipID.unwrappedWeights.sortedByDate
     )
     .frame(height: 240)
     .padding()

@@ -17,6 +17,7 @@ struct WeightDetail: View {
     @State private var weightValue: Double?
     @State private var editingWeight: Bool = false
     @State private var showingDeleteAlert: Bool = false
+    @State private var showingWeightAlert: Bool = false
     
     @FocusState private var weightTextFieldFocused
     
@@ -61,9 +62,21 @@ struct WeightDetail: View {
                         .onChange(
                             of: weightValue ?? 0
                         ) { oldValue, newValue in
-                            weight.value = newValue
+                            if newValue <= 350.0 {
+                                weight.value = 0
+                            } else {
+                                showingWeightAlert = true
+                            }
                         }
                     }
+                }
+                
+                Section("Notes") {
+                    TextField(
+                        "...",
+                        text: $weight.notes,
+                        axis: .vertical
+                    )
                 }
                 
                 if !isNew {
@@ -91,6 +104,12 @@ struct WeightDetail: View {
                 Button("Ok", role: .destructive, action: deleteWeight)
             } message: {
                 Text("This weight will be deleted, are you sure?")
+            }
+            .alert("Warning!", isPresented: $showingWeightAlert) {
+                Button("No!", role: .cancel, action: { })
+                Button("Yes", role: .destructive, action: deleteWeight)
+            } message: {
+                Text("Are you sure that \(pet.name) is \(String(format: "%.2f", weightValue ?? 0)) \(Format.weightUnits)?")
             }
             .toolbar {
                 if isNew {

@@ -106,7 +106,7 @@ struct WeightList: View {
             .sheet(isPresented: $showingAddWeightSheet) {
                 WeightDetail(pet: pet, isNew: true)
             }
-            .toolbar {   
+            .toolbar {
                 ToolbarItem {
                     Button { showingAddWeightSheet.toggle() } label: {
                         Label("Add weight", systemImage: "plus")

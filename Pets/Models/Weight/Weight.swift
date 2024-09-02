@@ -13,6 +13,7 @@ class Weight {
     var date: Date = Date.now
     var value: Double = 0
     var pet: Pet?
+    var notes: String = ""
     
     init(date: Date = .now, value: Double = 0) {
         self.date = date
