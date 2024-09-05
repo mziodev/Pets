@@ -13,13 +13,19 @@ struct PetList: View {
     
     @Environment(\.modelContext) var modelContext
     
-    @State private var showingAddPetSheet = false
+    @EnvironmentObject var petsStoreManager: PetsStoreManager
     
+    @State private var showingAddPet = false
+    @State private var showingPetsStore = false
+
+    private var premiumCheckedPets: [Pet] {
+        petsStoreManager.isPremiumUnlocked ? self.pets : pets.first.map { [$0] } ?? []
+    }
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(pets) { pet in
+                ForEach(premiumCheckedPets) { pet in
                     NavigationLink {
                         PetCard(pet: pet)
                     } label: {
@@ -32,13 +38,32 @@ struct PetList: View {
             .overlay {
                 if pets.isEmpty { PetListNoPets() }
             }
-            .sheet(isPresented: $showingAddPetSheet) {
-                PetDetail(pet: Pet(), isNew: true)
+            .sheet(isPresented: $showingAddPet) {
+                if pets.count >= 1 && !petsStoreManager.isPremiumUnlocked {
+                    PetsStore()
+                        .presentationDragIndicator(.visible)
+                } else {
+                    PetDetail(pet: Pet(), isNew: true)
+                }
+            }
+            .sheet(isPresented: $showingPetsStore) {
+                PetsStore()
+                    .presentationDragIndicator(.visible)
             }
             .toolbar {
+                if !petsStoreManager.isPremiumUnlocked {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            showingPetsStore = true
+                        } label: {
+                            PremiumButtonLabel()
+                        }
+                    }
+                }
+                
                 ToolbarItem(placement: .topBarTrailing) {
                     Button{
-                        showingAddPetSheet = true
+                        showingAddPet = true
                     } label: {
                         Label("Add pet", systemImage: "plus")
                     }
@@ -49,9 +74,11 @@ struct PetList: View {
                         EditButton()
                     }
                     
-                    ToolbarItem(placement: .status) {
-                        Text("\(pets.count) pets")
-                            .font(.caption)
+                    ToolbarItem(placement: .bottomBar) {
+                        ZStack {
+                            Text("\(premiumCheckedPets.count) pets")
+                                .font(.caption)
+                        }
                     }
                 }
             }
@@ -68,4 +95,5 @@ struct PetList: View {
 #Preview {
     PetList()
         .modelContainer(SampleData.shared.modelContainer)
+        .environmentObject(PetsStoreManager())
 }

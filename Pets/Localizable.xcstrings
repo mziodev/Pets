@@ -75,7 +75,14 @@
       }
     },
     "%@ photo" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ foto"
+          }
+        }
+      }
     },
     "%@ still will be protected %lld more days until next vaccine." : {
       "localizations" : {
@@ -649,6 +656,22 @@
         }
       }
     },
+    "Are you sure that %@ is %@ %@?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Are you sure that %1$@ is %2$@ %3$@?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seguro que %1$@ es %2$@ %3$@?"
+          }
+        }
+      }
+    },
     "Average weight" : {
       "localizations" : {
         "es" : {
@@ -1151,6 +1174,16 @@
     "Giant" : {
 
     },
+    "Go premium and get unlimited pets, deworming treatment and vaccine notifications, and notes." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pásate a Premium para poder añadir mascotas ilimitadas, notificaciones para desparasitaciones y vacunas, y notas."
+          }
+        }
+      }
+    },
     "Hairless" : {
 
     },
@@ -1591,6 +1624,9 @@
         }
       }
     },
+    "No!" : {
+
+    },
     "None (completely hairless)" : {
 
     },
@@ -1710,6 +1746,16 @@
         }
       }
     },
+    "Pets Store" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La tienda de Mascotas"
+          }
+        }
+      }
+    },
     "Pill" : {
       "localizations" : {
         "es" : {
@@ -1736,6 +1782,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ppm"
+          }
+        }
+      }
+    },
+    "Premium" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium"
           }
         }
       }
@@ -1776,6 +1832,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminar foto"
+          }
+        }
+      }
+    },
+    "Restore Purchases" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar Compras"
           }
         }
       }
@@ -2170,6 +2236,9 @@
       }
     },
     "Wiry" : {
+
+    },
+    "Yes" : {
 
     },
     "You have to select your pet species first." : {

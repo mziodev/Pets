@@ -23,7 +23,7 @@ class SampleData {
             Pet.self,
             Weight.self,
             DewormingTreatment.self,
-            Vaccine.self
+            Vaccine.self,
         ])
         
         let modelConfiguration = ModelConfiguration(

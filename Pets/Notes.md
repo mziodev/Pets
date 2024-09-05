@@ -34,6 +34,9 @@ We have to adaptate the app to properly render on an iPad.
 - Food brand, quantity, cost, shop link.
 - Food per day.
 
+### Weights
+- Add a notes field/property. 
+
 ### Vaccines
 - We need to store the cost? Or is included on the cost of consultation?
 

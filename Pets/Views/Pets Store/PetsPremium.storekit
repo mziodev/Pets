@@ -1,0 +1,90 @@
+{
+  "identifier" : "22000CD0",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : true,
+      "internalID" : "6670559967",
+      "localizations" : [
+        {
+          "description" : "Disfruta Mascotas con todas sus opciones",
+          "displayName" : "Mascotas Premium",
+          "locale" : "es_ES"
+        },
+        {
+          "description" : "Enjoy all of the Pets features",
+          "displayName" : "Pets Premium",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "dev.mzio.pets.premium",
+      "referenceName" : "Pets Premium",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6670243713",
+    "_developerTeamID" : "ZP4QTMB37S",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 747239745.12375498,
+    "_locale" : "es_ES",
+    "_storefront" : "ESP",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

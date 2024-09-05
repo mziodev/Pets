@@ -63,7 +63,7 @@ struct WeightDetail: View {
                             of: weightValue ?? 0
                         ) { oldValue, newValue in
                             if newValue <= 350.0 {
-                                weight.value = 0
+                                weight.value = newValue
                             } else {
                                 showingWeightAlert = true
                             }
