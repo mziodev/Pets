@@ -11,19 +11,30 @@ import SwiftUI
 struct WeightListChart: View {
     let weights: [Weight]
     
-    
     var body: some View {
         Chart {
             ForEach(weights) { weight in
                 BarMark(
                     x: .value(
-                        "Month",
-                        weight.date.formatted(
-                            .dateTime.month().day()
-                        )
+                        "Date",
+                        weight.date.monthAndDay
                     ),
                     y: .value("Weight", weight.value)
                 )
+            }
+            
+            if weights.count > 1 {
+                RuleMark(
+                    y: .value("Average", weights.averaging())
+                )
+                .foregroundStyle(.petsAccentRed)
+                .annotation(position: .top, alignment: .leading) {
+                    Text("Average")
+                        .foregroundStyle(.petsAccentRed)
+                        .font(.caption2.smallCaps())
+                        .fontDesign(.rounded)
+                        .bold()
+                }
             }
         }
         .chartScrollableAxes(.horizontal)

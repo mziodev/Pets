@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08012CF62C25C27E000C9418 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08012CF52C25C27E000C9418 /* Format.swift */; };
+		080343782C8AF8F6004F4249 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080343772C8AF8F6004F4249 /* Date+Format.swift */; };
 		080F40692C241DC60085CA65 /* DewormingTreatmentListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */; };
 		080F406F2C246FDC0085CA65 /* DewormingTreatmentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */; };
 		083766F42C89B7AE009255E1 /* PremiumButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083766F32C89B7AE009255E1 /* PremiumButtonLabel.swift */; };
@@ -93,6 +94,7 @@
 
 /* Begin PBXFileReference section */
 		08012CF52C25C27E000C9418 /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		080343772C8AF8F6004F4249 /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentListRow.swift; sourceTree = "<group>"; };
 		080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentDetail.swift; sourceTree = "<group>"; };
 		082419E92C81BEBF008BE7D1 /* Pets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pets.entitlements; sourceTree = "<group>"; };
@@ -191,6 +193,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080343762C8AF8CD004F4249 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				080343772C8AF8F6004F4249 /* Date+Format.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		083DAC562C33FE73001EDAA7 /* Vaccine */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +288,7 @@
 				08953B702C35A13E008C7D86 /* Localizable.xcstrings */,
 				08EEF0C92C22EE5B003ABFF9 /* Apps */,
 				08866F582C0F237700455EAE /* Custom types */,
+				080343762C8AF8CD004F4249 /* Extensions */,
 				08833FDE2C09CABB000FD0BF /* Models */,
 				08B585042C1718B90068D4B2 /* Services */,
 				08833FE22C09CABB000FD0BF /* Utitliies */,
@@ -624,6 +635,7 @@
 				083766F42C89B7AE009255E1 /* PremiumButtonLabel.swift in Sources */,
 				08CACB3C2C78DA020068AC60 /* CoatType.swift in Sources */,
 				083DAC5E2C3406C7001EDAA7 /* VaccineListRow.swift in Sources */,
+				080343782C8AF8F6004F4249 /* Date+Format.swift in Sources */,
 				08A29E3A2C1451AF00D45D98 /* Weight+SampleData.swift in Sources */,
 				08833FFC2C09CABB000FD0BF /* PetChipBarcode.swift in Sources */,
 				088340012C09CABB000FD0BF /* PetList.swift in Sources */,

@@ -79,7 +79,7 @@ struct WeightDetail: View {
                     )
                 }
                 
-                if !isNew {
+                if !isNew && editingWeight {
                     RowDeleteButton(
                         title: String(localized: "Delete Weight"),
                         showingAlert: $showingDeleteAlert
@@ -90,8 +90,6 @@ struct WeightDetail: View {
             .navigationTitle(isNew ? "Add Weight" : "Weight Details")
             .navigationBarTitleDisplayMode(.inline)
             .disabled(!editingWeight)
-            .overlay {
-            }
             .onAppear {
                 copyWeightValue()
                 

@@ -14,6 +14,9 @@
         }
       }
     },
+    "(Not enough data from %@)" : {
+
+    },
     "& %lld months" : {
       "localizations" : {
         "en" : {
@@ -672,12 +675,22 @@
         }
       }
     },
-    "Average weight" : {
+    "Average" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Peso promedio"
+            "value" : "Promedio"
+          }
+        }
+      }
+    },
+    "Average Weight" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso Promedio"
           }
         }
       }
@@ -1501,16 +1514,6 @@
         }
       }
     },
-    "Month" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mes"
-          }
-        }
-      }
-    },
     "more days" : {
       "localizations" : {
         "es" : {
@@ -1550,6 +1553,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nueva mascota"
+          }
+        }
+      }
+    },
+    "No average yet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin promedio todavía"
           }
         }
       }
@@ -1625,7 +1638,14 @@
       }
     },
     "No!" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No!"
+          }
+        }
+      }
     },
     "None (completely hairless)" : {
 

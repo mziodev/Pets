@@ -5,8 +5,7 @@
 
 
 ## Weight
-- Weight chart should not show anything until have at least 3 weights ??
-- 12 month time period should show up when we have 12 month interval of weights.
+- Add All dates time period ??
 
 
 ## Family Sharing
@@ -33,9 +32,6 @@ We have to adaptate the app to properly render on an iPad.
 ### Food control:
 - Food brand, quantity, cost, shop link.
 - Food per day.
-
-### Weights
-- Add a notes field/property. 
 
 ### Vaccines
 - We need to store the cost? Or is included on the cost of consultation?

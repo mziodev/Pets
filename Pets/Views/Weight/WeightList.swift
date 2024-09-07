@@ -21,23 +21,28 @@ struct WeightList: View {
     }
     
     private var selectedDateRangeWeights: [Weight] {
-        pet.unwrappedWeights.filteringAndSorting(
-            in: selectedDateRange
-        )
+        pet.unwrappedWeights.filteringAndSorting(in: selectedDateRange)
     }
     
-    var scrollPositionStartString: String {
-        pet.unwrappedWeights.reverseSortedByDate.last!.date.formatted(
-            .dateTime.month().day()
-        )
+    private var averageStartDate: Date {
+        pet.unwrappedWeights
+            .sortedByDate
+            .first(where: { selectedDateRange.contains($0.date) })?.date
+            ?? pet.unwrappedWeights.sortedByDate.first?.date
+            ?? Date.now
     }
     
-    var scrollPositionEndString: String {
-        pet.unwrappedWeights.reverseSortedByDate.first!.date.formatted(
-            .dateTime.month().day().year()
-        )
+    private var averageEndDate: Date {
+        pet.unwrappedWeights
+            .sortedByDate
+            .first(where: { selectedDateRange.contains($0.date) })?.date
+            ?? pet.unwrappedWeights.sortedByDate.last?.date
+            ?? Date.now
     }
     
+    private var averageStartDateToString: String {
+        averageStartDate.year != averageEndDate.year ? averageStartDate.monthDayYear : averageStartDate.monthAndDay
+    }
     
     var body: some View {
         NavigationStack {
@@ -59,32 +64,42 @@ struct WeightList: View {
                     
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading) {
-                            Text("Average weight")
+                            if !selectedDateRangeWeights.isEmpty && selectedDateRangeWeights.count > 1 {
+                                Text("Average Weight")
+                            } else {
+                                Text("No average yet")
+                            }
+                            
+                            if selectedDateRangeWeights.isEmpty {
+                                Text("(Not enough data from \(selectedTimePeriod.localizedDescription))")
+                                    .font(.caption)
+                            }
                             
                             Text(
-                                String(
+                                pet.unwrappedWeights.count > 1  && !selectedDateRangeWeights.isEmpty ? String(
                                     format: "%.2f %@",
-                                    locale: Locale.current,
                                     selectedDateRangeWeights.averaging(),
                                     Format.weightUnits
-                                )
+                                ) : "-"
                             )
                             .font(.largeTitle)
                             .fontDesign(.rounded)
                             .bold()
                             .foregroundStyle(.accent)
                             
-                            Text("\(scrollPositionStartString) – \(scrollPositionEndString)")
+                            Text("\(averageStartDateToString) – \(averageEndDate.monthDayYear)")
                                 .foregroundStyle(.secondary)
                         }
                         .padding(.horizontal, 5)
                         
                         WeightListChart(weights: selectedDateRangeWeights)
-                        .frame(height: 240)
-                        .padding(.horizontal, 5)
+                            .frame(height: 240)
+                            .padding(.horizontal, 5)
                     }
                     .padding(.horizontal)
                     .padding(.top, 2)
+                    if pet.unwrappedWeights.count > 1 {
+                    }
                     
                     List {
                         Section("Weight List (\(Format.weightUnits))") {
