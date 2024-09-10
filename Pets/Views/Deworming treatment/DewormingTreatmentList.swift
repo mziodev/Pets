@@ -24,7 +24,7 @@ struct DewormingTreatmentList: View {
                             ForEach(
                                 pet.unwrappedDewormingTreatments.reverseSortedByActiveDays
                             ) { treatment in
-                                if (treatment.activeDays > 0) {
+                                if (treatment.activeDays >= 0) {
                                     NavigationLink{
                                         DewormingTreatmentDetail(
                                             pet: pet,
@@ -45,7 +45,7 @@ struct DewormingTreatmentList: View {
                             ForEach(
                                 pet.unwrappedDewormingTreatments.reverseSortedByActiveDays
                             ) { treatment in
-                                if (treatment.activeDays <= 0) {
+                                if (treatment.activeDays < 0) {
                                     NavigationLink{
                                         DewormingTreatmentDetail(
                                             pet: pet,

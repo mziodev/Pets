@@ -104,8 +104,8 @@ struct WeightDetail: View {
                 Text("This weight will be deleted, are you sure?")
             }
             .alert("Warning!", isPresented: $showingWeightAlert) {
-                Button("No!", role: .cancel, action: { })
-                Button("Yes", role: .destructive, action: deleteWeight)
+                Button("Nooo!", role: .cancel, action: { })
+                Button("Yes", role: .destructive, action: { })
             } message: {
                 Text("Are you sure that \(pet.name) is \(String(format: "%.2f", weightValue ?? 0)) \(Format.weightUnits)?")
             }

@@ -16,11 +16,13 @@ class DewormingTreatment {
     var quantity: Double = 0
     var startingDate: Date = Date.now
     var endingDate: Date = Date.now
+    var notification: NotificationPeriod = NotificationPeriod.none
+    var notificationTime: Date = Date.now
     var notes: String = ""
     var pet: Pet? = nil
     
     var activeDays: Int {
-        Int(endingDate.timeIntervalSince(.now) / 86400)
+        Int(ceil(endingDate.timeIntervalSince(.now) / 86400))
     }
     
     init(
@@ -30,6 +32,8 @@ class DewormingTreatment {
         quantity: Double = 0,
         startingDate: Date = .now,
         endingDate: Date = .now,
+        notification: NotificationPeriod = .none,
+        notificationTime: Date = .now,
         notes: String = "",
         pet: Pet? = nil
     ) {
@@ -39,6 +43,8 @@ class DewormingTreatment {
         self.quantity = quantity
         self.startingDate = startingDate
         self.endingDate = endingDate
+        self.notification = notification
+        self.notificationTime = notificationTime
         self.notes = notes
         self.pet = pet
     }    

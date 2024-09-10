@@ -35,7 +35,7 @@ struct WeightList: View {
     private var averageEndDate: Date {
         pet.unwrappedWeights
             .sortedByDate
-            .first(where: { selectedDateRange.contains($0.date) })?.date
+            .last(where: { selectedDateRange.contains($0.date) })?.date
             ?? pet.unwrappedWeights.sortedByDate.last?.date
             ?? Date.now
     }

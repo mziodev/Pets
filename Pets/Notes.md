@@ -5,9 +5,19 @@
 
 
 ## Notifications
+- Fix notification message: it's showing the same treatment name on all messages. ✅
+- Fix time form field: it should be shown when is been setted up. ✅
+- Limit notifications just to the Premium users.
+
+
+## Deworming Treatment
+- Check active days algorithm, maybe is counting a day behind. ✅
 
 
 ## Weight
+- Fix average weight time intervals, it's showing the same date on both of them. ✅
+- Fix PetCard weight: it should be showing the last weight. ✅
+- Fix wrong weight alert Yes action: it should delete the amount and let to input a new one. ✅
 - Add All dates time period ??
 
 

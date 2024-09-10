@@ -7,6 +7,7 @@
 
 import SwiftData
 import SwiftUI
+import UserNotifications
 
 struct DewormingTreatmentDetail: View {
     @Environment(\.dismiss) var dismiss
@@ -16,8 +17,9 @@ struct DewormingTreatmentDetail: View {
     @State var dewormingTreatment: DewormingTreatment
     
     @State private var treatmentQuantity: Double?
-    @State private var editingTreatment: Bool = false
-    @State private var showingDeleteAlert: Bool = false
+    @State private var editingTreatment = false
+    @State private var showingNotificationTime = false
+    @State private var showingDeleteAlert = false
     
     @FocusState private var treatmentNameTextFieldFocused: Bool
     
@@ -53,18 +55,20 @@ struct DewormingTreatmentDetail: View {
                         Spacer()
                         
                         VStack {
-                            Label(
-                                dewormingTreatment.type.rawValue,
-                                systemImage: dewormingTreatment.type.systemImage
+                            Image(
+                                systemName: dewormingTreatment.type.systemImage
                             )
-                            .labelStyle(.iconOnly)
                             .font(.system(size: 70))
                             .foregroundStyle(.petsAccentBlue)
+                            .accessibilityLabel(
+                                dewormingTreatment.type.localizedDescription
+                            )
                             
                             Text("\(pet.name)'s deworming treatment")
                                 .font(.title3)
                                 .padding(.top)
                         }
+                        .animation(.default, value: dewormingTreatment.type)
                         
                         Spacer()
                     }
@@ -83,7 +87,7 @@ struct DewormingTreatmentDetail: View {
                     
                     Picker(
                         "Treatment type",
-                        selection: $dewormingTreatment.type.animation()
+                        selection: $dewormingTreatment.type
                     ) {
                         ForEach(
                             TreatmentType.allCases,
@@ -127,6 +131,7 @@ struct DewormingTreatmentDetail: View {
                         )
                     }
                 }
+                .disabled(!editingTreatment)
                 
                 Section("Dates") {
                     DatePicker(
@@ -142,7 +147,32 @@ struct DewormingTreatmentDetail: View {
                         in: dewormingTreatment.startingDate ... .distantFuture,
                         displayedComponents: .date
                     )
+                    
+                    Picker(
+                        "Notification",
+                        selection: $dewormingTreatment.notification) {
+                            ForEach(NotificationPeriod.allCases, id: \.self) { period in
+                                Text(period.localizedDescription)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        .onChange(of: dewormingTreatment.notification) { oldValue, newValue in
+                            withAnimation {
+                                showingNotificationTime = dewormingTreatment.notification != .none
+                            }
+                            
+                            Notification.requestAuthorization()
+                        }
+                    
+                    if showingNotificationTime {
+                        DatePicker(
+                            "Notification Time",
+                            selection: $dewormingTreatment.notificationTime,
+                            displayedComponents: .hourAndMinute
+                        )
+                    }
                 }
+                .disabled(!editingTreatment)
                 
                 Section("Notes") {
                     TextField(
@@ -151,8 +181,9 @@ struct DewormingTreatmentDetail: View {
                         axis: .vertical
                     )
                 }
+                .disabled(!editingTreatment)
                 
-                if !isNew {
+                if !isNew && editingTreatment {
                     RowDeleteButton(
                         title: String(localized: "Delete Treatment"),
                         showingAlert: $showingDeleteAlert
@@ -161,12 +192,14 @@ struct DewormingTreatmentDetail: View {
             }
             .scrollDismissesKeyboard(.interactively)
             .navigationTitle(isNew ? "Add Treatment" : "Treatment Details")
-            .disabled(!editingTreatment)
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 copyDewormingTreatmentQuantity()
                 
                 if isNew { editingTreatment = true }
+                if dewormingTreatment.notification != .none {
+                    showingNotificationTime = true
+                }
                 
                 treatmentNameTextFieldFocused = true
             }
@@ -210,6 +243,16 @@ struct DewormingTreatmentDetail: View {
     
     private func appendDewormingTreatment() {
         pet.dewormingTreatments?.append(dewormingTreatment)
+        
+        if dewormingTreatment.notification != .none {
+            Notification.schedule(
+                title: "Deworming Treatment Warning",
+                body: "\(pet.name) is running out of \(dewormingTreatment.name) coverage.",
+                targetDate: dewormingTreatment.endingDate,
+                daysBefore: dewormingTreatment.notification.value,
+                notificationTime: dewormingTreatment.notificationTime
+            )
+        }
         
         dismiss()
     }

@@ -17,7 +17,7 @@ extension Array where Element == Weight {
     }
     
     var currentWeight: Double {
-        self.first?.value ?? 0
+        self.reverseSortedByDate.first?.value ?? 0
     }
     
     func filteringAndSorting(in range: ClosedRange<Date>) -> [Weight] {

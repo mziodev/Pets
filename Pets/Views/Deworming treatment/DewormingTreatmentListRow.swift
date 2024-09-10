@@ -12,7 +12,7 @@ struct DewormingTreatmentListRow: View {
     
     private let daysRange = 7...15
     private var isTreatmentExpired: Bool {
-        dewormingTreatment.activeDays < 1
+        dewormingTreatment.activeDays < 0
     }
     
     var activeTreatmentDaysColor: Color {
@@ -71,6 +71,9 @@ struct DewormingTreatmentListRow: View {
             }
         }
         .foregroundStyle(isTreatmentExpired ? .secondary : .primary)
+        .onAppear {
+            print(dewormingTreatment.activeDays)
+        }
     }
 }
 

@@ -103,7 +103,7 @@ struct VaccineDetail: View {
                         Text(isVaccineExpired ? "\(pet.name) was protected against \(vaccine.type.localizedDescription)." : "\(pet.name) will be protected against \(vaccine.type.localizedDescription).")
                     }
                 }
-                
+                .disabled(!editingVaccine)
                 
                 Section {
                     DatePicker(
@@ -135,6 +135,7 @@ struct VaccineDetail: View {
                         Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
                     }
                 }
+                .disabled(!editingVaccine)
                 
                 Section("Notes") {
                     TextField(
@@ -143,8 +144,9 @@ struct VaccineDetail: View {
                         axis: .vertical
                     )
                 }
+                .disabled(!editingVaccine)
                 
-                if !isNew {
+                if !isNew && editingVaccine {
                     RowDeleteButton(
                         title: String(localized: "Delete Vaccine"),
                         showingAlert: $showingDeleteAlert
@@ -153,7 +155,6 @@ struct VaccineDetail: View {
             }
             .navigationTitle(isNew ? "Add Vaccine" : "Vaccine Details")
             .navigationBarTitleDisplayMode(.inline)
-            .disabled(!editingVaccine)
             .onAppear {
                 if isNew { editingVaccine = true }
                 
