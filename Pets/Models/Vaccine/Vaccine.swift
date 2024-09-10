@@ -14,6 +14,8 @@ class Vaccine {
     var type: VaccineType = VaccineType.unknown
     var starts: Date = Date.now
     var ends: Date = Date.now
+    var notification: NotificationPeriod = NotificationPeriod.none
+    var notificationTime: Date = Date.now
     var notes: String = ""
     var pet: Pet?
     

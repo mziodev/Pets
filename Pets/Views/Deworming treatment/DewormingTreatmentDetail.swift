@@ -11,6 +11,7 @@ import UserNotifications
 
 struct DewormingTreatmentDetail: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var petsStoreManager: PetsStoreManager
     
     @Bindable var pet: Pet
     
@@ -148,40 +149,44 @@ struct DewormingTreatmentDetail: View {
                         displayedComponents: .date
                     )
                     
-                    Picker(
-                        "Notification",
-                        selection: $dewormingTreatment.notification) {
-                            ForEach(NotificationPeriod.allCases, id: \.self) { period in
-                                Text(period.localizedDescription)
+                    if petsStoreManager.isPremiumUnlocked {
+                        Picker(
+                            "Notification",
+                            selection: $dewormingTreatment.notification) {
+                                ForEach(NotificationPeriod.allCases, id: \.self) { period in
+                                    Text(period.localizedDescription)
+                                }
                             }
-                        }
-                        .pickerStyle(.menu)
-                        .onChange(of: dewormingTreatment.notification) { oldValue, newValue in
-                            withAnimation {
-                                showingNotificationTime = dewormingTreatment.notification != .none
+                            .pickerStyle(.menu)
+                            .onChange(of: dewormingTreatment.notification) { oldValue, newValue in
+                                withAnimation {
+                                    showingNotificationTime = dewormingTreatment.notification != .none
+                                }
+                                
+                                Notification.requestAuthorization()
                             }
-                            
-                            Notification.requestAuthorization()
+                        
+                        if showingNotificationTime {
+                            DatePicker(
+                                "Notification Time",
+                                selection: $dewormingTreatment.notificationTime,
+                                displayedComponents: .hourAndMinute
+                            )
                         }
-                    
-                    if showingNotificationTime {
-                        DatePicker(
-                            "Notification Time",
-                            selection: $dewormingTreatment.notificationTime,
-                            displayedComponents: .hourAndMinute
-                        )
                     }
                 }
                 .disabled(!editingTreatment)
                 
-                Section("Notes") {
-                    TextField(
-                        "...",
-                        text: $dewormingTreatment.notes,
-                        axis: .vertical
-                    )
+                if petsStoreManager.isPremiumUnlocked {
+                    Section("Notes") {
+                        TextField(
+                            "...",
+                            text: $dewormingTreatment.notes,
+                            axis: .vertical
+                        )
+                    }
+                    .disabled(!editingTreatment)
                 }
-                .disabled(!editingTreatment)
                 
                 if !isNew && editingTreatment {
                     RowDeleteButton(
@@ -197,7 +202,7 @@ struct DewormingTreatmentDetail: View {
                 copyDewormingTreatmentQuantity()
                 
                 if isNew { editingTreatment = true }
-                if dewormingTreatment.notification != .none {
+                if petsStoreManager.isPremiumUnlocked && dewormingTreatment.notification != .none {
                     showingNotificationTime = true
                 }
                 
@@ -280,6 +285,7 @@ struct DewormingTreatmentDetail: View {
         pet: SampleData.shared.petWithChipID,
         isNew: true
     )
+    .environmentObject(PetsStoreManager())
 }
 
 #Preview("Existing deworming") {
@@ -287,4 +293,5 @@ struct DewormingTreatmentDetail: View {
         pet: SampleData.shared.petWithChipID,
         dewormingTreatment: SampleData.shared.petWithChipID.unwrappedDewormingTreatments[0]
     )
+    .environmentObject(PetsStoreManager())
 }

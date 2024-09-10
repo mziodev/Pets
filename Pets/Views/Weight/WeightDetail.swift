@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WeightDetail: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var petsStoreManager: PetsStoreManager
     
     @Bindable var pet: Pet
     
@@ -71,12 +72,14 @@ struct WeightDetail: View {
                     }
                 }
                 
-                Section("Notes") {
-                    TextField(
-                        "...",
-                        text: $weight.notes,
-                        axis: .vertical
-                    )
+                if petsStoreManager.isPremiumUnlocked {
+                    Section("Notes") {
+                        TextField(
+                            "...",
+                            text: $weight.notes,
+                            axis: .vertical
+                        )
+                    }
                 }
                 
                 if !isNew && editingWeight {
@@ -161,8 +164,13 @@ struct WeightDetail: View {
 
 #Preview("New weight") {
     WeightDetail(pet: SampleData.shared.petWithChipID, isNew: true)
+        .environmentObject(PetsStoreManager())
 }
 
 #Preview("Existing weight") {
-    WeightDetail(pet: SampleData.shared.petWithChipID, weight: Weight.sampleData[0])
+    WeightDetail(
+        pet: SampleData.shared.petWithChipID,
+        weight: Weight.sampleData[0]
+    )
+    .environmentObject(PetsStoreManager())
 }

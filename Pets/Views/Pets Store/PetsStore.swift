@@ -13,20 +13,48 @@ struct PetsStore: View {
     @EnvironmentObject var petsStoreManager: PetsStoreManager
     
     private let premiumFeatures = """
-    · Unlimited pets
-    · Notifications
-    · Notes
+    Buy Premium and get:
+    
+    ✅ Unlimited pets.
+    ✅ Vaccine and Deworming Treatment notifications.
+    ✅ Weights, Vaccines and Deworming Treatment notes.
     """
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(alignment: .leading) {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Go premium and get unlimited pets, deworming treatment and vaccine notifications, and notes.")
-                        .font(.title3)
+                    Text("Buy Premium and get:")
+                        .font(.headline)
+                    
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack {
+                            Image(systemName: "checkmark.seal")
+                                .symbolRenderingMode(.palette)
+                                .foregroundStyle(.petsAccentRed, .petsAccentBlue)
+                            
+                            Text("Unlimited pets.")
+                        }
+                        
+                        HStack {
+                            Image(systemName: "checkmark.seal")
+                                .symbolRenderingMode(.palette)
+                                .foregroundStyle(.petsAccentRed, .petsAccentBlue)
+                            
+                            Text("Vaccine and Deworming Treatment notifications.")
+                        }
+                        
+                        HStack {
+                            Image(systemName: "checkmark.seal")
+                                .symbolRenderingMode(.palette)
+                                .foregroundStyle(.petsAccentRed, .petsAccentBlue)
+                            
+                            Text("Weights, Vaccines and Deworming Treatment notes.")
+                        }
+                    }
+                    .padding(.top)
                 }
-                .padding(.top, 30)
-                .padding(.bottom, 10)
+                .padding()
                 
                 if let product = petsStoreManager.products.first {
                     ProductView(id: product.id) {

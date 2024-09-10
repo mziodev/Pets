@@ -10,12 +10,14 @@ import SwiftUI
 
 struct VaccineDetail: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var petsStoreManager: PetsStoreManager
     
     @Bindable var pet: Pet
     
     @State var vaccine: Vaccine
     
     @State private var editingVaccine: Bool = false
+    @State private var showingNotificationTime = false
     @State private var showingDeleteAlert: Bool = false
     
     @FocusState private var vaccineNameTextFieldFocused: Bool
@@ -119,6 +121,32 @@ struct VaccineDetail: View {
                         in: vaccine.starts ... .distantFuture,
                         displayedComponents: .date
                     )
+                    
+                    if petsStoreManager.isPremiumUnlocked {
+                        Picker(
+                            "Notification",
+                            selection: $vaccine.notification) {
+                                ForEach(NotificationPeriod.allCases, id: \.self) { period in
+                                    Text(period.localizedDescription)
+                                }
+                            }
+                            .pickerStyle(.menu)
+                            .onChange(of: vaccine.notification) { oldValue, newValue in
+                                withAnimation {
+                                    showingNotificationTime = vaccine.notification != .none
+                                }
+                                
+                                Notification.requestAuthorization()
+                            }
+                        
+                        if showingNotificationTime {
+                            DatePicker(
+                                "Notification Time",
+                                selection: $vaccine.notificationTime,
+                                displayedComponents: .hourAndMinute
+                            )
+                        }
+                    }
                 } header: {
                     Text("Dates")
                 } footer: {
@@ -137,14 +165,45 @@ struct VaccineDetail: View {
                 }
                 .disabled(!editingVaccine)
                 
-                Section("Notes") {
-                    TextField(
-                        "...",
-                        text: $vaccine.notes,
-                        axis: .vertical
-                    )
+                if petsStoreManager.isPremiumUnlocked {
+                    Section("Notes") {
+                        TextField(
+                            "...",
+                            text: $vaccine.notes,
+                            axis: .vertical
+                        )
+                    }
+                    .disabled(!editingVaccine)
                 }
-                .disabled(!editingVaccine)
+                
+                if !petsStoreManager.isPremiumUnlocked {
+                    Section {
+                        HStack {
+                            VStack {
+                                Text("Unlock Notes, Notifications and some other features with Pets Premium.")
+                                    .font(.caption)
+                                
+                                HStack {
+                                    Spacer()
+                                    
+                                    Button {
+                                        
+                                    } label: {
+                                        Label("go Premium!", systemImage: "crown")
+                                            .bold()
+                                    }
+                                    .frame(width: 200, height: 44)
+                                    .background(Color.petsAccentRed)
+                                    .foregroundStyle(.white)
+                                    .clipShape(.rect(cornerRadius: 30))
+                                    .padding(.top)
+                                    
+                                    Spacer()
+                                }
+                            }
+                        }
+                    }
+                }
                 
                 if !isNew && editingVaccine {
                     RowDeleteButton(
@@ -209,12 +268,12 @@ struct VaccineDetail: View {
     }
 }
 
-
 #Preview("New vaccine") {
     VaccineDetail(
         pet: SampleData.shared.petWithoutSpecies,
         isNew: true
     )
+    .environmentObject(PetsStoreManager())
 }
 
 #Preview("Existing vaccine") {
@@ -222,6 +281,7 @@ struct VaccineDetail: View {
         pet: SampleData.shared.petWithChipID,
         vaccine: SampleData.shared.petWithChipID.unwrappedVaccines[0]
     )
+    .environmentObject(PetsStoreManager())
 }
 
 #Preview("Expired vaccine") {
@@ -229,4 +289,5 @@ struct VaccineDetail: View {
         pet: SampleData.shared.petWithChipID,
         vaccine: SampleData.shared.petWithExpiredVaccines.unwrappedVaccines[1]
     )
+    .environmentObject(PetsStoreManager())
 }

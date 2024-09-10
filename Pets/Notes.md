@@ -4,20 +4,30 @@
 - 94, 139, 178, 190
 
 
+## Premium
+✅ Improve store text, look and feel.
+- Add text on places it supposed to be a premium feature.
+
+
+## Pets
+- Add manual sorting to PetList.
+
+
 ## Notifications
-- Fix notification message: it's showing the same treatment name on all messages. ✅
-- Fix time form field: it should be shown when is been setted up. ✅
-- Limit notifications just to the Premium users.
+✅ Fix notification message: it's showing the same treatment name on all messages.
+✅ Fix time form field: it should be shown when is been setted up.
+✅ Add notifications to vaccines and deworming treatments.
+✅ Limit notifications just to the Premium users on deworming, vaccines and weights.
 
 
 ## Deworming Treatment
-- Check active days algorithm, maybe is counting a day behind. ✅
+✅ Check active days algorithm, maybe is counting a day behind.
 
 
 ## Weight
-- Fix average weight time intervals, it's showing the same date on both of them. ✅
-- Fix PetCard weight: it should be showing the last weight. ✅
-- Fix wrong weight alert Yes action: it should delete the amount and let to input a new one. ✅
+✅ Fix average weight time intervals, it's showing the same date on both of them.
+✅ Fix PetCard weight: it should be showing the last weight.
+✅ Fix wrong weight alert Yes action: it should delete the amount and let to input a new one.
 - Add All dates time period ??
 
 
