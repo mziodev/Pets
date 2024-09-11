@@ -16,9 +16,12 @@ struct VaccineDetail: View {
     
     @State var vaccine: Vaccine
     
-    @State private var editingVaccine: Bool = false
+    @State private var petsStoreAdText = "Unlock Vaccine Notes, Notifications and some other features with Pets Premium."
+    @State private var editingVaccine = false
+    
+    @State private var showingPetsStore = false
     @State private var showingNotificationTime = false
-    @State private var showingDeleteAlert: Bool = false
+    @State private var showingDeleteAlert = false
     
     @FocusState private var vaccineNameTextFieldFocused: Bool
     
@@ -176,33 +179,11 @@ struct VaccineDetail: View {
                     .disabled(!editingVaccine)
                 }
                 
-                if !petsStoreManager.isPremiumUnlocked {
-                    Section {
-                        HStack {
-                            VStack {
-                                Text("Unlock Notes, Notifications and some other features with Pets Premium.")
-                                    .font(.caption)
-                                
-                                HStack {
-                                    Spacer()
-                                    
-                                    Button {
-                                        
-                                    } label: {
-                                        Label("go Premium!", systemImage: "crown")
-                                            .bold()
-                                    }
-                                    .frame(width: 200, height: 44)
-                                    .background(Color.petsAccentRed)
-                                    .foregroundStyle(.white)
-                                    .clipShape(.rect(cornerRadius: 30))
-                                    .padding(.top)
-                                    
-                                    Spacer()
-                                }
-                            }
-                        }
-                    }
+                if !petsStoreManager.isPremiumUnlocked && editingVaccine {
+                    GoPremiumAd(
+                        showingPetsStore: $showingPetsStore,
+                        adText: petsStoreAdText
+                    )
                 }
                 
                 if !isNew && editingVaccine {
@@ -218,6 +199,10 @@ struct VaccineDetail: View {
                 if isNew { editingVaccine = true }
                 
                 vaccineNameTextFieldFocused = true
+            }
+            .sheet(isPresented: $showingPetsStore) {
+                PetsStore()
+                    .presentationDragIndicator(.visible)
             }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
                 Button("Cancel", role: .cancel, action: { })

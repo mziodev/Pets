@@ -51,13 +51,13 @@ struct PetList: View {
                     .presentationDragIndicator(.visible)
             }
             .toolbar {
-                if !petsStoreManager.isPremiumUnlocked {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button {
-                            showingPetsStore = true
-                        } label: {
-                            PremiumButtonLabel()
-                        }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        showingPetsStore = true
+                    } label: {
+                        PremiumButtonLabel(
+                            isPremium: petsStoreManager.isPremiumUnlocked
+                        )
                     }
                 }
                 
@@ -84,7 +84,6 @@ struct PetList: View {
             }
         }
     }
-    
 
     private func deletePets(offsets: IndexSet) {
         offsets.forEach { modelContext.delete(pets[$0]) }

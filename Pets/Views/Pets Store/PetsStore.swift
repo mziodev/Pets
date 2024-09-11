@@ -22,7 +22,7 @@ struct PetsStore: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading) {
+            VStack {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Buy Premium and get:")
                         .font(.headline)
@@ -60,7 +60,14 @@ struct PetsStore: View {
                     ProductView(id: product.id) {
                         Image(systemName: "crown.fill")
                             .font(.system(size: 90))
-                            .foregroundStyle(.petsAccentBlue)
+                            .foregroundStyle(
+                                Gradient(
+                                    colors: [
+                                        .petsAccentRed,
+                                        .petsAccentBlue
+                                    ]
+                                )
+                            )
                     }
                     .padding(.vertical, 20)
                     .padding(.horizontal, 50)

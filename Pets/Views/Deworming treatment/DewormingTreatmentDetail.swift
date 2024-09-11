@@ -19,6 +19,9 @@ struct DewormingTreatmentDetail: View {
     
     @State private var treatmentQuantity: Double?
     @State private var editingTreatment = false
+    @State private var petsStoreAdText = "Unlock Deworming Treatment Notes, Notifications and some other features with Pets Premium."
+    
+    @State private var showingPetsStore = false
     @State private var showingNotificationTime = false
     @State private var showingDeleteAlert = false
     
@@ -188,6 +191,13 @@ struct DewormingTreatmentDetail: View {
                     .disabled(!editingTreatment)
                 }
                 
+                if !petsStoreManager.isPremiumUnlocked && editingTreatment {
+                    GoPremiumAd(
+                        showingPetsStore: $showingPetsStore,
+                        adText: petsStoreAdText
+                    )
+                }
+                
                 if !isNew && editingTreatment {
                     RowDeleteButton(
                         title: String(localized: "Delete Treatment"),
@@ -207,6 +217,10 @@ struct DewormingTreatmentDetail: View {
                 }
                 
                 treatmentNameTextFieldFocused = true
+            }
+            .sheet(isPresented: $showingPetsStore) {
+                PetsStore()
+                    .presentationDragIndicator(.visible)
             }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
                 Button("Cancel", role: .cancel, action: { })

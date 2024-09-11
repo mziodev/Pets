@@ -6,7 +6,7 @@
 
 ## Premium
 ✅ Improve store text, look and feel.
-- Add text on places it supposed to be a premium feature.
+✅ Add text on places it supposed to be a premium feature
 
 
 ## Pets

@@ -16,9 +16,12 @@ struct WeightDetail: View {
     @State var weight: Weight
     
     @State private var weightValue: Double?
-    @State private var editingWeight: Bool = false
-    @State private var showingDeleteAlert: Bool = false
-    @State private var showingWeightAlert: Bool = false
+    @State private var editingWeight = false
+    @State private var petsStoreAdText = "Unlock Weight Notes and some other features with Pets Premium."
+    
+    @State private var showingPetsStore = false
+    @State private var showingDeleteAlert = false
+    @State private var showingWeightAlert = false
     
     @FocusState private var weightTextFieldFocused
     
@@ -82,6 +85,13 @@ struct WeightDetail: View {
                     }
                 }
                 
+                if !petsStoreManager.isPremiumUnlocked && editingWeight {
+                    GoPremiumAd(
+                        showingPetsStore: $showingPetsStore,
+                        adText: petsStoreAdText
+                    )
+                }
+                
                 if !isNew && editingWeight {
                     RowDeleteButton(
                         title: String(localized: "Delete Weight"),
@@ -99,6 +109,10 @@ struct WeightDetail: View {
                 if isNew { editingWeight = true }
                 
                 weightTextFieldFocused = true
+            }
+            .sheet(isPresented: $showingPetsStore) {
+                PetsStore()
+                    .presentationDragIndicator(.visible)
             }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
                 Button("Cancel", role: .cancel, action: { })

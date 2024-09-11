@@ -792,6 +792,16 @@
         }
       }
     },
+    "Buy Premium and get:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compra Premium y consigue:"
+          }
+        }
+      }
+    },
     "Buzzed" : {
 
     },
@@ -1224,12 +1234,22 @@
     "Giant" : {
 
     },
-    "Go premium and get unlimited pets, deworming treatment and vaccine notifications, and notes." : {
+    "go Premium" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pásate a Premium para poder añadir mascotas ilimitadas, notificaciones para desparasitaciones y vacunas, y notas."
+            "value" : "pásate a Premium"
+          }
+        }
+      }
+    },
+    "go Premium!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pásate a Premium!"
           }
         }
       }
@@ -1674,17 +1694,6 @@
         }
       }
     },
-    "No!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No!"
-          }
-        }
-      }
-    },
     "None" : {
       "localizations" : {
         "es" : {
@@ -1699,7 +1708,14 @@
 
     },
     "Nooo!" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nooo!"
+          }
+        }
+      }
     },
     "Notes" : {
       "localizations" : {
@@ -1873,16 +1889,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ppm"
-          }
-        }
-      }
-    },
-    "Premium" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Premium"
           }
         }
       }
@@ -2260,6 +2266,26 @@
         }
       }
     },
+    "Unlimited pets." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mascotas ilimitadas."
+          }
+        }
+      }
+    },
+    "Vaccine and Deworming Treatment notifications." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notificaciones para Vacunas y Desparasitaciones."
+          }
+        }
+      }
+    },
     "Vaccine Details" : {
       "localizations" : {
         "es" : {
@@ -2352,6 +2378,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pesos"
+          }
+        }
+      }
+    },
+    "Weights, Vaccines and Deworming Treatment notes." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notas para Pesos, Vacunas y Desparasitaciones."
           }
         }
       }
