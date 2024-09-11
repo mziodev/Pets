@@ -27,7 +27,9 @@ struct GoPremiumAd: View {
                         HStack {
                             Image(systemName: "crown.fill")
                                 .symbolRenderingMode(.palette)
-                                .foregroundStyle(Gradient(colors: [.petsLightGold, .petsMediumGold]))
+                                .foregroundStyle(
+                                    Gradient(colors: [.petsSunset, .petsFulvous])
+                                )
                             
                             Text("go Premium!")
                         }

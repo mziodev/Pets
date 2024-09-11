@@ -62,7 +62,7 @@ struct DewormingTreatmentDetail: View {
                             )
                             .symbolRenderingMode(.palette)
                             .font(.system(size: 70))
-                            .foregroundStyle(.accent, .petsLightBlue)
+                            .foregroundStyle(.accent, .petsPowderBlue)
                             .accessibilityLabel(
                                 dewormingTreatment.type.localizedDescription
                             )

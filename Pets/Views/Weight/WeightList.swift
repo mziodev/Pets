@@ -85,7 +85,7 @@ struct WeightList: View {
                             .font(.largeTitle)
                             .fontDesign(.rounded)
                             .bold()
-                            .foregroundStyle(.petsMediumGold)
+                            .foregroundStyle(.petsFulvous)
                             
                             Text("\(averageStartDateToString) – \(averageEndDate.monthDayYear)")
                                 .foregroundStyle(.secondary)

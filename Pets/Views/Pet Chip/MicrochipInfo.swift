@@ -45,7 +45,7 @@ struct MicrochipInfo: View {
                                 )
                                 .labelStyle(.iconOnly)
                             }
-                            .tint(.petsMediumGold)
+                            .tint(.petsFulvous)
                         }
                     }
                     

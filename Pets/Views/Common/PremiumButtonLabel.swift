@@ -15,7 +15,7 @@ struct PremiumButtonLabel: View {
             spacing: 5
         ) {
             Image(systemName: "crown.fill")
-                .foregroundStyle(Gradient(colors: [.petsLightGold, .petsMediumGold]))
+                .foregroundStyle(Gradient(colors: [.petsSunset, .petsFulvous]))
             
             if !isPremium {
                 Text("go Premium")

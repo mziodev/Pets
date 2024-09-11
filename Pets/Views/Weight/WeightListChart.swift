@@ -27,10 +27,10 @@ struct WeightListChart: View {
                 RuleMark(
                     y: .value("Average", weights.averaging())
                 )
-                .foregroundStyle(.petsMediumGold)
+                .foregroundStyle(.petsFulvous)
                 .annotation(position: .top, alignment: .leading) {
                     Text("Average")
-                        .foregroundStyle(.petsMediumGold)
+                        .foregroundStyle(.petsFulvous)
                         .font(.caption2.smallCaps())
                         .fontDesign(.rounded)
                         .bold()
