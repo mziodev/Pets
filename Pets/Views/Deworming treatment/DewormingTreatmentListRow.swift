@@ -31,7 +31,7 @@ struct DewormingTreatmentListRow: View {
             Image(systemName: dewormingTreatment.type.systemImage)
                 .font(.title)
                 .foregroundStyle(
-                    isTreatmentExpired ? .secondary : Color.petsAccentBlue
+                    isTreatmentExpired ? .secondary : Color.accent
                 )
                 .accessibilityLabel("Treatment image")
             
@@ -52,15 +52,23 @@ struct DewormingTreatmentListRow: View {
             Spacer()
             
             if !isTreatmentExpired {
-                VStack(alignment: .center) {
-                    Text("\(dewormingTreatment.activeDays)")
-                        .font(.title3)
-                        .fontDesign(.serif)
+                if dewormingTreatment.activeDays > 0 {
+                    VStack(alignment: .center) {
+                        Text("\(dewormingTreatment.activeDays)")
+                            .font(.title3)
+                            .fontDesign(.serif)
+                            .bold()
+                            .foregroundStyle(activeTreatmentDaysColor)
+                        
+                        Text("more days")
+                            .font(.caption2.smallCaps())
+                            .bold()
+                    }
+                } else if dewormingTreatment.activeDays == 0 {
+                    Text("Last day")
+                        .font(.caption2.smallCaps())
                         .bold()
-                        .foregroundStyle(activeTreatmentDaysColor)
-                    
-                    Text("more days")
-                        .font(.caption2.lowercaseSmallCaps())
+                        .foregroundStyle(.red)
                 }
             } else {
                 HStack {
@@ -71,9 +79,6 @@ struct DewormingTreatmentListRow: View {
             }
         }
         .foregroundStyle(isTreatmentExpired ? .secondary : .primary)
-        .onAppear {
-            print(dewormingTreatment.activeDays)
-        }
     }
 }
 

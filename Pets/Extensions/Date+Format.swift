@@ -19,4 +19,8 @@ extension Date {
     var year: String {
         self.formatted(.dateTime.year())
     }
+    
+    var firstHour: Date {
+        Calendar.current.startOfDay(for: self)
+    }
 }

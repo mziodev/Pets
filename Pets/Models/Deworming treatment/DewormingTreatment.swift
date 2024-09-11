@@ -22,7 +22,7 @@ class DewormingTreatment {
     var pet: Pet? = nil
     
     var activeDays: Int {
-        Int(ceil(endingDate.timeIntervalSince(.now) / 86400))
+        Int(ceil(endingDate.firstHour.timeIntervalSince(.now) / 86400))
     }
     
     init(

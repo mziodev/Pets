@@ -21,7 +21,7 @@ struct PetBreedListRow: View {
             if pet.breed == breed.name {
                 Image(systemName: "checkmark.circle")
                     .font(.title3)
-                    .foregroundStyle(.petsAccentBlue)
+                    .foregroundStyle(.accent)
             }
         }
         .contentShape(Rectangle()) // for the getting tap gesture on the entire row

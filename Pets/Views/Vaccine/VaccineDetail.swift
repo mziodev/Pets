@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct VaccineDetail: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var petsStoreManager: PetsStoreManager
@@ -80,7 +79,7 @@ struct VaccineDetail: View {
                         } header: {
                             Text("For dogs")
                                 .font(.headline.smallCaps())
-                                .foregroundStyle(.petsAccentBlue)
+                                .foregroundStyle(.accent)
                         }
                         
                         Section {
@@ -96,7 +95,7 @@ struct VaccineDetail: View {
                         } header: {
                             Text("For cats")
                                 .font(.headline.smallCaps())
-                                .foregroundStyle(.petsAccentBlue)
+                                .foregroundStyle(.accent)
                         }
                     }
                     .pickerStyle(.navigationLink)
@@ -129,7 +128,10 @@ struct VaccineDetail: View {
                         Picker(
                             "Notification",
                             selection: $vaccine.notification) {
-                                ForEach(NotificationPeriod.allCases, id: \.self) { period in
+                                ForEach(
+                                    NotificationPeriod.allCases,
+                                    id: \.self
+                                ) { period in
                                     Text(period.localizedDescription)
                                 }
                             }
@@ -199,6 +201,10 @@ struct VaccineDetail: View {
                 if isNew { editingVaccine = true }
                 
                 vaccineNameTextFieldFocused = true
+                
+                if petsStoreManager.isPremiumUnlocked {
+                    showingNotificationTime = true
+                }
             }
             .sheet(isPresented: $showingPetsStore) {
                 PetsStore()
@@ -240,6 +246,17 @@ struct VaccineDetail: View {
     
     private func appendVaccine() {
         pet.vaccines?.append(vaccine)
+        
+        if vaccine.notification != .none {
+            Notification.schedule(
+                title: "Vaccine Warning",
+                body: "\(pet.name) is running out of \(vaccine.name) coverage.",
+                targetDate: vaccine.ends,
+                daysBefore: vaccine.notification.value,
+                notificationTime: vaccine.notificationTime
+            )
+        }
+        
         dismiss()
     }
     

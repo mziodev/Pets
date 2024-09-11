@@ -26,7 +26,7 @@ struct PetBreedVariationList: View {
                         if pet.breed == "\(breed.name), \(variation)" {
                             Image(systemName: "checkmark.circle")
                                 .font(.title3)
-                                .foregroundStyle(.petsAccentBlue)
+                                .foregroundStyle(.accent)
                         }
                         
                     }

@@ -101,7 +101,7 @@ struct PetDetail: View {
                 
                 Section("Dates") {
                     Toggle("Adopted", isOn: $pet.isAdopted.animation())
-                        .tint(.petsAccentBlue)
+                        .tint(.accentColor)
                     
                     DatePicker(
                         "Birthday",

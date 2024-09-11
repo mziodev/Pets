@@ -27,10 +27,10 @@ struct WeightListChart: View {
                 RuleMark(
                     y: .value("Average", weights.averaging())
                 )
-                .foregroundStyle(.petsAccentRed)
+                .foregroundStyle(.petsMediumGold)
                 .annotation(position: .top, alignment: .leading) {
                     Text("Average")
-                        .foregroundStyle(.petsAccentRed)
+                        .foregroundStyle(.petsMediumGold)
                         .font(.caption2.smallCaps())
                         .fontDesign(.rounded)
                         .bold()
@@ -39,7 +39,7 @@ struct WeightListChart: View {
         }
         .chartScrollableAxes(.horizontal)
         .chartXVisibleDomain(length: weights.count)
-        .foregroundStyle(.petsAccentBlue)
+        .foregroundStyle(.accent)
     }
 }
 

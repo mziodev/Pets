@@ -11,7 +11,7 @@ struct WeightListEmpty: View {
     var body: some View {
         ContentUnavailableView {
             Label("No weights yet", systemImage: "scalemass")
-                .foregroundStyle(.petsAccentBlue)
+                .foregroundStyle(.accent)
         } description:  {
             Text("Tap on the Plus button to add a new weight.")
                 .padding(.top, 5)

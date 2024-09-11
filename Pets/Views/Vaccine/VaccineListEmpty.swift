@@ -11,7 +11,7 @@ struct VaccineListEmpty: View {
     var body: some View {
         ContentUnavailableView {
             Label("No vaccines yet", systemImage: "syringe")
-                .foregroundStyle(.petsAccentBlue)
+                .foregroundStyle(.accent)
         } description: {
             Text("Tap on the plus button to add new vaccines.")
         }

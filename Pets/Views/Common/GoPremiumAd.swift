@@ -24,11 +24,17 @@ struct GoPremiumAd: View {
                     Button {
                         showingPetsStore = true
                     } label: {
-                        Label("go Premium!", systemImage: "crown")
-                            .bold()
+                        HStack {
+                            Image(systemName: "crown.fill")
+                                .symbolRenderingMode(.palette)
+                                .foregroundStyle(Gradient(colors: [.petsLightGold, .petsMediumGold]))
+                            
+                            Text("go Premium!")
+                        }
+                        .bold()
                     }
                     .frame(width: 200, height: 44)
-                    .background(Color.petsAccentRed)
+                    .background(.accent)
                     .foregroundStyle(.white)
                     .clipShape(.rect(cornerRadius: 30))
                     .padding(.top)

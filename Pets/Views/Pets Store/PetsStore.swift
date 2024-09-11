@@ -31,7 +31,7 @@ struct PetsStore: View {
                         HStack {
                             Image(systemName: "checkmark.seal")
                                 .symbolRenderingMode(.palette)
-                                .foregroundStyle(.petsAccentRed, .petsAccentBlue)
+                                .foregroundStyle(.petsMediumGold, .accent)
                             
                             Text("Unlimited pets.")
                         }
@@ -39,7 +39,7 @@ struct PetsStore: View {
                         HStack {
                             Image(systemName: "checkmark.seal")
                                 .symbolRenderingMode(.palette)
-                                .foregroundStyle(.petsAccentRed, .petsAccentBlue)
+                                .foregroundStyle(.petsMediumGold, .accent)
                             
                             Text("Vaccine and Deworming Treatment notifications.")
                         }
@@ -47,7 +47,7 @@ struct PetsStore: View {
                         HStack {
                             Image(systemName: "checkmark.seal")
                                 .symbolRenderingMode(.palette)
-                                .foregroundStyle(.petsAccentRed, .petsAccentBlue)
+                                .foregroundStyle(.petsMediumGold, .accent)
                             
                             Text("Weights, Vaccines and Deworming Treatment notes.")
                         }
@@ -63,8 +63,8 @@ struct PetsStore: View {
                             .foregroundStyle(
                                 Gradient(
                                     colors: [
-                                        .petsAccentRed,
-                                        .petsAccentBlue
+                                        .petsLightGold,
+                                        .petsMediumGold
                                     ]
                                 )
                             )

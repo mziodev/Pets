@@ -42,7 +42,7 @@ struct PetBreedList: View {
                                     
                                     Text("I'm a \(pet.breed)")
                                         .font(.headline)
-                                        .foregroundStyle(.petsAccentBlue)
+                                        .foregroundStyle(.accent)
                                         .lineLimit(1)
                                     
                                     Spacer()

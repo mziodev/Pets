@@ -5,9 +5,7 @@
 //  Created by MZiO on 20/6/24.
 //
 
-import SwiftData
 import SwiftUI
-import UserNotifications
 
 struct DewormingTreatmentDetail: View {
     @Environment(\.dismiss) var dismiss
@@ -62,8 +60,9 @@ struct DewormingTreatmentDetail: View {
                             Image(
                                 systemName: dewormingTreatment.type.systemImage
                             )
+                            .symbolRenderingMode(.palette)
                             .font(.system(size: 70))
-                            .foregroundStyle(.petsAccentBlue)
+                            .foregroundStyle(.accent, .petsLightBlue)
                             .accessibilityLabel(
                                 dewormingTreatment.type.localizedDescription
                             )

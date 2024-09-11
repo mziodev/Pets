@@ -27,7 +27,7 @@ struct PetListRow: View {
             
             Image(systemName: "\(pet.species.symbol).fill")
                 .font(.title2)
-                .foregroundStyle(.petsAccentBlue)
+                .foregroundStyle(.accent)
                 .accessibilityLabel(pet.species.symbolLocalizedDescription)
         }
     }

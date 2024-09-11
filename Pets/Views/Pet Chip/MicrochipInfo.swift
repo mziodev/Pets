@@ -21,7 +21,7 @@ struct MicrochipInfo: View {
                     HStack {
                         Text("Type")
                             .font(.headline)
-                            .foregroundStyle(.petsAccentBlue)
+                            .foregroundStyle(.accent)
                         
                         Spacer()
                         
@@ -31,7 +31,7 @@ struct MicrochipInfo: View {
                     HStack {
                         Text("Number")
                             .font(.headline)
-                            .foregroundStyle(.petsAccentBlue)
+                            .foregroundStyle(.accent)
                         
                         Spacer()
                         
@@ -45,13 +45,14 @@ struct MicrochipInfo: View {
                                 )
                                 .labelStyle(.iconOnly)
                             }
+                            .tint(.petsMediumGold)
                         }
                     }
                     
                     HStack {
                         Text("Implanted on")
                             .font(.headline)
-                            .foregroundStyle(.petsAccentBlue)
+                            .foregroundStyle(.accent)
                         
                         Spacer()
                         
@@ -66,7 +67,7 @@ struct MicrochipInfo: View {
                     HStack {
                         Text("Location")
                             .font(.headline)
-                            .foregroundStyle(.petsAccentBlue)
+                            .foregroundStyle(.accent)
                         
                         Spacer()
                         

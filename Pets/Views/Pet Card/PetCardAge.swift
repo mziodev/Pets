@@ -29,7 +29,7 @@ struct PetCardAge: View {
                     Text(monthString)
                         .font(pet.age["year"] == nil ? .title.bold() : .body)
                         .fontDesign(.serif)
-                        .foregroundStyle(.petsAccentBlue)
+                        .foregroundStyle(.accent)
                         .padding(.top, pet.age["year"] == nil ? 0 : 7)
                 }
                 

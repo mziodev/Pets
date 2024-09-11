@@ -12,7 +12,7 @@ struct PetListNoPets: View {
     var body: some View {
         ContentUnavailableView {
             Label("No pets yet", systemImage: "pawprint.fill")
-                .foregroundStyle(.petsAccentBlue)
+                .foregroundStyle(.accent)
         } description: {
             Text("Tap on the button '+' for add a new pet.")
         }

@@ -11,7 +11,7 @@ struct PetBreedListEmpty: View {
     var body: some View {
         ContentUnavailableView {
             Label("No breeds yet", systemImage: "pawprint.fill")
-                .foregroundStyle(.petsAccentBlue)
+                .foregroundStyle(.accent)
         } description: {
             Text("You have to select your pet species first.")
         }

@@ -20,7 +20,7 @@ class Vaccine {
     var pet: Pet?
     
     var activeDays: Int {
-        Int(ends.timeIntervalSince(.now) / 86400)
+        Int(ceil(ends.firstHour.timeIntervalSince(.now) / 86400))
     }
     
     init(

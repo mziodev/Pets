@@ -19,7 +19,7 @@ struct PetImagePlaceholder: View {
                     width: imageSize.rawValue,
                     height: imageSize.rawValue
                 )
-                .foregroundStyle(.petsAccentBlue)
+                .foregroundStyle(.accent)
             
             Image(systemName: "\(species.symbol).fill")
                 .font(.system(size: imageSize.rawValue * 0.45))

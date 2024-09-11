@@ -16,7 +16,7 @@ struct VerificationCheckMark: View {
             Spacer()
             
             Image(systemName: "checkmark.circle")
-                .foregroundStyle(condition ? .petsAccentBlue : .gray)
+                .foregroundStyle(condition ? Color.green : Color.secondary)
         }
     }
 }

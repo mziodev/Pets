@@ -100,7 +100,7 @@ struct PetCard: View {
                         Button("Microchip") { showingChipID = true }
                             .font(.callout.smallCaps())
                             .bold()
-                            .foregroundStyle(.petsAccentBlue)
+                            .foregroundStyle(.accent)
                     }
                 }
             }

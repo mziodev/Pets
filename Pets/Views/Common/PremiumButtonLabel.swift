@@ -14,8 +14,8 @@ struct PremiumButtonLabel: View {
         HStack(
             spacing: 5
         ) {
-            Image(systemName: "crown")
-                .foregroundStyle(Gradient(colors: [.petsAccentRed, .petsAccentBlue]))
+            Image(systemName: "crown.fill")
+                .foregroundStyle(Gradient(colors: [.petsLightGold, .petsMediumGold]))
             
             if !isPremium {
                 Text("go Premium")

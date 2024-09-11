@@ -12,6 +12,10 @@ struct VaccineListRow: View {
     
     private let daysRange = 15...30
     
+    private var isVaccineExpired: Bool {
+        vaccine.activeDays < 0
+    }
+    
     var activeDaysColor: Color {
         if vaccine.activeDays < 15 {
             return .red
@@ -28,14 +32,14 @@ struct VaccineListRow: View {
                 Text(vaccine.name)
                     .font(.headline)
                     .foregroundStyle(
-                        vaccine.activeDays > 0 ? Color.primary : Color.secondary
+                        isVaccineExpired ? Color.secondary : Color.primary
                     )
                 
                 Text(vaccine.type.rawValue)
                     .font(.footnote)
                     .bold()
                     .foregroundStyle(
-                        vaccine.activeDays > 0 ? Color.petsAccentBlue : Color.secondary
+                        isVaccineExpired ? Color.secondary : Color.accentColor
                     )
                 
                 Text(
@@ -51,15 +55,22 @@ struct VaccineListRow: View {
             
             Spacer()
             
-            if vaccine.activeDays > 0 {
-                VStack {
-                    Text(vaccine.activeDays.description)
-                        .font(.title)
-                        .fontDesign(.rounded)
-                        .foregroundStyle(activeDaysColor)
-                    Text("More days")
+            if !isVaccineExpired {
+                if vaccine.activeDays > 0 {
+                    VStack {
+                        Text(vaccine.activeDays.description)
+                            .font(.title)
+                            .fontDesign(.rounded)
+                            .foregroundStyle(activeDaysColor)
+                        Text("More Days")
+                            .font(.caption.smallCaps())
+                            .bold()
+                    }
+                } else if vaccine.activeDays == 0 {
+                    Text("Last Day")
                         .font(.caption.smallCaps())
                         .bold()
+                        .foregroundStyle(.red)
                 }
             } else {
                 HStack {
