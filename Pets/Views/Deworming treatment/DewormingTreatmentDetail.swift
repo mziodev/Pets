@@ -17,7 +17,9 @@ struct DewormingTreatmentDetail: View {
     
     @State private var treatmentQuantity: Double?
     @State private var editingTreatment = false
-    @State private var petsStoreAdText = "Unlock Deworming Treatment Notes, Notifications and some other features with Pets Premium."
+    @State private var petsStoreAdText = String(
+        localized: "Unlock Deworming Treatment Notes, Notifications and some other features with Pets Premium."
+    )
     
     @State private var showingPetsStore = false
     @State private var showingNotificationTime = false
@@ -36,7 +38,6 @@ struct DewormingTreatmentDetail: View {
     private var isFormVerified: Bool {
         isNameVerified && isQuantityVerified
     }
-    
     
     init(
         pet: Pet,
@@ -217,10 +218,7 @@ struct DewormingTreatmentDetail: View {
                 
                 treatmentNameTextFieldFocused = true
             }
-            .sheet(isPresented: $showingPetsStore) {
-                PetsStore()
-                    .presentationDragIndicator(.visible)
-            }
+            .sheet(isPresented: $showingPetsStore) { PetsStoreView() }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
                 Button("Cancel", role: .cancel, action: { })
                 Button(

@@ -8,17 +8,9 @@
 import StoreKit
 import SwiftUI
 
-struct PetsStore: View {
+struct PetsStoreView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var petsStoreManager: PetsStoreManager
-    
-    private let premiumFeatures = """
-    Buy Premium and get:
-    
-    ✅ Unlimited pets.
-    ✅ Vaccine and Deworming Treatment notifications.
-    ✅ Weights, Vaccines and Deworming Treatment notes.
-    """
     
     var body: some View {
         NavigationStack {
@@ -28,29 +20,11 @@ struct PetsStore: View {
                         .font(.headline)
                     
                     VStack(alignment: .leading, spacing: 10) {
-                        HStack {
-                            Image(systemName: "checkmark.seal")
-                                .symbolRenderingMode(.palette)
-                                .foregroundStyle(.petsFulvous, .accent)
-                            
-                            Text("Unlimited pets.")
-                        }
+                        PetsStoreFeature(feature: "Unlimited pets.")
                         
-                        HStack {
-                            Image(systemName: "checkmark.seal")
-                                .symbolRenderingMode(.palette)
-                                .foregroundStyle(.petsFulvous, .accent)
-                            
-                            Text("Vaccine and Deworming Treatment notifications.")
-                        }
+                        PetsStoreFeature(feature: "Vaccine and Deworming Treatment notifications.")
                         
-                        HStack {
-                            Image(systemName: "checkmark.seal")
-                                .symbolRenderingMode(.palette)
-                                .foregroundStyle(.petsFulvous, .accent)
-                            
-                            Text("Weights, Vaccines and Deworming Treatment notes.")
-                        }
+                        PetsStoreFeature(feature: "Weights, Vaccines and Deworming Treatment notes.")
                     }
                     .padding(.top)
                 }
@@ -62,10 +36,7 @@ struct PetsStore: View {
                             .font(.system(size: 90))
                             .foregroundStyle(
                                 Gradient(
-                                    colors: [
-                                        .petsSunset,
-                                        .petsFulvous
-                                    ]
+                                    colors: [.petsSunset, .petsFulvous]
                                 )
                             )
                     }
@@ -80,7 +51,7 @@ struct PetsStore: View {
                 
                 Spacer()
                 
-                Button("Restore Purchases") {
+                Button("Restore Purchase") {
                     Task {
                         do {
                             try await AppStore.sync()
@@ -90,8 +61,8 @@ struct PetsStore: View {
                     }
                 }
                 .padding(.vertical)
+                .font(.callout.smallCaps())
             }
-            .padding()
             .navigationTitle("Pets Store")
             .onInAppPurchaseCompletion { product, result in
                 await petsStoreManager.purchase(product)
@@ -110,7 +81,23 @@ struct PetsStore: View {
     }
 }
 
+struct PetsStoreFeature: View {
+    let feature: String
+    
+    var body: some View {
+        HStack {
+            Image(
+                systemName: "checkmark.seal"
+            )
+            .symbolRenderingMode(.palette)
+            .foregroundStyle(.petsFulvous, .accent)
+            
+            Text(feature)
+        }
+    }
+}
+
 #Preview {
-    PetsStore()
+    PetsStoreView()
         .environmentObject(PetsStoreManager())
 }

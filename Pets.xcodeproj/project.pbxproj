@@ -24,7 +24,7 @@
 		084E3E422C8F0F3600623D9E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E3E412C8F0F3600623D9E /* Notification.swift */; };
 		087136B92C91925800A08726 /* GoPremiumAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087136B82C91925800A08726 /* GoPremiumAd.swift */; };
 		087DCEB22C85D7DA005E3A47 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087DCEB12C85D7DA005E3A47 /* StoreKit.framework */; };
-		087DCEBD2C8615C4005E3A47 /* PetsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087DCEBC2C8615C4005E3A47 /* PetsStore.swift */; };
+		087DCEBD2C8615C4005E3A47 /* PetsStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087DCEBC2C8615C4005E3A47 /* PetsStoreView.swift */; };
 		087DCEBF2C871935005E3A47 /* PetsStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087DCEBE2C871935005E3A47 /* PetsStoreManager.swift */; };
 		087F5B562C131CF9005A7083 /* VerificationCheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F5B552C131CF9005A7083 /* VerificationCheckMark.swift */; };
 		087F5B582C1350A0005A7083 /* Pet+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F5B572C1350A0005A7083 /* Pet+Validation.swift */; };
@@ -114,7 +114,7 @@
 		084E3E412C8F0F3600623D9E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		087136B82C91925800A08726 /* GoPremiumAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPremiumAd.swift; sourceTree = "<group>"; };
 		087DCEB12C85D7DA005E3A47 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		087DCEBC2C8615C4005E3A47 /* PetsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsStore.swift; sourceTree = "<group>"; };
+		087DCEBC2C8615C4005E3A47 /* PetsStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsStoreView.swift; sourceTree = "<group>"; };
 		087DCEBE2C871935005E3A47 /* PetsStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsStoreManager.swift; sourceTree = "<group>"; };
 		087F5B552C131CF9005A7083 /* VerificationCheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCheckMark.swift; sourceTree = "<group>"; };
 		087F5B572C1350A0005A7083 /* Pet+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+Validation.swift"; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				083766F52C89F902009255E1 /* PetsPremium.storekit */,
-				087DCEBC2C8615C4005E3A47 /* PetsStore.swift */,
+				087DCEBC2C8615C4005E3A47 /* PetsStoreView.swift */,
 				087DCEBE2C871935005E3A47 /* PetsStoreManager.swift */,
 				083766F72C89F923009255E1 /* StoreKitTestCertificate.cer */,
 			);
@@ -281,7 +281,6 @@
 				08AE31A12C7DC7B300A61EF9 /* Pet Breed */,
 				08AE31A02C7DC79100A61EF9 /* Pet Card */,
 				08AE31A22C7DC7C700A61EF9 /* Pet Chip */,
-				087DCEB52C8610D8005E3A47 /* Pets Store */,
 				083DAC562C33FE73001EDAA7 /* Vaccine */,
 				08DF54492C1C605B003076B1 /* Weight */,
 			);
@@ -302,6 +301,7 @@
 				08B585042C1718B90068D4B2 /* Services */,
 				08833FE22C09CABB000FD0BF /* Utitliies */,
 				08833FEE2C09CABB000FD0BF /* Views */,
+				087DCEB52C8610D8005E3A47 /* Pets Store */,
 				08833FEF2C09CABB000FD0BF /* Assets.xcassets */,
 				08833FE02C09CABB000FD0BF /* Preview Content */,
 			);
@@ -605,7 +605,7 @@
 				08B752032C2B128E00C0D143 /* DewormingTreatmentListEmpty.swift in Sources */,
 				08833FF22C09CABB000FD0BF /* Pet.swift in Sources */,
 				08DF54412C1C46FC003076B1 /* PetCardAge.swift in Sources */,
-				087DCEBD2C8615C4005E3A47 /* PetsStore.swift in Sources */,
+				087DCEBD2C8615C4005E3A47 /* PetsStoreView.swift in Sources */,
 				08DF543B2C1C34DC003076B1 /* PetListRow.swift in Sources */,
 				08FD87AB2C2C01E400CC9F9A /* WeightListEmpty.swift in Sources */,
 				08CACB3E2C78E07D0068AC60 /* CoatLength.swift in Sources */,
@@ -798,7 +798,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
@@ -837,7 +837,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;

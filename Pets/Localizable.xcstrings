@@ -1956,15 +1956,8 @@
         }
       }
     },
-    "Restore Purchases" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurar Compras"
-          }
-        }
-      }
+    "Restore Purchase" : {
+
     },
     "Save" : {
       "localizations" : {
@@ -2289,22 +2282,32 @@
         }
       }
     },
-    "Unlimited pets." : {
+    "Unlock Deworming Treatment Notes, Notifications and some other features with Pets Premium." : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mascotas ilimitadas."
+            "value" : "Desbloquea las Notificaciones y las Notas para Desparasitación, y algunas otras características con Mascotas Premium"
           }
         }
       }
     },
-    "Vaccine and Deworming Treatment notifications." : {
+    "Unlock Vaccine Notes, Notifications and some other features with Pets Premium." : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Notificaciones para Vacunas y Desparasitaciones."
+            "value" : "Desbloquea Notificaciones y Notas para las Vacunas, y algunas otras características más con Mascotas Premium."
+          }
+        }
+      }
+    },
+    "Unlock Weight Notes and some other features with Pets Premium." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbloquea Notas para los Pesos, y alunas otras características más con Mascotas Premium."
           }
         }
       }
@@ -2401,16 +2404,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pesos"
-          }
-        }
-      }
-    },
-    "Weights, Vaccines and Deworming Treatment notes." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notas para Pesos, Vacunas y Desparasitaciones."
           }
         }
       }

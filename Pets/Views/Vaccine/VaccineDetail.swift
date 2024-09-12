@@ -15,7 +15,9 @@ struct VaccineDetail: View {
     
     @State var vaccine: Vaccine
     
-    @State private var petsStoreAdText = "Unlock Vaccine Notes, Notifications and some other features with Pets Premium."
+    @State private var petsStoreAdText = String(
+        localized: "Unlock Vaccine Notes, Notifications and some other features with Pets Premium."
+    )
     @State private var editingVaccine = false
     
     @State private var showingPetsStore = false
@@ -26,16 +28,9 @@ struct VaccineDetail: View {
     
     let isNew: Bool
     
-    private var isVaccineExpired: Bool {
-        vaccine.activeDays < 0
-    }
-    
-    private var isNameVerified: Bool {
-        vaccine.name.hasMinimumLength()
-    }
-    
+    private var isVaccineExpired: Bool { vaccine.activeDays < 0 }
+    private var isNameVerified: Bool { vaccine.name.hasMinimumLength() }
     private var isFormVerified: Bool { isNameVerified }
-    
     
     init(
         pet: Pet,
@@ -46,7 +41,6 @@ struct VaccineDetail: View {
         self.vaccine = vaccine
         self.isNew = isNew
     }
-    
     
     var body: some View {
         NavigationStack {
@@ -218,10 +212,7 @@ struct VaccineDetail: View {
                     vaccine.notificationTime = .now
                 }
             }
-            .sheet(isPresented: $showingPetsStore) {
-                PetsStore()
-                    .presentationDragIndicator(.visible)
-            }
+            .sheet(isPresented: $showingPetsStore) { PetsStoreView() }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
                 Button("Cancel", role: .cancel, action: { })
                 Button( "Ok", role: .destructive, action: deleteVaccine)

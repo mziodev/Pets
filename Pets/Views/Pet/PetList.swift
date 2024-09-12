@@ -19,7 +19,7 @@ struct PetList: View {
     @State private var showingPetsStore = false
 
     private var premiumCheckedPets: [Pet] {
-        petsStoreManager.isPremiumUnlocked ? self.pets : pets.first.map { [$0] } ?? []
+        petsStoreManager.isPremiumUnlocked ? pets : pets.prefix(1).compactMap { $0 }
     }
     
     var body: some View {
@@ -40,16 +40,12 @@ struct PetList: View {
             }
             .sheet(isPresented: $showingAddPet) {
                 if pets.count >= 1 && !petsStoreManager.isPremiumUnlocked {
-                    PetsStore()
-                        .presentationDragIndicator(.visible)
+                    PetsStoreView()
                 } else {
                     PetDetail(pet: Pet(), isNew: true)
                 }
             }
-            .sheet(isPresented: $showingPetsStore) {
-                PetsStore()
-                    .presentationDragIndicator(.visible)
-            }
+            .sheet(isPresented: $showingPetsStore) { PetsStoreView() }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {

@@ -17,7 +17,9 @@ struct WeightDetail: View {
     
     @State private var weightValue: Double?
     @State private var editingWeight = false
-    @State private var petsStoreAdText = "Unlock Weight Notes and some other features with Pets Premium."
+    @State private var petsStoreAdText = String(
+        localized: "Unlock Weight Notes and some other features with Pets Premium."
+    )
     
     @State private var showingPetsStore = false
     @State private var showingDeleteAlert = false
@@ -26,7 +28,6 @@ struct WeightDetail: View {
     @FocusState private var weightTextFieldFocused
     
     let isNew: Bool
-    
     
     init(
         pet: Pet,
@@ -37,7 +38,6 @@ struct WeightDetail: View {
         self.weight = weight
         self.isNew = isNew
     }
-    
     
     var body: some View {
         NavigationStack {
@@ -74,6 +74,7 @@ struct WeightDetail: View {
                         }
                     }
                 }
+                .disabled(!editingWeight)
                 
                 if petsStoreManager.isPremiumUnlocked {
                     Section("Notes") {
@@ -83,6 +84,7 @@ struct WeightDetail: View {
                             axis: .vertical
                         )
                     }
+                    .disabled(!editingWeight)
                 }
                 
                 if !petsStoreManager.isPremiumUnlocked && editingWeight {
@@ -99,10 +101,8 @@ struct WeightDetail: View {
                     )
                 }
             }
-            .scrollDismissesKeyboard(.immediately)
             .navigationTitle(isNew ? "Add Weight" : "Weight Details")
             .navigationBarTitleDisplayMode(.inline)
-            .disabled(!editingWeight)
             .onAppear {
                 copyWeightValue()
                 
@@ -110,10 +110,7 @@ struct WeightDetail: View {
                 
                 weightTextFieldFocused = true
             }
-            .sheet(isPresented: $showingPetsStore) {
-                PetsStore()
-                    .presentationDragIndicator(.visible)
-            }
+            .sheet(isPresented: $showingPetsStore) { PetsStoreView() }
             .alert("Warning!", isPresented: $showingDeleteAlert) {
                 Button("Cancel", role: .cancel, action: { })
                 Button("Ok", role: .destructive, action: deleteWeight)
