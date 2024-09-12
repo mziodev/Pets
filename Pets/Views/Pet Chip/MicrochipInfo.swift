@@ -90,7 +90,7 @@ struct MicrochipInfo: View {
             .listSectionSpacing(5)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { dismiss() }
+                    Button("Ok") { dismiss() }
                 }
             }
         }

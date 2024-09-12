@@ -202,7 +202,11 @@
 		080343762C8AF8CD004F4249 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				08909CF12C7F1FC400C65D5A /* Array+DewormingTreatment.swift */,
+				08909CF32C7F24A800C65D5A /* Array+Vaccine.swift */,
+				08909CEF2C7F1B7500C65D5A /* Array+Weight.swift */,
 				080343772C8AF8F6004F4249 /* Date+Format.swift */,
+				08909CF62C7F2B0800C65D5A /* String+Validation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -240,13 +244,10 @@
 		08833FDE2C09CABB000FD0BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				08909CEE2C7F1B5D00C65D5A /* Array */,
 				08FD87C72C32AC9D00CC9F9A /* Microchip */,
 				08EEF0CA2C22F7D0003ABFF9 /* Deworming treatment */,
-				08B585192C19E4010068D4B2 /* JSON */,
 				08B585172C19E3E20068D4B2 /* Pet */,
 				08909CED2C7F1B1200C65D5A /* Pet Breed */,
-				08909CF52C7F2AE100C65D5A /* String */,
 				08FD87B72C2DB0A200CC9F9A /* Vaccine */,
 				08B585182C19E3EE0068D4B2 /* Weight */,
 			);
@@ -296,6 +297,7 @@
 				08EEF0C92C22EE5B003ABFF9 /* Apps */,
 				08866F582C0F237700455EAE /* Custom types */,
 				080343762C8AF8CD004F4249 /* Extensions */,
+				08B585192C19E4010068D4B2 /* JSON */,
 				08833FDE2C09CABB000FD0BF /* Models */,
 				08B585042C1718B90068D4B2 /* Services */,
 				08833FE22C09CABB000FD0BF /* Utitliies */,
@@ -350,24 +352,6 @@
 				08B585112C1849330068D4B2 /* PetBreed+SampleData.swift */,
 			);
 			path = "Pet Breed";
-			sourceTree = "<group>";
-		};
-		08909CEE2C7F1B5D00C65D5A /* Array */ = {
-			isa = PBXGroup;
-			children = (
-				08909CF12C7F1FC400C65D5A /* Array+DewormingTreatment.swift */,
-				08909CF32C7F24A800C65D5A /* Array+Vaccine.swift */,
-				08909CEF2C7F1B7500C65D5A /* Array+Weight.swift */,
-			);
-			path = Array;
-			sourceTree = "<group>";
-		};
-		08909CF52C7F2AE100C65D5A /* String */ = {
-			isa = PBXGroup;
-			children = (
-				08909CF62C7F2B0800C65D5A /* String+Validation.swift */,
-			);
-			path = String;
 			sourceTree = "<group>";
 		};
 		08AE31A02C7DC79100A61EF9 /* Pet Card */ = {

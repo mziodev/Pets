@@ -54,6 +54,9 @@ struct VaccineDetail: View {
                 Section {
                     TextField("Name", text: $vaccine.name)
                         .focused($vaccineNameTextFieldFocused)
+                        .overlay {
+                            VerificationCheckMark(condition: isNameVerified)
+                        }
                     
                     Picker("Type", selection: $vaccine.type) {
                         ForEach(
@@ -81,6 +84,7 @@ struct VaccineDetail: View {
                                 .font(.headline.smallCaps())
                                 .foregroundStyle(.accent)
                         }
+                        .foregroundStyle(.primary)
                         
                         Section {
                             ForEach(

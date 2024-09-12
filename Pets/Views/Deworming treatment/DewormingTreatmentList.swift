@@ -112,8 +112,10 @@ struct DewormingTreatmentList: View {
 
 #Preview("Empty Treatment List") {
     DewormingTreatmentList(pet: SampleData.shared.petWithExpiredVaccines)
+        .environmentObject(PetsStoreManager())
 }
 
 #Preview("Existing Treatment List") {
     DewormingTreatmentList(pet: SampleData.shared.petWithChipID)
+        .environmentObject(PetsStoreManager())
 }

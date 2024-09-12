@@ -59,9 +59,8 @@ struct DewormingTreatmentDetail: View {
                             Image(
                                 systemName: dewormingTreatment.type.systemImage
                             )
-                            .symbolRenderingMode(.palette)
                             .font(.system(size: 70))
-                            .foregroundStyle(.accent, .petsPowderBlue)
+                            .foregroundStyle(.accent)
                             .accessibilityLabel(
                                 dewormingTreatment.type.localizedDescription
                             )

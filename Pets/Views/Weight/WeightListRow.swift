@@ -31,6 +31,7 @@ struct WeightListRow: View {
             )
             .font(.headline)
             .fontDesign(.rounded)
+            .foregroundStyle(.petsFulvous)
         }
     }
 }

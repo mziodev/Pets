@@ -97,8 +97,10 @@ struct VaccineList: View {
 
 #Preview("Vaxxed pet") {
     VaccineList(pet: SampleData.shared.petWithExpiredVaccines)
+        .environmentObject(PetsStoreManager())
 }
 
 #Preview("No vaccines yet") {
     VaccineList(pet: SampleData.shared.petWithoutSpecies)
+        .environmentObject(PetsStoreManager())
 }

@@ -34,6 +34,7 @@ struct WeightListChart: View {
                         .font(.caption2.smallCaps())
                         .fontDesign(.rounded)
                         .bold()
+                        .padding(.horizontal, 10)
                 }
             }
         }

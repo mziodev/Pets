@@ -65,7 +65,6 @@ struct PetCard: View {
             .sheet(isPresented: $showingChipID) {
                 MicrochipInfo(pet: pet)
                     .presentationDetents([.medium])
-                    .presentationDragIndicator(.visible)
             }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
@@ -100,7 +99,7 @@ struct PetCard: View {
                         Button("Microchip") { showingChipID = true }
                             .font(.callout.smallCaps())
                             .bold()
-                            .foregroundStyle(.accent)
+                            .foregroundStyle(.petsFulvous)
                     }
                 }
             }
