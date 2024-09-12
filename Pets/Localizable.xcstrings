@@ -84,6 +84,16 @@
         }
       }
     },
+    "%@ is on the last day vaccine's protection." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ está en su último día de protección de esta vacuna."
+          }
+        }
+      }
+    },
     "%@ photo" : {
       "localizations" : {
         "es" : {
@@ -1387,10 +1397,24 @@
       }
     },
     "Last day" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Último día"
+          }
+        }
+      }
     },
     "Last Day" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Último Día"
+          }
+        }
+      }
     },
     "Leptospirosis" : {
       "localizations" : {
@@ -1583,17 +1607,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "días más"
-          }
-        }
-      }
-    },
-    "More days" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Días más"
           }
         }
       }

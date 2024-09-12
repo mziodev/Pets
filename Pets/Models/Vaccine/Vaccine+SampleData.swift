@@ -20,7 +20,7 @@ extension Vaccine {
             name: "Eclipse",
             type: .FVRCP,
             starts: .now - (86400 * 450),
-            ends: .now - (86400 * 85)
+            ends: .now - (86400 * 86)
         ),
         
         Vaccine(

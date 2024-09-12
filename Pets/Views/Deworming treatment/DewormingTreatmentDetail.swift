@@ -48,7 +48,6 @@ struct DewormingTreatmentDetail: View {
         self.isNew = isNew
     }
     
-    
     var body: some View {
         NavigationStack {
             Form {
@@ -211,8 +210,10 @@ struct DewormingTreatmentDetail: View {
                 copyDewormingTreatmentQuantity()
                 
                 if isNew { editingTreatment = true }
-                if petsStoreManager.isPremiumUnlocked && dewormingTreatment.notification != .none {
+                if dewormingTreatment.notification != .none {
                     showingNotificationTime = true
+                } else {
+                    dewormingTreatment.notificationTime = .now
                 }
                 
                 treatmentNameTextFieldFocused = true

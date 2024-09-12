@@ -27,7 +27,7 @@ struct VaccineDetail: View {
     let isNew: Bool
     
     private var isVaccineExpired: Bool {
-        vaccine.activeDays <= 0 && !isNew
+        vaccine.activeDays < 0
     }
     
     private var isNameVerified: Bool {
@@ -136,9 +136,11 @@ struct VaccineDetail: View {
                                 }
                             }
                             .pickerStyle(.menu)
-                            .onChange(of: vaccine.notification) { oldValue, newValue in
+                            .onChange(of: vaccine.notification) {
+                                oldValue,
+                                newValue in
                                 withAnimation {
-                                    showingNotificationTime = vaccine.notification != .none
+                                    showingNotificationTime = newValue != .none
                                 }
                                 
                                 Notification.requestAuthorization()
@@ -165,7 +167,11 @@ struct VaccineDetail: View {
                             Spacer()
                         }
                     } else if !isNew {
-                        Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
+                        if vaccine.activeDays == 0 {
+                            Text("\(pet.name) is on the last day vaccine's protection.")
+                        } else {
+                            Text("\(pet.name) still will be protected \(vaccine.activeDays) more days until next vaccine.")
+                        }
                     }
                 }
                 .disabled(!editingVaccine)
@@ -202,8 +208,10 @@ struct VaccineDetail: View {
                 
                 vaccineNameTextFieldFocused = true
                 
-                if petsStoreManager.isPremiumUnlocked {
+                if vaccine.notification != .none {
                     showingNotificationTime = true
+                } else if vaccine.notification == .none {
+                    vaccine.notificationTime = .now
                 }
             }
             .sheet(isPresented: $showingPetsStore) {
