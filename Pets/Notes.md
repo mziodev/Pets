@@ -1,13 +1,9 @@
 # Project Notes
 
 ## Color Code
-### Original
+### Old
 - Accent Red: #E15161
 - Accent Blue: #00A5E0
-
-### New
-- Accent Blue Any: #3574AC
-- Accent Blue Dark: #41BBDC
 
 ## Cannine Breed JSON list free IDs
 - 94, 139, 178, 190

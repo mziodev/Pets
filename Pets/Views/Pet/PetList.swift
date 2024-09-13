@@ -9,6 +9,8 @@ import SwiftData
 import SwiftUI
 
 struct PetList: View {
+    @AppStorage("FirstStart") private var isFirstLaunch: Bool = true
+    
     @Query(sort: \Pet.name) var pets: [Pet]
     
     @Environment(\.modelContext) var modelContext
@@ -37,6 +39,9 @@ struct PetList: View {
             .navigationTitle("Pets")
             .overlay {
                 if pets.isEmpty { PetListNoPets() }
+            }
+            .sheet(isPresented: $isFirstLaunch) {
+                Welcome(isFirstStart: $isFirstLaunch)
             }
             .sheet(isPresented: $showingAddPet) {
                 if pets.count >= 1 && !petsStoreManager.isPremiumUnlocked {

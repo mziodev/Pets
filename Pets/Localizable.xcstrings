@@ -915,6 +915,16 @@
         }
       }
     },
+    "Continue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
+          }
+        }
+      }
+    },
     "Copy chip ID number" : {
       "localizations" : {
         "es" : {
@@ -934,6 +944,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Coronavirus"
+          }
+        }
+      }
+    },
+    "Create their identities" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea sus identidades"
           }
         }
       }
@@ -1084,6 +1104,9 @@
         }
       }
     },
+    "Don't miss anything" : {
+
+    },
     "Done" : {
       "localizations" : {
         "es" : {
@@ -1199,6 +1222,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hembra"
+          }
+        }
+      }
+    },
+    "Fill their personal cards up with their names, breeds, birthdays, Microchip info..." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rellena sus tarjetas personales con sus nombres, razas, fechas de nacimiento, información del Microchip..."
           }
         }
       }
@@ -1612,7 +1645,14 @@
       }
     },
     "More Days" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Días Más"
+          }
+        }
+      }
     },
     "More than 6 inches (15 cm)" : {
 
@@ -2087,6 +2127,26 @@
         }
       }
     },
+    "Take care of your pets" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuida a tus mascotas"
+          }
+        }
+      }
+    },
+    "Take control of their weight, their regular deworming treatments, and vaccines." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toma el control de sus pesos, sus desparasitaciones y vacunas habituales."
+          }
+        }
+      }
+    },
     "Tap on the button '+' for add a new pet." : {
       "localizations" : {
         "es" : {
@@ -2408,8 +2468,28 @@
         }
       }
     },
+    "Welcome to Pets" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido/a a Mascotas"
+          }
+        }
+      }
+    },
     "Wiry" : {
 
+    },
+    "Write down any weight, vaccine or deworming treatment detail so you don't miss anything, and configure notifications so you don't forget any important thing." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toma nota de cualquier detalle sobre su peso, vacunas o desparasitaciones para que no te pierdas nada, y configura notificaciones para que no te olvides ni una sola cosa importante."
+          }
+        }
+      }
     },
     "Yes" : {
       "localizations" : {

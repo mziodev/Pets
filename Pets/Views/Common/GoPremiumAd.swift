@@ -35,10 +35,14 @@ struct GoPremiumAd: View {
                         }
                         .bold()
                     }
-                    .frame(width: 200, height: 44)
-                    .background(.accent)
+                    .font(.title3.bold())
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 50)
                     .foregroundStyle(.white)
-                    .clipShape(.rect(cornerRadius: 30))
+                    .background(
+                        .petsUCLABlue,
+                        in: .rect(cornerRadius: 16)
+                    )
                     .padding(.top)
                     
                     Spacer()
