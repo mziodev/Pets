@@ -269,8 +269,8 @@ struct DewormingTreatmentDetail: View {
         
         if dewormingTreatment.notification != .none {
             Notification.schedule(
-                title: "Deworming Treatment Warning",
-                body: "\(pet.name) is running out of \(dewormingTreatment.name) coverage.",
+                title: String(localized: "Deworming Treatment Warning"),
+                body: String(localized: "\(pet.name) is running out of \(dewormingTreatment.name) coverage."),
                 targetDate: dewormingTreatment.endingDate,
                 daysBefore: dewormingTreatment.notification.value,
                 notificationTime: dewormingTreatment.notificationTime

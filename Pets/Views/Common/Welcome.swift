@@ -36,8 +36,13 @@ struct Welcome: View {
                     symbolName: "calendar.badge.clock",
                     symbolColor: .petsFulvous,
                     title: String(localized: "Don't miss anything"),
-                    text: String(localized: "Write down any weight, vaccine or deworming treatment detail so you don't miss anything, and configure notifications so you don't forget any important thing.")
+                    text: String(localized: "Write down any weight, vaccine or deworming treatment detail so you don't miss anything, and configure notifications so you don't forget any important thing.*")
                 )
+                
+                Text("*Some features are only available on Pets Premium.")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .padding(.top)
             }
             
             Button("Continue", action: goToApp)

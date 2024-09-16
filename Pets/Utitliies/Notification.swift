@@ -35,14 +35,25 @@ struct Notification {
         )
         
         let calendar = Calendar.current
-        let triggerComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: triggerDate)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerComponents, repeats: false)
+        let triggerComponents = calendar.dateComponents(
+            [.year, .month, .day, .hour, .minute],
+            from: triggerDate
+        )
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: triggerComponents,
+            repeats: false
+        )
         let content = UNMutableNotificationContent()
         
         content.title = title
         content.body = body
+        content.sound = UNNotificationSound.default
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(
+            identifier: UUID().uuidString,
+            content: content,
+            trigger: trigger
+        )
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
@@ -51,7 +62,11 @@ struct Notification {
         }
     }
     
-    static private func createTriggerDate(targetDate: Date, daysBefore: Int, notificationTime: Date) -> Date {
+    static private func createTriggerDate(
+        targetDate: Date,
+        daysBefore: Int,
+        notificationTime: Date
+    ) -> Date {
         let calendar = Calendar.current
         
         var triggerDate = calendar.date(byAdding: .day, value: -daysBefore, to: targetDate)!

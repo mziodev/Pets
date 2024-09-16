@@ -4,34 +4,15 @@
 
   ],
   "products" : [
-    {
-      "displayPrice" : "2.99",
-      "familyShareable" : true,
-      "internalID" : "6670559967",
-      "localizations" : [
-        {
-          "description" : "Disfruta Mascotas con todas sus opciones",
-          "displayName" : "Mascotas Premium",
-          "locale" : "es_ES"
-        },
-        {
-          "description" : "Enjoy all of the Pets features",
-          "displayName" : "Pets Premium",
-          "locale" : "en_US"
-        }
-      ],
-      "productID" : "dev.mzio.pets.premium",
-      "referenceName" : "Pets Premium",
-      "type" : "NonConsumable"
-    }
+
   ],
   "settings" : {
     "_applicationInternalID" : "6670243713",
     "_developerTeamID" : "ZP4QTMB37S",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 747239745.12375498,
-    "_locale" : "es_ES",
-    "_storefront" : "ESP",
+    "_lastSynchronizedDate" : 748191487.60699105,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
     "_storeKitErrors" : [
       {
         "current" : null,
@@ -81,7 +62,45 @@
     ]
   },
   "subscriptionGroups" : [
+    {
+      "id" : "21539355",
+      "localizations" : [
 
+      ],
+      "name" : "pets.premium.subcriptions",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "5.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "6689515822",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Enjoy all of the features of Pets",
+              "displayName" : "Pets Premium",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Disfruta de todas las opciones de Mascotas",
+              "displayName" : "Mascotas Premium",
+              "locale" : "es_ES"
+            }
+          ],
+          "productID" : "dev.mzio.pets.premium.suscription",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pets Premium Subscription",
+          "subscriptionGroupID" : "21539355",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
   ],
   "version" : {
     "major" : 3,

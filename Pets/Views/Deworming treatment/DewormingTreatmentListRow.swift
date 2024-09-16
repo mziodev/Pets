@@ -57,7 +57,7 @@ struct DewormingTreatmentListRow: View {
                     VStack(alignment: .center) {
                         Text("\(dewormingTreatment.activeDays)")
                             .font(.title3)
-                            .fontDesign(.serif)
+                            .fontDesign(.rounded)
                             .bold()
                             .foregroundStyle(activeTreatmentDaysColor)
                         

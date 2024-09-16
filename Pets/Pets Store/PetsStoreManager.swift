@@ -14,9 +14,12 @@ enum PetsStoreError: Error {
 
 typealias PurchaseResult = Product.PurchaseResult
 
+
 class PetsStoreManager: ObservableObject {
     @Published private(set) var products = [Product]()
     @Published private(set) var purchasedProductIDs = Set<String>()
+    
+    let productIDs = ["dev.mzio.pets.premium", "dev.mzio.pets.premium.suscription"]
     
     private var updates: Task<Void, Never>? = nil
     
@@ -65,7 +68,7 @@ private extension PetsStoreManager {
     func loadProducts() async {
         do {
             products = try await Product.products(
-                for: ["dev.mzio.pets.premium"]
+                for: ["dev.mzio.pets.premium.suscription"]
             ).sorted { $0.price < $1.price }
         } catch {
             // TODO: handle Error

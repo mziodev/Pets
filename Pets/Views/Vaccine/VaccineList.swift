@@ -23,7 +23,7 @@ struct VaccineList: View {
                             ForEach(
                                 pet.unwrappedVaccines.reverseSortedByActiveDays
                             ) { vaccine in
-                                if vaccine.activeDays > 0 {
+                                if vaccine.activeDays >= 0 {
                                     NavigationLink {
                                         VaccineDetail(
                                             pet: pet,
@@ -42,7 +42,7 @@ struct VaccineList: View {
                             ForEach(
                                 pet.unwrappedVaccines.reverseSortedByActiveDays
                             ) { vaccine in
-                                if vaccine.activeDays <= 0 {
+                                if vaccine.activeDays < 0 {
                                     NavigationLink {
                                         VaccineDetail(
                                             pet: pet,

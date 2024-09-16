@@ -254,8 +254,8 @@ struct VaccineDetail: View {
         
         if vaccine.notification != .none {
             Notification.schedule(
-                title: "Vaccine Warning",
-                body: "\(pet.name) is running out of \(vaccine.name) coverage.",
+                title: String(localized: "Vaccine Warning"),
+                body: String(localized: "\(pet.name) is running out of \(vaccine.name) coverage."),
                 targetDate: vaccine.ends,
                 daysBefore: vaccine.notification.value,
                 notificationTime: vaccine.notificationTime

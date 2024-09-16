@@ -9,6 +9,11 @@
 - 94, 139, 178, 190
 
 
+## Notifications
+- We have to remove an existing notification when updating a vaccine or treatment for avoiding duplicates.
+- We need to pass an existing ID (ex. vaccine.id) and check if this ID is already inside NotificationCenter. If so we remove it and create a new one with the new data.
+
+
 ## Localization and i18n
 - We have to do localization and internationalization of the entire app on: English, Spanish, French, Portuguese, German, Chinese, Japanese, Indian... on this order.
 

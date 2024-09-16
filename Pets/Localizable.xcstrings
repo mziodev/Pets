@@ -24,6 +24,16 @@
         }
       }
     },
+    "*Some features are only available on Pets Premium." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*Algunas opciones sólo están disponibles en Mascotas Premium."
+          }
+        }
+      }
+    },
     "& %lld months" : {
       "localizations" : {
         "en" : {
@@ -90,6 +100,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ está en su último día de protección de esta vacuna."
+          }
+        }
+      }
+    },
+    "%@ is running out of %@ coverage." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ is running out of %2$@ coverage."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ se está quedando sin protección de %2$@."
           }
         }
       }
@@ -1010,6 +1036,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminar Peso"
+          }
+        }
+      }
+    },
+    "Deworming Treatment Warning" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso de Desparasitación"
           }
         }
       }
@@ -2426,6 +2462,16 @@
         }
       }
     },
+    "Vaccine Warning" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso de Vacuna"
+          }
+        }
+      }
+    },
     "Vaccines" : {
       "localizations" : {
         "es" : {
@@ -2545,12 +2591,12 @@
     "Wiry" : {
 
     },
-    "Write down any weight, vaccine or deworming treatment detail so you don't miss anything, and configure notifications so you don't forget any important thing." : {
+    "Write down any weight, vaccine or deworming treatment detail so you don't miss anything, and configure notifications so you don't forget any important thing.*" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Toma nota de cualquier detalle sobre su peso, vacunas o desparasitaciones para que no te pierdas nada, y configura notificaciones para que no te olvides ni una sola cosa importante."
+            "value" : "Toma nota de cualquier detalle sobre Pesos, Vacunas o Desparasitaciones para que no te pierdas nada, y configura las Notificaciones para que no te olvides ni una sola cosa importante.*"
           }
         }
       }
