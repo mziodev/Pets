@@ -42,11 +42,13 @@ struct PetCardAge: View {
                 Spacer()
             }
             
-            PetCardOnFamily(onFamilyYears: pet.onFamilyYears, adopted: pet.isAdopted)
+            PetCardOnFamily(
+                onFamilyYears: pet.onFamilyYears,
+                adopted: pet.isAdopted
+            )
         }
     }
 }
-
 
 #Preview("Years and months") {
     PetCardAge(pet: SampleData.shared.petWithChipID)

@@ -11,7 +11,7 @@
 		080343782C8AF8F6004F4249 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080343772C8AF8F6004F4249 /* Date+Format.swift */; };
 		080F40692C241DC60085CA65 /* DewormingTreatmentListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */; };
 		080F406F2C246FDC0085CA65 /* DewormingTreatmentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */; };
-		083766F42C89B7AE009255E1 /* PremiumButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083766F32C89B7AE009255E1 /* PremiumButtonLabel.swift */; };
+		083766F42C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083766F32C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift */; };
 		083766F62C89F902009255E1 /* PetsPremium.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 083766F52C89F902009255E1 /* PetsPremium.storekit */; };
 		083766F82C89F923009255E1 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 083766F72C89F923009255E1 /* StoreKitTestCertificate.cer */; };
 		083DAC532C33F4D1001EDAA7 /* VaccineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC522C33F4D1001EDAA7 /* VaccineType.swift */; };
@@ -57,7 +57,6 @@
 		08A29E382C144D2500D45D98 /* Pet+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A29E372C144D2500D45D98 /* Pet+SampleData.swift */; };
 		08A29E3A2C1451AF00D45D98 /* Weight+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A29E392C1451AF00D45D98 /* Weight+SampleData.swift */; };
 		08AE31A62C7DCBEA00A61EF9 /* cannineBreeds_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 08AE31A52C7DCBEA00A61EF9 /* cannineBreeds_es.json */; };
-		08AE31A82C7DE0ED00A61EF9 /* felineBreeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 08AE31A72C7DE0ED00A61EF9 /* felineBreeds.json */; };
 		08AE31AA2C7DE22500A61EF9 /* felineBreeds_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 08AE31A92C7DE22500A61EF9 /* felineBreeds_es.json */; };
 		08B584F92C16E8A90068D4B2 /* PetImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B584F82C16E8A90068D4B2 /* PetImageSize.swift */; };
 		08B585032C1713A40068D4B2 /* PetBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B585022C1713A40068D4B2 /* PetBreed.swift */; };
@@ -71,7 +70,6 @@
 		08B5851B2C19E9B20068D4B2 /* WeightListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B5851A2C19E9B20068D4B2 /* WeightListRow.swift */; };
 		08B752032C2B128E00C0D143 /* DewormingTreatmentListEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B752022C2B128E00C0D143 /* DewormingTreatmentListEmpty.swift */; };
 		08CACB342C7886D40068AC60 /* RowDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CACB332C7886D40068AC60 /* RowDeleteButton.swift */; };
-		08CACB382C78CAB40068AC60 /* cannineBreeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 08CACB372C78CAB40068AC60 /* cannineBreeds.json */; };
 		08CACB3A2C78D9F10068AC60 /* PetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CACB392C78D9F10068AC60 /* PetSize.swift */; };
 		08CACB3C2C78DA020068AC60 /* CoatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CACB3B2C78DA020068AC60 /* CoatType.swift */; };
 		08CACB3E2C78E07D0068AC60 /* CoatLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CACB3D2C78E07D0068AC60 /* CoatLength.swift */; };
@@ -102,7 +100,7 @@
 		080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentListRow.swift; sourceTree = "<group>"; };
 		080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentDetail.swift; sourceTree = "<group>"; };
 		082419E92C81BEBF008BE7D1 /* Pets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pets.entitlements; sourceTree = "<group>"; };
-		083766F32C89B7AE009255E1 /* PremiumButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumButtonLabel.swift; sourceTree = "<group>"; };
+		083766F32C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPremiumButtonLabel.swift; sourceTree = "<group>"; };
 		083766F52C89F902009255E1 /* PetsPremium.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = PetsPremium.storekit; sourceTree = "<group>"; };
 		083766F72C89F923009255E1 /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		083DAC522C33F4D1001EDAA7 /* VaccineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineType.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 		08A29E372C144D2500D45D98 /* Pet+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+SampleData.swift"; sourceTree = "<group>"; };
 		08A29E392C1451AF00D45D98 /* Weight+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weight+SampleData.swift"; sourceTree = "<group>"; };
 		08AE31A52C7DCBEA00A61EF9 /* cannineBreeds_es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cannineBreeds_es.json; sourceTree = "<group>"; };
-		08AE31A72C7DE0ED00A61EF9 /* felineBreeds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = felineBreeds.json; sourceTree = "<group>"; };
 		08AE31A92C7DE22500A61EF9 /* felineBreeds_es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = felineBreeds_es.json; sourceTree = "<group>"; };
 		08B584F82C16E8A90068D4B2 /* PetImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetImageSize.swift; path = Pets/Views/PetImageSize.swift; sourceTree = SOURCE_ROOT; };
 		08B585022C1713A40068D4B2 /* PetBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreed.swift; sourceTree = "<group>"; };
@@ -163,7 +160,6 @@
 		08B5851A2C19E9B20068D4B2 /* WeightListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightListRow.swift; sourceTree = "<group>"; };
 		08B752022C2B128E00C0D143 /* DewormingTreatmentListEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentListEmpty.swift; sourceTree = "<group>"; };
 		08CACB332C7886D40068AC60 /* RowDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowDeleteButton.swift; sourceTree = "<group>"; };
-		08CACB372C78CAB40068AC60 /* cannineBreeds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cannineBreeds.json; sourceTree = "<group>"; };
 		08CACB392C78D9F10068AC60 /* PetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSize.swift; sourceTree = "<group>"; };
 		08CACB3B2C78DA020068AC60 /* CoatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatType.swift; sourceTree = "<group>"; };
 		08CACB3D2C78E07D0068AC60 /* CoatLength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatLength.swift; sourceTree = "<group>"; };
@@ -422,10 +418,8 @@
 			children = (
 				08B5850F2C1840740068D4B2 /* felineBreeds_en.json */,
 				08AE31A92C7DE22500A61EF9 /* felineBreeds_es.json */,
-				08AE31A72C7DE0ED00A61EF9 /* felineBreeds.json */,
 				08B5850B2C1753C80068D4B2 /* cannineBreeds_en.json */,
 				08AE31A52C7DCBEA00A61EF9 /* cannineBreeds_es.json */,
-				08CACB372C78CAB40068AC60 /* cannineBreeds.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -435,7 +429,7 @@
 			children = (
 				08CACB332C7886D40068AC60 /* RowDeleteButton.swift */,
 				087F5B552C131CF9005A7083 /* VerificationCheckMark.swift */,
-				083766F32C89B7AE009255E1 /* PremiumButtonLabel.swift */,
+				083766F32C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift */,
 				087136B82C91925800A08726 /* GoPremiumAd.swift */,
 				086C88402C94389D004F9C6C /* Welcome.swift */,
 			);
@@ -575,9 +569,7 @@
 				08AE31AA2C7DE22500A61EF9 /* felineBreeds_es.json in Resources */,
 				08B585102C1840740068D4B2 /* felineBreeds_en.json in Resources */,
 				083766F82C89F923009255E1 /* StoreKitTestCertificate.cer in Resources */,
-				08AE31A82C7DE0ED00A61EF9 /* felineBreeds.json in Resources */,
 				08AE31A62C7DCBEA00A61EF9 /* cannineBreeds_es.json in Resources */,
-				08CACB382C78CAB40068AC60 /* cannineBreeds.json in Resources */,
 				083766F62C89F902009255E1 /* PetsPremium.storekit in Resources */,
 				08953B712C35A13E008C7D86 /* Localizable.xcstrings in Resources */,
 				08833FF72C09CABB000FD0BF /* Preview Assets.xcassets in Resources */,
@@ -628,7 +620,7 @@
 				08833FF92C09CABB000FD0BF /* PetCard.swift in Sources */,
 				087F5B562C131CF9005A7083 /* VerificationCheckMark.swift in Sources */,
 				08833FF82C09CABB000FD0BF /* SampleData.swift in Sources */,
-				083766F42C89B7AE009255E1 /* PremiumButtonLabel.swift in Sources */,
+				083766F42C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift in Sources */,
 				08CACB3C2C78DA020068AC60 /* CoatType.swift in Sources */,
 				083DAC5E2C3406C7001EDAA7 /* VaccineListRow.swift in Sources */,
 				080343782C8AF8F6004F4249 /* Date+Format.swift in Sources */,
@@ -802,7 +794,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
@@ -841,7 +833,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;

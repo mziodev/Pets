@@ -25,7 +25,6 @@ struct DewormingTreatmentListRow: View {
         }
     }
     
-    
     var body: some View {
         HStack {
             Image(systemName: dewormingTreatment.type.systemImage)
@@ -33,7 +32,9 @@ struct DewormingTreatmentListRow: View {
                 .foregroundStyle(
                     isTreatmentExpired ? .secondary : Color.accent
                 )
-                .accessibilityLabel("Treatment image")
+                .accessibilityLabel(
+                    dewormingTreatment.type.localizedDescription
+                )
             
             VStack(alignment: .leading) {
                 Text(dewormingTreatment.name)
@@ -60,7 +61,7 @@ struct DewormingTreatmentListRow: View {
                             .bold()
                             .foregroundStyle(activeTreatmentDaysColor)
                         
-                        Text("more days")
+                        Text("More days")
                             .font(.caption2.smallCaps())
                             .bold()
                     }

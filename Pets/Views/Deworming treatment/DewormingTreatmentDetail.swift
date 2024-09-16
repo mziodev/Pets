@@ -70,7 +70,10 @@ struct DewormingTreatmentDetail: View {
                                 .font(.title3)
                                 .padding(.top)
                         }
-                        .animation(.default, value: dewormingTreatment.type)
+                        .animation(
+                            .default,
+                            value: dewormingTreatment.type
+                        )
                         
                         Spacer()
                     }
@@ -84,7 +87,9 @@ struct DewormingTreatmentDetail: View {
                     )
                     .focused($treatmentNameTextFieldFocused)
                     .overlay {
-                        VerificationCheckMark(condition: isNameVerified)
+                        VerificationCheckMark(
+                            condition: isNameVerified
+                        )
                     }
                     
                     Picker(
@@ -204,7 +209,9 @@ struct DewormingTreatmentDetail: View {
                 }
             }
             .scrollDismissesKeyboard(.interactively)
-            .navigationTitle(isNew ? "Add Treatment" : "Treatment Details")
+            .navigationTitle(
+                isNew ? "Add Treatment" : "Treatment Details"
+            )
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 copyDewormingTreatmentQuantity()

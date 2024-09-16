@@ -90,7 +90,6 @@ struct PetBreedList: View {
                     PetBreedListEmpty()
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationTitle(pet.name)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

@@ -28,16 +28,22 @@ struct GoPremiumAd: View {
                             Image(systemName: "crown.fill")
                                 .symbolRenderingMode(.palette)
                                 .foregroundStyle(
-                                    Gradient(colors: [.petsSunset, .petsFulvous])
+                                    Gradient(
+                                        colors: [
+                                            .petsSunset,
+                                            .petsFulvous
+                                        ]
+                                    )
                                 )
+                                .accessibilityLabel("Gold crown")
                             
                             Text("go Premium!")
                         }
                         .bold()
                     }
-                    .font(.title3.bold())
-                    .padding(.vertical, 12)
-                    .padding(.horizontal, 50)
+                    .font(.title3)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical)
                     .foregroundStyle(.white)
                     .background(
                         .petsUCLABlue,

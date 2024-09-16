@@ -101,7 +101,7 @@ struct PetDetail: View {
                 
                 Section("Dates") {
                     Toggle("Adopted", isOn: $pet.isAdopted.animation())
-                        .tint(.accentColor)
+                        .tint(.accent)
                     
                     DatePicker(
                         "Birthday",
@@ -119,7 +119,10 @@ struct PetDetail: View {
                 }
                 
                 Section("Chip") {
-                    Picker("ID type", selection: $pet.chipID.type.animation()) {
+                    Picker(
+                        "ID type",
+                        selection: $pet.chipID.type.animation()
+                    ) {
                         ForEach(ChipIDType.allCases, id: \.self) { type in
                             Text(type.localizedDescription)
                         }
@@ -160,8 +163,10 @@ struct PetDetail: View {
                 if pet.name.isEmpty { nameTextFieldFocused = true }
             }
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", action: dismissView)
+                if isNew {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel", action: dismissView)
+                    }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
@@ -173,19 +178,17 @@ struct PetDetail: View {
                                 dismiss()
                             }
                         } else {
-                            Button("Done", action: dismissView)
-                        }                        
+                            Button("Ok", action: dismissView)
+                        }
                     }
                     .disabled(!isFormVerified)
                 }
-                
             }
         }
     }
     
     private func dismissView() { dismiss() }
 }
-
 
 #Preview("New pet") {
     PetDetail(pet: Pet(), isNew: true)

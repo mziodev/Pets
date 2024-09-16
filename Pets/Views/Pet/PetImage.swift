@@ -33,7 +33,6 @@ struct PetImage: View {
     }
 }
 
-
 #Preview("Small image size") {
     PetImage(
         pet: SampleData.shared.petWithChipID,

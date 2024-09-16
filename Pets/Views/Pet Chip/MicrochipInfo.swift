@@ -12,7 +12,7 @@ struct MicrochipInfo: View {
     
     let pet: Pet
     
-    @State private var showingChipIDNumberText: Bool = false
+    @State private var showingMicrochipCopiedText: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -73,21 +73,14 @@ struct MicrochipInfo: View {
                         
                         Text(pet.chipID.location)
                     }
-                }
-                
-                if showingChipIDNumberText {
-                    Section {
+                } footer: {
+                    if showingMicrochipCopiedText {
                         Text("Microchip number is been copied to the clipboard. Go to [https://petmaxx.com](https://www.petmaxx.com/) and paste it inside the 'Microchip Search' box.")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .padding(.horizontal)
                     }
-                    .listRowBackground(Color.clear)
                 }
             }
             .navigationTitle("Microchip Info")
             .navigationBarTitleDisplayMode(.inline)
-            .listSectionSpacing(5)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Ok") { dismiss() }
@@ -98,7 +91,7 @@ struct MicrochipInfo: View {
     
     private func copyChipIDNumber() {
         UIPasteboard.general.string = pet.chipID.number
-        withAnimation { showingChipIDNumberText = true }
+        withAnimation { showingMicrochipCopiedText = true }
     }
 }
 

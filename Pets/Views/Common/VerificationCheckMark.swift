@@ -10,17 +10,18 @@ import SwiftUI
 struct VerificationCheckMark: View {
     let condition: Bool
     
-    
     var body: some View {
         HStack {
             Spacer()
             
             Image(systemName: "checkmark.circle")
-                .foregroundStyle(condition ? Color.green : Color.secondary)
+                .foregroundStyle(
+                    condition ? Color.green : Color.secondary
+                )
+                .accessibilityLabel(condition ? "Verified green checkmark" : "Unverified gray checkmark")
         }
     }
 }
-
 
 #Preview("Incorrect condition") {
     VerificationCheckMark(condition: false)

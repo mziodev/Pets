@@ -25,7 +25,6 @@ struct WeightListRow: View {
             Text(
                 String(
                     format: "%.3f",
-                    locale: Locale.current,
                     weight.value
                 )
             )

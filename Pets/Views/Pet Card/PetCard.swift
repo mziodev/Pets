@@ -16,7 +16,6 @@ struct PetCard: View {
     @State private var showingVaccineList: Bool = false
     @State private var showingChipID: Bool = false
     
-    
     var body: some View {
         NavigationStack {
             VStack(spacing: 30) {
@@ -48,19 +47,15 @@ struct PetCard: View {
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showingPetDetail) {
                 PetDetail(pet: pet)
-                    .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showingWeightDetail) {
                 WeightList(pet: pet)
-                    .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showingDewormingTreatmentList) {
                 DewormingTreatmentList(pet: pet)
-                    .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showingVaccineList) {
                 VaccineList(pet: pet)
-                    .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showingChipID) {
                 MicrochipInfo(pet: pet)
@@ -106,7 +101,6 @@ struct PetCard: View {
         }
     }
 }
-
 
 #Preview("Pet with chip ID") {
     PetCard(pet: SampleData.shared.petWithChipID)

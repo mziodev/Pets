@@ -17,45 +17,43 @@ struct DewormingTreatmentList: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                List {
-                    if pet.unwrappedDewormingTreatments.active > 0 {
-                        Section("Active treatments") {
-                            ForEach(
-                                pet.unwrappedDewormingTreatments.reverseSortedByActiveDays
-                            ) { treatment in
-                                if (treatment.activeDays >= 0) {
-                                    NavigationLink{
-                                        DewormingTreatmentDetail(
-                                            pet: pet,
-                                            dewormingTreatment: treatment
-                                        )
-                                    } label: {
-                                        DewormingTreatmentListRow(
-                                            dewormingTreatment: treatment
-                                        )
-                                    }
+            List {
+                if pet.unwrappedDewormingTreatments.active > 0 {
+                    Section("Active treatments") {
+                        ForEach(
+                            pet.unwrappedDewormingTreatments.reverseSortedByActiveDays
+                        ) { treatment in
+                            if (treatment.activeDays >= 0) {
+                                NavigationLink{
+                                    DewormingTreatmentDetail(
+                                        pet: pet,
+                                        dewormingTreatment: treatment
+                                    )
+                                } label: {
+                                    DewormingTreatmentListRow(
+                                        dewormingTreatment: treatment
+                                    )
                                 }
                             }
                         }
                     }
-                    
-                    if pet.unwrappedDewormingTreatments.expired > 0 {
-                        Section("Expired treatments") {
-                            ForEach(
-                                pet.unwrappedDewormingTreatments.reverseSortedByActiveDays
-                            ) { treatment in
-                                if (treatment.activeDays < 0) {
-                                    NavigationLink{
-                                        DewormingTreatmentDetail(
-                                            pet: pet,
-                                            dewormingTreatment: treatment
-                                        )
-                                    } label: {
-                                        DewormingTreatmentListRow(
-                                            dewormingTreatment: treatment
-                                        )
-                                    }
+                }
+                
+                if pet.unwrappedDewormingTreatments.expired > 0 {
+                    Section("Expired treatments") {
+                        ForEach(
+                            pet.unwrappedDewormingTreatments.reverseSortedByActiveDays
+                        ) { treatment in
+                            if (treatment.activeDays < 0) {
+                                NavigationLink{
+                                    DewormingTreatmentDetail(
+                                        pet: pet,
+                                        dewormingTreatment: treatment
+                                    )
+                                } label: {
+                                    DewormingTreatmentListRow(
+                                        dewormingTreatment: treatment
+                                    )
                                 }
                             }
                         }

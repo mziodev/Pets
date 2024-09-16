@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct PetListNoPets: View {
     var body: some View {
         ContentUnavailableView {
@@ -18,7 +17,6 @@ struct PetListNoPets: View {
         }
     }
 }
-
 
 #Preview {
     PetListNoPets()

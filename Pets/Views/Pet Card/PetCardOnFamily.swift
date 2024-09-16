@@ -11,7 +11,6 @@ struct PetCardOnFamily: View {
     let onFamilyYears: [String: String]
     let adopted: Bool
 
-    
     var body: some View {
         HStack {
             Spacer()
@@ -23,7 +22,6 @@ struct PetCardOnFamily: View {
                 
                 if let monthString = onFamilyYears["month"] {
                     Text(monthString)
-                        .padding(.leading, -5)
                 }
                 
                 if let dayString = onFamilyYears["day"] {
@@ -43,9 +41,15 @@ struct PetCardOnFamily: View {
 
 
 #Preview("Not adopted") {
-    PetCardOnFamily(onFamilyYears: SampleData.shared.petWithoutChipID.onFamilyYears, adopted: false)
+    PetCardOnFamily(
+        onFamilyYears: SampleData.shared.petWithoutChipID.onFamilyYears,
+        adopted: false
+    )
 }
 
 #Preview("Adopted") {
-    PetCardOnFamily(onFamilyYears: SampleData.shared.petWithoutChipID.onFamilyYears, adopted: true)
+    PetCardOnFamily(
+        onFamilyYears: SampleData.shared.petWithoutChipID.onFamilyYears,
+        adopted: true
+    )
 }

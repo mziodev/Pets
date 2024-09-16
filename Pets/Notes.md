@@ -9,36 +9,6 @@
 - 94, 139, 178, 190
 
 
-## Premium
-✅ Improve Pets Store text, look and feel.
-✅ Add text on places it supposed to be a premium feature
-
-
-## Pets
-- Add manual sorting to PetList.
-
-
-## Notifications
-✅ Fix notification message: it's showing the same treatment name on all messages.
-✅ Fix time form field: it should be shown when is been setted up.
-✅ Add notifications to vaccines and deworming treatments.
-✅ Limit notifications just to the Premium users on deworming, vaccines and weights.
-
-
-## Deworming Treatment
-✅ Check active days algorithm, maybe is counting a day behind.
-
-
-## Weight
-✅ Fix average weight time intervals, it's showing the same date on both of them.
-✅ Fix PetCard weight: it should be showing the last weight.
-✅ Fix wrong weight alert Yes action: it should delete the amount and let to input a new one.
-- Add All dates time period ??
-
-
-## Family Sharing
-
-
 ## Localization and i18n
 - We have to do localization and internationalization of the entire app on: English, Spanish, French, Portuguese, German, Chinese, Japanese, Indian... on this order.
 
@@ -57,6 +27,8 @@ We have to adaptate the app to properly render on an iPad.
 
 
 ## Future features
+### PDF export
+
 ### Food control:
 - Food brand, quantity, cost, shop link.
 - Food per day.

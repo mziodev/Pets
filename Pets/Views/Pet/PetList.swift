@@ -56,7 +56,7 @@ struct PetList: View {
                     Button {
                         showingPetsStore = true
                     } label: {
-                        PremiumButtonLabel(
+                        ToolbarPremiumButtonLabel(
                             isPremium: petsStoreManager.isPremiumUnlocked
                         )
                     }

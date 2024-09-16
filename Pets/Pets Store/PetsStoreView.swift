@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PetsStoreView: View {
     @Environment(\.dismiss) private var dismiss
+    
     @EnvironmentObject var petsStoreManager: PetsStoreManager
     
     var body: some View {
@@ -20,11 +21,17 @@ struct PetsStoreView: View {
                         .font(.headline)
                     
                     VStack(alignment: .leading, spacing: 10) {
-                        PetsStoreFeature(feature: "Unlimited pets.")
+                        PetsStoreFeature(
+                            feature: String(localized: "Unlimited pets.")
+                        )
                         
-                        PetsStoreFeature(feature: "Vaccine and Deworming Treatment notifications.")
+                        PetsStoreFeature(
+                            feature: String(localized: "Vaccine and Deworming Treatment notifications.")
+                        )
                         
-                        PetsStoreFeature(feature: "Weights, Vaccines and Deworming Treatment notes.")
+                        PetsStoreFeature(
+                            feature: String(localized: "Weights, Vaccines and Deworming Treatment notes.")
+                        )
                     }
                     .padding(.top)
                 }

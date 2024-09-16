@@ -42,8 +42,8 @@ struct Welcome: View {
             
             Button("Continue", action: goToApp)
                 .font(.title3.bold())
-                .padding(.vertical, 12)
-                .padding(.horizontal, 60)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical)
                 .foregroundStyle(.white)
                 .background(
                     .petsUCLABlue,

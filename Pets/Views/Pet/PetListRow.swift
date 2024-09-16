@@ -33,7 +33,6 @@ struct PetListRow: View {
     }
 }
 
-
 #Preview("Dog") {
     List {
         PetListRow(pet: SampleData.shared.petWithChipID)

@@ -98,8 +98,6 @@ struct WeightList: View {
                     }
                     .padding(.horizontal)
                     .padding(.top, 2)
-                    if pet.unwrappedWeights.count > 1 {
-                    }
                     
                     List {
                         Section("Weight List (\(Format.weightUnits))") {

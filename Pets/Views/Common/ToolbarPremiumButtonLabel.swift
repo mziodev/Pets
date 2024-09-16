@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-struct PremiumButtonLabel: View {
+struct ToolbarPremiumButtonLabel: View {
     let isPremium: Bool
     
     var body: some View {
-        HStack(
-            spacing: 5
-        ) {
+        HStack(spacing: 5) {
             Image(systemName: "crown.fill")
-                .foregroundStyle(Gradient(colors: [.petsSunset, .petsFulvous]))
+                .foregroundStyle(
+                    Gradient(colors: [.petsSunset, .petsFulvous])
+                )
+                .accessibilityLabel("Gold crown")
             
             if !isPremium {
                 Text("go Premium")
@@ -28,5 +29,5 @@ struct PremiumButtonLabel: View {
 }
 
 #Preview {
-    PremiumButtonLabel(isPremium: false)
+    ToolbarPremiumButtonLabel(isPremium: false)
 }

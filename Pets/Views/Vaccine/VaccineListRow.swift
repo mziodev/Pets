@@ -39,7 +39,7 @@ struct VaccineListRow: View {
                     .font(.footnote)
                     .bold()
                     .foregroundStyle(
-                        isVaccineExpired ? Color.secondary : Color.accentColor
+                        isVaccineExpired ? Color.secondary : Color.accent
                     )
                 
                 Text(

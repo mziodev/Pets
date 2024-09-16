@@ -24,11 +24,14 @@ struct PetBreedListRow: View {
                     .foregroundStyle(.green)
             }
         }
-        .contentShape(Rectangle()) // for the getting tap gesture on the entire row
+        .contentShape(Rectangle()) // for getting tap gesture on the entire row
     }
 }
 
 #Preview {
-    PetBreedListRow(pet: SampleData.shared.petWithChipID, breed: PetBreed.sampledata[0])
-        .padding()
+    PetBreedListRow(
+        pet: SampleData.shared.petWithChipID,
+        breed: PetBreed.sampledata[0]
+    )
+    .padding()
 }

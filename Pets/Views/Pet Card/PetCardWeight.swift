@@ -10,7 +10,6 @@ import SwiftUI
 struct PetCardWeight: View {
     let pet: Pet
     
-    
     var body: some View {
         if pet.unwrappedWeights.currentWeight > 0 {
             HStack {
@@ -23,7 +22,6 @@ struct PetCardWeight: View {
                 Text(
                     String(
                         format: "%.3f %@",
-                        locale: Locale.current,
                         pet.unwrappedWeights.currentWeight,
                         Format.weightUnits
                     )

@@ -99,7 +99,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ foto"
+            "value" : "Foto de %@"
           }
         }
       }
@@ -717,7 +717,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seguro que %1$@ es %2$@ %3$@?"
+            "value" : "Seguro que %1$@ pesa %2$@ %3$@?"
           }
         }
       }
@@ -1105,7 +1105,14 @@
       }
     },
     "Don't miss anything" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No te pierdas nada"
+          }
+        }
+      }
     },
     "Done" : {
       "localizations" : {
@@ -1293,6 +1300,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "pásate a Premium!"
+          }
+        }
+      }
+    },
+    "Gold crown" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corona dorada"
           }
         }
       }
@@ -1634,12 +1651,12 @@
         }
       }
     },
-    "more days" : {
+    "More days" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "días más"
+            "value" : "Días más"
           }
         }
       }
@@ -1997,7 +2014,14 @@
       }
     },
     "Restore Purchase" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar Compra"
+          }
+        }
+      }
     },
     "Save" : {
       "localizations" : {
@@ -2246,16 +2270,6 @@
         }
       }
     },
-    "Treatment image" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imagen del tratamiento"
-          }
-        }
-      }
-    },
     "Treatment name" : {
       "localizations" : {
         "es" : {
@@ -2342,6 +2356,16 @@
         }
       }
     },
+    "Unlimited pets." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mascotas ilimitadas."
+          }
+        }
+      }
+    },
     "Unlock Deworming Treatment Notes, Notifications and some other features with Pets Premium." : {
       "localizations" : {
         "es" : {
@@ -2367,7 +2391,27 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Desbloquea Notas para los Pesos, y alunas otras características más con Mascotas Premium."
+            "value" : "Desbloquea Notas para los Pesos, y algunas otras características más con Mascotas Premium."
+          }
+        }
+      }
+    },
+    "Unverified gray checkmark" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check gris de no verificado"
+          }
+        }
+      }
+    },
+    "Vaccine and Deworming Treatment notifications." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notificaciones para Vacunas y Desparasitaciones."
           }
         }
       }
@@ -2388,6 +2432,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vacunas"
+          }
+        }
+      }
+    },
+    "Verified green checkmark" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check verde de verificado."
           }
         }
       }
@@ -2464,6 +2518,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pesos"
+          }
+        }
+      }
+    },
+    "Weights, Vaccines and Deworming Treatment notes." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notas para Pesos, Vacunas, y Desparasitaciones."
           }
         }
       }

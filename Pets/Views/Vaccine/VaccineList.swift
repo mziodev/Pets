@@ -14,7 +14,6 @@ struct VaccineList: View {
     
     @State private var showingVaccineDetail: Bool = false
     
-    
     var body: some View {
         NavigationStack {
             VStack {
@@ -93,7 +92,6 @@ struct VaccineList: View {
     
     private func dismissView() { dismiss() }
 }
-
 
 #Preview("Vaxxed pet") {
     VaccineList(pet: SampleData.shared.petWithExpiredVaccines)

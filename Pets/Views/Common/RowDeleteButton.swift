@@ -22,12 +22,13 @@ struct RowDeleteButton: View {
                     role: .destructive,
                     action: activeShowingAlert
                 )
-                .padding()
-                .padding(.horizontal, 50)
+                .font(.title3)
+                .bold()
+                .frame(maxWidth: .infinity)
+                .padding(.vertical)
                 .foregroundStyle(.white)
                 .background(Color.red)
                 .clipShape(.rect(cornerRadius: 16))
-                
                 
                 Spacer()
             }

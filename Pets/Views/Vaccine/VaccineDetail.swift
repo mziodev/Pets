@@ -49,7 +49,9 @@ struct VaccineDetail: View {
                     TextField("Name", text: $vaccine.name)
                         .focused($vaccineNameTextFieldFocused)
                         .overlay {
-                            VerificationCheckMark(condition: isNameVerified)
+                            VerificationCheckMark(
+                                condition: isNameVerified
+                            )
                         }
                     
                     Picker("Type", selection: $vaccine.type) {
