@@ -17,6 +17,7 @@ class DewormingTreatment {
     var startingDate: Date = Date.now
     var endingDate: Date = Date.now
     var notification: NotificationPeriod = NotificationPeriod.none
+    var notificationID: String = ""
     var notificationTime: Date = Date.now
     var notes: String = ""
     var pet: Pet? = nil
@@ -32,8 +33,7 @@ class DewormingTreatment {
         quantity: Double = 0,
         startingDate: Date = .now,
         endingDate: Date = .now,
-        notification: NotificationPeriod = .none,
-        notificationTime: Date = .now,
+        notificationID: String = UUID().uuidString,
         notes: String = "",
         pet: Pet? = nil
     ) {
@@ -43,8 +43,7 @@ class DewormingTreatment {
         self.quantity = quantity
         self.startingDate = startingDate
         self.endingDate = endingDate
-        self.notification = notification
-        self.notificationTime = notificationTime
+        self.notificationID = notificationID
         self.notes = notes
         self.pet = pet
     }    

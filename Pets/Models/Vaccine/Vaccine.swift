@@ -15,6 +15,7 @@ class Vaccine {
     var starts: Date = Date.now
     var ends: Date = Date.now
     var notification: NotificationPeriod = NotificationPeriod.none
+    var notificationID: String = ""
     var notificationTime: Date = Date.now
     var notes: String = ""
     var pet: Pet?
@@ -28,6 +29,7 @@ class Vaccine {
         type: VaccineType = .unknown,
         starts: Date = .now,
         ends: Date = .now,
+        notificationID: String = UUID().uuidString,
         notes: String = "",
         pet: Pet? = nil
     ) {
@@ -35,6 +37,7 @@ class Vaccine {
         self.type = type
         self.starts = starts
         self.ends = ends
+        self.notificationID = notificationID
         self.notes = notes
         self.pet = pet
     }

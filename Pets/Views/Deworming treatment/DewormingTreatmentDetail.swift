@@ -269,11 +269,16 @@ struct DewormingTreatmentDetail: View {
         
         if dewormingTreatment.notification != .none {
             Notification.schedule(
+                identifier: dewormingTreatment.notificationID,
                 title: String(localized: "Deworming Treatment Warning"),
                 body: String(localized: "\(pet.name) is running out of \(dewormingTreatment.name) coverage."),
                 targetDate: dewormingTreatment.endingDate,
                 daysBefore: dewormingTreatment.notification.value,
                 notificationTime: dewormingTreatment.notificationTime
+            )
+        } else {
+            Notification.removePendingNotifications(
+                for: dewormingTreatment.notificationID
             )
         }
         
@@ -281,9 +286,9 @@ struct DewormingTreatmentDetail: View {
     }
     
     private func deleteDewormingTreatment() {
-        if let dewormingTreatmentIndex = pet.unwrappedDewormingTreatments.firstIndex(where: {
-            $0.id == dewormingTreatment.id
-        }) {
+        if let dewormingTreatmentIndex = pet.unwrappedDewormingTreatments.firstIndex(
+            where: { $0.id == dewormingTreatment.id
+            }) {
             pet.dewormingTreatments?.remove(at: dewormingTreatmentIndex)
             
             dismiss()

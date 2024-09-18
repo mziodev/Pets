@@ -13,10 +13,10 @@ extension Array where Element == Vaccine {
     }
     
     var active: Int {
-        self.filter { $0.activeDays > 0 }.count
+        self.filter { $0.activeDays >= 0 }.count
     }
     
     var expired: Int {
-        self.filter { $0.activeDays <= 0 }.count
+        self.filter { $0.activeDays < 0 }.count
     }
 }
