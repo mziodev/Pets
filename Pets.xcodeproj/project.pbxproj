@@ -148,7 +148,7 @@
 		08A29E392C1451AF00D45D98 /* Weight+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weight+SampleData.swift"; sourceTree = "<group>"; };
 		08AE31A52C7DCBEA00A61EF9 /* cannineBreeds_es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cannineBreeds_es.json; sourceTree = "<group>"; };
 		08AE31A92C7DE22500A61EF9 /* felineBreeds_es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = felineBreeds_es.json; sourceTree = "<group>"; };
-		08B584F82C16E8A90068D4B2 /* PetImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetImageSize.swift; path = Pets/Views/PetImageSize.swift; sourceTree = SOURCE_ROOT; };
+		08B584F82C16E8A90068D4B2 /* PetImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetImageSize.swift; path = "Pets/Custom types/PetImageSize.swift"; sourceTree = SOURCE_ROOT; };
 		08B585022C1713A40068D4B2 /* PetBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreed.swift; sourceTree = "<group>"; };
 		08B585052C1718E70068D4B2 /* PetBreedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedDataService.swift; sourceTree = "<group>"; };
 		08B585072C1748690068D4B2 /* PetBreedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedList.swift; sourceTree = "<group>"; };
@@ -311,13 +311,13 @@
 			children = (
 				08833FE72C09CABB000FD0BF /* ChipIDType.swift */,
 				084E3E3F2C8EF8B400623D9E /* NotificationPeriod.swift */,
-				08B584F82C16E8A90068D4B2 /* PetImageSize.swift */,
 				08833FDA2C09CABB000FD0BF /* PetSex.swift */,
 				08833FDB2C09CABB000FD0BF /* PetSpecies.swift */,
 				08EEF0CF2C23214F003ABFF9 /* TreatmentType.swift */,
 				08EEF0CD2C23212A003ABFF9 /* TreatmentUnit.swift */,
 				08833FDC2C09CABB000FD0BF /* TimePeriod.swift */,
 				083DAC522C33F4D1001EDAA7 /* VaccineType.swift */,
+				08B584F82C16E8A90068D4B2 /* PetImageSize.swift */,
 				08CACB392C78D9F10068AC60 /* PetSize.swift */,
 				08CACB3D2C78E07D0068AC60 /* CoatLength.swift */,
 				089175E32C79E62E001BAC58 /* CoatTexture.swift */,
@@ -796,7 +796,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
@@ -835,7 +835,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
