@@ -828,16 +828,6 @@
         }
       }
     },
-    "Buy Premium and get:" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Compra Premium y consigue:"
-          }
-        }
-      }
-    },
     "Buzzed" : {
 
     },
@@ -2009,6 +1999,16 @@
         }
       }
     },
+    "Privacy policy" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Política de privacidad"
+          }
+        }
+      }
+    },
     "Product Info" : {
       "localizations" : {
         "es" : {
@@ -2177,6 +2177,16 @@
     "Straight and smooth, but not as fine as fine coats" : {
 
     },
+    "Subscribe to Pets Premium and get:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suscríbete a Mascotas Premium y consigue:"
+          }
+        }
+      }
+    },
     "Suppository" : {
       "localizations" : {
         "es" : {
@@ -2243,6 +2253,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Haz tap en el botón '+' para añadir un nuevo tratamiento de desparasitación."
+          }
+        }
+      }
+    },
+    "Terms of use" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condiciones de uso"
           }
         }
       }

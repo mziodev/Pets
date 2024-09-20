@@ -13,11 +13,15 @@ struct PetsStoreView: View {
     
     @EnvironmentObject var petsStoreManager: PetsStoreManager
     
+    private let privacyPolicyURL = URL(string: "https://mziodev.github.io/Pets/privacy.html")!
+    
+    private let termsOfUseURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
+    
     var body: some View {
         NavigationStack {
             VStack {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Buy Premium and get:")
+                    Text("Subscribe to Pets Premium and get:")
                         .font(.headline)
                     
                     VStack(alignment: .leading, spacing: 10) {
@@ -56,19 +60,27 @@ struct PetsStoreView: View {
                     .productViewStyle(.large)
                 }
                 
-                Spacer()
-                
-                Button("Restore Purchase") {
-                    Task {
-                        do {
-                            try await AppStore.sync()
-                        } catch {
-                            print(error)
+                VStack {
+                    Button("Restore Purchase") {
+                        Task {
+                            do {
+                                try await AppStore.sync()
+                            } catch {
+                                print(error)
+                            }
                         }
                     }
+                    .font(.body.smallCaps())
+                    
+                    VStack(spacing: 10) {
+                        Link("Privacy policy", destination: privacyPolicyURL)
+                        
+                        Link("Terms of use", destination: privacyPolicyURL)
+                    }
+                    .padding(.top)
+                    .font(.subheadline)
                 }
-                .padding(.vertical)
-                .font(.callout.smallCaps())
+                .padding(.vertical, 20)
             }
             .navigationTitle("Pets Store")
             .onInAppPurchaseCompletion { product, result in
