@@ -75,7 +75,7 @@ struct PetsStoreView: View {
                     VStack(spacing: 10) {
                         Link("Privacy policy", destination: privacyPolicyURL)
                         
-                        Link("Terms of use", destination: privacyPolicyURL)
+                        Link("Terms of use", destination: termsOfUseURL)
                     }
                     .padding(.top)
                     .font(.subheadline)
