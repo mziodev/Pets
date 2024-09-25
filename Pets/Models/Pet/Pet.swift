@@ -21,6 +21,9 @@ class Pet: Equatable, ObservableObject {
     
     @Attribute(.externalStorage)
     var image: Data?
+    var imageScale: CGFloat = 1
+    var imageOffsetX: CGFloat = 0
+    var imageOffsetY: CGFloat = 0
     
     @Relationship(deleteRule: .cascade)
     var weights: [Weight]? = [Weight]()
@@ -71,6 +74,20 @@ class Pet: Equatable, ObservableObject {
     
     var onFamilyYears: [String: String] {
         years(from: onFamilySince)
+    }
+    
+    var imageOffset: CGSize {
+        .init(width: imageOffsetX, height: imageOffsetY)
+    }
+    
+    func updateImageOffset(offset: CGSize) {
+        imageOffsetX = offset.width
+        imageOffsetY = offset.height
+    }
+    
+    func updateImageOffset(x: CGFloat, y: CGFloat) {
+        imageOffsetX = x
+        imageOffsetY = y
     }
     
     /// Calculates the years, months and days until a date.

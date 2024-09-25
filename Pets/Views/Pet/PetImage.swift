@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PetImage: View {
     let pet: Pet
-    let imageSize: PetImageSize
+    
+    private let imageSize = PetImageSize.medium.value
     
     var body: some View {
         if let imageData = pet.image,
@@ -17,32 +18,18 @@ struct PetImage: View {
             Image(uiImage: uiImage)
                 .resizable()
                 .scaledToFill()
-                .frame(
-                    width: imageSize.rawValue,
-                    height: imageSize.rawValue
-                )
+                .scaleEffect(pet.imageScale)
+                .offset(pet.imageOffset)
+                .frame(maxHeight: imageSize)
                 .clipShape(Circle())
                 .accessibilityLabel("\(pet.name) photo")
 
         } else {
-            PetImagePlaceholder(
-                species: pet.species,
-                imageSize: imageSize
-            )
+            PetImagePlaceholder(species: pet.species)
         }
     }
 }
 
 #Preview("Small image size") {
-    PetImage(
-        pet: SampleData.shared.petWithChipID,
-        imageSize: .small
-    )
-}
-
-#Preview("Large image size") {
-    PetImage(
-        pet: SampleData.shared.petWithChipID,
-        imageSize: .medium
-    )
+    PetImage(pet: SampleData.shared.petWithChipID)
 }

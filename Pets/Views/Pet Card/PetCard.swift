@@ -18,31 +18,26 @@ struct PetCard: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 30) {
-                PetImage(pet: pet, imageSize: .medium)
-                    .padding(.top)
-                
-                List {
+            ScrollView {
+//                Image("Nano")
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(maxHeight: 250)
+//                    .clipShape(Circle())
+
+                PetImage(pet: pet)
+
+                VStack(spacing: 10) {
                     PetCardName(name: pet.name)
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.clear)
-                    
+
                     PetCardBreed(breed: pet.breed)
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.clear)
-                    
+
                     PetCardAge(pet: pet)
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.clear)
 
                     PetCardWeight(pet: pet)
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.clear)
                 }
-                .listStyle(.plain)
-                .scrollIndicators(.hidden)
             }
-            .padding(.top)
+            .scrollIndicators(.hidden)
             .navigationTitle("\(pet.name)'s Card")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showingPetDetail) {

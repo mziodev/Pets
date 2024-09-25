@@ -612,6 +612,9 @@
         }
       }
     },
+    "Add image" : {
+
+    },
     "Add pet" : {
       "localizations" : {
         "es" : {
@@ -623,6 +626,7 @@
       }
     },
     "Add photo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -882,6 +886,7 @@
       }
     },
     "Change photo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -1760,6 +1765,9 @@
         }
       }
     },
+    "No pet image available." : {
+
+    },
     "No pets yet" : {
       "localizations" : {
         "es" : {
@@ -2039,7 +2047,11 @@
         }
       }
     },
+    "Remove image" : {
+
+    },
     "Remove photo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -2048,6 +2060,12 @@
           }
         }
       }
+    },
+    "Resize %@'s Image" : {
+
+    },
+    "Resize image" : {
+
     },
     "Restore Purchase" : {
       "localizations" : {

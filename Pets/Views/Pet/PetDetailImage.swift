@@ -12,36 +12,34 @@ struct PetDetailImage: View {
     @Bindable var pet: Pet
     
     @State private var selectedImage: PhotosPickerItem?
+    @State private var showingResizeImage: Bool = false
     
     var body: some View {
-        HStack {
-            Spacer()
-            
-            VStack {
-                PetImage(pet: pet, imageSize: .small)
-                
+        VStack(spacing: 10) {
+            PetImage(pet: pet)
+
+            if pet.image == nil {
                 PhotosPicker(
+                    "Add image",
                     selection: $selectedImage,
                     matching: .images,
                     photoLibrary: .shared()
-                ) {
-                    Text(pet.image != nil ? "Change photo" : "Add photo")
-                        .foregroundStyle(
-                            pet.image != nil ? .primary : Color.accent
-                        )
+                )
+            } else {
+                Button("Resize image") {
+                    showingResizeImage = true
                 }
-                
-                if pet.image != nil {
-                    Button("Remove photo", role: .destructive) {
-                        withAnimation {
-                            selectedImage = nil
-                            pet.image = nil
-                        }
+
+                Button("Remove image", role: .destructive) {
+                    withAnimation {
+                        selectedImage = nil
+                        pet.image = nil
                     }
                 }
             }
-            
-            Spacer()
+        }
+        .sheet(isPresented: $showingResizeImage) {
+            ResizeImage(pet: pet)
         }
         .task(id: selectedImage) {
             if let data = try? await selectedImage?.loadTransferable(

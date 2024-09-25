@@ -9,20 +9,18 @@ import SwiftUI
 
 struct PetImagePlaceholder: View {
     let species: PetSpecies
-    let imageSize: PetImageSize
+    
+    private let imageSize = PetImageSize.medium.value
     
     
     var body: some View {
         ZStack {
             Circle()
-                .frame(
-                    width: imageSize.rawValue,
-                    height: imageSize.rawValue
-                )
+                .frame(width: imageSize, height: imageSize)
                 .foregroundStyle(.accent)
             
             Image(systemName: "\(species.symbol).fill")
-                .font(.system(size: imageSize.rawValue * 0.45))
+                .font(.system(size: imageSize * 0.5))
                 .foregroundStyle(.white)
                 .accessibilityLabel(
                     species.symbolLocalizedDescription
@@ -32,16 +30,14 @@ struct PetImagePlaceholder: View {
 }
 
 
-#Preview("No species, large") {
-    PetImagePlaceholder(
-        species: .unknown,
-        imageSize: .medium
-    )
+#Preview("No species") {
+    PetImagePlaceholder(species: .unknown)
 }
 
-#Preview("Dog, small") {
-    PetImagePlaceholder(
-        species: .cannine,
-        imageSize: .small
-    )
+#Preview("Dog") {
+    PetImagePlaceholder(species: .cannine)
+}
+
+#Preview("Cat") {
+    PetImagePlaceholder(species: .feline)
 }

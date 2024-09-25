@@ -57,102 +57,106 @@ struct PetDetail: View {
     
     var body: some View {
         NavigationStack {
-            Form {
-                Section {
-                    PetDetailImage(pet: pet)
-                }
-                .listRowBackground(Color.clear)
+            VStack {
+                PetDetailImage(pet: pet)
                 
-                Section("Basics") {
-                    TextField("Name", text: $pet.name)
-                        .focused($nameTextFieldFocused)
-                        .overlay {
-                            VerificationCheckMark(condition: isNameVerified)
+                Form {
+                    Section("Basics") {
+                        TextField("Name", text: $pet.name)
+                            .focused($nameTextFieldFocused)
+                            .overlay {
+                                VerificationCheckMark(
+                                    condition: isNameVerified
+                                )
+                            }
+                        
+                        Picker("Species", selection: $pet.species) {
+                            ForEach(
+                                PetSpecies.allCases,
+                                id: \.self
+                            ) { species in
+                                Text(species.localizedDescription)
+                            }
                         }
-                    
-                    Picker("Species", selection: $pet.species) {
-                        ForEach(PetSpecies.allCases, id: \.self) { species in
-                            Text(species.localizedDescription)
+                        .pickerStyle(.menu)
+                        
+                        Picker("Sex", selection: $pet.sex) {
+                            ForEach(PetSex.allCases, id: \.self) { sex in
+                                Text(sex.localizedDescription)
+                            }
                         }
+                        .pickerStyle(.menu)
                     }
-                    .pickerStyle(.menu)
                     
-                    Picker("Sex", selection: $pet.sex) {
-                        ForEach(PetSex.allCases, id: \.self) { sex in
-                            Text(sex.localizedDescription)
-                        }
-                    }
-                    .pickerStyle(.menu)
-                }
-                
-                Section("Breed") {
-                    NavigationLink {
-                        PetBreedList(pet: pet)
-                    } label: {
-                        Text(
-                            pet.breed.isEmpty ?
-                            String(localized: "Select a breed") : pet.breed
-                        )
-                        .foregroundStyle(
-                            pet.breed.isEmpty ? .gray.opacity(0.7) : .primary
-                        )
-                    }
-                }
-                
-                Section("Dates") {
-                    Toggle("Adopted", isOn: $pet.isAdopted.animation())
-                        .tint(.accent)
-                    
-                    DatePicker(
-                        "Birthday",
-                        selection: $pet.birthday,
-                        in: Date.distantPast ... .now,
-                        displayedComponents: .date
-                    )
-                    
-                    DatePicker(
-                        pet.isAdopted ? "Adopted on" : "On family since",
-                        selection: $pet.onFamilySince,
-                        in: pet.birthday ... .now,
-                        displayedComponents: .date
-                    )
-                }
-                
-                Section("Chip") {
-                    Picker(
-                        "ID type",
-                        selection: $pet.chipID.type.animation()
-                    ) {
-                        ForEach(ChipIDType.allCases, id: \.self) { type in
-                            Text(type.localizedDescription)
-                        }
-                    }
-                    .pickerStyle(.menu)
-                    
-                    if pet.chipID.type != .noChipID {
-                        TextField(
-                            chipIDNumberPlaceholderText,
-                            text: $pet.chipID.number
-                        )
-                        .keyboardType(.numbersAndPunctuation)
-                        .focused($chipTextFieldFocused)
-                        .onChange(of: pet.chipID.type) { oldValue, newValue in
-                            chipTextFieldFocused = true
-                        }
-                        .overlay {
-                            VerificationCheckMark(
-                                condition: isChipIDVerified
+                    Section("Breed") {
+                        NavigationLink {
+                            PetBreedList(pet: pet)
+                        } label: {
+                            Text(
+                                pet.breed.isEmpty ?
+                                String(localized: "Select a breed") : pet.breed
+                            )
+                            .foregroundStyle(
+                                pet.breed.isEmpty ? .gray.opacity(0.7) : .primary
                             )
                         }
+                    }
+                    
+                    Section("Dates") {
+                        Toggle("Adopted", isOn: $pet.isAdopted.animation())
+                            .tint(.accent)
                         
                         DatePicker(
-                            "Implanted on",
-                            selection: $pet.chipID.implantedDate,
-                            in: pet.birthday ... .now,
+                            "Birthday",
+                            selection: $pet.birthday,
+                            in: Date.distantPast ... .now,
                             displayedComponents: .date
                         )
                         
-                        TextField("Location", text: $pet.chipID.location)
+                        DatePicker(
+                            pet.isAdopted ? "Adopted on" : "On family since",
+                            selection: $pet.onFamilySince,
+                            in: pet.birthday ... .now,
+                            displayedComponents: .date
+                        )
+                    }
+                    
+                    Section("Chip") {
+                        Picker(
+                            "ID type",
+                            selection: $pet.chipID.type.animation()
+                        ) {
+                            ForEach(ChipIDType.allCases, id: \.self) { type in
+                                Text(type.localizedDescription)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        
+                        if pet.chipID.type != .noChipID {
+                            TextField(
+                                chipIDNumberPlaceholderText,
+                                text: $pet.chipID.number
+                            )
+                            .keyboardType(.numbersAndPunctuation)
+                            .focused($chipTextFieldFocused)
+                            .onChange(of: pet.chipID.type) { oldValue, newValue in
+                                chipTextFieldFocused = true
+                            }
+                            .overlay {
+                                VerificationCheckMark(
+                                    condition: isChipIDVerified
+                                )
+                            }
+                            
+                            DatePicker(
+                                "Implanted on",
+                                selection: $pet.chipID.implantedDate,
+                                in: pet.birthday ... .now,
+                                displayedComponents: .date
+                            )
+                            
+                            TextField("Location", text: $pet.chipID.location)
+                        }
                     }
                 }
             }

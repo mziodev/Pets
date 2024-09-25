@@ -8,6 +8,13 @@
 import Foundation
 
 enum PetImageSize: Double {
-    case small = 150
-    case medium = 220
+    case small
+    case medium
+    
+    var value: CGFloat {
+        switch self {
+        case .small: return 150
+        case .medium: return 220
+        }
+    }
 }
