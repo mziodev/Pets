@@ -15,7 +15,7 @@ struct PetDetailImage: View {
     @State private var showingResizeImage: Bool = false
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 15) {
             PetImage(pet: pet)
 
             if pet.image == nil {
@@ -26,16 +26,13 @@ struct PetDetailImage: View {
                     photoLibrary: .shared()
                 )
             } else {
-                Button("Resize image") {
-                    showingResizeImage = true
-                }
+                Button("Resize image", action: resizeImage)
 
-                Button("Remove image", role: .destructive) {
-                    withAnimation {
-                        selectedImage = nil
-                        pet.image = nil
-                    }
-                }
+                Button(
+                    "Remove image",
+                    role: .destructive,
+                    action: removeImage
+                )
             }
         }
         .sheet(isPresented: $showingResizeImage) {
@@ -47,6 +44,20 @@ struct PetDetailImage: View {
             ) {
                 pet.image = data
             }
+        }
+    }
+    
+    private func resizeImage() {
+        showingResizeImage = true
+    }
+    
+    private func removeImage() {
+        selectedImage = nil
+        
+        withAnimation {
+            pet.image = nil
+            pet.imageScale = 1
+            pet.updateImageOffset(offset: .zero)
         }
     }
 }

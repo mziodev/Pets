@@ -12,8 +12,39 @@ struct ResizeImage: View {
     
     @Bindable var pet: Pet
     
-    @State var newOffset: CGSize
-    @State var newScale: CGFloat
+    @GestureState private var startOffset: CGSize? = nil
+    @GestureState private var magnifyBy: CGFloat = 1.0
+    
+    @State private var newOffset: CGSize
+    @State private var newScale: CGFloat
+    
+    private var magnification: some Gesture {
+        MagnifyGesture()
+            .updating($magnifyBy) { value, state, _ in
+                state = value.magnification
+            }
+            .onEnded { value in
+                newScale *= value.magnification
+                pet.imageScale = newScale
+            }
+            .simultaneously(with: drag)
+    }
+    
+    private var drag: some Gesture {
+        DragGesture()
+            .onChanged { offset in
+                newOffset = startOffset ?? pet.imageOffset
+                
+                newOffset.width += offset.translation.width
+                newOffset.height += offset.translation.height
+            }
+            .updating($startOffset) { value, startOffset, transaction in
+                startOffset = startOffset ?? pet.imageOffset
+            }
+            .onEnded { _ in
+                pet.updateImageOffset(offset: newOffset)
+            }
+    }
     
     private let imageSize = PetImageSize.medium.value
     
@@ -26,60 +57,40 @@ struct ResizeImage: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                ZStack {
-                    if let imageData = pet.image,
-                       let uiImage = UIImage(data: imageData) {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .scaledToFill()
-                            .scaleEffect(newScale)
-                            .offset(newOffset)
-                            .frame(height: imageSize)
-                            .opacity(0.4)
-                        
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .scaledToFit()
-                            .scaleEffect(newScale)
-                            .offset(newOffset)
-                            .mask(
-                                Circle()
-                                    .frame(
-                                        width: imageSize,
-                                        height: imageSize
-                                    )
+            ZStack {
+                if let imageData = pet.image,
+                    let uiImage = UIImage(data: imageData)  {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFit()
+                        .scaleEffect(newScale * magnifyBy)
+                        .offset(newOffset)
+                }
+                
+                GeometryReader { geometry in
+                    let centerX = (geometry.size.width / 2) - (imageSize / 2)
+                    let centerY = (geometry.size.height / 2) - (imageSize / 2)
+                    
+                    Rectangle()
+                        .symmetricDifference(
+                            .circle.path(
+                                in: CGRect(
+                                    x: centerX,
+                                    y: centerY,
+                                    width: imageSize,
+                                    height: imageSize
+                                )
                             )
-                            .gesture(
-                                MagnifyGesture()
-                                    .onChanged { scale in
-                                        newScale = scale.magnification
-                                    }
-                                    .onEnded { _ in
-                                        pet.imageScale = newScale
-                                    }
-                            )
-                            .simultaneousGesture(
-                                DragGesture()
-                                    .onChanged { offset in
-                                        newOffset = offset.translation
-                                    }
-                                    .onEnded { _ in
-                                        pet.updateImageOffset(
-                                            offset: newOffset
-                                        )
-                                    }
-                            )
-                    } else {
-                        Text("No pet image available.")
-                    }
+                        )
+                        .fill(Color.black.opacity(0.5))
+                        .ignoresSafeArea(edges: .bottom)
                 }
             }
-            .navigationTitle("Resize \(pet.name)'s Image")
+            .navigationTitle(
+                pet.name != "" ? "Resize \(pet.name)'s Image" : "Resize Image"
+            )
             .navigationBarTitleDisplayMode(.inline)
-            .onAppear {
-                print(pet.imageScale)
-            }
+            .gesture(magnification)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Ok", action: dismissView)

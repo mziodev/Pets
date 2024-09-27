@@ -625,17 +625,6 @@
         }
       }
     },
-    "Add photo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Añadir foto"
-          }
-        }
-      }
-    },
     "Add Treatment" : {
       "localizations" : {
         "es" : {
@@ -881,17 +870,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Símbolo de gato"
-          }
-        }
-      }
-    },
-    "Change photo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cambiar foto"
           }
         }
       }
@@ -1765,9 +1743,6 @@
         }
       }
     },
-    "No pet image available." : {
-
-    },
     "No pets yet" : {
       "localizations" : {
         "es" : {
@@ -2048,24 +2023,44 @@
       }
     },
     "Remove image" : {
-
-    },
-    "Remove photo" : {
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eliminar foto"
+            "value" : "Eliminar imagen"
           }
         }
       }
     },
     "Resize %@'s Image" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redimensiona la Imagen de %@"
+          }
+        }
+      }
     },
     "Resize image" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redimensionar imagen"
+          }
+        }
+      }
+    },
+    "Resize Image" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redimensiona la Imagen"
+          }
+        }
+      }
     },
     "Restore Purchase" : {
       "localizations" : {
