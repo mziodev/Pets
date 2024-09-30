@@ -19,13 +19,8 @@ struct PetCard: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-//                Image("Nano")
-//                    .resizable()
-//                    .scaledToFill()
-//                    .frame(maxHeight: 250)
-//                    .clipShape(Circle())
-
                 PetImage(pet: pet)
+                    .padding(.top)
 
                 VStack(spacing: 10) {
                     PetCardName(name: pet.name)
@@ -33,9 +28,29 @@ struct PetCard: View {
                     PetCardBreed(breed: pet.breed)
 
                     PetCardAge(pet: pet)
-
-                    PetCardWeight(pet: pet)
                 }
+                .padding()
+                
+                LazyVGrid(
+                    columns: [
+                        GridItem(.fixed(150), spacing: 10),
+                        GridItem(.fixed(150), spacing: 10)
+                    ]
+                ) {
+                    NavigationLink {
+                        WeightList(pet: pet)
+                    } label: {
+                        WeightCard(pet: pet)
+                    }
+                    
+                    NavigationLink {
+                        DewormingTreatmentList(pet: pet)
+                    } label: {
+                        DewormingTreatmentsCard(pet: pet)
+                    }
+                }
+                .foregroundColor(.primary)
+                .padding()
             }
             .scrollIndicators(.hidden)
             .navigationTitle("\(pet.name)'s Card")
@@ -102,8 +117,8 @@ struct PetCard: View {
         .modelContainer(SampleData.shared.modelContainer)
 }
 
-#Preview("Pet without chip ID") {
-    PetCard(pet: SampleData.shared.petWithoutChipID)
+#Preview("Pet with expired vaccines") {
+    PetCard(pet: SampleData.shared.petWithExpiredVaccines)
         .modelContainer(SampleData.shared.modelContainer)
 }
 

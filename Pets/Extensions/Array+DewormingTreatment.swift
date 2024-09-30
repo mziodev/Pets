@@ -19,4 +19,8 @@ extension Array where Element == DewormingTreatment {
     var expired: Int {
         self.filter { $0.activeDays < 0 }.count
     }
+    
+    var lastActive: DewormingTreatment? {
+        self.first(where: { $0.activeDays >= 0 })
+    }
 }

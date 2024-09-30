@@ -10,27 +10,12 @@ import SwiftUI
 struct DewormingTreatmentListRow: View {
     let dewormingTreatment: DewormingTreatment
     
-    private let daysRange = 7...15
-    private var isTreatmentExpired: Bool {
-        dewormingTreatment.activeDays < 0
-    }
-    
-    var activeTreatmentDaysColor: Color {
-        if dewormingTreatment.activeDays < 7 {
-            return .red
-        } else if daysRange.contains(dewormingTreatment.activeDays) {
-            return .yellow
-        } else {
-            return .green
-        }
-    }
-    
     var body: some View {
         HStack {
             Image(systemName: dewormingTreatment.type.systemImage)
                 .font(.title)
                 .foregroundStyle(
-                    isTreatmentExpired ? .secondary : Color.accent
+                    dewormingTreatment.isActive ? Color.accent : .secondary
                 )
                 .accessibilityLabel(
                     dewormingTreatment.type.localizedDescription
@@ -52,14 +37,16 @@ struct DewormingTreatmentListRow: View {
             
             Spacer()
             
-            if !isTreatmentExpired {
+            if dewormingTreatment.isActive {
                 if dewormingTreatment.activeDays > 0 {
                     VStack(alignment: .center) {
                         Text("\(dewormingTreatment.activeDays)")
                             .font(.title3)
                             .fontDesign(.rounded)
                             .bold()
-                            .foregroundStyle(activeTreatmentDaysColor)
+                            .foregroundStyle(
+                                dewormingTreatment.activeDaysColor
+                            )
                         
                         Text("More days")
                             .font(.caption2.smallCaps())
@@ -79,7 +66,7 @@ struct DewormingTreatmentListRow: View {
                 .foregroundStyle(.secondary)
             }
         }
-        .foregroundStyle(isTreatmentExpired ? .secondary : .primary)
+        .foregroundStyle(dewormingTreatment.isActive ? .primary : .secondary)
     }
 }
 

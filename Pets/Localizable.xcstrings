@@ -582,6 +582,9 @@
     "About 3-6 inches (7.5-15 cm)" : {
 
     },
+    "Active" : {
+
+    },
     "Active treatments" : {
       "localizations" : {
         "es" : {
@@ -983,6 +986,9 @@
         }
       }
     },
+    "Days to expire" : {
+
+    },
     "Delete Treatment" : {
       "localizations" : {
         "es" : {
@@ -1032,6 +1038,9 @@
           }
         }
       }
+    },
+    "Deworming Treatments" : {
+
     },
     "Dewormings" : {
       "localizations" : {
@@ -1435,6 +1444,9 @@
     "Large" : {
 
     },
+    "Last" : {
+
+    },
     "Last 6 Months" : {
       "localizations" : {
         "es" : {
@@ -1703,6 +1715,9 @@
         }
       }
     },
+    "No active deworming treatments." : {
+
+    },
     "No average yet" : {
       "localizations" : {
         "es" : {
@@ -1732,6 +1747,9 @@
           }
         }
       }
+    },
+    "No data yet" : {
+
     },
     "No Microchip" : {
       "localizations" : {
