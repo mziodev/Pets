@@ -28,19 +28,18 @@ struct DewormingTreatmentsCard: View {
             Divider()
             
             VStack(alignment: .leading) {
+                Text("Active")
+                    .font(.caption.smallCaps())
+                
+                Spacer()
+                
                 if let lastActiveTreatment =  pet.unwrappedDewormingTreatments.lastActive {
-                    Text("Active")
-                        .font(.caption.smallCaps())
-                    
                     Text(lastActiveTreatment.name)
-                        .font(.headline)
+                        .font(.callout)
+                        .bold()
                     
-                    VStack(alignment: .center){
-                        HStack {
-                            Text("Days to expire")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                            
+                    VStack {
+                        HStack(alignment: .bottom, spacing: 0) {
                             Text("\(lastActiveTreatment.activeDays)")
                                 .font(.largeTitle)
                                 .bold()
@@ -48,23 +47,23 @@ struct DewormingTreatmentsCard: View {
                                 .foregroundStyle(
                                     lastActiveTreatment.activeDaysColor
                                 )
+                            
+                            Text("More days")
+                                .font(.caption.smallCaps())
+                                .foregroundStyle(.secondary)
                         }
                     }
-                    
-                    Spacer()
+                    .frame(maxWidth: .infinity)
                 } else {
-                    HStack {
-                        Text("No active deworming treatments.")
+                    VStack {
+                        Text("No data yet.")
                             .font(.caption)
                             .foregroundStyle(.secondary)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "ant.fill")
-                            .font(.title3)
-                            .foregroundStyle(.red)
                     }
+                    .frame(maxWidth: .infinity)
                 }
+                
+                Spacer()
             }
             .frame(height: 80)
             .padding(.horizontal)

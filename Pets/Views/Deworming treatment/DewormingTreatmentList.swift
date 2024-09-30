@@ -96,10 +96,6 @@ struct DewormingTreatmentList: View {
                         )
                         .font(.caption)
                     }
-                } else {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel", action: dismissView)
-                    }
                 }
             }
         }

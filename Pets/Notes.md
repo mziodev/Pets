@@ -1,9 +1,5 @@
 # Project Notes
 
-## Color Code
-### Old
-- Accent Red: #E15161
-- Accent Blue: #00A5E0
 
 ## Cannine Breed JSON list free IDs
 - 94, 139, 178, 190
@@ -11,10 +7,6 @@
 
 ## Localization and i18n
 - We have to do localization and internationalization of the entire app on: English, Spanish, French, Portuguese, German, Chinese, Japanese, Indian... on this order.
-
-
-## Resizable image
-We need to implement a resizable function for pet images. Probably we need a new intermediate sheet view for selecting and resizing the photo. And it would be a good idea an alert message before deleting the existing image.
 
 
 ## Sharing data with other iCloud users

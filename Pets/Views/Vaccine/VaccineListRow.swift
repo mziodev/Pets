@@ -10,36 +10,20 @@ import SwiftUI
 struct VaccineListRow: View {
     let vaccine: Vaccine
     
-    private let daysRange = 15...30
-    
-    private var isVaccineExpired: Bool {
-        vaccine.activeDays < 0
-    }
-    
-    var activeDaysColor: Color {
-        if vaccine.activeDays < 15 {
-            return .red
-        } else if daysRange.contains(vaccine.activeDays) {
-            return .yellow
-        } else {
-            return .green
-        }
-    }
-    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 Text(vaccine.name)
                     .font(.headline)
                     .foregroundStyle(
-                        isVaccineExpired ? Color.secondary : Color.primary
+                        vaccine.isExpired ? Color.secondary : Color.primary
                     )
                 
                 Text(vaccine.type.rawValue)
                     .font(.footnote)
                     .bold()
                     .foregroundStyle(
-                        isVaccineExpired ? Color.secondary : Color.accent
+                        vaccine.isExpired ? Color.secondary : Color.accent
                     )
                 
                 Text(
@@ -55,13 +39,19 @@ struct VaccineListRow: View {
             
             Spacer()
             
-            if !isVaccineExpired {
+            if vaccine.isExpired {
+                HStack {
+                    Text("Expired")
+                        .font(.subheadline.smallCaps())
+                }
+                .foregroundStyle(.secondary)
+            } else {
                 if vaccine.activeDays > 0 {
                     VStack {
                         Text(vaccine.activeDays.description)
                             .font(.title)
                             .fontDesign(.rounded)
-                            .foregroundStyle(activeDaysColor)
+                            .foregroundStyle(vaccine.activeDaysColor)
                         Text("More Days")
                             .font(.caption.smallCaps())
                             .bold()
@@ -72,12 +62,6 @@ struct VaccineListRow: View {
                         .bold()
                         .foregroundStyle(.red)
                 }
-            } else {
-                HStack {
-                    Text("Expired")
-                        .font(.subheadline.smallCaps())
-                }
-                .foregroundStyle(.secondary)
             }
         }
     }

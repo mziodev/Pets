@@ -583,7 +583,14 @@
 
     },
     "Active" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activas"
+          }
+        }
+      }
     },
     "Active treatments" : {
       "localizations" : {
@@ -986,9 +993,6 @@
         }
       }
     },
-    "Days to expire" : {
-
-    },
     "Delete Treatment" : {
       "localizations" : {
         "es" : {
@@ -1040,9 +1044,6 @@
       }
     },
     "Deworming Treatments" : {
-
-    },
-    "Dewormings" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -1445,7 +1446,14 @@
 
     },
     "Last" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Último"
+          }
+        }
+      }
     },
     "Last 6 Months" : {
       "localizations" : {
@@ -1715,9 +1723,6 @@
         }
       }
     },
-    "No active deworming treatments." : {
-
-    },
     "No average yet" : {
       "localizations" : {
         "es" : {
@@ -1748,8 +1753,15 @@
         }
       }
     },
-    "No data yet" : {
-
+    "No data yet." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin datos todavía."
+          }
+        }
+      }
     },
     "No Microchip" : {
       "localizations" : {
@@ -2605,16 +2617,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lista de Pesos (%@)"
-          }
-        }
-      }
-    },
-    "Weights" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pesos"
           }
         }
       }

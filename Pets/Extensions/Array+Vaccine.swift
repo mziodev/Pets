@@ -19,4 +19,8 @@ extension Array where Element == Vaccine {
     var expired: Int {
         self.filter { $0.activeDays < 0 }.count
     }
+    
+    var lastActive: Vaccine? {
+        self.first(where: { $0.activeDays >= 0 })
+    }
 }

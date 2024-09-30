@@ -30,21 +30,36 @@ struct WeightCard: View {
             VStack(alignment: .leading) {
                 Text("Last")
                     .font(.caption.smallCaps())
+                
+                Spacer()
+                
                 if pet.unwrappedWeights.currentWeight.isZero {
-                    Text("No data yet")
-                        .foregroundStyle(.secondary)
+                    VStack {
+                        Text("No data yet.")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity)
                 } else {
-                    Text(
-                        String(
-                            format: "%.3f %@",
-                            pet.unwrappedWeights.currentWeight,
-                            Format.weightUnits
-                        )
-                    )
-                    .font(.title)
-                    .bold()
-                    .fontDesign(.serif)
-                    .foregroundStyle(.accent)
+                    VStack {
+                        HStack(alignment: .bottom, spacing: 0) {
+                            Text(
+                                String(
+                                    format: "%.3f",
+                                    pet.unwrappedWeights.currentWeight
+                                )
+                            )
+                            .font(.largeTitle)
+                            .bold()
+                            .fontDesign(.serif)
+                            .foregroundStyle(.accent)
+                            
+                            Text(Format.weightUnits)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
                 }
                 
                 Spacer()
