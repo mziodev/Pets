@@ -1800,6 +1800,16 @@
         }
       }
     },
+    "New Support, What's New, and Rate this App views." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevas vistas de Soporte, Novedades, y Califica esta App."
+          }
+        }
+      }
+    },
     "No average yet" : {
       "localizations" : {
         "es" : {

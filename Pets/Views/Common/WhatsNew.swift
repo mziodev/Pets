@@ -12,42 +12,29 @@ struct WhatsNew: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 50) {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 15) {
-                        Text("Version 1.1.0")
-                            .font(.title)
-                            .bold()
-                        
-                        VStack(alignment: .leading, spacing: 8) {
-                            UpdateView(
-                                text: String(
-                                    localized: "Added resize feature for images."
-                                )
-                            )
-                            
-                            UpdateView(
-                                text: String(
-                                    localized: "New Pet card with summary information about the last weight, deworming treatments, and vaccines."
-                                )
-                            )
-                            
-                            UpdateView(
-                                text: String(
-                                    localized: "Some minor UI tweaks and error fixes."
-                                )
-                            )
-                        }
-                    }
+            List {
+                Section("Version 1.1.0") {
+                    UpdateView(
+                        text: String(
+                            localized: "Added resize feature for images."
+                        )
+                    )
+                    
+                    UpdateView(
+                        text: String(
+                            localized: "New Pet card with summary information about the last weight, deworming treatments, and vaccines."
+                        )
+                    )
+                    
+                    UpdateView(text: String(localized: "New Support, What's New, and Rate this App views."))
+                    
+                    UpdateView(
+                        text: String(
+                            localized: "Some minor UI tweaks and error fixes."
+                        )
+                    )
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
-            .background(
-                Gradient(
-                    colors: [.accent.opacity(0), .accent.opacity(0.3)]
-                )
-            )
             .navigationTitle("What's new on Pets")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
@@ -73,8 +60,6 @@ struct UpdateView: View {
                 .foregroundStyle(.green)
             
             Text(text)
-                .font(.subheadline)
-                .padding(.top, 3)
         }
     }
 }

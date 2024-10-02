@@ -29,14 +29,25 @@ struct PetList: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(premiumCheckedPets) { pet in
-                    NavigationLink {
-                        PetCard(pet: pet)
-                    } label: {
-                        PetListRow(pet: pet)
+                Section {
+                    ForEach(premiumCheckedPets) { pet in
+                        NavigationLink {
+                            PetCard(pet: pet)
+                        } label: {
+                            PetListRow(pet: pet)
+                        }
                     }
+                    .onDelete(perform: deletePets)
+                } footer: {
+                    HStack {
+                        Spacer()
+                        
+                        Text("\(premiumCheckedPets.count) pets")
+                        
+                        Spacer()
+                    }
+                    .padding(.top, 10)
                 }
-                .onDelete(perform: deletePets)
             }
             .navigationTitle("Pets")
             .overlay {
@@ -92,7 +103,11 @@ struct PetList: View {
                     Button{
                         showingAddPet = true
                     } label: {
-                        Label("Add pet", systemImage: "plus")
+                        HStack {
+                            Image(systemName: "plus.circle.fill")
+                            
+                            Text("Add pet")
+                        }
                     }
                 }
                 
@@ -100,13 +115,13 @@ struct PetList: View {
                     ToolbarItem(placement: .topBarTrailing) {
                         EditButton()
                     }
-                    
-                    ToolbarItem(placement: .status) {
-                        ZStack {
-                            Text("\(premiumCheckedPets.count) pets")
-                                .font(.caption)
-                        }
-                    }
+//                    
+//                    ToolbarItem(placement: .status) {
+//                        ZStack {
+//                            Text("\(premiumCheckedPets.count) pets")
+//                                .font(.caption)
+//                        }
+//                    }
                 }
             }
         }
