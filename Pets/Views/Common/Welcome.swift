@@ -11,38 +11,43 @@ struct Welcome: View {
     @Binding var isFirstStart: Bool
     
     var body: some View {
-        VStack(spacing: 30) {
+        VStack(spacing: 50) {
             Text("Welcome to Pets")
                 .font(.largeTitle)
                 .bold()
                 .padding()
             
             ScrollView {
-                Feature(
-                    symbolName: "person.text.rectangle.fill",
-                    symbolColor: .petsCelestialBlue,
-                    title: String(localized: "Create their identities"),
-                    text: String(localized: "Fill their personal cards up with their names, breeds, birthdays, Microchip info...")
-                )
-                
-                Feature(
-                    symbolName: "stethoscope",
-                    symbolColor: .red,
-                    title: String(localized: "Take care of your pets"),
-                    text: String(localized: "Take control of their weight, their regular deworming treatments, and vaccines.")
-                )
-                
-                Feature(
-                    symbolName: "calendar.badge.clock",
-                    symbolColor: .petsFulvous,
-                    title: String(localized: "Don't miss anything"),
-                    text: String(localized: "Write down any weight, vaccine or deworming treatment detail so you don't miss anything, and configure notifications so you don't forget any important thing.*")
-                )
-                
-                Text("*Some features are only available on Pets Premium.")
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
-                    .padding(.top)
+                VStack(alignment: .leading, spacing: 20) {
+                    Feature(
+                        symbolName: "person.text.rectangle.fill",
+                        symbolColor: .petsCelestialBlue,
+                        title: String(localized: "Create their identities"),
+                        text: String(localized: "Fill their personal cards up with their names, breeds, birthdays, Microchip info...")
+                    )
+                    
+                    Feature(
+                        symbolName: "stethoscope",
+                        symbolColor: .red,
+                        title: String(localized: "Take care of your pets"),
+                        text: String(localized: "Take control of their weight, their regular deworming treatments, and vaccines.")
+                    )
+                    
+                    Feature(
+                        symbolName: "calendar.badge.clock",
+                        symbolColor: .petsFulvous,
+                        title: String(localized: "Don't miss anything"),
+                        text: String(localized: "Write down any weight, vaccine or deworming treatment detail so you don't miss anything, and configure notifications so you don't forget any important thing.*")
+                    )
+                    
+                    Spacer()
+                    
+                    Text("*Some features are only available on Pets Premium.")
+                        .font(.caption2)
+                        .bold()
+                        .foregroundStyle(.secondary)
+                        .padding()
+                }
             }
             
             Button("Continue", action: goToApp)
@@ -54,6 +59,7 @@ struct Welcome: View {
                     .petsUCLABlue,
                     in: .rect(cornerRadius: 16)
                 )
+                .padding(.horizontal)
                 .padding(.bottom)
         }
         .padding()
@@ -71,7 +77,7 @@ struct Feature: View {
     var body: some View {
         HStack {
             Image(systemName: symbolName)
-                .frame(width: 80, height: 90)
+                .frame(width: 70)
                 .font(.system(size: 40))
                 .foregroundStyle(symbolColor)
             
@@ -81,9 +87,9 @@ struct Feature: View {
                 
                 Text(text)
                     .foregroundStyle(.secondary)
+                    .padding(.trailing)
             }
         }
-        .padding(.bottom, 20)
     }
 }
 

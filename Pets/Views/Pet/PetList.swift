@@ -18,6 +18,8 @@ struct PetList: View {
     @EnvironmentObject var petsStoreManager: PetsStoreManager
     
     @State private var showingAddPet = false
+    @State private var showingSupport = false
+    @State private var showingWhatsNew: Bool = false
     @State private var showingPetsStore = false
 
     private var premiumCheckedPets: [Pet] {
@@ -50,19 +52,43 @@ struct PetList: View {
                     PetDetail(pet: Pet(), isNew: true)
                 }
             }
-            .sheet(isPresented: $showingPetsStore) { PetsStoreView() }
+            .sheet(isPresented: $showingSupport) {
+                Support()
+            }
+            .sheet(isPresented: $showingWhatsNew) {
+                WhatsNew()
+            }
+            .sheet(isPresented: $showingPetsStore) {
+                PetsStoreView()
+            }
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItemGroup(placement: .secondaryAction) {
+                    Button {
+                        showingWhatsNew = true
+                    } label: {
+                        Label("What's new", systemImage: "sparkles")
+                    }
+                    
                     Button {
                         showingPetsStore = true
                     } label: {
-                        ToolbarPremiumButtonLabel(
-                            isPremium: petsStoreManager.isPremiumUnlocked
-                        )
+                        Label("Pets Premium", systemImage: "crown.fill")
+                    }
+                    
+                    Button {
+                        showAppStoreRating()
+                    } label: {
+                        Label("Rate this app", systemImage: "star.fill")
+                    }
+                    
+                    Button {
+                        showingSupport = true
+                    } label: {
+                        Label("Support", systemImage: "envelope.fill")
                     }
                 }
                 
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .bottomBar) {
                     Button{
                         showingAddPet = true
                     } label: {
@@ -75,7 +101,7 @@ struct PetList: View {
                         EditButton()
                     }
                     
-                    ToolbarItem(placement: .bottomBar) {
+                    ToolbarItem(placement: .status) {
                         ZStack {
                             Text("\(premiumCheckedPets.count) pets")
                                 .font(.caption)
@@ -88,6 +114,22 @@ struct PetList: View {
 
     private func deletePets(offsets: IndexSet) {
         offsets.forEach { modelContext.delete(pets[$0]) }
+    }
+    
+    private func showAppStoreRating() {
+        guard let url = URL(
+            string: "itms-apps://itunes.apple.com/app/id6670243713?action=write-review"
+        ) else {
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(
+                url,
+                options: [:],
+                completionHandler: nil
+            )
+        }
     }
 }
 

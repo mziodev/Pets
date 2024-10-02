@@ -72,10 +72,6 @@ struct PetCard: View {
                     Button("Edit") { showingPetDetail = true }
                 }
                 
-                ToolbarItemGroup(placement: .secondaryAction) {
-                    //
-                }
-                
                 ToolbarItem(placement: .status) {
                     if pet.chipID.type == .noChipID {
                         Text("No Microchip")

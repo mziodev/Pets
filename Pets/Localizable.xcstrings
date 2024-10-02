@@ -486,6 +486,16 @@
         }
       }
     },
+    "©2024 Mauricio Del Solar (MZiO)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "©2024 Mauricio Del Solar (MZiO)"
+          }
+        }
+      }
+    },
     "4-8 pounds (1.8-3.6 kg)" : {
 
     },
@@ -582,6 +592,16 @@
     "About 3-6 inches (7.5-15 cm)" : {
 
     },
+    "About Pets" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acerca de Mascotas"
+          }
+        }
+      }
+    },
     "Active" : {
       "localizations" : {
         "es" : {
@@ -623,7 +643,14 @@
       }
     },
     "Add image" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir imagen"
+          }
+        }
+      }
     },
     "Add pet" : {
       "localizations" : {
@@ -681,6 +708,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Añadir Peso"
+          }
+        }
+      }
+    },
+    "Added resize feature for images." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva función de redimensionado de imágenes añadida."
           }
         }
       }
@@ -831,6 +868,16 @@
         }
       }
     },
+    "Build number:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de build:"
+          }
+        }
+      }
+    },
     "Buzzed" : {
 
     },
@@ -920,6 +967,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Collar"
+          }
+        }
+      }
+    },
+    "Contact Us" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contacta con nosotros"
           }
         }
       }
@@ -1703,6 +1760,16 @@
     "More than 6 inches (15 cm)" : {
 
     },
+    "mziodev@gmail.com" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mziodev@gmail.com"
+          }
+        }
+      }
+    },
     "Name" : {
       "localizations" : {
         "es" : {
@@ -1719,6 +1786,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nueva mascota"
+          }
+        }
+      }
+    },
+    "New Pet card with summary information about the last weight, deworming treatments, and vaccines." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva Tarjeta de Mascota con resúmenes de información sobre los últimos pesos, desparasitaciones y vacunas."
           }
         }
       }
@@ -1972,12 +2049,32 @@
         }
       }
     },
+    "Pets Premium" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mascotas Premium"
+          }
+        }
+      }
+    },
     "Pets Store" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "La tienda de Mascotas"
+          }
+        }
+      }
+    },
+    "Pets Support" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soporte de Mascotas"
           }
         }
       }
@@ -2002,6 +2099,16 @@
         }
       }
     },
+    "Policies" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Políticas"
+          }
+        }
+      }
+    },
     "ppm" : {
       "localizations" : {
         "es" : {
@@ -2018,6 +2125,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Política de privacidad"
+          }
+        }
+      }
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Política de Privacidad"
           }
         }
       }
@@ -2052,12 +2169,32 @@
         }
       }
     },
+    "Rate this app" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Califica esta app"
+          }
+        }
+      }
+    },
     "Remove image" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminar imagen"
+          }
+        }
+      }
+    },
+    "Report a problem or just send us some feedback." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informa de un problema o simplemente envíanos tus comentarios."
           }
         }
       }
@@ -2174,6 +2311,16 @@
     "Soft and smooth to the touch" : {
 
     },
+    "Some minor UI tweaks and error fixes." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algunos ajustes menores en la IU y correcciones de errores."
+          }
+        }
+      }
+    },
     "Species" : {
       "localizations" : {
         "es" : {
@@ -2226,6 +2373,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suscríbete a Mascotas Premium y consigue:"
+          }
+        }
+      }
+    },
+    "Support" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soporte"
           }
         }
       }
@@ -2296,6 +2453,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Haz tap en el botón '+' para añadir un nuevo tratamiento de desparasitación."
+          }
+        }
+      }
+    },
+    "Terms of Service (EULA)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condiciones de Uso (EULA)"
           }
         }
       }
@@ -2555,6 +2722,26 @@
         }
       }
     },
+    "Version 1.1.0" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión 1.1.0"
+          }
+        }
+      }
+    },
+    "Version number:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de versión:"
+          }
+        }
+      }
+    },
     "Very short (less than 1/4 inch or 6 mm)" : {
 
     },
@@ -2637,6 +2824,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bienvenido/a a Mascotas"
+          }
+        }
+      }
+    },
+    "What's new" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novedades"
+          }
+        }
+      }
+    },
+    "What's new on Pets" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novedades en Mascotas"
           }
         }
       }

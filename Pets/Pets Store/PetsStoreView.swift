@@ -13,10 +13,6 @@ struct PetsStoreView: View {
     
     @EnvironmentObject var petsStoreManager: PetsStoreManager
     
-    private let privacyPolicyURL = URL(string: "https://mziodev.github.io/Pets/privacy.html")!
-    
-    private let termsOfUseURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
-    
     var body: some View {
         NavigationStack {
             VStack {
@@ -73,9 +69,12 @@ struct PetsStoreView: View {
                     .font(.body.smallCaps())
                     
                     VStack(spacing: 10) {
-                        Link("Privacy policy", destination: privacyPolicyURL)
+                        Link(
+                            "Privacy policy",
+                            destination: URLs.privacyPolicyURL
+                        )
                         
-                        Link("Terms of use", destination: termsOfUseURL)
+                        Link("Terms of use", destination: URLs.termsOfUseURL)
                     }
                     .padding(.top)
                     .font(.subheadline)

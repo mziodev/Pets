@@ -11,6 +11,7 @@
 		080343782C8AF8F6004F4249 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080343772C8AF8F6004F4249 /* Date+Format.swift */; };
 		080F40692C241DC60085CA65 /* DewormingTreatmentListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */; };
 		080F406F2C246FDC0085CA65 /* DewormingTreatmentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */; };
+		0823CD622CAC3CFF008DE67A /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0823CD612CAC3CFF008DE67A /* URLs.swift */; };
 		083766F42C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083766F32C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift */; };
 		083766F62C89F902009255E1 /* PetsPremium.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 083766F52C89F902009255E1 /* PetsPremium.storekit */; };
 		083766F82C89F923009255E1 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 083766F72C89F923009255E1 /* StoreKitTestCertificate.cer */; };
@@ -23,6 +24,7 @@
 		084E3E402C8EF8B400623D9E /* NotificationPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E3E3F2C8EF8B400623D9E /* NotificationPeriod.swift */; };
 		084E3E422C8F0F3600623D9E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E3E412C8F0F3600623D9E /* Notification.swift */; };
 		086955E92CAA93F100AC52FF /* VaccineCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086955E82CAA93F100AC52FF /* VaccineCard.swift */; };
+		086955EB2CAAFAE200AC52FF /* WhatsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086955EA2CAAFAE200AC52FF /* WhatsNew.swift */; };
 		086C88412C94389D004F9C6C /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086C88402C94389D004F9C6C /* Welcome.swift */; };
 		087136B92C91925800A08726 /* GoPremiumAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087136B82C91925800A08726 /* GoPremiumAd.swift */; };
 		087DCEB22C85D7DA005E3A47 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087DCEB12C85D7DA005E3A47 /* StoreKit.framework */; };
@@ -76,6 +78,7 @@
 		08CACB3A2C78D9F10068AC60 /* PetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CACB392C78D9F10068AC60 /* PetSize.swift */; };
 		08CACB3C2C78DA020068AC60 /* CoatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CACB3B2C78DA020068AC60 /* CoatType.swift */; };
 		08CACB3E2C78E07D0068AC60 /* CoatLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CACB3D2C78E07D0068AC60 /* CoatLength.swift */; };
+		08D802FE2CAC38CF00415EA0 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D802FD2CAC38CF00415EA0 /* Support.swift */; };
 		08DF543B2C1C34DC003076B1 /* PetListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF543A2C1C34DC003076B1 /* PetListRow.swift */; };
 		08DF543F2C1C4519003076B1 /* PetCardBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF543E2C1C4519003076B1 /* PetCardBreed.swift */; };
 		08DF54412C1C46FC003076B1 /* PetCardAge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF54402C1C46FC003076B1 /* PetCardAge.swift */; };
@@ -103,6 +106,7 @@
 		080343772C8AF8F6004F4249 /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentListRow.swift; sourceTree = "<group>"; };
 		080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentDetail.swift; sourceTree = "<group>"; };
+		0823CD612CAC3CFF008DE67A /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		082419E92C81BEBF008BE7D1 /* Pets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pets.entitlements; sourceTree = "<group>"; };
 		083766F32C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPremiumButtonLabel.swift; sourceTree = "<group>"; };
 		083766F52C89F902009255E1 /* PetsPremium.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = PetsPremium.storekit; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 		084E3E3F2C8EF8B400623D9E /* NotificationPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPeriod.swift; sourceTree = "<group>"; };
 		084E3E412C8F0F3600623D9E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		086955E82CAA93F100AC52FF /* VaccineCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCard.swift; sourceTree = "<group>"; };
+		086955EA2CAAFAE200AC52FF /* WhatsNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNew.swift; sourceTree = "<group>"; };
 		086C88402C94389D004F9C6C /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		087136B82C91925800A08726 /* GoPremiumAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPremiumAd.swift; sourceTree = "<group>"; };
 		087DCEB12C85D7DA005E3A47 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -170,6 +175,7 @@
 		08CACB392C78D9F10068AC60 /* PetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSize.swift; sourceTree = "<group>"; };
 		08CACB3B2C78DA020068AC60 /* CoatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatType.swift; sourceTree = "<group>"; };
 		08CACB3D2C78E07D0068AC60 /* CoatLength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatLength.swift; sourceTree = "<group>"; };
+		08D802FD2CAC38CF00415EA0 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		08DF543A2C1C34DC003076B1 /* PetListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListRow.swift; sourceTree = "<group>"; };
 		08DF543E2C1C4519003076B1 /* PetCardBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardBreed.swift; sourceTree = "<group>"; };
 		08DF54402C1C46FC003076B1 /* PetCardAge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardAge.swift; sourceTree = "<group>"; };
@@ -275,6 +281,7 @@
 				08012CF52C25C27E000C9418 /* Format.swift */,
 				084E3E412C8F0F3600623D9E /* Notification.swift */,
 				08833FE12C09CABB000FD0BF /* SampleData.swift */,
+				0823CD612CAC3CFF008DE67A /* URLs.swift */,
 			);
 			path = Utitliies;
 			sourceTree = "<group>";
@@ -440,8 +447,10 @@
 				08EDF6822CA2B124003D49FC /* ResizeImage.swift */,
 				08CACB332C7886D40068AC60 /* RowDeleteButton.swift */,
 				083766F32C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift */,
+				08D802FD2CAC38CF00415EA0 /* Support.swift */,
 				087F5B552C131CF9005A7083 /* VerificationCheckMark.swift */,
 				086C88402C94389D004F9C6C /* Welcome.swift */,
+				086955EA2CAAFAE200AC52FF /* WhatsNew.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -614,6 +623,7 @@
 				08DF54412C1C46FC003076B1 /* PetCardAge.swift in Sources */,
 				087DCEBD2C8615C4005E3A47 /* PetsStoreView.swift in Sources */,
 				08DF543B2C1C34DC003076B1 /* PetListRow.swift in Sources */,
+				08D802FE2CAC38CF00415EA0 /* Support.swift in Sources */,
 				08FD87AB2C2C01E400CC9F9A /* WeightListEmpty.swift in Sources */,
 				08CACB3E2C78E07D0068AC60 /* CoatLength.swift in Sources */,
 				08909CF72C7F2B0800C65D5A /* String+Validation.swift in Sources */,
@@ -635,6 +645,7 @@
 				08833FF92C09CABB000FD0BF /* PetCard.swift in Sources */,
 				087F5B562C131CF9005A7083 /* VerificationCheckMark.swift in Sources */,
 				08833FF82C09CABB000FD0BF /* SampleData.swift in Sources */,
+				0823CD622CAC3CFF008DE67A /* URLs.swift in Sources */,
 				083766F42C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift in Sources */,
 				08CACB3C2C78DA020068AC60 /* CoatType.swift in Sources */,
 				083DAC5E2C3406C7001EDAA7 /* VaccineListRow.swift in Sources */,
@@ -671,6 +682,7 @@
 				087136B92C91925800A08726 /* GoPremiumAd.swift in Sources */,
 				08833FF42C09CABB000FD0BF /* PetSpecies.swift in Sources */,
 				08B585162C1855250068D4B2 /* PetBreedVariationList.swift in Sources */,
+				086955EB2CAAFAE200AC52FF /* WhatsNew.swift in Sources */,
 				084E3E422C8F0F3600623D9E /* Notification.swift in Sources */,
 				08B585032C1713A40068D4B2 /* PetBreed.swift in Sources */,
 				08FD87BD2C30012F00CC9F9A /* PetBreedListEmpty.swift in Sources */,
@@ -812,7 +824,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
@@ -831,7 +843,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mzio.Pets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -851,7 +863,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
@@ -870,7 +882,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mzio.Pets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
