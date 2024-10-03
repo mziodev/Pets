@@ -9,6 +9,16 @@ import SwiftUI
 
 struct WeightListRow: View {
     let weight: Weight
+    
+    private var weightFormatter: NumberFormatter {
+        let numberFormatter = NumberFormatter()
+        
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.minimumFractionDigits = 3
+        numberFormatter.maximumFractionDigits = 3
+        
+        return numberFormatter
+    }
 
     var body: some View {
         HStack {
@@ -22,12 +32,7 @@ struct WeightListRow: View {
             
             Spacer()
             
-            Text(
-                String(
-                    format: "%.3f",
-                    weight.value
-                )
-            )
+            Text(weight.value as NSNumber, formatter: weightFormatter)
             .font(.headline)
             .fontDesign(.rounded)
             .foregroundStyle(.petsFulvous)

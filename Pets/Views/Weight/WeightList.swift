@@ -71,17 +71,28 @@ struct WeightList: View {
                             }
                             
                             if selectedDateRangeWeights.isEmpty {
-                                Text("(Not enough data from \(selectedTimePeriod.localizedDescription))")
-                                    .font(.caption)
+                                Text(
+                                    "(Not enough data from \(selectedTimePeriod.localizedDescription))"
+                                )
+                                .font(.caption)
                             }
                             
-                            Text(
-                                pet.unwrappedWeights.count > 1  && !selectedDateRangeWeights.isEmpty ? String(
-                                    format: "%.2f %@",
-                                    selectedDateRangeWeights.averaging(),
-                                    Format.weightUnits
-                                ) : "-"
-                            )
+                            Group {
+                                if pet.unwrappedWeights.count > 1  && !selectedDateRangeWeights.isEmpty {
+                                    HStack(spacing: 5) {
+                                        Text(
+                                            selectedDateRangeWeights
+                                                .averaging() as NSNumber,
+                                            formatter: Weight
+                                                .decimalFormatter(for: 2)
+                                        )
+                                        
+                                        Text(Weight.units)
+                                    }
+                                } else {
+                                    Text("-")
+                                }
+                            }
                             .font(.largeTitle)
                             .fontDesign(.rounded)
                             .bold()
@@ -100,7 +111,7 @@ struct WeightList: View {
                     .padding(.top, 2)
                     
                     List {
-                        Section("Weight List (\(Format.weightUnits))") {
+                        Section("Weight List (\(Weight.units))") {
                             ForEach(pet.unwrappedWeights.reverseSortedByDate) { weight in
                                 NavigationLink {
                                     WeightDetail(pet: pet, weight: weight)

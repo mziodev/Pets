@@ -20,11 +20,8 @@ struct PetCardWeight: View {
                     .foregroundStyle(.accent)
                 
                 Text(
-                    String(
-                        format: "%.3f %@",
-                        pet.unwrappedWeights.currentWeight,
-                        Format.weightUnits
-                    )
+                    pet.unwrappedWeights.currentWeight as NSNumber,
+                    formatter: Weight.decimalFormatter(for: 3)
                 )
                 .font(.largeTitle)
                 .bold()

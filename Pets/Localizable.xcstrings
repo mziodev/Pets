@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "-" : {
+
+    },
     "..." : {
       "localizations" : {
         "es" : {
@@ -432,17 +435,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "%lld weights" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld pesos"
           }
         }
       }

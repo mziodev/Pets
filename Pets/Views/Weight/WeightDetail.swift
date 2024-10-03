@@ -52,7 +52,7 @@ struct WeightDetail: View {
                     .foregroundStyle(.placeholder)
                     
                     HStack {
-                        Text("\(Format.weightUnits)")
+                        Text("\(Weight.units)")
                             .foregroundStyle(.placeholder)
                         
                         TextField(
@@ -121,7 +121,7 @@ struct WeightDetail: View {
                 Button("Nooo!", role: .cancel, action: { })
                 Button("Yes", role: .destructive, action: { })
             } message: {
-                Text("Are you sure that \(pet.name) is \(String(format: "%.2f", weightValue ?? 0)) \(Format.weightUnits)?")
+                Text("Are you sure that \(pet.name) is \(String(format: "%.2f", weightValue ?? 0)) \(Weight.units)?")
             }
             .toolbar {
                 if isNew {

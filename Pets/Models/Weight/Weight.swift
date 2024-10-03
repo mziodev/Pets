@@ -15,8 +15,22 @@ class Weight {
     var pet: Pet?
     var notes: String = ""
     
+    static var units: String {
+        Locale.current.identifier == "en_US" ? "lb" : "kg"
+    }
+    
     init(date: Date = .now, value: Double = 0) {
         self.date = date
         self.value = value
-    }    
+    }
+    
+    static func decimalFormatter(for decimalNumber: Int) -> NumberFormatter {
+        let numberFormatter = NumberFormatter()
+        
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = decimalNumber
+        numberFormatter.minimumFractionDigits = decimalNumber
+        
+        return numberFormatter
+    }
 }

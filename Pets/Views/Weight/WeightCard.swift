@@ -44,17 +44,15 @@ struct WeightCard: View {
                     VStack {
                         HStack(alignment: .bottom, spacing: 0) {
                             Text(
-                                String(
-                                    format: "%.3f",
-                                    pet.unwrappedWeights.currentWeight
-                                )
+                                pet.unwrappedWeights.currentWeight as NSNumber,
+                                formatter: Weight.decimalFormatter(for: 3)
                             )
                             .font(.largeTitle)
                             .bold()
                             .fontDesign(.serif)
                             .foregroundStyle(.accent)
                             
-                            Text(Format.weightUnits)
+                            Text(Weight.units)
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
