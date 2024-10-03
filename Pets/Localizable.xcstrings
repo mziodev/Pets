@@ -437,6 +437,7 @@
       }
     },
     "%lld weights" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -598,16 +599,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Acerca de Mascotas"
-          }
-        }
-      }
-    },
-    "Active" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activas"
           }
         }
       }
@@ -1810,6 +1801,16 @@
         }
       }
     },
+    "Next to Expire" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente en Caducar"
+          }
+        }
+      }
+    },
     "No average yet" : {
       "localizations" : {
         "es" : {
@@ -2075,16 +2076,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La tienda de Mascotas"
-          }
-        }
-      }
-    },
-    "Pets Support" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Soporte de Mascotas"
           }
         }
       }
@@ -2617,7 +2608,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Desconocido"
+            "value" : "Desconocida"
           }
         }
       }
@@ -2848,12 +2839,12 @@
         }
       }
     },
-    "What's new on Pets" : {
+    "What's New" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Novedades en Mascotas"
+            "value" : "Novedades"
           }
         }
       }

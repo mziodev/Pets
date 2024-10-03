@@ -35,7 +35,7 @@ struct WhatsNew: View {
                     )
                 }
             }
-            .navigationTitle("What's new on Pets")
+            .navigationTitle("What's New")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Ok", action: dismissView)

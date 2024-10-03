@@ -226,11 +226,11 @@
 		083DAC562C33FE73001EDAA7 /* Vaccine */ = {
 			isa = PBXGroup;
 			children = (
+				086955E82CAA93F100AC52FF /* VaccineCard.swift */,
 				083DAC5F2C34107D001EDAA7 /* VaccineDetail.swift */,
 				083DAC572C33FE88001EDAA7 /* VaccineList.swift */,
 				083DAC5D2C3406C7001EDAA7 /* VaccineListRow.swift */,
 				083DAC592C3400DA001EDAA7 /* VaccineListEmpty.swift */,
-				086955E82CAA93F100AC52FF /* VaccineCard.swift */,
 			);
 			path = Vaccine;
 			sourceTree = "<group>";
@@ -824,7 +824,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
@@ -863,7 +863,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;

@@ -86,10 +86,6 @@ struct DewormingTreatmentList: View {
                 }
                 
                 if !pet.unwrappedDewormingTreatments.isEmpty {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Ok", action: dismissView)
-                    }
-                    
                     ToolbarItem(placement: .status) {
                         Text(
                             "\(pet.unwrappedDewormingTreatments.active) active treatments"

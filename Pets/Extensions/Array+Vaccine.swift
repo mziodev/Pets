@@ -23,4 +23,8 @@ extension Array where Element == Vaccine {
     var lastActive: Vaccine? {
         self.first(where: { $0.activeDays >= 0 })
     }
+    
+    var nextToExpire: Vaccine? {
+        self.filter { $0.activeDays >= 0 }.min { $0.activeDays < $1.activeDays }
+    }
 }

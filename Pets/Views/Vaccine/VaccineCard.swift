@@ -27,31 +27,37 @@ struct VaccineCard: View {
             
             Divider()
             
-            VStack(alignment: .leading) {
-                Text("Active")
+            VStack(alignment: .leading, spacing: 3) {
+                Text("Next to Expire")
                     .font(.caption.smallCaps())
                 
-                Spacer()
-                
-                if let lastActive = pet.vaccines?.lastActive {
+                if let lastActive = pet.unwrappedVaccines.nextToExpire {
                     Text(lastActive.name)
                         .font(.headline)
                     
                     VStack {
-                        HStack(alignment: .bottom, spacing: 0) {
-                            Text(lastActive.activeDays.formatted())
-                                .font(.largeTitle)
-                                .bold()
-                                .fontDesign(.serif)
-                                .foregroundStyle(lastActive.activeDaysColor)
-                            
-                            Text("More days")
+                        if lastActive.activeDays > 0 {
+                            HStack(alignment: .bottom, spacing: 0) {
+                                Text(lastActive.activeDays.formatted())
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .fontDesign(.serif)
+                                    .foregroundStyle(lastActive.activeDaysColor)
+                                
+                                Text("More days")
+                                    .font(.caption2.smallCaps())
+                                    .foregroundStyle(.secondary)
+                            }
+                        } else {
+                            Text("Last day")
                                 .font(.caption2.smallCaps())
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(.red)
                         }
                     }
                     .frame(maxWidth: .infinity)
                 } else {
+                    Spacer()
+                    
                     VStack {
                         Text("No data yet.")
                             .font(.caption)
@@ -72,5 +78,5 @@ struct VaccineCard: View {
 }
 
 #Preview {
-    VaccineCard(pet: SampleData.shared.petWithChipID)
+    VaccineCard(pet: SampleData.shared.petWithExpiredVaccines).padding()
 }

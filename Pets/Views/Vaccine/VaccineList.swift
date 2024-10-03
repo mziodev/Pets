@@ -76,16 +76,6 @@ struct VaccineList: View {
                     }
                     
                 }
-                
-                if !pet.unwrappedVaccines.isEmpty {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Ok", action: dismissView)
-                    }
-                } else {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel", action: dismissView)
-                    }
-                }
             }
         }
     }

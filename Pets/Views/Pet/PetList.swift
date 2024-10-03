@@ -29,24 +29,24 @@ struct PetList: View {
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    ForEach(premiumCheckedPets) { pet in
-                        NavigationLink {
-                            PetCard(pet: pet)
-                        } label: {
-                            PetListRow(pet: pet)
+                if !pets.isEmpty {
+                    Section {
+                        ForEach(premiumCheckedPets) { pet in
+                            NavigationLink {
+                                PetCard(pet: pet)
+                            } label: {
+                                PetListRow(pet: pet)
+                            }
+                        }
+                        .onDelete(perform: deletePets)
+                    } header: {
+                        HStack {
+                            Spacer()
+                            
+                            Text("\(premiumCheckedPets.count) pets")
+                                .font(.caption)
                         }
                     }
-                    .onDelete(perform: deletePets)
-                } footer: {
-                    HStack {
-                        Spacer()
-                        
-                        Text("\(premiumCheckedPets.count) pets")
-                        
-                        Spacer()
-                    }
-                    .padding(.top, 10)
                 }
             }
             .navigationTitle("Pets")
@@ -115,13 +115,6 @@ struct PetList: View {
                     ToolbarItem(placement: .topBarTrailing) {
                         EditButton()
                     }
-//                    
-//                    ToolbarItem(placement: .status) {
-//                        ZStack {
-//                            Text("\(premiumCheckedPets.count) pets")
-//                                .font(.caption)
-//                        }
-//                    }
                 }
             }
         }

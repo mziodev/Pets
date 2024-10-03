@@ -125,21 +125,6 @@ struct WeightList: View {
                         Label("Add weight", systemImage: "plus")
                     }
                 }
-                
-                if !pet.unwrappedWeights.isEmpty {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Ok", action: dismissView)
-                    }
-                    
-                    ToolbarItem(placement: .status) {
-                        Text("\(pet.unwrappedWeights.count) weights")
-                            .font(.caption)
-                    }
-                } else {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel", action: dismissView)
-                    }
-                }
             }
         }
     }

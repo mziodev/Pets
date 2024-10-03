@@ -27,34 +27,40 @@ struct DewormingTreatmentsCard: View {
             
             Divider()
             
-            VStack(alignment: .leading) {
-                Text("Active")
+            VStack(alignment: .leading, spacing: 3) {
+                Text("Next to Expire")
                     .font(.caption.smallCaps())
                 
-                Spacer()
-                
-                if let lastActiveTreatment =  pet.unwrappedDewormingTreatments.lastActive {
+                if let lastActiveTreatment =  pet.unwrappedDewormingTreatments.nextToExpire {
                     Text(lastActiveTreatment.name)
                         .font(.callout)
                         .bold()
                     
                     VStack {
-                        HStack(alignment: .bottom, spacing: 0) {
-                            Text("\(lastActiveTreatment.activeDays)")
-                                .font(.largeTitle)
-                                .bold()
-                                .fontDesign(.serif)
-                                .foregroundStyle(
-                                    lastActiveTreatment.activeDaysColor
-                                )
-                            
-                            Text("More days")
+                        if lastActiveTreatment.activeDays > 0 {
+                            HStack(alignment: .bottom, spacing: 0) {
+                                Text("\(lastActiveTreatment.activeDays)")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .fontDesign(.serif)
+                                    .foregroundStyle(
+                                        lastActiveTreatment.activeDaysColor
+                                    )
+                                
+                                Text("More days")
+                                    .font(.caption.smallCaps())
+                                    .foregroundStyle(.secondary)
+                            }
+                        } else {
+                            Text("Last day")
                                 .font(.caption.smallCaps())
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(.red)
                         }
                     }
                     .frame(maxWidth: .infinity)
                 } else {
+                    Spacer()
+                    
                     VStack {
                         Text("No data yet.")
                             .font(.caption)

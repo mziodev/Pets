@@ -73,7 +73,7 @@ struct Support: View {
                     }
                 }
             }
-            .navigationTitle("Pets Support")
+            .navigationTitle("Support")
             .toolbar {
                 ToolbarItem {
                     Button("Ok", action: dismissView)
