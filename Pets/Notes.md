@@ -5,7 +5,8 @@
 - 94, 139, 178, 190
 
 
-## Localization and i18n
+## l10n and i18n
+- Notification messages l10n is missing!!!
 - We have to do localization and internationalization of the entire app on: English, Spanish, French, Portuguese, German, Chinese, Japanese, Indian... on this order.
 
 
