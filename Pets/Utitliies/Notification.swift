@@ -29,7 +29,10 @@ struct Notification {
         daysBefore: Int,
         notificationTime: Date
     ) {
-        let notificationContent = createNotificationContent(title: title, body: body)
+        let notificationContent = createNotificationContent(
+            title: title,
+            body: body
+        )
         let triggerDate = createTriggerDate(
             targetDate: targetDate,
             daysBefore: daysBefore,

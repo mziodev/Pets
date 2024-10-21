@@ -158,19 +158,25 @@ struct DewormingTreatmentDetail: View {
                     if petsStoreManager.isPremiumUnlocked {
                         Picker(
                             "Notification",
-                            selection: $dewormingTreatment.notification) {
-                                ForEach(NotificationPeriod.allCases, id: \.self) { period in
-                                    Text(period.localizedDescription)
-                                }
+                            selection: $dewormingTreatment.notification
+                        ) {
+                            ForEach(
+                                NotificationPeriod.allCases,
+                                id: \.self
+                            ) { period in
+                                Text(period.localizedDescription)
                             }
-                            .pickerStyle(.menu)
-                            .onChange(of: dewormingTreatment.notification) { oldValue, newValue in
-                                withAnimation {
-                                    showingNotificationTime = dewormingTreatment.notification != .none
-                                }
-                                
-                                Notification.requestAuthorization()
+                        }
+                        .pickerStyle(.menu)
+                        .onChange(
+                            of: dewormingTreatment.notification
+                        ) { oldValue, newValue in
+                            withAnimation {
+                                showingNotificationTime = dewormingTreatment.notification != .none
                             }
+                            
+                            Notification.requestAuthorization()
+                        }
                         
                         if showingNotificationTime {
                             DatePicker(
