@@ -19,4 +19,8 @@ class URLs {
     static let termsOfUseURL = URL(
         string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
     )!
+    
+    static let writeReviewURL = URL(
+        string: "itms-apps://itunes.apple.com/app/id6670243713?action=write-review"
+    )!
 }

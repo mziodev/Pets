@@ -11,15 +11,15 @@ import SwiftUI
 struct PetList: View {
     @AppStorage("FirstStart") private var isFirstLaunch: Bool = true
     
-    @Query(sort: \Pet.name) var pets: [Pet]
+    @Query(sort: \Pet.name) private var pets: [Pet]
     
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) private var modelContext
     
-    @EnvironmentObject var petsStoreManager: PetsStoreManager
+    @EnvironmentObject private var petsStoreManager: PetsStoreManager
     
     @State private var showingAddPet = false
     @State private var showingSupport = false
-    @State private var showingWhatsNew: Bool = false
+    @State private var showingWhatsNew = false
     @State private var showingPetsStore = false
 
     private var premiumCheckedPets: [Pet] {
@@ -40,12 +40,7 @@ struct PetList: View {
                         }
                         .onDelete(perform: deletePets)
                     } header: {
-                        HStack {
-                            Spacer()
-                            
-                            Text("\(premiumCheckedPets.count) pets")
-                                .font(.caption)
-                        }
+                        PetListHeader(petNumber: premiumCheckedPets.count)
                     }
                 }
             }
@@ -57,7 +52,7 @@ struct PetList: View {
                 Welcome(isFirstStart: $isFirstLaunch)
             }
             .sheet(isPresented: $showingAddPet) {
-                if pets.count >= 1 && !petsStoreManager.isPremiumUnlocked {
+                if !pets.isEmpty && !petsStoreManager.isPremiumUnlocked {
                     PetsStoreView()
                 } else {
                     PetDetail(pet: Pet(), isNew: true)
@@ -74,27 +69,19 @@ struct PetList: View {
             }
             .toolbar {
                 ToolbarItemGroup(placement: .secondaryAction) {
-                    Button {
-                        showingWhatsNew = true
-                    } label: {
+                    Button(action: showWhatsNew) {
                         Label("What's new", systemImage: "sparkles")
                     }
                     
-                    Button {
-                        showingPetsStore = true
-                    } label: {
+                    Button(action: showPetsStore) {
                         Label("Pets Premium", systemImage: "crown.fill")
                     }
                     
-                    Button {
-                        showAppStoreRating()
-                    } label: {
+                    Button(action: showAppStoreRating) {
                         Label("Rate this app", systemImage: "star.fill")
                     }
                     
-                    Button {
-                        showingSupport = true
-                    } label: {
+                    Button(action: showSupport) {
                         Label("Support", systemImage: "envelope.fill")
                     }
                 }
@@ -124,12 +111,16 @@ struct PetList: View {
         offsets.forEach { modelContext.delete(pets[$0]) }
     }
     
+    private func showWhatsNew() {
+        showingWhatsNew = true
+    }
+    
+    private func showPetsStore() {
+        showingPetsStore = true
+    }
+    
     private func showAppStoreRating() {
-        guard let url = URL(
-            string: "itms-apps://itunes.apple.com/app/id6670243713?action=write-review"
-        ) else {
-            return
-        }
+        let url = URLs.writeReviewURL
         
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(
@@ -138,6 +129,10 @@ struct PetList: View {
                 completionHandler: nil
             )
         }
+    }
+    
+    private func showSupport() {
+        showingSupport = true
     }
 }
 
