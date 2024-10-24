@@ -5,6 +5,10 @@
 - 94, 139, 178, 190
 
 
+## iPad
+We have to adaptate the app to properly render on an iPad.
+
+
 ## l10n and i18n
 - We have to do localization and internationalization of the entire app on: English, Spanish, French, Portuguese, German, Chinese, Japanese, Indian... on this order.
 
@@ -12,10 +16,6 @@
 ## Sharing data with other iCloud users
 - It's not possible right now from SwiftData.
 - Maybe it's possible merging SwiftData and CoreData.
-
-
-## iPad (waiting for iOS 18)
-We have to adaptate the app to properly render on an iPad.
 
 
 ## Future features

@@ -17,6 +17,8 @@ struct PetList: View {
     
     @EnvironmentObject private var petsStoreManager: PetsStoreManager
     
+    @State private var selectedPet : Pet?
+    
     @State private var showingAddPet = false
     @State private var showingSupport = false
     @State private var showingWhatsNew = false
@@ -27,14 +29,12 @@ struct PetList: View {
     }
     
     var body: some View {
-        NavigationStack {
-            List {
+        NavigationSplitView {
+            List(selection: $selectedPet) {
                 if !pets.isEmpty {
                     Section {
                         ForEach(premiumCheckedPets) { pet in
-                            NavigationLink {
-                                PetCard(pet: pet)
-                            } label: {
+                            NavigationLink(value: pet) {
                                 PetListRow(pet: pet)
                             }
                         }
@@ -103,6 +103,13 @@ struct PetList: View {
                         EditButton()
                     }
                 }
+            }
+        } detail: {
+            if let selectedPet = selectedPet {
+                PetCard(pet: selectedPet)
+            } else {
+                Text("Select a pet to show its card.")
+                    .foregroundStyle(.secondary)
             }
         }
     }
