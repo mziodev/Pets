@@ -15,7 +15,7 @@ struct PetCardOnFamily: View {
         HStack {
             Spacer()
             
-            Group {
+            HStack(spacing: 5) {
                 if let yearString = onFamilyYears["year"] {
                     Text(yearString)
                 }

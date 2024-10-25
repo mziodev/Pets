@@ -2252,6 +2252,16 @@
         }
       }
     },
+    "Select a pet to show its card." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona una mascota para mostrar su tarjeta."
+          }
+        }
+      }
+    },
     "Select a sex" : {
       "localizations" : {
         "es" : {
