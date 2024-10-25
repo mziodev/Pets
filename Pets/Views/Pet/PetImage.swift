@@ -10,7 +10,13 @@ import SwiftUI
 struct PetImage: View {
     let pet: Pet
     
-    private let imageSize = PetImageSize.medium.value
+    private var imageSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            PetImageSize.medium.value * 1.2
+        } else {
+            PetImageSize.medium.value
+        }
+    }
     
     var body: some View {
         if let imageData = pet.image,
@@ -18,9 +24,10 @@ struct PetImage: View {
             Image(uiImage: uiImage)
                 .resizable()
                 .scaledToFill()
+                .aspectRatio(contentMode: .fill)
                 .scaleEffect(pet.imageScale)
                 .offset(pet.imageOffset)
-                .frame(maxHeight: imageSize)
+                .frame(width: imageSize, height: imageSize)
                 .clipShape(Circle())
                 .accessibilityLabel("\(pet.name) photo")
 

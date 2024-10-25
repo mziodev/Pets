@@ -10,8 +10,13 @@ import SwiftUI
 struct PetImagePlaceholder: View {
     let species: PetSpecies
     
-    private let imageSize = PetImageSize.medium.value
-    
+    private var imageSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            PetImageSize.medium.value * 1.2
+        } else {
+            PetImageSize.medium.value
+        }
+    }
     
     var body: some View {
         ZStack {

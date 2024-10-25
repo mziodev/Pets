@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PetCardAge: View {
-    let pet: Pet
+    let age: [String: String]
     
     var body: some View {
         VStack(spacing: 10) {
@@ -19,41 +19,36 @@ struct PetCardAge: View {
                     .font(.callout.lowercaseSmallCaps())
                     .foregroundStyle(.tint)
                 
-                if let yearString = pet.age["year"] {
+                if let yearString = age["year"] {
                     Text(yearString)
                         .font(.title.bold())
                         .fontDesign(.serif)
                 }
                 
-                if let monthString = pet.age["month"] {
+                if let monthString = age["month"] {
                     Text(monthString)
-                        .font(pet.age["year"] == nil ? .title.bold() : .body)
+                        .font(age["year"] == nil ? .title.bold() : .body)
                         .fontDesign(.serif)
                         .foregroundStyle(.accent)
-                        .padding(.top, pet.age["year"] == nil ? 0 : 7)
+                        .padding(.top, age["year"] == nil ? 0 : 7)
                 }
                 
-                if let dayString = pet.age["day"] {
+                if let dayString = age["day"] {
                     Text(dayString)
                         .font(.largeTitle.bold())
                         .fontDesign(.serif)
                 }
                 
                 Spacer()
-            }
-            
-            PetCardOnFamily(
-                onFamilyYears: pet.onFamilyYears,
-                adopted: pet.isAdopted
-            )
+            } 
         }
     }
 }
 
 #Preview("Years and months") {
-    PetCardAge(pet: SampleData.shared.petWithChipID)
+    PetCardAge(age: SampleData.shared.petWithChipID.age)
 }
 
 #Preview("Just days") {
-    PetCardAge(pet: SampleData.shared.petWithoutSpecies)
+    PetCardAge(age: SampleData.shared.petWithoutSpecies.age)
 }

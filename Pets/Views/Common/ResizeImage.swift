@@ -63,8 +63,10 @@ struct ResizeImage: View {
                     Image(uiImage: uiImage)
                         .resizable()
                         .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
                         .scaleEffect(newScale * magnifyBy)
                         .offset(newOffset)
+                        .frame(width: imageSize, height: imageSize)
                 }
                 
                 GeometryReader { geometry in

@@ -51,6 +51,15 @@ struct PetList: View {
             .sheet(isPresented: $isFirstLaunch) {
                 Welcome(isFirstStart: $isFirstLaunch)
             }
+            .sheet(isPresented: $showingWhatsNew) {
+                WhatsNew()
+            }
+            .sheet(isPresented: $showingPetsStore) {
+                PetsStoreView()
+            }
+            .sheet(isPresented: $showingSupport) {
+                Support()
+            }
             .sheet(isPresented: $showingAddPet) {
                 if !pets.isEmpty && !petsStoreManager.isPremiumUnlocked {
                     PetsStoreView()
@@ -58,29 +67,26 @@ struct PetList: View {
                     PetDetail(pet: Pet(), isNew: true)
                 }
             }
-            .sheet(isPresented: $showingSupport) {
-                Support()
-            }
-            .sheet(isPresented: $showingWhatsNew) {
-                WhatsNew()
-            }
-            .sheet(isPresented: $showingPetsStore) {
-                PetsStoreView()
-            }
             .toolbar {
-                ToolbarItemGroup(placement: .secondaryAction) {
+                ToolbarItem(placement: .secondaryAction) {
                     Button(action: showWhatsNew) {
                         Label("What's new", systemImage: "sparkles")
                     }
-                    
+                }
+                
+                ToolbarItem(placement: .secondaryAction) {
                     Button(action: showPetsStore) {
                         Label("Pets Premium", systemImage: "crown.fill")
                     }
-                    
+                }
+                
+                ToolbarItem(placement: .secondaryAction) {
                     Button(action: showAppStoreRating) {
                         Label("Rate this app", systemImage: "star.fill")
                     }
-                    
+                }
+                
+                ToolbarItem(placement: .secondaryAction) {
                     Button(action: showSupport) {
                         Label("Support", systemImage: "envelope.fill")
                     }

@@ -13,26 +13,43 @@ struct PetCard: View {
     @State private var showingPetDetail: Bool = false
     @State private var showingChipID: Bool = false
     
+    private var gridColumns: [GridItem] {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            [
+                GridItem(.fixed(200), spacing: 10),
+                GridItem(.fixed(200), spacing: 10),
+                GridItem(.fixed(200), spacing: 10)
+            ]
+        } else {
+            [
+                GridItem(.fixed(165), spacing: 10),
+                GridItem(.fixed(165), spacing: 10)
+            ]
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 PetImage(pet: pet)
-                    .padding(.top)
+                    .padding(.top, 50)
 
                 VStack(spacing: 10) {
                     PetCardName(name: pet.name)
 
                     PetCardBreed(breed: pet.breed)
 
-                    PetCardAge(pet: pet)
+                    PetCardAge(age: pet.age)
+                    
+                    PetCardOnFamily(
+                        onFamilyYears: pet.onFamilyYears,
+                        adopted: pet.isAdopted
+                    )
                 }
                 .padding()
                 
                 LazyVGrid(
-                    columns: [
-                        GridItem(.fixed(165), spacing: 10),
-                        GridItem(.fixed(165), spacing: 10)
-                    ],
+                    columns: gridColumns,
                     spacing: 10
                 ) {
                     NavigationLink {
