@@ -93,6 +93,7 @@
 		08EEF0D22C2322EA003ABFF9 /* Deworming+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEF0D12C2322EA003ABFF9 /* Deworming+SampleData.swift */; };
 		08EEF0D52C2326FD003ABFF9 /* DewormingTreatmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEF0D42C2326FD003ABFF9 /* DewormingTreatmentList.swift */; };
 		08FD16F02CCA44C600B6C118 /* PetListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD16EF2CCA44C600B6C118 /* PetListHeader.swift */; };
+		08FD17102CCBB5B600B6C118 /* PetListSelectAPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD170F2CCBB5B600B6C118 /* PetListSelectAPet.swift */; };
 		08FD87AB2C2C01E400CC9F9A /* WeightListEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87AA2C2C01E400CC9F9A /* WeightListEmpty.swift */; };
 		08FD87B02C2C30F600CC9F9A /* PetCardOnFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87AF2C2C30F600CC9F9A /* PetCardOnFamily.swift */; };
 		08FD87B22C2C5F6B00CC9F9A /* PetCardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD87B12C2C5F6B00CC9F9A /* PetCardName.swift */; };
@@ -191,6 +192,7 @@
 		08EEF0D12C2322EA003ABFF9 /* Deworming+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deworming+SampleData.swift"; sourceTree = "<group>"; };
 		08EEF0D42C2326FD003ABFF9 /* DewormingTreatmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentList.swift; sourceTree = "<group>"; };
 		08FD16EF2CCA44C600B6C118 /* PetListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListHeader.swift; sourceTree = "<group>"; };
+		08FD170F2CCBB5B600B6C118 /* PetListSelectAPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListSelectAPet.swift; sourceTree = "<group>"; };
 		08FD87AA2C2C01E400CC9F9A /* WeightListEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightListEmpty.swift; sourceTree = "<group>"; };
 		08FD87AF2C2C30F600CC9F9A /* PetCardOnFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardOnFamily.swift; sourceTree = "<group>"; };
 		08FD87B12C2C5F6B00CC9F9A /* PetCardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardName.swift; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				08FD16EF2CCA44C600B6C118 /* PetListHeader.swift */,
 				08833FE92C09CABB000FD0BF /* PetListNoPets.swift */,
 				08DF543A2C1C34DC003076B1 /* PetListRow.swift */,
+				08FD170F2CCBB5B600B6C118 /* PetListSelectAPet.swift */,
 			);
 			path = Pet;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				08DF544B2C1C80A6003076B1 /* PetImagePlaceholder.swift in Sources */,
 				083DAC552C33F628001EDAA7 /* Vaccine+SampleData.swift in Sources */,
 				08B585062C1718E70068D4B2 /* PetBreedDataService.swift in Sources */,
+				08FD17102CCBB5B600B6C118 /* PetListSelectAPet.swift in Sources */,
 				084E3E402C8EF8B400623D9E /* NotificationPeriod.swift in Sources */,
 				08833FFF2C09CABB000FD0BF /* PetListNoPets.swift in Sources */,
 				08909CF02C7F1B7500C65D5A /* Array+Weight.swift in Sources */,
@@ -828,7 +832,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
@@ -847,7 +851,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mzio.Pets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -867,7 +871,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pets/Pets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
@@ -886,7 +890,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mzio.Pets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -1,12 +1,13 @@
 # Project Notes
 
+### Las published version: 1.1.0, build 7
 
 ## Cannine Breed JSON list free IDs
 - 94, 139, 178, 190
 
 
 ## iPad
-We have to adaptate the app to properly render on an iPad.
+- We have to adaptate the app to properly render on an iPad.
 
 
 ## l10n and i18n
@@ -19,6 +20,7 @@ We have to adaptate the app to properly render on an iPad.
 
 
 ## Future features
+
 ### PDF export
 
 ### Food control:
@@ -38,5 +40,5 @@ We have to adaptate the app to properly render on an iPad.
 
 ### Grooming
 
-### Dead pets (archived)
+### Dead pets (archived info)
 
