@@ -16,9 +16,11 @@ struct ActiveNotificationList: View {
     var body: some View {
         NavigationStack {
             List(activeNotifications, id: \.identifier) { notification in
-                ActiveNotificationListRow(notification: notification)
+                Section("Active notifications") {
+                    ActiveNotificationListRow(notification: notification)
+                }
             }
-            .navigationTitle("Active notifications")
+            .navigationTitle("Notifications center")
             .overlay {
                 if activeNotifications.isEmpty {
                     ActiveNotificationsListEmpty()

@@ -2,6 +2,9 @@
 
 ### Last published version: 1.1.0, build 7
 
+## Notifications
+- We need to navigate from a selected notification to the sender details view.
+
 ## Cannine Breed JSON list free IDs
 - 94, 139, 178, 190
 
