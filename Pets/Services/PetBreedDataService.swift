@@ -8,8 +8,11 @@
 import Foundation
 
 class PetBreedDataService {
+
     static func loadPetBreeds(from filename: String) -> [PetBreed]? {
-        let localizedFilename = filename + "_\(Locale.current.language.languageCode?.identifier ?? "en")"
+        
+        let localeCode = Locale.current.language.languageCode?.identifier ?? "en"
+        let localizedFilename = filename + "_\(localeCode)"
         
         if let url = Bundle.main.url(
             forResource: localizedFilename,
@@ -17,8 +20,10 @@ class PetBreedDataService {
         ) {
             do {
                 let data = try Data(contentsOf: url)
-                let jsonDecoder = JSONDecoder()
-                let petBreeds = try jsonDecoder.decode([PetBreed].self, from: data)
+                let petBreeds = try JSONDecoder().decode(
+                    [PetBreed].self,
+                    from: data
+                )
                 
                 return petBreeds
             } catch {
@@ -27,7 +32,7 @@ class PetBreedDataService {
                 return nil
             }
         } else {
-            print("Can't find file \(localizedFilename).json")
+            print("Can't find the file \(localizedFilename).json")
             
             return nil
         }

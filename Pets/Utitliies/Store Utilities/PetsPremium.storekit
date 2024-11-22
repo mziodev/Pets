@@ -1,0 +1,122 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "22000CD0",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6670243713",
+    "_developerTeamID" : "ZP4QTMB37S",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 748191487.60699105,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21539355",
+      "localizations" : [
+
+      ],
+      "name" : "pets.premium.subcriptions",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "5.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "6689515822",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Enjoy all of the features of Pets",
+              "displayName" : "Pets Premium",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Disfruta de todas las opciones de Mascotas",
+              "displayName" : "Mascotas Premium",
+              "locale" : "es_ES"
+            }
+          ],
+          "productID" : "dev.mzio.pets.premium.suscription",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pets Premium Subscription",
+          "subscriptionGroupID" : "21539355",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

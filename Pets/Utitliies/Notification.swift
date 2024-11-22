@@ -9,7 +9,9 @@ import Foundation
 import UserNotifications
 
 struct Notification {
+    
     static func requestAuthorization() {
+        
         UNUserNotificationCenter.current().requestAuthorization(
             options: [.alert, .badge, .sound]
         ) { granted, error in
@@ -70,6 +72,7 @@ struct Notification {
     }
     
     static func removePendingNotifications(for identifier: String) {
+
         let notificationCenter = UNUserNotificationCenter.current()
         
         notificationCenter.getPendingNotificationRequests { requests in
@@ -90,6 +93,7 @@ struct Notification {
         daysBefore: Int,
         notificationTime: Date
     ) -> Date {
+        
         let calendar = Calendar.current
         
         var triggerDate = calendar.date(
@@ -115,7 +119,10 @@ struct Notification {
         return triggerDate
     }
     
-    static func createTrigger(from date: Date) -> UNCalendarNotificationTrigger {
+    static func createTrigger(
+        from date: Date
+    ) -> UNCalendarNotificationTrigger {
+        
         let calendar = Calendar.current
         let components = calendar.dateComponents(
             [.year, .month, .day, .hour, .minute],
@@ -132,6 +139,7 @@ struct Notification {
         title: String,
         body: String
     ) -> UNMutableNotificationContent {
+        
         let content = UNMutableNotificationContent()
         
         content.title = title

@@ -1,0 +1,2893 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "-" : {
+
+    },
+    "..." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "..."
+          }
+        }
+      }
+    },
+    "(Not enough data from %@)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(No hay suficientes datos de %@)"
+          }
+        }
+      }
+    },
+    "*Some features are only available on Pets Premium." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*Algunas opciones sólo están disponibles en Mascotas Premium."
+          }
+        }
+      }
+    },
+    "& %lld months" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "& %lld month"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "& %lld months"
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "& %lld mes"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "& %lld meses"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "%@ – %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ – %2$@"
+          }
+        }
+      }
+    },
+    "%@ is on the last day vaccine's protection." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ está en su último día de protección de esta vacuna."
+          }
+        }
+      }
+    },
+    "%@ is running out of %@ coverage." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ is running out of %2$@ coverage."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ se está quedando sin protección de %2$@."
+          }
+        }
+      }
+    },
+    "%@ photo" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto de %@"
+          }
+        }
+      }
+    },
+    "%@ still will be protected %lld more days until next vaccine." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$@ still will be protected %2$lld more day until next vaccine."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%1$@ still will be protected %2$lld more days until next vaccine."
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$@ todavía estará protegido %2$lld día más hasta la siguiente vacuna."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$@ todavía estará protegido %2$lld días más hasta la siguiente vacuna."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%@ variations" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variaciones de %@"
+          }
+        }
+      }
+    },
+    "%@ was protected against %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ was protected against %2$@."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ estuvo protegido contra %2$@."
+          }
+        }
+      }
+    },
+    "%@ will be protected against %@." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ estará protegido contra %2$@"
+          }
+        }
+      }
+    },
+    "%@'s Card" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de %@"
+          }
+        }
+      }
+    },
+    "%@'s deworming treatment" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tratamiento de desparasitación de %@"
+          }
+        }
+      }
+    },
+    "%@'s dewormings" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desparasitaciónes de %@"
+          }
+        }
+      }
+    },
+    "%@'s vaccines" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vacunas de %@"
+          }
+        }
+      }
+    },
+    "%@'s weight list" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista de pesos de %@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "%lld active treatments" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld active treatment"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld active treatments"
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld tratamiento activo"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld tratamientos activos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld breeds" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld razas"
+          }
+        }
+      }
+    },
+    "%lld days" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld day"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld days"
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld día"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld días"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld months" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld month"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld months"
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld mes"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld meses"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld pets" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld pet"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld pets"
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld mascota"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld mascotas"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld years" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld year"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld years"
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld año"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld años"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "©2024 Mauricio Del Solar (MZiO)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "©2024 Mauricio Del Solar (MZiO)"
+          }
+        }
+      }
+    },
+    "4-8 pounds (1.8-3.6 kg)" : {
+
+    },
+    "8-12 pounds (3.6-5.4 kg)" : {
+
+    },
+    "9-digits (AVID)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "9-digitos (AVID)"
+          }
+        }
+      }
+    },
+    "10-20 pounds (4.5-9 kg)" : {
+
+    },
+    "10-digit (ISO)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10-digitos (ISO)"
+          }
+        }
+      }
+    },
+    "12-15 pounds (5.4-6.8 kg)" : {
+
+    },
+    "15-18 pounds (6.8-8.2 kg)" : {
+
+    },
+    "15-digit (ISO)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "15-digitos (ISO)"
+          }
+        }
+      }
+    },
+    "18-22 pounds (8.2-10 kg)" : {
+
+    },
+    "20-30 pounds (9-13.6 kg)" : {
+
+    },
+    "30-50 pounds (13.6-22.7 kg)" : {
+
+    },
+    "50-80 pounds (22.7-36 kg)" : {
+
+    },
+    "80-100 pounds (36-45 kg)" : {
+
+    },
+    "A day before" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 día antes"
+          }
+        }
+      }
+    },
+    "A month before" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 mes antes"
+          }
+        }
+      }
+    },
+    "A week before" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 semana antes"
+          }
+        }
+      }
+    },
+    "About 1-3 inches (2.5-7.5 cm)" : {
+
+    },
+    "About 3-6 inches (7.5-15 cm)" : {
+
+    },
+    "About Pets" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acerca de Mascotas"
+          }
+        }
+      }
+    },
+    "Active treatments" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tratamientos activos"
+          }
+        }
+      }
+    },
+    "Active Vaccines" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vacunas activas"
+          }
+        }
+      }
+    },
+    "Add deworming treatment" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir desparasitación"
+          }
+        }
+      }
+    },
+    "Add image" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir imagen"
+          }
+        }
+      }
+    },
+    "Add pet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir mascota"
+          }
+        }
+      }
+    },
+    "Add Treatment" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir tratamiento"
+          }
+        }
+      }
+    },
+    "Add vaccine" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir vacuna"
+          }
+        }
+      }
+    },
+    "Add Vaccine" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir Vacuna"
+          }
+        }
+      }
+    },
+    "Add weight" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir peso"
+          }
+        }
+      }
+    },
+    "Add Weight" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir Peso"
+          }
+        }
+      }
+    },
+    "Added resize feature for images." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva función de redimensionado de imágenes añadida."
+          }
+        }
+      }
+    },
+    "Additive" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aditivo"
+          }
+        }
+      }
+    },
+    "Adenovirus" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adenovirus"
+          }
+        }
+      }
+    },
+    "Adopted" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adoptado"
+          }
+        }
+      }
+    },
+    "Adopted on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adoptado el"
+          }
+        }
+      }
+    },
+    "Age" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edad"
+          }
+        }
+      }
+    },
+    "Are you sure that %@ is %@ %@?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Are you sure that %1$@ is %2$@ %3$@?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seguro que %1$@ pesa %2$@ %3$@?"
+          }
+        }
+      }
+    },
+    "Average" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Promedio"
+          }
+        }
+      }
+    },
+    "Average Weight" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso Promedio"
+          }
+        }
+      }
+    },
+    "Barcode reading error, try again" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error en la lectura del código de barras, inténtalo otra vez."
+          }
+        }
+      }
+    },
+    "Basics" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información esencial"
+          }
+        }
+      }
+    },
+    "Birthday" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fecha de nacimiento"
+          }
+        }
+      }
+    },
+    "Bordetella" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bordetella"
+          }
+        }
+      }
+    },
+    "Breed" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raza"
+          }
+        }
+      }
+    },
+    "Breeds" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Razas"
+          }
+        }
+      }
+    },
+    "Build number:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de build:"
+          }
+        }
+      }
+    },
+    "Buzzed" : {
+
+    },
+    "Calicivirus" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calicivirus"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
+    },
+    "Canine Influenza" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Influenza Canina"
+          }
+        }
+      }
+    },
+    "Cat" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gato"
+          }
+        }
+      }
+    },
+    "Cat symbol" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Símbolo de gato"
+          }
+        }
+      }
+    },
+    "Chip" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microchip"
+          }
+        }
+      }
+    },
+    "Chip ID" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microchip ID"
+          }
+        }
+      }
+    },
+    "Chip ID Barcode" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código de barras del Microchip ID"
+          }
+        }
+      }
+    },
+    "Collar" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collar"
+          }
+        }
+      }
+    },
+    "Contact Us" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contacta con nosotros"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
+          }
+        }
+      }
+    },
+    "Copy chip ID number" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copia el número de Microchip"
+          }
+        }
+      }
+    },
+    "Corded" : {
+
+    },
+    "Coronavirus" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coronavirus"
+          }
+        }
+      }
+    },
+    "Create their identities" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea sus identidades"
+          }
+        }
+      }
+    },
+    "Crinkle" : {
+
+    },
+    "Curly" : {
+
+    },
+    "Date" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fecha"
+          }
+        }
+      }
+    },
+    "Dates" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechas"
+          }
+        }
+      }
+    },
+    "Delete Treatment" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar Tratamiento"
+          }
+        }
+      }
+    },
+    "Delete Vaccine" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar Vacuna"
+          }
+        }
+      }
+    },
+    "Delete Weight" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar Peso"
+          }
+        }
+      }
+    },
+    "Deworming Treatment Warning" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso de Desparasitación"
+          }
+        }
+      }
+    },
+    "Deworming treatment will deleted, are you sure?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El tratamiento de desparasitación será eliminado, ¿estás seguro/a?"
+          }
+        }
+      }
+    },
+    "Deworming Treatments" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desparasitaciones"
+          }
+        }
+      }
+    },
+    "Distemper" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moquillo"
+          }
+        }
+      }
+    },
+    "Distemper, Hepatitis, Leptospirosis, Parvovirus and Parainfluenza" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moquillo, Hepatitis, Leptospirosis, Parvovirus y Parainfluenza"
+          }
+        }
+      }
+    },
+    "Distemper, Hepatitis, Leptospirosis, Parvovirus, Parainfluenza and Influenza" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moquillo, Hepatitis, Leptospirosis, Parvovirus, Parainfluenza e Influenza"
+          }
+        }
+      }
+    },
+    "Distemper, Hepatitis, Parvovirus and Parainfluenza" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moquillo, Hepatitis, Parvovirus y Parainfluenza"
+          }
+        }
+      }
+    },
+    "Distemper, Hepatitis, Parvovirus, Parainfluenza and Influenza" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moquillo, Hepatitis, Parvovirus, Parainfluenza e Influenza"
+          }
+        }
+      }
+    },
+    "Dog" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perro"
+          }
+        }
+      }
+    },
+    "Dog symbol" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Símbolo de perro"
+          }
+        }
+      }
+    },
+    "Don't miss anything" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No te pierdas nada"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
+          }
+        }
+      }
+    },
+    "Double" : {
+
+    },
+    "Edit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
+          }
+        }
+      }
+    },
+    "Ended" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminó"
+          }
+        }
+      }
+    },
+    "Ends" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina"
+          }
+        }
+      }
+    },
+    "Expired" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caducado"
+          }
+        }
+      }
+    },
+    "Expired treatments" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tratamientos caducados"
+          }
+        }
+      }
+    },
+    "Expired Vaccine" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vacuna Caducada"
+          }
+        }
+      }
+    },
+    "Expired Vaccines" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vacunas Caducadas"
+          }
+        }
+      }
+    },
+    "Extra Large" : {
+
+    },
+    "Extra Long" : {
+
+    },
+    "Feline Viral Rhinotracheitis, Calicivirus and Panleukopenia (also known as Feline Distemper)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rinotraqueítis Viral Felina, Calicivirus y Panleucopenia (también conocida como Moquillo Felino)"
+          }
+        }
+      }
+    },
+    "Feline Viral Rhinotracheitis, Calicivirus, Panleukopenia (also known as Feline Distemper), Herpesvirus and Syncytial Virus" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rinotraqueítis Viral Felina, Calicivirus, Panleucopenia (también conocida como Moquillo Felino), Herpesvirus y Virus Sincitial"
+          }
+        }
+      }
+    },
+    "Female" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hembra"
+          }
+        }
+      }
+    },
+    "Fill their personal cards up with their names, breeds, birthdays, Microchip info..." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rellena sus tarjetas personales con sus nombres, razas, fechas de nacimiento, información del Microchip..."
+          }
+        }
+      }
+    },
+    "Fine downy coat" : {
+
+    },
+    "Fine downy coat (about 1/4 inch or 6 mm)" : {
+
+    },
+    "For cats" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para gatos"
+          }
+        }
+      }
+    },
+    "For dogs" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para perros"
+          }
+        }
+      }
+    },
+    "Forms a wavy or crinkled texture" : {
+
+    },
+    "Forms long, thin cords or mats" : {
+
+    },
+    "Forms loose waves or ripples" : {
+
+    },
+    "Forms tight curls or waves" : {
+
+    },
+    "Giant" : {
+
+    },
+    "go Premium" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pásate a Premium"
+          }
+        }
+      }
+    },
+    "go Premium!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pásate a Premium!"
+          }
+        }
+      }
+    },
+    "Gold crown" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corona dorada"
+          }
+        }
+      }
+    },
+    "Hairless" : {
+
+    },
+    "Harsh and wiry, with a dense undercoat" : {
+
+    },
+    "Has two distinct layers of fur, with a soft undercoat and a coarser outer coat" : {
+
+    },
+    "Hepatitis" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hepatitis"
+          }
+        }
+      }
+    },
+    "I'm a %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soy un %@"
+          }
+        }
+      }
+    },
+    "ID number (9 numeric digits)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número ID (9 dígitos numéricos)"
+          }
+        }
+      }
+    },
+    "ID number (10 alphanumeric digits)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número ID (10 dígitos alfanuméricos)"
+          }
+        }
+      }
+    },
+    "ID number (15 numeric digits)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número ID (15 dígitos numéricos)"
+          }
+        }
+      }
+    },
+    "ID type" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo de ID"
+          }
+        }
+      }
+    },
+    "Immunodeficiency Virus" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Virus de Inmunodeficiencia"
+          }
+        }
+      }
+    },
+    "Implanted on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Implantado el"
+          }
+        }
+      }
+    },
+    "Info" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información"
+          }
+        }
+      }
+    },
+    "Injection" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inyección"
+          }
+        }
+      }
+    },
+    "Large" : {
+
+    },
+    "Last" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Último"
+          }
+        }
+      }
+    },
+    "Last 6 Months" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Últimos 6 Meses"
+          }
+        }
+      }
+    },
+    "Last 12 Months" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Últimos 12 Meses"
+          }
+        }
+      }
+    },
+    "Last day" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Último día"
+          }
+        }
+      }
+    },
+    "Last Day" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Último Día"
+          }
+        }
+      }
+    },
+    "Leptospirosis" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leptospirosis"
+          }
+        }
+      }
+    },
+    "Less than 1 inch (2.5 cm)" : {
+
+    },
+    "Leukemia Virus" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Virus de la Leucemia"
+          }
+        }
+      }
+    },
+    "Lies flat against the body, with no curl or wave" : {
+
+    },
+    "Liquid" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Líquido"
+          }
+        }
+      }
+    },
+    "Live Rabies" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rabia"
+          }
+        }
+      }
+    },
+    "Location" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Localización"
+          }
+        }
+      }
+    },
+    "Long" : {
+
+    },
+    "Low risk Rabies" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rabia de Bajo Riesgo"
+          }
+        }
+      }
+    },
+    "Lyme disease" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enfermedad de Lyme"
+          }
+        }
+      }
+    },
+    "Male" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macho"
+          }
+        }
+      }
+    },
+    "Markings" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcas"
+          }
+        }
+      }
+    },
+    "Medium" : {
+
+    },
+    "mg" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mg"
+          }
+        }
+      }
+    },
+    "mg/kg" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mg/kg"
+          }
+        }
+      }
+    },
+    "mg/ml" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mg/ml"
+          }
+        }
+      }
+    },
+    "Microchip" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microchip"
+          }
+        }
+      }
+    },
+    "Microchip Info" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microchip Info"
+          }
+        }
+      }
+    },
+    "Microchip number is been copied to the clipboard. Go to [https://petmaxx.com](https://www.petmaxx.com/) and paste it inside the 'Microchip Search' box." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El número del Microchip se ha copiado en el portapapeles. Ve a [https://petmaxx.com](https://www.petmaxx.com/) y pégalo dentro de la caja de búsqueda 'Microchip Search'."
+          }
+        }
+      }
+    },
+    "Miniature" : {
+
+    },
+    "ml" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ml"
+          }
+        }
+      }
+    },
+    "ml/kg" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ml/kg"
+          }
+        }
+      }
+    },
+    "More days" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Días más"
+          }
+        }
+      }
+    },
+    "More Days" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Días Más"
+          }
+        }
+      }
+    },
+    "More than 6 inches (15 cm)" : {
+
+    },
+    "mziodev@gmail.com" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mziodev@gmail.com"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre"
+          }
+        }
+      }
+    },
+    "New pet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva mascota"
+          }
+        }
+      }
+    },
+    "New Pet card with summary information about the last weight, deworming treatments, and vaccines." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva Tarjeta de Mascota con resúmenes de información sobre los últimos pesos, desparasitaciones y vacunas."
+          }
+        }
+      }
+    },
+    "New Support, What's New, and Rate this App views." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevas vistas de Soporte, Novedades, y Califica esta App."
+          }
+        }
+      }
+    },
+    "Next to Expire" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente en Caducar"
+          }
+        }
+      }
+    },
+    "No average yet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin promedio todavía"
+          }
+        }
+      }
+    },
+    "No breeds yet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no hay razas"
+          }
+        }
+      }
+    },
+    "No chip" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin microchip"
+          }
+        }
+      }
+    },
+    "No data yet." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin datos todavía."
+          }
+        }
+      }
+    },
+    "No Microchip" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin Microchip"
+          }
+        }
+      }
+    },
+    "No pets yet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no hay mascotas"
+          }
+        }
+      }
+    },
+    "No treatments yet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no hay tratamientos"
+          }
+        }
+      }
+    },
+    "No vaccines yet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no hay vacunas"
+          }
+        }
+      }
+    },
+    "No weights yet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no hay pesos"
+          }
+        }
+      }
+    },
+    "None" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ninguno"
+          }
+        }
+      }
+    },
+    "None (completely hairless)" : {
+
+    },
+    "Nooo!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nooo!"
+          }
+        }
+      }
+    },
+    "Notes" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notas"
+          }
+        }
+      }
+    },
+    "Notification" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso"
+          }
+        }
+      }
+    },
+    "Notification Time" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hora del Aviso"
+          }
+        }
+      }
+    },
+    "Number" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número"
+          }
+        }
+      }
+    },
+    "Ok" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
+    },
+    "on Family" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "en la familia"
+          }
+        }
+      }
+    },
+    "On family since" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En la familia desde"
+          }
+        }
+      }
+    },
+    "Others" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otros"
+          }
+        }
+      }
+    },
+    "over 22 pounds (10 kg)" : {
+
+    },
+    "over 100 pounds (45 kg)" : {
+
+    },
+    "Panleukopenia (also known as Feline Distemper)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panleucopenia (también conocida como Moquillo Felino)"
+          }
+        }
+      }
+    },
+    "Parainfluenza" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parainfluenza"
+          }
+        }
+      }
+    },
+    "Parvovirus" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parvovirus"
+          }
+        }
+      }
+    },
+    "Paw symbol" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Símbolo de pezuña"
+          }
+        }
+      }
+    },
+    "Pets" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mascotas"
+          }
+        }
+      }
+    },
+    "Pets Premium" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mascotas Premium"
+          }
+        }
+      }
+    },
+    "Pets Store" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La tienda de Mascotas"
+          }
+        }
+      }
+    },
+    "Pill" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pastilla"
+          }
+        }
+      }
+    },
+    "Pipette" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pipeta"
+          }
+        }
+      }
+    },
+    "Policies" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Políticas"
+          }
+        }
+      }
+    },
+    "ppm" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ppm"
+          }
+        }
+      }
+    },
+    "Privacy policy" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Política de privacidad"
+          }
+        }
+      }
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Política de Privacidad"
+          }
+        }
+      }
+    },
+    "Product Info" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información del producto"
+          }
+        }
+      }
+    },
+    "Quantity" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantidad"
+          }
+        }
+      }
+    },
+    "Rabies" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rabia"
+          }
+        }
+      }
+    },
+    "Rate this app" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Califica esta app"
+          }
+        }
+      }
+    },
+    "Remove image" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar imagen"
+          }
+        }
+      }
+    },
+    "Report a problem or just send us some feedback." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informa de un problema o simplemente envíanos tus comentarios."
+          }
+        }
+      }
+    },
+    "Resize %@'s Image" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redimensiona la Imagen de %@"
+          }
+        }
+      }
+    },
+    "Resize image" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redimensionar imagen"
+          }
+        }
+      }
+    },
+    "Resize Image" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redimensiona la Imagen"
+          }
+        }
+      }
+    },
+    "Restore Purchase" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar Compra"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
+        }
+      }
+    },
+    "Select a breed" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona una raza"
+          }
+        }
+      }
+    },
+    "Select a pet to show its card." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona una mascota para mostrar su tarjeta."
+          }
+        }
+      }
+    },
+    "Select a sex" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona un sexo"
+          }
+        }
+      }
+    },
+    "Sex" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sexo"
+          }
+        }
+      }
+    },
+    "Shampoo" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Champú"
+          }
+        }
+      }
+    },
+    "Short" : {
+
+    },
+    "Silky" : {
+
+    },
+    "since adopted" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "desde la adopción"
+          }
+        }
+      }
+    },
+    "Small" : {
+
+    },
+    "Soft and smooth to the touch" : {
+
+    },
+    "Some minor UI tweaks and error fixes." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algunos ajustes menores en la IU y correcciones de errores."
+          }
+        }
+      }
+    },
+    "Species" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especie"
+          }
+        }
+      }
+    },
+    "Spray" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spray"
+          }
+        }
+      }
+    },
+    "Started" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empezó"
+          }
+        }
+      }
+    },
+    "Starts" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empieza"
+          }
+        }
+      }
+    },
+    "Straight" : {
+
+    },
+    "Straight and smooth, but not as fine as fine coats" : {
+
+    },
+    "Subscribe to Pets Premium and get:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suscríbete a Mascotas Premium y consigue:"
+          }
+        }
+      }
+    },
+    "Support" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soporte"
+          }
+        }
+      }
+    },
+    "Suppository" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supositorio"
+          }
+        }
+      }
+    },
+    "Take care of your pets" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuida a tus mascotas"
+          }
+        }
+      }
+    },
+    "Take control of their weight, their regular deworming treatments, and vaccines." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toma el control de sus pesos, sus desparasitaciones y vacunas habituales."
+          }
+        }
+      }
+    },
+    "Tap on the button '+' for add a new pet." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz tap en el botón '+' para añadir una nueva mascota."
+          }
+        }
+      }
+    },
+    "Tap on the Plus button to add a new weight." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz tap en el botón '+' para añadir un nuevo peso."
+          }
+        }
+      }
+    },
+    "Tap on the plus button to add new vaccines." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz tap en el botón '+' para añadir una nueva vacuna."
+          }
+        }
+      }
+    },
+    "Tap the plus button to add a new deworming treatment." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz tap en el botón '+' para añadir un nuevo tratamiento de desparasitación."
+          }
+        }
+      }
+    },
+    "Terms of Service (EULA)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condiciones de Uso (EULA)"
+          }
+        }
+      }
+    },
+    "Terms of use" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condiciones de uso"
+          }
+        }
+      }
+    },
+    "The same day" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El mismo día"
+          }
+        }
+      }
+    },
+    "Thick" : {
+
+    },
+    "Thick and rough, with a dense undercoat" : {
+
+    },
+    "This vaccine data will be deleted, are you sure?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los datos de esta vacuna será eliminados, ¿estás seguro/a?"
+          }
+        }
+      }
+    },
+    "This weight will be deleted, are you sure?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este peso será eliminado, ¿estás seguro/a?"
+          }
+        }
+      }
+    },
+    "Time Period" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Periodo de Tiempo"
+          }
+        }
+      }
+    },
+    "Toy" : {
+
+    },
+    "Treatment Details" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles del tratamiento"
+          }
+        }
+      }
+    },
+    "Treatment name" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del tratamiento"
+          }
+        }
+      }
+    },
+    "Treatment type" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo de tratamiento"
+          }
+        }
+      }
+    },
+    "Two days before" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 días antes"
+          }
+        }
+      }
+    },
+    "Two weeks before" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 semanas antes"
+          }
+        }
+      }
+    },
+    "Type" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo"
+          }
+        }
+      }
+    },
+    "under 4 pounds (1.8 kg)" : {
+
+    },
+    "Under 10 pounds (4.5 kg)" : {
+
+    },
+    "Units" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unidades"
+          }
+        }
+      }
+    },
+    "Unknown" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desconocida"
+          }
+        }
+      }
+    },
+    "Unknown breed" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raza desconocida"
+          }
+        }
+      }
+    },
+    "Unlimited pets." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mascotas ilimitadas."
+          }
+        }
+      }
+    },
+    "Unlock Deworming Treatment Notes, Notifications and some other features with Pets Premium." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbloquea las Notificaciones y las Notas para Desparasitación, y algunas otras características con Mascotas Premium"
+          }
+        }
+      }
+    },
+    "Unlock Vaccine Notes, Notifications and some other features with Pets Premium." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbloquea Notificaciones y Notas para las Vacunas, y algunas otras características más con Mascotas Premium."
+          }
+        }
+      }
+    },
+    "Unlock Weight Notes and some other features with Pets Premium." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbloquea Notas para los Pesos, y algunas otras características más con Mascotas Premium."
+          }
+        }
+      }
+    },
+    "Unverified gray checkmark" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check gris de no verificado"
+          }
+        }
+      }
+    },
+    "Vaccine and Deworming Treatment notifications." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notificaciones para Vacunas y Desparasitaciones."
+          }
+        }
+      }
+    },
+    "Vaccine Details" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles de la vacuna"
+          }
+        }
+      }
+    },
+    "Vaccine Warning" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso de Vacuna"
+          }
+        }
+      }
+    },
+    "Vaccines" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vacunas"
+          }
+        }
+      }
+    },
+    "Verified green checkmark" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check verde de verificado."
+          }
+        }
+      }
+    },
+    "Version 1.1.0" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión 1.1.0"
+          }
+        }
+      }
+    },
+    "Version number:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de versión:"
+          }
+        }
+      }
+    },
+    "Very short (less than 1/4 inch or 6 mm)" : {
+
+    },
+    "Viral Rhinotracheitis" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rinotraqueitis Viral"
+          }
+        }
+      }
+    },
+    "Warning!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Aviso!"
+          }
+        }
+      }
+    },
+    "Wavy" : {
+
+    },
+    "Weight" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso"
+          }
+        }
+      }
+    },
+    "Weight Data" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datos del Peso"
+          }
+        }
+      }
+    },
+    "Weight Details" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles del Peso"
+          }
+        }
+      }
+    },
+    "Weight List (%@)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista de Pesos (%@)"
+          }
+        }
+      }
+    },
+    "Weights, Vaccines and Deworming Treatment notes." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notas para Pesos, Vacunas, y Desparasitaciones."
+          }
+        }
+      }
+    },
+    "Welcome to Pets" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido/a a Mascotas"
+          }
+        }
+      }
+    },
+    "What's new" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novedades"
+          }
+        }
+      }
+    },
+    "What's New" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novedades"
+          }
+        }
+      }
+    },
+    "Wiry" : {
+
+    },
+    "Write down any weight, vaccine or deworming treatment detail so you don't miss anything, and configure notifications so you don't forget any important thing.*" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toma nota de cualquier detalle sobre Pesos, Vacunas o Desparasitaciones para que no te pierdas nada, y configura las Notificaciones para que no te olvides ni una sola cosa importante.*"
+          }
+        }
+      }
+    },
+    "Yes" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sí"
+          }
+        }
+      }
+    },
+    "You have to select your pet species first." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primero tienes que seleccionar la especie de tu mascota."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

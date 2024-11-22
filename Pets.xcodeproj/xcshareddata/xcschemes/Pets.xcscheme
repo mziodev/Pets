@@ -60,7 +60,7 @@
          </EnvironmentVariable>
       </EnvironmentVariables>
       <StoreKitConfigurationFileReference
-         identifier = "../../Pets/Pets Store/PetsPremium.storekit">
+         identifier = "../../Pets/Utitliies/Store Utilities/PetsPremium.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
