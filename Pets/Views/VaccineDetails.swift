@@ -58,9 +58,9 @@ struct VaccineDetails: View {
                         ForEach(
                             VaccineType.allCases,
                             id: \.self
-                        ) { vaccine in
-                            if vaccine.species == "unknown" {
-                                Text(vaccine.localizedDescription)
+                        ) { type in
+                            if type.species == "unknown" {
+                                Text(type.localizedDescription)
                                     .font(.callout)
                             }
                         }
@@ -69,9 +69,9 @@ struct VaccineDetails: View {
                             ForEach(
                                 VaccineType.allCases,
                                 id: \.self
-                            ) { vaccine in
-                                if vaccine.species == "dogs" {
-                                    Text(vaccine.rawValue)
+                            ) { type in
+                                if type.species == "dogs" {
+                                    Text(type.rawValue)
                                         .font(.callout)
                                 }
                             }

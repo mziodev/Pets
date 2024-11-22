@@ -11,18 +11,18 @@ import SwiftUI
 struct ActiveNotificationList: View {
     @Environment(\.dismiss) private var dismiss
     
-    @State private var activeNotifications: [UNNotificationRequest] = []
+    @State private var activeNotificationRequests: [UNNotificationRequest] = []
     
     var body: some View {
         NavigationStack {
-            List(activeNotifications, id: \.identifier) { notification in
-                Section("Active notifications") {
-                    ActiveNotificationListRow(notification: notification)
+            List(activeNotificationRequests, id: \.identifier) { request in
+                Section("Upcoming Notifications") {
+                    ActiveNotificationListRow(notification: request)
                 }
             }
             .navigationTitle("Notifications center")
             .overlay {
-                if activeNotifications.isEmpty {
+                if activeNotificationRequests.isEmpty {
                     ActiveNotificationsListEmpty()
                 }
             }
@@ -36,8 +36,8 @@ struct ActiveNotificationList: View {
     }
     
     private func loadActiveNotifications() {
-        UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
-            self.activeNotifications = notifications
+        UNUserNotificationCenter.current().getPendingNotificationRequests { request in
+            self.activeNotificationRequests = request
         }
     }
     

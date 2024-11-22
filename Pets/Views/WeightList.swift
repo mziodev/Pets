@@ -114,7 +114,7 @@ struct WeightList: View {
                         Section("Weight List (\(Weight.units))") {
                             ForEach(pet.unwrappedWeights.reverseSortedByDate) { weight in
                                 NavigationLink {
-                                    WeightDetail(pet: pet, weight: weight)
+                                    WeightDetails(pet: pet, weight: weight)
                                 } label: {
                                     WeightListRow(weight: weight)
                                 }
@@ -128,7 +128,7 @@ struct WeightList: View {
             .navigationTitle("\(pet.name)'s weight list")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showingAddWeightSheet) {
-                WeightDetail(pet: pet, isNew: true)
+                WeightDetails(pet: pet, isNew: true)
             }
             .toolbar {
                 ToolbarItem {

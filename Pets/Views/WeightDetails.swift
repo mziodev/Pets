@@ -1,5 +1,5 @@
 //
-//  WeightDetail.swift
+//  WeightDetails.swift
 //  Petee
 //
 //  Created by MZiO on 24/5/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WeightDetail: View {
+struct WeightDetails: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var petsStoreManager: PetsStoreManager
     
@@ -174,12 +174,12 @@ struct WeightDetail: View {
 
 
 #Preview("New weight") {
-    WeightDetail(pet: SampleData.shared.petWithChipID, isNew: true)
+    WeightDetails(pet: SampleData.shared.petWithChipID, isNew: true)
         .environmentObject(PetsStoreManager())
 }
 
 #Preview("Existing weight") {
-    WeightDetail(
+    WeightDetails(
         pet: SampleData.shared.petWithChipID,
         weight: Weight.sampleData[0]
     )

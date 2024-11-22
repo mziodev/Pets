@@ -39,7 +39,7 @@
 		08833FF72C09CABB000FD0BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08833FDF2C09CABB000FD0BF /* Preview Assets.xcassets */; };
 		08833FF82C09CABB000FD0BF /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE12C09CABB000FD0BF /* SampleData.swift */; };
 		08833FF92C09CABB000FD0BF /* PetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE32C09CABB000FD0BF /* PetCard.swift */; };
-		08833FFB2C09CABB000FD0BF /* WeightDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE52C09CABB000FD0BF /* WeightDetail.swift */; };
+		08833FFB2C09CABB000FD0BF /* WeightDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE52C09CABB000FD0BF /* WeightDetails.swift */; };
 		08833FFD2C09CABB000FD0BF /* ChipIDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE72C09CABB000FD0BF /* ChipIDType.swift */; };
 		08833FFF2C09CABB000FD0BF /* PetListNoPets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FE92C09CABB000FD0BF /* PetListNoPets.swift */; };
 		088340002C09CABB000FD0BF /* PetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833FEA2C09CABB000FD0BF /* PetDetail.swift */; };
@@ -142,7 +142,7 @@
 		08833FDF2C09CABB000FD0BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		08833FE12C09CABB000FD0BF /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		08833FE32C09CABB000FD0BF /* PetCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetCard.swift; sourceTree = "<group>"; };
-		08833FE52C09CABB000FD0BF /* WeightDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightDetail.swift; sourceTree = "<group>"; };
+		08833FE52C09CABB000FD0BF /* WeightDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightDetails.swift; sourceTree = "<group>"; };
 		08833FE72C09CABB000FD0BF /* ChipIDType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipIDType.swift; sourceTree = "<group>"; };
 		08833FE92C09CABB000FD0BF /* PetListNoPets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetListNoPets.swift; sourceTree = "<group>"; };
 		08833FEA2C09CABB000FD0BF /* PetDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetDetail.swift; sourceTree = "<group>"; };
@@ -339,7 +339,7 @@
 				087F5B552C131CF9005A7083 /* VerificationCheckMark.swift */,
 				086C88402C94389D004F9C6C /* Welcome.swift */,
 				08AB75B72CA6FD0400BAC6A2 /* WeightCard.swift */,
-				08833FE52C09CABB000FD0BF /* WeightDetail.swift */,
+				08833FE52C09CABB000FD0BF /* WeightDetails.swift */,
 				08833FED2C09CABB000FD0BF /* WeightList.swift */,
 				08FD87AA2C2C01E400CC9F9A /* WeightListEmpty.swift */,
 				08833FEC2C09CABB000FD0BF /* WeightListChart.swift */,
@@ -579,7 +579,7 @@
 				08DF54432C1C511E003076B1 /* PetCardWeight.swift in Sources */,
 				08B585082C1748690068D4B2 /* PetBreedList.swift in Sources */,
 				08D19C362CEF7D1E0068377E /* Pet+Dates.swift in Sources */,
-				08833FFB2C09CABB000FD0BF /* WeightDetail.swift in Sources */,
+				08833FFB2C09CABB000FD0BF /* WeightDetails.swift in Sources */,
 				088340032C09CABB000FD0BF /* WeightList.swift in Sources */,
 				088340052C09CABB000FD0BF /* PetsApp.swift in Sources */,
 				081E7B092CF090F8001B1962 /* ActiveNotificationList.swift in Sources */,
@@ -741,7 +741,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pets.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
@@ -782,7 +782,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pets.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
