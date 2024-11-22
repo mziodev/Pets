@@ -72,9 +72,11 @@ struct PetList: View {
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .secondaryAction) {
-                    Button(action: showActiveNotifications) {
-                        Label("Active notifications", systemImage: "bell")
+                if petsStoreManager.isPremiumUnlocked {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: showActiveNotifications) {
+                            Label("Active notifications", systemImage: "bell")
+                        }
                     }
                 }
                 
@@ -115,7 +117,7 @@ struct PetList: View {
                 }
                 
                 if !pets.isEmpty {
-                    ToolbarItem(placement: .topBarTrailing) {
+                    ToolbarItem {
                         EditButton()
                     }
                 }

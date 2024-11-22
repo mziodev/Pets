@@ -2,11 +2,6 @@
 
 ### Last published version: 1.1.0, build 7
 
-## Notification list
-- We need build a screen with all of the active notifications
-- This list can be accessible when we create a notification.
-- We need to check notifications duplicity when edit a Vaccine or a Deworming Treatment.
-
 ## Cannine Breed JSON list free IDs
 - 94, 139, 178, 190
 
