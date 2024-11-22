@@ -25,7 +25,7 @@ struct VaccineList: View {
                             ) { vaccine in
                                 if vaccine.activeDays >= 0 {
                                     NavigationLink {
-                                        VaccineDetail(
+                                        VaccineDetails(
                                             pet: pet,
                                             vaccine: vaccine
                                         )
@@ -44,7 +44,7 @@ struct VaccineList: View {
                             ) { vaccine in
                                 if vaccine.activeDays < 0 {
                                     NavigationLink {
-                                        VaccineDetail(
+                                        VaccineDetails(
                                             pet: pet,
                                             vaccine: vaccine
                                         )
@@ -65,7 +65,7 @@ struct VaccineList: View {
                 }
             }
             .sheet(isPresented: $showingVaccineDetail) {
-                VaccineDetail(pet: pet, isNew: true)
+                VaccineDetails(pet: pet, isNew: true)
             }
             .toolbar {
                 ToolbarItem {

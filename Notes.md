@@ -2,15 +2,17 @@
 
 ### Last published version: 1.1.0, build 7
 
+
+## Edit pages
+- We need to simplify the Details screens to just one step.
+
+
 ## Notifications
 - We need to navigate from a selected notification to the sender details view.
 
+
 ## Cannine Breed JSON list free IDs
 - 94, 139, 178, 190
-
-
-## iPad
-- We have to adaptate the app to properly render on an iPad.
 
 
 ## l10n and i18n

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DewormingTreatmentDetail: View {
+struct DewormingTreatmentDetails: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var petsStoreManager: PetsStoreManager
     
@@ -310,7 +310,7 @@ struct DewormingTreatmentDetail: View {
 
 
 #Preview("New deworming") {
-    DewormingTreatmentDetail(
+    DewormingTreatmentDetails(
         pet: SampleData.shared.petWithChipID,
         isNew: true
     )
@@ -318,7 +318,7 @@ struct DewormingTreatmentDetail: View {
 }
 
 #Preview("Existing deworming") {
-    DewormingTreatmentDetail(
+    DewormingTreatmentDetails(
         pet: SampleData.shared.petWithChipID,
         dewormingTreatment: SampleData.shared.petWithChipID.unwrappedDewormingTreatments[0]
     )

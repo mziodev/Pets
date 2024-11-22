@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		080343782C8AF8F6004F4249 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080343772C8AF8F6004F4249 /* Date+Format.swift */; };
 		080F40692C241DC60085CA65 /* DewormingTreatmentListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */; };
-		080F406F2C246FDC0085CA65 /* DewormingTreatmentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */; };
+		080F406F2C246FDC0085CA65 /* DewormingTreatmentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F406E2C246FDC0085CA65 /* DewormingTreatmentDetails.swift */; };
 		081E7B092CF090F8001B1962 /* ActiveNotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E7B082CF090F8001B1962 /* ActiveNotificationList.swift */; };
 		083766F42C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083766F32C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift */; };
 		083766F62C89F902009255E1 /* PetsPremium.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 083766F52C89F902009255E1 /* PetsPremium.storekit */; };
@@ -19,7 +19,7 @@
 		083DAC582C33FE88001EDAA7 /* VaccineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC572C33FE88001EDAA7 /* VaccineList.swift */; };
 		083DAC5A2C3400DA001EDAA7 /* VaccineListEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC592C3400DA001EDAA7 /* VaccineListEmpty.swift */; };
 		083DAC5E2C3406C7001EDAA7 /* VaccineListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC5D2C3406C7001EDAA7 /* VaccineListRow.swift */; };
-		083DAC602C34107D001EDAA7 /* VaccineDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC5F2C34107D001EDAA7 /* VaccineDetail.swift */; };
+		083DAC602C34107D001EDAA7 /* VaccineDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DAC5F2C34107D001EDAA7 /* VaccineDetails.swift */; };
 		084E3E402C8EF8B400623D9E /* NotificationPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E3E3F2C8EF8B400623D9E /* NotificationPeriod.swift */; };
 		084E3E422C8F0F3600623D9E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E3E412C8F0F3600623D9E /* Notification.swift */; };
 		086955E92CAA93F100AC52FF /* VaccineCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086955E82CAA93F100AC52FF /* VaccineCard.swift */; };
@@ -111,7 +111,7 @@
 /* Begin PBXFileReference section */
 		080343772C8AF8F6004F4249 /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentListRow.swift; sourceTree = "<group>"; };
-		080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentDetail.swift; sourceTree = "<group>"; };
+		080F406E2C246FDC0085CA65 /* DewormingTreatmentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewormingTreatmentDetails.swift; sourceTree = "<group>"; };
 		081E7B082CF090F8001B1962 /* ActiveNotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNotificationList.swift; sourceTree = "<group>"; };
 		082419E92C81BEBF008BE7D1 /* Pets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pets.entitlements; sourceTree = "<group>"; };
 		083766F32C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPremiumButtonLabel.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		083DAC572C33FE88001EDAA7 /* VaccineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineList.swift; sourceTree = "<group>"; };
 		083DAC592C3400DA001EDAA7 /* VaccineListEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineListEmpty.swift; sourceTree = "<group>"; };
 		083DAC5D2C3406C7001EDAA7 /* VaccineListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineListRow.swift; sourceTree = "<group>"; };
-		083DAC5F2C34107D001EDAA7 /* VaccineDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineDetail.swift; sourceTree = "<group>"; };
+		083DAC5F2C34107D001EDAA7 /* VaccineDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineDetails.swift; sourceTree = "<group>"; };
 		084E3E3F2C8EF8B400623D9E /* NotificationPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPeriod.swift; sourceTree = "<group>"; };
 		084E3E412C8F0F3600623D9E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		086955E82CAA93F100AC52FF /* VaccineCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCard.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 			children = (
 				081E7B082CF090F8001B1962 /* ActiveNotificationList.swift */,
 				08AB75B92CA7FF1A00BAC6A2 /* DewormingTreatmentsCard.swift */,
-				080F406E2C246FDC0085CA65 /* DewormingTreatmentDetail.swift */,
+				080F406E2C246FDC0085CA65 /* DewormingTreatmentDetails.swift */,
 				08EEF0D42C2326FD003ABFF9 /* DewormingTreatmentList.swift */,
 				08B752022C2B128E00C0D143 /* DewormingTreatmentListEmpty.swift */,
 				080F40682C241DC60085CA65 /* DewormingTreatmentListRow.swift */,
@@ -332,7 +332,7 @@
 				08D802FD2CAC38CF00415EA0 /* Support.swift */,
 				083766F32C89B7AE009255E1 /* ToolbarPremiumButtonLabel.swift */,
 				086955E82CAA93F100AC52FF /* VaccineCard.swift */,
-				083DAC5F2C34107D001EDAA7 /* VaccineDetail.swift */,
+				083DAC5F2C34107D001EDAA7 /* VaccineDetails.swift */,
 				083DAC572C33FE88001EDAA7 /* VaccineList.swift */,
 				083DAC5D2C3406C7001EDAA7 /* VaccineListRow.swift */,
 				083DAC592C3400DA001EDAA7 /* VaccineListEmpty.swift */,
@@ -551,7 +551,7 @@
 				08AB75BA2CA7FF1A00BAC6A2 /* DewormingTreatmentsCard.swift in Sources */,
 				08B5851B2C19E9B20068D4B2 /* WeightListRow.swift in Sources */,
 				08FD87B22C2C5F6B00CC9F9A /* PetCardName.swift in Sources */,
-				083DAC602C34107D001EDAA7 /* VaccineDetail.swift in Sources */,
+				083DAC602C34107D001EDAA7 /* VaccineDetails.swift in Sources */,
 				083DAC582C33FE88001EDAA7 /* VaccineList.swift in Sources */,
 				08833FF92C09CABB000FD0BF /* PetCard.swift in Sources */,
 				087F5B562C131CF9005A7083 /* VerificationCheckMark.swift in Sources */,
@@ -602,7 +602,7 @@
 				084E3E422C8F0F3600623D9E /* Notification.swift in Sources */,
 				08B585032C1713A40068D4B2 /* PetBreed.swift in Sources */,
 				08FD87BD2C30012F00CC9F9A /* PetBreedListEmpty.swift in Sources */,
-				080F406F2C246FDC0085CA65 /* DewormingTreatmentDetail.swift in Sources */,
+				080F406F2C246FDC0085CA65 /* DewormingTreatmentDetails.swift in Sources */,
 				083DAC532C33F4D1001EDAA7 /* VaccineType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

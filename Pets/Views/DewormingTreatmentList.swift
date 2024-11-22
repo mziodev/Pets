@@ -25,7 +25,7 @@ struct DewormingTreatmentList: View {
                         ) { treatment in
                             if (treatment.activeDays >= 0) {
                                 NavigationLink{
-                                    DewormingTreatmentDetail(
+                                    DewormingTreatmentDetails(
                                         pet: pet,
                                         dewormingTreatment: treatment
                                     )
@@ -46,7 +46,7 @@ struct DewormingTreatmentList: View {
                         ) { treatment in
                             if (treatment.activeDays < 0) {
                                 NavigationLink{
-                                    DewormingTreatmentDetail(
+                                    DewormingTreatmentDetails(
                                         pet: pet,
                                         dewormingTreatment: treatment
                                     )
@@ -68,7 +68,7 @@ struct DewormingTreatmentList: View {
                 }
             }
             .sheet(isPresented: $showingDewormingTreatmentDetail) {
-                DewormingTreatmentDetail(
+                DewormingTreatmentDetails(
                     pet: pet,
                     isNew: true
                 )
