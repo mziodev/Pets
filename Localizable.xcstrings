@@ -595,6 +595,9 @@
         }
       }
     },
+    "Active notifications" : {
+
+    },
     "Active treatments" : {
       "localizations" : {
         "es" : {
@@ -1807,6 +1810,9 @@
         }
       }
     },
+    "No active notifications yet." : {
+
+    },
     "No average yet" : {
       "localizations" : {
         "es" : {
@@ -1969,6 +1975,9 @@
           }
         }
       }
+    },
+    "OK" : {
+
     },
     "on Family" : {
       "localizations" : {
@@ -2245,6 +2254,9 @@
           }
         }
       }
+    },
+    "Scheduled for: %@" : {
+
     },
     "Select a breed" : {
       "localizations" : {

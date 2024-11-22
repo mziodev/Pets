@@ -21,6 +21,7 @@ struct PetList: View {
     
     @State private var showingAddPet = false
     @State private var showingSupport = false
+    @State private var showingActiveNotifications = false
     @State private var showingWhatsNew = false
     @State private var showingPetsStore = false
 
@@ -51,6 +52,9 @@ struct PetList: View {
             .sheet(isPresented: $isFirstLaunch) {
                 Welcome(isFirstStart: $isFirstLaunch)
             }
+            .sheet(isPresented: $showingActiveNotifications) {
+                ActiveNotificationList()
+            }
             .sheet(isPresented: $showingWhatsNew) {
                 WhatsNew()
             }
@@ -68,6 +72,12 @@ struct PetList: View {
                 }
             }
             .toolbar {
+                ToolbarItem(placement: .secondaryAction) {
+                    Button(action: showActiveNotifications) {
+                        Label("Active notifications", systemImage: "bell")
+                    }
+                }
+                
                 ToolbarItem(placement: .secondaryAction) {
                     Button(action: showWhatsNew) {
                         Label("What's new", systemImage: "sparkles")
@@ -122,6 +132,10 @@ struct PetList: View {
 
     private func deletePets(offsets: IndexSet) {
         offsets.forEach { modelContext.delete(pets[$0]) }
+    }
+    
+    private func showActiveNotifications() {
+        showingActiveNotifications = true
     }
     
     private func showWhatsNew() {

@@ -16,6 +16,17 @@ extension Date {
         self.formatted(.dateTime.month().day().year())
     }
     
+    var monthDayYearTime: String {
+        self.formatted(
+            .dateTime
+                .month()
+                .day()
+                .year()
+                .hour()
+                .minute()
+        )
+    }
+    
     var year: String {
         self.formatted(.dateTime.year())
     }
