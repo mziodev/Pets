@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ChipIDType: Codable, CaseIterable {
+enum ChipIDType: String, Codable, CaseIterable {
     case noChipID
     case fifteenDigit
     case tenDigit
