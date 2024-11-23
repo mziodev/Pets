@@ -3,11 +3,8 @@
 ### Last published version: 1.1.0, build 7
 
 
-## Edit pages
-- We need to simplify the Details screens to just one step.
-
-
 ## Notifications
+- Check screen localization for the notification center button on iPad.
 - We need to navigate from a selected notification to the sender details view.
 
 

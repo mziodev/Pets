@@ -209,7 +209,7 @@
 		08FD87B12C2C5F6B00CC9F9A /* PetCardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardName.swift; sourceTree = "<group>"; };
 		08FD87B82C2DB0B200CC9F9A /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
 		08FD87BC2C30012F00CC9F9A /* PetBreedListEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBreedListEmpty.swift; sourceTree = "<group>"; };
-		08FD87BE2C300C7500CC9F9A /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = "<group>"; };
+		08FD87BE2C300C7500CC9F9A /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = SOURCE_ROOT; };
 		08FD87CA2C32B97D00CC9F9A /* MicrochipInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrochipInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -741,7 +741,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pets.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
@@ -782,7 +782,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pets.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Pets/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;

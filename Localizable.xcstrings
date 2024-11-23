@@ -5,7 +5,14 @@
 
     },
     "-" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        }
+      }
     },
     "..." : {
       "localizations" : {
@@ -596,7 +603,14 @@
       }
     },
     "Active notifications" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notificaciones activas"
+          }
+        }
+      }
     },
     "Active treatments" : {
       "localizations" : {
@@ -794,17 +808,6 @@
         }
       }
     },
-    "Barcode reading error, try again" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error en la lectura del código de barras, inténtalo otra vez."
-          }
-        }
-      }
-    },
     "Basics" : {
       "localizations" : {
         "es" : {
@@ -924,28 +927,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Microchip"
-          }
-        }
-      }
-    },
-    "Chip ID" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Microchip ID"
-          }
-        }
-      }
-    },
-    "Chip ID Barcode" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Código de barras del Microchip ID"
           }
         }
       }
@@ -1175,17 +1156,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No te pierdas nada"
-          }
-        }
-      }
-    },
-    "Done" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Listo"
           }
         }
       }
@@ -1811,7 +1781,14 @@
       }
     },
     "No active notifications yet." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no hay ninguna notificación."
+          }
+        }
+      }
     },
     "No average yet" : {
       "localizations" : {
@@ -1957,7 +1934,14 @@
       }
     },
     "Notifications center" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Centro de notificaciones"
+          }
+        }
+      }
     },
     "Number" : {
       "localizations" : {
@@ -1980,7 +1964,14 @@
       }
     },
     "OK" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
     },
     "on Family" : {
       "localizations" : {
@@ -2259,7 +2250,14 @@
       }
     },
     "Scheduled for: %@" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Programado para: %@"
+          }
+        }
+      }
     },
     "Select a breed" : {
       "localizations" : {
@@ -2690,6 +2688,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Check gris de no verificado"
+          }
+        }
+      }
+    },
+    "Upcoming Notifications" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximas notificaciones."
           }
         }
       }
