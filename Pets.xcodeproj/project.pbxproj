@@ -27,6 +27,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		083DA0482D47AD4500C2F51C /* Pets */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (083DA0A52D47AD4600C2F51C /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Pets; sourceTree = "<group>"; };
+		083DA1762D47E68700C2F51C /* New Folder */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "New Folder"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +56,7 @@
 				083DA0482D47AD4500C2F51C /* Pets */,
 				0887947D2BFB35E600635DB7 /* Products */,
 				087DCEB02C85D7DA005E3A47 /* Frameworks */,
+				083DA1762D47E68700C2F51C /* New Folder */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +85,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				083DA0482D47AD4500C2F51C /* Pets */,
+				083DA1762D47E68700C2F51C /* New Folder */,
 			);
 			name = Pets;
 			productName = Petee;

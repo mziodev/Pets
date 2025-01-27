@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct Welcome: View {
+struct WelcomeView: View {
+    
     @Binding var isFirstStart: Bool
     
+    func continueToApp() {
+        isFirstStart = false
+    }
+    
     var body: some View {
-        VStack(spacing: 50) {
-            Text("Welcome to Pets")
-                .font(.largeTitle)
-                .bold()
-                .padding()
-            
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
+        NavigationStack {
+            VStack(spacing: 50) {
+                VStack(alignment: .leading, spacing: 30) {
                     Feature(
                         symbolName: "person.text.rectangle.fill",
                         symbolColor: .petsCelestialBlue,
@@ -39,33 +39,39 @@ struct Welcome: View {
                         title: String(localized: "Don't miss anything"),
                         text: String(localized: "Write down any weight, vaccine or deworming treatment detail so you don't miss anything, and configure notifications so you don't forget any important thing.*")
                     )
-                    
-                    Spacer()
-                    
+                }
+                .padding(.top, 30)
+                
+                Spacer()
+                
+                VStack {
                     Text("*Some features are only available on Pets Premium.")
                         .font(.caption2)
                         .bold()
                         .foregroundStyle(.secondary)
                         .padding()
+                    
+                    Button("Continue", action: continueToApp)
+                        .font(.title3.bold())
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical)
+                        .foregroundStyle(.white)
+                        .background(
+                            .petsUCLABlue,
+                            in: .rect(cornerRadius: 12)
+                        )
+                        .padding(.horizontal)
+                        .padding(.bottom)
                 }
             }
-            
-            Button("Continue", action: goToApp)
-                .font(.title3.bold())
-                .frame(maxWidth: .infinity)
-                .padding(.vertical)
-                .foregroundStyle(.white)
-                .background(
-                    .petsUCLABlue,
-                    in: .rect(cornerRadius: 16)
-                )
-                .padding(.horizontal)
-                .padding(.bottom)
+            .padding()
+            .navigationTitle("Welcome to Pets")
         }
-        .padding()
     }
-    
-    func goToApp() { isFirstStart = false }
+}
+
+#Preview {
+    WelcomeView(isFirstStart: .constant(true))
 }
 
 struct Feature: View {
@@ -91,9 +97,5 @@ struct Feature: View {
             }
         }
     }
-}
-
-#Preview {
-    Welcome(isFirstStart: .constant(true))
 }
 

@@ -54,7 +54,7 @@ struct PetList: View {
                 if pets.isEmpty { PetListNoPets() }
             }
             .sheet(isPresented: $isFirstLaunch) {
-                Welcome(isFirstStart: $isFirstLaunch)
+                WelcomeView(isFirstStart: $isFirstLaunch)
             }
             .sheet(isPresented: $showingAddPet) {
                 if pets.count >= 1 && !petsStoreManager.isPremiumUnlocked {
