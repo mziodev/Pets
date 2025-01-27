@@ -67,7 +67,7 @@ struct PetList: View {
                 Support()
             }
             .sheet(isPresented: $showingWhatsNew) {
-                WhatsNew()
+                WhatsNewView()
             }
             .sheet(isPresented: $showingPetsStore) {
                 PetsStoreView()

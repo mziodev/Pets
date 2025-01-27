@@ -7,12 +7,23 @@
 
 import SwiftUI
 
-struct WhatsNew: View {
+struct WhatsNewView: View {
+    
     @Environment(\.dismiss) private var dismiss
+    
+    private func dismissView() {
+        dismiss()
+    }
     
     var body: some View {
         NavigationStack {
             List {
+                Section("Version 1.1.1") {
+                    UpdateView(
+                        text: String(localized: "Improve app code internaly for better performance.")
+                    )
+                }
+                
                 Section("Version 1.1.0") {
                     UpdateView(
                         text: String(
@@ -43,10 +54,10 @@ struct WhatsNew: View {
             }
         }
     }
-    
-    private func dismissView() {
-        dismiss()
-    }
+}
+
+#Preview {
+    WhatsNewView()
 }
 
 struct UpdateView: View {
@@ -62,8 +73,4 @@ struct UpdateView: View {
             Text(text)
         }
     }
-}
-
-#Preview {
-    WhatsNew()
 }
