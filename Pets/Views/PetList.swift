@@ -64,7 +64,7 @@ struct PetList: View {
                 }
             }
             .sheet(isPresented: $showingSupport) {
-                Support()
+                SupportView()
             }
             .sheet(isPresented: $showingWhatsNew) {
                 WhatsNewView()

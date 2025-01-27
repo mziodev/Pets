@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct Support: View {
+struct SupportView: View {
     @Environment(\.dismiss) private var dismiss
     
     let appVersionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
-    let appBuildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
     
     var body: some View {
         NavigationStack {
@@ -25,11 +24,7 @@ struct Support: View {
                     } header: {
                         Text("Contact Us")
                     } footer: {
-                        HStack {
-                            Spacer()
-                            
-                            Text("Report a problem or just send us some feedback.")
-                        }
+                        Text("Report a problem or just send us some feedback.")
                     }
                     
                     Section("Policies") {
@@ -45,32 +40,20 @@ struct Support: View {
                     }
                     
                     Section("About Pets") {
-                        AppInfo(
-                            text: String(localized: "Version number:"),
-                            number: appVersionNumber
-                        )
-                        
-                        AppInfo(
-                            text: String(localized: "Build number:"),
-                            number: appBuildNumber
-                        )
-                    }
-                }
-                .overlay {
-                    VStack {
-                        Spacer()
-                        
                         HStack {
-                            Spacer()
+                            Text("Version number:")
                             
-                            Text("©2024 Mauricio Del Solar (MZiO)")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                            
-                            Spacer()
-                            
+                            Text(appVersionNumber)
+                                .fontDesign(.rounded)
+                                .bold()
+                                .foregroundStyle(.petsFulvous)
                         }
                     }
+                }
+                .overlay(alignment: .bottom) {
+                    Text("©\(Date.now.year) Mauricio Del Solar (MZiO)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
             }
             .navigationTitle("Support")
@@ -87,22 +70,6 @@ struct Support: View {
     }
 }
 
-struct AppInfo: View {
-    let text: String
-    let number: String
-    
-    var body: some View {
-        HStack(spacing: 10) {
-            Text(text)
-            
-            Text(number)
-                .fontDesign(.rounded)
-                .bold()
-                .foregroundStyle(.petsFulvous)
-        }
-    }
-}
-
 #Preview {
-    Support()
+    SupportView()
 }

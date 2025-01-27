@@ -479,7 +479,11 @@
         }
       }
     },
+    "©%@ Mauricio Del Solar (MZiO)" : {
+
+    },
     "©2024 Mauricio Del Solar (MZiO)" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -852,6 +856,7 @@
       }
     },
     "Build number:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -1461,6 +1466,9 @@
           }
         }
       }
+    },
+    "Improve app code internaly for better performance." : {
+
     },
     "Info" : {
       "localizations" : {
@@ -2724,6 +2732,9 @@
           }
         }
       }
+    },
+    "Version 1.1.1" : {
+
     },
     "Version number:" : {
       "localizations" : {
