@@ -17,12 +17,25 @@ enum ChipIDType: String, Codable, CaseIterable {
         switch self {
         case .noChipID:
             String(localized: "No chip")
-        case .fifteenDigit:
-            String(localized: "15-digit (ISO)")
-        case .tenDigit:
-            String(localized: "10-digit (ISO)")
         case .nineDigit:
             String(localized: "9-digits (AVID)")
+        case .tenDigit:
+            String(localized: "10-digit (ISO)")
+        case .fifteenDigit:
+            String(localized: "15-digit (ISO)")
+        }
+    }
+    
+    var placeholderText: String {
+        switch self {
+        case .noChipID:
+            ""
+        case .nineDigit:
+            String(localized: "ID number (9 numeric digits)")
+        case .tenDigit:
+            String(localized: "ID number (10 alphanumeric digits)")
+        case .fifteenDigit:
+            String(localized: "ID number (15 numeric digits)")
         }
     }
 }

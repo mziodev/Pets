@@ -95,7 +95,7 @@ struct PetListView: View {
                 if pets.count >= 1 && !petsStoreManager.isPremiumUnlocked {
                     PetsStoreView()
                 } else {
-                    PetDetail(pet: Pet(), isNew: true)
+                    PetDetailsView(pet: Pet(), isNew: true)
                 }
             }
             .sheet(isPresented: $showingSupport) {

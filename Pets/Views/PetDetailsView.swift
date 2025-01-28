@@ -10,7 +10,8 @@ import SwiftData
 import SwiftUI
 
 
-struct PetDetail: View {
+struct PetDetailsView: View {
+    
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     
@@ -21,23 +22,6 @@ struct PetDetail: View {
     
     let isNew: Bool
     
-    private var chipIDNumberPlaceholderText: String {
-        switch pet.chipID.type {
-        case .noChipID:
-            ""
-        case .fifteenDigit:
-            String(localized: "ID number (15 numeric digits)")
-        case .tenDigit:
-            String(localized: "ID number (10 alphanumeric digits)")
-        case .nineDigit:
-            String(localized: "ID number (9 numeric digits)")
-        }
-    }
-    
-    private var isNameVerified: Bool {
-        pet.name.hasMinimumLength()
-    }
-    
     private var isChipIDVerified: Bool {
         if pet.chipID.type == .noChipID {
             true
@@ -47,7 +31,16 @@ struct PetDetail: View {
     }
     
     private var isFormVerified: Bool {
-        isNameVerified && isChipIDVerified
+        pet.name.hasMinimumLength() && isChipIDVerified
+    }
+    
+    private func savePet() {
+        modelContext.insert(pet)
+        dismiss()
+    }
+    
+    private func cancel() {
+        dismiss()
     }
     
     init(pet: Pet, isNew: Bool = false) {
@@ -64,10 +57,10 @@ struct PetDetail: View {
                     Section("Basics") {
                         TextField("Name", text: $pet.name)
                             .focused($nameTextFieldFocused)
-                            .overlay {
-                                VerificationCheckMark(
-                                    condition: isNameVerified
-                                )
+                            .overlay(alignment: .trailing) {
+                                if pet.name.hasMinimumLength() {
+                                    CheckMarkLabel()
+                                }
                             }
                         
                         Picker("Species", selection: $pet.species) {
@@ -132,9 +125,10 @@ struct PetDetail: View {
                         }
                         .pickerStyle(.menu)
                         
-                        if pet.chipID.type != .noChipID {
+                        let type = pet.chipID.type
+                        if type != .noChipID {
                             TextField(
-                                chipIDNumberPlaceholderText,
+                                type.placeholderText,
                                 text: $pet.chipID.number
                             )
                             .keyboardType(.numbersAndPunctuation)
@@ -142,10 +136,10 @@ struct PetDetail: View {
                             .onChange(of: pet.chipID.type) { oldValue, newValue in
                                 chipTextFieldFocused = true
                             }
-                            .overlay {
-                                VerificationCheckMark(
-                                    condition: isChipIDVerified
-                                )
+                            .overlay(alignment: .trailing) {
+                                if isChipIDVerified {
+                                    CheckMarkLabel()
+                                }
                             }
                             
                             DatePicker(
@@ -169,20 +163,16 @@ struct PetDetail: View {
             .toolbar {
                 if isNew {
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel", action: dismissView)
+                        Button("Cancel", action: cancel)
                     }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Group {
                         if isNew {
-                            Button("Save") {
-                                modelContext.insert(pet)
-                                
-                                dismiss()
-                            }
+                            Button("Save", action: savePet)
                         } else {
-                            Button("Ok", action: dismissView)
+                            Button("Ok", action: cancel)
                         }
                     }
                     .disabled(!isFormVerified)
@@ -190,17 +180,15 @@ struct PetDetail: View {
             }
         }
     }
-    
-    private func dismissView() { dismiss() }
 }
 
 #Preview("New pet") {
-    PetDetail(pet: Pet(), isNew: true)
+    PetDetailsView(pet: Pet(), isNew: true)
         .modelContainer(SampleData.shared.modelContainer)
 }
 
 #Preview("Existing pet") {
-    PetDetail(pet: SampleData.shared.petWithChipID)
+    PetDetailsView(pet: SampleData.shared.petWithChipID)
         .modelContainer(SampleData.shared.modelContainer)
 }
 

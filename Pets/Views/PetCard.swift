@@ -61,7 +61,7 @@ struct PetCard: View {
             .navigationTitle("\(pet.name)'s Card")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showingPetDetail) {
-                PetDetail(pet: pet)
+                PetDetailsView(pet: pet)
             }
             .sheet(isPresented: $showingChipID) {
                 MicrochipInfo(pet: pet)
