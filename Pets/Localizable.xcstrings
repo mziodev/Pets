@@ -5,7 +5,14 @@
 
     },
     "-" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        }
+      }
     },
     "..." : {
       "localizations" : {
@@ -480,24 +487,14 @@
       }
     },
     "©%@ Mauricio Del Solar (MZiO)" : {
-
-    },
-    "©2024 Mauricio Del Solar (MZiO)" : {
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "©2024 Mauricio Del Solar (MZiO)"
+            "value" : "©%@ Mauricio Del Solar (MZiO)"
           }
         }
       }
-    },
-    "4-8 pounds (1.8-3.6 kg)" : {
-
-    },
-    "8-12 pounds (3.6-5.4 kg)" : {
-
     },
     "9-digits (AVID)" : {
       "localizations" : {
@@ -509,9 +506,6 @@
         }
       }
     },
-    "10-20 pounds (4.5-9 kg)" : {
-
-    },
     "10-digit (ISO)" : {
       "localizations" : {
         "es" : {
@@ -522,12 +516,6 @@
         }
       }
     },
-    "12-15 pounds (5.4-6.8 kg)" : {
-
-    },
-    "15-18 pounds (6.8-8.2 kg)" : {
-
-    },
     "15-digit (ISO)" : {
       "localizations" : {
         "es" : {
@@ -537,21 +525,6 @@
           }
         }
       }
-    },
-    "18-22 pounds (8.2-10 kg)" : {
-
-    },
-    "20-30 pounds (9-13.6 kg)" : {
-
-    },
-    "30-50 pounds (13.6-22.7 kg)" : {
-
-    },
-    "50-80 pounds (22.7-36 kg)" : {
-
-    },
-    "80-100 pounds (36-45 kg)" : {
-
     },
     "A day before" : {
       "localizations" : {
@@ -582,12 +555,6 @@
           }
         }
       }
-    },
-    "About 1-3 inches (2.5-7.5 cm)" : {
-
-    },
-    "About 3-6 inches (7.5-15 cm)" : {
-
     },
     "About Pets" : {
       "localizations" : {
@@ -855,20 +822,6 @@
         }
       }
     },
-    "Build number:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Número de build:"
-          }
-        }
-      }
-    },
-    "Buzzed" : {
-
-    },
     "Calicivirus" : {
       "localizations" : {
         "es" : {
@@ -989,9 +942,6 @@
         }
       }
     },
-    "Corded" : {
-
-    },
     "Coronavirus" : {
       "localizations" : {
         "es" : {
@@ -1011,12 +961,6 @@
           }
         }
       }
-    },
-    "Crinkle" : {
-
-    },
-    "Curly" : {
-
     },
     "Date" : {
       "localizations" : {
@@ -1188,9 +1132,6 @@
         }
       }
     },
-    "Double" : {
-
-    },
     "Edit" : {
       "localizations" : {
         "es" : {
@@ -1261,12 +1202,6 @@
         }
       }
     },
-    "Extra Large" : {
-
-    },
-    "Extra Long" : {
-
-    },
     "Feline Viral Rhinotracheitis, Calicivirus and Panleukopenia (also known as Feline Distemper)" : {
       "localizations" : {
         "es" : {
@@ -1307,12 +1242,6 @@
         }
       }
     },
-    "Fine downy coat" : {
-
-    },
-    "Fine downy coat (about 1/4 inch or 6 mm)" : {
-
-    },
     "For cats" : {
       "localizations" : {
         "es" : {
@@ -1332,21 +1261,6 @@
           }
         }
       }
-    },
-    "Forms a wavy or crinkled texture" : {
-
-    },
-    "Forms long, thin cords or mats" : {
-
-    },
-    "Forms loose waves or ripples" : {
-
-    },
-    "Forms tight curls or waves" : {
-
-    },
-    "Giant" : {
-
     },
     "go Premium" : {
       "localizations" : {
@@ -1377,15 +1291,6 @@
           }
         }
       }
-    },
-    "Hairless" : {
-
-    },
-    "Harsh and wiry, with a dense undercoat" : {
-
-    },
-    "Has two distinct layers of fur, with a soft undercoat and a coarser outer coat" : {
-
     },
     "Hepatitis" : {
       "localizations" : {
@@ -1468,7 +1373,14 @@
       }
     },
     "Improve app code internaly for better performance." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mejoramos el código de la aplicación internamente para obtener un mejor rendimiento."
+          }
+        }
+      }
     },
     "Info" : {
       "localizations" : {
@@ -1489,9 +1401,6 @@
           }
         }
       }
-    },
-    "Large" : {
-
     },
     "Last" : {
       "localizations" : {
@@ -1553,9 +1462,6 @@
         }
       }
     },
-    "Less than 1 inch (2.5 cm)" : {
-
-    },
     "Leukemia Virus" : {
       "localizations" : {
         "es" : {
@@ -1565,9 +1471,6 @@
           }
         }
       }
-    },
-    "Lies flat against the body, with no curl or wave" : {
-
     },
     "Liquid" : {
       "localizations" : {
@@ -1598,9 +1501,6 @@
           }
         }
       }
-    },
-    "Long" : {
-
     },
     "Low risk Rabies" : {
       "localizations" : {
@@ -1641,9 +1541,6 @@
           }
         }
       }
-    },
-    "Medium" : {
-
     },
     "mg" : {
       "localizations" : {
@@ -1705,9 +1602,6 @@
         }
       }
     },
-    "Miniature" : {
-
-    },
     "ml" : {
       "localizations" : {
         "es" : {
@@ -1747,9 +1641,6 @@
           }
         }
       }
-    },
-    "More than 6 inches (15 cm)" : {
-
     },
     "mziodev@gmail.com" : {
       "localizations" : {
@@ -1911,9 +1802,6 @@
         }
       }
     },
-    "None (completely hairless)" : {
-
-    },
     "Nooo!" : {
       "localizations" : {
         "es" : {
@@ -2003,12 +1891,6 @@
           }
         }
       }
-    },
-    "over 22 pounds (10 kg)" : {
-
-    },
-    "over 100 pounds (45 kg)" : {
-
     },
     "Panleukopenia (also known as Feline Distemper)" : {
       "localizations" : {
@@ -2290,12 +2172,6 @@
         }
       }
     },
-    "Short" : {
-
-    },
-    "Silky" : {
-
-    },
     "since adopted" : {
       "localizations" : {
         "es" : {
@@ -2305,12 +2181,6 @@
           }
         }
       }
-    },
-    "Small" : {
-
-    },
-    "Soft and smooth to the touch" : {
-
     },
     "Some minor UI tweaks and error fixes." : {
       "localizations" : {
@@ -2361,12 +2231,6 @@
           }
         }
       }
-    },
-    "Straight" : {
-
-    },
-    "Straight and smooth, but not as fine as fine coats" : {
-
     },
     "Subscribe to Pets Premium and get:" : {
       "localizations" : {
@@ -2488,12 +2352,6 @@
         }
       }
     },
-    "Thick" : {
-
-    },
-    "Thick and rough, with a dense undercoat" : {
-
-    },
     "This vaccine data will be deleted, are you sure?" : {
       "localizations" : {
         "es" : {
@@ -2523,9 +2381,6 @@
           }
         }
       }
-    },
-    "Toy" : {
-
     },
     "Treatment Details" : {
       "localizations" : {
@@ -2586,12 +2441,6 @@
           }
         }
       }
-    },
-    "under 4 pounds (1.8 kg)" : {
-
-    },
-    "Under 10 pounds (4.5 kg)" : {
-
     },
     "Units" : {
       "localizations" : {
@@ -2734,7 +2583,14 @@
       }
     },
     "Version 1.1.1" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión 1.1.1"
+          }
+        }
+      }
     },
     "Version number:" : {
       "localizations" : {
@@ -2745,9 +2601,6 @@
           }
         }
       }
-    },
-    "Very short (less than 1/4 inch or 6 mm)" : {
-
     },
     "Viral Rhinotracheitis" : {
       "localizations" : {
@@ -2768,9 +2621,6 @@
           }
         }
       }
-    },
-    "Wavy" : {
-
     },
     "Weight" : {
       "localizations" : {
@@ -2851,9 +2701,6 @@
           }
         }
       }
-    },
-    "Wiry" : {
-
     },
     "Write down any weight, vaccine or deworming treatment detail so you don't miss anything, and configure notifications so you don't forget any important thing.*" : {
       "localizations" : {
