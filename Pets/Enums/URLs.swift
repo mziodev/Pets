@@ -7,7 +7,7 @@
 
 import Foundation
 
-class URLs {
+enum URLs {
     static let emailURL = URL(
         string: "mailto:mziodev@gmail.com"
     )!
@@ -18,5 +18,9 @@ class URLs {
     
     static let termsOfUseURL = URL(
         string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+    )!
+    
+    static let appStoreRatingURL = URL(
+        string: "itms-apps://itunes.apple.com/app/id6670243713?action=write-review"
     )!
 }
