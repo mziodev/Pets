@@ -37,7 +37,7 @@ struct PetsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            PetList()
+            PetListView()
                 .modelContainer(sharedModelContainer)
                 .environmentObject(petsStoreManager)
                 .task {
