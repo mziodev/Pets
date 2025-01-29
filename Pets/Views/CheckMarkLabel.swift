@@ -10,7 +10,7 @@ import SwiftUI
 struct CheckMarkLabel: View {
     var body: some View {
         Label(
-            "Name verified checkmark",
+            "Green checkmark",
             systemImage: "checkmark"
         )
         .labelStyle(.iconOnly)

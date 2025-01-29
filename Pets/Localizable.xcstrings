@@ -496,6 +496,16 @@
         }
       }
     },
+    "|" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "|"
+          }
+        }
+      }
+    },
     "9-digits (AVID)" : {
       "localizations" : {
         "es" : {
@@ -1292,6 +1302,16 @@
         }
       }
     },
+    "Green checkmark" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marca de verificación verde"
+          }
+        }
+      }
+    },
     "Hepatitis" : {
       "localizations" : {
         "es" : {
@@ -1372,7 +1392,7 @@
         }
       }
     },
-    "Improve app code internaly for better performance." : {
+    "Improve app code internally for better performance." : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -2062,12 +2082,12 @@
         }
       }
     },
-    "Remove image" : {
+    "Remove" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eliminar imagen"
+            "value" : "Eliminar"
           }
         }
       }
@@ -2082,22 +2102,22 @@
         }
       }
     },
+    "Resize" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redimensionar"
+          }
+        }
+      }
+    },
     "Resize %@'s Image" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Redimensiona la Imagen de %@"
-          }
-        }
-      }
-    },
-    "Resize image" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Redimensionar imagen"
           }
         }
       }
@@ -2512,16 +2532,6 @@
         }
       }
     },
-    "Unverified gray checkmark" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Check gris de no verificado"
-          }
-        }
-      }
-    },
     "Vaccine and Deworming Treatment notifications." : {
       "localizations" : {
         "es" : {
@@ -2558,16 +2568,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vacunas"
-          }
-        }
-      }
-    },
-    "Verified green checkmark" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Check verde de verificado."
           }
         }
       }

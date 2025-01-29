@@ -20,7 +20,7 @@ struct WhatsNewView: View {
             List {
                 Section("Version 1.1.1") {
                     UpdateView(
-                        text: String(localized: "Improve app code internaly for better performance.")
+                        text: String(localized: "Improve app code internally for better performance.")
                     )
                 }
                 
