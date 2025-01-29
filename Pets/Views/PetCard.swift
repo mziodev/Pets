@@ -16,7 +16,7 @@ struct PetCard: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                PetImage(pet: pet)
+                PetImageView(pet: pet)
                     .padding(.top)
 
                 VStack(spacing: 10) {

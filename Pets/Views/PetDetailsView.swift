@@ -51,7 +51,7 @@ struct PetDetailsView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                PetDetailImage(pet: pet)
+                PetDetailsImageView(pet: pet)
                 
                 Form {
                     Section("Basics") {

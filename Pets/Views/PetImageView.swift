@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct PetImage: View {
+struct PetImageView: View {
+    
     let pet: Pet
     
     private let imageSize = PetImageSize.medium.value
@@ -25,11 +26,21 @@ struct PetImage: View {
                 .accessibilityLabel("\(pet.name) photo")
 
         } else {
-            PetImagePlaceholder(species: pet.species)
+            Circle()
+                .frame(width: imageSize, height: imageSize)
+                .foregroundStyle(.accent)
+                .overlay {
+                    Image(systemName: "\(pet.species.symbol).fill")
+                        .font(.system(size: imageSize * 0.5))
+                        .foregroundStyle(.white)
+                        .accessibilityLabel(
+                            pet.species.symbolLocalizedDescription
+                        )
+                }
         }
     }
 }
 
 #Preview("Small image size") {
-    PetImage(pet: SampleData.shared.petWithChipID)
+    PetImageView(pet: SampleData.shared.petWithChipID)
 }

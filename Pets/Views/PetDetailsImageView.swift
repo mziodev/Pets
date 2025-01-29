@@ -8,44 +8,12 @@
 import PhotosUI
 import SwiftUI
 
-struct PetDetailImage: View {
+struct PetDetailsImageView: View {
+    
     @Bindable var pet: Pet
     
     @State private var selectedImage: PhotosPickerItem?
     @State private var showingResizeImage: Bool = false
-    
-    var body: some View {
-        VStack(spacing: 15) {
-            PetImage(pet: pet)
-
-            if pet.image == nil {
-                PhotosPicker(
-                    "Add image",
-                    selection: $selectedImage,
-                    matching: .images,
-                    photoLibrary: .shared()
-                )
-            } else {
-                Button("Resize image", action: resizeImage)
-
-                Button(
-                    "Remove image",
-                    role: .destructive,
-                    action: removeImage
-                )
-            }
-        }
-        .sheet(isPresented: $showingResizeImage) {
-            ResizeImage(pet: pet)
-        }
-        .task(id: selectedImage) {
-            if let data = try? await selectedImage?.loadTransferable(
-                type: Data.self
-            ) {
-                pet.image = data
-            }
-        }
-    }
     
     private func resizeImage() {
         showingResizeImage = true
@@ -60,8 +28,46 @@ struct PetDetailImage: View {
             pet.updateImageOffset(offset: .zero)
         }
     }
+    
+    var body: some View {
+        VStack(spacing: 15) {
+            PetImageView(pet: pet)
+
+            if pet.image == nil {
+                PhotosPicker(
+                    "Add image",
+                    selection: $selectedImage,
+                    matching: .images,
+                    photoLibrary: .shared()
+                )
+            } else {
+                HStack(spacing: 30) {
+                    Button(action: resizeImage) {
+                        Label("Resize", systemImage: "square.resize")
+                    }
+                    
+                    Text("|")
+                        .foregroundStyle(.secondary)
+                    
+                    Button(role: .destructive, action: removeImage) {
+                        Label("Remove", systemImage: "trash")
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $showingResizeImage) {
+            ResizeImage(pet: pet)
+        }
+        .task(id: selectedImage) {
+            if let data = try? await selectedImage?.loadTransferable(
+                type: Data.self
+            ) {
+                pet.image = data
+            }
+        }
+    }
 }
 
 #Preview {
-    PetDetailImage(pet: SampleData.shared.petWithChipID)
+    PetDetailsImageView(pet: SampleData.shared.petWithChipID)
 }

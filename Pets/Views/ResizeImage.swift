@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ResizeImage: View {
+    
     @Environment(\.dismiss) var dismiss
     
     @Bindable var pet: Pet
