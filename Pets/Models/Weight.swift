@@ -23,14 +23,4 @@ class Weight {
         self.date = date
         self.value = value
     }
-    
-    static func decimalFormatter(for decimalNumber: Int) -> NumberFormatter {
-        let numberFormatter = NumberFormatter()
-        
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = decimalNumber
-        numberFormatter.minimumFractionDigits = decimalNumber
-        
-        return numberFormatter
-    }
 }
