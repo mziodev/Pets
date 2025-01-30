@@ -30,14 +30,23 @@ struct PetCardView: View {
                     .padding(.top)
 
                 VStack(spacing: 10) {
-                    PetFeature(feature: "Name", value: pet.name)
-                    
-                    PetFeature(feature: "Breed", value: pet.breed)
-                    
-                    PetFeature(feature: "Age", value: pet.age)
+                    PetFeature(
+                        feature: String(localized: "Name"),
+                        value: pet.name
+                    )
                     
                     PetFeature(
-                        feature: "In the Family for",
+                        feature: String(localized: "Breed"),
+                        value: pet.breed
+                    )
+                    
+                    PetFeature(
+                        feature: String(localized: "Age"),
+                        value: pet.age
+                    )
+                    
+                    PetFeature(
+                        feature: String(localized: "In the Family for"),
                         value: pet.inFamilyYears
                     )
                 }
@@ -47,19 +56,19 @@ struct PetCardView: View {
                     NavigationLink {
                         WeightList(pet: pet)
                     } label: {
-                        WeightCard(pet: pet)
+                        PetCardSummaryView(pet: pet, summarySource: .weights)
                     }
                     
                     NavigationLink {
                         DewormingTreatmentList(pet: pet)
                     } label: {
-                        DewormingTreatmentsCard(pet: pet)
+                        PetCardSummaryView(pet: pet, summarySource: .dewormings)
                     }
                     
                     NavigationLink {
                         VaccineList(pet: pet)
                     } label: {
-                        VaccineCard(pet: pet)
+                        PetCardSummaryView(pet: pet, summarySource: .vaccines)
                     }
                 }
                 .foregroundColor(.primary)
