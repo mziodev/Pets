@@ -1,5 +1,5 @@
 //
-//  ResizeImage.swift
+//  ResizeImageView.swift
 //  Pets
 //
 //  Created by MZiO on 24/9/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ResizeImage: View {
+struct ResizeImageView: View {
     
     @Environment(\.dismiss) var dismiss
     
@@ -106,5 +106,5 @@ struct ResizeImage: View {
 }
 
 #Preview {
-    ResizeImage(pet: SampleData.shared.petWithChipID)
+    ResizeImageView(pet: SampleData.shared.petWithChipID)
 }

@@ -56,7 +56,7 @@ struct PetDetailsImageView: View {
             }
         }
         .sheet(isPresented: $showingResizeImage) {
-            ResizeImage(pet: pet)
+            ResizeImageView(pet: pet)
         }
         .task(id: selectedImage) {
             if let data = try? await selectedImage?.loadTransferable(
