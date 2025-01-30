@@ -7,20 +7,32 @@
 
 import SwiftUI
 
-struct MicrochipInfo: View {
+struct MicrochipView: View {
+    
     @Environment(\.dismiss) var dismiss
     
     let pet: Pet
     
-    @State private var showingMicrochipCopiedText: Bool = false
+    @State private var showingMicrochipCopiedText = false
+    
+    private func copyMicrochipNumber() {
+        UIPasteboard.general.string = pet.chipID.number
+        
+        withAnimation {
+            showingMicrochipCopiedText = true
+        }
+    }
+    
+    private func dismissView() {
+        dismiss()
+    }
     
     var body: some View {
         NavigationStack {
             List {
-                Section {
+                Section() {
                     HStack {
                         Text("Type")
-                            .font(.headline)
                             .foregroundStyle(.accent)
                         
                         Spacer()
@@ -30,7 +42,6 @@ struct MicrochipInfo: View {
                     
                     HStack {
                         Text("Number")
-                            .font(.headline)
                             .foregroundStyle(.accent)
                         
                         Spacer()
@@ -38,7 +49,7 @@ struct MicrochipInfo: View {
                         HStack {
                             Text(pet.chipID.number)
                             
-                            Button(action: copyChipIDNumber) {
+                            Button(action: copyMicrochipNumber) {
                                 Label(
                                     "Copy chip ID number",
                                     systemImage: "doc.on.doc"
@@ -51,7 +62,6 @@ struct MicrochipInfo: View {
                     
                     HStack {
                         Text("Implanted on")
-                            .font(.headline)
                             .foregroundStyle(.accent)
                         
                         Spacer()
@@ -66,35 +76,31 @@ struct MicrochipInfo: View {
                     
                     HStack {
                         Text("Location")
-                            .font(.headline)
                             .foregroundStyle(.accent)
                         
                         Spacer()
                         
                         Text(pet.chipID.location)
                     }
+                } header: {
+                    Text("Info")
                 } footer: {
                     if showingMicrochipCopiedText {
                         Text("Microchip number is been copied to the clipboard. Go to [https://petmaxx.com](https://www.petmaxx.com/) and paste it inside the 'Microchip Search' box.")
                     }
                 }
             }
-            .navigationTitle("Microchip Info")
+            .navigationTitle("\(pet.name)'s Microchip")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Ok") { dismiss() }
+                    Button("Ok", action: dismissView)
                 }
             }
         }
     }
-    
-    private func copyChipIDNumber() {
-        UIPasteboard.general.string = pet.chipID.number
-        withAnimation { showingMicrochipCopiedText = true }
-    }
 }
 
 #Preview {
-    MicrochipInfo(pet: SampleData.shared.petWithChipID)
+    MicrochipView(pet: SampleData.shared.petWithChipID)
 }

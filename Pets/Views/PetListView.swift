@@ -66,7 +66,7 @@ struct PetListView: View {
                     Section {
                         ForEach(premiumCheckedPets) { pet in
                             NavigationLink {
-                                PetCard(pet: pet)
+                                PetCardView(pet: pet)
                             } label: {
                                 PetListRowView(pet: pet)
                             }

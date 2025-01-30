@@ -7,11 +7,21 @@
 
 import SwiftUI
 
-struct PetCard: View {
+struct PetCardView: View {
+    
     @ObservedObject var pet: Pet
     
     @State private var showingPetDetail: Bool = false
     @State private var showingChipID: Bool = false
+    
+    private let gridColumns = [
+        GridItem(.fixed(165), spacing: 10),
+        GridItem(.fixed(165), spacing: 10)
+    ]
+    
+    private func showPetDetailsView() {
+        showingPetDetail = true
+    }
     
     var body: some View {
         NavigationStack {
@@ -20,21 +30,20 @@ struct PetCard: View {
                     .padding(.top)
 
                 VStack(spacing: 10) {
-                    PetCardName(name: pet.name)
-
-                    PetCardBreed(breed: pet.breed)
-
-                    PetCardAge(pet: pet)
+                    PetFeature(feature: "Name", value: pet.name)
+                    
+                    PetFeature(feature: "Breed", value: pet.breed)
+                    
+                    PetFeature(feature: "Age", value: pet.age)
+                    
+                    PetFeature(
+                        feature: "In the Family for",
+                        value: pet.inFamilyYears
+                    )
                 }
                 .padding()
                 
-                LazyVGrid(
-                    columns: [
-                        GridItem(.fixed(165), spacing: 10),
-                        GridItem(.fixed(165), spacing: 10)
-                    ],
-                    spacing: 10
-                ) {
+                LazyVGrid(columns: gridColumns, spacing: 10) {
                     NavigationLink {
                         WeightList(pet: pet)
                     } label: {
@@ -52,7 +61,6 @@ struct PetCard: View {
                     } label: {
                         VaccineCard(pet: pet)
                     }
-                    .foregroundStyle(.primary)
                 }
                 .foregroundColor(.primary)
                 .padding()
@@ -64,12 +72,12 @@ struct PetCard: View {
                 PetDetailsView(pet: pet)
             }
             .sheet(isPresented: $showingChipID) {
-                MicrochipInfo(pet: pet)
+                MicrochipView(pet: pet)
                     .presentationDetents([.medium])
             }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button("Edit") { showingPetDetail = true }
+                    Button("Edit", action: showPetDetailsView)
                 }
                 
                 ToolbarItem(placement: .status) {
@@ -89,19 +97,44 @@ struct PetCard: View {
 }
 
 #Preview("Pet with chip ID") {
-    PetCard(pet: SampleData.shared.petWithChipID)
+    PetCardView(pet: SampleData.shared.petWithChipID)
         .modelContainer(SampleData.shared.modelContainer)
         .environmentObject(PetsStoreManager())
 }
 
 #Preview("Pet with expired vaccines") {
-    PetCard(pet: SampleData.shared.petWithExpiredVaccines)
+    PetCardView(pet: SampleData.shared.petWithExpiredVaccines)
         .modelContainer(SampleData.shared.modelContainer)
         .environmentObject(PetsStoreManager())
 }
 
 #Preview("Pet without weight") {
-    PetCard(pet: SampleData.shared.petWithoutSpecies)
+    PetCardView(pet: SampleData.shared.petWithoutSpecies)
         .modelContainer(SampleData.shared.modelContainer)
         .environmentObject(PetsStoreManager())
+}
+
+struct PetFeature: View {
+    
+    let feature: String
+    let value: String
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            
+            Text(feature)
+                .font(.callout.smallCaps())
+                .foregroundStyle(.accent)
+            
+            Text(value.isEmpty ? "Unknown" : value)
+                .font(feature == "Age" ? .title : .largeTitle)
+                .bold()
+                .fontDesign(.serif)
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
+            
+            Spacer()
+        }
+    }
 }

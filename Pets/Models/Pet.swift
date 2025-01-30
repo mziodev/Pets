@@ -68,12 +68,46 @@ class Pet: Equatable, ObservableObject {
         self.image = image
     }
     
-    var age: [String: String] {
-        years(from: birthday)
+//    var age: [String: String] {
+//        years(from: birthday)
+//    }
+    
+    var age: String {
+        let age = years(from: birthday)
+        var ageString = ""
+        
+        if let yearString = age["year"] {
+            ageString += yearString + " "
+        }
+        
+        if let monthString = age["month"] {
+            ageString += monthString + " "
+        }
+        
+        if let dayString = age["day"] {
+            ageString += dayString
+        }
+        
+        return ageString
     }
     
-    var onFamilyYears: [String: String] {
-        years(from: onFamilySince)
+    var inFamilyYears: String {
+        let inFamilyYears = years(from: onFamilySince)
+        var inFamilyYearsString = ""
+        
+        if let yearString = inFamilyYears["year"] {
+            inFamilyYearsString += yearString + " "
+        }
+        
+        if let monthString = inFamilyYears["month"] {
+            inFamilyYearsString += monthString + " "
+        }
+        
+        if let dayString = inFamilyYears["day"] {
+            inFamilyYearsString += dayString
+        }
+        
+        return inFamilyYearsString
     }
     
     var imageOffset: CGSize {
