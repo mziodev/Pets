@@ -84,7 +84,7 @@ struct WeightList: View {
                                             selectedDateRangeWeights
                                                 .averaging() as NSNumber,
                                             formatter: Weight
-                                                .decimalFormatter(for: 2)
+                                                .decimalFormatter(fractionDigits: 2)
                                         )
                                         
                                         Text(Weight.units)
