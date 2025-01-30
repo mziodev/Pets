@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct PetBreedVariationList: View {
+struct PetBreedVariationListView: View {
+    
     @Environment(\.dismiss) var dismiss
     
     @Bindable var pet: Pet
@@ -24,20 +25,21 @@ struct PetBreedVariationList: View {
                         Spacer()
                         
                         if pet.breed == "\(breed.name), \(variation)" {
-                            Image(systemName: "checkmark.circle")
-                                .font(.title3)
-                                .foregroundStyle(.green)
+                            CheckMarkLabel()
                         }
                         
                     }
-                    .contentShape(Rectangle()) // for the getting tap gesture on the entire row
                     .onTapGesture {
                         withAnimation {
-                            pet.breed = "\(breed.name), \(variation)"
+                            if pet.breed == "\(breed.name), \(variation)" {
+                                pet.breed = ""
+                            } else {
+                                pet.breed = "\(breed.name), \(variation)"
+                                dismiss()
+                            }
                         }
-                        
-                        dismiss()
                     }
+                    .contentShape(Rectangle()) // for the getting tap gesture on the entire row
                 }
             }
             .navigationTitle("\(breed.name) variations")
@@ -47,7 +49,7 @@ struct PetBreedVariationList: View {
 }
 
 #Preview {
-    PetBreedVariationList(
+    PetBreedVariationListView(
         pet: SampleData.shared.petWithoutChipID,
         breed: PetBreed.sampledata[1]
     )

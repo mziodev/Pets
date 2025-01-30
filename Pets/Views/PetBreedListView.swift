@@ -1,4 +1,4 @@
-//
+ //
 //  PetBreedList.swift
 //  Pets
 //
@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-struct PetBreedList: View {
+struct PetBreedListView: View {
+    
     @Bindable var pet: Pet
     
     @State private var searchText = ""
@@ -30,52 +31,50 @@ struct PetBreedList: View {
         }
     }
     
+    private var selectedBreedText: String {
+        pet.breed.isEmpty ? "Select a breed from below list" : "\(pet.breed) 🐾"
+    }
+    
+    private func resetSearchable() {
+        searchText = ""
+        isSearchPresented = !searchText.isEmpty
+    }
+    
     var body: some View {
         NavigationStack {
             VStack {
                 if pet.species != .unknown {
                     List {
-                        Section {
-                            if !pet.breed.isEmpty {
-                                HStack {
-                                    Spacer()
-                                    
-                                    Text("I'm a \(pet.breed)")
-                                        .font(.headline)
-                                        .foregroundStyle(.accent)
-                                        .lineLimit(1)
-                                    
-                                    Spacer()
-                                }
-                            }
+                        Section("Selected Breed") {
+                            Text(selectedBreedText)
+                                .font(.headline)
+                                .foregroundStyle(.accent)
+                                .lineLimit(1)
                         }
-                        .listRowBackground(Color.clear)
 
                         Section("Breeds") {
                             ForEach(filteredPetBreedList) { breed in
                                 if breed.variations.isEmpty {
-                                    PetBreedListRow(
-                                        pet: pet,
-                                        breed: breed
-                                    )
+                                    PetBreedListRow(pet: pet, breed: breed)
                                     .onTapGesture {
                                         withAnimation {
-                                            pet.breed = breed.name
+                                            if pet.breed == breed.name {
+                                                pet.breed = ""
+                                            } else {
+                                                pet.breed = breed.name
+                                            }
                                         }
                                         
                                         resetSearchable()
                                     }
                                 } else {
                                     NavigationLink {
-                                        PetBreedVariationList(
+                                        PetBreedVariationListView(
                                             pet: pet,
                                             breed: breed
                                         )
                                     } label: {
-                                        PetBreedListRow(
-                                            pet: pet,
-                                            breed: breed
-                                        )
+                                        PetBreedListRow(pet: pet, breed: breed)
                                     }
                                 }
                             }
@@ -87,7 +86,7 @@ struct PetBreedList: View {
                     )
                     .onAppear(perform: resetSearchable)
                 } else {
-                    PetBreedListEmpty()
+                    NoBreedsYetView()
                 }
             }
             .navigationTitle(pet.name)
@@ -102,18 +101,43 @@ struct PetBreedList: View {
             }
         }
     }
-    
-    private func resetSearchable() {
-        searchText = ""
-        isSearchPresented = !searchText.isEmpty
-    }
 }
 
 
 #Preview("Breed list is empty") {
-    PetBreedList(pet: SampleData.shared.petWithoutSpecies)
+    PetBreedListView(pet: SampleData.shared.petWithoutSpecies)
 }
 
 #Preview("Breed list is not empty") {
-    PetBreedList(pet: SampleData.shared.petWithChipID)
+    PetBreedListView(pet: SampleData.shared.petWithChipID)
+}
+
+struct PetBreedListRow: View {
+    
+    let pet: Pet
+    let breed: PetBreed
+    
+    var body: some View {
+        HStack {
+            Text(breed.name)
+            
+            Spacer()
+            
+            if pet.breed == breed.name {
+                CheckMarkLabel()
+            }
+        }
+        .contentShape(Rectangle()) // for getting tap gesture on the entire row
+    }
+}
+
+struct NoBreedsYetView: View {
+    var body: some View {
+        ContentUnavailableView {
+            Label("No breeds yet", systemImage: "pawprint.fill")
+                .foregroundStyle(.accent)
+        } description: {
+            Text("You have to select your pet species first.")
+        }
+    }
 }

@@ -8,7 +8,9 @@
 import Foundation
 
 class PetBreedDataService {
+    
     static func loadPetBreeds(from filename: String) -> [PetBreed]? {
+        
         let localizedFilename = filename + "_\(Locale.current.language.languageCode?.identifier ?? "en")"
         
         if let url = Bundle.main.url(
@@ -23,11 +25,13 @@ class PetBreedDataService {
                 return petBreeds
             } catch {
                 print("Error loading JSON file: \(error)")
+                // TODO: show user about this error
                 
                 return nil
             }
         } else {
             print("Can't find file \(localizedFilename).json")
+            // TODO: show user about this error
             
             return nil
         }

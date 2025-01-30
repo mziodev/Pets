@@ -83,7 +83,7 @@ struct PetDetailsView: View {
                     
                     Section("Breed") {
                         NavigationLink {
-                            PetBreedList(pet: pet)
+                            PetBreedListView(pet: pet)
                         } label: {
                             Text(
                                 pet.breed.isEmpty ?
