@@ -54,7 +54,7 @@ struct PetCardView: View {
                 
                 LazyVGrid(columns: gridColumns, spacing: 10) {
                     NavigationLink {
-                        WeightList(pet: pet)
+                        WeightListView(pet: pet)
                     } label: {
                         PetCardSummaryView(pet: pet, summarySource: .weights)
                     }

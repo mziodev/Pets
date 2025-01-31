@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct WeightDetail: View {
+struct WeightDetailsView: View {
+    
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var petsStoreManager: PetsStoreManager
     
@@ -17,10 +18,6 @@ struct WeightDetail: View {
     
     @State private var weightValue: Double?
     @State private var editingWeight = false
-    @State private var petsStoreAdText = String(
-        localized: "Unlock Weight Notes and some other features with Pets Premium."
-    )
-    
     @State private var showingPetsStore = false
     @State private var showingDeleteAlert = false
     @State private var showingWeightAlert = false
@@ -28,6 +25,41 @@ struct WeightDetail: View {
     @FocusState private var weightTextFieldFocused
     
     let isNew: Bool
+    
+    private let petsStoreAdText = String(
+        localized: "Unlock Weight Notes and some other features with Pets Premium."
+    )
+    
+    private func dismissView() {
+        dismiss()
+    }
+    
+    private func toggleEditigWeight() {
+        withAnimation {
+            editingWeight.toggle()
+            weightTextFieldFocused.toggle()
+        }
+    }
+    
+    private func appendWeight() {
+        pet.weights?.append(weight)
+        
+        dismiss()
+    }
+    
+    private func deleteWeight() {
+        if let weightIndex = pet.unwrappedWeights.firstIndex(where: {
+            $0.id == weight.id
+        }) {
+            pet.weights?.remove(at: weightIndex)
+        }
+        
+        dismiss()
+    }
+    
+    private func copyWeightValue() {
+        if weight.value > 0 { weightValue = self.weight.value }
+    }
     
     init(
         pet: Pet,
@@ -88,7 +120,7 @@ struct WeightDetail: View {
                 }
                 
                 if !petsStoreManager.isPremiumUnlocked && editingWeight {
-                    GoPremiumAd(
+                    GoPremiumAdView(
                         showingPetsStore: $showingPetsStore,
                         adText: petsStoreAdText
                     )
@@ -141,45 +173,16 @@ struct WeightDetail: View {
             }
         }
     }
-    
-    private func dismissView() { dismiss() }
-    
-    private func toggleEditigWeight() {
-        withAnimation {
-            editingWeight.toggle()
-            weightTextFieldFocused.toggle()
-        }
-    }
-    
-    private func appendWeight() {
-        pet.weights?.append(weight)
-        
-        dismiss()
-    }
-    
-    private func deleteWeight() {
-        if let weightIndex = pet.unwrappedWeights.firstIndex(where: {
-            $0.id == weight.id
-        }) {
-            pet.weights?.remove(at: weightIndex)
-        }
-        
-        dismiss()
-    }
-    
-    private func copyWeightValue() {
-        if weight.value > 0 { weightValue = self.weight.value }
-    }
 }
 
 
 #Preview("New weight") {
-    WeightDetail(pet: SampleData.shared.petWithChipID, isNew: true)
+    WeightDetailsView(pet: SampleData.shared.petWithChipID, isNew: true)
         .environmentObject(PetsStoreManager())
 }
 
 #Preview("Existing weight") {
-    WeightDetail(
+    WeightDetailsView(
         pet: SampleData.shared.petWithChipID,
         weight: Weight.sampleData[0]
     )

@@ -1,20 +1,22 @@
 //
-//  WeightList.swift
+//  WeightListView.swift
 //  Petee
 //
 //  Created by MZiO on 21/5/24.
 //
 
+import Charts
 import SwiftData
 import SwiftUI
 
-struct WeightList: View {
+struct WeightListView: View {
+    
     @Environment(\.dismiss) var dismiss
     
     @ObservedObject var pet: Pet
     
     @State private var selectedTimePeriod: TimePeriod = .lastSixMonths
-    @State private var showingAddWeightSheet: Bool = false
+    @State private var showingWeightDetailsView = false
     
     private var selectedDateRange: ClosedRange<Date> {
         selectedTimePeriod.dateValue ... .now
@@ -43,6 +45,12 @@ struct WeightList: View {
     private var averageStartDateToString: String {
         averageStartDate.year != averageEndDate.year ? averageStartDate.monthDayYear : averageStartDate.monthAndDay
     }
+    
+    private func showWeightDetailsView() {
+        showingWeightDetailsView = true
+    }
+    
+    private func dismissView() { dismiss() }
     
     var body: some View {
         NavigationStack {
@@ -84,7 +92,9 @@ struct WeightList: View {
                                             selectedDateRangeWeights
                                                 .averaging() as NSNumber,
                                             formatter: Weight
-                                                .decimalFormatter(fractionDigits: 2)
+                                                .decimalFormatter(
+                                                    fractionDigits: 1
+                                                )
                                         )
                                         
                                         Text(Weight.units)
@@ -103,7 +113,7 @@ struct WeightList: View {
                         }
                         .padding(.horizontal, 5)
                         
-                        WeightListChart(weights: selectedDateRangeWeights)
+                        WeightChart(weights: selectedDateRangeWeights)
                             .frame(height: 240)
                             .padding(.horizontal, 5)
                     }
@@ -114,7 +124,7 @@ struct WeightList: View {
                         Section("Weight List (\(Weight.units))") {
                             ForEach(pet.unwrappedWeights.reverseSortedByDate) { weight in
                                 NavigationLink {
-                                    WeightDetail(pet: pet, weight: weight)
+                                    WeightDetailsView(pet: pet, weight: weight)
                                 } label: {
                                     WeightListRow(weight: weight)
                                 }
@@ -122,31 +132,107 @@ struct WeightList: View {
                         }
                     }
                 } else {
-                    WeightListEmpty()
+                    NoWeightsYetView()
                 }
             }
             .navigationTitle("\(pet.name)'s weight list")
             .navigationBarTitleDisplayMode(.inline)
-            .sheet(isPresented: $showingAddWeightSheet) {
-                WeightDetail(pet: pet, isNew: true)
+            .sheet(isPresented: $showingWeightDetailsView) {
+                WeightDetailsView(pet: pet, isNew: true)
             }
             .toolbar {
-                ToolbarItem {
-                    Button { showingAddWeightSheet.toggle() } label: {
-                        Label("Add weight", systemImage: "plus")
+                ToolbarItem(placement: .status) {
+                    Button(action: showWeightDetailsView) {
+                        Label("Add weight", systemImage: "plus.circle.fill")
+                            .labelStyle(.titleAndIcon)
                     }
                 }
             }
         }
     }
-    
-    private func dismissView() { dismiss() }
 }
 
 #Preview("Existing Weight List") {
-    WeightList(pet: SampleData.shared.petWithoutChipID)
+    WeightListView(pet: SampleData.shared.petWithoutChipID)
+        .environmentObject(PetsStoreManager())
 }
 
 #Preview("Empty Weight List") {
-    WeightList(pet: SampleData.shared.petWithoutSpecies)
+    WeightListView(pet: SampleData.shared.petWithoutSpecies)
+}
+
+struct WeightChart: View {
+    
+    let weights: [Weight]
+    
+    var body: some View {
+        Chart {
+            ForEach(weights) { weight in
+                BarMark(
+                    x: .value(
+                        "Date",
+                        weight.date.monthAndDay
+                    ),
+                    y: .value("Weight", weight.value)
+                )
+            }
+            
+            if weights.count > 1 {
+                RuleMark(
+                    y: .value("Average", weights.averaging())
+                )
+                .foregroundStyle(.petsFulvous)
+                .annotation(position: .top, alignment: .leading) {
+                    Text("Average")
+                        .foregroundStyle(.petsFulvous)
+                        .font(.caption2.smallCaps())
+                        .fontDesign(.rounded)
+                        .bold()
+                        .padding(.horizontal, 10)
+                }
+            }
+        }
+        .chartScrollableAxes(.horizontal)
+        .chartXVisibleDomain(length: weights.count)
+        .foregroundStyle(.accent)
+    }
+}
+
+struct WeightListRow: View {
+    
+    let weight: Weight
+
+    var body: some View {
+        HStack {
+            Text(
+                weight.date.formatted(
+                    date: .abbreviated,
+                    time: .omitted
+                )
+            )
+            .font(.callout)
+            
+            Spacer()
+            
+            Text(
+                weight.value as NSNumber,
+                formatter: Weight.decimalFormatter(fractionDigits: 3)
+            )
+            .font(.headline)
+            .fontDesign(.rounded)
+            .foregroundStyle(.petsFulvous)
+        }
+    }
+}
+
+struct NoWeightsYetView: View {
+    var body: some View {
+        ContentUnavailableView {
+            Label("No weights yet", systemImage: "scalemass")
+                .foregroundStyle(.accent)
+        } description:  {
+            Text("Tap on the Plus button to add a new weight.")
+                .padding(.top, 5)
+        }
+    }
 }
