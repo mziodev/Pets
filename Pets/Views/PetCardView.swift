@@ -66,7 +66,7 @@ struct PetCardView: View {
                     }
                     
                     NavigationLink {
-                        VaccineList(pet: pet)
+                        VaccineListView(pet: pet)
                     } label: {
                         PetCardSummaryView(pet: pet, summarySource: .vaccines)
                     }

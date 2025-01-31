@@ -1,5 +1,5 @@
 //
-//  VaccineDetail.swift
+//  VaccineDetailsView.swift
 //  Pets
 //
 //  Created by MZiO on 2/7/24.
@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct VaccineDetail: View {
+struct VaccineDetailsView: View {
+    
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var petsStoreManager: PetsStoreManager
     
@@ -15,11 +16,7 @@ struct VaccineDetail: View {
     
     @State var vaccine: Vaccine
     
-    @State private var petsStoreAdText = String(
-        localized: "Unlock Vaccine Notes, Notifications and some other features with Pets Premium."
-    )
     @State private var editingVaccine = false
-    
     @State private var showingPetsStore = false
     @State private var showingNotificationTime = false
     @State private var showingDeleteAlert = false
@@ -28,9 +25,59 @@ struct VaccineDetail: View {
     
     let isNew: Bool
     
+    private let petsStoreAdText = String(
+        localized: "Unlock Vaccine Notes, Notifications and some other features with Pets Premium."
+    )
+    
     private var isVaccineExpired: Bool { vaccine.activeDays < 0 }
     private var isNameVerified: Bool { vaccine.name.hasMinimumLength() }
     private var isFormVerified: Bool { isNameVerified }
+    
+    private func dismissView() {
+        dismiss()
+    }
+    
+    private func toggleEditingVaccine() {
+        withAnimation {
+            editingVaccine.toggle()
+            vaccineNameTextFieldFocused.toggle()
+        }
+    }
+    
+    private func scheduleNotification() {
+        let title = String(localized: "Vaccine Warning")
+        let body = String(localized: "\(pet.name) is running out of \(vaccine.name) coverage.")
+        
+        if vaccine.notification != .none {
+            Notification.schedule(
+                identifier: vaccine.notificationID,
+                title: title,
+                body: body,
+                targetDate: vaccine.ends,
+                daysBefore: vaccine.notification.value,
+                notificationTime: vaccine.notificationTime
+            )
+        } else {
+            Notification.removePendingNotifications(
+                for: vaccine.notificationID
+            )
+        }
+    }
+    
+    private func appendVaccine() {
+        pet.vaccines?.append(vaccine)
+        scheduleNotification()
+        dismiss()
+    }
+    
+    private func deleteVaccine() {
+        if let vaccineIndex = pet.unwrappedVaccines.firstIndex(where: {
+            $0.id == vaccine.id
+        }) {
+            pet.vaccines?.remove(at: vaccineIndex)
+            dismiss()
+        }
+    }
     
     init(
         pet: Pet,
@@ -48,10 +95,10 @@ struct VaccineDetail: View {
                 Section {
                     TextField("Name", text: $vaccine.name)
                         .focused($vaccineNameTextFieldFocused)
-                        .overlay {
-                            VerificationCheckMark(
-                                condition: isNameVerified
-                            )
+                        .overlay(alignment: .trailing) {
+                            if isNameVerified {
+                                CheckMarkLabel()
+                            }
                         }
                     
                     Picker("Type", selection: $vaccine.type) {
@@ -188,7 +235,7 @@ struct VaccineDetail: View {
                 }
                 
                 if !petsStoreManager.isPremiumUnlocked && editingVaccine {
-                    GoPremiumAd(
+                    GoPremiumAdView(
                         showingPetsStore: $showingPetsStore,
                         adText: petsStoreAdText
                     )
@@ -239,47 +286,10 @@ struct VaccineDetail: View {
             }
         }
     }
-    
-    private func dismissView() { dismiss() }
-    
-    private func toggleEditingVaccine() {
-        withAnimation {
-            editingVaccine.toggle()
-            vaccineNameTextFieldFocused.toggle()
-        }
-    }
-    
-    private func appendVaccine() {
-        pet.vaccines?.append(vaccine)
-        
-        if vaccine.notification != .none {
-            Notification.schedule(
-                identifier: vaccine.notificationID,
-                title: String(localized: "Vaccine Warning"),
-                body: String(localized: "\(pet.name) is running out of \(vaccine.name) coverage."),
-                targetDate: vaccine.ends,
-                daysBefore: vaccine.notification.value,
-                notificationTime: vaccine.notificationTime
-            )
-        } else {
-            Notification.removePendingNotifications(for: vaccine.notificationID)
-        }
-        
-        dismiss()
-    }
-    
-    private func deleteVaccine() {
-        if let vaccineIndex = pet.unwrappedVaccines.firstIndex(where: {
-            $0.id == vaccine.id
-        }) {
-            pet.vaccines?.remove(at: vaccineIndex)
-            dismiss()
-        }
-    }
 }
 
 #Preview("New vaccine") {
-    VaccineDetail(
+    VaccineDetailsView(
         pet: SampleData.shared.petWithoutSpecies,
         isNew: true
     )
@@ -287,7 +297,7 @@ struct VaccineDetail: View {
 }
 
 #Preview("Existing vaccine") {
-    VaccineDetail(
+    VaccineDetailsView(
         pet: SampleData.shared.petWithChipID,
         vaccine: SampleData.shared.petWithChipID.unwrappedVaccines[0]
     )
@@ -295,7 +305,7 @@ struct VaccineDetail: View {
 }
 
 #Preview("Expired vaccine") {
-    VaccineDetail(
+    VaccineDetailsView(
         pet: SampleData.shared.petWithChipID,
         vaccine: SampleData.shared.petWithExpiredVaccines.unwrappedVaccines[1]
     )

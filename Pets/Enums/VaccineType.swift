@@ -7,32 +7,32 @@
 
 import Foundation
 
-enum VaccineType: String, Codable, CaseIterable {    
+enum VaccineType: String, Codable, CaseIterable {
     case unknown
-    case DHPP
-    case DHPPi
-    case DHLPP
-    case DHLPPi
-    case L4
-    case L4R
     case A
     case B
     case Ci
     case CoV
     case D
+    case DHLPP
+    case DHLPPi
+    case DHPP
+    case DHPPi
     case H
     case L
+    case L4
+    case L4R
     case Ly
     case P
     case Pi
     case R
-    case FVRCP
-    case FVRCPHS = "FVRCP-HS"
-    case FVR
-    case FCV
-    case FPV
+    case FCV // cats from here until the end
     case FeLV
     case FIV
+    case FPV
+    case FVR
+    case FVRCP
+    case FVRCPHS = "FVRCP-HS"
     
     var localizedDescription: String {
         switch self {
