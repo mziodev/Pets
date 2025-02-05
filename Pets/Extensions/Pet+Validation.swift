@@ -8,11 +8,7 @@
 import Foundation
 
 extension Pet {
-    /// A dictionary of validators for different types of pet Chip ID numbers.
-    ///
-    /// Each key represents a pet `ChipIDType`, and the corresponding value is a 
-    /// closure that takes a `String` input (pet ID number) and returns a `Bool` indicating
-    /// whether the input is valid for that Chip ID type.
+    
     static var chipIDValidators: [ChipIDType: (String) -> Bool] = [
 //        .noChipID: { $0.isEmpty },
         .fifteenDigit: { $0.count == 15 },

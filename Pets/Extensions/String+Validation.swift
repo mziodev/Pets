@@ -8,6 +8,7 @@
 import Foundation
 
 extension String {
+    
     func hasMinimumLength(length: Int = 1) -> Bool {
         self.count > length
     }

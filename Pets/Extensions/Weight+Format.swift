@@ -10,7 +10,6 @@ import Foundation
 extension Weight {
     
     static func decimalFormatter(fractionDigits decimalNumber: Int) -> NumberFormatter {
-        
         let numberFormatter = NumberFormatter()
         
         numberFormatter.numberStyle = .decimal
