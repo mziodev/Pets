@@ -9,9 +9,14 @@ import StoreKit
 import SwiftUI
 
 struct PetsStoreView: View {
+    
     @Environment(\.dismiss) private var dismiss
     
     @EnvironmentObject var petsStoreManager: PetsStoreManager
+    
+    private func dismissView() {
+        dismiss()
+    }
     
     var body: some View {
         NavigationStack {
@@ -92,10 +97,6 @@ struct PetsStoreView: View {
                 }
             }
         }
-    }
-    
-    private func dismissView() {
-        dismiss()
     }
 }
 

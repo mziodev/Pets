@@ -16,6 +16,7 @@ typealias PurchaseResult = Product.PurchaseResult
 
 
 class PetsStoreManager: ObservableObject {
+    
     @Published private(set) var products = [Product]()
     @Published private(set) var purchasedProductIDs = Set<String>()
     
@@ -64,6 +65,7 @@ class PetsStoreManager: ObservableObject {
 }
 
 private extension PetsStoreManager {
+    
     @MainActor
     func loadProducts() async {
         do {
