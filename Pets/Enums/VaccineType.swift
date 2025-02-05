@@ -26,7 +26,7 @@ enum VaccineType: String, Codable, CaseIterable {
     case P
     case Pi
     case R
-    case FCV // cats from here until the end
+    case FCV
     case FeLV
     case FIV
     case FPV
@@ -38,18 +38,6 @@ enum VaccineType: String, Codable, CaseIterable {
         switch self {
         case .unknown:
             String(localized: "Unknown")
-        case .DHPP:
-            String(localized: "Distemper, Hepatitis, Parvovirus and Parainfluenza")
-        case .DHPPi:
-            String(localized: "Distemper, Hepatitis, Parvovirus, Parainfluenza and Influenza")
-        case .DHLPP:
-            String(localized: "Distemper, Hepatitis, Leptospirosis, Parvovirus and Parainfluenza")
-        case .DHLPPi:
-            String(localized: "Distemper, Hepatitis, Leptospirosis, Parvovirus, Parainfluenza and Influenza")
-        case .L4:
-            String(localized: "Low risk Rabies")
-        case .L4R:
-            String(localized: "Live Rabies")
         case .A:
             String(localized: "Adenovirus")
         case .B:
@@ -60,8 +48,20 @@ enum VaccineType: String, Codable, CaseIterable {
             String(localized: "Coronavirus")
         case .D:
             String(localized: "Distemper")
+        case .DHLPP:
+            String(localized: "Distemper, Hepatitis, Leptospirosis, Parvovirus and Parainfluenza")
+        case .DHLPPi:
+            String(localized: "Distemper, Hepatitis, Leptospirosis, Parvovirus, Parainfluenza and Influenza")
+        case .DHPP:
+            String(localized: "Distemper, Hepatitis, Parvovirus and Parainfluenza")
+        case .DHPPi:
+            String(localized: "Distemper, Hepatitis, Parvovirus, Parainfluenza and Influenza")
         case .H:
             String(localized: "Hepatitis")
+        case .L4:
+            String(localized: "Low risk Rabies")
+        case .L4R:
+            String(localized: "Live Rabies")
         case .L:
             String(localized: "Leptospirosis")
         case .Ly:
@@ -72,20 +72,20 @@ enum VaccineType: String, Codable, CaseIterable {
             String(localized: "Parainfluenza")
         case .R:
             String(localized: "Rabies")
-        case .FVRCP:
-            String(localized: "Feline Viral Rhinotracheitis, Calicivirus and Panleukopenia (also known as Feline Distemper)")
-        case .FVRCPHS:
-            String(localized: "Feline Viral Rhinotracheitis, Calicivirus, Panleukopenia (also known as Feline Distemper), Herpesvirus and Syncytial Virus")
-        case .FVR:
-            String(localized: "Viral Rhinotracheitis")
         case .FCV:
             String(localized: "Calicivirus")
-        case .FPV:
-            String(localized: "Panleukopenia (also known as Feline Distemper)")
         case .FeLV:
             String(localized: "Leukemia Virus")
         case .FIV:
             String(localized: "Immunodeficiency Virus")
+        case .FPV:
+            String(localized: "Panleukopenia (also known as Feline Distemper)")
+        case .FVR:
+            String(localized: "Viral Rhinotracheitis")
+        case .FVRCP:
+            String(localized: "Feline Viral Rhinotracheitis, Calicivirus and Panleukopenia (also known as Feline Distemper)")
+        case .FVRCPHS:
+            String(localized: "Feline Viral Rhinotracheitis, Calicivirus, Panleukopenia (also known as Feline Distemper), Herpesvirus and Syncytial Virus")
         }
     }
     
@@ -93,14 +93,6 @@ enum VaccineType: String, Codable, CaseIterable {
         switch self {
         case .unknown:
             "unknown"
-        case .DHPP:
-            "dogs"
-        case .DHPPi:
-            "dogs"
-        case .DHLPP:
-            "dogs"
-        case .DHLPPi:
-            "dogs"
         case .L4:
             "dogs"
         case .L4R:
@@ -115,6 +107,14 @@ enum VaccineType: String, Codable, CaseIterable {
             "dogs"
         case .D:
             "dogs"
+        case .DHPP:
+            "dogs"
+        case .DHPPi:
+            "dogs"
+        case .DHLPP:
+            "dogs"
+        case .DHLPPi:
+            "dogs"
         case .H:
             "dogs"
         case .L:
@@ -127,19 +127,19 @@ enum VaccineType: String, Codable, CaseIterable {
             "dogs"
         case .R:
             "dogs"
-        case .FVRCP:
-            "cats"
-        case .FVRCPHS:
-            "cats"
-        case .FVR:
-            "cats"
         case .FCV:
-            "cats"
-        case .FPV:
             "cats"
         case .FeLV:
             "cats"
         case .FIV:
+            "cats"
+        case .FPV:
+            "cats"
+        case .FVR:
+            "cats"
+        case .FVRCP:
+            "cats"
+        case .FVRCPHS:
             "cats"
         }
     }

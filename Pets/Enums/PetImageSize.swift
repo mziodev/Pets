@@ -13,8 +13,10 @@ enum PetImageSize: Double {
     
     var value: CGFloat {
         switch self {
-        case .small: return 150
-        case .medium: return 220
+        case .small:
+            150
+        case .medium:
+            220
         }
     }
 }
