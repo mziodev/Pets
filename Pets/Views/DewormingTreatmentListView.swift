@@ -1,5 +1,5 @@
-//
-//  DewormingList.swift
+ //
+//  DewormingTreatmentListView.swift
 //  Pets
 //
 //  Created by MZiO on 19/6/24.
@@ -8,12 +8,21 @@
 import SwiftData
 import SwiftUI
 
-struct DewormingTreatmentList: View {
+struct DewormingTreatmentListView: View {
+    
     @Environment(\.dismiss) var dismiss
     
     @ObservedObject var pet: Pet
     
-    @State private var showingDewormingTreatmentDetail: Bool = false
+    @State private var showingDewormingTreatmentDetails: Bool = false
+    
+    private func showDewormingTreatmentDetailsView() {
+        showingDewormingTreatmentDetails = true
+    }
+    
+    private func dismissView() {
+        dismiss()
+    }
     
     var body: some View {
         NavigationStack {
@@ -25,12 +34,12 @@ struct DewormingTreatmentList: View {
                         ) { treatment in
                             if (treatment.activeDays >= 0) {
                                 NavigationLink{
-                                    DewormingTreatmentDetail(
+                                    DewormingTreatmentDetailsView(
                                         pet: pet,
                                         dewormingTreatment: treatment
                                     )
                                 } label: {
-                                    DewormingTreatmentListRow(
+                                    DewormingTreatmentListRowView(
                                         dewormingTreatment: treatment
                                     )
                                 }
@@ -46,12 +55,12 @@ struct DewormingTreatmentList: View {
                         ) { treatment in
                             if (treatment.activeDays < 0) {
                                 NavigationLink{
-                                    DewormingTreatmentDetail(
+                                    DewormingTreatmentDetailsView(
                                         pet: pet,
                                         dewormingTreatment: treatment
                                     )
                                 } label: {
-                                    DewormingTreatmentListRow(
+                                    DewormingTreatmentListRowView(
                                         dewormingTreatment: treatment
                                     )
                                 }
@@ -64,48 +73,47 @@ struct DewormingTreatmentList: View {
             .navigationBarTitleDisplayMode(.inline)
             .overlay {
                 if pet.unwrappedDewormingTreatments.isEmpty {
-                    DewormingTreatmentListEmpty()
+                    NoDewormingTreatmentsYet()
                 }
             }
-            .sheet(isPresented: $showingDewormingTreatmentDetail) {
-                DewormingTreatmentDetail(
+            .sheet(isPresented: $showingDewormingTreatmentDetails) {
+                DewormingTreatmentDetailsView(
                     pet: pet,
                     isNew: true
                 )
             }
             .toolbar {
-                ToolbarItem {
-                    Button {
-                        showingDewormingTreatmentDetail = true
-                    } label: {
+                ToolbarItem(placement: .status) {
+                    Button(action: showDewormingTreatmentDetailsView) {
                         Label(
                             "Add deworming treatment",
-                            systemImage: "plus"
+                            systemImage: "plus.circle.fill"
                         )
-                    }
-                }
-                
-                if !pet.unwrappedDewormingTreatments.isEmpty {
-                    ToolbarItem(placement: .status) {
-                        Text(
-                            "\(pet.unwrappedDewormingTreatments.active) active treatments"
-                        )
-                        .font(.caption)
+                        .labelStyle(.titleAndIcon)
                     }
                 }
             }
         }
     }
-    
-    private func dismissView() { dismiss() }
 }
 
 #Preview("Empty Treatment List") {
-    DewormingTreatmentList(pet: SampleData.shared.petWithExpiredVaccines)
+    DewormingTreatmentListView(pet: SampleData.shared.petWithExpiredVaccines)
         .environmentObject(PetsStoreManager())
 }
 
 #Preview("Existing Treatment List") {
-    DewormingTreatmentList(pet: SampleData.shared.petWithChipID)
+    DewormingTreatmentListView(pet: SampleData.shared.petWithChipID)
         .environmentObject(PetsStoreManager())
+}
+
+struct NoDewormingTreatmentsYet: View {
+    var body: some View {
+        ContentUnavailableView {
+            Label("No deworming treatments yet", systemImage: "ant")
+                .foregroundStyle(.accent)
+        } description: {
+            Text("Tap the plus button below to add a new deworming treatment.")
+        }
+    }
 }

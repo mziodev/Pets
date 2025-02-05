@@ -60,7 +60,7 @@ struct PetCardView: View {
                     }
                     
                     NavigationLink {
-                        DewormingTreatmentList(pet: pet)
+                        DewormingTreatmentListView(pet: pet)
                     } label: {
                         PetCardSummaryView(pet: pet, summarySource: .dewormings)
                     }

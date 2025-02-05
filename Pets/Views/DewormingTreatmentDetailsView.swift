@@ -1,5 +1,5 @@
 //
-//  DewormingDetail.swift
+//  DewormingTreatmentDetailsView.swift
 //  Pets
 //
 //  Created by MZiO on 20/6/24.
@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct DewormingTreatmentDetail: View {
+struct DewormingTreatmentDetailsView: View {
+    
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var petsStoreManager: PetsStoreManager
     
@@ -17,10 +18,6 @@ struct DewormingTreatmentDetail: View {
     
     @State private var treatmentQuantity: Double?
     @State private var editingTreatment = false
-    @State private var petsStoreAdText = String(
-        localized: "Unlock Deworming Treatment Notes, Notifications and some other features with Pets Premium."
-    )
-    
     @State private var showingPetsStore = false
     @State private var showingNotificationTime = false
     @State private var showingDeleteAlert = false
@@ -28,6 +25,10 @@ struct DewormingTreatmentDetail: View {
     @FocusState private var treatmentNameTextFieldFocused: Bool
     
     let isNew: Bool
+    
+    private let petsStoreAdText = String(
+        localized: "Unlock Deworming Treatment Notes, Notifications and some other features with Pets Premium."
+    )
     
     private var isNameVerified: Bool {
         dewormingTreatment.name.hasMinimumLength()
@@ -37,6 +38,61 @@ struct DewormingTreatmentDetail: View {
     }
     private var isFormVerified: Bool {
         isNameVerified && isQuantityVerified
+    }
+    
+    private func dismissView() {
+        dismiss()
+    }
+    
+    private func toggleEditingTreatment() {
+        withAnimation {
+            editingTreatment.toggle()
+            treatmentNameTextFieldFocused.toggle()
+        }
+    }
+    
+    private func scheduleNotification() {
+        let title = String(localized: "Deworming Treatment Warning")
+        let body = String(localized: "\(pet.name) is running out of \(dewormingTreatment.name) coverage.")
+        
+        if dewormingTreatment.notification != .none {
+            Notification.schedule(
+                identifier: dewormingTreatment.notificationID,
+                title: title,
+                body: body,
+                targetDate: dewormingTreatment.endingDate,
+                daysBefore: dewormingTreatment.notification.value,
+                notificationTime: dewormingTreatment.notificationTime
+            )
+        } else {
+            Notification.removePendingNotifications(
+                for: dewormingTreatment.notificationID
+            )
+        }
+    }
+    
+    private func appendDewormingTreatment() {
+        pet.dewormingTreatments?.append(dewormingTreatment)
+        
+        scheduleNotification()
+        
+        dismiss()
+    }
+    
+    private func deleteDewormingTreatment() {
+        if let dewormingTreatmentIndex = pet.unwrappedDewormingTreatments.firstIndex(
+            where: { $0.id == dewormingTreatment.id
+            }) {
+            pet.dewormingTreatments?.remove(at: dewormingTreatmentIndex)
+            
+            dismiss()
+        }
+    }
+    
+    private func copyDewormingTreatmentQuantity() {
+        if dewormingTreatment.quantity > 0 {
+            treatmentQuantity = dewormingTreatment.quantity
+        }
     }
     
     init(
@@ -57,14 +113,13 @@ struct DewormingTreatmentDetail: View {
                         Spacer()
                         
                         VStack {
-                            Image(
-                                systemName: dewormingTreatment.type.systemImage
+                            Label(
+                                dewormingTreatment.type.localizedDescription,
+                                systemImage: dewormingTreatment.type.systemImage
                             )
+                            .labelStyle(.iconOnly)
                             .font(.system(size: 70))
                             .foregroundStyle(.accent)
-                            .accessibilityLabel(
-                                dewormingTreatment.type.localizedDescription
-                            )
                             
                             Text("\(pet.name)'s deworming treatment")
                                 .font(.title3)
@@ -86,10 +141,10 @@ struct DewormingTreatmentDetail: View {
                         text: $dewormingTreatment.name
                     )
                     .focused($treatmentNameTextFieldFocused)
-                    .overlay {
-                        VerificationCheckMark(
-                            condition: isNameVerified
-                        )
+                    .overlay(alignment: .trailing) {
+                        if isNameVerified {
+                            CheckMarkLabel()
+                        }
                     }
                     
                     Picker(
@@ -132,10 +187,10 @@ struct DewormingTreatmentDetail: View {
                     }
                     .pickerStyle(.menu)
                     .padding(.trailing, 30)
-                    .overlay {
-                        VerificationCheckMark(
-                            condition: isQuantityVerified
-                        )
+                    .overlay(alignment: .trailing) {
+                        if isQuantityVerified {
+                            CheckMarkLabel()
+                        }
                     }
                 }
                 .disabled(!editingTreatment)
@@ -195,7 +250,7 @@ struct DewormingTreatmentDetail: View {
                 }
                 
                 if !petsStoreManager.isPremiumUnlocked && editingTreatment {
-                    GoPremiumAd(
+                    GoPremiumAdView(
                         showingPetsStore: $showingPetsStore,
                         adText: petsStoreAdText
                     )
@@ -234,7 +289,7 @@ struct DewormingTreatmentDetail: View {
                     action: deleteDewormingTreatment
                 )
             } message: {
-                Text("Deworming treatment will deleted, are you sure?")
+                Text("Deworming treatment will be deleted, are you sure?")
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
@@ -254,57 +309,11 @@ struct DewormingTreatmentDetail: View {
             }
         }
     }
-    
-    private func dismissView() { dismiss() }
-    
-    private func toggleEditingTreatment() {
-        withAnimation {
-            editingTreatment.toggle()
-            treatmentNameTextFieldFocused.toggle()
-        }
-    }
-    
-    private func appendDewormingTreatment() {
-        pet.dewormingTreatments?.append(dewormingTreatment)
-        
-        if dewormingTreatment.notification != .none {
-            Notification.schedule(
-                identifier: dewormingTreatment.notificationID,
-                title: String(localized: "Deworming Treatment Warning"),
-                body: String(localized: "\(pet.name) is running out of \(dewormingTreatment.name) coverage."),
-                targetDate: dewormingTreatment.endingDate,
-                daysBefore: dewormingTreatment.notification.value,
-                notificationTime: dewormingTreatment.notificationTime
-            )
-        } else {
-            Notification.removePendingNotifications(
-                for: dewormingTreatment.notificationID
-            )
-        }
-        
-        dismiss()
-    }
-    
-    private func deleteDewormingTreatment() {
-        if let dewormingTreatmentIndex = pet.unwrappedDewormingTreatments.firstIndex(
-            where: { $0.id == dewormingTreatment.id
-            }) {
-            pet.dewormingTreatments?.remove(at: dewormingTreatmentIndex)
-            
-            dismiss()
-        }
-    }
-    
-    private func copyDewormingTreatmentQuantity() {
-        if dewormingTreatment.quantity > 0 {
-            treatmentQuantity = dewormingTreatment.quantity
-        }
-    }
 }
 
 
 #Preview("New deworming") {
-    DewormingTreatmentDetail(
+    DewormingTreatmentDetailsView(
         pet: SampleData.shared.petWithChipID,
         isNew: true
     )
@@ -312,7 +321,7 @@ struct DewormingTreatmentDetail: View {
 }
 
 #Preview("Existing deworming") {
-    DewormingTreatmentDetail(
+    DewormingTreatmentDetailsView(
         pet: SampleData.shared.petWithChipID,
         dewormingTreatment: SampleData.shared.petWithChipID.unwrappedDewormingTreatments[0]
     )

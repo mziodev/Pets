@@ -1,5 +1,5 @@
 //
-//  DewormingListRow.swift
+//  DewormingTreatmentListRowView.swift
 //  Pets
 //
 //  Created by MZiO on 20/6/24.
@@ -7,19 +7,21 @@
 
 import SwiftUI
 
-struct DewormingTreatmentListRow: View {
+struct DewormingTreatmentListRowView: View {
+    
     let dewormingTreatment: DewormingTreatment
     
     var body: some View {
         HStack {
-            Image(systemName: dewormingTreatment.type.systemImage)
-                .font(.title)
-                .foregroundStyle(
-                    dewormingTreatment.isActive ? Color.accent : .secondary
-                )
-                .accessibilityLabel(
-                    dewormingTreatment.type.localizedDescription
-                )
+            Label(
+                dewormingTreatment.type.localizedDescription,
+                systemImage: dewormingTreatment.type.systemImage
+            )
+            .labelStyle(.iconOnly)
+            .font(.title)
+            .foregroundStyle(
+                dewormingTreatment.isActive ? Color.accent : .secondary
+            )
             
             VStack(alignment: .leading) {
                 Text(dewormingTreatment.name)
@@ -59,11 +61,8 @@ struct DewormingTreatmentListRow: View {
                         .foregroundStyle(.red)
                 }
             } else {
-                HStack {
-                    Text("Expired")
-                        .font(.subheadline.smallCaps())
-                }
-                .foregroundStyle(.secondary)
+                Text("Expired")
+                    .font(.subheadline.smallCaps())
             }
         }
         .foregroundStyle(dewormingTreatment.isActive ? .primary : .secondary)
@@ -71,14 +70,8 @@ struct DewormingTreatmentListRow: View {
 }
 
 
-#Preview("Active deworming") {
-    List {
-        DewormingTreatmentListRow(dewormingTreatment: DewormingTreatment.sampleData[0])
-    }
-}
-
-#Preview("Expired deworming") {
-    List {
-        DewormingTreatmentListRow(dewormingTreatment: DewormingTreatment.sampleData[3])
+#Preview {
+    List(DewormingTreatment.sampleData) { deworming in
+        DewormingTreatmentListRowView(dewormingTreatment: deworming)
     }
 }
