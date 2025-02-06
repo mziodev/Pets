@@ -22,9 +22,11 @@ struct WhatsNewView: View {
                     UpdateView(
                         text: String(localized: "Improve app code internally for better performance.")
                     )
+                    
+                    UpdateView(text: String(localized: "Add some user interface twicks here and there for a smoother user experience."))
                 }
                 
-                Section("Version 1.1.0") {
+                Section("Version 1.1") {
                     UpdateView(
                         text: String(
                             localized: "Added resize feature for images."
