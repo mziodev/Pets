@@ -8,6 +8,7 @@
 import Foundation
 
 extension PetBreed {
+    
     static let sampledata = [
         PetBreed(id: 112, name: "Jack Russell Terrier", variations: []),
         PetBreed(id: 154, name: "Poodle", variations: ["Miniature", "Standard", "Toy"]),

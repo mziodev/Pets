@@ -8,6 +8,7 @@
 import Foundation
 
 extension Pet {
+    
     static let sampleData = [
         Pet(
             species: .cannine,

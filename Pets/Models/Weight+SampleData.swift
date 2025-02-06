@@ -8,6 +8,7 @@
 import Foundation
 
 extension Weight {
+    
     static let sampleData = [
         // Rocky
         Weight(date: .now - (86400 * 2), value: 7.340),

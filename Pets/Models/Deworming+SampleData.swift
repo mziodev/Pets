@@ -8,6 +8,7 @@
 import Foundation
 
 extension DewormingTreatment {
+    
     static var sampleData = [
         DewormingTreatment(
             type: .liquid,

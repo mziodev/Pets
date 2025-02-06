@@ -10,6 +10,7 @@ import SwiftUI
 
 @Model
 class DewormingTreatment {
+    
     var type: TreatmentType = TreatmentType.unknown
     var units: TreatmentUnit = TreatmentUnit.units
     var name: String = ""
@@ -21,26 +22,6 @@ class DewormingTreatment {
     var notificationTime: Date = Date.now
     var notes: String = ""
     var pet: Pet? = nil
-    
-    var activeDays: Int {
-        Int(ceil(endingDate.firstHour.timeIntervalSince(.now) / 86400))
-    }
-    
-    var activeDaysColor: Color {
-        let daysRange = 7...15
-        
-        if activeDays < 7 {
-            return .red
-        } else if daysRange.contains(activeDays) {
-            return .yellow
-        } else {
-            return .green
-        }
-    }
-    
-    var isActive: Bool {
-        self.activeDays >= 0
-    }
     
     init(
         type: TreatmentType = .unknown,
