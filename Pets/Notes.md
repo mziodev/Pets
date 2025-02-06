@@ -5,6 +5,15 @@
 - 94, 139, 178, 190
 
 
+## Show users if they already are a Premium user
+
+
+## Change Notes TextField to TextEditor
+
+
+## Change Vaccines and Dewormings as info cards instead plain list elements
+
+
 ## Localization and i18n
 - We have to do localization and internationalization of the entire app on: English, Spanish, French, Portuguese, German, Chinese, Japanese, Indian... on this order.
 

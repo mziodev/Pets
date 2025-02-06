@@ -246,6 +246,16 @@
         }
       }
     },
+    "%@'s Microchip" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microchip de %@"
+          }
+        }
+      }
+    },
     "%@'s vaccines" : {
       "localizations" : {
         "es" : {
@@ -272,46 +282,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
-          }
-        }
-      }
-    },
-    "%lld active treatments" : {
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld active treatment"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld active treatments"
-                }
-              }
-            }
-          }
-        },
-        "es" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld tratamiento activo"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld tratamientos activos"
-                }
-              }
-            }
           }
         }
       }
@@ -626,6 +596,16 @@
         }
       }
     },
+    "Add some user interface twicks here and there for a smoother user experience." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadimos algunos ajustes a la interfaz de usuario aquí y allá para una experiencia de usuario más fluida."
+          }
+        }
+      }
+    },
     "Add Treatment" : {
       "localizations" : {
         "es" : {
@@ -772,16 +752,6 @@
         }
       }
     },
-    "Barcode reading error, try again" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error en la lectura del código de barras, inténtalo otra vez."
-          }
-        }
-      }
-    },
     "Basics" : {
       "localizations" : {
         "es" : {
@@ -888,26 +858,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Microchip"
-          }
-        }
-      }
-    },
-    "Chip ID" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Microchip ID"
-          }
-        }
-      }
-    },
-    "Chip ID Barcode" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Código de barras del Microchip ID"
           }
         }
       }
@@ -1032,17 +982,17 @@
         }
       }
     },
-    "Deworming treatment will deleted, are you sure?" : {
+    "Deworming treatment will be deleted, are you sure?" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "El tratamiento de desparasitación será eliminado, ¿estás seguro/a?"
+            "value" : "El tratamiento antiparasitario será eliminado ¿estás seguro/a?"
           }
         }
       }
     },
-    "Deworming Treatments" : {
+    "Dewormings" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -1128,16 +1078,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No te pierdas nada"
-          }
-        }
-      }
-    },
-    "Done" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Listo"
           }
         }
       }
@@ -1272,16 +1212,6 @@
         }
       }
     },
-    "go Premium" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "pásate a Premium"
-          }
-        }
-      }
-    },
     "go Premium!" : {
       "localizations" : {
         "es" : {
@@ -1292,12 +1222,12 @@
         }
       }
     },
-    "Gold crown" : {
+    "Gold crown symbol" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Corona dorada"
+            "value" : "Símbolo de corona de oro"
           }
         }
       }
@@ -1318,16 +1248,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hepatitis"
-          }
-        }
-      }
-    },
-    "I'm a %@" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Soy un %@"
           }
         }
       }
@@ -1398,6 +1318,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mejoramos el código de la aplicación internamente para obtener un mejor rendimiento."
+          }
+        }
+      }
+    },
+    "In the Family for" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En la familia desde"
           }
         }
       }
@@ -1602,16 +1532,6 @@
         }
       }
     },
-    "Microchip Info" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Microchip Info"
-          }
-        }
-      }
-    },
     "Microchip number is been copied to the clipboard. Go to [https://petmaxx.com](https://www.petmaxx.com/) and paste it inside the 'Microchip Search' box." : {
       "localizations" : {
         "es" : {
@@ -1762,6 +1682,16 @@
         }
       }
     },
+    "No deworming treatments yet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay ninguna desparasitación"
+          }
+        }
+      }
+    },
     "No Microchip" : {
       "localizations" : {
         "es" : {
@@ -1778,16 +1708,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Todavía no hay mascotas"
-          }
-        }
-      }
-    },
-    "No treatments yet" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Todavía no hay tratamientos"
           }
         }
       }
@@ -1878,16 +1798,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ok"
-          }
-        }
-      }
-    },
-    "on Family" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "en la familia"
           }
         }
       }
@@ -2172,6 +2082,16 @@
         }
       }
     },
+    "Selected Breed" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raza selecionada"
+          }
+        }
+      }
+    },
     "Sex" : {
       "localizations" : {
         "es" : {
@@ -2188,16 +2108,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Champú"
-          }
-        }
-      }
-    },
-    "since adopted" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "desde la adopción"
           }
         }
       }
@@ -2332,12 +2242,12 @@
         }
       }
     },
-    "Tap the plus button to add a new deworming treatment." : {
+    "Tap the plus button below to add a new deworming treatment." : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Haz tap en el botón '+' para añadir un nuevo tratamiento de desparasitación."
+            "value" : "Haz tap en el botón de abajo para añadir un nuevo tratamiento antiparasitario."
           }
         }
       }
@@ -2572,12 +2482,12 @@
         }
       }
     },
-    "Version 1.1.0" : {
+    "Version 1.1" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Versión 1.1.0"
+            "value" : "Versión 1.1"
           }
         }
       }
@@ -2658,6 +2568,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lista de Pesos (%@)"
+          }
+        }
+      }
+    },
+    "Weights" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pesos"
           }
         }
       }
